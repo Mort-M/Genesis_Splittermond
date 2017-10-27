@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="VILLAGE" cplx="U" id="aschelauge" load="0" material="OTHER" price="3" robust="0" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="bimsstein" load="0" material="OTHER" price="5" robust="3" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="bürste" load="0" material="OTHER" price="10" robust="3" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="F" id="duftöl" load="0" material="OTHER" price="100" robust="0" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="hornfeile" load="0" material="METAL" price="100" robust="6" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="kamm" load="0" material="OTHER" price="5" robust="3" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="rasierklinge" load="0" material="METAL" price="100" robust="6" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="U" id="schwamm" load="0" material="OTHER" price="50" robust="1" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="seife" load="0" material="OTHER" price="50" robust="3" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="F" id="kosmetikkoffer" load="2" material="OTHER" price="1500" robust="0" skill="diplomacy" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="schminke" load="0" material="OTHER" price="500" robust="0" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="körperfarben" load="0" material="OTHER" price="50" robust="0" type="OTHER"/>
+</items>

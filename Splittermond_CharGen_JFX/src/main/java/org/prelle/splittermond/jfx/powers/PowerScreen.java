@@ -1,0 +1,222 @@
+/**
+ * 
+ */
+package org.prelle.splittermond.jfx.powers;
+
+import java.util.Arrays;
+import java.util.PropertyResourceBundle;
+import java.util.ResourceBundle;
+
+import org.apache.log4j.Logger;
+import org.prelle.javafx.CloseType;
+import org.prelle.javafx.ManagedScreen;
+import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
+import org.prelle.splimo.PointsPane;
+import org.prelle.splimo.Power;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.ViewMode;
+import org.prelle.splimo.charctrl.CharacterController;
+import org.prelle.splimo.charctrl.Generator;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.TextAlignment;
+
+/**
+ * @author Stefan
+ *
+ */
+public class PowerScreen extends ManagedScreen implements GenerationEventListener {
+
+	private final static Logger logger = Logger.getLogger("splimo.jfx");
+	
+	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+
+	private CharacterController control;
+	private ViewMode mode;
+
+	private PointsPane points;
+	private PowerPane powers;
+	private WeaknessPane weaknesses;
+	private Label pageRef;
+	private Label description;
+	private VBox descLayout;
+	
+	//--------------------------------------------------------------------
+	/**
+	 */
+	public PowerScreen(CharacterController control, ViewMode mode) {
+		this.control = control;
+		this.mode    = mode;
+		
+		initComponents();
+		initLayout();
+		initInteractivity();
+		setSkin(new ManagedScreenStructuredSkin(this));
+		GenerationEventDispatcher.addListener(this);
+ 	}
+
+	//-------------------------------------------------------------------
+	private void initComponents() {
+		getNavigButtons().add(CloseType.BACK);
+		setTitle(UI.getString("powerscreen.title"));
+		
+		powers = new PowerPane(control.getPowerController(), true);
+		weaknesses = new WeaknessPane();
+
+		description = new Label();
+		description.setWrapText(true);
+//		description.setContentDisplay(ContentDisplay.BOTTOM);
+//		description.setGraphicTextGap(2);
+		description.getStyleClass().add("text-body");
+		description.setMaxHeight(Double.MAX_VALUE);
+		description.setMaxWidth(Double.MAX_VALUE);
+		description.setTextAlignment(TextAlignment.JUSTIFY);
+		description.setAlignment(Pos.TOP_LEFT);
+		description.setStyle("-fx-min-width: 10em");
+		pageRef = new Label();
+		pageRef.getStyleClass().add("text-body");
+
+		
+		powers.getStyleClass().add("content");
+		weaknesses.getStyleClass().add("content");
+
+		/*
+		 * Exp & Co.
+		 */
+		points = new PointsPane(mode);
+		if (control instanceof Generator)
+			points.setGenerator((Generator) control);
+	}
+
+	//-------------------------------------------------------------------
+	private void initLayout() {
+		getStyleClass().add("text-body");
+		
+		// Powers
+		Label lblPower = new Label(UI.getString("label.powers"));
+		powers.setMaxWidth(Double.MAX_VALUE);
+		HBox.setHgrow(powers, Priority.ALWAYS);
+		lblPower.getStyleClass().add("text-subheader");
+
+		// Resources
+		Label lblWeak = new Label(UI.getString("label.weaknesses"));
+		weaknesses.setMaxWidth(Double.MAX_VALUE);
+		HBox.setHgrow(weaknesses, Priority.ALWAYS);
+		lblWeak.getStyleClass().add("text-subheader");
+
+		// Description
+		descLayout = new VBox(20);
+		descLayout.getChildren().addAll(pageRef, description);
+		descLayout.getStyleClass().add("content");
+		ScrollPane descScroll = new ScrollPane(descLayout);
+		descScroll.setFitToWidth(true);
+		descScroll.setMaxHeight(Double.MAX_VALUE);
+		descScroll.setMaxWidth(Double.MAX_VALUE);
+		
+		// Flow; Resources and Powers
+		GridPane flow = new GridPane();
+		flow.add(lblPower   , 0, 0);
+		flow.add(powers     , 0, 1);
+		flow.add(lblWeak    , 0, 2);
+		flow.add(weaknesses , 0, 3);
+		flow.add(descScroll , 1, 1, 1,3);
+		flow.setVgap(20);
+		flow.setHgap(20);
+		ColumnConstraints col1 = new ColumnConstraints();
+		ColumnConstraints col2 = new ColumnConstraints();
+        col1.setPercentWidth(66);
+        col2.setPercentWidth(33);
+        flow.getColumnConstraints().addAll(col1, col2);
+
+		HBox content = new HBox();
+		content.setSpacing(20);
+		content.getChildren().addAll(points, flow);
+		HBox.setHgrow(flow, Priority.ALWAYS);
+		HBox.setMargin(points, new Insets(0,0,20,0));
+		HBox.setMargin(flow  , new Insets(0,0,20,0));
+		setContent(content);
+	}
+
+	//-------------------------------------------------------------------
+	private void updateDescription(Power value) {
+		if (value==null) {
+			description.setText(null);
+			pageRef.setText(null); 
+		} else {
+			String ref = "'"+value.getProductName()+"' "+value.getPage();
+			pageRef.setText(ref);
+			description.setText(value.getHelpText());
+		}
+	}
+
+	//-------------------------------------------------------------------
+	private void initInteractivity() {
+		powers.getTable().getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
+			logger.info("Selected in table "+n);
+			if (n!=null) {
+				updateDescription(n.getPower());
+			}
+		});
+		powers.getChoiceBox().getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
+			logger.info("Selected in choice box "+n);
+			if (n!=null) {
+				updateDescription(n);
+			}
+		});
+			
+	}
+
+	//-------------------------------------------------------------------
+	public void setData(SpliMoCharacter model) {
+		points.setData(model);
+		powers.setData(model);
+		weaknesses.setData(model);
+		if (control.getPowerController() instanceof Generator) {
+			points.setGenerator((Generator)control.getPowerController());
+			points.refresh();
+		}
+	}
+
+	//--------------------------------------------------------------------
+	/**
+	 * @see org.prelle.splimo.chargen.event.GenerationEventListener#handleGenerationEvent(org.prelle.splimo.chargen.event.GenerationEvent)
+	 */
+	@Override
+	public void handleGenerationEvent(GenerationEvent event) {
+		switch (event.getType()) {
+		case EXPERIENCE_CHANGED:
+			logger.debug("rcv "+event.getType()+"   "+Arrays.toString((int[])event.getValue()));
+			points.refresh();
+			break;
+		case POINTS_LEFT_POWERS:
+			points.refresh();
+			break;
+		default:
+			break;
+		}		
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.ManagedScreen#close(org.prelle.javafx.CloseType)
+	 */
+	@Override
+	public boolean close(CloseType closeType) {
+		GenerationEventDispatcher.removeListener(this);
+		GenerationEventDispatcher.removeListener(powers);
+		GenerationEventDispatcher.removeListener(weaknesses);
+		return true;
+	}
+
+}

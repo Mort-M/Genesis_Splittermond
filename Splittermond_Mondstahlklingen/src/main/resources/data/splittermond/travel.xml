@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="LARGE_TOWN" cplx="M" id="astrolabium" load="5" material="OTHER" price="5000" robust="4" skill="seafaring" spec="seafaring/navigation" type="TRAVEL"/>
+   <item avail="CAPITAL" cplx="M" id="fernrohr" load="1" material="OTHER" price="2000" robust="4" skill="perception" spec="perception/see" type="TRAVEL"/>
+   <item avail="LARGE_TOWN" cplx="F" id="gradstock" load="1" material="WOOD" price="500" robust="3" type="TRAVEL"/>
+   <item avail="SMALL_TOWN" cplx="F" id="karten" load="0" material="OTHER" price="500" robust="0" skill="survival" spec="survival/wilderness" type="TRAVEL"/>
+   <item avail="CAPITAL" cplx="A" id="kompass" load="2" material="METAL" price="1500" robust="2" type="TRAVEL"/>
+   <item avail="SMALL_TOWN" cplx="G" id="schlafsack" load="2" material="FABRIC" price="100" robust="1" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="U" id="decke" load="1" material="FABRIC" price="10" robust="0" type="TRAVEL"/>
+   <item avail="SMALL_TOWN" cplx="U" id="hängematte" load="2" material="OTHER" price="20" robust="1" type="TRAVEL"/>
+   <item avail="SMALL_TOWN" cplx="G" id="jurte8Personen" load="10" material="OTHER" price="1000" robust="2" type="TRAVEL"/>
+   <item avail="SMALL_TOWN" cplx="G" id="königszelt10Personen" load="12" material="OTHER" price="2500" robust="2" type="TRAVEL"/>
+   <item avail="SMALL_TOWN" cplx="G" id="nomadenzelt6Personen" load="8" material="OTHER" price="500" robust="1" type="TRAVEL"/>
+   <item avail="SMALL_TOWN" cplx="G" id="zeltproperson" load="4" material="OTHER" price="100" robust="1" type="TRAVEL"/>
+   <item avail="SMALL_TOWN" cplx="G" id="zeltProPerson" load="4" material="OTHER" price="100" robust="1" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="U" id="kochgeschirrSatz" load="2" material="OTHER" price="50" robust="5" skill="craftmanship" spec="craftmanship/cooking" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="U" id="angelhakenUndSchnur" load="0" material="OTHER" price="30" robust="3" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="G" id="bierFässchen" load="5" material="WOOD" price="100" robust="3" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="U" id="marschrationprotag" load="1" material="OTHER" price="10" robust="0" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="U" id="essgeschirr" load="1" material="OTHER" price="20" robust="2" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="G" id="kessel3L" load="2" material="METAL" price="30" robust="6" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="U" id="messer" load="1" material="METAL" price="100" robust="6" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="G" id="pfanne" load="1" material="METAL" price="20" robust="6" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="U" id="bratspieß" load="1" material="METAL" price="10" robust="6" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="G" id="schnapsEinfachFlasche" load="1" material="OTHER" price="50" robust="2" type="TRAVEL"/>
+   <item avail="SMALL_TOWN" cplx="F" id="likörTeuerFlasche" load="1" material="OTHER" price="500" robust="2" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="U" id="gewürzEinfach" load="0" material="OTHER" price="10" robust="1" type="TRAVEL"/>
+   <item avail="LARGE_TOWN" cplx="U" id="gewürzTeuer" load="0" material="OTHER" price="300" robust="1" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="U" id="schwimmblase" load="1" material="OTHER" price="30" robust="2" type="TRAVEL"/>
+   <item avail="SMALL_TOWN" cplx="G" id="schwimmflossen" load="1" material="LEATHER" price="50" robust="2" type="TRAVEL"/>
+</items>

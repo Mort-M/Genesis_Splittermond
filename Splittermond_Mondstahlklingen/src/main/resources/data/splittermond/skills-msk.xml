@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+    <skill id="acrobatics" attr1="AGILITY" attr2="STRENGTH">
+        <mastership level="1" key="evade1">
+        	<modifications>
+        	  <attrmod attr="DEFENSE" val="2" cond="true"/>
+        	</modifications>
+        </mastership>
+        <mastership level="1" key="feint1"/>
+         <mastership level="2" key="evade2" >
+            <requires>
+                <masterreq ref="acrobatics/evade1"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="feint2">
+            <requires>
+                <masterreq ref="acrobatics/feint1"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="agileinarmor">
+            <requires>
+                <masterreq ref="acrobatics/evade2"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="evade3">
+            <requires>
+                <masterreq ref="acrobatics/evade2"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="feint3">
+            <requires>
+                <masterreq ref="acrobatics/feint2"/>
+            </requires>
+        </mastership>
+    </skill>
+
+    <skill id="alchemy" attr1="MYSTIC" attr2="MIND">
+        <mastership level="2" key="materialmaster"/>
+    </skill>
+    <skill id="clscraft" attr1="INTUITION" attr2="MIND" grouped="true">
+        <mastership level="2" key="materialmaster"/>
+        <mastership level="3" key="frommaster"/>
+    </skill>
+    <skill id="craftmanship" attr1="CONSTITUTION" attr2="MIND" grouped="true">
+        <mastership level="2" key="materialmaster"/>
+        <mastership level="2" key="efweaponforge">
+            <requires>
+                <masterreq ref="craftmanship/journeyman"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="frommaster"/>
+    </skill>
+</skills>

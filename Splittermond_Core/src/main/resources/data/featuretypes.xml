@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<featuretypes>
+  <featuretype id="DEFENSIVE"     types="SHIELD,WEAPON" level="true"/>
+  <featuretype id="DOUBLE_WEAPON" types="WEAPON"/>
+  <featuretype id="PENETRATING"   types="LONG_RANGE_WEAPON,WEAPON"/>
+  <featuretype id="IMPROVISED"    types="LONG_RANGE_WEAPON,WEAPON"/>
+  <featuretype id="DISARMING"     types="WEAPON" level="true"/>
+  <featuretype id="LONG_WEAPON"   types="LONG_RANGE_WEAPON,WEAPON"/>
+  <featuretype id="CLOSE_COMBAT_SUITABLE" types="LONG_RANGE_WEAPON"/>
+  <featuretype id="PARRY_WEAPON"  types="WEAPON"/>
+  <featuretype id="PRIMITIVE"     types="ARMOR,WEAPON,LONG_RANGE_WEAPON"/>
+  <featuretype id="INFANTRY_WEAPON" types="LONG_RANGE_WEAPON,WEAPON"/>
+  <featuretype id="PIERCING"      types="LONG_RANGE_WEAPON,WEAPON" level="true"/>
+  <featuretype id="BLUNT"         types="LONG_RANGE_WEAPON,WEAPON"/>
+  <featuretype id="SEPERATABLE"   types="LONG_RANGE_WEAPON,WEAPON"/>
+  <featuretype id="SEPERATABLE2"  types="LONG_RANGE_WEAPON,WEAPON"/>
+  <featuretype id="CLUTCH"        types="LONG_RANGE_WEAPON,WEAPON"/>
+  <featuretype id="ENCUMBRANT"    types="LONG_RANGE_WEAPON,WEAPON"/>
+  <featuretype id="FLEXIBLE"      types="WEAPON"/>
+  <featuretype id="HEAVY"         types="LONG_RANGE_WEAPON,WEAPON"/>
+  <featuretype id="THROWABLE"     types="WEAPON"/>
+  <featuretype id="TWO_HANDED"    types="LONG_RANGE_WEAPON,WEAPON"/>
+  <featuretype id="COVER"         types="SHIELD"/>
+  <featuretype id="FIRM"          types="ARMOR"/>
+  <featuretype id="PADDED"        types="ARMOR"/>
+</featuretypes>

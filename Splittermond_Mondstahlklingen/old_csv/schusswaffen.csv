@@ -1,0 +1,12 @@
+﻿Albenbogen;Großstadt;16 L / 32 T;3;3;F;1W10+6;12;BEW+INT;BEW 3, INT 3;Durchdringung (2), Scharf (4), Zweihändig;35
+Balester;Kleinstadt;15 L / 30 T;2;3;F;1W10+5;10 ;INT+WIL ;INT 3, WIL 2;Kritisch (2), Zweihändig;8
+Handarmbrust;Metropole;30 L / 25 T;2;4;A;1W6+3;10;INT+WIL;INT 2;Durchdringung (3);8
+Kurzbogen;Dorf;8 L / 16 T;2;3;U;1W10+1;9;BEW+INT;STÄ 1;Durchdringung (1), Scharf (2), Zweihändig;20
+Langbogen;Kleinstadt;15 L / 30 T;3;3;G;1W10+8;13;INT+STÄ;STÄ 3;Durchdringung (1), Scharf (2), Zweihändig;35
+Leichte Armbrust;Kleinstadt;20 L / 40 T;3;3;F;2W6+6;13;INT+WIL;INT 2, STÄ 1;Durchdringung (4), Zweihändig;25
+Reiterbogen;Kleinstadt;10 L / 20 T;3;3;G;1W10+4;11;INT+STÄ;INT 3, STÄ 2;Durchdringung (1), Reiterwaffe (0), Scharf (3), Zweihändig;25
+Schleuder;Dorf;50 T / 1 T;1;1;U;1W6+4;9;BEW+INT;BEW 1;-;15
+Schwere Armbrust;Kleinstadt;30 L / 60 T;4;4;M;3W6+4;25;INT+WIL;INT 2, STÄ 4;Durchdringung (6), Wuchtig, Zweihändig;30
+Vargenbogen;Großstadt;20 L / 40 T;3;3;F;2W10+3;14;INT+STÄ;STÄ 5;Durchdringung (2), Scharf (3), Zweihändig;30
+Wintholter Langbogen;Großstadt;16 L / 32 T;3;3;F;1W10+5;11;BEW+INT;INT 2, STÄ 2;Durchdringung (2), Kritisch (2), Scharf (2), Zweihändig;30
+

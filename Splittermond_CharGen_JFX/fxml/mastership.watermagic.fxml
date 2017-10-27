@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:id="special" hgap="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="40.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+  <children>
+    <Text rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%mastership.level1" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="resistwater1"    maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.resistwater1" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="wavechild"       maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.wavechild"    GridPane.columnIndex="2" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="detox"           maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.detox"        GridPane.columnIndex="3" GridPane.rowIndex="0" />
+    <Text rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%mastership.level2" GridPane.rowIndex="1" />
+    <ToggleButton fx:id="resistwater2"    maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.resistwater2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <ToggleButton fx:id="watermastery"    maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.watermastery" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    <ToggleButton fx:id="masterwaterelem" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.masterwaterelem" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+    <Text rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%mastership.level3" GridPane.rowIndex="2" />
+    <ToggleButton fx:id="resistwater3"    maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.resistwater3" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <ToggleButton fx:id="masterwaves"     maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.masterwaves"  GridPane.columnIndex="2" GridPane.rowIndex="2" />
+  </children>
+  <columnConstraints>
+    <ColumnConstraints />
+    <ColumnConstraints />
+    <ColumnConstraints />
+    <ColumnConstraints />
+    <ColumnConstraints />
+  </columnConstraints>
+</GridPane>

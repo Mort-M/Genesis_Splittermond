@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<enhancements>
+  <enhancement id="secretcompartment" cost="1" max="ONCEPERLOAD">
+  	<modifications>
+  	  <mastermod level="+1"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="premiumcrafted" cost="1" max="1">
+  	<modifications>
+  	  <featuremod remove="true" feature="PRIMITIVE"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="resistcold" cost="1" max="2">
+  	<modifications>
+  	  <itemmod attr="HANDICAP" val="1"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="deflectdirt" cost="1" max="1" />
+  <enhancement id="inconspicuous" cost="1" max="2" />
+  <enhancement id="uncommonspecialization" cost="2" max="2">
+  	<modifications>
+  	  <mastermod level="+1"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="damagetype" cost="1" max="3" />
+  <enhancement id="waterproof" cost="1" max="2" />
+  <enhancement id="demountable" cost="1" max="1" />
+  
+  <enhancement id="farrange" cost="1" max="1" items="LONG_RANGE_WEAPON">
+  	<modifications>
+  	  <featuremod remove="false" feature="FARRANGE"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="weaponpair" cost="2" max="1" items="WEAPON,LONG_RANGE_WEAPON">
+  	<modifications>
+  	  <featuremod remove="false" feature="WEAPONPAIR"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="unerring" cost="1" max="1" items="WEAPON,LONG_RANGE_WEAPON">
+  	<modifications>
+  	  <featuremod remove="false" feature="UNERRING"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="imprdefensive" cost="1" max="1" items="WEAPON,LONG_RANGE_WEAPON,SHIELD">
+  	<modifications>
+  	  <featuremod feature="DEFENSIVE"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="imprexact" cost="1" max="1" items="WEAPON,LONG_RANGE_WEAPON">
+  	<modifications>
+  	  <featuremod feature="EXACT"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="imprpiercing" cost="1" max="1" items="WEAPON,LONG_RANGE_WEAPON">
+  	<modifications>
+  	  <featuremod feature="PIERCING"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="imprdisarmprot" cost="1" max="2" items="WEAPON">
+  	<modifications>
+  	  <featuremod feature="DISARMING_PROTECTION"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="imprcritical" cost="1" max="1" items="WEAPON,LONG_RANGE_WEAPON">
+  	<modifications>
+  	  <featuremod feature="CRITICAL"/>
+  	  <featuremod feature="CRITICAL"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="imprdistract" cost="1" max="1" items="WEAPON,LONG_RANGE_WEAPON">
+  	<modifications>
+  	  <featuremod feature="DISTRACTING"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="comfy" cost="1" max="1" items="ARMOR">
+  	<modifications>
+  	  <featuremod feature="COMFY"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="hardened" cost="1" max="1" items="ARMOR">
+  	<modifications>
+  	  <featuremod feature="HARDENED"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="stable" cost="1" max="1" items="ARMOR">
+  	<modifications>
+  	  <featuremod feature="STABLE"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="padded" cost="1" max="1" items="ARMOR">
+  	<modifications>
+  	  <featuremod feature="PADDED"/>
+  	</modifications>
+  </enhancement>
+  
+  <enhancement id="mount" cost="1" max="1" items="SHIELD">
+  	<modifications>
+  	  <featuremod feature="MOUNT"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="cover" cost="1" max="1" items="SHIELD">
+  	<modifications>
+  	  <featuremod feature="COVER"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="spikes" cost="1" max="1" items="SHIELD">
+  	<modifications>
+  	  <featuremod feature="SPIKES"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="shieldwall" cost="1" max="1" items="SHIELD">
+  	<modifications>
+  	  <featuremod feature="SHIELDWALL"/>
+  	</modifications>
+  </enhancement>
+  
+  <enhancement id="narrowusers"   cost="1" type="RELIC"/>
+  <enhancement id="specialdamage" cost="2" type="RELIC"/>
+  <enhancement id="youbelongtome" cost="1" type="RELIC"/>
+  <enhancement id="enemycurse"    cost="1" max="2" type="RELIC"/>
+  <enhancement id="soundoffear"   cost="2" type="RELIC"/>
+  <enhancement id="intomypocket"  cost="2" type="RELIC"/>
+  <enhancement id="courager1"     cost="1" type="RELIC"/>
+  <enhancement id="courager2"     cost="1" type="RELIC"/>
+  <enhancement id="moonblessing"  cost="3" type="RELIC"/>
+  <enhancement id="situational"   cost="1" max="2" type="RELIC"/>
+  <enhancement id="returntoowner" cost="1" type="RELIC"/>
+  <enhancement id="shieldmight"   cost="1" max="3" type="RELIC"/>
+  <enhancement id="power1"        cost="1" type="RELIC"/>
+  <enhancement id="power2"        cost="2" type="RELIC"/>
+  <enhancement id="banishweapon"  cost="3" type="RELIC"/>
+  <enhancement id="imprmoonsigh"  cost="2" type="RELIC"/>
+  <enhancement id="moreisbetter"  cost="2" type="RELIC"/>
+  <enhancement id="ancientlore"   cost="2" type="RELIC"/>
+
+</enhancements>

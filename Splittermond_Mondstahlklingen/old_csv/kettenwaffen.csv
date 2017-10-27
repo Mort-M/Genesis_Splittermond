@@ -1,0 +1,16 @@
+﻿Alira;Kleinstadt;4 L;2;3;G;1W6+1;7;BEW+INT;BEW 3, INT 3;Ablenkend,  Entwaffnend (1), Kritisch (2), Lange Waffe, Umklammern, Unhandlich, Vielseitig
+Dornenkette;Großstadt;15 L;3;6;F;1W10+2;8;BEW+STÄ;BEW 3, STÄ 2;Ablenkend, Doppelwaffe, Entwaffnend (1), Kritisch (2), Umklammern, Zweihändig
+Drachenfaust;Großstadt;14 L;3;6;G;2W10+2;12;BEW+STÄ;BEW 3, STÄ 3;Ablenkend, Lange Waffe, Scharf (3), Wuchtig, Umklammern, Unhandlich, Zweihändig
+Dreigliederstab;Kleinstadt;13  L;3;5;F;1W10+5;10;INT+STÄ;INT 4;Ablenkend, Doppelwaffe, Lange Waffe, Scharf (2), Zweihändig
+Dreschflegel;Dorf;2 L;4;3;G;3W6+3;13;KON+STÄ;KON 2, STÄ 2;Improvisiert, Primitiv, Wuchtig, Zweihändig
+Eisenpeitsche;Großstadt;12 L;2;5;F;1W6+4;9;BEW+STÄ;BEW 3, STÄ 2;Ablenkend, Exakt (1),  Kritisch (1), Scharf (2), Unhandlich
+Kettenpeitsche;Großstadt;12 L;3;5;F;2W6+1;10;INT+STÄ;INT 3, STÄ 2;Kritisch (2), Lange Waffe, Umklammern, Unhandlich, Vielseitig, Wuchtig
+Kettensichel;Großstadt;12 L;2;6;F;1W10;8;BEW+INT;BEW 4, INT 2;Entwaffnend (2), Lange Waffe, Umklammern, Vielseitig
+Kriegsflegel;Kleinstadt;10 L;4;4;G;2W10+4;14;KON+STÄ;KON 5, STÄ 5;Durchdringung (2), Wuchtig, Zweihändig
+Morgenstern;Kleinstadt;9 L;2;6;G;1W10+5;10;BEW+KON;BEW 3, KON 3;Unhandlich
+Peitsche;Dorf;1 L;2;1;U;1W10;13;BEW+INT;BEW 2;Entwaffnend (3), Improvisiert, Lange Waffe, Umklammern, Unhandlich
+Pudjari-Peitsche;Großstadt;12 L;2;2;G;1W10+2;10;BEW+INT;BEW 2;Entwaffnend (3), Lange Waffe, Umklammern, Unhandlich
+Urumi;Großstadt;14 L;2;6;M;1W6+5;9;BEW+INT;BEW 3, INT 3;Ablenkend, Lange Waffe, Scharf (3), Unhandlich
+Valkarr;Kleinstadt;5 L;3;4;U;1W6+1;6;BEW+STÄ;BEW 3, STÄ 2;Umklammern, Wurftauglich
+Zweigliederstab;Kleinstadt;12 L;2;5;G;1W6+1;8;INT+STÄ;INT 3;Ablenkend, Kritisch (3), Scharf (2), Vielseitig
+Zweihandmorgenstern;Großstadt;20 L;4;6;G;2W10+3;13;BEW+KON;KON 5, STÄ 3;Durchdringung (3), Kritisch (1), Unhandlich, Wuchtig, Zweihändig

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="SMALL_TOWN" cplx="G" id="tuchrüstung" load="3" material="FABRIC" price="600" robust="2" type="ARMOR">
+      <armor def="1" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH"/>
+         </requires>
+      </armor>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="tuchMittel" load="3" material="FABRIC" price="700" robust="2" type="ARMOR">
+      <armor dr="1" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH"/>
+         </requires>
+      </armor>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="tuchSchwer" load="3" material="FABRIC" price="800" robust="2" type="ARMOR">
+      <armor def="2" hc="1" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH"/>
+         </requires>
+      </armor>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="lederleicht" load="3" material="LEATHER" price="900" robust="3" type="ARMOR">
+      <armor def="1" dr="1" hc="1" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="1"/>
+         </requires>
+      </armor>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="ledermittel" load="4" material="LEATHER" price="1000" robust="3" type="ARMOR">
+      <armor def="2" dr="1" hc="2" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="1"/>
+         </requires>
+         <features>
+            <feature type="FIRM"/>
+         </features>
+      </armor>
+   </item>
+   <item avail="SMALL_TOWN" cplx="F" id="lederschwer" load="4" material="LEATHER" price="1100" robust="3" type="ARMOR">
+      <armor def="3" tickMalus="1" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="1"/>
+         </requires>
+      </armor>
+   </item>
+   <item avail="VILLAGE" cplx="U" id="fellLeicht" load="2" material="LEATHER" price="300" robust="2" type="ARMOR">
+      <armor dr="2" hc="1" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="1"/>
+         </requires>
+         <features>
+            <feature type="PROTECT_COLD"/>
+            <feature type="PRIMITIVE"/>
+         </features>
+      </armor>
+   </item>
+   <item avail="VILLAGE" cplx="U" id="fellrüstung" load="3" material="LEATHER" price="400" robust="2" type="ARMOR">
+      <armor def="1" dr="2" tickMalus="1" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="1"/>
+         </requires>
+         <features>
+            <feature type="PRIMITIVE"/>
+         </features>
+      </armor>
+   </item>
+   <item avail="VILLAGE" cplx="G" id="fellSchwer" load="4" material="LEATHER" price="500" robust="2" type="ARMOR">
+      <armor def="2" dr="2" hc="2" tickMalus="1" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature type="PADDED"/>
+         </features>
+      </armor>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="ketteleicht" load="4" material="METAL" price="1200" robust="6" type="ARMOR">
+      <armor def="2" dr="2" hc="1" tickMalus="1" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+      </armor>
+   </item>
+   <item avail="SMALL_TOWN" cplx="F" id="ketteMittel" load="4" material="METAL" price="1300" robust="6" type="ARMOR">
+      <armor def="2" dr="4" hc="2" tickMalus="1" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature type="FIRM"/>
+         </features>
+      </armor>
+   </item>
+   <item avail="LARGE_TOWN" cplx="F" id="ketteschwer" load="4" material="METAL" price="1500" robust="6" type="ARMOR">
+      <armor def="3" dr="2" hc="3" tickMalus="2" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature type="PADDED"/>
+         </features>
+      </armor>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="schuppeLeicht" load="4" material="METAL" price="1600" robust="7" type="ARMOR">
+      <armor def="3" hc="1" tickMalus="1" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature type="FIRM"/>
+         </features>
+      </armor>
+   </item>
+   <item avail="SMALL_TOWN" cplx="F" id="schuppeMittel" load="5" material="METAL" price="1800" robust="7" type="ARMOR">
+      <armor def="3" dr="3" hc="2" tickMalus="1" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+      </armor>
+   </item>
+   <item avail="SMALL_TOWN" cplx="F" id="schuppe" load="5" material="METAL" price="2000" robust="7" type="ARMOR">
+      <armor def="4" dr="2" hc="4" tickMalus="2" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="3"/>
+         </requires>
+         <features>
+            <feature type="PADDED"/>
+         </features>
+      </armor>
+   </item>
+   <item avail="LARGE_TOWN" cplx="F" id="platteleicht" load="5" material="METAL" price="2500" robust="7" type="ARMOR">
+      <armor def="3" dr="1" hc="1" tickMalus="1" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="3"/>
+         </requires>
+         <features>
+            <feature type="FIRM"/>
+         </features>
+      </armor>
+   </item>
+   <item avail="LARGE_TOWN" cplx="F" id="platteMittel" load="5" material="METAL" price="2700" robust="7" type="ARMOR">
+      <armor def="3" dr="3" hc="4" tickMalus="2" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="3"/>
+         </requires>
+         <features>
+            <feature type="PADDED"/>
+         </features>
+      </armor>
+   </item>
+   <item avail="LARGE_TOWN" cplx="M" id="platteschwer" load="6" material="METAL" price="3000" robust="7" type="ARMOR">
+      <armor def="4" dr="4" hc="3" tickMalus="3" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH" val="4"/>
+         </requires>
+      </armor>
+   </item>
+   <item avail="CAPITAL" cplx="M" id="selenischerRossharnisch" load="8" material="METAL" price="3500" robust="7" type="ARMOR">
+      <armor dr="4" type="ARMOR">
+         <requires>
+            <attrreq attr="STRENGTH"/>
+         </requires>
+      </armor>
+   </item>
+</items>

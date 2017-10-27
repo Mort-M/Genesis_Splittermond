@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<materials>
+  <material id="spidersilk" quality="1" price="500" type="FABRIC">
+    <modifications>
+      <skillmod ref="diplomacy" value="1" cond="true"/>
+    </modifications>
+  </material>
+  <material id="djinnsilkWater" quality="2" price="1500" type="FABRIC">
+    <modifications>
+      <skillmod ref="watermagic" value="2"/>
+    </modifications>
+  </material>
+  <material id="djinnsilkFire" quality="2" price="1500" type="FABRIC">
+    <modifications>
+      <skillmod ref="firemagic" value="2"/>
+    </modifications>
+  </material>
+  <material id="djinnsilkAir" quality="2" price="1500" type="FABRIC">
+    <modifications>
+      <skillmod ref="windmagic" value="2"/>
+    </modifications>
+  </material>
+  <material id="djinnsilkEarth" quality="2" price="1500" type="FABRIC">
+    <modifications>
+      <skillmod ref="stonemagic" value="2"/>
+      <attrmod attr="DAMAGE_REDUCTION" val="1" cond="true"/>
+    </modifications>
+  </material>
+  <material id="fairytwine" quality="4" price="5000" type="FABRIC">
+    <modifications>
+  	  <featuremod feature="DEFLECTDIRT"/>
+  	  <featuremod feature="WATERPROOF"/>
+  	  <featuremod feature="WATERPROOF"/>
+      <attitudemod val="1" cond="true"/>
+    </modifications>
+  </material>
+  
+  <material id="sanjawood" quality="1" price="500" type="WOOD">
+    <modifications>
+  	  <featuremod feature="FARRANGE"/>
+    </modifications>
+  </material>
+  <material id="druidwood" quality="2" price="1500" type="WOOD" />
+  <material id="ghostwood" quality="2" price="1500" type="WOOD">
+    <modifications>
+      <skillmod ref="deathmagic" value="2"/>
+    </modifications>
+  </material>
+  <material id="whisperwood" quality="2" price="1500" type="WOOD">
+    <modifications>
+      <skillmod ref="deathmagic" value="1"/>
+      <skillmod ref="naturemagic" value="1"/>
+    </modifications>
+  </material>
+  <material id="walkingwood" quality="3" price="0" type="WOOD">
+    <modifications>
+      <attitudemod val="-1" type="abs" cond="true"/>
+    </modifications>
+  </material>
+  <material id="firnwood" quality="4" price="5000" type="WOOD">
+    <modifications>
+      <attrmod attr="FOCUS" val="5"/>
+    </modifications>
+  </material>
+  
+  <material id="blackleather" quality="1" price="500" type="LEATHER">
+    <modifications>
+      <skillmod ref="stealth" value="1" />
+    </modifications>
+  </material>
+  <material id="krakenleather" quality="2" price="1500" type="LEATHER">
+    <modifications>
+  	  <featuremod feature="PROTECT_COLD"/>
+  	  <featuremod feature="WATERPROOF"/>
+  	  <featuremod feature="WATERPROOF"/>
+    </modifications>
+  </material>
+  <material id="bigbullleather" quality="2" price="1500" type="LEATHER">
+    <modifications>
+      <itemmod attr="RIGIDITY" val="1"/>
+    </modifications>
+  </material>
+  <material id="forestdragonleather" quality="3" price="2500" type="LEATHER">
+    <modifications>
+      <skillmod ref="naturemagic" value="1" />
+    </modifications>
+  </material>
+  <material id="sanddragonleather" quality="4" price="5000" type="LEATHER">
+    <modifications>
+      <itemmod attr="RIGIDITY" val="1"/>
+      <attrmod attr="BODYRESIST" val="2" cond="true"/>
+    </modifications>
+  </material>
+  <material id="highdragonleather" quality="5" price="7500" type="LEATHER">
+    <modifications>
+      <skillmod ref="firemagic" value="2" />
+  	  <featuremod feature="STABLE"/>
+    </modifications>
+  </material>
+  
+  <material id="thaumarium" quality="2" price="1500" type="METAL">
+    <modifications>
+      <skillmod ref="diplomacy" value="1" cond="true"/>
+    </modifications>
+  </material>
+  <material id="oreofthedead" quality="2" price="1500" type="METAL">
+    <modifications>
+      <skillmod ref="diplomacy" value="1" cond="true"/>
+    </modifications>
+  </material>
+  <material id="jadeiron" quality="3" price="2500" type="METAL">
+    <modifications>
+      <itemmod attr="LOAD" val="-1"/>
+      <itemmod attr="ROBUSTNESS" val="1"/>
+      <skillmod ref="leadership" value="2" cond="true"/>
+    </modifications>
+  </material>
+  <material id="moonsteel" quality="6" price="20000" type="METAL">
+    <modifications>
+    </modifications>
+  </material>
+  
+  <material id="plaingraveplate" quality="1" price="500" type="OTHER">
+    <modifications>
+      <itemmod attr="LOAD" val="-1"/>
+      <itemmod attr="ROBUSTNESS" val="1"/>
+    </modifications>
+  </material>
+  <material id="calaifeathers" quality="4" price="5000" type="OTHER">
+    <modifications>
+      <itemmod attr="LOAD" val="-1"/>
+      <itemmod attr="ROBUSTNESS" val="-1"/>
+      <skillmod ref="motionmagic" value="1"/>
+      <skillmod ref="windmagic" value="1"/>
+    </modifications>
+  </material>
+  <material id="godsonscale" quality="4" price="5000" type="OTHER">
+    <modifications>
+      <skillmod ref="swim" value="2"/>
+    </modifications>
+  </material>
+  <material id="hornfelsenhuf" quality="5" price="7500" type="OTHER">
+    <modifications>
+      <skillmod ref="swim" value="2"/>
+    </modifications>
+  </material>
+  <material id="targithanhide" quality="6" price="25000" type="OTHER">
+    <modifications>
+    </modifications>
+  </material>
+</materials>

@@ -1,0 +1,3 @@
+<mastermod ref="skillid/mastershipid" />      Eine spezielle Meisterschaft
+<mastermod skill="skillid"  level=1" />       Eine beliebige Stufe 1-Meisterschaft im Skill
+<mastermod spec="skillid/specialization" />   Eine Spezialisierung

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<spells>
+  <spell id="banishfairies" diff="21" cost="K12V3" castdur="4T" range="CASTER" spelldur="K" enh="1/+K3V3"> 
+    <school skill="antimagic" level="3"/>
+    <type>FAIRY_CREATURE</type>
+    <type>PROTECTIONFIELD</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+  </spell>
+  <spell id="fairysight" diff="21" cost="K8V2" castdur="6T" range="CASTER" spelldur="K" enh="1/+K2V2"> 
+    <school skill="insightmagic" level="2"/>
+    <type>FAIRY_CREATURE</type>
+    <type>OTHERWORLD</type>
+    <type>SENSES</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+  </spell>
+  <spell id="protectfairies" diff="21" cost="K8V2" castdur="9T" range="CASTER" spelldur="K" enh="1/+K2V2"> 
+    <school skill="protectionmagic" level="2"/>
+    <type>FAIRY_CREATURE</type>
+    <type>PROTECTIONFIELD</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+  </spell>
+  
+</spells>

@@ -1,0 +1,29 @@
+﻿Einbruchswerkzeug (Satz);Kleinstadt;20 L;4;6;Schlösser und Fallen;Schlösser öffnen;F
+Diebesutensilien (Satz);Kleinstadt;5 L;1;4;Fingerfertigkeit;Taschendiebstahl;G
+Fallenwerkzeuge (Satz);Kleinstadt;10 L;2;4;Schlösser und Fallen;Diverse;F
+Brecheisen;Dorf;2 L;2;6;-;-;U
+Dietriche;Kleinstadt;15L;1;6;-  ;-;F
+Feile ;Dorf;1 L;0;6;-;-;G
+Fingerklinge;Kleinstadt;2 L;0;4;-;-;G
+Sperrhaken;Kleinstadt;10 L;1;6;-;-;F
+Türkeil;Kleinstadt;1L;2;6;-;-;U
+Fälscherwerkzeug (Satz);Kleinstadt;20 L;0;0;Edelhandwerk;Kalligraphie;F
+Siegelrohling;Kleinstadt;2L;0;0;-;-;U
+Siegelwachs;Kleinstadt;6T;0;0;-;-;U
+Fußschellen;Kleinstadt;7L;2;6;Diverse;Fesseln/Knoten;G
+Handschellen;Kleinstadt;5L;1;6;Diverse;Fesseln/Knoten;G
+Kette (2 m);Kleinstadt;2L;1;6;-;-;G
+mit einfachem Schloss;Kleinstadt;5 L;1;6;-;-;G
+mit durchschnittlichem Schloss;Kleinstadt;10 L;1;6;-;-;G
+mit gutem Schloss;Großstadt;15 L;1;7;-;-;F
+mit herausragendem Schloss;Großstadt;20 L;1;7;-;-;M
+Gezinkte Würfel;Kleinstadt;2 L;0;2;Fingerfertigkeit;Falschspiel;G
+Horchhorn;Kleinstadt;2 L;1;2;-;-;G
+Verkleidungskiste (Satz);Kleinstadt;10L;5;3;Redegewandheit;Verkleiden;G
+Blase mit Tierblut;Dorf;50 T;1;1;-;-;-
+Falscher Bart;Kleinstadt;50 T;0;1;-;-;G
+Perücke;Kleinstadt;50 T;0;1;-;-;G
+Plateauschuhe;Kleinstadt;1 L;1;2;-;-;G
+Schminke;Kleinstadt;5 L;0;0;-;-;G
+Wachs;Kleinstadt;2 L;0;1;-;-;G
+

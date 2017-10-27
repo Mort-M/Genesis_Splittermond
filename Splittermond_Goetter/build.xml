@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<project name="splittermond-goetter" default="jar" basedir=".">
+	<property name="build.src.dir"      value="src"/>
+	<property name="build.classes.dir"  value="classes"/>
+	<property name="build.dist.dir"     value="dist"/>
+	<property name="package"            value="splittermond-goetter"/>
+	<property name="baseversion"        value="1.0"/>
+	<property name="version"        value="${baseversion}"/>
+    <property name="archivefile"    value="${package}.jar"/>
+    <property name="sourcefile"     value="${package}-src.zip"/>
+    <property name="javadocfile"    value="${package}-javadoc.zip"/>
+    <property name="repository"     value="roleplaying"/>
+
+	<path id="CLASSPATH">
+		<pathelement location="libs/log4j.jar"/>
+	      <pathelement location="libs/commons-lang3-3.4.jar"/>
+	    <pathelement location="../RPGFramework_API/dist/rpgframework-api.jar"/>
+	    <pathelement location="../Splittermond_Core/dist/splittermond-core.jar"/>
+	</path>
+
+	<target name="clean">
+		<delete dir="${build.classes.dir}"/>
+		<delete dir="${build.dist.dir}"/>
+	</target>
+
+	<target name="compile" depends="clean">
+	    <mkdir dir="${build.classes.dir}"/>
+	    <mkdir dir="${build.dist.dir}"/>
+		<javac srcdir="${build.src.dir}" destdir="${build.classes.dir}" classpathref="CLASSPATH" includeantruntime="false" deprecation="on" debug="on" debuglevel="source,lines" />
+	</target>
+
+    <target name="jar" depends="compile" >
+		<jar destfile="${build.dist.dir}/${archivefile}">
+		    <fileset dir="${build.classes.dir}" includes="**/*.class" />
+		    <fileset dir="." includes="data/**/*.xml" />
+		    <fileset dir="." includes="i18n/**/*.properties i18n/**/*.html" />
+
+ 			<manifest>
+      			<attribute name="Built-By" value="${user.name}"/>
+      	     	<attribute name="Implementation-Title"   value="Die Götter"/>
+      	      	<attribute name="Implementation-Version" value="${version}"/>
+      	      	<attribute name="Implementation-Vendor"  value="Stefan Prelle"/>
+      		</manifest>
+        	<service type="de.rpgframework.RulePlugin" provider="org.prelle.rpgframework.splittermond.goetter.GoetterPlugin"/>
+		</jar>
+        <jar destfile="${build.dist.dir}/${sourcefile}" >
+		    <fileset dir="${build.classes.dir}" includes="**/*.class"  />
+		    <fileset dir="." includes="i18n/**/*.properties i18n/**/*.html" />
+         	<manifest>
+      			<attribute name="Built-By" value="${user.name}"/>
+      		</manifest>
+        </jar>
+ 	</target>
+
+    <target name="javadoc">
+    	<javadoc
+    		classpathref="CLASSPATH"
+    		destdir="${build.dist.dir}/javadoc"
+    	    author="true"
+    	    version="true"
+    	    use="true"
+    	    windowtitle="Splittermond - Die Götter ${version}">
+
+    	    <packageset dir="src" defaultexcludes="yes">
+    	      <include name="org/prelle/rpgframework/**"/>
+    	    </packageset>
+
+    		<group title="Splittermond World" packages="org.prelle.rpgframework.splittermond.goetter*"/>
+
+    	    <bottom><![CDATA[<i>Copyright &#169; 2016 Stefan Prelle</i>]]></bottom>
+    	    <link href="http://docs.oracle.com/javase/8/docs/api/" />
+    	    <link href="http://www.rpgframework.de/javadoc/rpgframework-api/" />
+    	    <link href="http://www.rpgframework.de/javadoc/babylon-api/" />
+    	  </javadoc>
+  		<zip destfile="${build.dist.dir}/${javadocfile}" basedir="${build.dist.dir}/javadoc" />
+      </target>
+
+    <target name="publish" depends="jar,javadoc">
+	 	<scp file="${build.dist.dir}/${archivefile}"    trust="true" todir="prelle@rpgframework.de:/var/www/html/jar/" keyfile="${user.home}/.ssh/id_rsa" />
+	 	<scp file="${build.dist.dir}/${sourcefile}"     trust="true" todir="prelle@rpgframework.de:/var/www/html/src/" keyfile="${user.home}/.ssh/id_rsa" />
+	 	<scp file="${build.dist.dir}/${javadocfile}"    trust="true" todir="prelle@rpgframework.de:/var/www/html/javadoc/" keyfile="${user.home}/.ssh/id_rsa" />
+	 	<scp file="${build.dist.dir}/${archivefile}"    trust="true" todir="prelle@rpgframework.de:/var/www/html/bootloader1/${repository}/" keyfile="${user.home}/.ssh/id_rsa" />
+	 	<scp file="${build.dist.dir}/${archivefile}"    trust="true" todir="prelle@rpgframework.de:/var/www/html/bootloader2.5/${repository}/" keyfile="${user.home}/.ssh/id_rsa" />
+	 	<scp file="releasenotes.html" trust="true" todir="prelle@rpgframework.de:/var/www/html/bootloader1/${repository}/${package}.jar.html" keyfile="${user.home}/.ssh/id_rsa" />
+	 	<scp file="releasenotes.html" trust="true" todir="prelle@rpgframework.de:/var/www/html/bootloader2.5/${repository}/${package}.jar.html" keyfile="${user.home}/.ssh/id_rsa" />
+	   	<sshexec host="rpgframework.de" trust="true"
+    		username="prelle"
+    		keyfile="${user.home}/.ssh/id_rsa"
+     		command="unzip -q -o -d /var/www/html/javadoc/${package}-${baseversion} /var/www/html/javadoc/${javadocfile}"/>
+	</target>
+
+</project>

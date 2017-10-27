@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<deitytypes>
+    <deitytype id="darkness_shadow">
+        <aspects>
+        	<aspect ref="stolz"/>
+        	<aspect ref="treue"/>
+        </aspects>
+    </deitytype>
+</deitytypes>

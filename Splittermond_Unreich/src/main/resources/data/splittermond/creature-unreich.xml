@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<creatures>
+	<creature id="irlisch" lvl1="4" lvl2="4">
+		<creaturetypes>
+			<creaturetype type="MONSTER"/>
+		</creaturetypes>
+		<attribues>
+			<attr id="CHARISMA"     value="7"/>
+			<attr id="AGILITY"      value="6"/>
+			<attr id="INTUITION"    value="4"/>
+			<attr id="CONSTITUTION" value="4"/>
+			<attr id="MYSTIC"       value="10"/>
+			<attr id="STRENGTH"     value="6"/>
+			<attr id="MIND"         value="5"/>
+			<attr id="WILLPOWER"    value="8"/>
+			<attr id="SIZE"         value="7"/>
+			<attr id="SPEED"        value="25"/>
+			<attr id="LIFE"         value="11"/>
+			<attr id="FOCUS"        value="71"/>
+			<attr id="DEFENSE"      value="40"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="28"/>
+			<attr id="MINDRESIST"   value="48"/>
+		</attribues>
+		
+		<weapons>
+			<cweapon id="body" skill="melee" val="24" dmg="1w10+3" spd="8"/>
+				<features>
+					<feature type="PENETRATING" level="3"/>
+					<feature type="PIERCING" level="3"/>
+					<feature type="HEAVY"/>
+				</features>
+		</weapons>
+		<skillvals>
+			<skillval skill="acrobatics" val="15"/>
+			<skillval skill="athletics" val="28"/>
+			<skillval skill="diplomacy" val="18"/>
+			<skillval skill="determination" val="27"/>
+			<skillval skill="stealth" val="22"/>
+			<skillval skill="perception" val="21"/>
+			<skillval skill="endurance" val="21"/>
+			<skillval skill="controlmagic" val="24"/>
+			<skillval skill="insightmagic" val="20"/>
+			<skillval skill="illusionmagic" val="28"/>
+			<skillval skill="combatmagic" val="28"/>
+			<skillval skill="naturemagic" val="26"/>
+			<skillval skill="shadowmagic" val="20"/>
+		</skillvals>
+		<spellvals>
+			<spellval school="naturemagic" spell="growth"/>
+			<spellval school="naturemagic" spell="controlanimal"/>
+			<spellval school="naturemagic" spell="leavenotrace"/>
+			<spellval school="naturemagic" spell="chamaeleon"/>
+			<spellval school="naturemagic" spell="wither"/>
+			<spellval school="controlmagic" spell="hallucination"/>
+			<spellval school="controlmagic" spell="mindlessservant"/>
+			<spellval school="controlmagic" spell="puppet"/>
+			<spellval school="controlmagic" spell="geas"/>
+			<spellval school="insightmagic" spell="magicdialogue"/>
+			<spellval school="insightmagic" spell="readmind"/>
+			<spellval school="insightmagic" spell="speakwithanimal"/>
+			<spellval school="illusionmagic" spell="terrorform"/>
+			<spellval school="illusionmagic" spell="panopticum"/>
+			<spellval school="combatmagic" spell="easytarget"/>
+			<spellval school="combatmagic" spell="damagecircle"/>
+			<spellval school="shadowmagic" spell="lightban"/>
+			<spellval school="shadowmagic" spell="nightvision"/>
+			<spellval school="shadowmagic" spell="shadowleap"/>
+			<spellval school="shadowmagic" spell="blackness"/>
+		</spellvals>
+		
+	</creature>
+</creatures>

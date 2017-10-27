@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="VILLAGE" cplx="G" id="schreinerwerkzeug" load="4" material="METAL" price="1000" robust="4" skill="craftmanship" spec="craftmanship/woodworking" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="baumsägeZerlegbar" load="3" material="METAL" price="400" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="feile" load="0" material="METAL" price="100" robust="6" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="hammer" load="1" material="METAL" price="100" robust="6" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="handsäge" load="1" material="METAL" price="200" robust="6" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="handbeil" load="2" material="METAL" price="400" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="handbohrer" load="1" material="METAL" price="200" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="holzfälleraxt" load="3" material="METAL" price="600" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="leim" load="1" material="OTHER" price="100" robust="0" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="nägel50Stück" load="1" material="METAL" price="50" robust="6" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="schnitzmesser" load="1" material="METAL" price="200" robust="6" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="spaltaxt" load="3" material="METAL" price="500" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="stemmeisen" load="1" material="METAL" price="100" robust="7" type="TOOLS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="schmiedeausstattung" load="6" material="METAL" price="3000" robust="7" skill="craftmanship" spec="craftmanship/forging" type="TOOLS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="amboss" load="7" material="METAL" price="500" robust="7" type="TOOLS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="blasebalg" load="1" material="WOOD" price="300" robust="1" type="TOOLS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="gussform" load="2" material="METAL" price="300" robust="6" type="TOOLS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="schmiedehammer" load="2" material="METAL" price="500" robust="6" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="schürhaken" load="1" material="METAL" price="100" robust="7" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="zange" load="1" material="METAL" price="300" robust="6" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="kürschnerwerkzeugSatz" load="2" material="METAL" price="1000" robust="4" skill="hunting" spec="hunting/processing" type="TOOLS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="sattlerwerkzeugSatz" load="2" material="METAL" price="1000" robust="4" skill="craftmanship" spec="craftmanship/tailoring" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="schneiderwerkzeug" load="2" material="METAL" price="1000" robust="4" skill="craftmanship" spec="craftmanship/tailoring" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="schusterwerkzeugSatz" load="2" material="METAL" price="1000" robust="4" skill="craftmanship" spec="craftmanship/tailoring" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="nadelUndFaden" load="0" material="METAL" price="10" robust="6" type="TOOLS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="schere" load="1" material="METAL" price="100" robust="6" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="schneidermesser" load="1" material="METAL" price="200" robust="6" type="TOOLS"/>
+   <item avail="LARGE_TOWN" cplx="F" id="webstuhl" load="7" material="WOOD" price="1000" robust="3" type="TOOLS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="zollstock" load="1" material="WOOD" price="50" robust="2" type="TOOLS"/>
+   <item avail="LARGE_TOWN" cplx="F" id="glasbläserwerkzeugSatz" load="4" material="METAL" price="2000" robust="5" skill="clscraft" spec="clscraft/glassblowing" type="TOOLS"/>
+   <item avail="LARGE_TOWN" cplx="G" id="gravurwerkzeugSatz" load="3" material="METAL" price="2000" robust="7" skill="clscraft" spec="clscraft/engraving" type="TOOLS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="steinmetzwerkzeugSatz" load="6" material="METAL" price="2000" robust="6" skill="craftmanship" spec="craftmanship/stoneworking" type="TOOLS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="tätowierwerkzeugSatz" load="2" material="METAL" price="2000" robust="6" skill="clscraft" spec="clscraft/tatooing" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="besen" load="3" material="WOOD" price="10" robust="2" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="fischermesser" load="1" material="METAL" price="200" robust="6" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="flaschenzug" load="1" material="WOOD" price="100" robust="3" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="handspaten" load="3" material="METAL" price="100" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="jagdmesser" load="1" material="METAL" price="200" robust="6" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="meißel" load="2" material="METAL" price="100" robust="7" type="TOOLS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="metallsäge" load="1" material="METAL" price="500" robust="6" type="TOOLS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="pinzette" load="0" material="METAL" price="100" robust="6" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="rechen" load="4" material="METAL" price="200" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="schaufel" load="4" material="METAL" price="200" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="schlägel" load="3" material="METAL" price="100" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="sense" load="4" material="METAL" price="300" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="sichel" load="2" material="METAL" price="100" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="sieb" load="1" material="METAL" price="100" robust="3" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="spaten" load="3" material="METAL" price="100" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="spitzhacke" load="3" material="METAL" price="400" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="vorschlaghammer" load="4" material="METAL" price="200" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="U" id="zwingen" load="1" material="METAL" price="50" robust="5" type="TOOLS"/>
+</items>

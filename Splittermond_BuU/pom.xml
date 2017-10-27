@@ -1,0 +1,108 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.prelle.rpgframework</groupId>
+  <artifactId>splittermond-buu</artifactId>
+  <version>0.2.0</version>
+  <name>Splittermond 'Bestien und Ungeheuer'</name>
+  <description>Splittermond Spielhilfe</description>
+  
+  <properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <repositories>
+    	<repository>
+	  <id>central</id>
+	  <url>http://repository.rpgframework.de:8081/artifactory/libs-release</url>
+	  <snapshots>
+            <enabled>false</enabled>
+	  </snapshots>
+	</repository>
+	<repository>
+	  <id>snapshots</id>
+	  <url>http://repository.rpgframework.de:8081/artifactory/libs-snapshot</url>
+	  <releases> 
+            <enabled>false</enabled>
+	  </releases>
+	</repository>
+  </repositories>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-ssh</artifactId>
+        <version>2.12</version>
+      </extension>
+    </extensions> 
+
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>log4j</groupId>
+  		<artifactId>log4j</artifactId>
+  		<version>1.2.17</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.rpgframework</groupId>
+  		<artifactId>rpgframework-api</artifactId>
+  		<version>[1.0.0,)</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.prelle.rpgframework</groupId>
+  		<artifactId>splittermond-core</artifactId>
+  		<version>[2.4.0,)</version>
+  	</dependency>
+  </dependencies>
+  
+  <ciManagement>
+  	<system>Bamboo</system>
+  	<url>http://build.rgpframework.de/</url>
+  </ciManagement>
+  <issueManagement>
+  	<system>JIRA</system>
+  	<url>http://jira.rpgframework.de:18080/</url>
+  </issueManagement>
+  <scm>
+    <url>http://git.rpgframework.de:7990</url>
+    <developerConnection>scm:git:http://git.rpgframework.de:7990/scm/rpgfw/rpgframework_apis.git</developerConnection>
+  </scm>
+  <distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>rpgframeworkde-snapshots</name>
+        <url>http://repository.rpgframework.de:8081/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+    <repository>
+        <id>central</id>
+        <name>rpgframeworkde-releases</name>
+        <url>http://repository.rpgframework.de:8081/artifactory/libs-release-local</url>
+    </repository>
+  </distributionManagement>
+  
+</project>

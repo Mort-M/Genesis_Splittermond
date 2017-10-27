@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<deities>
+    <deity id="aand">
+      <aspects>
+        <aspect ref="licht"/>
+        <aspect ref="sonne"/>
+        <aspect ref="schöpfung"/>         
+        <aspect ref="stolz"/>         
+        <aspect ref="treue"/>         
+        <aspect ref="aufrichtigkeit"/>         
+     </aspects>
+      <modifications>
+        <skillmod ref="lightmagic"/>
+        <skillmod ref="naturemagic"/>
+        <skillmod ref="fatemagic"/>         
+        <skillmod ref="shadowmagic" value="-1"/>
+        <edumod ref="faithwarrior"/>         
+        <!-- edumod ref="mystic"/-->         
+        </modifications>
+   </deity>
+</deities>

@@ -1,0 +1,52 @@
+﻿Schreinerwerkzeug (Satz);Dorf;10 L;4;4;Handwerk;Holzbearbeitung;G
+Baumsäge, zerlegbar;Dorf;4 L;3;5;-;-;G
+Feile ;Dorf;1 L;0;6;-;-;G
+Hammer;Dorf;1 L;1;6;-;-;U
+Handsäge;Dorf;2 L;1;6;-;-;G
+Handbeil;Dorf;4 L;2;5;-;-;U
+Handbohrer ;Dorf;2 L;1;5;-;-;G
+Holzfälleraxt;Dorf;6 L;3;5;-;-;G
+Leim;Dorf;1 L;1;-;-;-;U
+Nägel (50 Stück) ;Dorf;50 T;1;6;-;-;U
+Schnitzmesser;Dorf;2 L;1;6;-;-;G
+Spaltaxt;Dorf;5 L;3;5;-;-;G
+Stemmeisen;Dorf;1 L;1;7;-;-;U
+Schmiedeausstattung (Satz);Kleinstadt;30 L;6;7;Handwerk;Schmiedekunst;G
+Amboss;Kleinstadt;5 L;7;7;-;-;G
+Blasebalg;Kleinstadt;3 L;1;1;-;-;G
+Gussform;Kleinstadt;3 L;2;6;-;-;G
+Schmiedehammer;Kleinstadt;5 L;2;6;-;-;G
+Schürhaken;Dorf;1 L;1;7;-;-;U
+Zange;Dorf;3 L;1;6;-;-;U
+Kürschnerwerkzeug (Satz);Dorf;10 L;2;4;Jagdkunst;Verarbeitung;G
+Sattlerwerkzeug (Satz);Kleinstadt;10 L;2;4;Handwerk;Schneiderei;G
+Schneiderwerkzeug (Satz);Dorf;10 L;2;4;Handwerk;Schneiderei ;G
+Schusterwerkzeug (Satz);Dorf;10 L;2;4;Handwerk;Schneiderei;G
+Nadel und Faden;Dorf;10 T;0;6;-;- ;U
+Schere;Kleinstadt;1 L;1;6;-;- ;G
+Schneidermesser;Dorf;2 L;1;6;-;- ;G
+Webstuhl;Großstadt;10 L;7;3;-;- ;F
+Zollstock;Kleinstadt;50 T;1;2;-;-;G
+Glasbläserwerkzeug (Satz);Großstadt;20 L;4;5;Edelhandwerk;Glasbläserei;F
+Gravurwerkzeug (Satz);Großstadt;20 L;3;7;Edelhandwerk;Gravur;G
+Steinmetzwerkzeug (Satz);Kleinstadt;20 L;6;6;Handwerk;Steinbearbeitung;G
+Tätowierwerkzeug (Satz);Kleinstadt;20 L;2;6;Edelhandwerk;Tätowieren;G
+Besen;Dorf;10 T;3;2;-;-;U
+Fischermesser;Dorf;2 L;1;6;-;-;G
+Flaschenzug;Dorf;1 L;1;3;-;-;G
+Handspaten;Dorf;1 L;3;5;-;-;G
+Jagdmesser;Dorf;2 L;1;6;-;-;G
+Meißel;Dorf;1 L;2;7;-;-;U
+Metallsäge;Kleinstadt;5 L;1;6;-;-;G
+Pinzette;Kleinstadt;1 L;0;6;-;-;G
+Rechen;Dorf;2 L;4;5;-;-;U
+Schaufel;Dorf;2 L;4;5;-;-;G
+Schlägel;Dorf;1 L;3;5;-;-;U
+Sense;Dorf;3 L;4;5;-;-;G
+Sichel;Dorf;1 L;2;5;-;-;G
+Sieb;Dorf;1 L;1;3;-;-;G
+Spaten;Dorf;1 L;3;5;-;-;G
+Spitzhacke;Dorf;4 L;3;5;-;-;U
+Vorschlaghammer;Dorf;2 L;4;5;-;-;U
+Zwingen;Dorf;50 T;1;5;-;-;U
+

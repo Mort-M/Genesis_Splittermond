@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<creaturefeaturetypes>
+  <creaturefeaturetype id="amphibic"/>
+  <creaturefeaturetype id="berserk" levels="true"/>
+  <creaturefeaturetype id="trap" levels="true"/>
+  <creaturefeaturetype id="immune_fear"/>
+  <creaturefeaturetype id="shapeshifter"/>
+  <creaturefeaturetype id="infectious" levels="true"/>
+  <creaturefeaturetype id="light_sensitive" levels="true"/>
+  <creaturefeaturetype id="weak_spot_attack" />
+  <creaturefeaturetype id="swarm" count="true" levels="true"/>
+  <creaturefeaturetype id="swarm_presence" levels="true" mods="true"/>
+  <creaturefeaturetype id="diver"/>
+  <creaturefeaturetype id="teleport" levels="true"/>
+  <creaturefeaturetype id="uncontrollable"/>
+  <creaturefeaturetype id="invisible"/>
+  <creaturefeaturetype id="call_support" levels="true" count="true"/>
+  
+</creaturefeaturetypes>

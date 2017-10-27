@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<resources>
+    <resource id="contacts" />
+    <resource id="creature" />
+    <resource id="relic" />
+    <resource id="reputation" />
+    <resource id="status" />
+    <resource id="wealth" />
+    <resource id="refuge" />
+    <resource id="mentor" />
+    <resource id="entourage" />
+    <resource id="rank" />
+</resources>

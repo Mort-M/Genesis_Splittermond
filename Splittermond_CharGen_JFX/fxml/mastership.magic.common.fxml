@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:id="common" hgap="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="40.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+          <rowConstraints>
+           <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+          <children>
+    <Text rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schwelle 1" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="magiccrafter" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.magiccrafter" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="castershand" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.castershand" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="savingcaster" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.savingcaster" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="delayedcaster" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.delayedcaster" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="focuscontrol" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.focuscontrol" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+    <Text rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schwelle 2" GridPane.rowIndex="1" />
+    <ToggleButton fx:id="nothinghappend" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.nothinghappend" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    <ToggleButton fx:id="wondercrafter" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.wondercrafter" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Text rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schwelle 3" GridPane.rowIndex="2" />
+    <ToggleButton fx:id="relicmaster" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.relicmaster" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <ToggleButton fx:id="casterseye" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.casterseye" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <Text rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schwelle 4" GridPane.rowIndex="3" />
+    <ToggleButton fx:id="grandmaster" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.grandmaster" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+<ColumnConstraints />
+          </columnConstraints>
+        </GridPane>

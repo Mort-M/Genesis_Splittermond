@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="LARGE_TOWN" cplx="G" id="chakram" load="2" material="METAL" price="800" robust="7" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="STRENGTH" att2="INTUITION" damage="2W6" range="8" skill="throwing" speed="5" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="2" type="PIERCING"/>
+         </features>
+      </rangeweapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="großesWurfholz" load="2" material="WOOD" price="200" robust="4" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="STRENGTH" att2="CONSTITUTION" damage="3W6+2" range="12" skill="throwing" speed="10" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="2"/>
+            <attrreq attr="CONSTITUTION" val="3"/>
+         </requires>
+         <features>
+            <feature type="PRIMITIVE"/>
+            <feature type="RETURNING"/>
+            <feature type="BLUNT"/>
+            <feature type="HEAVY"/>
+            <feature type="TWO_HANDED"/>
+         </features>
+      </rangeweapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="U" id="speerschleuder" load="1" material="WOOD" price="300" robust="3" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="AGILITY" att2="STRENGTH" damage="2W10+1" range="15" skill="throwing" speed="10" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+            <attrreq attr="AGILITY" val="2"/>
+         </requires>
+         <features>
+            <feature level="2" type="PENETRATING"/>
+            <feature type="TWO_HANDED"/>
+            <feature type="HEAVY"/>
+         </features>
+      </rangeweapon>
+   </item>
+   <item avail="VILLAGE" cplx="U" id="stone_mug_boot" load="1" material="WOOD" price="0" robust="0" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="INTUITION" att2="STRENGTH" damage="1W6" range="4" skill="throwing" speed="6" type="LONG_RANGE_WEAPON">
+         <features>
+            <feature type="IMPROVISED"/>
+            <feature type="PRIMITIVE"/>
+         </features>
+      </rangeweapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="stockschleuder" load="2" material="WOOD" price="300" robust="3" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="INTUITION" att2="STRENGTH" damage="1W10+1" range="12" skill="throwing" speed="7" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="INTUITION" val="3"/>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="EXACT"/>
+            <feature level="2" type="PIERCING"/>
+         </features>
+      </rangeweapon>
+   </item>
+   <item avail="VILLAGE" cplx="G" id="throwingaxe" load="2" material="METAL" price="600" robust="5" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6+3" skill="slashing" speed="10" type="WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature type="IMPROVISED"/>
+            <feature type="THROWABLE"/>
+         </features>
+      </weapon>
+        <rangeweapon skill="throwing"
+               damage="1W6+4" speed="5" att1="AGILITY" att2="STRENGTH" range="5">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="CLOSE_COMBAT_SUITABLE"/>
+            </features>
+        </rangeweapon>
+   </item>
+   <item avail="VILLAGE" cplx="U" id="throwingdagger" load="1" material="METAL" price="200" robust="7" type="WEAPON">
+      <weapon att1="AGILITY" att2="INTUITION" damage="1W6-1" skill="blades" speed="8" type="WEAPON">
+         <requires>
+            <attrreq attr="INTUITION" val="2"/>
+         </requires>
+         <features>
+            <feature type="IMPROVISED"/>
+            <feature type="THROWABLE"/>
+         </features>
+      </weapon>
+        <rangeweapon skill="throwing" damage="1W6+1" speed="3" att1="AGILITY" att2="INTUITION" range="5">
+            <requires>
+                <attrreq attr="INTUITION" val="2"/>
+            </requires>
+            <features>
+                <feature type="CLOSE_COMBAT_SUITABLE"/>
+            </features>
+        </rangeweapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="wurfhaken" load="2" material="METAL" price="100" robust="6" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="AGILITY" att2="STRENGTH" damage="1W6+1" range="4" skill="throwing" speed="8" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature type="IMPROVISED"/>
+            <feature type="CLIMBING_HELP"/>
+         </features>
+      </rangeweapon>
+   </item>
+   <item avail="VILLAGE" cplx="G" id="throwinghammer" load="2" material="METAL" price="500" robust="5" type="WEAPON">
+      <weapon att1="CONSTITUTION" att2="STRENGTH" damage="1W6+2" skill="slashing" speed="11" type="WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature type="IMPROVISED"/>
+            <feature type="THROWABLE"/>
+         </features>
+      </weapon>
+        <rangeweapon skill="throwing"
+               damage="1W6+5" speed="6" att1="AGILITY" att2="STRENGTH" range="5">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="CLOSE_COMBAT_SUITABLE"/>
+            </features>
+        </rangeweapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="wurfholz" load="1" material="WOOD" price="100" robust="4" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="AGILITY" att2="STRENGTH" damage="1W6+3" range="10" skill="throwing" speed="5" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="3"/>
+         </requires>
+         <features>
+            <feature type="PRIMITIVE"/>
+            <feature type="RETURNING"/>
+            <feature type="BLUNT"/>
+         </features>
+      </rangeweapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="wurflanze" load="3" material="METAL" price="700" robust="4" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W10" skill="staffs" speed="12" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="3"/>
+            <attrreq attr="STRENGTH" val="3"/>
+         </requires>
+         <features>
+            <feature level="2" type="EXACT"/>
+            <feature level="1" type="CRITICAL"/>
+            <feature level="2" type="INFANTRY_WEAPON"/>
+            <feature type="FLEXIBLE"/>
+            <feature type="THROWABLE"/>
+            <feature type="HEAVY"/>
+         </features>
+      </weapon>
+      <rangeweapon att1="INTUITION" att2="STRENGTH" damage="1W10+3" range="8" skill="throwing" speed="11" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="INTUITION" val="2"/>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="PENETRATING"/>
+            <feature type="CLOSE_COMBAT_SUITABLE"/>
+            <feature level="2" type="INFANTRY_WEAPON"/>
+            <feature type="HEAVY"/>
+         </features>
+      </rangeweapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="U" id="dart" load="1" material="WOOD" price="200" robust="3" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="AGILITY" att2="INTUITION" damage="1W6" range="8" skill="throwing" speed="3" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="INTUITION" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="PENETRATING"/>
+            <feature level="2" type="PIERCING"/>
+         </features>
+      </rangeweapon>
+   </item>
+   <item avail="VILLAGE" cplx="G" id="throwingspear" load="2" material="METAL" price="700" robust="4" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6+2" skill="staffs" speed="11" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="2"/>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature type="IMPROVISED"/>
+            <feature type="THROWABLE"/>
+         </features>
+      </weapon>
+      <rangeweapon att1="AGILITY" att2="STRENGTH" damage="1W10+5" range="10" skill="throwing" speed="9" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="2"/>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="2" type="PENETRATING"/>
+            <feature type="CLOSE_COMBAT_SUITABLE"/>
+            <feature type="HEAVY"/>
+         </features>
+      </rangeweapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="throwingstar" load="1" material="METAL" price="300" robust="7" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="AGILITY" att2="INTUITION" damage="1W6+2" range="5" skill="throwing" speed="4" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="INTUITION" val="2"/>
+         </requires>
+      </rangeweapon>
+   </item>
+</items>

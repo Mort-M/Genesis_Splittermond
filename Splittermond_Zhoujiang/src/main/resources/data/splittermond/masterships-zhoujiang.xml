@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+   <skill id="melee">
+   		<mastership level="1" common="true" key="hard_style">
+   			<requires>
+   			    <selreq>
+   					<masterreq ref="melee/push"/>
+   					<masterreq ref="melee/clutch"/>
+   					<masterreq ref="melee/rush"/>
+   					<masterreq ref="melee/disarm"/>
+   					<masterreq ref="melee/sweepingblow"/>
+   					<masterreq ref="melee/confusion"/>
+   					<masterreq ref="melee/painful"/>
+   					<masterreq ref="melee/strangehold"/>
+   					<masterreq ref="melee/riding_rush"/>
+   			    </selreq>
+   			</requires>
+   		</mastership>
+
+   		<mastership level="1" common="true" key="impro_parry"/>
+
+   		<mastership level="1" common="true" key="jugshield">
+   			<requires>
+   			  <masterreq ref="melee/improvise"/>
+  			</requires>
+   		</mastership>
+
+   		<mastership level="1" common="true" key="soft_style">
+  			<requires>
+   			    <selreq>
+   					<masterreq ref="melee/push"/>
+   					<masterreq ref="melee/clutch"/>
+   					<masterreq ref="melee/rush"/>
+   					<masterreq ref="melee/disarm"/>
+   					<masterreq ref="melee/sweepingblow"/>
+   					<masterreq ref="melee/confusion"/>
+   					<masterreq ref="melee/painful"/>
+   					<masterreq ref="melee/strangehold"/>
+   					<masterreq ref="melee/riding_rush"/>
+   			    </selreq>
+  			</requires>
+   		</mastership>
+      </skill>
+
+    <skill id="slashing">
+    	<mastership level="1" common="true" key="hard_style">
+   			<requires>
+   			    <selreq>
+   					<masterreq ref="melee/push"/>
+   					<masterreq ref="melee/clutch"/>
+   					<masterreq ref="melee/rush"/>
+   					<masterreq ref="melee/disarm"/>
+   					<masterreq ref="melee/sweepingblow"/>
+   					<masterreq ref="melee/confusion"/>
+   					<masterreq ref="melee/painful"/>
+   					<masterreq ref="melee/strangehold"/>
+   					<masterreq ref="melee/riding_rush"/>
+   			    </selreq>
+   			</requires>
+   		</mastership>
+
+   		<mastership level="1" common="true" key="impro_parry"/>
+
+   		<mastership level="1" common="true" key="jugshield">
+   			<requires>
+   			  <masterreq ref="slashing/improvise"/>
+  			</requires>
+   		</mastership>
+
+   		<mastership level="1" common="true" key="soft_style">
+  			<requires>
+    			    <selreq>
+   					<masterreq ref="melee/push"/>
+   					<masterreq ref="melee/clutch"/>
+   					<masterreq ref="melee/rush"/>
+   					<masterreq ref="melee/disarm"/>
+   					<masterreq ref="melee/sweepingblow"/>
+   					<masterreq ref="melee/confusion"/>
+   					<masterreq ref="melee/painful"/>
+   					<masterreq ref="melee/strangehold"/>
+   					<masterreq ref="melee/riding_rush"/>
+   			    </selreq>
+  			</requires>
+   		</mastership>
+    </skill>
+    <skill id="chains">
+    	<mastership level="1" common="true" key="hard_style">
+   			<requires>
+   			    <selreq>
+   					<masterreq ref="melee/push"/>
+   					<masterreq ref="melee/clutch"/>
+   					<masterreq ref="melee/rush"/>
+   					<masterreq ref="melee/disarm"/>
+   					<masterreq ref="melee/sweepingblow"/>
+   					<masterreq ref="melee/confusion"/>
+   					<masterreq ref="melee/painful"/>
+   					<masterreq ref="melee/strangehold"/>
+   					<masterreq ref="melee/riding_rush"/>
+   			    </selreq>
+   			</requires>
+   		</mastership>
+
+   		<mastership level="1" common="true" key="impro_parry"/>
+
+   		<mastership level="1" common="true" key="jugshield">
+   			<requires>
+   				<masterreq ref="chains/improvise"/>
+   			</requires>
+   		</mastership>
+
+   		<mastership level="1" common="true" key="soft_style">
+   			<requires>
+   			    <selreq>
+   					<masterreq ref="melee/push"/>
+   					<masterreq ref="melee/clutch"/>
+   					<masterreq ref="melee/rush"/>
+   					<masterreq ref="melee/disarm"/>
+   					<masterreq ref="melee/sweepingblow"/>
+   					<masterreq ref="melee/confusion"/>
+   					<masterreq ref="melee/painful"/>
+   					<masterreq ref="melee/strangehold"/>
+   					<masterreq ref="melee/riding_rush"/>
+   			    </selreq>
+   			</requires>
+   		</mastership>
+    </skill>
+
+    <skill id="blades">
+    	<mastership level="1" common="true" key="hard_style">
+   			<requires>
+   			    <selreq>
+   					<masterreq ref="melee/push"/>
+   					<masterreq ref="melee/clutch"/>
+   					<masterreq ref="melee/rush"/>
+   					<masterreq ref="melee/disarm"/>
+   					<masterreq ref="melee/sweepingblow"/>
+   					<masterreq ref="melee/confusion"/>
+   					<masterreq ref="melee/painful"/>
+   					<masterreq ref="melee/strangehold"/>
+   					<masterreq ref="melee/riding_rush"/>
+   			    </selreq>
+   			</requires>
+   		</mastership>
+
+   		<mastership level="1" common="true" key="impro_parry"/>
+
+   		<mastership level="1" common="true" key="jugshield">
+   			<requires>
+   				<masterreq ref="blades/improvise"/>
+   			</requires>
+   		</mastership>
+
+   		<mastership level="1" common="true" key="soft_style">
+   			<requires>
+   			    <selreq>
+   					<masterreq ref="melee/push"/>
+   					<masterreq ref="melee/clutch"/>
+   					<masterreq ref="melee/rush"/>
+   					<masterreq ref="melee/disarm"/>
+   					<masterreq ref="melee/sweepingblow"/>
+   					<masterreq ref="melee/confusion"/>
+   					<masterreq ref="melee/painful"/>
+   					<masterreq ref="melee/strangehold"/>
+   					<masterreq ref="melee/riding_rush"/>
+   			    </selreq>
+   			</requires>
+   		</mastership>
+    </skill>
+
+    <skill id="staffs">
+    	<mastership level="1" common="true" key="hard_style">
+   			<requires>
+   			    <selreq>
+   					<masterreq ref="melee/push"/>
+   					<masterreq ref="melee/clutch"/>
+   					<masterreq ref="melee/rush"/>
+   					<masterreq ref="melee/disarm"/>
+   					<masterreq ref="melee/sweepingblow"/>
+   					<masterreq ref="melee/confusion"/>
+   					<masterreq ref="melee/painful"/>
+   					<masterreq ref="melee/strangehold"/>
+   					<masterreq ref="melee/riding_rush"/>
+   			    </selreq>
+   			</requires>
+   		</mastership>
+
+   		<mastership level="1" common="true" key="impro_parry"/>
+
+   		<mastership level="1" common="true" key="jugshield">
+    		<requires>
+   				<masterreq ref="staffs/improvise"/>
+   			</requires>
+   		</mastership>
+
+   		<mastership level="1" common="true" key="soft_style">
+    		<requires>
+   			    <selreq>
+   					<masterreq ref="melee/push"/>
+   					<masterreq ref="melee/clutch"/>
+   					<masterreq ref="melee/rush"/>
+   					<masterreq ref="melee/disarm"/>
+   					<masterreq ref="melee/sweepingblow"/>
+   					<masterreq ref="melee/confusion"/>
+   					<masterreq ref="melee/painful"/>
+   					<masterreq ref="melee/strangehold"/>
+   					<masterreq ref="melee/riding_rush"/>
+   			    </selreq>
+   			</requires>
+   		</mastership>
+    </skill>
+
+    <skill id="longrange">
+    	<mastership level="1" key="riflegunner"/>
+    	<mastership level="2" key="fast_reload">
+     		<requires>
+    		<masterreq ref="longrange/riflegunner"/>
+    		<masterreq ref="longrange/fastshooter1"/>
+     		</requires>
+    	</mastership>
+    	<mastership level="2" key="imperturbable_riflegunner">
+    		<requires>
+    		<masterreq ref="longrange/riflegunner"/>
+    		</requires>
+    	</mastership>
+    </skill>
+
+    <skill id="alchemy">
+    	<mastership level="1" key="herbal_medicine">
+    		<requires>
+    		<masterreq ref="nature/conservation"/>
+    		</requires>
+    	</mastership>
+    	<mastership level="2" key="harmonized_alchemy">
+    		<requires>
+    		<!-- Vorrausetzung einen Fertigkeitspunkt in 5 verschiedenen Magieschulen -->
+    		<!--skillreq ref="skill.type.magic" level="1"/>
+    		<skillreq ref="skill.type.magic" level="1"/>
+    		<skillreq ref="skill.type.magic" level="1"/>
+    		<skillreq ref="skill.type.magic" level="1"/>
+    		<skillreq ref="skill.type.magic" level="1"/-->
+    		</requires>
+    	</mastership>
+    	<mastership level="2" key="herb_brew">
+    		<requires>
+    		<masterreq ref="nature/herb_tea"/>
+    		</requires>
+    	</mastership>
+    </skill>
+
+    <skill id="athletics">
+    	<mastership level="1" key="harmonized_movement">
+    		<requires>
+    		<masterreq ref="motionmagic/arcanespeed"/>
+    		</requires>
+    	</mastership>
+    </skill>
+
+    <skill id="clscraft">
+    	<mastership level="1" key="precise_arkancalligraphy">
+    		<requires>
+    		<masterreq ref="clscraft/journeyman" focus="clscraft/calligraphy"/>
+    		</requires>
+    	</mastership>
+    	<mastership level="1" key="skillful_arkancalligraphy">
+    		<requires>
+    		<masterreq ref="clscraft/journeyman" focus="clscraft/calligraphy"/>
+    		</requires>
+    	</mastership>
+    </skill>
+
+    <skill id="heal">
+    	<mastership level="2" key="medicinelore"/>
+    	<mastership level="2" key="harmonized_heal">
+    		<requires>
+    		<!-- Vorrausetzung einen Fertigkeitspunkt in 5 verschiedenen Magieschulen -->
+    		</requires>
+    	</mastership>
+    </skill>
+
+    <skill id="nature">
+    	<mastership level="1" key="herb_tea">
+    		<requires>
+    		<masterreq ref="nature/conservation"/>
+    		</requires>
+    	</mastership>
+    </skill>
+
+    <skill id="antimagic">
+    	<mastership level="1" key="antighostseal">
+    		<requires>
+    		<masterreq ref="clscraft/journeyman" focus="clscraft/calligraphy"/>
+    		</requires>
+    	</mastership>
+    	<mastership level="1" key="protection_field_fixation"/>
+    </skill>
+
+    <skill id="combatmagic">
+    	<mastership level="2" key="legendaryfist">
+    		<requires>
+    		<skillreq ref="melee" value="9"/><!-- 9 in Handgemenge -->
+    		</requires>
+    	</mastership>
+    </skill>
+
+    <skill id="deathmagic">
+    	<mastership level="1" key="ghosthunter"/>
+    	<mastership level="3" key="ghostpresence">
+    		<requires>
+    		    <selreq>
+    			<masterreq ref="deathmagic/ghosthunter"/>
+    			<masterreq ref="deathmagic/ghostexpert"/>
+    		    </selreq>
+    		</requires>
+    	</mastership>
+    </skill>
+</skills>

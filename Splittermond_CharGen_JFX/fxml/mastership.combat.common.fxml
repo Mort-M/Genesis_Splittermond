@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:id="common" hgap="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="40.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+          <rowConstraints>
+           <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+           <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+          <children>
+    <Text rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schwelle 1" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="biweapon"  maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.biweapon" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="push"      maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.push" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="improvise" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.improvise" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="withdraw"  maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.withdraw" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="clutch"    maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.clutch" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+    <ToggleButton fx:id="knock"     maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.knock" GridPane.columnIndex="6" />
+    <ToggleButton fx:id="defender"  maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.defender" GridPane.columnIndex="7" />
+    <ToggleButton fx:id="rush"      maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.rush" GridPane.columnIndex="8" />
+    <ToggleButton fx:id="sweepingblow"  maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.sweepingblow" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+    <ToggleButton fx:id="dancingblade"  maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.dancingblade" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <Text rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schwelle 2" GridPane.rowIndex="1" />
+    <ToggleButton fx:id="disarn"        maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.disarm" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    <ToggleButton fx:id="bihandedparry" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.bihandedparry" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Text rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schwelle 3" GridPane.rowIndex="2" />
+    <ToggleButton fx:id="bihandedmastery" maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.bihandedmastery" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <ToggleButton fx:id="bihandedattack"  maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.bihandedattack" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+    <Text rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schwelle 4" GridPane.rowIndex="3" />
+    <ToggleButton fx:id="grandmaster"     maxHeight="200" maxWidth="200" mnemonicParsing="false" text="%mastership.grandmaster" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+			<ColumnConstraints />
+			<ColumnConstraints />
+			<ColumnConstraints />
+			<ColumnConstraints />
+          </columnConstraints>
+        </GridPane>

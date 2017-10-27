@@ -1,0 +1,21 @@
+﻿Heilerbesteck (Satz);Großstadt; 10 L;1;4;Heilkunde;Diverse;G
+Knochensäge;Kleinstadt;3 L;1;6;-;-;G
+Nadel und Faden;Dorf;10 T;0;6;-;-;U
+Pinzette;Kleinstadt;1 L;0;6;-;-;G
+Schröpfkopf;Kleinstadt;2  L;0;1;-;-;F
+Skalpell;Kleinstadt;3 L;0;6;-;-;G
+Verbandszeug;Dorf;10 T;0;0;-;-;U
+Wundhaken;Kleinstadt;30 T;0;6;-;-;G
+Ausdauertrunk;Kleinstadt;10 L;0;-;-;-;G
+Essig;Dorf;10 T;0;-;-;-;U
+Heilkraut;Dorf; 50 T;0;0;-;-;U
+Heiltrank, leicht;Dorf;10 L;0;-;-;-;G
+Heiltrank, stark;Kleinstadt;20 L;0;-;-;-;F
+Heiltrank, sehr stark;Großstadt;30 L;0;-;-;-;M
+Gegengift, leicht;Kleinstadt;10 L;0;-;-;-;G
+Gegengift, mittel;Kleinstadt;20 L;0;-;-;-;F
+Gegengift, stark;Kleinstadt;50 L;0;-;-;-;F
+Gegengift, sehr stark;Großstadt;100 L;0;-;-;-;M
+Kräuterverband;Dorf;50 T;0;0;-;-;G
+Wundsalbe;Dorf;50 T;0;-;-;-;G
+Fibel;Kleinstadt;15 L;1;1;Naturkunde;Diverse;F

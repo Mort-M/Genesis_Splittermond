@@ -1,0 +1,36 @@
+﻿Anderthalbhänder;Großstadt;16 L;3;7;G;2W6;9;BEW+STÄ;BEW 3, STÄ 3;Scharf (3), Vielseitig
+Breitschwert;Kleinstadt;10 L;2;7;G;1W6+4;9;BEW+STÄ;STÄ 3;Wuchtig
+Dao;Kleinstadt;8 L;2;7;G;1W6+4;8;BEW+STÄ;BEW 2, STÄ 2;Kritisch (1)
+Dolch;Dorf;3 L;1;7;U;1W6+1;6;BEW+INT;/;Wurffähig
+Dschiahn;Kleinstadt;10 L;2;7;G;1W10;8;BEW+INT;BEW 2, INT 2;Exakt 1, Kritisch (2)
+Entermesser;Kleinstadt;7 L;2;7;G;1W6+3;7;BEW+STÄ;BEW 2, STÄ 2;Kritisch (1)
+Falchion;Kleinstadt;8 L;2;7;G;1W6+5;9;BEW+STÄ;BEW 2, STÄ 2;-
+Falkaa;Großstadt;14 L;2;7;G;1W6+3;7;BEW+INT;BEW 3, INT 2;Scharf (2)
+Fulnisches Halbschwert;Metropole;15 L;2;7;A;1W6+4;8;BEW+INT;BEW 3;Teilbar(*)
+Gabeldolch;Kleinstadt;8 L;1;7;G;1W6+1;6;BEW+STÄ;BEW 2, STÄ 2;Defensiv (1), Durchdringung (1), Entwaffnend (1), Parierwaffe (0)
+Haifischklinge;Großstadt;10 L;1;4;G;1W6;7;BEW+STÄ;STÄ 2;Durchdringung (3), Scharf (2)
+Haumesser;Dorf;7 L;2;7;G;1W6+2;7;BEW+STÄ;STÄ 2;Improvisiert
+Katana;Großstadt;18 L;2;7;F;1W10;9;BEW+INT;BEW 3, INT 2;Exakt (2), Vielseitig
+Khopesh;Kleinstadt;6 L;2;2;G;1W10+1;7;BEW+STÄ;BEW 2, STÄ 3;Scharf (2)
+Krummdolch;Kleinstadt;3 L;1;7;G;1W6+2;7;INT+STÄ;STÄ 2;-
+Kurzschwert;Kleinstadt;8 L;2;7;G;1W6+2;7;BEW+INT;BEW 2;-
+Langschwert;Kleinstadt;10 L;2;7;G;1W6+4;8;BEW+STÄ;BEW 2, STÄ 2;Scharf (2)
+Liara;Großstadt;16 L;3;7;F;1W6+2;8;BEW+STÄ;BEW 3, STÄ 2;Durchdringung (1), Lange Waffe, Vielseitig
+Maira;Großstadt;8 L;1;7;G;1W6+1;6;BEW+INT;BEW 3;Scharf (2)
+Patalische Klingenfaust;Großstadt;5 L;1;7;F;1W6+1;7;INT+STÄ;INT 2, STÄ 2;Entwaffnungsimmunität, Durchdringung (1)
+Patalisches Stoßschwert;Großstadt;14 L;2;7;F;1W6+4;9;BEW+STÄ;STÄ 3;Entwaffnungsimmunität, Durchdringung (1)
+Pfauenfeder;Großstadt;16 L;4;7;F;2W6+4;10;BEW+INT;BEW 4, INT 2;Scharf (2), Wuchtig, Zweihändig
+Reitersäbel;Kleinstadt;7 L;2;7;G;1W6+3;8;BEW+INT;INT 3;Reiterwaffe (2)
+Ruahgarr-Klinge;Kleinstadt;14 L;3;7;G;2W6;10;BEW+STÄ;BEW 3, STÄ 4;Defensiv (1), Durchdringung (2), Kritisch (1), Vielseitig
+Säbel;Kleinstadt;7 L;2;7;G;1W6+4;8;BEW+INT;BEW 2, INT 2;Scharf (2)
+Scheibendolch;Kleinstadt;5 L;1;7;G;1W6;6;INT+STÄ;STÄ 3;Durchdringung (2)
+Schlangenzunge;Großstadt;4 L;1;6;G;1W6+2;7;BEW+INT;INT 3;-
+Skavona;Kleinstadt;10 L;2;7; G;1W6+2;7;BEW+INT;BEW 2, INT 2;Durchdringung (2)
+Steinmesser;Dorf;1 L;2;3;U;1W6+1;6;BEW+INT;/;Primitiv
+Tanto;Kleinstadt;4 L;1;7;G;1W6;6;BEW+STÄ;BEW 2;Exakt 1, Wurffähig
+Tigerhakenschwert;Großstadt;12 L;2;7;G;1W10+2;8;INT+STÄ;INT 2, STÄ 2;Entwaffnend (2)
+Wakizashi;Kleinstadt;10 L;2;7;F;1W6+1;7;BEW+INT;BEW 2, INT 2;Durchdringung (2), Exakt 1
+Wurfdolch;Dorf;2 L;1;7;U;1W6+1;6;BEW+INT;INT 2;Improvisiert, Wurffähig
+Yonnus-Sichel;Großstadt;20 L;4;7;F;2W6+4;10;INT+STÄ;INT 3, STÄ 3;Lange Waffe, Wuchtig, Zweihändig
+Zweihänder;Großstadt;20 L;4;7;F;2W6+4;12;INT+STÄ;INT 2, STÄ 4;Durchdringung (2), Lange Waffe, Scharf (3), Wuchtig, Zweihändig
+Zweihandsäbel;Großstadt;16 L;4;7;F;2W6+5;11;BEW+INT;BEW 3, INT 3;Scharf (2), Wuchtig, Zweihändig

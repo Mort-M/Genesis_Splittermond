@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="CAPITAL" cplx="U" id="asteria-perlenWeiß" load="0" material="OTHER" price="300" robust="2" type="LIGHT">
+      <light level="-1" range="3" type="LIGHT"/>
+   </item>
+   <item avail="CAPITAL" cplx="U" id="asteria-perlenBlau" load="0" material="OTHER" price="500" robust="2" type="LIGHT">
+      <light level="-1" range="3" type="LIGHT"/>
+   </item>
+   <item avail="CAPITAL" cplx="U" id="asteria-perlenRotGrünGolden" load="0" material="OTHER" price="1000" robust="2" type="LIGHT">
+      <light level="-1" range="3" type="LIGHT"/>
+   </item>
+   <item avail="VILLAGE" cplx="G" id="blendlaterne" load="2" material="METAL" price="200" robust="3" type="LIGHT">
+      <light level="-3" range="15" type="LIGHT"/>
+   </item>
+   <item avail="VILLAGE" cplx="U" id="fackel" load="1" material="WOOD" price="1" robust="2" type="LIGHT">
+      <light level="-3" range="10" type="LIGHT"/>
+   </item>
+   <item avail="VILLAGE" cplx="U" id="kerze5Stück" load="1" material="OTHER" price="1" robust="0" type="LIGHT">
+      <light level="-2" range="3" type="LIGHT"/>
+   </item>
+   <item avail="VILLAGE" cplx="G" id="kohlebecken" load="4" material="METAL" price="500" robust="6" type="LIGHT">
+      <light level="-2" range="5" type="LIGHT"/>
+   </item>
+   <item avail="VILLAGE" cplx="G" id="laterneeinfach" load="2" material="METAL" price="50" robust="3" type="LIGHT">
+      <light level="-3" range="15" type="LIGHT"/>
+   </item>
+   <item avail="VILLAGE" cplx="G" id="öllampe" load="1" material="METAL" price="15" robust="1" type="LIGHT">
+      <light level="-2" range="3" type="LIGHT"/>
+   </item>
+   <item avail="VILLAGE" cplx="U" id="talglicht10Stück" load="0" material="OTHER" price="1" robust="0" type="LIGHT">
+      <light level="-2" range="1" type="LIGHT"/>
+   </item>
+   <item avail="VILLAGE" cplx="U" id="feuersteinUndStahl" load="0" material="OTHER" price="15" robust="4" type="LIGHT"/>
+   <item avail="VILLAGE" cplx="U" id="lampenöl12Stunden" load="0" material="OTHER" price="20" robust="0" type="LIGHT"/>
+   <item avail="LARGE_TOWN" cplx="F" id="schwefelhölzer10Stück" load="0" material="OTHER" price="50" robust="2" type="LIGHT"/>
+   <item avail="VILLAGE" cplx="U" id="zunderschachtel" load="0" material="OTHER" price="5" robust="2" type="LIGHT"/>
+</items>

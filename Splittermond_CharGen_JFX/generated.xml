@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<splimochar race="human" culture="elyrrose" expfree="15" expinv="0">
+    <name>Manfred Mustermann</name>
+    <powerrefs>
+        <powerref ref="enduring"/>
+        <powerref ref="lowlight"/>
+        <powerref ref="onestepahead"/>
+        <powerref ref="friendearth"/>
+        <powerref ref="concentrated"/>
+        <powerref ref="literate"/>
+        <powerref ref="addsplinter"/>
+    </powerrefs>
+    <resourcerefs>
+        <resourceref ref="reputation" val="1"/>
+        <resourceref ref="status" val="0"/>
+        <resourceref ref="contacts" val="4"/>
+        <resourceref ref="wealth" val="2"/>
+        <resourceref ref="creature" val="2"/>
+    </resourcerefs>
+    <attributes>
+        <attr id="CHARISMA" value="2"/>
+        <attr id="AGILITY" value="2"/>
+        <attr id="INTUITION" value="2"/>
+        <attr id="CONSTITUTION" value="3"/>
+        <attr id="MYSTIC" value="4"/>
+        <attr id="STRENGTH" value="2"/>
+        <attr id="MIND" value="3"/>
+        <attr id="WILLPOWER" value="2"/>
+        <attr id="SPLINTER" value="3"/>
+        <attr id="SIZE" value="5"/>
+        <attr id="SPEED" value="7"/>
+        <attr id="INITIATIVE" value="8"/>
+        <attr id="LIFE" value="8"/>
+        <attr id="FOCUS" value="12"/>
+        <attr id="DEFENSE" value="16"/>
+        <attr id="MINDRESIST" value="17"/>
+        <attr id="BODYRESIST" value="17"/>
+    </attributes>
+    <skillvals>
+        <skillval skill="melee" val="0"/>
+        <skillval skill="slashing" val="2"/>
+        <skillval skill="chains" val="0"/>
+        <skillval skill="blades" val="0"/>
+        <skillval skill="longrange" val="1"/>
+        <skillval skill="staffs" val="0"/>
+        <skillval skill="throwing" val="0"/>
+        <skillval skill="acrobatics" val="0"/>
+        <skillval skill="alchemy" val="0"/>
+        <skillval skill="leadership" val="0"/>
+        <skillval skill="arcanelore" val="3"/>
+        <skillval skill="athletics" val="2"/>
+        <skillval skill="performance" val="0"/>
+        <skillval skill="diplomacy" val="2"/>
+        <skillval skill="clscraft" val="0"/>
+        <skillval skill="empathy" val="1"/>
+        <skillval skill="determination" val="6"/>
+        <skillval skill="dexterity" val="0"/>
+        <skillval skill="history" val="4"/>
+        <skillval skill="craftmanship" val="1"/>
+        <skillval skill="heal" val="1"/>
+        <skillval skill="stealth" val="0"/>
+        <skillval skill="hunting" val="0"/>
+        <skillval skill="countrylore" val="1"/>
+        <skillval skill="nature" val="2"/>
+        <skillval skill="eloquence" val="1"/>
+        <skillval skill="locksntraps" val="0"/>
+        <skillval skill="swim" val="0"/>
+        <skillval skill="seafaring" val="0"/>
+        <skillval skill="streetlore" val="3"/>
+        <skillval skill="animals" val="1"/>
+        <skillval skill="survival" val="0"/>
+        <skillval skill="perception" val="0"/>
+        <skillval skill="endurance" val="4"/>
+        <skillval skill="antimagic" val="2"/>
+        <skillval skill="controlmagic" val="0"/>
+        <skillval skill="motionmagic" val="0"/>
+        <skillval skill="insightmagic" val="0"/>
+        <skillval skill="stonemagic" val="2"/>
+        <skillval skill="firemagic" val="4"/>
+        <skillval skill="healmagic" val="0"/>
+        <skillval skill="illusionmagic" val="0"/>
+        <skillval skill="combatmagic" val="0"/>
+        <skillval skill="lightmagic" val="0"/>
+        <skillval skill="naturemagic" val="0"/>
+        <skillval skill="shadowmagic" val="0"/>
+        <skillval skill="fatemagic" val="0"/>
+        <skillval skill="protectionmagic" val="1"/>
+        <skillval skill="enhancemagic" val="1"/>
+        <skillval skill="deathmagic" val="0"/>
+        <skillval skill="transformationmagic" val="0"/>
+        <skillval skill="watermagic" val="2"/>
+        <skillval skill="windmagic" val="6"/>
+    </skillvals>
+    <spellvals>
+        <spellval spell="interferespell" school="antimagic"/>
+        <spellval spell="featherfall" school="windmagic"/>
+        <spellval spell="shockgrasp" school="windmagic"/>
+        <spellval spell="heat" school="firemagic"/>
+        <spellval spell="firelance" school="firemagic"/>
+        <spellval spell="stone" school="stonemagic"/>
+        <spellval spell="majorprotectmagic" school="protectionmagic"/>
+        <spellval spell="quickwash" school="watermagic"/>
+    </spellvals>
+    <hairColor>hellbraun</hairColor>
+    <eyeColor>braun</eyeColor>
+    <size>182</size>
+    <gender>MALE</gender>
+</splimochar>

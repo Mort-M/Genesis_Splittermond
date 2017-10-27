@@ -1,0 +1,2081 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cultures>
+    <culture id="afali" continent="BINNENMEER">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="alben"/>
+
+            <backmod ref="merchant"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="priests"/>
+            <backmod ref="sailor"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="zwingardisch"/>
+            <cultureloremod ref="afali"/>
+
+            <powermod ref="senseorient"/>
+
+            <skillmod ref="acrobatics" value="1"/>
+            <skillmod ref="athletics" value="1"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="history" value="2"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="1"/>
+                <skillmod ref="heal" value="1"/>
+            </selmod>
+            <skillmod ref="countrylore" value="1"/>
+            <selmod>
+                <skillmod ref="nature" value="2"/>
+                <skillmod ref="watermagic" value="2"/>
+            </selmod>
+            <skillmod ref="swim" value="2"/>
+            <skillmod ref="seafaring" value="2"/>
+            <skillmod ref="perception" value="2"/>
+
+            <mastermod ref="seafaring/sailorslegs" />
+
+        </modifications>
+    </culture>
+    <culture id="aitushar" continent="PASHANAR">
+        <modifications>
+            <racemod ref="gnome"/>
+            <racemod ref="human"/>
+            <racemod ref="alben"/>
+            <racemod ref="varg"/>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids="nobility"/>
+
+            <languagemod ref="farukanisch"/>
+            <cultureloremod ref="aitushar"/>
+
+            <selmod>
+                <powermod ref="attractive"/>
+                <powermod ref="socialable"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="performance" value="1"/>
+                <skillmod ref="illusionmagic" value="1"/>
+            </selmod>
+            <skillmod ref="diplomacy" value="2"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="2"/>
+                <skillmod ref="clscraft" value="2"/>
+            </selmod>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="dexterity" value="1"/>
+            <skillmod ref="history" value="1"/>
+            <skillmod ref="countrylore" value="1"/>
+            <skillmod ref="eloquence" value="2"/>
+
+            <mastermod ref="diplomacy/stylegrace"/>
+        </modifications>
+    </culture>
+    <culture id="anuu" continent="BINNENMEER">
+        <modifications>
+            <racemod ref="gnome"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="sailor"/>
+
+            <languagemod ref="anabu"/>
+            <cultureloremod ref="anuu"/>
+
+            <selmod>
+                <powermod ref="goodhearing"/>
+                <powermod ref="goodsight"/>
+            </selmod>
+            <skillmod ref="athletics" value="1"/>
+            <skillmod ref="empathy" value="1"/>
+            <selmod>
+                <skillmod ref="history" value="1"/>
+                <skillmod ref="naturemagic" value="1"/>
+            </selmod>
+            <skillmod ref="craftmanship" value="2"/>
+            <skillmod ref="heal" value="2"/>
+            <selmod>
+                <skillmod ref="stealth" value="1"/>
+                <skillmod ref="perception" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="hunting" value="1"/>
+                <skillmod ref="swim" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+
+            <mastermod ref="nature/conservation"/>
+        </modifications>
+    </culture>
+    <culture id="arkuri" continent="FROSTLANDE">
+        <modifications>
+            <racemod ref="gnome"/>
+            <racemod ref="human"/>
+            <racemod ref="alben"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="ragtag"/>
+            <backmod ref="merchant"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="warrior"/>
+            <backmod ref="magister"/>
+            <backmod ref="priests"/>
+            <backmod ref="traveler"/>
+            <backmod ref="sailor"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="dragoreisch"/>
+            <cultureloremod ref="arkuri"/>
+
+            <selmod>
+                <powermod ref="enduring"/>
+                <powermod ref="tinker"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="craftmanship" value="2"/>
+            <skillmod ref="heal" value="1"/>
+            <skillmod ref="hunting" value="2"/>
+            <selmod>
+                <skillmod ref="nature" value="1"/>
+                <skillmod ref="naturemagic" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="swim" value="1"/>
+                <skillmod ref="animals" value="1"/>
+            </selmod>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="endurance" value="1"/>
+
+            <mastermod ref="craftmanship/scrimper"/>
+        </modifications>
+    </culture>
+    <culture id="badashan" continent="PASHANAR">
+        <modifications>
+            <racemod ref="gnome"/>
+            <racemod ref="human"/>
+            <racemod ref="varg"/>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids=""/>
+
+            <selmod>
+                <languagemod ref="badashiri"/>
+                <languagemod ref="farukanisch"/>
+            </selmod>
+            <cultureloremod ref="badashan"/>
+
+            <selmod>
+                <powermod ref="resistpoison"/>
+                <powermod ref="resistheat"/>
+            </selmod>
+
+            <skillmod ref="arcanelore" value="1"/>
+            <selmod>
+                <skillmod ref="diplomacy" value="1"/>
+                <skillmod ref="hunting" value="1"/>
+            </selmod>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="history" value="2"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="1"/>
+                <skillmod ref="heal" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="streetlore" value="1"/>
+            <skillmod ref="survival" value="1"/>
+            <selmod>
+                <skillmod ref="perception" value="1"/>
+                <skillmod ref="naturemagic" value="1"/>
+            </selmod>
+            <mastermod ref="survival/terrainlore_jungle"/>
+        </modifications>
+    </culture>
+    <culture id="borombri" continent="BINNENMEER">
+        <modifications>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids="largefarm"/>
+            <languagemod ref="boromto"/>
+            <cultureloremod ref="borombri"/>
+
+            <selmod>
+                <powermod ref="goodmemory"/>
+                <powermod ref="senseorient"/>
+            </selmod>
+
+            <skillmod ref="longrange" value="2"/>
+            <skillmod ref="diplomacy" value="1"/>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="craftmanship" value="2"/>
+            <skillmod ref="countrylore" value="1"/>
+            <selmod>
+                <skillmod ref="locksntraps" value="1"/>
+                <skillmod ref="stonemagic" value="1"/>
+            </selmod>
+            <skillmod ref="swim" value="2"/>
+            <skillmod ref="seafaring" value="1"/>
+            <skillmod ref="perception" value="2"/>
+            <skillmod ref="endurance" value="1"/>
+            <mastermod ref="craftmanship/journeyman"/>
+        </modifications>
+    </culture>
+    <culture id="chorrash" continent="PASHANAR">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="varg"/>
+
+            <notbackmod ids="largefarm,nobility,courtier"/>
+
+            <selmod>
+                <languagemod ref="farukanisch"/>
+                <languagemod ref="chorrashitisch"/>
+            </selmod>
+
+            <cultureloremod ref="chorrash"/>
+            <selmod>
+                <powermod ref="animallover"/>
+                <powermod ref="animalfamiliar"/>
+            </selmod>
+
+            <skillmod ref="melee" value="2"/>
+            <selmod>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <skillmod ref="athletics" value="1"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="craftmanship" value="1"/>
+            <selmod>
+                <skillmod ref="heal" value="1"/>
+                <skillmod ref="nature" value="1"/>
+            </selmod>
+            <skillmod ref="animals" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <selmod>
+                <skillmod ref="perception" value="1"/>
+                <skillmod ref="windmagic" value="1"/>
+            </selmod>
+            <skillmod ref="endurance" value="1"/>
+            <selmod>
+                <mastermod ref="animals/dompteur"/>
+                <mastermod ref="animals/ridingfighter"/>
+            </selmod>
+        </modifications>
+    </culture>
+    <culture id="dakardsmyr" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="gnome"/>
+
+            <notbackmod ids="largefarm,nobility,courtier,gentry"/>
+
+            <selmod>
+                <languagemod ref="basargnomisch"/>
+                <languagemod ref="dragoreisch"/>
+            </selmod>
+
+            <cultureloremod ref="dakardsmyr"/>
+
+            <selmod>
+                <powermod ref="resistpoison"/>
+                <powermod ref="sensebalance"/>
+            </selmod>
+
+            <skillmod ref="alchemy" value="2"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="2"/>
+                <skillmod ref="clscraft" value="2"/>
+            </selmod>
+            <skillmod ref="empathy" value="1"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="history" value="1"/>
+            <selmod>
+                <skillmod ref="heal" value="1"/>
+                <skillmod ref="locksntraps" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="stealth" value="1"/>
+                <skillmod ref="watermagic" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="swim" value="1"/>
+            <selmod>
+                <mastermod ref="alchemy/journeyman"/>
+                <mastermod ref="swim/workunderwater"/>
+            </selmod>
+        </modifications>
+    </culture>
+    <culture id="dalmreich" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="gnome"/>
+            <racemod ref="human"/>
+            <racemod ref="alben"/>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids=""/>
+
+            <languagemod ref="dalmarisch"/>
+
+            <cultureloremod ref="dalmarien"/>
+
+            <powermod ref="socialable"/>
+
+            <skillmod ref="blades" value="2"/>
+            <selmod>
+                <skillmod ref="performance" value="1"/>
+                <skillmod ref="clscraft" value="1"/>
+            </selmod>
+            <skillmod ref="diplomacy" value="1"/>
+            <skillmod ref="empathy" value="1"/>
+            <skillmod ref="history" value="1"/>
+            <skillmod ref="craftmanship" value="2"/>
+            <skillmod ref="countrylore" value="1"/>
+            <selmod>
+                <skillmod ref="nature" value="2"/>
+                <skillmod ref="streetlore" value="2"/>
+            </selmod>
+            <skillmod ref="eloquence" value="1"/>
+            <skillmod ref="perception" value="1"/>
+            <mastermod ref="empathy/readfoe1"/>
+        </modifications>
+    </culture>
+    <culture id="demerai" continent="PASHANAR">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="varg"/>
+
+            <notbackmod ids="nobility"/>
+
+            <selmod>
+                <languagemod ref="farukanisch"/>
+                <languagemod ref="larangi"/>
+            </selmod>
+
+            <cultureloremod ref="demerai"/>
+
+            <selmod>
+                <powermod ref="socialable"/>
+                <powermod ref="sensesocial"/>
+            </selmod>
+            <skillmod ref="melee" value="1"/>
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="chains" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="diplomacy" value="2"/>
+                <skillmod ref="stealth" value="2"/>
+            </selmod>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <selmod>
+                <skillmod ref="dexterity" value="2"/>
+                <skillmod ref="streetlore" value="2"/>
+            </selmod>
+            <skillmod ref="history" value="1"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="1"/>
+                <skillmod ref="controlmagic" value="1"/>
+            </selmod>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="perception" value="1"/>
+            <mastermod ref="eloquence/distract"/>
+        </modifications>
+    </culture>
+    <culture id="elyrrose" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+
+            <backmod ref="academics"/>
+            <backmod ref="largefarm"/>
+            <backmod ref="nobility"/>
+            <backmod ref="courtier"/>
+            <backmod ref="warrior"/>
+            <backmod ref="gentry"/>
+            <backmod ref="magister"/>
+            <backmod ref="priests"/>
+            <backmod ref="sailor"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="patalisch"/>
+
+            <cultureloremod ref="patalis"/>
+
+            <selmod>
+                <powermod ref="literate"/>
+                <powermod ref="determined"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="blades" value="2"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+            </selmod>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="craftmanship" value="1"/>
+            <skillmod ref="heal" value="1"/>
+            <skillmod ref="animals" value="1"/>
+            <skillmod ref="endurance" value="2"/>
+            <selmod>
+                <skillmod ref="protectionmagic" value="1"/>
+                <skillmod ref="enhancemagic" value="1"/>
+            </selmod>
+            <mastermod ref="determination/imperturbable"/>
+        </modifications>
+    </culture>
+    <culture id="elyrvolk" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="gnome"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="ragtag"/>
+            <backmod ref="merchant"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="priests"/>
+            <backmod ref="traveler"/>
+            <backmod ref="sailor"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="basargnomisch"/>
+
+            <cultureloremod ref="elyrea"/>
+
+            <selmod>
+                <powermod ref="enduring"/>
+                <powermod ref="senseorient"/>
+            </selmod>
+            <skillmod ref="throwing" value="1"/>
+            <skillmod ref="athletics" value="2"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="1"/>
+                <skillmod ref="stonemagic" value="1"/>
+                <skillmod ref="naturemagic" value="1"/>
+            </selmod>
+            <skillmod ref="heal" value="1"/>
+            <skillmod ref="hunting" value="2"/>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="animals" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="1"/>
+            <skillmod ref="endurance" value="1"/>
+            <mastermod ref="survival/terrainlore_mountain"/>
+        </modifications>
+    </culture>
+    <culture id="farukhur" continent="PASHANAR">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="varg"/>
+            <racemod ref="dwarf"/>
+            <racemod ref="alben"/>
+
+            <backmod ref="academics"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="nobility"/>
+            <backmod ref="courtier"/>
+            <backmod ref="warrior"/>
+            <backmod ref="artists"/>
+            <backmod ref="gentry"/>
+            <backmod ref="magister"/>
+            <backmod ref="priests"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="farukanisch"/>
+
+            <cultureloremod ref="farukhur"/>
+
+            <powermod ref="urbane"/>
+
+            <skillmod ref="leadership" value="2"/>
+            <skillmod ref="arcanelore" value="1"/>
+            <selmod>
+                <skillmod ref="performance" value="1"/>
+                <skillmod ref="clscraft" value="1"/>
+            </selmod>
+            <skillmod ref="diplomacy" value="2"/>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <selmod>
+                <skillmod ref="dexterity" value="1"/>
+                <skillmod ref="stealth" value="1"/>
+            </selmod>
+            <skillmod ref="history" value="2"/>
+            <selmod>
+                <skillmod ref="countrylore" value="1"/>
+                <skillmod ref="antimagic" value="1"/>
+                <skillmod ref="combatmagic" value="1"/>
+                <skillmod ref="windmagic" value="1"/>
+                <skillmod ref="stonemagic" value="1"/>
+                <skillmod ref="enhancemagic" value="1"/>
+                <skillmod ref="firemagic" value="1"/>
+                <skillmod ref="watermagic" value="1"/>
+                <skillmod ref="shadowmagic" value="1"/>
+                <skillmod ref="naturemagic" value="1"/>
+                <skillmod ref="illusionmagic" value="1"/>
+                <skillmod ref="controlmagic" value="1"/>
+                <skillmod ref="motionmagic" value="1"/>
+                <skillmod ref="insightmagic" value="1"/>
+                <skillmod ref="healmagic" value="1"/>
+                <skillmod ref="lightmagic" value="1"/>
+                <skillmod ref="fatemagic" value="1"/>
+                <skillmod ref="protectionmagic" value="1"/>
+                <skillmod ref="enhancemagic" value="1"/>
+                <skillmod ref="deathmagic" value="1"/>
+                <skillmod ref="transformationmagic" value="1"/>
+            </selmod>
+            <mastermod ref="leadership/challenge"/>
+        </modifications>
+    </culture>
+    <culture id="fedirin" continent="PASHANAR">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="varg"/>
+
+            <notbackmod ids="sailor"/>
+
+            <languagemod ref="farukanisch"/>
+
+            <cultureloremod ref="fedirin"/>
+
+            <powermod ref="goodmemory"/>
+
+            <skillmod ref="leadership" value="1"/>
+            <skillmod ref="arcanelore" value="2"/>
+            <skillmod ref="diplomacy" value="2"/>
+            <skillmod ref="empathy" value="1"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="history" value="2"/>
+            <selmod>
+                <skillmod ref="countrylore" value="1"/>
+                <skillmod ref="deathmagic" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="nature" value="1"/>
+                <skillmod ref="streetlore" value="1"/>
+            </selmod>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="perception" value="1"/>
+            <mastermod ref="determination/ironwill"/>
+        </modifications>
+    </culture>
+    <culture id="feuerlauf" continent="PASHANAR">
+        <modifications>
+            <racemod ref="human"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="merchant"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="warrior"/>
+            <backmod ref="priests"/>
+            <backmod ref="traveler"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="feuerzunge"/>
+
+            <cultureloremod ref="feuerlaeufer"/>
+
+            <powermod ref="resistheat"/>
+
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <selmod>
+                <skillmod ref="history" value="1"/>
+                <skillmod ref="nature" value="1"/>
+            </selmod>
+            <skillmod ref="craftmanship" value="2"/>
+            <selmod>
+                <skillmod ref="heal" value="1"/>
+                <skillmod ref="stealth" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="hunting" value="1"/>
+                <skillmod ref="animals" value="1"/>
+            </selmod>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="1"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="firemagic" value="1"/>
+            <mastermod ref="survival/wildernessrunner"/>
+        </modifications>
+    </culture>
+    <culture id="frynjord" continent="FROSTLANDE">
+        <modifications>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids="largefarm,courtier,gentry,traveler"/>
+
+            <languagemod ref="frynto"/>
+
+            <cultureloremod ref="frynjord"/>
+
+            <powermod ref="resistcold"/>
+
+            <skillmod ref="slashing" value="1"/>
+            <skillmod ref="leadership" value="1"/>
+            <selmod>
+                <skillmod ref="arcanelore" value="1"/>
+                <skillmod ref="history" value="1"/>
+            </selmod>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <selmod>
+                <skillmod ref="heal" value="1"/>
+                <skillmod ref="watermagic" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="seafaring" value="1"/>
+            <skillmod ref="perception" value="1"/>
+            <skillmod ref="survival" value="2"/>
+            <mastermod ref="leadership/troopup"/>
+        </modifications>
+    </culture>
+    <culture id="gotmarkut" continent="ARAKEA">
+        <modifications>
+            <racemod ref="gnome"/>
+            <racemod ref="human"/>
+            <racemod ref="alben"/>
+            <racemod ref="varg"/>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids="nobility,courtier"/>
+
+            <languagemod ref="basargnomisch"/>
+
+            <selmod>
+                <cultureloremod ref="gotor"/>
+                <cultureloremod ref="marakatam"/>
+                <cultureloremod ref="kutakina"/>
+            </selmod>
+
+            <selmod>
+                <powermod ref="resistheat"/>
+                <powermod ref="resistsick"/>
+            </selmod>
+
+            <skillmod ref="melee" value="1"/>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="1"/>
+            <skillmod ref="history" value="1"/>
+            <selmod>
+                <skillmod ref="countrylore" value="1"/>
+                <skillmod ref="enhancemagic" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="endurance" value="1"/>
+            <mastermod ref="survival/terrainlore_jungle"/>
+        </modifications>
+    </culture>
+    <culture id="gulong" continent="EXOTENKUESTE">
+        <modifications>
+            <racemod ref="gnome"/>
+            <racemod ref="human"/>
+            <racemod ref="alben"/>
+            <racemod ref="varg"/>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids="largefarm,nobility,courtier,sailor"/>
+
+            <languagemod ref="gulong"/>
+
+            <cultureloremod ref="gulong"/>
+
+            <selmod>
+                <powermod ref="enduring"/>
+                <powermod ref="senseorient"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <skillmod ref="arcanelore" value="2"/>
+            <skillmod ref="athletics" value="1"/>
+            <selmod>
+                <skillmod ref="diplomacy" value="1"/>
+                <skillmod ref="hunting" value="1"/>
+            </selmod>
+            <skillmod ref="empathy" value="2"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="1"/>
+                <skillmod ref="heal" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="nature" value="2"/>
+                <skillmod ref="streetlore" value="2"/>
+            </selmod>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="animals" value="1"/>
+            <skillmod ref="survival" value="2"/>
+            <selmod>
+                <mastermod ref="survival/terrainlore_grassland"/>
+                <mastermod spec="arcanelore/elementalcreatures"/>
+            </selmod>
+        </modifications>
+    </culture>
+    <culture id="immersomm" continent="DRAGOREA">
+        <modifications>
+
+            <racemod ref="alben"/>
+            <backmod ref="eremits"/>
+            <backmod ref="academics"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="warrior"/>
+            <backmod ref="artists"/>
+            <backmod ref="priests"/>
+            <backmod ref="traveler"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="tial"/>
+            <cultureloremod ref="immersommeralb"/>
+
+            <selmod>
+                <powermod ref="goodhearing"/>
+                <powermod ref="goodsight"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="naturemagic" value="1"/>
+            </selmod>
+            <skillmod ref="acrobatics" value="2"/>
+            <skillmod ref="arcanelore" value="1"/>
+            <skillmod ref="athletics" value="2"/>
+            <selmod>
+                <skillmod ref="performance" value="1"/>
+                <skillmod ref="craftmanship" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="diplomacy" value="1"/>
+                <skillmod ref="clscraft" value="1"/>
+            </selmod>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="1"/>
+            <mastermod ref="survival/terrainlore_forest"/>
+        </modifications>
+    </culture>
+    <culture id="jagodien" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="varg"/>
+
+            <backmod ref="ragtag"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="traveler"/>
+
+            <languagemod ref="jagodisch"/>
+
+            <cultureloremod ref="jagodien"/>
+
+            <selmod>
+                <powermod ref="senseorient"/>
+                <powermod ref="goodsight"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+            </selmod>
+            <skillmod ref="longrange" value="2"/>
+            <skillmod ref="athletics" value="1"/>
+            <selmod>
+                <skillmod ref="history" value="1"/>
+                <skillmod ref="determination" value="1"/>
+            </selmod>
+            <skillmod ref="heal" value="1"/>
+            <skillmod ref="hunting" value="2"/>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="animals" value="2"/>
+            <skillmod ref="survival" value="1"/>
+            <skillmod ref="perception" value="2"/>
+            <selmod>
+                <mastermod ref="nature/hunter_bear"/>
+                <mastermod ref="nature/hunter_biggame"/>
+                <mastermod ref="nature/hunter_smallgame"/>
+                <mastermod ref="nature/hunter_canine"/>
+                <mastermod ref="nature/hunter_feline"/>
+                <mastermod ref="nature/hunter_spider"/>
+                <mastermod ref="nature/hunter_insect"/>
+                <mastermod ref="nature/hunter_reptile"/>
+                <mastermod ref="nature/hunter_bird"/>
+                <mastermod ref="animals/ridingfighter"/>
+            </selmod>
+        </modifications>
+    </culture>
+    <culture id="jagodsklav" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="gnome"/>
+            <racemod ref="alben"/>
+            <racemod ref="varg"/>
+            <racemod ref="dwarf"/>
+
+            <backmod ref="ragtag"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="traveler"/>
+
+            <languagemod ref="jogdarisch"/>
+
+            <cultureloremod ref="jogodai"/>
+
+            <selmod>
+                <powermod ref="enduring"/>
+                <powermod ref="swift"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="acrobatics" value="1"/>
+                <skillmod ref="athletics" value="1"/>
+            </selmod>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="history" value="1"/>
+            <skillmod ref="craftmanship" value="2"/>
+            <selmod>
+                <skillmod ref="heal" value="1"/>
+                <skillmod ref="animals" value="1"/>
+            </selmod>
+            <skillmod ref="stealth" value="1"/>
+            <skillmod ref="nature" value="1"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="2"/>
+            <skillmod ref="endurance" value="1"/>
+            <mastermod ref="craftmanship/efficiency"/>
+        </modifications>
+    </culture>
+    <culture id="jagodstamm" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="ragtag"/>
+            <backmod ref="merchant"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="warrior"/>
+            <backmod ref="gentry"/>
+            <backmod ref="priests"/>
+            <backmod ref="traveler"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="jogdarisch"/>
+            <cultureloremod ref="jogodai"/>
+
+            <selmod>
+                <powermod ref="enduring"/>
+                <powermod ref="tough"/>
+            </selmod>
+            <skillmod ref="melee" value="1"/>
+            <skillmod ref="slashing" value="1"/>
+            <skillmod ref="throwing" value="2"/>
+            <selmod>
+                <skillmod ref="acrobatics" value="1"/>
+                <skillmod ref="athletics" value="1"/>
+            </selmod>
+            <skillmod ref="performance" value="1"/>
+            <selmod>
+                <skillmod ref="history" value="1"/>
+                <skillmod ref="enhancemagic" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="craftmanship" value="1"/>
+                <skillmod ref="hunting" value="1"/>
+            </selmod>
+            <skillmod ref="animals" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+            <selmod>
+                <mastermod ref="animals/ridingfighter"/>
+                <mastermod ref="throwing/strongthrowing"/>
+            </selmod>
+        </modifications>
+    </culture>
+    <culture id="keshubim" continent="EXOTENKUESTE">
+        <modifications>
+            <racemod ref="gnome"/>
+
+            <notbackmod ids="ragtag,largefarm,sailor"/>
+
+            <languagemod ref="keshu"/>
+            <cultureloremod ref="keshubim"/>
+
+            <selmod>
+                <powermod ref="swift"/>
+                <powermod ref="resistpoison"/>
+            </selmod>
+
+            <skillmod ref="acrobatics" value="2"/>
+            <selmod>
+                <skillmod ref="alchemy" value="1"/>
+                <skillmod ref="athletics" value="1"/>
+            </selmod>
+            <skillmod ref="determination" value="2"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="1"/>
+                <skillmod ref="hunting" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="heal" value="1"/>
+                <skillmod ref="shadowmagic" value="1"/>
+            </selmod>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="1"/>
+            <skillmod ref="endurance" value="1"/>
+            <mastermod ref="stealth/sneakattack1"/>
+        </modifications>
+    </culture>
+    <culture id="kungaitan" continent="EXOTENKUESTE">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="gnome"/>
+            <racemod ref="varg"/>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids="nobility"/>
+
+            <languagemod ref="kungai"/>
+
+            <cultureloremod ref="kungaitan"/>
+
+            <selmod>
+                <powermod ref="socialable"/>
+                <powermod ref="urbane"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <skillmod ref="leadership" value="1"/>
+            <skillmod ref="diplomacy" value="2"/>
+            <selmod>
+                <skillmod ref="clscraft" value="1"/>
+                <skillmod ref="craftmanship" value="1"/>
+            </selmod>
+            <skillmod ref="empathy" value="2"/>
+            <selmod>
+                <skillmod ref="determination" value="1"/>
+                <skillmod ref="controlmagic" value="1"/>
+            </selmod>
+            <skillmod ref="countrylore" value="2"/>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="swim" value="1"/>
+            <skillmod ref="seafaring" value="2"/>
+            <mastermod ref="seafaring/stargaze"/>
+        </modifications>
+    </culture>
+    <culture id="mahaluu" continent="ARAKEA">
+        <modifications>
+            <racemod ref="human"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="artists"/>
+            <backmod ref="priests"/>
+            <backmod ref="sailor"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="olelo"/>
+            <cultureloremod ref="mahaluu"/>
+
+            <selmod>
+                <powermod ref="attractive"/>
+                <powermod ref="socialable"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="acrobatics" value="1"/>
+                <skillmod ref="athletics" value="1"/>
+            </selmod>
+            <skillmod ref="performance" value="1"/>
+            <skillmod ref="empathy" value="2"/>
+            <selmod>
+                <skillmod ref="heal" value="1"/>
+                <skillmod ref="craftmanship" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="1"/>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="swim" value="2"/>
+            <skillmod ref="seafaring" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <selmod>
+                <skillmod ref="healmagic" value="1"/>
+                <skillmod ref="naturemagic" value="1"/>
+            </selmod>
+            <selmod>
+                <mastermod ref="swim/workunderwater"/>
+                <mastermod ref="swim/riverdiver"/>
+            </selmod>
+        </modifications>
+    </culture>
+    <culture id="midstad" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="gnome"/>
+            <racemod ref="alben"/>
+            <racemod ref="dwarf"/>
+            <racemod ref="varg"/>
+
+            <notbackmod ids=""/>
+
+            <languagemod ref="dragoreisch"/>
+
+            <cultureloremod ref="midstad"/>
+
+            <powermod ref="concentrated"/>
+
+            <selmod>
+                <skillmod ref="melee" value="2"/>
+                <skillmod ref="slashing" value="2"/>
+            </selmod>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="history" value="1"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="2"/>
+                <skillmod ref="seafaring" value="2"/>
+            </selmod>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="nature" value="1"/>
+            <selmod>
+                <skillmod ref="swim" value="1"/>
+                <skillmod ref="animals" value="1"/>
+            </selmod>
+            <skillmod ref="perception" value="1"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="fatemagic" value="1"/>
+            <mastermod ref="empathy/speaktome"/>
+        </modifications>
+    </culture>
+    <culture id="nyrdfing" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="gnome"/>
+            <racemod ref="alben"/>
+            <racemod ref="dwarf"/>
+            <racemod ref="varg"/>
+
+            <notbackmod ids=""/>
+
+            <languagemod ref="nyrdfingisch"/>
+
+            <cultureloremod ref="nyrdfing"/>
+
+            <selmod>
+                <powermod ref="tinker"/>
+                <powermod ref="resistcold"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="blades" value="1"/>
+            </selmod>
+            <skillmod ref="melee" value="2"/>
+            <skillmod ref="leadership" value="2"/>
+            <skillmod ref="athletics" value="1"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="history" value="1"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="2"/>
+                <skillmod ref="seafaring" value="2"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="heal" value="1"/>
+                <skillmod ref="lightmagic" value="1"/>
+            </selmod>
+            <skillmod ref="countrylore" value="1"/>
+            <selmod>
+                <skillmod ref="nature" value="2"/>
+                <skillmod ref="animals" value="2"/>
+            </selmod>
+            <selmod>
+                <mastermod ref="melee/hold"/>
+                <mastermod ref="craftmanship/scrimper"/>
+            </selmod>
+        </modifications>
+    </culture>
+    <culture id="patalis" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids=""/>
+
+            <languagemod ref="patalisch"/>
+
+            <cultureloremod ref="patalis"/>
+
+            <powermod ref="sensesocial"/>
+
+            <skillmod ref="blades" value="1"/>
+            <skillmod ref="leadership" value="1"/>
+            <selmod>
+                <skillmod ref="performance" value="2"/>
+                <skillmod ref="clscraft" value="2"/>
+            </selmod>
+            <skillmod ref="diplomacy" value="2"/>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <selmod>
+                <skillmod ref="history" value="1"/>
+                <skillmod ref="countrylore" value="1"/>
+            </selmod>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="seafaring" value="1"/>
+            <skillmod ref="streetlore" value="1"/>
+
+            <mastermod ref="diplomacy/diplomat"/>
+
+        </modifications>
+    </culture>
+    <culture id="piriwatu" continent="ARAKEA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="alben"/>
+            <racemod ref="gnome"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="warrior"/>
+            <backmod ref="priests"/>
+            <backmod ref="traveler"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="piriwat"/>
+
+            <cultureloremod ref="piriwatu"/>
+
+            <powermod ref="enduring"/>
+
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+                <skillmod ref="naturemagic" value="1"/>
+            </selmod>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <selmod>
+                <skillmod ref="history" value="1"/>
+                <skillmod ref="hunting" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="craftmanship" value="1"/>
+                <skillmod ref="heal" value="1"/>
+            </selmod>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="1"/>
+            <skillmod ref="endurance" value="1"/>
+
+            <mastermod ref="nature/conservation"/>
+        </modifications>
+    </culture>
+    <culture id="porukala" continent="EXOTENKUESTE">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="gnome"/>
+            <racemod ref="alben"/>
+            <racemod ref="varg"/>
+            <racemod ref="dwarf"/>
+
+            <backmod ref="craftsmen"/>
+            <backmod ref="sailor"/>
+
+            <languagemod ref="siprangulu"/>
+
+            <cultureloremod ref="porukala"/>
+
+            <powermod ref="senseorient"/>
+
+            <skillmod ref="acrobatics" value="1"/>
+            <skillmod ref="determination" value="1"/>
+            <skillmod ref="history" value="2"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="1"/>
+                <skillmod ref="animals" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="countrylore" value="1"/>
+                <skillmod ref="watermagic" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="1"/>
+            <skillmod ref="swim" value="2"/>
+            <skillmod ref="seafaring" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="2"/>
+
+            <mastermod ref="seafaring/seadog"/>
+        </modifications>
+    </culture>
+    <culture id="puntani" continent="EXOTENKUESTE">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="dwarf"/>
+            <racemod ref="gnome"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="priests"/>
+            <backmod ref="traveler"/>
+            <backmod ref="sailor"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="puntani"/>
+
+            <cultureloremod ref="punta"/>
+
+            <selmod>
+                <powermod ref="swift"/>
+                <powermod ref="goodhearing"/>
+            </selmod>
+
+            <skillmod ref="acrobatics" value="2"/>
+            <selmod>
+                <skillmod ref="athletics" value="1"/>
+                <skillmod ref="shadowmagic" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="diplomacy" value="1"/>
+                <skillmod ref="history" value="1"/>
+            </selmod>
+            <skillmod ref="empathy" value="1"/>
+            <skillmod ref="craftmanship" value="1"/>
+            <selmod>
+                <skillmod ref="heal" value="1"/>
+                <skillmod ref="hunting" value="1"/>
+            </selmod>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="2"/>
+
+            <mastermod ref="acrobatics/flashreflexes"/>
+        </modifications>
+    </culture>
+    <culture id="raugarr" continent="FROSTLANDE">
+        <modifications>
+            <racemod ref="varg"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="warrior"/>
+            <backmod ref="traveler"/>
+
+            <languagemod ref="raugro"/>
+
+            <cultureloremod ref="raugarr"/>
+
+            <powermod ref="tough"/>
+
+            <skillmod ref="melee" value="2"/>
+            <skillmod ref="athletics" value="2"/>
+            <selmod>
+                <skillmod ref="determination" value="1"/>
+                <skillmod ref="history" value="1"/>
+            </selmod>
+            <skillmod ref="craftmanship" value="1"/>
+            <skillmod ref="stealth" value="1"/>
+            <skillmod ref="hunting" value="2"/>
+            <skillmod ref="nature" value="1"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="1"/>
+            <skillmod ref="endurance" value="2"/>
+
+            <mastermod ref="melee/rush"/>
+        </modifications>
+    </culture>
+    <culture id="sadu" continent="TAKASADU">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="alben"/>
+            <racemod ref="gnome"/>
+            <racemod ref="dwarf"/>
+            <racemod ref="varg"/>
+
+            <notbackmod ids=""/>
+
+            <languagemod ref="xienyan"/>
+
+            <cultureloremod ref="sadu"/>
+
+            <selmod>
+                <powermod ref="tinker"/>
+                <powermod ref="sensesocial"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <skillmod ref="arcanelore" value="1"/>
+            <selmod>
+                <skillmod ref="performance" value="1"/>
+                <skillmod ref="clscraft" value="1"/>
+            </selmod>
+            <skillmod ref="diplomacy" value="2"/>
+            <skillmod ref="empathy" value="2"/>
+            <selmod>
+                <skillmod ref="history" value="1"/>
+                <skillmod ref="countrylore" value="1"/>
+            </selmod>
+            <skillmod ref="eloquence" value="2"/>
+            <selmod>
+                <skillmod ref="seafaring" value="1"/>
+                <skillmod ref="survival" value="1"/>
+            </selmod>
+            <skillmod ref="streetlore" value="2"/>
+            <skillmod ref="perception" value="2"/>
+
+            <mastermod ref="empathy/readfoe1"/>
+        </modifications>
+    </culture>
+    <culture id="schaedel" continent="BINNENMEER">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="alben"/>
+            <racemod ref="gnome"/>
+
+            <backmod ref="ragtag"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="warrior"/>
+            <backmod ref="sailor"/>
+
+            <languagemod ref="basargnomisch"/>
+
+            <cultureloremod ref="schaedelkorsar"/>
+
+            <selmod>
+                <powermod ref="senseorient"/>
+                <powermod ref="tough"/>
+            </selmod>
+
+            <skillmod ref="melee" value="2"/>
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="acrobatics" value="1"/>
+                <skillmod ref="athletics" value="1"/>
+            </selmod>
+            <skillmod ref="craftmanship" value="1"/>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="nature" value="1"/>
+            <skillmod ref="swim" value="2"/>
+            <skillmod ref="seafaring" value="2"/>
+            <skillmod ref="perception" value="1"/>
+            <skillmod ref="endurance" value="2"/>
+            <mastermod ref="seafaring/sailorslegs"/>
+        </modifications>
+    </culture>
+    <culture id="schaschbar" continent="ARAKEA">
+        <modifications>
+            <racemod ref="dwarf"/>
+
+            <backmod ref="craftsmen"/>
+            <backmod ref="merchant"/>
+            <backmod ref="farmer"/>
+            <backmod ref="warrior"/>
+            <backmod ref="artists"/>
+            <backmod ref="gentry"/>
+            <backmod ref="priests"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="schaschto"/>
+
+            <cultureloremod ref="schaschbar"/>
+
+            <selmod>
+                <powermod ref="tinker"/>
+                <powermod ref="resistheat"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="alchemy" value="1"/>
+                <skillmod ref="clscraft" value="1"/>
+            </selmod>
+            <skillmod ref="diplomacy" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="craftmanship" value="2"/>
+            <selmod>
+                <skillmod ref="nature" value="1"/>
+                <skillmod ref="stonemagic" value="1"/>
+            </selmod>
+            <skillmod ref="locksntraps" value="1"/>
+            <skillmod ref="survival" value="1"/>
+            <skillmod ref="perception" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+
+            <mastermod ref="perception/surroundingsenses_jungle"/>
+        </modifications>
+    </culture>
+    <culture id="schwertadel" continent="TAKASADU">
+        <modifications>
+            <racemod ref="alben"/>
+
+            <backmod ref="academics"/>
+            <backmod ref="largefarm"/>
+            <backmod ref="nobility"/>
+            <backmod ref="courtier"/>
+            <backmod ref="warrior"/>
+            <backmod ref="artists"/>
+            <backmod ref="gentry"/>
+            <backmod ref="magister"/>
+            <backmod ref="priests"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="kintial"/>
+
+            <cultureloremod ref="schwertalb"/>
+
+            <powermod ref="literate"/>
+
+            <skillmod ref="blades" value="2"/>
+            <skillmod ref="leadership" value="2"/>
+            <skillmod ref="arcanelore" value="1"/>
+            <selmod>
+                <skillmod ref="performance" value="2"/>
+                <skillmod ref="clscraft" value="2"/>
+            </selmod>
+            <skillmod ref="diplomacy" value="1"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="eloquence" value="1"/>
+            <skillmod ref="perception" value="1"/>
+            <skillmod ref="combatmagic" value="1"/>
+
+            <mastermod ref="leadership/challenge"/>
+        </modifications>
+    </culture>
+    <culture id="schwertvolk" continent="TAKASADU">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="varg"/>
+            <racemod ref="gnome"/>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids="nobility,gentry"/>
+
+            <languagemod ref="xienyan"/>
+
+            <cultureloremod ref="schwertalb"/>
+
+            <selmod>
+                <powermod ref="concentrated"/>
+                <powermod ref="determined"/>
+            </selmod>
+
+            <skillmod ref="blades" value="1"/>
+            <selmod>
+                <skillmod ref="arcanelore" value="1"/>
+                <skillmod ref="nature" value="1"/>
+            </selmod>
+            <skillmod ref="athletics" value="2"/>
+            <selmod>
+                <skillmod ref="performance" value="1"/>
+                <skillmod ref="clscraft" value="1"/>
+            </selmod>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="craftmanship" value="2"/>
+            <selmod>
+                <skillmod ref="seafaring" value="1"/>
+                <skillmod ref="streetlore" value="1"/>
+            </selmod>
+            <skillmod ref="survival" value="1"/>
+            <skillmod ref="endurance" value="2"/>
+
+            <mastermod ref="determination/imperturbable"/>
+        </modifications>
+    </culture>
+    <culture id="shahandir" continent="PASHANAR">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="dwarf"/>
+            <racemod ref="varg"/>
+
+            <notbackmod ids=""/>
+
+            <selmod>
+                <languagemod ref="farukanisch"/>
+                <languagemod ref="dalmarisch"/>
+            </selmod>
+
+            <cultureloremod ref="shahandir"/>
+
+            <selmod>
+                <powermod ref="loreculture"/>
+                <powermod ref="urbane"/>
+            </selmod>
+
+            <skillmod ref="melee" value="1"/>
+            <selmod>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="blades" value="2"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="leadership" value="1"/>
+                <skillmod ref="craftmanship" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="diplomacy" value="2"/>
+                <skillmod ref="stealth" value="2"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="clscraft" value="1"/>
+                <skillmod ref="streetlore" value="1"/>
+            </selmod>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="1"/>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="countrylore" value="2"/>
+            <skillmod ref="eloquence" value="1"/>
+            <selmod>
+                <mastermod ref="empathy/speaktome"/>
+                <mastermod spec="countrylore/region"/>
+            </selmod>
+        </modifications>
+    </culture>
+    <culture id="stromsiprangu" continent="EXOTENKUESTE">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="alben"/>
+            <racemod ref="gnome"/>
+            <racemod ref="varg"/>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids="nobility"/>
+
+            <languagemod ref="siprangulu"/>
+
+            <cultureloremod ref="stromlandinseln"/>
+
+            <powermod ref="urbane"/>
+
+            <selmod>
+                <skillmod ref="performance" value="1"/>
+                <skillmod ref="craftmanship" value="1"/>
+            </selmod>
+            <skillmod ref="diplomacy" value="2"/>
+            <skillmod ref="empathy" value="1"/>
+            <skillmod ref="dexterity" value="1"/>
+            <skillmod ref="history" value="1"/>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="countrylore" value="2"/>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="swim" value="1"/>
+            <skillmod ref="streetlore" value="2"/>
+
+            <mastermod ref="streetlore/heargossip"/>
+        </modifications>
+    </culture>
+    <culture id="strominseln" continent="EXOTENKUESTE">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="alben"/>
+            <racemod ref="gnome"/>
+            <racemod ref="varg"/>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids="largefarm,courtier,nobility,magister"/>
+
+            <languagemod ref="siprangulu"/>
+
+            <cultureloremod ref="stromlandinseln"/>
+
+            <powermod ref="enduring"/>
+
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <skillmod ref="acrobatics" value="2"/>
+            <skillmod ref="athletics" value="2"/>
+            <selmod>
+                <skillmod ref="performance" value="1"/>
+                <skillmod ref="countrylore" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="history" value="1"/>
+                <skillmod ref="watermagic" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="craftmanship" value="1"/>
+                <skillmod ref="nature" value="1"/>
+            </selmod>
+            <skillmod ref="swim" value="2"/>
+            <skillmod ref="seafaring" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="1"/>
+
+            <mastermod ref="acrobatics/balance"/>
+        </modifications>
+    </culture>
+    <culture id="teleshai" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="alben"/>
+
+            <backmod ref="craftsmen"/>
+            <backmod ref="artists"/>
+            <backmod ref="traveler"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="telshial"/>
+
+            <cultureloremod ref="teleshai"/>
+
+            <powermod ref="urbane"/>
+
+            <skillmod ref="acrobatics" value="2"/>
+            <skillmod ref="performance" value="2"/>
+            <selmod>
+                <skillmod ref="diplomacy" value="1"/>
+                <skillmod ref="illusionmagic" value="1"/>
+            </selmod>
+            <skillmod ref="empathy" value="2"/>
+            <selmod>
+                <skillmod ref="dexterity" value="1"/>
+                <skillmod ref="stealth" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="history" value="1"/>
+                <skillmod ref="survival" value="1"/>
+            </selmod>
+            <skillmod ref="countrylore" value="1"/>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="animals" value="2"/>
+            <skillmod ref="perception" value="1"/>
+            <selmod>
+                <mastermod ref="performance/influenceattitude"/>
+                <mastermod ref="eloquence/taunt"/>
+            </selmod>
+        </modifications>
+    </culture>
+    <culture id="termark" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="varg"/>
+            <racemod ref="gnome"/>
+            <racemod ref="dwarf"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="ragtag"/>
+            <backmod ref="merchant"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="warrior"/>
+            <backmod ref="gentry"/>
+            <backmod ref="traveler"/>
+            <backmod ref="sailor"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="zwingardisch"/>
+
+            <cultureloremod ref="termark"/>
+
+            <selmod>
+                <powermod ref="tough"/>
+                <powermod ref="determined"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="blades" value="2"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="leadership" value="1"/>
+                <skillmod ref="combatmagic" value="1"/>
+            </selmod>
+            <skillmod ref="athletics" value="1"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="history" value="1"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="2"/>
+                <skillmod ref="heal" value="2"/>
+            </selmod>
+            <skillmod ref="stealth" value="1"/>
+            <selmod>
+                <skillmod ref="countrylore" value="1"/>
+                <skillmod ref="nature" value="1"/>
+            </selmod>
+            <skillmod ref="perception" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+            <mastermod ref="determination/keepcool1"/>
+        </modifications>
+    </culture>
+    <culture id="tirdurghachan" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+
+            <notbackmod ids="nobility,courtier,magister,priests"/>
+
+            <languagemod ref="durghraeg"/>
+
+            <cultureloremod ref="durghach"/>
+
+            <powermod ref="determined"/>
+
+            <skillmod ref="melee" value="1"/>
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="arcanelore" value="2"/>
+                <skillmod ref="athletics" value="2"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="empathy" value="1"/>
+                <skillmod ref="nature" value="1"/>
+            </selmod>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="1"/>
+            <skillmod ref="endurance" value="2"/>
+            <selmod>
+                <skillmod ref="antimagic" value="1"/>
+                <skillmod ref="protectionmagic" value="1"/>
+            </selmod>
+
+            <selmod>
+                <mastermod spec="history/legendarycreatures"/>
+                <mastermod ref="arcanelore/arcanedefense1"/>
+            </selmod>
+        </modifications>
+    </culture>
+    <culture id="turubar" continent="PASHANAR">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="varg"/>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids="ragtag,nobility,gentry"/>
+
+            <languagemod ref="farukanisch"/>
+
+            <cultureloremod ref="turubar"/>
+
+            <powermod ref="concentrated"/>
+
+            <skillmod ref="arcanelore" value="1"/>
+            <skillmod ref="diplomacy" value="2"/>
+            <selmod>
+                <skillmod ref="clscraft" value="1"/>
+                <skillmod ref="stonemagic" value="1"/>
+            </selmod>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="1"/>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="heal" value="2"/>
+            <selmod>
+                <skillmod ref="nature" value="1"/>
+                <skillmod ref="endurance" value="1"/>
+            </selmod>
+            <skillmod ref="eloquence" value="1"/>
+            <skillmod ref="perception" value="2"/>
+
+            <mastermod ref="empathy/calm"/>
+        </modifications>
+    </culture>
+    <culture id="utarti" continent="ARAKEA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="alben"/>
+            <racemod ref="gnome"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="warrior"/>
+            <backmod ref="traveler"/>
+            <backmod ref="wizard"/>
+
+            <languagemod ref="utart"/>
+
+            <cultureloremod ref="utarti"/>
+
+            <powermod ref="enduring"/>
+
+            <selmod>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="athletics" value="1"/>
+                <skillmod ref="endurance" value="1"/>
+            </selmod>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="history" value="1"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="1"/>
+                <skillmod ref="naturemagic" value="1"/>
+            </selmod>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="hunting" value="2"/>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="1"/>
+
+            <mastermod ref="survival/terrainlore_jungle"/>
+        </modifications>
+    </culture>
+    <culture id="vaigarr" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="varg"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="warrior"/>
+            <backmod ref="priests"/>
+
+            <languagemod ref="vaigro"/>
+
+            <cultureloremod ref="vaigarr"/>
+
+            <selmod>
+                <powermod ref="senseorient"/>
+                <powermod ref="tough"/>
+            </selmod>
+
+            <skillmod ref="melee" value="2"/>
+            <skillmod ref="throwing" value="1"/>
+            <skillmod ref="athletics" value="2"/>
+            <selmod>
+                <skillmod ref="determination" value="1"/>
+                <skillmod ref="history" value="1"/>
+                <skillmod ref="naturemagic" value="1"/>
+            </selmod>
+            <skillmod ref="stealth" value="1"/>
+            <skillmod ref="hunting" value="1"/>
+            <skillmod ref="nature" value="1"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+            <mastermod ref="survival/terrainlore_forest"/>
+        </modifications>
+    </culture>
+    <culture id="westergrom" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="gnome"/>
+            <racemod ref="alben"/>
+            <racemod ref="varg"/>
+
+            <notbackmod ids="nobility,courtier"/>
+
+            <languagemod ref="westergromisch"/>
+
+            <cultureloremod ref="westergrom"/>
+
+            <selmod>
+                <powermod ref="enduring"/>
+                <powermod ref="tough"/>
+            </selmod>
+
+            <skillmod ref="melee" value="2"/>
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="stonemagic" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="clscraft" value="1"/>
+                <skillmod ref="dexterity" value="1"/>
+            </selmod>
+            <skillmod ref="determination" value="1"/>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="craftmanship" value="2"/>
+            <skillmod ref="hunting" value="1"/>
+            <selmod>
+                <skillmod ref="nature" value="1"/>
+                <skillmod ref="streetlore" value="1"/>
+            </selmod>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+
+            <mastermod ref="determination/keepcool1"/>
+        </modifications>
+    </culture>
+    <culture id="wintholt" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="alben"/>
+
+            <notbackmod ids=""/>
+
+            <languagemod ref="wintholtisch"/>
+
+            <cultureloremod ref="wintholt"/>
+
+            <selmod>
+                <powermod ref="senseorient"/>
+                <powermod ref="goodhearing"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="melee" value="2"/>
+                <skillmod ref="chains" value="2"/>
+                <skillmod ref="blades" value="2"/>
+                <skillmod ref="staffs" value="2"/>
+                <skillmod ref="longrange" value="2"/>
+                <skillmod ref="throwing" value="2"/>
+            </selmod>
+            <skillmod ref="athletics" value="1"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="history" value="2"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="1"/>
+                <skillmod ref="hunting" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="1"/>
+            <selmod>
+                <skillmod ref="animals" value="1"/>
+                <skillmod ref="naturemagic" value="1"/>
+            </selmod>
+            <skillmod ref="survival" value="1"/>
+            <skillmod ref="perception" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+
+            <mastermod ref="endurance/alertness"/>
+        </modifications>
+    </culture>
+    <culture id="zhoujiang" continent="TAKASADU">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="gnome"/>
+            <racemod ref="alben"/>
+            <racemod ref="varg"/>
+            <racemod ref="dwarf"/>
+
+            <notbackmod ids=""/>
+
+            <languagemod ref="xienyan"/>
+
+            <cultureloremod ref="zhoujiang"/>
+
+            <selmod>
+                <powermod ref="socialable"/>
+                <powermod ref="sensesocial"/>
+            </selmod>
+
+            <skillmod ref="arcanelore" value="2"/>
+            <skillmod ref="diplomacy" value="1"/>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="1"/>
+            <skillmod ref="history" value="2"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="1"/>
+                <skillmod ref="antimagic" value="1"/>
+                <skillmod ref="combatmagic" value="1"/>
+                <skillmod ref="windmagic" value="1"/>
+                <skillmod ref="stonemagic" value="1"/>
+                <skillmod ref="enhancemagic" value="1"/>
+                <skillmod ref="firemagic" value="1"/>
+                <skillmod ref="watermagic" value="1"/>
+                <skillmod ref="shadowmagic" value="1"/>
+                <skillmod ref="naturemagic" value="1"/>
+                <skillmod ref="illusionmagic" value="1"/>
+                <skillmod ref="controlmagic" value="1"/>
+                <skillmod ref="motionmagic" value="1"/>
+                <skillmod ref="insightmagic" value="1"/>
+                <skillmod ref="healmagic" value="1"/>
+                <skillmod ref="lightmagic" value="1"/>
+                <skillmod ref="fatemagic" value="1"/>
+                <skillmod ref="protectionmagic" value="1"/>
+                <skillmod ref="enhancemagic" value="1"/>
+                <skillmod ref="deathmagic" value="1"/>
+                <skillmod ref="transformationmagic" value="1"/>
+            </selmod>
+            <skillmod ref="countrylore" value="1"/>
+            <skillmod ref="eloquence" value="2"/>
+            <selmod>
+                <skillmod ref="streetlore" value="2"/>
+                <skillmod ref="survival" value="2"/>
+            </selmod>
+            <skillmod ref="perception" value="1"/>
+            <mastermod ref="diplomacy/haggler"/>
+        </modifications>
+    </culture>
+</cultures>

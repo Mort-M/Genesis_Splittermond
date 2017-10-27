@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skillgroupdefs>
+  <skillgroupelement skill="clscraft" id="architecture" />
+  <skillgroupelement skill="clscraft" id="glassblowing" />
+  <skillgroupelement skill="clscraft" id="engraving" />
+  <skillgroupelement skill="clscraft" id="jeweler" />
+  <skillgroupelement skill="clscraft" id="calligraphy" />
+  <skillgroupelement skill="clscraft" id="cartography" />
+  <skillgroupelement skill="clscraft" id="painting" />
+  <skillgroupelement skill="clscraft" id="tatooing" />
+  <skillgroupelement skill="clscraft" id="cooking" />
+</skillgroupdefs>

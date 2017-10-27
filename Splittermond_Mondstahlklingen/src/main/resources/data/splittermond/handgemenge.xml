@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="SMALL_TOWN" cplx="G" id="bichwa" load="1" material="METAL" price="300" robust="5" type="WEAPON">
+      <weapon att1="AGILITY" att2="INTUITION" damage="1W6" skill="melee" speed="6" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="PENETRATING"/>
+            <feature level="1" type="CRITICAL"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="bundi" load="1" material="METAL" price="400" robust="5" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6+1" skill="melee" speed="6" type="WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="2" type="DISARMING_PROTECTION"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="LARGE_TOWN" cplx="F" id="thorneglove" load="1" material="METAL" price="800" robust="4" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6" skill="melee" speed="5" type="WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="DISARMING"/>
+            <feature level="2" type="DEFENSIVE"/>
+            <feature level="1" type="PARRY_WEAPON"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="LARGE_TOWN" cplx="F" id="thornegloveFreehand" load="1" material="LEATHER" price="1000" robust="4" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6" skill="melee" speed="6" type="WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="2" type="DEFENSIVE"/>
+            <feature level="2" type="DISARMING"/>
+            <feature type="FREEHAND"/>
+            <feature level="1" type="PARRY_WEAPON"/>
+            <feature level="2" type="PIERCING"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="eimitzi-dornen" load="0" material="METAL" price="700" robust="7" type="WEAPON">
+      <weapon att1="AGILITY" att2="INTUITION" damage="1W6" skill="melee" speed="5" type="WEAPON">
+         <requires>
+            <attrreq attr="INTUITION" val="3"/>
+         </requires>
+         <features>
+            <feature type="DISTRACTING"/>
+            <feature level="2" type="PIERCING"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="eisenarmschienen" load="1" material="METAL" price="600" robust="7" type="WEAPON">
+      <weapon att1="INTUITION" att2="STRENGTH" damage="1W6" skill="melee" speed="7" type="WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="DEFENSIVE"/>
+            <feature level="1" type="EXACT"/>
+            <feature type="FREEHAND"/>
+            <feature level="1" type="CRITICAL"/>
+            <feature type="PARRY_WEAPON"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="faustdorn" load="0" material="METAL" price="200" robust="7" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6" skill="melee" speed="6" type="WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="PENETRATING"/>
+            <feature level="2" type="PIERCING"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="LARGE_TOWN" cplx="G" id="großerKriegsfächer" load="2" material="METAL" price="1500" robust="6" type="WEAPON">
+      <weapon att1="AGILITY" att2="INTUITION" damage="1W10+3" skill="melee" speed="10" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="4"/>
+            <attrreq attr="INTUITION" val="3"/>
+         </requires>
+         <features>
+            <feature level="2" type="EXACT"/>
+            <feature level="3" type="CRITICAL"/>
+            <feature type="TWO_HANDED"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="gzayai" load="1" material="METAL" price="300" robust="5" type="WEAPON">
+      <weapon att1="AGILITY" att2="INTUITION" damage="1W6" skill="melee" speed="6" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="PENETRATING"/>
+            <feature level="1" type="CRITICAL"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="katar" load="1" material="METAL" price="300" robust="5" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6+1" skill="melee" speed="6" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="2"/>
+         </requires>
+         <features>
+            <feature level="2" type="PIERCING"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="katzenkrallen" load="0" material="METAL" price="600" robust="6" type="WEAPON">
+      <weapon att1="AGILITY" att2="INTUITION" damage="1W6" skill="melee" speed="5" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="2"/>
+            <attrreq attr="INTUITION" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="CRITICAL"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="kriegsfächer" load="1" material="METAL" price="1200" robust="5" type="WEAPON">
+      <weapon att1="AGILITY" att2="INTUITION" damage="1W6+2" skill="melee" speed="8" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="3"/>
+            <attrreq attr="INTUITION" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="DEFENSIVE"/>
+            <feature level="1" type="EXACT"/>
+            <feature level="2" type="CRITICAL"/>
+            <feature type="PARRY_WEAPON"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="LARGE_TOWN" cplx="G" id="liandia" load="1" material="METAL" price="500" robust="7" type="WEAPON">
+      <weapon att1="AGILITY" att2="INTUITION" damage="1W6+1" skill="melee" speed="6" type="WEAPON">
+         <requires>
+            <attrreq attr="INTUITION" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="DEFENSIVE"/>
+            <feature level="1" type="DISARMING"/>
+            <feature type="PARRY_WEAPON"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="navirkrallen" load="1" material="METAL" price="400" robust="7" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6+3" skill="melee" speed="8" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="3"/>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="3" type="CRITICAL"/>
+            <feature level="3" type="PIERCING"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="LARGE_TOWN" cplx="G" id="panzerhandschuh" load="1" material="METAL" price="500" robust="7" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6+1" skill="melee" speed="7" type="WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="DEFENSIVE"/>
+            <feature level="2" type="DISARMING"/>
+            <feature type="FREEHAND"/>
+            <feature type="PARRY_WEAPON"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="U" id="punchring" load="1" material="METAL" price="700" robust="6" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6" skill="melee" speed="5" type="WEAPON">
+         <features>
+            <feature level="2" type="PIERCING"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="LARGE_TOWN" cplx="F" id="schuhsporn" load="0" material="METAL" price="300" robust="6" type="WEAPON">
+      <weapon att1="AGILITY" att2="INTUITION" damage="1W6" skill="melee" speed="6" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="PENETRATING"/>
+            <feature type="FREEHAND"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="VILLAGE" cplx="G" id="sichel" load="1" material="METAL" price="100" robust="7" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6-1" skill="melee" speed="9" type="WEAPON">
+         <features>
+            <feature type="IMPROVISED"/>
+            <feature level="2" type="PIERCING"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="VILLAGE" cplx="U" id="steindorn" load="0" material="METAL" price="50" robust="5" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6" skill="melee" speed="6" type="WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="PENETRATING"/>
+            <feature type="PRIMITIVE"/>
+            <feature level="2" type="PIERCING"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="tigerfänger" load="1" material="METAL" price="300" robust="5" type="WEAPON">
+      <weapon att1="AGILITY" att2="INTUITION" damage="1W6" skill="melee" speed="6" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="PENETRATING"/>
+            <feature level="1" type="CRITICAL"/>
+         </features>
+      </weapon>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="tigerklauen" load="1" material="METAL" price="300" robust="5" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6+1" skill="melee" speed="6" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="3"/>
+         </requires>
+         <features>
+            <feature type="CLIMBING_HELP"/>
+            <feature level="1" type="CRITICAL"/>
+         </features>
+      </weapon>
+   </item>
+</items>

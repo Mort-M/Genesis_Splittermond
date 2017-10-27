@@ -1,0 +1,28 @@
+﻿Astrolabium;Großstadt;50 L;5;4;-;-;M
+Fernrohr;Metropole;20 L;1;4;-;-;M
+Gradstock;Großstadt;5 L;1;3;-;-;F
+Karten;Kleinstadt;5 L;0;0;Überleben;Wildnisführung;F
+Kompass;Metropole;15 L;2;2;-;-;A
+Schlafsack;Kleinstadt;1 L;2;1;-;-;G
+Decke ;Dorf;10 T;1;0;-;-;U
+Hängematte;Kleinstadt;20 T;2;1;-;-;U
+Jurte (8 Personen);Kleinstadt;10 L;10;2;-;-;G
+Königszelt (10 Personen);Kleinstadt;25 L;12;2;-;-;G
+Nomadenzelt (6 Personen);Kleinstadt;5 L;8;1;-;-;G
+Zelt (pro Person);Kleinstadt;1 L;4;1;-;-;G
+Kochgeschirr (Satz);Dorf;50 T;2;5;Handwerk;Kochen;U
+Angelhaken und Schnur;Dorf;30 T;0;3;-;-;U
+Bier, Fässchen;Dorf;1 L;5;3;-;-;G
+Proviant (je Tagesration);Dorf;10 T;1;0;-;-;-
+Essgeschirr und -besteck;Dorf;20 T;1;2;-;-;U
+Kessel (3 l);Dorf;30 T;2;6;-;-;G
+Messer;Dorf;1 L;1;6;-;-;U
+Pfanne;Dorf;20 T;1;6;-;-;G
+Bratspieß;Dorf;10 T;1;6;-;-;U
+Schnaps, einfach, Flasche;Dorf;50 T;1;2;-;-;G
+Likör, teuer, Flasche;Kleinstadt;5 L;1;2;-;-;F
+Gewürz, einfach;Dorf;10 T;0;1;-;-;-
+Gewürz, teuer;Großstadt;3 L;0;1;-;-;-
+Schwimmblase;Dorf;30 T;1;2;-;-;U
+Schwimmflossen;Kleinstadt;50 T;1;2;-;-;G
+

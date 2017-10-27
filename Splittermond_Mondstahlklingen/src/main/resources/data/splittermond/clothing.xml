@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="VILLAGE" cplx="U" id="bastmütze" load="1" material="FABRIC" price="10" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="bundhaube" load="0" material="FABRIC" price="10" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="filzhut" load="0" material="FABRIC" price="15" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="gesichtsschleier" load="0" material="FABRIC" price="20" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="gugel" load="0" material="FABRIC" price="15" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="kopftuch" load="0" material="FABRIC" price="10" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="pelzkappe" load="1" material="FABRIC" price="40" robust="2" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="stirnband" load="0" material="FABRIC" price="10" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="strohhut" load="0" material="FABRIC" price="5" robust="0" type="CLOTHING"/>
+   <item avail="LARGE_TOWN" cplx="F" id="adelskleidung" load="3" material="FABRIC" price="3000" robust="0" skill="diplomacy" spec="diplomacy/etiquettes" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="bauernkleidung" load="3" material="FABRIC" price="50" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="festtagskleidung" load="3" material="FABRIC" price="1000" robust="0" skill="diplomacy" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="F" id="gelehrtenkleidung" load="3" material="FABRIC" price="500" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="handwerkerkleidung" load="3" material="FABRIC" price="100" robust="1" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="F" id="höflingskleidung" load="3" material="FABRIC" price="2000" robust="0" skill="diplomacy" spec="diplomacy/etiquettes" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="künstlerkleidung" load="2" material="FABRIC" price="1000" robust="0" skill="performance" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="F" id="klerikaleKleidung" load="3" material="FABRIC" price="500" robust="0" skill="diplomacy" spec="diplomacy/proselytize" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="M" id="prachtgewand" load="4" material="FABRIC" price="2000" robust="0" skill="diplomacy" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="reisekleidung" load="3" material="FABRIC" price="200" robust="1" skill="endurance" spec="endurance/resistexhaustion" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="seefahrerkleidung" load="3" material="FABRIC" price="300" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="straßenkleidung" load="3" material="FABRIC" price="100" robust="0" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="tanzgewand" load="2" material="FABRIC" price="500" robust="0" skill="performance" spec="performance/dancing" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="wildniskleidung" load="3" material="FABRIC" price="300" robust="1" skill="endurance" spec="endurance/resistexhaustion" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="winterkleidung" load="4" material="FABRIC" price="800" robust="1" skill="endurance" spec="endurance/resistcold" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="polarkleidung" load="5" material="FABRIC" price="3000" robust="1" skill="endurance" spec="endurance/resistcold" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="wüstenkleidung" load="3" material="FABRIC" price="800" robust="0" skill="endurance" spec="endurance/resistheat" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="cabanmantel" load="2" material="FABRIC" price="400" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="kapuzenmantel" load="2" material="FABRIC" price="200" robust="1" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="ledermantel" load="3" material="LEATHER" price="300" robust="2" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="lodenmantel" load="2" material="FABRIC" price="200" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="pelerine/umhang" load="1" material="FABRIC" price="100" robust="1" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="pelzmantel" load="3" material="LEATHER" price="500" robust="2" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="radmantel" load="2" material="FABRIC" price="100" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="wollmantel" load="2" material="FABRIC" price="100" robust="1" type="CLOTHING"/>
+   <item avail="LARGE_TOWN" cplx="F" id="wendemantel" load="3" material="FABRIC" price="1500" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="fellstiefel" load="2" material="LEATHER" price="300" robust="2" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="U" id="galoschen" load="0" material="FABRIC" price="30" robust="0" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="hochseilschuhe" load="0" material="FABRIC" price="15" robust="0" skill="acrobatics" spec="acrobatics/balance" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="lederstiefel" load="1" material="LEATHER" price="200" robust="1" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="reiterstiefel" load="2" material="FABRIC" price="400" robust="2" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="sandalen" load="0" material="FABRIC" price="50" robust="0" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="schnabelschuhe" load="1" material="FABRIC" price="100" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="stoffschuhe" load="0" material="FABRIC" price="50" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="straßenschuhe" load="1" material="FABRIC" price="100" robust="1" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="F" id="schmugglerstiefel" load="1" material="FABRIC" price="1000" robust="1" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="schneeschuhe" load="2" material="WOOD" price="1000" robust="2" type="CLOTHING"/>
+   <item avail="LARGE_TOWN" cplx="G" id="schlittschuhe" load="2" material="FABRIC" price="1000" robust="1" skill="acrobatics" spec="acrobatics/iceskating" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="tanzschuhe" load="0" material="FABRIC" price="15" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="trippen" load="1" material="FABRIC" price="20" robust="2" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="augenklappe" load="0" material="FABRIC" price="10" robust="0" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="U" id="gesichtsmaske" load="1" material="FABRIC" price="500" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="halstuch/schal" load="0" material="FABRIC" price="30" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="hemd/wams" load="1" material="FABRIC" price="30" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="hose" load="1" material="FABRIC" price="30" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="gürtel" load="0" material="FABRIC" price="15" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="mieder" load="1" material="FABRIC" price="50" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="kleid" load="1" material="FABRIC" price="60" robust="1" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="lederhandschuhe" load="0" material="LEATHER" price="100" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="leinenweste" load="2" material="FABRIC" price="100" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="lendenschurz" load="1" material="FABRIC" price="50" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="nachthemd" load="0" material="FABRIC" price="50" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="rock" load="1" material="FABRIC" price="30" robust="1" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="samthandschuhe" load="0" material="FABRIC" price="500" robust="0" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="schneebrille" load="0" material="FABRIC" price="300" robust="1" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="schürze" load="1" material="FABRIC" price="30" robust="0" type="CLOTHING"/>
+   <item avail="SMALL_TOWN" cplx="G" id="seidenstrümpfe" load="0" material="FABRIC" price="500" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="U" id="unterkleidung" load="0" material="FABRIC" price="50" robust="0" type="CLOTHING"/>
+   <item avail="VILLAGE" cplx="G" id="wollfäustlinge" load="0" material="FABRIC" price="30" robust="0" type="CLOTHING"/>
+</items>
