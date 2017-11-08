@@ -3,7 +3,7 @@
 	<education id="beastmaster">
 		<modifications>
 			<powermod ref="animallover"/>
-			<powermod ref="animalfamilar"/>
+			<powermod ref="animalfamiliar"/>
 			
 			<resourcemod ref="creature" value="2"/>
 			
@@ -17,9 +17,9 @@
                 <skillmod ref="throwing" />
             </selmod>
             <selmod num="1">
-            	<skillmod ref="acrobatic" value="3"/>
+            	<skillmod ref="acrobatics" value="3"/>
             	<skillmod ref="athletics" value="3"/>
-            	<skillmod ref="swimming" value="3"/>
+            	<skillmod ref="swim" value="3"/>
             </selmod>
             <skillmod ref="determination" value="2"/>
             <skillmod ref="heal" value="2"/>
@@ -30,7 +30,7 @@
             <skillmod ref="nature" value="3"/>
             <skillmod ref="animals" value="3"/>
             <skillmod ref="survival" value="2"/>
-            <skillmod ref="endurence" value="3"/>
+            <skillmod ref="endurance" value="3"/>
             <skillmod ref="naturemagic" value="4"/>
             
             <mastermod ref="animals/dompteur"/> 
@@ -43,7 +43,7 @@
 			<reqmod type="culture" ref="deammeralb"/>
 			
 			<powermod ref="animallover"/>
-			<powermod ref="animalfamilar"/>
+			<powermod ref="animalfamiliar"/>
 			
 			<resourcemod ref="creature" value="2"/>
 			
@@ -59,9 +59,9 @@
                 <skillmod ref="throwing" value="3"/>
             </selmod>
             <selmod num="1">
-            	<skillmod ref="acrobatic" value="3"/>
+            	<skillmod ref="acrobatics" value="3"/>
             	<skillmod ref="athletics" value="3"/>
-            	<skillmod ref="swimming" value="3"/>
+            	<skillmod ref="swim" value="3"/>
             </selmod>
             <skillmod ref="determination" value="1"/>
             <skillmod ref="heal" value="1"/>
@@ -74,7 +74,7 @@
             <skillmod ref="nature" value="3"/>
             <skillmod ref="animals" value="3"/>
             <skillmod ref="survival" value="2"/>
-            <skillmod ref="endurence" value="2"/>
+            <skillmod ref="endurance" value="2"/>
             <skillmod ref="naturemagic" value="4"/>
             
             <mastermod ref="animals/dompteur"/> 
@@ -86,7 +86,7 @@
 		<modifications>
 			<reqmod type="culture" ref="corrash,jogodien,jogodstamm"/>
 			<powermod ref="enduring"/>
-			<powermod ref="animalfamilar"/>
+			<powermod ref="animalfamiliar"/>
 			
 			<resourcemod ref="creature" value="2"/>
 			
@@ -100,9 +100,9 @@
                 <skillmod ref="throwing" />
             </selmod>
             <selmod num="1">
-            	<skillmod ref="acrobatic" value="3"/>
+            	<skillmod ref="acrobatics" value="3"/>
             	<skillmod ref="athletics" value="3"/>
-            	<skillmod ref="swimming" value="3"/>
+            	<skillmod ref="swim" value="3"/>
             </selmod>
             <skillmod ref="determination" value="2"/>
             <skillmod ref="perception" value="2"/>
@@ -110,7 +110,7 @@
             <skillmod ref="nature" value="2"/>
             <skillmod ref="animals" value="3"/>
             <skillmod ref="survival" value="5"/>
-            <skillmod ref="endurence" value="3"/>
+            <skillmod ref="endurance" value="3"/>
             <skillmod ref="naturemagic" value="4"/>
             
             <mastermod ref="animals/ridingfighter"/> 
@@ -122,7 +122,7 @@
 		<modifications>
 			<reqmod type="culture" ref="gulong,keshubim"/>
 			<powermod ref="resistpoison"/>
-			<powermod ref="animalfamilar"/>
+			<powermod ref="animalfamiliar"/>
 			
 			<resourcemod ref="creature" value="2"/>
 			
@@ -136,9 +136,9 @@
                 <skillmod ref="throwing" value="3"/>
             </selmod>
             <selmod num="1">
-            	<skillmod ref="acrobatic" value="3"/>
+            	<skillmod ref="acrobatics" value="3"/>
             	<skillmod ref="athletics" value="3"/>
-            	<skillmod ref="swimming" value="3"/>
+            	<skillmod ref="swim" value="3"/>
             </selmod>
             <skillmod ref="determination" value="2"/>
             <skillmod ref="heal" value="2"/>
@@ -149,13 +149,13 @@
             <skillmod ref="nature" value="3"/>
             <skillmod ref="animals" value="3"/>
             <skillmod ref="survival" value="2"/>
-            <skillmod ref="endurence" value="2"/>
+            <skillmod ref="endurance" value="2"/>
             <skillmod ref="naturemagic" value="4"/>
             <skillmod ref="alchemy" value="3"/>
-            <sillmod ref="stealth" value="1"/>
+            <skillmod ref="stealth" value="1"/>
             
             <mastermod ref="animals/dompteur"/> 
-            <mastermod ref="alchemie/journeyman"/>
+            <mastermod ref="alchemy/journeyman"/>
 		</modifications>
 	</education>
 	
@@ -164,7 +164,7 @@
 			<reqmod type="culture" ref="sadu"/>
 			
 			<powermod ref="animallover"/>
-			<powermod ref="animalfamilar"/>
+			<powermod ref="animalfamiliar"/>
 			
 			<resourcemod ref="creature" value="2"/>
 			
@@ -178,9 +178,9 @@
                 <skillmod ref="throwing" value="3"/>
             </selmod>
             <selmod num="1">
-            	<skillmod ref="acrobatic" value="3"/>
+            	<skillmod ref="acrobatics" value="3"/>
             	<skillmod ref="athletics" value="3"/>
-            	<skillmod ref="swimming" value="3"/>
+            	<skillmod ref="swim" value="3"/>
             </selmod>
             <skillmod ref="determination" value="2"/>
             <skillmod ref="heal" value="2"/>
@@ -210,7 +210,7 @@
 		
 			<selmod dist="2">
 					<resourcemod ref="creature"/>
-					<resourcemod ref="contakt"/>
+					<resourcemod ref="contacts"/>
 			</selmod>
 			<!-- Hier bitte nochmal schauen -->
 		
@@ -237,7 +237,7 @@
 			</selmod>
 		
 			<mastermod ref="animals/dompteur"/>
-			<mastermod ref="perfance/fascinate"/>
+			<mastermod ref="performance/fascinate"/>
 		</modifications>
 	</education>
 	
@@ -250,7 +250,7 @@
 		
 			<selmod dist="2">
 					<resourcemod ref="creature"/>
-					<resourcemod ref="contakt"/>
+					<resourcemod ref="contacts"/>
 			</selmod>
 			<!-- Hier bitte nochmal schauen -->
 		
@@ -277,7 +277,7 @@
 			</selmod>
 		
 			<mastermod ref="animals/dompteur"/>
-			<mastermod ref="perfance/fascinate"/>
+			<mastermod ref="performance/fascinate"/>
 		</modifications>
 	</education>
 	
@@ -290,7 +290,7 @@
 		
 			<selmod dist="2">
 					<resourcemod ref="creature"/>
-					<resourcemod ref="contakt"/>
+					<resourcemod ref="contacts"/>
 			</selmod>
 			<!-- Hier bitte nochmal schauen -->
 		
@@ -316,7 +316,7 @@
 			<skillmod ref="illusionmagic" value="2"/>
 			
 			<mastermod ref="animals/dompteur"/>
-			<mastermod ref="perfance/fascinate"/>
+			<mastermod ref="performance/fascinate"/>
 		</modifications>
 	</education>
 	
@@ -329,7 +329,7 @@
 		
 			<selmod dist="2">
 					<resourcemod ref="creature"/>
-					<resourcemod ref="contakt"/>
+					<resourcemod ref="contacts"/>
 			</selmod>
 			<!-- Hier bitte nochmal schauen -->
 		
@@ -355,7 +355,7 @@
 			</selmod>
 		
 			<mastermod ref="animals/dompteur"/>
-			<mastermod ref="empathie/speaktome"/>
+			<mastermod ref="empathy/speaktome"/>
 		</modifications>
 	</education>
 </educations>
