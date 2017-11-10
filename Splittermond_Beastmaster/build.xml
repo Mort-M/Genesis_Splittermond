@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<project name="splittermond-beastmaster" default="jar" basedir=".">
+<project name="splittermond-beastmaster" default="publish" basedir=".">
 	<property name="build.src.dir"      value="src/main/java"/>
 	<property name="build.classes.dir"  value="target/classes"/>
 	<property name="build.dist.dir"     value="dist"/>
 	<property name="package"            value="splittermond-beastmaster"/>
-	<property name="baseversion"        value="1.0"/>
+	<property name="baseversion"        value="1.0.1"/>
 	<property name="version"            value="${baseversion}"/>
     <property name="archivefile"    value="${package}.jar"/>
     <property name="sourcefile"     value="${package}-src.zip"/>
@@ -75,18 +75,8 @@
 	  		<zip destfile="${build.dist.dir}/${javadocfile}" basedir="${build.dist.dir}/javadoc" />
       </target>
 
-    <target name="publish" depends="jar,javadoc">
-	 	<scp file="${build.dist.dir}/${archivefile}"    trust="true" todir="prelle@rpgframework.de:/var/www/html/jar/" keyfile="${user.home}/.ssh/id_rsa" />
-	 	<scp file="${build.dist.dir}/${sourcefile}"     trust="true" todir="prelle@rpgframework.de:/var/www/html/src/" keyfile="${user.home}/.ssh/id_rsa" />
-	 	<scp file="${build.dist.dir}/${javadocfile}"    trust="true" todir="prelle@rpgframework.de:/var/www/html/javadoc/" keyfile="${user.home}/.ssh/id_rsa" />
-	 	<scp file="${build.dist.dir}/${archivefile}"    trust="true" todir="prelle@rpgframework.de:/var/www/html/bootloader1/${repository}/" keyfile="${user.home}/.ssh/id_rsa" />
-	 	<scp file="${build.dist.dir}/${archivefile}"    trust="true" todir="prelle@rpgframework.de:/var/www/html/bootloader2.5/${repository}/" keyfile="${user.home}/.ssh/id_rsa" />
-	 	<scp file="releasenotes.html" trust="true" todir="prelle@rpgframework.de:/var/www/html/bootloader1/${repository}/${package}.jar.html" keyfile="${user.home}/.ssh/id_rsa" />
-		<scp file="releasenotes.html" trust="true" todir="prelle@rpgframework.de:/var/www/html/bootloader2.5/${repository}/${package}.jar.html" keyfile="${user.home}/.ssh/id_rsa" />
-    	<sshexec host="rpgframework.de" trust="true"
-    		username="prelle"
-    		keyfile="${user.home}/.ssh/id_rsa"
-     		command="unzip -q -o -d /var/www/html/javadoc/${package}-${baseversion} /var/www/html/javadoc/${javadocfile}"/>
+    <target name="publish">
+		<scp file="releasenotes.html" trust="true" todir="prelle@updates.rpgframework.de:/var/www/html/release-notes/${package}-${version}.jar.html" keyfile="${user.home}/.ssh/id_rsa" />
 	</target>
 
 </project>
