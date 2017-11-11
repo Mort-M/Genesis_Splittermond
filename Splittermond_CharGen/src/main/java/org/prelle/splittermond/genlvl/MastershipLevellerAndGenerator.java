@@ -1277,13 +1277,15 @@ public class MastershipLevellerAndGenerator implements MastershipController, Gen
 		SkillValue val = data.getSkillValue(skill);
 		if (val.getSkill().isGrouped()) {
 			for (MastershipReference masterRef : val.getMasterships()) {
-				logger.debug("...."+masterRef.getMastership().getId());
-				if ("journeyman".equals(masterRef.getMastership().getId()))
-					ret.add(String.format(RES.getString("skillgen.todo.group"), val.getSkill().getName(), masterRef.getMastership().getName()));
-				if ("expert".equals(masterRef.getMastership().getId()))
-					ret.add(String.format(RES.getString("skillgen.todo.group"), val.getSkill().getName(), masterRef.getMastership().getName()));
-				if ("master".equals(masterRef.getMastership().getId()))
-					ret.add(String.format(RES.getString("skillgen.todo.group"), val.getSkill().getName(), masterRef.getMastership().getName()));
+				if (masterRef.getMastership()!=null) {
+					logger.debug("...."+masterRef.getMastership().getId());
+					if ("journeyman".equals(masterRef.getMastership().getId()))
+						ret.add(String.format(RES.getString("skillgen.todo.group"), val.getSkill().getName(), masterRef.getMastership().getName()));
+					if ("expert".equals(masterRef.getMastership().getId()))
+						ret.add(String.format(RES.getString("skillgen.todo.group"), val.getSkill().getName(), masterRef.getMastership().getName()));
+					if ("master".equals(masterRef.getMastership().getId()))
+						ret.add(String.format(RES.getString("skillgen.todo.group"), val.getSkill().getName(), masterRef.getMastership().getName()));
+				}
 			}
 		}
 
