@@ -10,7 +10,7 @@
 
   <groupId>org.prelle.rpgframework</groupId>
   <artifactId>splittermond-goetter</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3-SNAPSHOT</version>
   <name>Splittermond 'Die Götter'</name>
   <description>Splittermond supplement 'Die Götter' </description>
 
