@@ -45,7 +45,7 @@
    <item avail="VILLAGE" cplx="G" id="schaufel" load="4" material="METAL" price="200" robust="5" type="TOOLS"/>
    <item avail="VILLAGE" cplx="U" id="schlägel" load="3" material="METAL" price="100" robust="5" type="TOOLS"/>
    <item avail="VILLAGE" cplx="G" id="sense" load="4" material="METAL" price="300" robust="5" type="TOOLS"/>
-   <item avail="VILLAGE" cplx="G" id="sichel" load="2" material="METAL" price="100" robust="5" type="TOOLS"/>
+   <item avail="VILLAGE" cplx="G" id="sichel_tool" load="2" material="METAL" price="100" robust="5" type="TOOLS"/>
    <item avail="VILLAGE" cplx="G" id="sieb" load="1" material="METAL" price="100" robust="3" type="TOOLS"/>
    <item avail="VILLAGE" cplx="G" id="spaten" load="3" material="METAL" price="100" robust="5" type="TOOLS"/>
    <item avail="VILLAGE" cplx="U" id="spitzhacke" load="3" material="METAL" price="400" robust="5" type="TOOLS"/>
