@@ -25,6 +25,7 @@ public class ModificationChoice extends ModificationImpl {
 	    @ElementList(entry="backmod", type=BackgroundModification.class),
 	    @ElementList(entry="countmod", type=CountModification.class),
 	    @ElementList(entry="cultureloremod", type=CultureLoreModification.class),
+	    @ElementList(entry="damagemod", type=DamageModification.class),
 	    @ElementList(entry="languagemod", type=LanguageModification.class),
 	    @ElementList(entry="mastermod", type=MastershipModification.class),
 	    @ElementList(entry="notbackmod", type=NotBackgroundModification.class),
