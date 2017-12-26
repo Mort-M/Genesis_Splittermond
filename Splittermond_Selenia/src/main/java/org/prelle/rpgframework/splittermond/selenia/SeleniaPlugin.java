@@ -115,6 +115,7 @@ public class SeleniaPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-selenia.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-selenia.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadNameTable(this, ClassLoader.getSystemResourceAsStream("data/splittermond/nametable-selenia.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadFeatureTypes(this, ClassLoader.getSystemResourceAsStream("data/splittermond/featuretypes-selenia.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.debug("STOP  Initialize");
 	}
