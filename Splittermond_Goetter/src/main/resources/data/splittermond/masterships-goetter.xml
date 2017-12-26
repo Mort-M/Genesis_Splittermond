@@ -30,6 +30,26 @@
        </mastership>
    </skill>
 
+   <skill id="clscraft">
+       <mastership level="2" key="craftman_of_gods">
+             <requires>
+                <masterreq ref="clscraft/journeyman"/>
+ 	          <selreq>
+	        	<resourcereq ref="faith" value="1"/>
+	       		<powerreq ref="priest" />
+	          </selreq>
+            </requires>
+       </mastership>
+   </skill>
+
+   <skill id="craftmanship">
+       <mastership level="2" key="craftman_of_gods">
+             <requires>
+                <masterreq ref="craftmanship/journeyman"/>
+            </requires>
+       </mastership>
+   </skill>
+
    <skill id="history">
    		<mastership level="1" key="common_rites">
        		<requires>
