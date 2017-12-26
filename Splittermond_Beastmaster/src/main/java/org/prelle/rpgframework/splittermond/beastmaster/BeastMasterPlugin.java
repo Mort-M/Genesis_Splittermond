@@ -118,6 +118,7 @@ public class BeastMasterPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadCreatures(this, ClassLoader.getSystemResourceAsStream("data/splittermond/creatures-beastmaster.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadCreatureModules(this, ClassLoader.getSystemResourceAsStream("data/splittermond/creaturetrainings-beastmaster.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-beastmaster.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-beastmaster.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.info("STOP  -------------------------------Beastmaster--------------------------------------------");
 //		logger.fatal("Stop here");
