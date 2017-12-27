@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<educations>
+	<education id="eine_id" variantof="hier_id_von_Hauptausbildung">
+		<modifications>
+			<selmod num="1">
+				<powermod ref="goodmemory" />
+				<powermod ref="literate" />
+			</selmod>
+			<powermod ref="priest" />
+			<powermod ref="sensesocial" />
+			<selmod num="1">
+				<resourcemod ref="reputation" value="1"/>
+				<resourcemod ref="entourage" value="1" />
+				<resourcemod ref="faith" value="1" />
+			</selmod>
+			<resourcemod ref="rank" value="1"/>
+			
+            <selmod values="3 2">
+                <skillmod ref="slashing" />
+                <skillmod ref="melee" />
+                <skillmod ref="chains" />
+                <skillmod ref="blades" />
+                <skillmod ref="staffs" />
+                <skillmod ref="longrange" />
+                <skillmod ref="throwing" />
+            </selmod>
+			<skillmod ref="leadership"    value="2" />
+			<skillmod ref="diplomacy"     value="2" />
+			<skillmod ref="empathy"       value="3" />
+			<skillmod ref="history"       value="3" />
+			<skillmod ref="determination" value="3" />
+			<selmod num="1">
+				<skillmod ref="countrylore" value="2" />
+				<skillmod ref="survival"    value="2" />
+			</selmod>
+			<skillmod ref="perception"   value="2" />
+            <selmod values="4 2">
+				<skillmod ref="antimagic"    />
+				<skillmod ref="insightmagic" />
+            </selmod>
+			<selmod num="1">
+				<skillmod ref="fatemagic"    value="2" />
+			    <skillmod ref="controlmagic" value="2" />
+				<skillmod ref="naturemagic"  value="2" />
+				<skillmod ref="shadowmagic"  value="2" />
+				<skillmod ref="enhancemagic" value="2" />
+				<skillmod ref="windmagic"    value="2" />
+				<skillmod ref="lightmagic"   value="2" />
+				<skillmod ref="combatmagic"  value="2" />
+				<skillmod ref="stonemagic"   value="2" />
+				<skillmod ref="firemagic"    value="2" />
+				<skillmod ref="watermagic"   value="2" />
+				<skillmod ref="illusionmagic" value="2" />
+				<skillmod ref="motionmagic"  value="2" />
+				<skillmod ref="healmagic"    value="2" />
+				<skillmod ref="deathmagic"   value="2" />
+				<skillmod ref="transformationmagic" value="2" />
+				<skillmod ref="protectionmagic"    value="2" />
+			</selmod>
+			<mastermod ref="empathy/speaktome" />
+			<!-- mastermod ref="antimagic/wardingexpert" /> -->
+		</modifications>
+	</education>
+</educations>

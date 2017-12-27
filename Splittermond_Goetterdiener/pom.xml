@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>de.rpgframework</groupId>
+    <artifactId>rpgframework-root</artifactId>
+    <version>3.0.0</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+
+  <groupId>org.prelle.rpgframework</groupId>
+  <artifactId>splittermond-goetterdiener</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <name>Splittermond_Goetterdiener</name>
+  <description>Splittermond supplement 'Götterdiener' </description>
+  
+  <organization>
+    <name>Martin Wolowski</name>
+  </organization>
+
+  <dependencies>
+  	<dependency>
+  		<groupId>log4j</groupId>
+  		<artifactId>log4j</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.rpgframework</groupId>
+  		<artifactId>rpgframework-api</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.prelle.rpgframework</groupId>
+  		<artifactId>splittermond-core</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.prelle.rpgframework</groupId>
+  		<artifactId>splittermond-goetter</artifactId>
+  	</dependency>
+  </dependencies>
+</project>
