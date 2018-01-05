@@ -60,6 +60,7 @@ public class AppearanceScreen extends ManagedScreen {
 	private TextField tfHair;
 	private TextField tfEyes;
 	private TextField tfSkin;
+	private TextField tfBirthPlace;
 	private ChoiceBox<Gender> cbGender;
 	private ChoiceBox<Moonsign> cbMoonsign;
 	
@@ -91,6 +92,7 @@ public class AppearanceScreen extends ManagedScreen {
 		tfHair = new TextField();
 		tfEyes = new TextField();
 		tfSkin = new TextField();
+		tfBirthPlace = new TextField();
 		cbGender = new ChoiceBox<>();
 		cbGender.getItems().addAll(Gender.values());
 		cbMoonsign = new ChoiceBox<>();
@@ -111,6 +113,7 @@ public class AppearanceScreen extends ManagedScreen {
 		Label heaHair      = new Label(uiResources.getString("label.hair"));
 		Label heaEyes      = new Label(uiResources.getString("label.eyes"));
 		Label heaSkin      = new Label(uiResources.getString("label.skin"));
+		Label heaBirthPlace    = new Label(uiResources.getString("label.birthplace"));
 		Label heaGender    = new Label(uiResources.getString("label.gender"));
 		Label heaMoonsign  = new Label(uiResources.getString("label.moonsign"));
 		
@@ -134,10 +137,12 @@ public class AppearanceScreen extends ManagedScreen {
 		grid.add( tfEyes  , 1, 4);
 		grid.add(heaSkin  , 0, 5);
 		grid.add( tfSkin  , 1, 5);
-		grid.add(heaGender, 0, 6);
-		grid.add( cbGender, 1, 6);
-		grid.add(heaMoonsign, 0, 7);
-		grid.add( cbMoonsign, 1, 7);
+		grid.add(heaBirthPlace, 0, 6);
+		grid.add( tfBirthPlace, 1, 6);
+		grid.add(heaGender, 0, 7);
+		grid.add( cbGender, 1, 7);
+		grid.add(heaMoonsign, 0, 8);
+		grid.add( cbMoonsign, 1, 8);
 
 		grid.setHgap(20);
 		grid.setVgap(20);
@@ -230,6 +235,7 @@ public class AppearanceScreen extends ManagedScreen {
 		model.setHairColor(tfHair.getText());
 		model.setEyeColor(tfEyes.getText());
 		model.setFurColor(tfSkin.getText());
+		model.setBirthPlace(tfBirthPlace.getText());
 		model.setGender(cbGender.getValue());
 		model.setSplinter(cbMoonsign.getValue());
 		
@@ -267,6 +273,7 @@ public class AppearanceScreen extends ManagedScreen {
 		tfHair.setText(model.getHairColor());
 		tfEyes.setText(model.getEyeColor());
 		tfSkin.setText(model.getFurColor());
+		tfBirthPlace.setText(model.getBirthplace());
 		cbGender.setValue(model.getGender());
 		cbMoonsign.setValue(model.getSplinter());
 		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.BASE_DATA_CHANGED, null));

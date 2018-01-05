@@ -280,6 +280,8 @@ class BaseDataBlock extends GridPane implements GenerationEventListener {
 		weight_tf.setText(Integer.toString(model.getWeight()));
 		hair_tf.setText(model.getHairColor());
 		eyes_tf.setText(model.getEyeColor());
+		skin_tf.setText(model.getFurColor());
+		birthplace_tf.setText(model.getBirthplace());
 //		gender_cb.getSelectionModel().select(model.getGender());
 		gender.setText(String.valueOf(model.getGender()));
 	}

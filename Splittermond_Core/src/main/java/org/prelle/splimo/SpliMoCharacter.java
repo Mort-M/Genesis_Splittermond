@@ -110,7 +110,7 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 	@Element
 	private byte[] image;
 	@Element
-	private String hairColor, eyeColor, furColor;
+	private String hairColor, eyeColor, furColor, birthPlace;
 	@Element
 	private int size;
 	@Element
@@ -554,6 +554,21 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 		this.furColor = furColor;
 	}
 
+	//-------------------------------------------------------------------
+	/**
+	 * @return the birthPlace
+	 */
+	public String getBirthplace() {
+		return birthPlace;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @param birthPlace the birthPlace to set
+	 */
+	public void setBirthPlace(String birthPlace) {
+		this.birthPlace = birthPlace;
+	}
 	//-------------------------------------------------------------------
 	/**
 	 * @return the size

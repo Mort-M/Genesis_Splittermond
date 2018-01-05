@@ -73,6 +73,7 @@ public class BaseDataBlockSpliMo extends VBox implements GenerationEventListener
 	private Label lblHair;
 	private Label lblEyes;
 	private Label lblSkin;
+	private Label lblBirthPlace;
 	private Label lblGender;
 	private Label lblMoonsign;
 //	private Button btnAddExp;
@@ -133,6 +134,7 @@ public class BaseDataBlockSpliMo extends VBox implements GenerationEventListener
 		lblHair      = new Label();
 		lblEyes      = new Label();
 		lblSkin      = new Label();
+		lblBirthPlace= new Label();
 		lblGender    = new Label();
 		lblMoonsign  = new Label();
 		
@@ -200,6 +202,7 @@ public class BaseDataBlockSpliMo extends VBox implements GenerationEventListener
 		Label heaHair      = new Label(uiResources.getString("label.hair"));
 		Label heaEyes      = new Label(uiResources.getString("label.eyes"));
 		Label heaSkin      = new Label(uiResources.getString("label.skin"));
+		Label heaBirthPlace= new Label(uiResources.getString("label.birthplace"));
 		Label heaGender    = new Label(uiResources.getString("label.gender"));
 		Label heaMoonsign  = new Label(uiResources.getString("label.moonsign"));
 
@@ -284,10 +287,12 @@ public class BaseDataBlockSpliMo extends VBox implements GenerationEventListener
 		grid.add(lblEyes, 1, 9);
 		grid.add(heaSkin, 0, 10);
 		grid.add(lblSkin, 1, 10);
-		grid.add(heaGender, 0, 11);
-		grid.add(lblGender, 1, 11);
-		grid.add(heaMoonsign, 0, 12);
-		grid.add(lblMoonsign, 1, 12);
+		grid.add(heaBirthPlace, 0, 11);
+		grid.add(lblBirthPlace, 1, 11);
+		grid.add(heaGender, 0, 12);
+		grid.add(lblGender, 1, 12);
+		grid.add(heaMoonsign, 0, 13);
+		grid.add(lblMoonsign, 1, 13);
 		
 		GridPane.setConstraints(lineRace, 0, 2, 2, 1, HPos.CENTER, VPos.CENTER, Priority.ALWAYS, Priority.NEVER);
 		
@@ -440,6 +445,7 @@ public class BaseDataBlockSpliMo extends VBox implements GenerationEventListener
 		lblHair.setText(model.getHairColor());
 		lblEyes.setText(model.getEyeColor());
 		lblSkin.setText(model.getFurColor());
+		lblBirthPlace.setText(model.getBirthplace());
 		lblGender.setText(String.valueOf(model.getGender()));
 		if (model.getSplinter()!=null)
 			lblMoonsign.setText(model.getSplinter().getName());
@@ -464,6 +470,7 @@ public class BaseDataBlockSpliMo extends VBox implements GenerationEventListener
 			lblHair.setText(model.getHairColor());
 			lblEyes.setText(model.getEyeColor());
 			lblSkin.setText(model.getFurColor());
+			lblBirthPlace.setText(model.getBirthplace());
 			lblGender.setText(String.valueOf(model.getGender()));
 			if (model.getSplinter()!=null)
 				lblMoonsign.setText(model.getSplinter().getName());

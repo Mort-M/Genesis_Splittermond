@@ -59,8 +59,10 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 	private TextField name;
 	private ChoiceBox<Gender> gender;
 	private TextField hairColor;
+	private TextField skinColor;
 	private TextField eyeColor;
 	private TextField weight;
+	private TextField birthPlace;
 	private TextField size_tf;
 	private Slider size;
 	private ImageView portrait;
@@ -92,8 +94,10 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 		
 		name      = new TextField();
 		hairColor = new TextField();
+		skinColor  = new TextField();
 		eyeColor  = new TextField();
 		weight    = new TextField();
+		birthPlace    = new TextField();
 		size_tf   = new TextField();
 		weight.setPromptText(UI.getString("prompt.weight"));
 		size_tf.setPromptText(UI.getString("prompt.size"));
@@ -141,12 +145,16 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 		content.add(new Label(UI.getString("label.weight")), 0, 3);
 		content.add(new Label(UI.getString("label.hair"  )), 0, 4);
 		content.add(new Label(UI.getString("label.eyes"  )), 0, 5);
+		content.add(new Label(UI.getString("label.skin"  )), 0, 6);
+		content.add(new Label(UI.getString("label.birthplace"  )), 0, 7);
 		content.add(name     , 1, 0);
 		content.add(gender   , 1, 1);
 		content.add(size_tf  , 1, 2);
 		content.add(weight   , 1, 3);
 		content.add(hairColor, 1, 4);
 		content.add(eyeColor , 1, 5);
+		content.add(skinColor , 1, 6);
+		content.add(birthPlace , 1, 7);
 		content.add(randomSize, 2, 2);
 		content.add(randomHair, 2, 4);
 		content.add(randomEyes, 2, 5);
@@ -243,6 +251,8 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 		charGen.setHairColor(hairColor.getText());
 		charGen.setEyeColor(eyeColor.getText());
 		charGen.setGender(gender.getValue());
+		charGen.setFurColor(skinColor.getText());
+		charGen.setBirthPlace(birthPlace.getText());
 		try {
 			if (weight.getText().length()>0)
 				charGen.setWeight((int)Math.round(Double.parseDouble(weight.getText())));
