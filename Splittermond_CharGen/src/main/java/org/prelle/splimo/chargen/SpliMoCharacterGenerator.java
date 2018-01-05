@@ -776,6 +776,16 @@ public class SpliMoCharacterGenerator implements CharacterController {
 
 	//-------------------------------------------------------------------
 	/**
+	 * @param birthPlace the birthPlace to set
+	 */
+	public void setBirthPlace(String birthPlace) {
+		model.setBirthPlace(birthPlace);
+		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.BASE_DATA_CHANGED, null));
+	}
+
+
+	//-------------------------------------------------------------------
+	/**
 	 * @param gender the gender to set
 	 */
 	public void setGender(Gender gender) {
