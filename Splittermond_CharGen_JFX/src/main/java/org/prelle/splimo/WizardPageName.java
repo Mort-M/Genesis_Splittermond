@@ -160,10 +160,10 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 		content.add(randomEyes, 2, 5);
 		
 		Region padding = new Region();
-		content.add(padding, 2, 6);
+		content.add(padding, 2, 8);
 		GridPane.setVgrow(padding, Priority.ALWAYS);
 
-		content.add(portBox  , 3, 0, 1,7);
+		content.add(portBox  , 3, 0, 1,9);
 		GridPane.setValignment(portBox, VPos.TOP);
 		
 //		content.getRowConstraints().add(RowConstraintsBuilder.create().vgrow(Priority.NEVER).valignment(VPos.TOP).build());
@@ -180,6 +180,8 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 		name.textProperty().addListener(this);
 		hairColor.textProperty().addListener(this);
 		eyeColor.textProperty().addListener(this);
+		skinColor.textProperty().addListener(this);
+		birthPlace.textProperty().addListener(this);
 		
 		randomHair.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
