@@ -134,6 +134,7 @@ class BaseDataBlock extends GridPane implements GenerationEventListener {
 	public BaseDataBlock() {
 		doInit();
 		doLayout();
+		GenerationEventDispatcher.addListener(this);
 	}
 
 	//-------------------------------------------------------------------
