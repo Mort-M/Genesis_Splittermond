@@ -22,11 +22,7 @@ import org.prelle.splimo.SpellSchoolEntry;
 import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.NewItemController;
-import org.prelle.splimo.items.Enhancement;
-import org.prelle.splimo.items.EnhancementReference;
-import org.prelle.splimo.items.ItemTemplate;
-import org.prelle.splimo.items.ItemTypeData;
-import org.prelle.splimo.items.Weapon;
+import org.prelle.splimo.items.*;
 
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
@@ -158,7 +154,7 @@ public class EnhancementReferenceListView extends ListView<EnhancementReference>
 		ItemTemplate template = control.getItem().getItem();
 		Skill skill = null;
 		for (ItemTypeData data : template.getTypeData()) {
-			if (data instanceof Weapon) {
+			if (data.getType() == ItemType.WEAPON || data.getType() == ItemType.LONG_RANGE_WEAPON) {
 				skill = ((Weapon)data).getSkill();
 				break;
 			}
