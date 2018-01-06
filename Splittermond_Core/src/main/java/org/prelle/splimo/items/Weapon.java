@@ -176,7 +176,7 @@ public class Weapon extends ItemTypeData {
 
 	//--------------------------------------------------------------------
 	/**
-	 * @param requires the requires to set
+	 * @param req the requires to set
 	 */
 	public void addRequirement(Requirement req) {
 		requires.add(req);
@@ -202,7 +202,7 @@ public class Weapon extends ItemTypeData {
 
 	//--------------------------------------------------------------------
 	/**
-	 * @param requires the requires to set
+	 * @param feat the Feature to set
 	 */
 	public void addFeature(Feature feat) {
 		features.add(feat);

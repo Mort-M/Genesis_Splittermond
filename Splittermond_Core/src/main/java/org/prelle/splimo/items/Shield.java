@@ -96,7 +96,7 @@ public class Shield extends ItemTypeData {
 	
 	//--------------------------------------------------------------------
 	/**
-	 * @param req the requires to set
+	 * @param feat the Feature to set
 	 */
 	public void addFeature(Feature feat) {
 		features.add(feat);
