@@ -1073,6 +1073,7 @@ public class SplitterTools {
 								&& mastership.getMastership().getKey().equals("shield1")) {
 							sumWithShield -= 1;
 						}
+					default:
 				}
 			}
 		}
