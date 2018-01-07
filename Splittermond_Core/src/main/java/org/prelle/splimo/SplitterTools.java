@@ -1046,6 +1046,38 @@ public class SplitterTools {
 				}
 			}
 		}
+
+		// check Meisterschaften in Zähigkeit
+		Skill endurance = SplitterMondCore.getSkill("endurance");
+		List<MastershipReference> masterships = character.getSkillValue(endurance).getMasterships();
+		for (MastershipReference mastership : masterships) {
+			if (mastership.getMastership() != null) {
+				switch (type) {
+					case TICKMALUS:
+						if (sum > 0
+								&& mastership.getMastership().getKey().equals("armour2")) {
+							sum -= 1;
+						}
+						if (withShield
+								&& sumWithShield > 0
+								&& mastership.getMastership().getKey().equals("shield2")) {
+							sumWithShield -= 1;
+						}
+					case HANDICAP:
+						if (sum > 0
+								&& mastership.getMastership().getKey().equals("armour1")) {
+							sum -= 1;
+						}
+						if (withShield
+								&& sumWithShield > 0
+								&& mastership.getMastership().getKey().equals("shield1")) {
+							sumWithShield -= 1;
+						}
+				}
+			}
+		}
+
+
 		if (withShield) {
 			return sum + sumWithShield;
 		} else {
