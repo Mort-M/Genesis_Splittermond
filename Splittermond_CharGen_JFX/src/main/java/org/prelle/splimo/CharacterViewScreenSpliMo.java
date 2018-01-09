@@ -11,25 +11,6 @@ import java.util.ResourceBundle;
 import java.util.StringTokenizer;
 import java.util.prefs.Preferences;
 
-import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.SnapshotParameters;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.image.WritableImage;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TransferMode;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.VBox;
-
 import org.apache.log4j.Logger;
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
@@ -59,6 +40,7 @@ import org.prelle.splittermond.jfx.cultures.CultureLoreScreen;
 import org.prelle.splittermond.jfx.equip.EquipmentScreen;
 import org.prelle.splittermond.jfx.languages.LanguageCard;
 import org.prelle.splittermond.jfx.languages.LanguageScreen;
+import org.prelle.splittermond.jfx.notes.NotesCard;
 import org.prelle.splittermond.jfx.powers.PowerCard;
 import org.prelle.splittermond.jfx.powers.PowerScreen;
 import org.prelle.splittermond.jfx.resources.ResourceCard;
@@ -77,6 +59,24 @@ import de.rpgframework.character.CharacterProvider;
 import de.rpgframework.core.CommandBus;
 import de.rpgframework.core.CommandResult;
 import de.rpgframework.core.CommandType;
+import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.SnapshotParameters;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.image.WritableImage;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
 
 /**
  * @author prelle
@@ -121,6 +121,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 	private SkillCard skillMagic;
 	/* Spells */
 	private SpellCard spells;
+	private NotesCard notes;
 	
 //	private AttentionPane stackBtnAttributes;
 //	private AttentionPane stackCrdAttributes;
@@ -138,6 +139,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 	private FlipControl flipEquipment;
 	private FlipControl flipCompanions;
 	private FlipControl flipDevelopment;
+	private FlipControl flipNotes;
 	
 	private AttentionPane paneAttr;
 	private AttentionPane panePowers;
@@ -183,6 +185,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		skillCombat = new SkillCard(SkillType.COMBAT);
 		skillMagic  = new SkillCard(SkillType.MAGIC);
 		spells      = new SpellCard();
+		notes       = new NotesCard();
 		
 		CharacterEditCallback callback = new CharacterEditCallback() {
 			
@@ -220,6 +223,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		initCompanions();
 //		initBackground();
 		initDevelopment();
+//		initNotes();
 
 		restoreState();
 		
@@ -636,6 +640,35 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 	}
 
 	//-------------------------------------------------------------------
+	private void initNotes() {
+		/*
+		 * Simple button
+		 */
+		Button button = new Button(uiResources.getString("label.notes"));
+		button.setWrapText(true);
+		button.setAlignment(Pos.TOP_LEFT);
+		button.getStyleClass().add("text-subheader");
+//		button.setPrefSize(200, 200);
+		button.setStyle("-fx-background-color: darker; -fx-text-fill: light; -fx-pref-width: 8em; -fx-pref-height: 8em;");
+
+		/*
+		 * Detail card
+		 */
+		Label label = new Label(uiResources.getString("label.notes"));
+		label.getStyleClass().add("section-head");
+		VBox card = new VBox();
+		card.getChildren().addAll(label, notes);
+		
+		/*
+		 * FlipPanel
+		 */
+		flipNotes = new FlipControl(Orientation.VERTICAL, true);
+		flipNotes.getItems().addAll( button, card);
+		flipNotes.setId("Development");
+		availableElements.add(flipNotes);
+	}
+
+	//-------------------------------------------------------------------
 	private void openAttributes() {
 		AttributeScreen toShow = new AttributeScreen(control, mode);
 		toShow.setData(model);
@@ -704,6 +737,14 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		CreatureScreen toShow = new CreatureScreen(control);
 		toShow.setData(model);
 		manager.show(toShow);
+	}
+
+	//-------------------------------------------------------------------
+	private void openNotes() {
+		logger.warn("TODO: open Notes dialog");
+//		CreatureScreen toShow = new CreatureScreen(control);
+//		toShow.setData(model);
+//		manager.show(toShow);
 	}
 
 	//-------------------------------------------------------------------
@@ -867,6 +908,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		flipDevelopment.setOnMouseClicked(event -> {event.consume(); openDevelopment(); } );
 		flipEquipment.setOnMouseClicked(event -> openEquipment());
 		flipCompanions.setOnMouseClicked(event -> openCompanions());
+//		flipNotes.setOnMouseClicked(event -> openNotes());
 		
 		/*
 		 * Drag and drop
