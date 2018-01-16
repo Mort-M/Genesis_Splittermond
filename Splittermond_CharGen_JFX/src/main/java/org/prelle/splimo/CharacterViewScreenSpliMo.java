@@ -1146,7 +1146,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 					byte[] encoded = (byte[]) result.getReturnValue();
 					try {
 						logger.info("Save character "+model.getName());
-						RPGFrameworkLoader.getInstance().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, null, encoded);
+						RPGFrameworkLoader.getInstance().getCharacterAndRules().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, null, encoded);
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -1159,7 +1159,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 			 * Update portrait
 			 */
 			logger.debug("Update portrait");
-			CharacterProvider charServ = RPGFrameworkLoader.getInstance().getCharacterService();
+			CharacterProvider charServ = RPGFrameworkLoader.getInstance().getCharacterAndRules().getCharacterService();
 			try {
 				if (model.getImage()!=null && handle!=null) {
 					Attachment attach = handle.getFirstAttachment(Type.CHARACTER, Format.IMAGE);
@@ -1211,7 +1211,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 			if (!model.getName().equals(handle.getName())) {
 				logger.info("Rename "+handle.getName()+" to "+model.getName());
 				try {
-					RPGFrameworkLoader.getInstance().getCharacterService().renameCharacter(handle, model.getName());
+					RPGFrameworkLoader.getInstance().getCharacterAndRules().getCharacterService().renameCharacter(handle, model.getName());
 					BabylonEventBus.fireEvent(BabylonEventType.CHAR_RENAMED, handle);
 				} catch (IOException e) {
 					logger.error("Failed renaming",e);

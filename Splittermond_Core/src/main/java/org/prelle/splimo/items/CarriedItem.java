@@ -504,7 +504,7 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 		 */
 		 outer:
 			 for (Modification mod : getItemModifications()) {
-				 logger.warn("Apply "+mod);
+				 logger.info("Apply "+mod);
 				 if (mod instanceof FeatureModification) {
 					 FeatureModification fMod = (FeatureModification)mod;
 					 if (fMod.isRemoved()) {

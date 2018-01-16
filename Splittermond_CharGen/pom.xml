@@ -81,8 +81,8 @@
   		<scope>test</scope>
   	</dependency>
   	<dependency>
-  		<groupId>org.prelle</groupId>
-  		<artifactId>babylon</artifactId>
+  		<groupId>de.rpgframework</groupId>
+  		<artifactId>babylon-charrules</artifactId>
   		<scope>test</scope>
   	</dependency>
   	<dependency>
@@ -93,6 +93,11 @@
   	<dependency>
   		<groupId>org.prelle.rpgframework</groupId>
   		<artifactId>splittermond-world</artifactId>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.prelle</groupId>
+  		<artifactId>simple-persist</artifactId>
   		<scope>test</scope>
   	</dependency>
   </dependencies>

@@ -220,7 +220,7 @@ public class SplittermondRules implements RulePlugin<SpliMoCharacter>, CommandBu
 	public static boolean isDeveloperMode() {
 		try {
 			RulePlugin<SpliMoCharacter> corePlugin = null;
-			for (RulePlugin<?> plugin : RPGFrameworkLoader.getRulePlugins(RoleplayingSystem.SPLITTERMOND)) {
+			for (RulePlugin<?> plugin : RPGFrameworkLoader.getInstance().getCharacterAndRules().getRulePlugins(RoleplayingSystem.SPLITTERMOND)) {
 				if (plugin.getID().equals("CORE")) {
 					corePlugin = (RulePlugin<SpliMoCharacter>) plugin;
 					break;

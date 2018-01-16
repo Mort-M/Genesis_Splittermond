@@ -3,9 +3,6 @@
  */
 package org.prelle.splimo;
 
-import de.rpgframework.LicenseManager;
-import de.rpgframework.core.RoleplayingSystem;
-
 /**
  * @author prelle
  *

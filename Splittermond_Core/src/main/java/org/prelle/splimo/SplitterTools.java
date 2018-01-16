@@ -418,6 +418,7 @@ public class SplitterTools {
 			if (item instanceof RewardImpl) {
 				RewardImpl reward = (RewardImpl)item;
 				Adventure adv = null;
+				System.err.println("Reward "+reward+" / "+reward.getTitle());
 				if (reward.getId()!=null) {
 					adv = sessServ.getAdventure(RoleplayingSystem.SPLITTERMOND, reward.getId());
 					if (adv==null) {
