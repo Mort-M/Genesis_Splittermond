@@ -21,6 +21,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
@@ -30,7 +31,7 @@ import org.apache.log4j.Logger;
  * @author Stefan
  *
  */
-public class MoonSignPane extends GridPane {
+public class MoonSignPane extends HBox {
 
 	private final static Logger logger = Logger.getLogger("splittermond.jfx");
 
@@ -38,17 +39,26 @@ public class MoonSignPane extends GridPane {
 
 	private Map<ImageView, Moonsign> mapping;
 	private ObjectProperty<Moonsign> selected;
+	private Label description;
+	private GridPane content;
 
 	//--------------------------------------------------------------------
 	public MoonSignPane() {
+		super(20);
 		selected = new SimpleObjectProperty<>();
 		initComponents();
 	}
 
 	//--------------------------------------------------------------------
 	private void initComponents() {
+
+		content = new GridPane();
+		description = new Label();
+		description.setWrapText(true);
+		description.getStyleClass().add("text-body");
+		description.setStyle("-fx-pref-width: 30em");
+
 		mapping = new HashMap<ImageView, Moonsign>();
-		
 		// Set data
 		List<Moonsign> data = new ArrayList<Moonsign>();
 		for (Moonsign tmp : Moonsign.values())
@@ -78,6 +88,7 @@ public class MoonSignPane extends GridPane {
 					logger.debug("Foo");
 					ImageView view = (ImageView) event.getSource();
 					selected.set(mapping.get(view));
+					description.setText(mapping.get(view).getDescription());
 					view.setEffect(new DropShadow(10, Color.RED));
 					for (ImageView temp : mapping.keySet())
 						if (temp!=view)
@@ -93,11 +104,13 @@ public class MoonSignPane extends GridPane {
 			foo.setAlignment(Pos.CENTER);
 			foo.getChildren().addAll(iView, label);
 			mapping.put(iView, tmp);
-			add(foo, x, y);
+			content.add(foo, x, y);
 			
 			i++;
 		}
-		
+
+		getChildren().addAll(content, description);
+
 	}
 
 	//--------------------------------------------------------------------
