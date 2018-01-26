@@ -658,6 +658,26 @@ public class EquipmentTools {
 			aVal.addModification(mod);
 		}
 	}
-	
+
+	public static boolean updateAllItems(SpliMoCharacter model){
+		boolean mightHaveChanged = false;
+		for (CarriedItem item : model.getItems()) {
+			ItemTemplate itemTemplate = item.getItem();
+			if (itemTemplate.isType(ItemType.WEAPON)
+					|| itemTemplate.isType(ItemType.LONG_RANGE_WEAPON)
+					|| itemTemplate.isType(ItemType.ARMOR)
+					|| itemTemplate.isType(ItemType.SHIELD)) {
+				mightHaveChanged= true;
+				if (item.getLocation() != ItemLocationType.BODY) {
+					EquipmentTools.applyEnhancements(model, item);
+				} else {
+					EquipmentTools.unequip(model, item);
+					EquipmentTools.equip(model, item);
+				}
+			}
+		}
+		return mightHaveChanged;
+	}
+
 
 }
