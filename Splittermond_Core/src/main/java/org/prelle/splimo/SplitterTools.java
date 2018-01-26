@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.UUID;
+import java.util.prefs.Preferences;
 
 import org.apache.log4j.Logger;
 import org.prelle.splimo.Skill.SkillType;
@@ -740,8 +741,9 @@ public class SplitterTools {
 		/*
 		 * Calculate level and add resistances depending on it
 		 */
+        double factor = Preferences.userRoot().node("/de/rpgframework/plugins/splittermond").getDouble("exp_factor", 1.0);
 		// Level 2
-		if (data.getExperienceInvested()>=100) {
+		if (data.getExperienceInvested()>=(int)(100*factor)) {
 			data.setLevel(2);
 			data.getAttribute(Attribute.SPLINTER  ).addModification( new AttributeModification(Attribute.SPLINTER  , 1, SplitterTools.LEVEL2) );
 			data.getAttribute(Attribute.BODYRESIST).addModification( new AttributeModification(Attribute.BODYRESIST, 2, SplitterTools.LEVEL2) );
@@ -750,7 +752,7 @@ public class SplitterTools {
 			cap = 4;
 		}
 		// Level 3
-		if (data.getExperienceInvested()>=300) {
+		if (data.getExperienceInvested()>=(int)(300*factor)) {
 			data.setLevel(3);
 			data.getAttribute(Attribute.SPLINTER  ).addModification( new AttributeModification(Attribute.SPLINTER  , 1, SplitterTools.LEVEL3) );
 			data.getAttribute(Attribute.BODYRESIST).addModification( new AttributeModification(Attribute.BODYRESIST, 2, SplitterTools.LEVEL3) );
@@ -759,7 +761,7 @@ public class SplitterTools {
 			cap = 5;
 		}
 		// Level 4
-		if (data.getExperienceInvested()>=600) {
+		if (data.getExperienceInvested()>=(int)(600*factor)) {
 			data.setLevel(4);
 			data.getAttribute(Attribute.SPLINTER  ).addModification( new AttributeModification(Attribute.SPLINTER  , 1, SplitterTools.LEVEL4) );
 			data.getAttribute(Attribute.BODYRESIST).addModification( new AttributeModification(Attribute.BODYRESIST, 2, SplitterTools.LEVEL4) );
