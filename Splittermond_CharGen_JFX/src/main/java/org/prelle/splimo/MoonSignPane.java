@@ -88,7 +88,7 @@ public class MoonSignPane extends HBox {
 					logger.debug("Foo");
 					ImageView view = (ImageView) event.getSource();
 					selected.set(mapping.get(view));
-					description.setText(mapping.get(view).getDescription());
+					description.setText(selected.get().getDescription());
 					view.setEffect(new DropShadow(10, Color.RED));
 					for (ImageView temp : mapping.keySet())
 						if (temp!=view)
