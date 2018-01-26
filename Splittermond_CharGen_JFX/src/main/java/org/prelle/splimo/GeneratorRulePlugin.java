@@ -40,6 +40,7 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 
 	private static List<RulePluginFeatures> FEATURES = new ArrayList<RulePluginFeatures>();
 	private static ConfigOption<Boolean>    developerMode;
+	private static ConfigOption<Double>     hgFactor;
 	
 	//-------------------------------------------------------------------
 	static {
@@ -98,9 +99,9 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	@Override
 	public Collection<RulePluginFeatures> getSupportedFeatures() {
 		List<RulePluginFeatures> ret = new ArrayList<>(FEATURES);
-		if (developerMode!=null && !(Boolean)developerMode.getValue()) {
-			ret.remove(RulePluginFeatures.DATA_INPUT);
-		}
+//		if (developerMode!=null && !(Boolean)developerMode.getValue()) {
+//			ret.remove(RulePluginFeatures.DATA_INPUT);
+//		}
 		return ret;
 	}
 
@@ -109,11 +110,12 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	 * @see de.rpgframework.RulePlugin#attachConfigurationTree(de.rpgframework.ConfigContainer)
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public void attachConfigurationTree(ConfigContainer addBelow) {
-		logger.fatal("attach");
+		logger.debug("attach");
 		ConfigContainer splittermond = (ConfigContainer)addBelow.getChild("splittermond");
-		logger.fatal("splimo = "+splittermond);
 		developerMode= (ConfigOption<Boolean>) splittermond.getChild(SplittermondRules.PROP_DEVELOPER_MODE);
+		hgFactor     = (ConfigOption<Double> ) splittermond.getChild(SplittermondRules.PROP_EXPERIENCE_FACTOR);
 //		System.exit(0);
 	}
 
@@ -170,7 +172,7 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 		case SHOW_CHARACTER_MODIFICATION_GUI:
 			logger.debug("start character modification");
 			model = (SpliMoCharacter)values[1];
-			control = new CharacterLeveller(model);
+			control = new CharacterLeveller(model, hgFactor);
 			CharacterHandle handle = (CharacterHandle)values[2];			
 			manager = (ScreenManager)values[4];
 			

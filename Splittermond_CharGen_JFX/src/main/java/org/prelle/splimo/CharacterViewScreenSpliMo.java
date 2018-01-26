@@ -1049,6 +1049,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		skillCombat.setData(model);
 		skillMagic.setData(model);
 		spells.setData(model);
+		notes.setData(model);
 		
 		updateAttentionFlags();
 		

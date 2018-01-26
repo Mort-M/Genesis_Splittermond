@@ -47,7 +47,7 @@ import de.rpgframework.products.Adventure;
 
 public class RewardBox extends HBox {
 
-	private final static Logger logger = Logger.getLogger("splimo.jfx");
+	private final static Logger logger = Logger.getLogger("splittermond.jfx");
 
 	private static PropertyResourceBundle res = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
 

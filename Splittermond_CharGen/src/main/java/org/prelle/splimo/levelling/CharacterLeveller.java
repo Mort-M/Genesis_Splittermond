@@ -35,6 +35,7 @@ import org.prelle.splimo.modifications.SkillModification;
 import org.prelle.splittermond.genlvl.MastershipLevellerAndGenerator;
 import org.prelle.splittermond.genlvl.SpellLevellerAndGenerator;
 
+import de.rpgframework.ConfigOption;
 import de.rpgframework.genericrpg.modification.Modification;
 
 /**
@@ -57,9 +58,12 @@ public class CharacterLeveller implements CharacterController, GenerationEventLi
 	private CultureLoreController cultures;
 	private LanguageController languages;
 	
+	private double hgFactor;
+	
 	//-------------------------------------------------------------------
-	public CharacterLeveller(SpliMoCharacter data) {
+	public CharacterLeveller(SpliMoCharacter data, ConfigOption<Double> hgFactor) {
 		this.data = data;
+		this.hgFactor = (hgFactor!=null)?(double) hgFactor.getValue():1.0;
 		undoList  = new ArrayList<Modification>();
 		
 		attributes= new AttributeLeveller(data, undoList);
@@ -70,6 +74,7 @@ public class CharacterLeveller implements CharacterController, GenerationEventLi
 		spells    = new SpellLevellerAndGenerator(data, undoList);
 		cultures  = new CultureLoreGenerator(data, undoList, CharGenMode.LEVELING);
 		languages = new LanguageGenerator(data, undoList, CharGenMode.LEVELING);
+		
 		
 //		int totalExp = data.getExperienceInvested() + data.getExperienceFree();
 		// Calculcate character level
@@ -82,7 +87,7 @@ public class CharacterLeveller implements CharacterController, GenerationEventLi
 	private void updateLevelAndMax() {
 		int oldLevel = data.getLevel();
 		
-		if (data.getExperienceInvested()>=600) {
+		if (data.getExperienceInvested()>=(int)(600*hgFactor)) {
 			data.setLevel(4);
 			maxAttribute = 4;
 			if (oldLevel==3) {
@@ -93,7 +98,7 @@ public class CharacterLeveller implements CharacterController, GenerationEventLi
 				data.getAttribute(Attribute.DEFENSE   ).addModification( new AttributeModification(Attribute.DEFENSE   , 2, SplitterTools.LEVEL4) );
 				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.ATTRIBUTE_CHANGED, Attribute.SPLINTER, data.getAttribute(Attribute.SPLINTER)));
 			}
-		} else if (data.getExperienceInvested()>=300) {
+		} else if (data.getExperienceInvested()>=(int)(300*hgFactor)) {
 			data.setLevel(3);
 			maxAttribute = 3;
 			if (oldLevel==2) {
@@ -109,7 +114,7 @@ public class CharacterLeveller implements CharacterController, GenerationEventLi
 				data.getAttribute(Attribute.SPLINTER).removeModificationForSource(SplitterTools.LEVEL4);
 				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.ATTRIBUTE_CHANGED, Attribute.SPLINTER, data.getAttribute(Attribute.SPLINTER)));
 			}
-		} else if (data.getExperienceInvested()>=100) {
+		} else if (data.getExperienceInvested()>=(int)(100*hgFactor)) {
 			data.setLevel(2);
 			maxAttribute = 2;
 			if (oldLevel==1) {

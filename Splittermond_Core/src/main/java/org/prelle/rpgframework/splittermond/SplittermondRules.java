@@ -38,6 +38,7 @@ public class SplittermondRules implements RulePlugin<SpliMoCharacter>, CommandBu
 	private final static Logger logger = Logger.getLogger("splittermond");
 
 	public final static String PROP_DEVELOPER_MODE = "developer_mode";
+	public final static String PROP_EXPERIENCE_FACTOR = "exp_factor";
 
 	private static List<RulePluginFeatures> FEATURES = new ArrayList<RulePluginFeatures>();
 
@@ -161,6 +162,7 @@ public class SplittermondRules implements RulePlugin<SpliMoCharacter>, CommandBu
 		configRoot = addBelow.createContainer("splittermond");
 		configRoot.setResourceBundle(SplitterMondCore.getI18nResources());
 		configRoot.createOption(PROP_DEVELOPER_MODE, ConfigOption.Type.BOOLEAN, false);
+		configRoot.createOption(PROP_EXPERIENCE_FACTOR, ConfigOption.Type.NUMBER, 1.0);
 	}
 
 	//-------------------------------------------------------------------

@@ -73,7 +73,7 @@ public class MyStarter extends Application {
 			Skill skill3 = SplitterMondCore.getSkill("hunting");
 			model.setExperienceFree(30);
 			model.setExperienceInvested(200);
-			charGen = new CharacterLeveller(model);
+			charGen = new CharacterLeveller(model, null);
 			dia = new SelectMastershipDialog2(charGen.getMastershipController(), model, skill2);
 			break;
 		case 1:
@@ -88,7 +88,7 @@ public class MyStarter extends Application {
 			model.setExperienceFree(50);
 			model.setExperienceInvested(200);
 			model.getSkillValue(SplitterMondCore.getSkill("empathy")).setValue(3);
-			charGen = new CharacterLeveller(model);
+			charGen = new CharacterLeveller(model, null);
 			dia = new SkillPane(null, charGen.getSkillController(), charGen.getMastershipController(), true, SkillType.NORMAL);
 			((SkillPane)dia).setContent(model);
 			break;
@@ -102,7 +102,7 @@ public class MyStarter extends Application {
 		case 8:
 			model.setExperienceFree(20);
 			model.addCultureLore(new CultureLoreReference(SplitterMondCore.getCultureLore("borombri")));
-			charGen = new CharacterLeveller(model);
+			charGen = new CharacterLeveller(model, null);
 			dia = new CultureLorePane(((CharacterLeveller)charGen).getCultureLoreController());
 			((CultureLorePane)dia).setData(model);
 			break;
@@ -123,7 +123,7 @@ public class MyStarter extends Application {
 			((CreaturePane)dia).setData(creature);
 			break;
 		case 12:
-			charGen = new CharacterLeveller(model);
+			charGen = new CharacterLeveller(model, null);
 			model.setExperienceFree(15);
 			CarriedItem item = new CarriedItem();
 			item.setItem(SplitterMondCore.getItem("falchion"));
@@ -207,7 +207,7 @@ public class MyStarter extends Application {
 			break;
 		case 18:
 			model.getSkillValue(SplitterMondCore.getSkill("hunting")).setValue(5);
-			charGen = new CharacterLeveller(model);
+			charGen = new CharacterLeveller(model, null);
 			SkillScreen2 screen4 = new SkillScreen2(charGen, ViewMode.MODIFICATION, SkillType.NORMAL);
 			dia = manager;
 			manager.show(screen4);

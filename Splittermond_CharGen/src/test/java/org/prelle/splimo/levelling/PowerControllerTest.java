@@ -105,7 +105,7 @@ public class PowerControllerTest implements GenerationEventListener {
 	public void setUp() throws Exception {
 		model = new SpliMoCharacter();
 		undoList = new ArrayList<Modification>();
-		control = new PowerLeveller(model, undoList, new CharacterLeveller(model));
+		control = new PowerLeveller(model, undoList, new CharacterLeveller(model, null));
 		events.clear();
 	}
 
