@@ -663,10 +663,11 @@ public class EquipmentTools {
 		boolean mightHaveChanged = false;
 		for (CarriedItem item : model.getItems()) {
 			ItemTemplate itemTemplate = item.getItem();
-			if (itemTemplate.isType(ItemType.WEAPON)
-					|| itemTemplate.isType(ItemType.LONG_RANGE_WEAPON)
-					|| itemTemplate.isType(ItemType.ARMOR)
-					|| itemTemplate.isType(ItemType.SHIELD)) {
+			if (item.getItemModifications().size() > 0 && (
+					itemTemplate.isType(ItemType.WEAPON) ||
+					itemTemplate.isType(ItemType.LONG_RANGE_WEAPON) ||
+					itemTemplate.isType(ItemType.ARMOR) ||
+					itemTemplate.isType(ItemType.SHIELD))) {
 				mightHaveChanged= true;
 				if (item.getLocation() != ItemLocationType.BODY) {
 					EquipmentTools.applyEnhancements(model, item);
