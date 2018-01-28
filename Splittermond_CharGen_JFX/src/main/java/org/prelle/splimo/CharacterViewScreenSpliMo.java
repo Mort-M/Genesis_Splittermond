@@ -29,6 +29,7 @@ import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.chargen.lvl.jfx.CharacterEditCallback;
 import org.prelle.splimo.chargen.lvl.jfx.CharacterLevelingPane;
 import org.prelle.splimo.levelling.CharacterLeveller;
@@ -1239,6 +1240,16 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		case POINTS_LEFT_POWERS:
 		case POINTS_LEFT_RESOURCES:
 			updateAttentionFlags();
+			break;
+		case ATTRIBUTE_CHANGED:
+			// update items after attribute change in case min Requirements are now met.
+			logger.info("attribute changed, updating items..");
+			boolean mightHaveChanged = EquipmentTools.updateAllItems(model);
+			if (mightHaveChanged) {
+				GenerationEventDispatcher.fireEvent(
+						new GenerationEvent(GenerationEventType.ITEM_CHANGED, model)
+				);
+			}
 			break;
 		default:
 		}
