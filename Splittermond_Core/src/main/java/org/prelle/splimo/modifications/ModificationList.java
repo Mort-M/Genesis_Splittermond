@@ -24,6 +24,7 @@ import de.rpgframework.genericrpg.modification.Modification;
     @ElementList(entry="allofmod", type=AllOfModification.class),
     @ElementList(entry="attitudemod", type=AttitudeModification.class),
     @ElementList(entry="backmod", type=BackgroundModification.class),
+    @ElementList(entry="condmod", type=ConditionalModification.class),
     @ElementList(entry="cultureloremod", type=CultureLoreModification.class),
     @ElementList(entry="creaturefeaturemod", type=CreatureFeatureModification.class),
     @ElementList(entry="creaturetypemod", type=CreatureTypeModification.class),
