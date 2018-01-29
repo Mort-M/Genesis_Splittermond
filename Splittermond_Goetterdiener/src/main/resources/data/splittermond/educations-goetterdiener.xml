@@ -297,7 +297,7 @@
 			<skillmod ref="watermagic"  value="3" />
 			
 			<mastermod spec="history/pantheon" />
-			<mastermod spec="watermagic/resistwater1" />
+			<mastermod ref="watermagic/resistwater1" />
 		</modifications>
 	</education>
     
@@ -343,13 +343,13 @@
                 <skillmod ref="firemagic" />
             </selmod>
 
-            <mastermod spec="endurance/shield1" />
+            <mastermod ref="endurance/shield1" />
             <selmod num="1">
-                <mastermod spec="melee/defender" />
-                <mastermod spec="slashing/defender" />
-                <mastermod spec="chains/defender" />
-                <mastermod spec="blades/defender" />
-                <mastermod spec="staffs/defender" />
+                <mastermod ref="melee/defender" />
+                <mastermod ref="slashing/defender" />
+                <mastermod ref="chains/defender" />
+                <mastermod ref="blades/defender" />
+                <mastermod ref="staffs/defender" />
             </selmod>
         </modifications>
     </education>
@@ -486,7 +486,7 @@
                  <skillmod ref="history"/>
                  <skillmod ref="countrylore" />
              </selmod>
-             <selmod nu="1">
+             <selmod num="1">
                  <skillmod ref="history" value="-2"/>
                  <skillmod ref="countrylore" value="-2" />
              </selmod>             
