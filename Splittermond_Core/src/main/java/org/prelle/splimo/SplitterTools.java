@@ -1229,27 +1229,31 @@ public class SplitterTools {
 	 * Get the speed for the assigned weapon, including mastership and
 	 * weapon modifications.
 	 */
-	public static int getWeaponSpeedFor(SpliMoCharacter model, CarriedItem item) {
+	public static int getWeaponSpeedFor(SpliMoCharacter model, CarriedItem item, ItemType type) {
 		// TODO Pastore 11.04.2017: this is a workaround. The value of the mastership should be a modification.
 		int tickMalus = SplitterTools.getTickMalusSum(model, true);
-		if (item.isType(ItemType.WEAPON)) {
-			Weapon weapon = item.getItem().getType(Weapon.class);
-			SkillValue skillVal = model.getSkillValue(weapon.getSkill());
-			return (int) Math.max(3, tickMalus + item.getSpeed(ItemType.WEAPON)
-			                                   - skillVal.getMasterships().stream()
-                                                                          .map(m -> (m.getMastership()!=null)?m.getMastership().getKey():"")
-                                                                          .filter(s -> s.equals("dancingblade")).count());
+		SkillValue skillVal;
+		switch(type) {
+			case WEAPON:
+				Weapon weapon = item.getItem().getType(Weapon.class);
+				skillVal = model.getSkillValue(weapon.getSkill());
+				return (int) Math.max(3, tickMalus + item.getSpeed(ItemType.WEAPON)
+												   - skillVal.getMasterships().stream()
+																			  .map(m -> (m.getMastership()!=null)?m.getMastership().getKey():"")
+																			  .filter(s -> s.equals("dancingblade")).count());
+			case LONG_RANGE_WEAPON:
+				LongRangeWeapon longRangeWeapon = item.getItem().getType(LongRangeWeapon.class);
+				skillVal = model.getSkillValue(longRangeWeapon.getSkill());
+				return (int) (tickMalus + item.getSpeed(ItemType.LONG_RANGE_WEAPON)
+										- skillVal.getMasterships().stream()
+																   .map(m -> (m.getMastership()!=null)?m.getMastership().getKey():"")
+																   .filter(s -> s.startsWith("fastshooter")).count());
+
+			default:
+				logger.error("Unknown item type of " + item);
+				return Short.MAX_VALUE;
 		}
-		if (item.isType(ItemType.LONG_RANGE_WEAPON)) {
-			LongRangeWeapon longRangeWeapon = item.getItem().getType(LongRangeWeapon.class);
-			SkillValue skillVal = model.getSkillValue(longRangeWeapon.getSkill());
-			return (int) (tickMalus + item.getSpeed(ItemType.LONG_RANGE_WEAPON)
-			                        - skillVal.getMasterships().stream()
-                                                               .map(m -> (m.getMastership()!=null)?m.getMastership().getKey():"")
-                                                               .filter(s -> s.startsWith("fastshooter")).count());
-		}
-		logger.error("Unknown item type of " + item);
-		return Short.MAX_VALUE;
+
 	}
 
 	//-------------------------------------------------------------------

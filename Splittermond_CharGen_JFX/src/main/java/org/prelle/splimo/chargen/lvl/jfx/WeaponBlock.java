@@ -166,9 +166,16 @@ public class WeaponBlock extends TableView<CarriedItem> implements GenerationEve
 			}
 		});
 		speedCol.setCellValueFactory(new Callback<CellDataFeatures<CarriedItem, Number>, ObservableValue<Number>>() {
-			public ObservableValue<Number> call(CellDataFeatures<CarriedItem, Number> p) { 
-				return new SimpleIntegerProperty( SplitterTools.getWeaponSpeedFor(model, p.getValue())); 
+			public ObservableValue<Number> call(CellDataFeatures<CarriedItem, Number> p) {
+				if (p.getValue().isType(ItemType.WEAPON)) {
+					CarriedItem item = p.getValue();
+					return new SimpleIntegerProperty(SplitterTools.getWeaponSpeedFor(model, p.getValue(), ItemType.WEAPON));
+				} else {
+					CarriedItem item = p.getValue();
+					return new SimpleIntegerProperty(SplitterTools.getWeaponSpeedFor(model, p.getValue(), ItemType.LONG_RANGE_WEAPON));
+				}
 			}
+
 		});
 		dmgCol.setCellValueFactory(new Callback<CellDataFeatures<CarriedItem, String>, ObservableValue<String>>() {
 			public ObservableValue<String> call(CellDataFeatures<CarriedItem, String> p) {
