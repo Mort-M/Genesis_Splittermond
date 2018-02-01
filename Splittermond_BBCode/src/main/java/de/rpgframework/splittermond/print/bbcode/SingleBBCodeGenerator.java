@@ -1,7 +1,5 @@
 package de.rpgframework.splittermond.print.bbcode;
 
-import org.apache.commons.lang3.StringUtils;
-
 /**
  * Takes a text and surrounds it with BBCode-Tags.
  * <p>
@@ -49,13 +47,13 @@ public class SingleBBCodeGenerator {
 	 */
 	public SingleBBCodeGenerator addBBCode(BBCodes bbcode, String option)
 			throws BBCodeOptionNotSupportedException {
-
-		if (StringUtils.isNotEmpty(option) && !bbcode.supportsOption) {
+		
+		if (!option.trim().isEmpty() && !bbcode.supportsOption) {
 			throw new BBCodeOptionNotSupportedException(bbcode, option);
 		}
 
 		String open = bbcode.open;
-		if (StringUtils.isNotEmpty(option)) {
+		if (!option.trim().isEmpty()) {
 			open = open.replace(BBCodeConstants.OPTION_STRING, option);
 		}
 
