@@ -108,6 +108,8 @@ public class Enhancement extends BasePluginData implements Comparable<Enhancemen
 
 	//-------------------------------------------------------------------
 	public String getName() {
+		if (i18n==null)
+			return id;
 		try {
 			return i18n.getString("enhancement."+id);
 		} catch (MissingResourceException e) {
