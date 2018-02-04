@@ -119,6 +119,7 @@ public class ZhoujiangPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadMasterships(this, ClassLoader.getSystemResourceAsStream("data/splittermond/masterships-zhoujiang.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-zhoujiang.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadSpells(this, ClassLoader.getSystemResourceAsStream("data/splittermond/spells-zhoujiang.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadNameTable(this, ClassLoader.getSystemResourceAsStream("data/splittermond/nametable-zhoujiang.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.info("STOP  -------------------------------Zhouijang-------------------------------------------");
 //		logger.fatal("Stop here");
