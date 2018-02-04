@@ -659,6 +659,7 @@ public class EquipmentTools {
 		}
 	}
 
+	//-------------------------------------------------------------------
 	public static boolean updateAllItems(SpliMoCharacter model){
 		boolean mightHaveChanged = false;
 		for (CarriedItem item : model.getItems()) {
