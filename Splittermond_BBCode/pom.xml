@@ -8,9 +8,8 @@
     <relativePath>../../pom.xml</relativePath>
   </parent>
   
-  <groupId>org.prelle.rpgframework</groupId>
   <artifactId>splittermond-bbcode</artifactId>
-  <version>1.0.4</version>
+  <version>1.1-SNAPSHOT</version>
   <name>Splittermond_BBCode</name>
   <description>Splittermond print to BBCode</description>
   

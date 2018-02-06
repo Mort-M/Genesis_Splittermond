@@ -10,7 +10,7 @@
 
   <groupId>org.prelle.rpgframework</groupId>
   <artifactId>splittermond-world</artifactId>
-  <version>1.0.7</version>
+  <version>1.1-SNAPSHOT</version>
   <name>Splittermond 'Die Welt'</name>
   
   <organization>

@@ -9,7 +9,7 @@ import org.prelle.simplepersist.Root;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.jaxb.SkillAdapter;
+import org.prelle.splimo.persist.SkillConverter;
 
 /**
  * @author prelle
@@ -102,7 +102,7 @@ public class SkillRequirement extends Requirement {
 		 * Try to resolve now.
 		 */
 		try {
-			resolved = (new SkillAdapter()).unmarshal(ref);
+			resolved = (new SkillConverter()).read(ref);
 			return true;
 		} catch (Exception e) {
 		} 

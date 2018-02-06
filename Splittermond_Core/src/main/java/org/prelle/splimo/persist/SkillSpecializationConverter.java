@@ -8,8 +8,8 @@ import org.prelle.simplepersist.StringValueConverter;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.jaxb.ReferenceException;
-import org.prelle.splimo.jaxb.ReferenceException.ReferenceType;
+import org.prelle.splimo.persist.ReferenceException;
+import org.prelle.splimo.persist.ReferenceException.ReferenceType;
 
 public class SkillSpecializationConverter implements StringValueConverter<SkillSpecialization> {
 

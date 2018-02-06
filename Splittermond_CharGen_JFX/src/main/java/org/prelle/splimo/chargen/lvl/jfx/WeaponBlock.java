@@ -3,6 +3,29 @@
  */
 package org.prelle.splimo.chargen.lvl.jfx;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PropertyResourceBundle;
+import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+
+import org.apache.log4j.Logger;
+import org.prelle.splimo.Skill;
+import org.prelle.splimo.Skill.SkillType;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.SplitterTools;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.items.CarriedItem;
+import org.prelle.splimo.items.Feature;
+import org.prelle.splimo.items.ItemAttribute;
+import org.prelle.splimo.items.ItemLocationType;
+import org.prelle.splimo.items.ItemType;
+import org.prelle.splimo.items.LongRangeWeapon;
+import org.prelle.splimo.items.Weapon;
+import org.prelle.splimo.persist.WeaponDamageConverter;
+
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
@@ -16,20 +39,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
-
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Skill;
-import org.prelle.splimo.Skill.SkillType;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.SplitterTools;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.items.*;
-import org.prelle.splimo.jaxb.WeaponDamageAdapter;
-
-import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * @author prelle
@@ -53,12 +62,12 @@ public class WeaponBlock extends TableView<CarriedItem> implements GenerationEve
 	private TableColumn<CarriedItem, String> featCol;
     private TableColumn<CarriedItem, ItemLocationType> carriageLocationCol;
 
-    private static WeaponDamageAdapter CONVERTER = new WeaponDamageAdapter();
+    private static WeaponDamageConverter CONVERTER = new WeaponDamageConverter();
 	
 	//-------------------------------------------------------------------
 	static String convertDamage(int damage) {
 		try {
-			return CONVERTER.marshal(damage);
+			return CONVERTER.write(damage);
 		} catch (Exception e) {
 			logger.error("Failed converting "+damage);
 			return "FEHLER";

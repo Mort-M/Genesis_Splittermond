@@ -17,16 +17,15 @@ import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SkillSpecialization.SkillSpecializationType;
 import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.creature.CreatureModuleReference;
+import org.prelle.splimo.creature.CreatureModuleReference.NecessaryChoice;
 import org.prelle.splimo.creature.CreatureReference;
 import org.prelle.splimo.creature.CreatureTools;
-import org.prelle.splimo.creature.CreatureModuleReference.NecessaryChoice;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.EnhancementReference;
 import org.prelle.splimo.items.ItemLocationType;
 import org.prelle.splimo.items.ItemType;
 import org.prelle.splimo.items.LongRangeWeapon;
 import org.prelle.splimo.items.Weapon;
-import org.prelle.splimo.jaxb.WeaponDamageAdapter;
 import org.prelle.splimo.modifications.AllOfModification;
 import org.prelle.splimo.modifications.AttitudeModification;
 import org.prelle.splimo.modifications.AttributeChangeModification;
@@ -1099,7 +1098,7 @@ public class SplitterTools {
 	//--------------------------------------------------------------------
 	public static String getWeaponDamageString(int damage) {
 		try {
-			return new WeaponDamageAdapter().marshal(damage);
+			return new WeaponDamageConverter().write(damage);
 		} catch (Exception e) {
 			return "";
 		}
@@ -1108,7 +1107,7 @@ public class SplitterTools {
 	//--------------------------------------------------------------------
 	public static int parseWeaponDamageString(String damage) {
 		try {
-			return new WeaponDamageAdapter().unmarshal(damage);
+			return new WeaponDamageConverter().read(damage);
 		} catch (Exception e) {
 			return 0;
 		}

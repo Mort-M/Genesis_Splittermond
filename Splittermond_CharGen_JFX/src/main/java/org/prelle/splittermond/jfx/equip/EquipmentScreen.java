@@ -35,7 +35,7 @@ import org.prelle.splimo.items.LongRangeWeapon;
 import org.prelle.splimo.items.PersonalizationReference;
 import org.prelle.splimo.items.Shield;
 import org.prelle.splimo.items.Weapon;
-import org.prelle.splimo.jaxb.WeaponDamageAdapter;
+import org.prelle.splimo.persist.WeaponDamageConverter;
 import org.prelle.splimo.requirements.AttributeRequirement; 
  
 import javafx.geometry.Insets;
@@ -594,7 +594,7 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 	//--------------------------------------------------------------------
 	static String getWeaponDamageString(int damage) {
 		try {
-			return new WeaponDamageAdapter().marshal(damage);
+			return new WeaponDamageConverter().write(damage);
 		} catch (Exception e) {
 			return "";
 		}

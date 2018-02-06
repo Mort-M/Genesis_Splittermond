@@ -6,7 +6,7 @@ import org.prelle.simplepersist.Root;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SkillSpecializationValue;
-import org.prelle.splimo.jaxb.SkillSpecializationAdapter;
+import org.prelle.splimo.persist.SkillSpecializationValueConverter;
 
 /**
  * @author prelle
@@ -24,7 +24,7 @@ public class SpecialRequirement extends Requirement {
     
     //-----------------------------------------------------------------------
     public SpecialRequirement() {
-    }
+     }
     
     //-----------------------------------------------------------------------
     public SpecialRequirement(SkillSpecialization special, int level) {
@@ -82,7 +82,7 @@ public class SpecialRequirement extends Requirement {
     	 */
     	if (id.indexOf('/')>0) {
     		try {
-    			resolved = (new SkillSpecializationAdapter()).unmarshal(id);
+    			resolved = (new SkillSpecializationValueConverter()).read(id);
     			return true;
     		} catch (Exception e) {
     		} 

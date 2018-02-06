@@ -4,8 +4,8 @@ import org.apache.log4j.Logger;
 import org.prelle.simplepersist.StringValueConverter;
 import org.prelle.splimo.Power;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.jaxb.ReferenceException;
-import org.prelle.splimo.jaxb.ReferenceException.ReferenceType;
+import org.prelle.splimo.persist.ReferenceException;
+import org.prelle.splimo.persist.ReferenceException.ReferenceType;
 
 public class PowerConverter implements StringValueConverter<Power> {
 	

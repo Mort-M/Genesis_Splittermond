@@ -2,7 +2,6 @@ package de.rpgframework.splittermond.print.bbcode.adder;
 
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SpliMoCharacter;
 
@@ -38,7 +37,7 @@ public class ResourcesAdder extends AbstractAdder {
 
 			// notes
 			String desciption = resourceReference.getDescription();
-			if (StringUtils.isNotEmpty(desciption)) {
+			if (desciption!=null && !desciption.trim().isEmpty()) {
 
 				valueBuilder.append(String.format(". %s: %s",
 						SpliMoLabels.getLabelNotes(), desciption));

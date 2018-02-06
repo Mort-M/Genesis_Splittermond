@@ -11,8 +11,7 @@ import org.prelle.simplepersist.StringValueConverter;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.jaxb.ReferenceException;
-import org.prelle.splimo.jaxb.ReferenceException.ReferenceType;
+import org.prelle.splimo.persist.ReferenceException.ReferenceType;
 
 /**
  * @author prelle

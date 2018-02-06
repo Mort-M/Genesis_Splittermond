@@ -6,9 +6,9 @@ import org.prelle.simplepersist.Root;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillSpecialization;
-import org.prelle.splimo.jaxb.ReferenceException;
-import org.prelle.splimo.jaxb.ReferenceException.ReferenceType;
 import org.prelle.splimo.persist.MastershipConverter;
+import org.prelle.splimo.persist.ReferenceException;
+import org.prelle.splimo.persist.ReferenceException.ReferenceType;
 import org.prelle.splimo.persist.SkillSpecializationConverter;
 
 /**

@@ -3,7 +3,7 @@
  */
 package org.prelle.splimo.chargen.lvl.jfx;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
@@ -15,7 +15,7 @@ import org.prelle.splimo.EquipmentTools;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SkillValue;
-import org.prelle.splimo.SpliMoCharacter; 
+import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
@@ -25,7 +25,6 @@ import org.prelle.splimo.items.ItemAttribute;
 import org.prelle.splimo.items.ItemLocationType;
 import org.prelle.splimo.items.ItemType;
 import org.prelle.splimo.items.Shield;
-import org.prelle.splimo.jaxb.WeaponDamageAdapter;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -65,8 +64,6 @@ public class ShieldBlock extends TableView<CarriedItem> implements GenerationEve
 	private TableColumn<CarriedItem, String> featCol;
     private TableColumn<CarriedItem, ItemLocationType> carriageLocationCol;
 	
-	private static WeaponDamageAdapter CONVERTER = new WeaponDamageAdapter();
-	
 	//-------------------------------------------------------------------
 	/**
 	 */
@@ -76,15 +73,6 @@ public class ShieldBlock extends TableView<CarriedItem> implements GenerationEve
 		doInteractivity();
 		
 		GenerationEventDispatcher.addListener(this);
-	}
-	
-	//-------------------------------------------------------------------
-	private static String convert(int dmg) {
-		try {
-			return CONVERTER.marshal(dmg);
-		} catch (Exception e) {
-			return "Error";
-		}
 	}
 
 	//-------------------------------------------------------------------

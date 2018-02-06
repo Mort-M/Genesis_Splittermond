@@ -114,8 +114,6 @@ public class GoetterdienerPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-goetterdiener.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.info("STOP  Initialize");
-		logger.fatal("Stop here");
-		System.exit(0);
 	}
 
 	//--------------------------------------------------------------------
