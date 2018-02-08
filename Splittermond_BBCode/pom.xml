@@ -4,12 +4,12 @@
   <parent>
     <groupId>de.rpgframework</groupId>
     <artifactId>genesis-root</artifactId>
-    <version>3.2-SNAPSHOT</version>
+    <version>3.2</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
   
   <artifactId>splittermond-bbcode</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.1</version>
   <name>Splittermond_BBCode</name>
   <description>Splittermond print to BBCode</description>
   

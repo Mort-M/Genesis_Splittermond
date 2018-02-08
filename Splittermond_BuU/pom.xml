@@ -4,13 +4,13 @@
   <parent>
     <groupId>de.rpgframework</groupId>
     <artifactId>genesis-root</artifactId>
-    <version>3.2-SNAPSHOT</version>
+    <version>3.2</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <groupId>org.prelle.rpgframework</groupId>
   <artifactId>splittermond-buu</artifactId>
-  <version>0.3-SNAPSHOT</version>
+  <version>0.3</version>
   <name>Splittermond 'Bestien und Ungeheuer'</name>
   <description>Splittermond Spielhilfe</description>
   

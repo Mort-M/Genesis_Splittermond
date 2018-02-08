@@ -4,13 +4,13 @@
   <parent>
     <groupId>de.rpgframework</groupId>
     <artifactId>genesis-root</artifactId>
-    <version>3.2-SNAPSHOT</version>
+    <version>3.2</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <groupId>org.prelle.rpgframework</groupId>
   <artifactId>splittermond-selenia</artifactId>
-  <version>1.4-SNAPSHOT</version>
+  <version>1.4</version>
   <name>Splittermond 'Selenia'</name>
   <description>Splittermond supplement 'Selenia' </description>
 
