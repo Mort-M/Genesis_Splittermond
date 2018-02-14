@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <item id="deadcatcher" avail="CAPITAL" price="1200" load="3" robust="4" cplx="F" material="METAL">
+        <weapon skill="staffs" damage="2W10-1" speed="14" att1="INTUITION" att2="AGILITY">
+            <requires>
+                <attrreq attr="INTUITION" val="2"/>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="IMPROVISED"/>
+                <feature type="LONG_WEAPON"/>
+                <feature type="CLUTCH"/>
+                <feature type="HEAVY"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+        </weapon>
+    </item>
+   
+  <item id="wormspell" avail="LARGE_TOWN" price="1200" load="3" robust="5" cplx="F" material="METAL">
+   		<weapon skill="staffs" damage="2W10" speed="10" att1="AGILITY" att2="STRENGTH">
+   			<requires>
+   				<attrreq attr="AGILITY" val="3"/>
+   				<attrreq attr="STRENGTH" val="2"/>
+   			</requires>
+   		<features>
+   			<feature type="DEFENSIVE" level="1"/>
+   			<feature type="LONG_WEAPON"/>
+   			<feature type="PIERCING" level="3"/>
+   			<feature type="TWO_HANDED"/>
+   		</features>
+   		</weapon>
+    </item>
+   
+     <item id="splitter" avail="LARGE_TOWN" price="1000" load="4" robust="6" cplx="G" material="METAL">
+   		<weapon skill="slashing" damage="2W6+2" speed="11" att1="AGILITY" att2="STRENGTH">
+   			<requires>
+   				<attrreq attr="AGILITY" val="2"/>
+   				<attrreq attr="STRENGTH" val="3"/>
+   			</requires>
+   			<features>
+   				<feature type="CRITICAL" level="1"/>
+   				<feature type="FLEXIBLE"/>
+   				<feature type="HEAVY"/>
+   			</features>
+   		</weapon>
+    </item>  
+</items>
