@@ -110,13 +110,13 @@ public class EsmodaPlugin implements RulePlugin<SpliMoCharacter> {
 	 */
 	@Override
 	public void init() {
-		logger.info("START -------------------------------esmoda-------------------------------------------");
-//		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/alchemy-esmoda.xml"), i18NResources, i18NHelpResources);
+		logger.info("START -------------------------------Esmoda-------------------------------------------");
+		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/alchemy-esmoda.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-esmoda.xml"), i18NResources, i18NHelpResources);
-//		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-esmoda.xml"), i18NResources, i18NHelpResources);
-//		SplitterMondCore.loadMaterials(this, ClassLoader.getSystemResourceAsStream("data/splittermond/materials-esmoda.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-esmoda.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadMaterials(this, ClassLoader.getSystemResourceAsStream("data/splittermond/materials-esmoda.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
-		logger.debug("STOP  Initialize");
+		logger.info("STOP  -------------------------------Esmoda-------------------------------------------");
 	}
 
 	//--------------------------------------------------------------------

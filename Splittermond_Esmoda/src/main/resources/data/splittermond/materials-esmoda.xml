@@ -7,9 +7,4 @@
 		</modifications>
 	</material>
 	
-	<material id="deadore" quality="2" type="METAL">
-		<modifications>
-			<!-- können ein weiters nak für ihren Träger Personalisiert werden! -->
-		</modifications>
-	</material>
 </materials>
