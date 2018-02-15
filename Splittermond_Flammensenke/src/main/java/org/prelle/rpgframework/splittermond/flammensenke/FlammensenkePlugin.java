@@ -111,11 +111,9 @@ public class FlammensenkePlugin implements RulePlugin<SpliMoCharacter> {
 	@Override
 	public void init() {
 		logger.info("START -------------------------------Flammensenke-------------------------------------------");
-//		SplitterMondCore.loadMasterships(this, ClassLoader.getSystemResourceAsStream("data/splittermond/masterships-flammensenke.xml"), i18NResources, i18NHelpResources);
 //		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-flammensenke.xml"), i18NResources, i18NHelpResources);
 //		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-flammensenke.xml"), i18NResources, i18NHelpResources);
-//		SplitterMondCore.loadNameTable(this, ClassLoader.getSystemResourceAsStream("data/splittermond/nametable-flammensenke.xml"), i18NResources, i18NHelpResources);
-//		SplitterMondCore.loadFeatureTypes(this, ClassLoader.getSystemResourceAsStream("data/splittermond/featuretypes-flammensenke.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadMaterials(this, ClassLoader.getSystemResourceAsStream("data/splittermond/materials-flammensenke.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.debug("STOP  Initialize");
 	}
