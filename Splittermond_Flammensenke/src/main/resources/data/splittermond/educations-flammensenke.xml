@@ -35,9 +35,9 @@
             <skillmod ref="perception" value="3"/>
             <skillmod ref="endurance" value="3"/>
             <skillmod ref="firemagic" value="2"/>
-            <selmod>
-                <mastermod spec="survival/terrainlore_mountain"/>
-                <mastermod spec="survival/terrainlore_grassland"/>
+            <selmod num="1">
+                <mastermod ref="survival/terrainlore_mountain"/>
+                <mastermod ref="survival/terrainlore_grassland"/>
             </selmod>
             <selmod>
                 <mastermod spec="perception/hear"/>
@@ -64,7 +64,7 @@
 		  <skillmod ref="arcanelore" value="3"/>
 		  <skillmod ref="diplomacy" value="1"/>
  		  <skillmod ref="determination" value="3"/>
- 		  <skillmid ref="history" value="2"/>
+ 		  <skillmod ref="history" value="2"/>
  		  <skillmod ref="countrylore" value="2"/>
 		  <skillmod ref="nature" value="2"/>
           <skillmod ref="survival" value="2"/>

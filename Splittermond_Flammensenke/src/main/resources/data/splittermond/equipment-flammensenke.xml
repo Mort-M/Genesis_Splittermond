@@ -2,15 +2,16 @@
 	<items>
 		<item id="fireofcolourfulmäander" avail="LARGE_TOWN" price="1500" load="0" robust="0" cplx="F" type="TRAVEL"/>
 		
-		<item id="salamanderspieß" avail="LAGRE_TOWN" price="2500" load="4" robsut="6" clpx="F">
+		<item id="salamanderspieß" avail="LARGE_TOWN" price="2500" load="4" robust="6" cplx="F">
 			<weapon skill="staffs" damage="1W6+2" speed="11" att1="STRENGTH" att2="CONSTITUTION">
             <requires>
-            	<attrreq attr="CONSTITUTION" value="3"/>
-                <attrreq attr="STRENGTH" value="5"/>
+            	<attrreq attr="CONSTITUTION" val="3"/>
+                <attrreq attr="STRENGTH" val="5"/>
             </requires>
             <features>
                 <feature type="IMPROVISED"/>
                 <feature type="THROWABLE"/>
             </features>
+            </weapon>
 		</item>
 	</items>
