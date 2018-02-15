@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<materials>
+	<material id="zofirastears" quality="2" price="1500" type="OTHER">
+		<modifications>
+			<!--  <skillmod ref="firemagic" value="1"/>
+			<skillmod ref="stonemagic" value="1"/> 
+				Bonus!-->
+		</modifications>
+	</material>
+	
+	<material id="smaragdzüngler_leather" quality="2" price="15" type="LEATHER">
+		<modifications>
+			<itemfeaturemod feature="WATERPROOF"/>
+			<!-- Schutz vor Schadensart FEUER -->
+		</modifications>
+	</material>
+	
+	<material id="aschebeißer_leather" quality="3" price="3" type="LEATHER">
+		<modifications>
+			<!-- Malus von +4 um Träger zu entdecken -->
+		</modifications>
+	</material>
+</materials>
