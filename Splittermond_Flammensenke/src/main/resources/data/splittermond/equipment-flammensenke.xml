@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<items>
-		<item id="fireofcolourfulmäander" avail="LARGE_TOWN" price="1500" load="0" robust="0" cplx="F" type="TRAVEL"/>
+		<item id="fireofcolourfulmaeander" avail="LARGE_TOWN" price="1500" load="0" robust="0" cplx="F" type="TRAVEL"/>
 		
-		<item id="salamanderspieß" avail="LARGE_TOWN" price="2500" load="4" robust="6" cplx="F">
+		<item id="salamanderspiess" avail="LARGE_TOWN" price="2500" load="4" robust="6" cplx="F">
 			<weapon skill="staffs" damage="1W6+2" speed="11" att1="STRENGTH" att2="CONSTITUTION">
             <requires>
             	<attrreq attr="CONSTITUTION" val="3"/>
