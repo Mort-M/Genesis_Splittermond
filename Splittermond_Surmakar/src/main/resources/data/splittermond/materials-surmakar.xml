@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<materials>
+	<material id="buffaloleather" quality="1" price="500" type="LEATHER">
+    	<modifications>
+      		<itemmod attr="ROBUSTNESS" val="1"/>
+   		</modifications>
+  	</material>
+	
+	<material id="kulaho_schuppe" quality="2" price="1500" type="OTHER">
+    <modifications>
+	<!-- siehe text --> 
+    </modifications>
+  </material>
+  
+  <material id="stonestiltsegg" quality="1" price="500" type="OTHER">
+    	<modifications>
+      		<!-- siehe Text -->
+   		</modifications>
+  	</material>
+  
+</materials>

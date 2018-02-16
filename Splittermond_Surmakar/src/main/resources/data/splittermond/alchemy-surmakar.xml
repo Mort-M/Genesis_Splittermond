@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <item avail="SMALL_TOWN" cplx="F" id="heiltrankstark" load="0" material="OTHER" price="1000" robust="0" type="POTION"/> -->
+
+ <!-- ############ Kräuter ############ -->
+ <items>
+ 	<item id="balmcorbs" avail="SMALL_TOWN" price="0" load="0" robust="0" type="POTION"/>
+ 	<item id="kronarsdorn" avail="SMALL_TOWN" price="0" load="0" robust="0" type="POTION"/>
+ 	<item id="sandrose" avail="SMALL_TOWN" price="0" load="0" robust="0" type="POTION"/>
+ 	
+ <!-- ############ Gifte ############ -->
+ 
+ 	<item id="kristaldeath" avail="LARGE_TOWN" price="2500" load="0" robust="0" type="POTION"/>
+ 	<item id="moonscorpianpoison" avail="LARGE_TOWN" price="1000" load="0" robust="0" type="POTION"/>
+ 	<item id="scorpionkiss" avail="CAPITAL" price="5000" load="0" robust="0" type="POTION"/>
+ 	
+ </items>
