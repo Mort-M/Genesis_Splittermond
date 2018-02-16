@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+   
+   <skill id="arcanelore">
+    	<mastership level="2" key="elementary_artifact_builder">
+    		<requires>
+    		    <selreq>
+    			<masterreq ref="magiccrafter"/>
+    			<masterreq ref="createscroll1"/>
+    		    </selreq>
+    		</requires>
+    	</mastership>
+    </skill>
+   
+   <skill id="history">
+       <mastership level="1" key="i_know_a_story" />
+   </skill>
+   
+   <skill id="history">
+       <mastership level="1" key="treasure_hunter" />
+   </skill>
+   
+   <skill id="countrylore">
+       <mastership level="1" key="jurist">
+            <requires>
+                <specialreq ref="law"/>
+            </requires>
+       </mastership>
+   </skill>
+      
+   <skill id="nature">
+       <mastership level="1" key="zoologist" />
+   </skill>
+
+   <skill id="stonemagic">
+       <mastership level="3" key="warrior_of_rocks">
+            <requires>
+                <masterreq ref="stonemagic/masterofstoneghosts"/>
+            </requires>
+       </mastership>
+   </skill>
+
+   <skill id="firemagic">
+       <mastership level="3" key="warrior_of_flames">
+            <requires>
+                <masterreq ref="firemagic/masteroffireghosts"/>
+            </requires>
+       </mastership>
+   </skill>
+
+   <skill id="watermagic">
+       <mastership level="3" key="warrior_of_waves">
+            <requires>
+                <masterreq ref="watermagic/masterwaterelem"/>
+            </requires>
+       </mastership>
+   </skill>
+
+   <skill id="windmagic">
+       <mastership level="3" key="warrior_of_winds">
+            <requires>
+                <masterreq ref="windmagic/windghostmaster"/>
+            </requires>
+       </mastership>
+   </skill>
+      
+</skills>
