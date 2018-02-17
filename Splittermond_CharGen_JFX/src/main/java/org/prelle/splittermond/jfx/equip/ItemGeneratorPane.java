@@ -233,7 +233,9 @@ public class ItemGeneratorPane extends Region implements GenerationEventListener
 					if (n.indexOf('"')>0) { n = n.substring(0, n.indexOf('"')); tfName.setText(n); }
 					if (n.indexOf('&')>0) { n = n.substring(0, n.indexOf('&')); tfName.setText(n); }
 
-					control.getItem().setCustomName(n);
+					if (!n.equals(control.getItem().getItem().getName())) {
+						control.getItem().setCustomName(n);
+					}
 				} catch (Exception e) {
 					logger.error("Failed setting name",e);
 				}
