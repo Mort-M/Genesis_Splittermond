@@ -930,6 +930,12 @@ public class SplitterTools {
 			}
 			CreatureTools.calculateTrainings(ref);
 		}
+
+		for (CarriedItem carriedItem : data.getItems()) {
+			if (carriedItem.getName().equals(carriedItem.getItem().getName())){
+				carriedItem.setCustomName(null);
+			}
+		}
 	}
 
 	//-------------------------------------------------------------------
