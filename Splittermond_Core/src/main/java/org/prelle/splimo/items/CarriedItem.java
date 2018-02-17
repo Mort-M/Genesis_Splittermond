@@ -215,7 +215,7 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 	}
 
 	//-------------------------------------------------------------------
-	public void setName(String name) {
+	public void setCustomName(String name) {
 		customName = name;
 	}
 

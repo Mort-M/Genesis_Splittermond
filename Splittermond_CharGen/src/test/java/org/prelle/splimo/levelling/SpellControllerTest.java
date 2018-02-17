@@ -58,7 +58,7 @@ public class SpellControllerTest implements GenerationEventListener {
 	static {
 //		ConsoleAppender console = new ConsoleAppender();
 //		console.setLayout(new PatternLayout("%5p [%c] (%F:%L) - %m%n"));
-//		console.setName("console");
+//		console.setCustomName("console");
 //		console.setWriter(new OutputStreamWriter(System.out));
 //		Logger.getRootLogger().addAppender(console);
 //		Logger.getRootLogger().setLevel(Level.INFO);

@@ -1,8 +1,5 @@
 package org.prelle.splimo;
 
-import java.util.Iterator;
-import java.util.ServiceLoader;
-
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,10 +8,8 @@ import javafx.stage.Stage;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.ModernUI;
 import org.prelle.javafx.ScreenManager;
-import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
 import org.prelle.rpgframework.splittermond.beastmaster.BeastMasterPlugin;
 import org.prelle.rpgframework.splittermond.buu.BestienUndUngeheuerPlugin;
 import org.prelle.rpgframework.splittermond.msk.MondstahlklingenPlugin;
@@ -27,7 +22,6 @@ import org.prelle.splimo.chargen.gen.jfx.SelectMastershipDialog2;
 import org.prelle.splimo.chargen.lvl.jfx.RewardDialog;
 import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.creature.CreatureGenerator;
-import org.prelle.splimo.creature.CreatureReference;
 import org.prelle.splimo.equip.ItemLevellerAndGenerator;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.Enhancement.EnhancementType;
@@ -47,13 +41,9 @@ import org.prelle.splittermond.jfx.cultures.CultureLorePane;
 import org.prelle.splittermond.jfx.equip.EditItemScreen;
 import org.prelle.splittermond.jfx.equip.EnhancementTypeScreen;
 import org.prelle.splittermond.jfx.equip.ItemGeneratorPane;
-import org.prelle.splittermond.jfx.equip.NewItemGeneratorPane;
 import org.prelle.splittermond.jfx.resources.ResourceScreen;
 import org.prelle.splittermond.jfx.skills.SkillPane;
 import org.prelle.splittermond.jfx.skills.SkillScreen2;
-
-import de.rpgframework.RulePlugin;
-import de.rpgframework.RulePluginFeatures;
 
 public class MyStarter extends Application {
 
@@ -129,7 +119,7 @@ public class MyStarter extends Application {
 			item.setItem(SplitterMondCore.getItem("falchion"));
 			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("tickmalus")));
 			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("damage")));
-			item.setName("Tolles Ding");
+			item.setCustomName("Tolles Ding");
 			model.addItem(item);
 			ResourceReference rref = charGen.getResourceController().openResource(SplitterMondCore.getResource("rank"));
 			rref.setDescription("Wächterbund");
@@ -175,7 +165,7 @@ public class MyStarter extends Application {
 //			item.setItem(SplitterMondCore.getItem("falchion"));
 //			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("tickmalus")));
 			item.setItem(SplitterMondCore.getItem("peacockfeather"));
-			item.setName("Leichtigkeit");
+			item.setCustomName("Leichtigkeit");
 			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("load")));
 			Logger.getLogger("splittermond.chargen").setLevel(Level.DEBUG);
 			itemLvl = new ItemLevellerAndGenerator(item, 6);

@@ -78,7 +78,7 @@ public class ItemSerialization {
 		REAL.setUniqueId(UUID.fromString("8f9be81b-a1c0-4caa-9cd3-488cd74788e4"));
 		REAL.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("load")));
 		REAL.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("speed")));
-		REAL.setName("Stich");
+		REAL.setCustomName("Stich");
 		
 		
 		REAL.addPersonalization(persoRef);

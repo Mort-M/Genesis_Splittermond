@@ -268,7 +268,7 @@ public class NewItemGeneratorPane extends VBox implements GenerationEventListene
 	private void initInteractivity() {
 		tfName.textProperty().addListener( (ov,o,n) -> {
 			if (n==null || n.length()==0)
-				control.getItem().setName(null);
+				control.getItem().setCustomName(null);
 			else {
 				try {
 					if (n.indexOf('<')>0) { n = n.substring(0, n.indexOf('<')); tfName.setText(n); }
@@ -276,7 +276,7 @@ public class NewItemGeneratorPane extends VBox implements GenerationEventListene
 					if (n.indexOf('"')>0) { n = n.substring(0, n.indexOf('"')); tfName.setText(n); }
 					if (n.indexOf('&')>0) { n = n.substring(0, n.indexOf('&')); tfName.setText(n); }
 
-					control.getItem().setName(n);
+					control.getItem().setCustomName(n);
 				} catch (Exception e) {
 					logger.error("Failed setting name",e);
 				}
