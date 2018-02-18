@@ -8,7 +8,8 @@
 					<masterreq ref="arcanelore/createscroll1" />
           <masterreq ref="windmagic/magiccrafter" />
           <masterreq ref="stonemagic/magiccrafter" />     
-          ...     
+          <masterreq ref="firemagic/magiccrafter" />
+          <masterreq ref="watermagic/magiccrafter" />     
 				</selreq>
 			</requires>
 		</mastership>
@@ -26,7 +27,7 @@
 		<mastership level="1" key="jurist">
 			<requires>
 			<!-- Du musst bei Referenzen immer die Fertigkeit mitangeben: statt law wäre countrylore/law korrekt -->
-				<specialreq ref="law" />
+				<specialreq ref="countrylore/law" />
 			</requires>
 		</mastership>
 	</skill>
