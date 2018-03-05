@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<educations>
+	<education id="academic">
+		<modifications>
+			<powermod ref="goodmemory"/>
+			<selmod num="1">
+				<powermod ref="literate"/>
+				<powermod ref="goodhearing"/>
+				<powermod ref="goodsight"/>
+			</selmod>
+			
+			<selmod num="1">
+				<resourcemod ref="reputation" value="1"/>
+				<resourcemod ref="status" value="1"/>
+			</selmod>
+			<selmod num="1">
+				<resourcemod ref="contacts" value="1"/>
+				<resourcemod ref="mentor" value="1"/>
+				<resourcemod ref="rank" value="1"/>
+			</selmod>			
+						
+			<selmod num="1">
+				<skillmod ref="alchemy" value="2"/>
+				<skillmod ref="clscraft" value="2"/>
+				<skillmod ref="craftmanship" value="2"/>
+			</selmod>
+			<skillmod ref="arcanelore" value="3"/>
+			<skillmod ref="diplomacy" value="2"/>
+			<skillmod ref="empathy" value="2"/>
+			<skillmod ref="determination" value="2"/>
+			<skillmod ref="history" value="4"/>
+			<selmod values="4 2">
+				<skillmod ref="countrylore"/>
+	            <skillmod ref="nature" />
+	        </selmod>
+			<skillmod ref="eloquence" value="2"/>
+			<skillmod ref="perception" value="3"/>
+			<skillmod ref="insightmagic" value="4"/>
+						
+			<mastermod ref="history/i_know_a_story"/>
+			<selmod num="1">
+          	   	<mastermod skill="countrylore" level="1"/>
+          		<mastermod skill="nature" level="1"/>
+            </selmod>
+		</modifications>
+	</education>
+	
+	<education id="pardedah" variantof="academic">
+		<modifications>
+			<reqmod type="culture" ref="aitushar,ashurmazaan,demerai,farukhur,fedirin,pashtar,turubar"/>
+			
+			<powermod ref="goodmemory"/>
+			<powermod ref="literate"/>
+							
+			<selmod num="1">
+				<resourcemod ref="reputation" value="1"/>
+				<resourcemod ref="status" value="1"/>
+			</selmod>
+			<selmod num="1">
+				<resourcemod ref="contacts" value="1"/>
+				<resourcemod ref="mentor" value="1"/>
+			</selmod>			
+			
+			<selmod num="1">
+				<skillmod ref="illusionmagic" value="4"/>
+				<skillmod ref="transformationmagic" value="4"/>
+			</selmod>
+			<skillmod ref="performance" value="3"/>
+			<skillmod ref="arcanelore" value="1"/>
+			<skillmod ref="diplomacy" value="2"/>
+			<skillmod ref="empathy" value="2"/>
+			<skillmod ref="determination" value="2"/>
+			<skillmod ref="history" value="4"/>
+			<skillmod ref="countrylore" value="4"/>
+			<skillmod ref="nature" value="2"/>
+			<skillmod ref="eloquence" value="3"/>
+			<skillmod ref="perception" value="3"/>
+									
+			<mastermod ref="history/i_know_a_story"/>
+			<mastermod ref="performance/fascinate"/>
+		</modifications>
+	</education>
+	
+	<education id="wisemanofstone" variantof="academic">
+		<modifications>
+			<reqmod type="culture" ref="furgand"/>
+			
+			<powermod ref="goodmemory"/>
+			<powermod ref="goodhearing"/>
+						
+			<selmod num="1">
+				<resourcemod ref="reputation" value="1"/>
+				<resourcemod ref="status" value="1"/>
+			</selmod>
+			<selmod num="1">
+				<resourcemod ref="contacts" value="1"/>
+				<resourcemod ref="mentor" value="1"/>
+				<resourcemod ref="rank" value="1"/>
+			</selmod>			
+						
+			<selmod num="1">
+				<skillmod ref="clscraft" value="2"/>
+				<skillmod ref="craftmanship" value="2"/>
+			</selmod>
+			<selmod num="1">
+				<skillmod ref="clscraft" value="2"/>
+				<skillmod ref="craftmanship" value="2"/>
+			</selmod>			
+			<skillmod ref="arcanelore" value="2"/>
+			<skillmod ref="diplomacy" value="2"/>
+			<skillmod ref="empathy" value="2"/>
+			<skillmod ref="determination" value="2"/>
+			<skillmod ref="history" value="4"/>
+			<skillmod ref="nature" value="4"/>
+			<skillmod ref="countrylore" value="2"/>
+			<skillmod ref="perception" value="4"/>
+			<skillmod ref="insightmagic" value="2"/>
+			<skillmod ref="stonemagic" value="2"/>
+						
+			<mastermod ref="history/i_know_a_story"/>
+			<mastermod ref="stonemagic/stoneresistence1"/>
+		</modifications>
+	</education>
+	
+	<education id="moonreader" variantof="academic">
+		<modifications>
+			<reqmod type="culture" ref="aitushar,ashurmazaan,demerai,farukhur,fedirin"/>
+						
+			<powermod ref="goodmemory"/>
+			<powermod ref="literate"/>
+						
+			<selmod num="1">
+				<resourcemod ref="reputation" value="1"/>
+				<resourcemod ref="status" value="1"/>
+			</selmod>
+			<selmod num="1">
+				<resourcemod ref="contacts" value="1"/>
+				<resourcemod ref="mentor" value="1"/>
+				<resourcemod ref="rank" value="1"/>
+			</selmod>			
+						
+			<selmod num="1">
+				<skillmod ref="alchemy" value="2"/>
+				<skillmod ref="clscraft" value="2"/>
+				<skillmod ref="craftmanship" value="2"/>
+			</selmod>
+			<skillmod ref="arcanelore" value="3"/>
+			<skillmod ref="diplomacy" value="2"/>
+			<skillmod ref="empathy" value="1"/>
+			<skillmod ref="determination" value="2"/>
+			<skillmod ref="history" value="4"/>
+			<skillmod ref="nature" value="4"/>
+			<skillmod ref="countrylore" value="2"/>
+			<skillmod ref="eloquence" value="2"/>
+			<skillmod ref="perception" value="4"/>
+			<skillmod ref="insightmagic" value="4"/>
+						
+			<mastermod ref="history/i_know_a_story"/>
+			<mastermod ref="nature/astronomy"/>
+		</modifications>
+	</education>
+	
+	
+	
+	
+</educations>
