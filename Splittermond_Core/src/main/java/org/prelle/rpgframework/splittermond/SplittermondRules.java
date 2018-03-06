@@ -10,8 +10,6 @@ import java.util.Collection;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.prelle.rpgframework.api.BabylonEventBus;
-import org.prelle.rpgframework.api.BabylonEventType;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.SplittermondCustomDataCore;
@@ -23,6 +21,8 @@ import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.RulePlugin;
 import de.rpgframework.RulePluginFeatures;
 import de.rpgframework.character.DecodeEncodeException;
+import de.rpgframework.core.BabylonEventBus;
+import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.CommandBus;
 import de.rpgframework.core.CommandBusListener;
 import de.rpgframework.core.CommandResult;
