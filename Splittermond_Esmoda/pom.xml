@@ -4,13 +4,13 @@
   <parent>
     <groupId>de.rpgframework</groupId>
     <artifactId>genesis-root</artifactId>
-    <version>3.2</version>
+    <version>3.3.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <groupId>org.prelle.rpgframework</groupId>
   <artifactId>splittermond-esmoda</artifactId>
-  <version>0.1</version>
+  <version>1.0-SNAPSHOT</version>
   <name>Splittermond_Esmoda</name>
   <description>Regionalspielhilfe "Esmoda"</description>
 

@@ -35,8 +35,6 @@ import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 
 import org.apache.log4j.Logger;
-import org.prelle.rpgframework.api.BabylonEventBus;
-import org.prelle.rpgframework.api.BabylonEventType;
 import org.prelle.simplepersist.Persister;
 import org.prelle.simplepersist.SerializationException;
 import org.prelle.splimo.Skill.SkillType;
@@ -86,6 +84,8 @@ import org.prelle.splimo.requirements.SpecialRequirement;
 import de.rpgframework.RPGFramework;
 import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.RulePlugin;
+import de.rpgframework.core.BabylonEventBus;
+import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.CommandBus;
 import de.rpgframework.core.RoleplayingSystem;
 import de.rpgframework.genericrpg.modification.Modification;
