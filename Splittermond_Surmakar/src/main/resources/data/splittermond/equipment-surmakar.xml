@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+   <item avail="VILLAGE" cplx="G" id="wildniskleidung" load="3" material="FABRIC" price="300" robust="1" skill="endurance" spec="endurance/resistexhaustion" type="CLOTHING"/>
+ -->
+ <!-- ############ WAFFEN ############ -->
+ <items>
+ 	<item id="kronarsclaws" avail="SMALL_TOWN" price="500" load="1" robust="6" cplx="G">
+ 		<weapon skill="slashing" damage="1W10" speed="8" att1="AGILITY" att2="INTUITION" type="WEAPON">
+ 			<requires>
+ 				<attrreq attr="AGILITY" val="2"/>
+ 				<attrreq attr="STRENGTH" val="2"/>
+ 			</requires>
+ 			<features>
+ 				<feature type="PENETRATING" level="3"/>
+ 				<feature type="PIERCING" level="3"/>
+ 			</features>
+ 		</weapon>
+ 	</item>
+ 	
+ 	<item id="sickle_blade" avail="SMALL_TOWN" price="700" load="2" robust="6" cplx="G">
+ 		<weapon skill="blades" damage="1W10+2" speed="8" att1="INTUITION" att2="STRENGTH">
+ 			<requires>
+ 				<attrreq attr="STRENGTH" val="2"/>
+ 			</requires>
+ 			<features>
+ 				<feature type="PIERCING" level="2"/>
+ 			</features>
+ 		</weapon>
+ 	</item>
+ 	
+ 	<item id="schemenstreu" avail="LARGE_TOWN" price="1800" load="3" robust="3" cplx="M">
+ 		<rangeweapon skill="longrange" damage="2W10+2" speed="9" att1="INTUITION" att2="STRENGTH" range="30">
+ 			<requires>
+ 				<attrreq attr="STRENGTH" val="4"/>
+ 			</requires>
+ 			<features>
+ 				<feature type="PENETRATING" level="2"/>
+ 				<feature type="PIERCING" level="2"/>
+ 			</features>
+ 		</rangeweapon>
+ 	</item>
+ 
+ <!-- ############ Klamotten ############ -->
+ 	
+ 	  <item id="arrgashi" avail="LARGE_TOWN" cplx="G" price="100" load="3" robust="3" material="FABRIC" type="CLOTHING"/>
+ 	  <item id="tarrbusen" avail="LARGE_TOWN" cplx="G" price="100" load="3" robust="3" material="FABRIC" type="CLOTHING"/>
+ 	  
+  <!-- ############ Beleuchtung ############ -->
+  
+  	  <item id="sunoil" avail="LARGE_TOWN" cplx="G" price="200" load="3" robust="0" type="TRAVEL"/>
+  	  
+  <!-- ############ Intrumente ############ -->
+  	
+	  <item avail="SMALL_TOWN" id="dathrakk_drum_small" price="50" load="1" robust="2" cplx="U" material="OTHER" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
+	  <item avail="LARGE_TOWN" id="dathrakk_drum_big" price="300" load="4" robust="2" cplx="G" material="OTHER" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
+	  <item avail="SMALL_TOWN" id="sandflute" price="100" load="0" robust="2" cplx="G" material="OTHER" skill="performance" spec="performance/instrumentwind" type="OTHER"/>
+	  <item avail="SMALL_TOWN" id="stilts_screamer" price="500" load="1" robust="3" cplx="U" material="OTHER" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
+	  <item avail="SMALL_TOWN" id="tarrhorn" price="100" load="2" robust="3" cplx="G" material="OTHER" skill="performance" spec="performance/instrumentwind" type="OTHER"/> 
+	  
+ </items>

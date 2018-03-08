@@ -38,8 +38,6 @@ import javax.mail.internet.MimeMultipart;
 import javax.mail.util.ByteArrayDataSource;
 
 import org.apache.log4j.Logger;
-import org.prelle.rpgframework.api.BabylonEventBus;
-import org.prelle.rpgframework.api.BabylonEventType;
 import org.prelle.simplepersist.Persister;
 import org.prelle.simplepersist.Serializer;
 import org.prelle.splimo.SkillSpecialization.SkillSpecializationType;
@@ -51,6 +49,8 @@ import org.prelle.splimo.items.Weapon;
 
 import de.rpgframework.RPGFramework;
 import de.rpgframework.RPGFrameworkLoader;
+import de.rpgframework.core.BabylonEventBus;
+import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.RoleplayingSystem;
 
 /**

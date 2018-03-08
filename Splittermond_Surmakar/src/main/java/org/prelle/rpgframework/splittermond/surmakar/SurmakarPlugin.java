@@ -111,8 +111,10 @@ public class SurmakarPlugin implements RulePlugin<SpliMoCharacter> {
 	@Override
 	public void init() {
 		logger.info("START -------------------------------Surmakar-------------------------------------------");
-//		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-surmakar.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-surmakar.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/alchemy-surmakar.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-surmakar.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadMaterials(this, ClassLoader.getSystemResourceAsStream("data/splittermond/materials-surmakar.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.info("STOP  -------------------------------Surmakar-------------------------------------------");
 	}

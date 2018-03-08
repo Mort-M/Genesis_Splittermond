@@ -10,8 +10,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
-import org.prelle.rpgframework.api.BabylonEventBus;
-import org.prelle.rpgframework.api.BabylonEventType;
 import org.prelle.splimo.DamageType;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.MastershipReference;
@@ -39,6 +37,8 @@ import org.prelle.splimo.modifications.SpellModification;
 import org.prelle.splimo.modifications.SubModificationChoice;
 import org.prelle.splimo.requirements.Requirement;
 
+import de.rpgframework.core.BabylonEventBus;
+import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.genericrpg.modification.Modification;
 
 /**
