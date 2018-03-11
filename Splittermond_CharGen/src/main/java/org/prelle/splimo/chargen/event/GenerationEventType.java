@@ -115,5 +115,7 @@ public enum GenerationEventType {
 	/** A value of a creature changed
 	 * key = creature
 	 */
-	CREATURE_CHANGED,
+	CREATURE_CHANGED, 
+	
+	NOTES_CHANGED,
 }

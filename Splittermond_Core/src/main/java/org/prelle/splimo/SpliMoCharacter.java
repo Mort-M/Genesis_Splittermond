@@ -138,6 +138,8 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 	private RewardList rewards;
 	@org.prelle.simplepersist.Attribute
 	private int telare;
+	@Element
+	protected String notes;
 
 	//-------------------------------------------------------------------
 	/**
@@ -1141,6 +1143,16 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 		ret.add(new CreatureFeature(SplitterMondCore.getCreatureFeatureType("TACTICIAN")));
 		logger.warn("TODO: getFeatures()");
 		return ret;
+	}
+
+	//-------------------------------------------------------------------
+	public String getNotes() {
+		return notes;
+	}
+
+	//-------------------------------------------------------------------
+	public void setNotes(String txt) {
+		this.notes = txt;
 	}
 
 }
