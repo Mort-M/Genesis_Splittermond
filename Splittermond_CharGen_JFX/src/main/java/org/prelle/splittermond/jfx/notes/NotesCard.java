@@ -3,28 +3,19 @@
  */
 package org.prelle.splittermond.jfx.notes;
 
-import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
-
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
-
-import org.apache.log4j.Logger;
-import org.prelle.splimo.PowerReference;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 
 /**
  * @author prelle
  *
  */
 public class NotesCard extends VBox implements GenerationEventListener {
-
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-	
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
 
 	private SpliMoCharacter     model;
 
@@ -43,15 +34,12 @@ public class NotesCard extends VBox implements GenerationEventListener {
 
 	//-------------------------------------------------------------------
 	private void initComponents() {
-//		heading   = new Label(uiResources.getString("label.power"));
-//		heading.getStyleClass().add("table-head");
 	}
 
 	//-------------------------------------------------------------------
 	private void initLayout() {
 		getStyleClass().add("text-body");
-//		getChildren().add(heading);
-//		heading.setMaxWidth(Double.MAX_VALUE);
+		this.setStyle("-fx-pref-width: 8em; -fx-pref-height: 8em;");
 	}
 
 	//-------------------------------------------------------------------
@@ -61,10 +49,7 @@ public class NotesCard extends VBox implements GenerationEventListener {
 	@Override
 	public void handleGenerationEvent(GenerationEvent event) {
 		switch (event.getType()) {
-		case POWER_ADDED:
-		case POWER_CHANGED:
-		case POWER_REMOVED:
-			logger.debug("PowerCard received "+event);
+		case NOTES_CHANGED:
 			updateContent();
 			break;
 		default:
@@ -73,30 +58,12 @@ public class NotesCard extends VBox implements GenerationEventListener {
 
 	//-------------------------------------------------------------------
 	private void updateContent() {
-//		getChildren().retainAll(heading);
 		getChildren().clear();
 		
-		int y=0;
-		for (PowerReference data : model.getPowers()) {
-			y++;
-			String lineStyle = ((y%2)==0)?"even":"odd";
-
-			Label name = null;
-			switch (data.getPower().getSelectable()) {
-			case ALWAYS:
-			case GENERATION:
-				name = new Label(data.getPower().getName());
-				break;
-			case LEVEL:
-			case MAX3:
-			case MULTIPLE:
-				name = new Label(data.getPower().getName()+" "+data.getCount());
-				break;
-			}
-			name.setMaxWidth(Double.MAX_VALUE);
-			name.getStyleClass().add(lineStyle);
-			getChildren().add(name);
-		}
+		Label name = new Label(model.getNotes());
+		name.setWrapText(true);
+		name.setMaxWidth(Double.MAX_VALUE);
+		getChildren().add(name);
 	}
 
 	//-------------------------------------------------------------------

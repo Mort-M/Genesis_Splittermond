@@ -992,6 +992,12 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		flipDevelopment.setOnDragOver    (event -> dragOver(event));
 		flipDevelopment.setOnDragExited  (event -> dragExited(event));
 		flipDevelopment.setOnDragDropped (event -> dragDropped(event));
+
+		flipNotes.setOnDragDetected(event -> dragStarted(event));
+		flipNotes.setOnDragEntered (event -> dragEntered(event));
+		flipNotes.setOnDragOver    (event -> dragOver(event));
+		flipNotes.setOnDragExited  (event -> dragExited(event));
+		flipNotes.setOnDragDropped (event -> dragDropped(event));
 		
 		baseBlock.viewProperty().addListener( (ov,o,n) -> {
 			if (n==View.DOCUMENT && flipCtrl.visibleNodeProperty().get()!=charDocPane)
