@@ -291,7 +291,7 @@
     		<masterreq ref="clscraft/journeyman" focus="clscraft/calligraphy"/>
     		</requires>
     	</mastership>
-    	<mastership level="1" key="protection_field_fixation"/>
+    	<mastership level="2" key="protection_field_fixation"/>
     </skill>
 
     <skill id="combatmagic">
