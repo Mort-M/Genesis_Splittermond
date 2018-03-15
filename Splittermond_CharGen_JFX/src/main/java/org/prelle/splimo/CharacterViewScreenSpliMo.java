@@ -42,6 +42,7 @@ import org.prelle.splittermond.jfx.equip.EquipmentScreen;
 import org.prelle.splittermond.jfx.languages.LanguageCard;
 import org.prelle.splittermond.jfx.languages.LanguageScreen;
 import org.prelle.splittermond.jfx.notes.NotesCard;
+import org.prelle.splittermond.jfx.notes.NotesScreen;
 import org.prelle.splittermond.jfx.powers.PowerCard;
 import org.prelle.splittermond.jfx.powers.PowerScreen;
 import org.prelle.splittermond.jfx.resources.ResourceCard;
@@ -224,7 +225,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		initCompanions();
 //		initBackground();
 		initDevelopment();
-//		initNotes();
+		initNotes();
 
 		restoreState();
 		
@@ -742,10 +743,10 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 
 	//-------------------------------------------------------------------
 	private void openNotes() {
-		logger.warn("TODO: open Notes dialog");
-//		CreatureScreen toShow = new CreatureScreen(control);
-//		toShow.setData(model);
-//		manager.show(toShow);
+		logger.info("open Notes dialog");
+		NotesScreen toShow = new NotesScreen(control);
+		toShow.setData(model);
+		manager.show(toShow);
 	}
 
 	//-------------------------------------------------------------------
@@ -909,7 +910,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		flipDevelopment.setOnMouseClicked(event -> {event.consume(); openDevelopment(); } );
 		flipEquipment.setOnMouseClicked(event -> openEquipment());
 		flipCompanions.setOnMouseClicked(event -> openCompanions());
-//		flipNotes.setOnMouseClicked(event -> openNotes());
+		flipNotes.setOnMouseClicked(event -> openNotes());
 		
 		/*
 		 * Drag and drop
@@ -991,6 +992,12 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		flipDevelopment.setOnDragOver    (event -> dragOver(event));
 		flipDevelopment.setOnDragExited  (event -> dragExited(event));
 		flipDevelopment.setOnDragDropped (event -> dragDropped(event));
+
+		flipNotes.setOnDragDetected(event -> dragStarted(event));
+		flipNotes.setOnDragEntered (event -> dragEntered(event));
+		flipNotes.setOnDragOver    (event -> dragOver(event));
+		flipNotes.setOnDragExited  (event -> dragExited(event));
+		flipNotes.setOnDragDropped (event -> dragDropped(event));
 		
 		baseBlock.viewProperty().addListener( (ov,o,n) -> {
 			if (n==View.DOCUMENT && flipCtrl.visibleNodeProperty().get()!=charDocPane)
