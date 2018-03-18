@@ -16,8 +16,6 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 import org.apache.log4j.Logger;
-import org.prelle.rpgframework.api.BabylonEventBus;
-import org.prelle.rpgframework.api.BabylonEventType;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.Culture;
@@ -73,6 +71,8 @@ import de.rpgframework.character.CharacterHandle;
 import de.rpgframework.character.CharacterHandle.Format;
 import de.rpgframework.character.CharacterHandle.Type;
 import de.rpgframework.character.CharacterProvider;
+import de.rpgframework.core.BabylonEventBus;
+import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.RoleplayingSystem;
 import de.rpgframework.genericrpg.Reward;
 import de.rpgframework.genericrpg.modification.Modification;
