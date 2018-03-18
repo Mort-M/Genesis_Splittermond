@@ -19,7 +19,6 @@ import org.apache.log4j.Appender;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
-import org.apache.log4j.PropertyConfigurator;
 import org.junit.Test;
 import org.prelle.simplepersist.Persister;
 import org.prelle.simplepersist.SerializationException;
@@ -49,8 +48,6 @@ import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splimo.modifications.AttributeModification;
 import org.prelle.splimo.modifications.ResourceModification;
 import org.prelle.splimo.modifications.SkillModification;
-
-import de.rpgframework.RPGFrameworkLoader;
 
 /**
  * @author prelle
@@ -209,7 +206,7 @@ public class CharacterSerialization {
 		CarriedItem staff = new CarriedItem();
 		staff.setItem(SplitterMondCore.getItem("combatstaff"));
 		staff.setItemLocation(ItemLocationType.BODY);
-		staff.setName("Superstab");
+		staff.setCustomName("Superstab");
 		staff.setUniqueId(UUID.fromString("791f8f8a-7989-46ce-83bb-920fa1201eae"));
 		CHARAC.addItem(staff);
 		
@@ -251,7 +248,7 @@ public class CharacterSerialization {
 		myItem.setComplexity(Complexity.EXPERT);
 		CHARAC.addCustomItem(myItem);
 		CarriedItem myCarriedItem = new CarriedItem(myItem, 2);
-		myCarriedItem.setName("Test");
+		myCarriedItem.setCustomName("Test");
 		myCarriedItem.addEnhancement(new EnhancementReference(
 				SplitterMondCore.getEnhancement("load")));
 		myCarriedItem.setUniqueId(UUID.fromString("5c2b035b-2bab-4262-be73-3dc667cc6a18"));

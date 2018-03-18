@@ -823,17 +823,6 @@
             </features>
         </shield>
     </item>
-    <item id="leathershield" avail="SMALL_TOWN" price="300" load="2" robust="3" cplx="G">
-        <shield def="+1" hc="1"
-                tickMalus="1">
-            <requires>
-                <attrreq attr="STRENGTH" val="2"/>
-            </requires>
-            <features>
-                <feature type="DEFENSIVE" level="2"/>
-            </features>
-        </shield>
-    </item>
     <item id="rundschild" avail="SMALL_TOWN" price="500" load="3" robust="3" cplx="G">
         <shield def="2" hc="2" tickMalus="0" type="SHIELD">
             <requires>

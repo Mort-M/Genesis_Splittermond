@@ -5,12 +5,8 @@ import java.util.StringTokenizer;
 
 import org.apache.log4j.Logger;
 import org.prelle.simplepersist.StringValueConverter;
-import org.prelle.splimo.Skill;
+import org.prelle.splimo.*;
 import org.prelle.splimo.Skill.SkillType;
-import org.prelle.splimo.SkillSpecialization;
-import org.prelle.splimo.SkillSpecializationValue;
-import org.prelle.splimo.SpellType;
-import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.persist.ReferenceException;
 import org.prelle.splimo.persist.ReferenceException.ReferenceType;
 
@@ -50,6 +46,10 @@ public class SkillSpecializationValueConverter implements StringValueConverter<S
 			} else {
 				special = skill.getSpecialization(specialID);
 				if (special==null) {
+					specialID = SplitterDataMigration.getMastershipId(specialID);
+					special = skill.getSpecialization(specialID);
+				}
+				if (special == null) {
 					logger.error("No such specialization: "+v);
 					throw new IllegalArgumentException("No such specialization: "+v);
 				}

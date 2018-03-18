@@ -2,6 +2,7 @@ package org.prelle.splimo.persist;
 
 import org.apache.log4j.Logger;
 import org.prelle.simplepersist.StringValueConverter;
+import org.prelle.splimo.SplitterDataMigration;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.SplittermondCustomDataCore;
 import org.prelle.splimo.items.ItemTemplate;
@@ -20,6 +21,12 @@ public class ItemConverter implements StringValueConverter<ItemTemplate> {
 		ItemTemplate item = SplitterMondCore.getItem(v);
 		if (item==null) {
 			item = SplittermondCustomDataCore.getItem(v);
+		}
+		if (item == null){
+			String id = SplitterDataMigration.getItemId(v);
+			if (id != null) {
+				return read(id);
+			}
 		}
 		if (item==null) {
 			logger.error("Unknown item reference: '"+v+"'");
