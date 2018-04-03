@@ -156,7 +156,7 @@
 			<skillmod ref="insightmagic" value="4"/>
 						
 			<mastermod ref="history/i_know_a_story"/>
-			<mastermod ref="nature/astronomy"/>
+			<mastermod spec="nature/astronomy"/>
 		</modifications>
 	</education>
 	
