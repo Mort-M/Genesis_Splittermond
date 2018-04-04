@@ -1,0 +1,75 @@
+Nahkämpfer, flink
+- Waffenfertigkeit
+- Akrobatik
+- Schutzmagie
+- Bewegungsmagie
+- Kampfmagie
+
+Nahkämpfer, Tank
+- Waffenfertigkeit
+- Zähigkeit
+- Schutzmagie
+- Kampfmagie
+
+Fernkämpfer
+- Waffenfertigkeit
+
+
+Heiler
+- Heilungsmagie
+- Heilkunde
+- Alchimie
+- Naturkunde
+
+Forscher
+- Arkane Kunde
+- Erkenntnismagie
+
+Gelehrter
+- Geschichte & Mythen
+- Länderkunde
+
+Naturführer
+- Überleben
+- Jagdkunst
+- Tierführung
+- Naturkunde
+
+Standhaft gegen das Böse
+- Entschlossenheit
+- Bannmagie
+- Schutzmagie
+
+Schurke
+- Straßenkunde
+- Heimlichkeit
+- Schlösser & Fallen
+- Redegewandheit
+- Fingerfertigkeit
+
+Athlet
+- Athletik
+- Zähigkeit
+- Schwimmen
+- Bewegungsmagie
+
+Face
+- Diplomatie
+- Redegewandheit
+- Darbietung
+- Beherrschungsmagie
+
+Handwerker
+- Handwerk
+- Edelhandwerk
+
+Beschwörer
+- Todesmagie
+
+Zaubere im Kampf
+- Kampfmagie
+- Konzentrationsstärke
+
+
+Profile enthalten Fertigkeiten (wenn unbedingt sinnvoll) oder Zauber und Meisterschaften (der PC rechnet dann aus, welche Fertigkeiten dafür sinnvoll wären)
+Evtl. unterteilen in Hauptprofile (Kämpfer, Heiler) und Seitenprofile (Standhaft, Zaubert im Kampf ...)
