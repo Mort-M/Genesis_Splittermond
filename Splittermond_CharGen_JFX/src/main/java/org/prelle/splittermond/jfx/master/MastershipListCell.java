@@ -77,6 +77,7 @@ public class MastershipListCell extends ListCell<MastershipOrSpecialization> {
 		StackPane.setAlignment(box, Pos.TOP_LEFT);
 		StackPane.setAlignment(lblLevel, Pos.TOP_RIGHT);
 		stack.getStyleClass().add("content");
+		stack.setStyle("-fx-max-width:22em");
 	}
 	
 	//-------------------------------------------------------------------
