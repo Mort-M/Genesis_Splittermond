@@ -135,5 +135,11 @@ public class CreatureModuleReference extends UniqueObject implements Comparable<
 		return new ArrayList<>(choices);
 	}
 
+	//--------------------------------------------------------------------
+	public void setModifications(List<Modification> values) {
+		modifications.clear();
+		modifications.addAll(values);
+	}
+
 
 }

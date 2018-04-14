@@ -910,6 +910,8 @@ public class SplitterTools {
 		for (CreatureReference ref : data.getCreatures()) {
 			if (ref.getModuleBasedCreature()!=null) {
 				logger.info("  calculate creature "+ref+" from modules");
+				// Create modifications
+				ref.getModuleBasedCreature().getRole().setModifications(ref.getModuleBasedCreature().getRole().getModule().getModifications());
 				// Fix originModule
 				for (NecessaryChoice choice : ref.getModuleBasedCreature().getRole().getChoices()) 
 					choice.originModule = ref.getModuleBasedCreature().getRole();

@@ -92,7 +92,7 @@ public class CreatureTools {
 	            modulBased.getBase().getModifications().stream().filter(mod -> !needsToBeAppliedLater(mod)).forEach(mod -> apply(modulBased, mod));
 	        }
 	        if (modulBased.getRole()!=null) {
-	            logger.debug("2. Role");
+	            logger.debug("2. Role = "+modulBased.getRole().getModule().getId());
 	            modulBased.getRole().getModifications().stream().filter(mod -> !needsToBeAppliedLater(mod)).forEach(mod -> apply(modulBased, mod));
 	        }
 
