@@ -483,10 +483,11 @@
  	<attrmod attr="DEFENSE" 		val="1"/>
  	<attrmod attr="MINDRESIST"		val="1"/> 	
  	<skillmod ref="melee"		value="1"/>
- 	<damagemod damage="3"/>
+ 	<damagemod damage="1"/>
  	<skillmod ref="perception" value="2" />
     <skillmod choice="NORMAL" restrict="ANY_EXIST" value="1" />
     <attrmod attr="SPEED" val="+5"/> 
+  <mastermod level="1"/>
  	<condmod>
  	  <conditions>
  	    <creatfeatreq not="true" ref="FLYING"/>
