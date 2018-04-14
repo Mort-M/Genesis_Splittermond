@@ -252,8 +252,10 @@ public class CreatureReference extends UniqueObject implements Lifeform, Compara
 	public List<CreatureTypeValue> getCreatureTypes() {
 		if (modBasedCreature!=null)
 			return modBasedCreature.getCreatureTypes();
-		else
+		if (ref!=null)
 			return ref.getCreatureTypes();
+		else
+			return new ArrayList<>();
 	}
 
 	//-------------------------------------------------------------------
