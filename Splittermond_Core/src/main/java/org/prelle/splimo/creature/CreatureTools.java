@@ -568,8 +568,9 @@ public class CreatureTools {
         		undo(modulBased, toUndo);
         	}
         } else {
-            logger.warn("TODO: don't know how to undo "+mod);
-            BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Don't know how to deal with "+mod);
+            logger.error("TODO: don't know how to undo "+mod.getClass().getSimpleName());
+            logger.warn("Modification was "+mod);
+            BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Don't know how to deal with "+mod.getClass().getSimpleName());
         }
     }
 

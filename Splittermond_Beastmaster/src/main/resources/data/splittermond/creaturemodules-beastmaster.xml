@@ -370,11 +370,9 @@
     <selmod num="1">
       <creaturefeaturemod remove="true" feature="COWARD" />
       <attrmod attr="DAMAGE_REDUCTION" val="1"/>
-      <subselmod num="1">
   		<creaturefeaturemod feature="LOWLIGHT"/> 
   		<creaturefeaturemod feature="RESIST_PAIN" />
   		<creaturefeaturemod feature="uncontrollable" /> 
-      </subselmod>
     </selmod>
     <requires>
       <creatmodreq not="true" ref="tiny"/>
@@ -572,13 +570,11 @@
  	
  	<selmod num="1">
  	  <creaturefeaturemod remove="true" feature="COWARD" />
- 	  <subselmod num="1">
  		<creaturefeaturemod feature="LOWLIGHT"/>
  		<creaturefeaturemod feature="immune_fear"/>
  		<creaturefeaturemod feature="concentrated"/>
  		<creaturefeaturemod feature="TACTICIAN"/>
  		<creaturefeaturemod feature="uncontrollable"/>	
- 	  </subselmod>
  	</selmod>
  </creaturemodule>
   
@@ -597,10 +593,8 @@
 	<creaturefeaturemod feature="LOWLIGHT"/>
  	<selmod num="1">
   		<creaturefeaturemod remove="true" feature="COWARD" />
- 		<subselmod num="1">
  			<creaturefeaturemod feature="TACTICIAN"/>
  			<creaturefeaturemod feature="immune_fear"/>
- 		</subselmod>
  	</selmod>
  </creaturemodule>
  
