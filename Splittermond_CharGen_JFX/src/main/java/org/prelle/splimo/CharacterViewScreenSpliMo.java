@@ -876,9 +876,12 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
         			toShow.remove(node);
         			// TODO flip if required
         			if (id.startsWith("crd")) {
-        				logger.debug("  flip "+baseId);
+        				logger.debug("  flip "+baseId+" / "+node);
 //        				((FlipControl)node).flip();
-        				((FlipControl)((AttentionPane)node).getChild()).flip();
+        				if (node instanceof AttentionPane)
+        					((FlipControl)((AttentionPane)node).getChild()).flip();
+        				else if (node instanceof FlipControl) 
+        					((FlipControl)node).flip();
 //        				((FlipControl)node).flip();
         			}
             		flow.getChildren().add(node);
