@@ -115,7 +115,7 @@ public class FarukanPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadSpells(this, ClassLoader.getSystemResourceAsStream("data/splittermond/spells-farukan.xml"), i18NResources, i18NHelpResources);
 //		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-farukan.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-farukan.xml"), i18NResources, i18NHelpResources);
-//		SplitterMondCore.loadNameTable(this, ClassLoader.getSystemResourceAsStream("data/splittermond/nametable-farukan.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadNameTable(this, ClassLoader.getSystemResourceAsStream("data/splittermond/nametable-farukan.xml"), i18NResources, i18NHelpResources);
 //		SplitterMondCore.loadFeatureTypes(this, ClassLoader.getSystemResourceAsStream("data/splittermond/featuretypes-farukan.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.debug("STOP  Initialize");
