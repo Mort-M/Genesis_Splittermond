@@ -119,8 +119,8 @@ public class FarukanPlugin implements RulePlugin<SpliMoCharacter> {
 //		SplitterMondCore.loadFeatureTypes(this, ClassLoader.getSystemResourceAsStream("data/splittermond/featuretypes-farukan.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.debug("STOP  Initialize");
-		logger.fatal("STOP HERE");
-		System.exit(0);
+//		logger.fatal("STOP HERE");
+//		System.exit(0);
 	}
 
 	//--------------------------------------------------------------------
