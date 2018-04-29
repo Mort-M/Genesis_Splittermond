@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+
+<!-- ###########################  WAFFEN  ###########################-->
+   <item avail="LARGE_TOWN" cplx="G" id="bullhead_mace" load="2" material="WOOD" price="800" robust="5" type="WEAPON">
+        <weapon att1="AGILITY" att2="CONSTITUTION" damage="1W6+5" skill="slashing" speed="9" type="WEAPON">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+        </weapon>
+    </item>
+   
+   <item avail="SMALL_TOWN" cplx="F" id="jeedra" load="3" material="WOOD" price="1200" robust="5" type="WEAPON">
+        <weapon att1="AGILITY" att2="STRENGTH" damage="1W10+1" skill="staffs" speed="8" type="WEAPON">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature level="2" type="INFANTRY_WEAPON"/>
+                <feature level="2" type="PIERCING"/>
+                <feature type="FLEXIBLE"/>
+            </features>
+        </weapon>
+    </item>
+      
+  <!-- ###########################  SPIELE & LUXUSZUBEHÖR ###########################-->
+  
+   <item avail="SMALL_TOWN" cplx="U" id="jadh" load="0" material="OTHER" price="400" robust="0" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="pardash_snailshell" load="0" material="OTHER" price="5" robust="0" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="scented_soap" load="0" material="OTHER" price="80" robust="3" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="U" id="shahir_game" load="1" material="OTHER" price="70" robust="2" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="angry_efreet" load="1" material="OTHER" price="50" robust="2" type="OTHER"/>
+   
+   <!-- ###########################  INSTRUMENTE  ###########################-->
+   
+   <item avail="VILLAGE" cplx="U" id="djabdjak" load="1" material="OTHER" price="50" robust="2" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="jarayan" load="3" material="OTHER" price="200" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="mizmar" load="2" material="OTHER" price="200" robust="2" skill="performance" spec="performance/instrumentwind" type="OTHER"/>
+   <item avail="LARGE_TOWN" cplx="G" id="shahrud" load="4" material="OTHER" price="500" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="ud" load="3" material="OTHER" price="200" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="yurm" load="0" material="OTHER" price="50" robust="2" skill="performance" spec="performance/instrumentwind" type="OTHER"/>
+   
+   <!-- ###########################  Lebensmittel  ###########################-->
+   
+   <item avail="SMALL_TOWN" cplx="F" id="ashlardrop" load="1" material="OTHER" price="400" robust="1" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="spice_basic" load="0" material="OTHER" price="10" robust="1" type="OTHER"/>
+   <item avail="LARGE_TOWN" cplx="U" id="spice_expensive" load="0" material="OTHER" price="300" robust="1" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="coffee_badashan" load="0" material="OTHER" price="40" robust="0" type="OTHER"/>
+   <item avail="LARGE_TOWN" cplx="G" id="wetvizier" load="0" material="OTHER" price="300" robust="0" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="F" id="shahanrasfavor" load="1" material="OTHER" price="600" robust="1" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="shuruni_raw" load="0" material="OTHER" price="60" robust="0" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="shuruni_roasted" load="0" material="OTHER" price="75" robust="0" type="OTHER"/>
+   <item avail="CAPITAL" cplx="G" id="silverpearl" load="0" material="OTHER" price="1200" robust="0" type="OTHER"/> 
+   <item avail="LARGE_TOWN" cplx="F" id="tahabi" load="1" material="OTHER" price="800" robust="1" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="tea_turubar" load="0" material="OTHER" price="50" robust="0" type="OTHER"/>
+     
+</items>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<spells>
+  <spell id="icebridge" diff="21" cost="8V2" castdur="15T" range="5m" spelldur="2m" enh="1/+2V2"> 
+    <school skill="watermagic" level="2"/>
+    <type>ICE</type>
+    <type>ELEMENTALCONTROL</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+    <enhancementtype>SPELLDURATION</enhancementtype>
+  </spell>
+  
+  <spell id="instrumentwind" diff="18" cost="K4V1" castdur="12T" range="CASTER" spelldur="K" enh="1/+K1V1"> 
+    <school skill="illusionmagic" level="2"/>
+    <school skill="windmagic" level="1"/>
+    <type>SUMMON</type>
+    <type>OBJECT</type>
+    <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+  </spell>
+  
+  <spell id="steelshield" diff="18" cost="K4V1" castdur="4T" range="TOUCH" spelldur="K" enh="1/+K1V1"> 
+    <school skill="stonemagic" level="1"/>
+    <school skill="combatmagic" level="2"/>
+    <type>OBJECT</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+  </spell>
+  
+  <spell id="windboots" diff="18" cost="K4V1" castdur="6T" range="TOUCH" spelldur="K" enh="1/+K1V1"> 
+    <school skill="motionmagic" level="2"/>
+    <school skill="windmagic" level="1"/>
+    <type>OBJECT</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+  </spell>
+</spells>
