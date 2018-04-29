@@ -55,5 +55,11 @@
    <item avail="CAPITAL" cplx="G" id="silverpearl" load="0" material="OTHER" price="1200" robust="0" type="OTHER"/> 
    <item avail="LARGE_TOWN" cplx="F" id="tahabi" load="1" material="OTHER" price="800" robust="1" type="OTHER"/>
    <item avail="VILLAGE" cplx="G" id="tea_turubar" load="0" material="OTHER" price="50" robust="0" type="OTHER"/>
+   
+   <!-- ###########################  Kräuter  ###########################-->
+   
+   <item avail="VILLAGE" cplx="U" id="shadowchamoischeese" load="0" material="OTHER" price="1500" robust="0" type="POTION"/>
+   <item avail="VILLAGE" cplx="U" id="duesterreizling" load="0" material="OTHER" price="700" robust="0" type="POTION"/>
+   <item avail="VILLAGE" cplx="U" id="rubyberries" load="0" material="OTHER" price="2000" robust="0" type="POTION"/>
      
 </items>
