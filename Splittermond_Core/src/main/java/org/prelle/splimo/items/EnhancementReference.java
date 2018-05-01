@@ -50,7 +50,6 @@ public class EnhancementReference {
 	public boolean equals(Object o) {
 		if (o instanceof EnhancementReference) {
 			EnhancementReference other = (EnhancementReference)o;
-			System.err.println("EnhanceRef.equals: "+uniqueID+" =?= "+other.getUniqueID());
 			if (enhancement!=other.getEnhancement()) return false;
 			if (skillSpecialization!=other.getSkillSpecialization()) return false;
 			if (uniqueID==null) {

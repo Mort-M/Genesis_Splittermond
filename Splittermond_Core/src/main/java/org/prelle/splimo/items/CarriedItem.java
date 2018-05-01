@@ -747,23 +747,12 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 	}
 
 	//--------------------------------------------------------------------
-	public int getRelicQuality() {
-		int count  = 0;
-		if (material!=null && !material.getId().startsWith("common"))
-			count++;
-		for (EnhancementReference enhance : enhancements) {
-				count+=enhance.getEnhancement().getSize();
-		}
-		return count;
-	}
-
-	//--------------------------------------------------------------------
 	private int[] getQuality() {
 		int normal = 0;
 		int magic  = 0;
 		int relic  = 0;
-		if (material!=null && !material.getId().startsWith("common"))
-			normal++;
+//		if (material!=null && !material.getId().startsWith("common"))
+//			normal++;
 		for (EnhancementReference enhance : enhancements) {
 			logger.warn("****Enhancement "+enhance+" is of type "+enhance.getEnhancement().getType()+" and of size "+enhance.getEnhancement().getSize());
 			switch (enhance.getEnhancement().getType()) {
@@ -773,6 +762,9 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 				normal+=enhance.getEnhancement().getSize();
 			}
 		}
+		
+		if (material!=null)
+			normal = Math.max(normal, material.getQuality());
 		return new int[]{normal, magic, relic};
 	}
 
@@ -802,6 +794,17 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 		if (ref.isType(ItemType.POTION))
 			return getQuality()[0]-1;
 		return getQuality()[0];
+	}
+
+	//--------------------------------------------------------------------
+	public int getRelicQuality() {
+		int[] quality = getQuality();
+		int sum = 0;
+		for (int tmp : quality)
+			sum+=tmp;
+		if (material!=null && !material.getId().startsWith("common"))
+			sum++;
+		return sum;
 	}
 
 	//--------------------------------------------------------------------

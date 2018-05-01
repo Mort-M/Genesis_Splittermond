@@ -355,6 +355,12 @@ public class NewItemGeneratorPane extends VBox implements GenerationEventListene
 			dataLine.getChildren().add(boxShield);
 //		dataLine.getChildren().add(boxDescr);
 
+		// Special handling for material
+		lblMaterial.setText(model.getMaterial().getId().startsWith("common")?"0":"1");
+		boxMaterial.getChildren().clear();
+		if (model.getMaterial()!=null)
+			boxMaterial.getChildren().add(new Label(model.getMaterial().getName()));
+
 		for (EnhancementType type : EnhancementType.values()) {
 			if (type==EnhancementType.RELIC)
 				buttons.get(type).setDisable(!model.isRelic());
@@ -455,5 +461,16 @@ public class NewItemGeneratorPane extends VBox implements GenerationEventListene
 		logger.info("obj = "+obj);
 		GenerationEventDispatcher.removeListener(screen);
 	}
+
+//	//--------------------------------------------------------------------
+//	private void openHolyItemScreen() {
+//		logger.debug("openHolyItemScreen()");
+//		HolyItemScreen screen = new MaterialScreen(control);
+//		GenerationEventDispatcher.addListener(screen);
+//
+//		Object obj = manager.showAndWait(screen);
+//		logger.info("obj = "+obj);
+//		GenerationEventDispatcher.removeListener(screen);
+//	}
 
 }

@@ -377,7 +377,7 @@ public class EquipmentScreen extends ManagedScreen implements GenerationEventLis
 	private void edit(CarriedItem item) {
 		logger.debug("Edit "+item);
 		NewItemController control = new ItemLevellerAndGenerator(item, item.getArtifactQuality()+item.getItemQuality());
-//		ItemGeneratorPane pane = new ItemGeneratorPane();
+//		NewItemGeneratorPane pane = new NewItemGeneratorPane();
 //		pane.setData(control);
 //		pane.setScreenManager(getScreenManager());
 //		

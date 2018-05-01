@@ -40,7 +40,12 @@ public class ItemControllerTest {
 	private static Enhancement DAMAGE;
 	private static Enhancement DMGREDUC;
 	private static Enhancement HANDICAP;
+	private static Enhancement SPELL1;
 	private static Enhancement RELICSONLY;
+	
+	private static Material FAIRYTWINE;
+	private static Material JADEIRON;
+	private static Material MOONSTEEL;
 	private ItemLevellerAndGenerator generator;
 	private CarriedItem model;
 
@@ -58,6 +63,10 @@ public class ItemControllerTest {
 		DAMAGE  = SplitterMondCore.getEnhancement("damage");
 		DMGREDUC= SplitterMondCore.getEnhancement("damagereduction");
 		HANDICAP= SplitterMondCore.getEnhancement("handicap");
+		SPELL1  = SplitterMondCore.getEnhancement("embedspell1");
+		FAIRYTWINE = SplitterMondCore.getMaterial("fairytwine");
+		JADEIRON   = SplitterMondCore.getMaterial("jadeiron");
+		MOONSTEEL  = SplitterMondCore.getMaterial("moonsteel");
 	}
 
 	//-------------------------------------------------------------------
@@ -88,6 +97,7 @@ public class ItemControllerTest {
 		assertEquals(0, generator.getPointsLeft());
 		assertEquals(0, model.getArtifactQuality());
 		assertEquals(0, model.getItemQuality());
+		assertEquals(0, model.getRelicQuality());
 		
 		List<Enhancement> avail = generator.getAvailableEnhancements();
 		assertTrue(avail.contains(SPEED));
@@ -104,6 +114,7 @@ public class ItemControllerTest {
 		assertFalse(generator.canBeAdded(DMGREDUC));
 		assertFalse(generator.canBeAdded(RELICSONLY));
 		assertFalse(generator.canBeAdded(HANDICAP));
+		assertTrue(generator.canBeAdded(SPELL1));
 	}
 
 	//-------------------------------------------------------------------
@@ -118,6 +129,7 @@ public class ItemControllerTest {
 		assertFalse(generator.canBeAdded(DMGREDUC));
 		assertTrue(generator.canBeAdded(RELICSONLY));
 		assertFalse(generator.canBeAdded(HANDICAP));
+		assertTrue(generator.canBeAdded(SPELL1));
 	}
 
 	//-------------------------------------------------------------------
@@ -133,6 +145,42 @@ public class ItemControllerTest {
 		assertNull(generator.addEnhancement(DAMAGE));
 		
 		assertEquals(DAMAGE.getSize()*2, model.getItemQuality());
+	}
+
+	//-------------------------------------------------------------------
+	@Test
+	public void testNonAvailableEnhancements() {
+		logger.debug("------testNonAvailableEnhancements----------");
+		
+		assertTrue(generator.canBeAdded(DAMAGE));
+		assertNotNull(generator.addEnhancement(DAMAGE));
+		assertTrue(generator.canBeAdded(DAMAGE));
+		assertNotNull(generator.addEnhancement(DAMAGE));
+		assertFalse(generator.canBeAdded(DAMAGE));
+		assertNull(generator.addEnhancement(DAMAGE));
+		
+		assertEquals(DAMAGE.getSize()*2, model.getItemQuality());
+	}
+
+	//-------------------------------------------------------------------
+	@Test
+	public void testPointsCalculations() {
+		logger.debug("------testPointsCalculations----------");
+		
+		assertNotNull(generator.addEnhancement(SPELL1));
+		assertNotNull(generator.addEnhancement(DAMAGE));
+//		assertNotNull(generator.addEnhancement(DAMAGE));
+		
+		assertEquals(2,model.getArtifactQuality());
+		assertEquals(1,model.getItemQuality());
+		assertEquals(3,model.getRelicQuality());
+		
+		// Add material
+		System.out.println("Available Materials = "+generator.getAvailableMaterials());
+		generator.setMaterial(JADEIRON);
+		assertEquals(2,model.getArtifactQuality());
+		assertEquals(3,model.getItemQuality());  // min. 3 like material quality
+		assertEquals(6,model.getRelicQuality()); // 2 (artifact), 3 (item), 1 (material)
 	}
 
 }
