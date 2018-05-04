@@ -13,8 +13,6 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 
-import com.sun.javafx.scene.control.skin.ContextMenuSkin;
-
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
@@ -36,6 +34,7 @@ import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.control.skin.ContextMenuSkin;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;

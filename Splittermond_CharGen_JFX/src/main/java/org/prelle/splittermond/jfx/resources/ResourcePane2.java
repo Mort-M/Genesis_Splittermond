@@ -19,8 +19,6 @@ import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.levelling.ResourceLeveller;
 
-import com.sun.javafx.scene.control.skin.ContextMenuSkin;
-
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
@@ -31,6 +29,7 @@ import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.skin.ContextMenuSkin;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

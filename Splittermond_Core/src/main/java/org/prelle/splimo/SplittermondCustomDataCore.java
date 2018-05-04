@@ -157,7 +157,7 @@ public class SplittermondCustomDataCore {
 				if (skill==null) {
 					logger.error("No skill assigned to custom weapon "+templ.getID());
 					BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 1, "Cannot load weapon '"+templ.getID()+"' since it has no skill assigned.\nDeleting the file "+readPath+" might help.\nMake sure you delete that item from all your characters");
-					items.remove(tmp);
+					items.remove(templ);
 					removeItem(templ);
 				}
 				if (skill.getSpecialization(templ.getID())!=null) {

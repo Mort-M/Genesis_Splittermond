@@ -49,7 +49,6 @@ public class SPRStarter extends Application {
 	 */
 	@Override
 	public void start(Stage prim) throws Exception {
-		ModernUI.initialize();
 
 		Scene scene = null;
 		int show = 7;

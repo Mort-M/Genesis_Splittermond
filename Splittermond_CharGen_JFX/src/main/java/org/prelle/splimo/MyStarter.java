@@ -231,7 +231,6 @@ public class MyStarter extends Application {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		PropertyConfigurator.configure("log4j.properties");
-		ModernUI.initialize();
 		SplitterMondCore.initialize(new DummyRulePlugin<>());
 		(new MondstahlklingenPlugin()).init();
 		(new BestienUndUngeheuerPlugin()).init();

@@ -8,8 +8,6 @@ import java.util.ResourceBundle;
 import org.apache.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
-import org.prelle.javafx.TiledCell;
-import org.prelle.javafx.TiledListView;
 import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
 import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
@@ -19,6 +17,8 @@ import org.prelle.splimo.items.Material;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
@@ -38,7 +38,7 @@ public class MaterialScreen extends ManagedScreen implements GenerationEventList
 	private NewItemController control;
 
 	private Label lblQuality;
-	private TiledListView<Material,String> lvMaterials;
+	private ListView<Material> lvMaterials;
 	private Label lblName;
 	private Label lblProduct;
 	private Label lblDescription;
@@ -64,17 +64,17 @@ public class MaterialScreen extends ManagedScreen implements GenerationEventList
 		lblQuality.setTextAlignment(TextAlignment.CENTER);
 		lblQuality.getStyleClass().add("text-header");
 
-		lvMaterials    = new TiledListView<>();
-		lvMaterials.setCellFactory(new Callback<TiledListView<Material,String>, TiledCell<Material,String>>() {
-			public TiledCell<Material, String> call(TiledListView<Material, String> param) {
+		lvMaterials    = new ListView<>();
+		lvMaterials.setCellFactory(new Callback<ListView<Material>, ListCell<Material>>() {
+			public ListCell<Material> call(ListView<Material> param) {
 				return new MaterialListCell(lvMaterials);
 			}
 		});
-		lvMaterials.setSectionFactory(new Callback<Material,String>() {
-			public String call(Material param) {
-				return param.getProductName();
-			}
-		});
+//		lvMaterials.setSectionFactory(new Callback<Material,String>() {
+//			public String call(Material param) {
+//				return param.getProductName();
+//			}
+//		});
 
 		lblName = new Label();
 		lblName.getStyleClass().add("text-small-subheader");
@@ -168,7 +168,7 @@ public class MaterialScreen extends ManagedScreen implements GenerationEventList
 
 }
 
-class MaterialListCell extends TiledCell<Material, String> {
+class MaterialListCell extends ListCell<Material> {
 
 	private Label lblName;
 	private Label lblPlugin;
@@ -176,9 +176,7 @@ class MaterialListCell extends TiledCell<Material, String> {
 	private HBox  layout;
 
 	//-------------------------------------------------------------------
-	public MaterialListCell(TiledListView<Material, String> listView) {
-		super(listView);
-
+	public MaterialListCell(ListView<Material> listView) {
 		lblName = new Label();
 		lblName.getStyleClass().add("text-small-subheader");
 		lblName.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
