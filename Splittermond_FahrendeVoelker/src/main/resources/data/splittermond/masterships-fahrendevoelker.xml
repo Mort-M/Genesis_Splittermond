@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+	<skill id="performance">
+    <mastership level="1" key="precentor"/>
+		<mastership level="1" key="motivativ_precentor">
+			<requires>
+				<masterreq ref="performance/precentor"/>
+			</requires>
+		</mastership>
+		
+		
+		<mastership level="1" key="hikingsong_boost">
+			<requires>
+				<masterreq ref="performance/hikingsong"/>
+			</requires>
+		</mastership>
+		
+		<mastership level="1" key="hikingsong"/>
+	</skill>
+	
+	<skill id="seafaring">
+		<mastership level="1" key="wavereading"/>
+		
+		<mastership level="2" key="savethroethestrom"/>
+	</skill>
+</skills>

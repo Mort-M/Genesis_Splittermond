@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<creatures>
+	<creature id="levashir" lvl1="1" lvl2="0">
+		<creaturetypes>
+			<creaturetype type="MOUNT"/>
+			<creaturetype type="ANIMAL"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="2"/>
+			<attr id="AGILITY"      value="3"/>
+			<attr id="INTUITION"    value="2"/>
+			<attr id="CONSTITUTION" value="6"/>
+			<attr id="MYSTIC"       value="1"/>
+			<attr id="STRENGTH"     value="9"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="2"/>
+			<attr id="SIZE"         value="8"/>
+			<attr id="SPEED"        value="10"/>
+			<attr id="LIFE"         value="14"/>
+			<attr id="FOCUS"        value="6"/>
+			<attr id="DEFENSE"      value="18"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="23"/>
+			<attr id="MINDRESIST"   value="20"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="9" dmg="2w6+2" spd="9" ini="8">
+				<features>
+					<feature type="BLUNT" />
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="acrobatics"    val="9"/>
+			<skillval skill="athletics"     val="27"/>
+			<skillval skill="determination" val="8"/>
+			<skillval skill="stealth"       val="5"/>
+			<skillval skill="perception"    val="7"/>
+			<skillval skill="endurance"     val="15"/>
+			<skillval skill="motionmagic"    val="9">
+				<masterref ref="melee/rush"/>
+				<masterref ref="athletics/muscleman"/>
+			</skillval>
+		</skillvals>
+		<spellvals>
+			<spellval school="motionmagic"   spell="accelerate"/>
+			<spellval school="motionmagic"   spell="shove"/>
+		</spellvals>
+		<features>
+			<creaturefeature type="RESIST_EXHAUSTION" level="2"/>
+			<creaturefeature type="COWARD"/>
+			<creaturefeature type="CREATURE" level="5"/>
+		</features>
+	</creature>
+	
+	<creature id="casseia" lvl1="1" lvl2="0">
+		<creaturetypes>
+			<creaturetype type="REPTILE"/>
+			<creaturetype type="ANIMAL"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="1"/>
+			<attr id="AGILITY"      value="2"/>
+			<attr id="INTUITION"    value="2"/>
+			<attr id="CONSTITUTION" value="2"/>
+			<attr id="MYSTIC"       value="2"/>
+			<attr id="STRENGTH"     value="2"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="1"/>
+			<attr id="SIZE"         value="5"/>
+			<attr id="SPEED"        value="8"/>
+			<attr id="LIFE"         value="8"/>
+			<attr id="FOCUS"        value="11"/>
+			<attr id="DEFENSE"      value="17"/>
+			<attr id="DAMAGE_REDUCTION" value="5"/>
+			<attr id="BODYRESIST"   value="18"/>
+			<attr id="MINDRESIST"   value="16"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="10" dmg="1w6+4" spd="8" ini="9">
+				<features>
+					<feature type="PIERCING" level="2"/>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="acrobatics"    val="4"/>
+			<skillval skill="athletics"     val="6"/>
+			<skillval skill="determination" val="13"/>
+			<skillval skill="stealth"       val="18"/>
+			<skillval skill="swim"    		val="11"/>
+			<skillval skill="perception"    val="6"/>
+			<skillval skill="endurance"     val="8"/>
+			<skillval skill="fatemagic"   	val="9">
+				<masterref ref="fatemagic/preemption"/>
+			</skillval>
+		</skillvals>
+		<spellvals>
+			<spellval school="fatemagic"   spell="fortune"/>
+			<spellval school="fatemagic"   spell="blessing"/>
+		</spellvals>
+		<features>
+			<creaturefeature type="WEAK"/>
+			<creaturefeature type="diver"/>
+			<creaturefeature type="resist_damage" damage="SHADOW" level="3"/>
+			<creaturefeature type="CREATURE" level="5"/>
+		</features>
+	</creature>
+</creatures>
