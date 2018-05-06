@@ -125,8 +125,8 @@ public class FahrendeVoelkerPlugin implements RulePlugin<SpliMoCharacter> {
 		}
 		BasePluginData.flushMissingKeys();
 		logger.debug("STOP  Initialize");
-		logger.fatal("STOP HERE");
-		System.exit(1);
+//		logger.fatal("STOP HERE");
+//		System.exit(1);
 	}
 
 	//--------------------------------------------------------------------
