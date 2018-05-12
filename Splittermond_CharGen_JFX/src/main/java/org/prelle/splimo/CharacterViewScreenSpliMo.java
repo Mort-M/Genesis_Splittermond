@@ -20,6 +20,7 @@ import org.prelle.javafx.ScreenManager;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
 import org.prelle.rpgframework.jfx.AttentionPane;
+import org.prelle.rpgframework.jfx.CharacterViewScreen;
 import org.prelle.splimo.BaseDataBlockSpliMo.View;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.charctrl.CharacterController;
@@ -78,6 +79,7 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 /**
@@ -99,10 +101,11 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 
 	private HBox content;
 	private CharacterLevelingPane charDocPane;
+	private ScrollPane scroll;
 
 	private BaseDataBlockSpliMo baseBlock;
 	
-	private FlipControl flipCtrl;
+	private StackPane exFlipCtrl;
 	private FlowPane flow;
 	/*
 	 * Attribute shortview
@@ -208,7 +211,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		flow.setVgap(20);
 		flow.setHgap(20);
 		
-		flipCtrl = new FlipControl(Orientation.HORIZONTAL);
+		exFlipCtrl = new StackPane();
 		
 		availableElements = new ArrayList<>();
 		initBaseBlockLayout();
@@ -229,11 +232,11 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 
 		restoreState();
 		
-		ScrollPane scroll = new ScrollPane(flow);
+		scroll = new ScrollPane(flow);
 		scroll.setFitToHeight(true);
 		
-		flipCtrl.getItems().addAll(scroll, charDocPane);
-		content.getChildren().add(flipCtrl);
+		exFlipCtrl.getChildren().addAll(scroll);
+		content.getChildren().add(exFlipCtrl);
 		
 		setContent(content);
 	}
@@ -1003,16 +1006,12 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		flipNotes.setOnDragDropped (event -> dragDropped(event));
 		
 		baseBlock.viewProperty().addListener( (ov,o,n) -> {
-			if (n==View.DOCUMENT && flipCtrl.visibleNodeProperty().get()!=charDocPane)
-				flipCtrl.flip();
-			if (n==View.TILES && flipCtrl.visibleNodeProperty().get()==charDocPane)
-				flipCtrl.flip();
-		});
-		flipCtrl.visibleNodeProperty().addListener( (ov,o,n) -> {
-			if (n==charDocPane)
-				baseBlock.viewProperty().set(View.DOCUMENT);
-			else
-				baseBlock.viewProperty().set(View.TILES);
+			if (n==View.DOCUMENT) {
+				exFlipCtrl.getChildren().clear(); exFlipCtrl.getChildren().add(charDocPane);
+			}
+			if (n==View.TILES) {
+				exFlipCtrl.getChildren().clear(); exFlipCtrl.getChildren().add(scroll);
+			}
 		});
 	}
 
