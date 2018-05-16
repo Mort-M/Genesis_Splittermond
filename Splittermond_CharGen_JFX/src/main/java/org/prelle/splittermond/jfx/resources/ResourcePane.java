@@ -34,7 +34,6 @@ import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.control.skin.ContextMenuSkin;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -142,7 +141,7 @@ public class ResourcePane extends VBox implements GenerationEventListener, Event
 		join  = new MenuItem(uiResources.getString("wizard.distrResource.join"));
 		split = new MenuItem(uiResources.getString("wizard.distrResource.split"));
 		contextMenu = new ContextMenu();
-		contextMenu.setSkin(new ContextMenuSkin(contextMenu));
+//		contextMenu.setSkin(new ContextMenuSkin(contextMenu));
 		contextMenu.getSkin().getNode().setEffect(new DropShadow());
 		contextMenu.getItems().addAll(join,split);		
 	}

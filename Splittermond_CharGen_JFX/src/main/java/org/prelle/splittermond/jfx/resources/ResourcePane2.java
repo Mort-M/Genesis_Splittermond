@@ -29,8 +29,6 @@ import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.skin.ContextMenuSkin;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
@@ -104,8 +102,6 @@ public class ResourcePane2 extends HBox implements GenerationEventListener {
 		join  = new MenuItem(uiResources.getString("wizard.distrResource.join"));
 		split = new MenuItem(uiResources.getString("wizard.distrResource.split"));
 		contextMenu = new ContextMenu();
-		contextMenu.setSkin(new ContextMenuSkin(contextMenu));
-		contextMenu.getSkin().getNode().setEffect(new DropShadow());
 		contextMenu.getItems().addAll(join,split);		
 	}
 
