@@ -51,6 +51,11 @@ public enum Attribute {
 	}
 	
 	//-------------------------------------------------------------------
+	public static Attribute[] secondaryValuesWithoutDR() {
+		return new Attribute[]{SIZE,SPEED,INITIATIVE,LIFE,FOCUS,DEFENSE,BODYRESIST,MINDRESIST};
+	}
+	
+	//-------------------------------------------------------------------
 	public boolean isPrimary() {
 		for (Attribute key : primaryValues())
 			if (this==key) return true;

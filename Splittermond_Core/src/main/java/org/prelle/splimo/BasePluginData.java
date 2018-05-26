@@ -109,7 +109,7 @@ public abstract class BasePluginData implements HardcopyPluginData {
 		if (i18nHelp==null)
 			return null;
 		String key = getHelpI18NKey();
-		if (!RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(plugin.getRules(), plugin.getID()))
+		if (!SplitterMondCore.hasLicense())
 			return null;
 
 		try {

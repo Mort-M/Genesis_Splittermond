@@ -11,9 +11,11 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.prelle.javafx.ScreenManager;
+import org.prelle.javafx.fluent.NavigationView;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.fluent.SplittermondCharGenView;
 import org.prelle.splimo.levelling.CharacterLeveller;
 import org.prelle.splittermond.jfx.equip.input.DataInputScreen;
 
@@ -175,11 +177,13 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 			control = new CharacterLeveller(model, hgFactor);
 			CharacterHandle handle = (CharacterHandle)values[2];			
 			manager = (ScreenManager)values[4];
-			
 			screen = new CharacterViewScreenSpliMo(control, ViewMode.MODIFICATION);
 //			OldCharacterViewScreen screen = new OldCharacterViewScreen((CharacterLeveller) control, ViewMode.MODIFICATION);
 			screen.setData(model, handle);
 			manager.show(screen, CSS);
+//			SplittermondCharGenView altScreen = new SplittermondCharGenView(control);
+//			altScreen.setData(model, handle);
+//			manager.show(altScreen, CSS);
 			
 			return new CommandResult(type, true);
 		case SHOW_CHARACTER_CREATION_GUI:

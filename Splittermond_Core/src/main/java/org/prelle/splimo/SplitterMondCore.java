@@ -133,6 +133,8 @@ public class SplitterMondCore {
 	private static Map<Culture, SpliMoNameTable> nameTables;
 
 	private static ArrayList<Resource> BASE_RESOURCES;
+	
+	private static boolean missingLicense;
 
 	//-------------------------------------------------------------------
 	static {
@@ -184,6 +186,7 @@ public class SplitterMondCore {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
+		missingLicense = !RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(RoleplayingSystem.SPLITTERMOND, plugin.getID());
 
 		loadPowers(plugin, ClassLoader.getSystemResourceAsStream("data/powers.xml"), i18NResources, i18NHelpResources);
 		loadSkills(plugin, ClassLoader.getSystemResourceAsStream("data/skills.xml"), i18NResources, i18NHelpResources);
@@ -219,6 +222,10 @@ public class SplitterMondCore {
 		CommandBus.registerBusCommandListener(new SplittermondCommandBus());
 	}
 
+	//-------------------------------------------------------------------
+	public static boolean hasLicense() {
+		return !missingLicense;
+	}
 
 	//-------------------------------------------------------------------
 	public static void loadSkills(RulePlugin<? extends SpliMoCharacter> plugin, InputStream in, ResourceBundle resources, ResourceBundle helpResources) {
@@ -329,7 +336,6 @@ public class SplitterMondCore {
 			SkillList addSkills = serializer.read(SkillList.class, in);
 			logger.debug("Successfully loaded masterships list");
 
-			boolean missingLicense = !RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(RoleplayingSystem.SPLITTERMOND, plugin.getID());
 			// Set translation
 			int count=0;
 			for (Skill tmp : addSkills) {
@@ -407,7 +413,6 @@ public class SplitterMondCore {
 		if (in==null)
 			throw new MissingResourceException("Missing spells.xml", SplitterMondCore.class.getName(), null);
 
-		boolean missingLicense = !RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(RoleplayingSystem.SPLITTERMOND, plugin.getID());
 		try {
 			SpellList addSpells = serializer.read(SpellList.class, in);
 			logger.info("Successfully loaded "+addSpells.size()+" spells");
@@ -1129,7 +1134,6 @@ public class SplitterMondCore {
 	public static void loadEquipment(RulePlugin<? extends SpliMoCharacter> plugin, InputStream in, ResourceBundle resrc, ResourceBundle helpResources) {
 		logger.debug("Load equipment (Plugin="+plugin.getID()+")");
 
-		boolean missingLicense = !RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(RoleplayingSystem.SPLITTERMOND, plugin.getID()) && !plugin.getID().equals("CORE");
 		if (missingLicense) {
 			logger.debug("Missing license for "+plugin.getID()+" equipment");
 		}
@@ -1544,7 +1548,6 @@ public class SplitterMondCore {
 	public static void loadMaterials(RulePlugin<? extends SpliMoCharacter> plugin, InputStream in, ResourceBundle resrc, ResourceBundle helpResources) {
 		logger.debug("Load materials (Plugin="+plugin.getID()+")");
 
-		boolean missingLicense = !RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(RoleplayingSystem.SPLITTERMOND, plugin.getID());
 		try {
 			MaterialList toAdd = serializer.read(MaterialList.class, in);
 			logger.info("Successfully loaded "+toAdd.size()+" materials");
