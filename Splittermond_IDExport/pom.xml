@@ -26,7 +26,7 @@
 			<artifactId>rpgframework-api</artifactId>
 		</dependency>
 		<dependency>
-         <groupId>de.rpgframework</groupId>
+			<groupId>de.rpgframework</groupId>
 			<artifactId>babylon</artifactId>
 			<version>2.0-SNAPSHOT</version>
 			<scope>runtime</scope>
@@ -39,91 +39,20 @@
 		</dependency>
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-world</artifactId>
-			<version>[1.0.7,)</version>
-			<scope>runtime</scope>
+			<artifactId>splittermond-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-msk</artifactId>
-			<version>[2.1.1,)</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-buu</artifactId>
-			<version>[0.4.0,)</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-jdg</artifactId>
-			<version>[1.1.1,)</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-selenia</artifactId>
-			<version>[1.1.1,)</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-zhouijang</artifactId>
+			<artifactId>splittermond-data</artifactId>
 			<version>[1.0.0,)</version>
 			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-farukan</artifactId>
-			<version>[1.0.0,)</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-fahrendevoelker</artifactId>
-			<version>[1.0.0,)</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-flammensenke</artifactId>
-			<version>[1.1.0,)</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-goetter</artifactId>
-			<version>[1.0.1,)</version>
-			<scope>runtime</scope>
+			<type>pom</type>
 		</dependency>
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
 			<artifactId>splittermond-print</artifactId>
-			<version>[1.0.7,)</version>
+			<version>[1.4.0,)</version>
 			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-surmakar</artifactId>
-			<version>[1.1.1,)</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-beastmaster</artifactId>
-			<version>[0.1.0-SNAPSHOT,)</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-unreich</artifactId>
-			<version>[1.0.0,)</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-core</artifactId>
 		</dependency>
 	</dependencies>
 </project>

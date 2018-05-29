@@ -15,31 +15,6 @@
 	<name>Splittermond Common Definitions</name>
 	<packaging>pom</packaging>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>wagon-maven-plugin</artifactId>
-				<version>1.0</version>
-				<executions>
-					<execution>
-						<id>upload-to-myserver</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>upload-single</goal>
-						</goals>
-						<configuration>
-							<serverId>updates</serverId>
-							<fromFile>releasenotes.html</fromFile>
-							<toFile>${project.artifactId}-${project.version}.jar.html</toFile>
-							<url>scp://updates.rpgframework.de/var/www/html/release-notes/</url>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
