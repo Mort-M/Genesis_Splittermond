@@ -1771,8 +1771,13 @@ public class SplitterMondCore {
 				if (logger.isDebugEnabled())
 					logger.debug("* "+tmp.getName());
 
-				SplitterTools.fixCreatureSkillPoints(tmp);
-
+//				if (tmp.getId().equals("fightingdog"))					
+//					System.err.println(tmp.dump());
+//				SplitterTools.fixCreatureSkillPoints(tmp);
+//				if (tmp.getId().equals("fightingdog"))	 {			
+//					System.err.println(tmp.dump());
+//					System.exit(0);
+//				}
 				// Check features for completeness
 				for (CreatureFeature feat : tmp.getFeatures()) {
 					if (feat.getType().hasLevels() && feat.getLevel()<1)
