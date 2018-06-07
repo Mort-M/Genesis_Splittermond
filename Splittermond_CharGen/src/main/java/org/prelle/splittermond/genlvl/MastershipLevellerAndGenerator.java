@@ -35,8 +35,10 @@ import org.prelle.splimo.requirements.AnyRequirement;
 import org.prelle.splimo.requirements.MastershipRequirement;
 import org.prelle.splimo.requirements.PowerRequirement;
 import org.prelle.splimo.requirements.Requirement;
+import org.prelle.splimo.requirements.ResourceRequirement;
 import org.prelle.splimo.requirements.SkillRequirement;
 import org.prelle.splimo.requirements.SpecialRequirement;
+import org.prelle.splimo.requirements.SpellRequirement;
 
 import de.rpgframework.genericrpg.modification.Modification;
 
@@ -653,6 +655,10 @@ public class MastershipLevellerAndGenerator implements MastershipController, Gen
 					ret.add( ((SpecialRequirement)req).getSpecialization().getName());
 				} else if (req instanceof AnyRequirement) {
 					ret.add( ((AnyRequirement)req).toString() );
+				} else if (req instanceof SpellRequirement) {
+					ret.add( RES.getString("label.spell")+" "+((SpellRequirement)req).getSpellName() );
+				} else if (req instanceof ResourceRequirement) {
+					ret.add( ((ResourceRequirement)req).getResource().getName()+" "+((ResourceRequirement)req).getValue() );
 				} else
 					logger.warn("Don't know how to show "+req.getClass());
 			}

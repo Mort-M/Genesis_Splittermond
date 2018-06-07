@@ -39,6 +39,7 @@ import org.prelle.splimo.requirements.Requirement;
 import org.prelle.splimo.requirements.ResourceRequirement;
 import org.prelle.splimo.requirements.SkillRequirement;
 import org.prelle.splimo.requirements.SpecialRequirement;
+import org.prelle.splimo.requirements.SpellRequirement;
 
 import de.rpgframework.character.RuleSpecificCharacterObject;
 import de.rpgframework.genericrpg.Reward;
@@ -863,8 +864,7 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 		if (req instanceof AttributeRequirement) {
 			AttributeRequirement real = (AttributeRequirement)req;
 			return getAttribute(real.getAttribute()).getValue()>=real.getValue();
-		} else
-			if (req instanceof MastershipRequirement) {
+		} else if (req instanceof MastershipRequirement) {
 				MastershipRequirement real = (MastershipRequirement)req;
 //				logger.debug("Check if mastership "+real.getMastership()+" exists");
 				if (real.getMastership()!=null) {
@@ -874,40 +874,42 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 						return hasMastership(real.getMastership(), real.getFokus());
 				}
 				return false;
-			} else
-				if (req instanceof SpecialRequirement) {
-					SpecialRequirement real = (SpecialRequirement)req;
-					if (real.getSpecialization()!=null)
-						return getSkillSpecializationLevel(real.getSpecialization().getSpecial())>0;
-						return false;
-				} else
-					if (req instanceof PowerRequirement) {
-						PowerRequirement real = (PowerRequirement)req;
-						for (PowerReference ref : powerrefs)
-							if (ref.getPower()==real.getPower())
-								return true;
-						return false;
-					} else
-						if (req instanceof ResourceRequirement) {
-							ResourceRequirement real = (ResourceRequirement)req;
-							for (ResourceReference ref : resourcerefs)
-								if (ref.getResource()==real.getResource() && ref.getValue()>=real.getValue())
-									return true;
-							return false;
-						} else
-							if (req instanceof SkillRequirement) {
-								SkillRequirement real = (SkillRequirement)req;
-								SkillValue sVal = getSkillValue(real.getSkill());
-								return sVal.getValue()>=real.getValue();
-							} else
-								if (req instanceof AnyRequirement) {
-									AnyRequirement real = (AnyRequirement)req;
-									for (Requirement opt : real.getOptionList()) {
-										if (meetsRequirement(opt))
-											return true;
-									}
-									return false;
-								}
+		} else if (req instanceof SpecialRequirement) {
+			SpecialRequirement real = (SpecialRequirement)req;
+			if (real.getSpecialization()!=null)
+				return getSkillSpecializationLevel(real.getSpecialization().getSpecial())>0;
+				return false;
+		} else if (req instanceof PowerRequirement) {
+			PowerRequirement real = (PowerRequirement)req;
+			for (PowerReference ref : powerrefs)
+				if (ref.getPower()==real.getPower())
+					return true;
+			return false;
+		} else if (req instanceof ResourceRequirement) {
+			ResourceRequirement real = (ResourceRequirement)req;
+			for (ResourceReference ref : resourcerefs)
+				if (ref.getResource()==real.getResource() && ref.getValue()>=real.getValue())
+					return true;
+			return false;
+		} else if (req instanceof SkillRequirement) {
+			SkillRequirement real = (SkillRequirement)req;
+			SkillValue sVal = getSkillValue(real.getSkill());
+			return sVal.getValue()>=real.getValue();
+		} else if (req instanceof AnyRequirement) {
+			AnyRequirement real = (AnyRequirement)req;
+			for (Requirement opt : real.getOptionList()) {
+				if (meetsRequirement(opt))
+					return true;
+			}
+			return false;
+		} else if (req instanceof SpellRequirement) {
+			SpellRequirement real = (SpellRequirement)req;
+			for (SpellValue sVal : getSpells()) {
+				if (real.getSpell().equals(sVal.getSpell()))
+					return true;
+			}
+			return false;
+		}
 		if (req instanceof FavoredSkillRequirement)
 			return true;
 
