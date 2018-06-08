@@ -119,10 +119,20 @@ public class EquipmentTools {
 		 */
 		if (ref.getSkillSpecialization()!=null && ref.getSkillSpecialization().getSkill()==null) {
 			SkillSpecialization spec = ref.getSkillSpecialization();
+			String search  = spec.getId();
+			String skillID = null;
+			if (search.contains("/")) {
+				skillID= search.substring(0,  search.indexOf("/"));
+				search = search.substring(search.indexOf("/")+1);
+			}
+//			logger.debug("   * search  = "+search);
+//			logger.debug("   * skillID = "+skillID);
 			outer:
 			for (Skill tmp : SplitterMondCore.getSkills()) {
+				if (skillID!=null && !tmp.getId().equals(skillID))
+					continue outer;
 				for (SkillSpecialization tmp2 : tmp.getSpecializations()) {
-					if (tmp2.getId().equals(spec.getId())) {
+					if (tmp2.getId().equals(search)) {
 						logger.warn("    Assume skill "+tmp+" for enhancement "+ref);
 						tmp2.setSkill(tmp);
 						ref.getSkillSpecialization().setSkill(tmp);

@@ -17,6 +17,7 @@ import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SkillSpecialization;
+import org.prelle.splimo.SkillSpecialization.SkillSpecializationType;
 import org.prelle.splimo.Spell;
 import org.prelle.splimo.SpellSchoolEntry;
 import org.prelle.splimo.SpellValue;
@@ -145,6 +146,11 @@ public class EnhancementReferenceListView extends ListView<EnhancementReference>
 		CloseType close = manager.showAlertAndCall(AlertType.QUESTION, UI.getString("dialog.selectSpecializationEnhancement"), pane);
 		if (close!=CloseType.OK)
 			return null;
+		
+		if (cbSpecs.getValue().getType()==SkillSpecializationType.SPELLTYPE) {
+			logger.debug("Special treatment for spell types");
+		  return new SkillSpecialization(cbSkills.getValue(), cbSpecs.getValue().getType(), cbSkills.getValue().getId()+"/"+cbSpecs.getValue().getId());
+		}
 		return cbSpecs.getValue();
 	}
 	

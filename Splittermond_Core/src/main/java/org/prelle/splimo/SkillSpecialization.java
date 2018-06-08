@@ -40,8 +40,11 @@ public class SkillSpecialization implements MastershipOrSpecialization {
 
 	//-------------------------------------------------------------------
 	public String getName() {
-		if (type==SkillSpecializationType.SPELLTYPE)
+		if (type==SkillSpecializationType.SPELLTYPE) {
+			if (id.indexOf("/")>0)
+				return SplitterMondCore.getI18nResources().getString("spell.type."+id.toLowerCase().substring(id.indexOf("/")+1));
 			return SplitterMondCore.getI18nResources().getString("spell.type."+id.toLowerCase());
+		}
 		if (type==SkillSpecializationType.WEAPON) {
 			if (SplitterMondCore.getI18nResources().containsKey("skillspecial."+id.toLowerCase()))
 				return SplitterMondCore.getI18nResources().getString("skillspecial."+id.toLowerCase());
