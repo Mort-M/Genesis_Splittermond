@@ -267,7 +267,7 @@ class PowerEditingCell extends TableCell<PowerReference, Object> {
 				PowerEditingCell.this.changed(arg0, arg1, arg2);
 			}});
 		
-		box = new ListSpinner<>(0, 6, 1);
+		box = new ListSpinner<>(0, 20, 1);
 		box.valueProperty().addListener(new ChangeListener<Integer>() {
 			public void changed(ObservableValue<? extends Integer> arg0,
 					Integer arg1, Integer arg2) {
