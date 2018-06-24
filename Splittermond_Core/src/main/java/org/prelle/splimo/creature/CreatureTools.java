@@ -165,12 +165,13 @@ public class CreatureTools {
 
     //-------------------------------------------------------------------
     public static void apply(ModuleBasedCreature modulBased, Modification mod) {
-        logger.debug("   apply "+mod.getClass()+" / "+mod);
+        logger.debug("     apply "+mod.getClass()+" / "+mod);
         if (mod instanceof AttributeModification) {
             AttributeModification aMod = (AttributeModification)mod;
             modulBased.getAttribute(aMod.getAttribute()).addModification(aMod);
         } else if (mod instanceof SkillModification) {
             SkillModification sMod = (SkillModification)mod;
+            logger.info("   Dump "+sMod.dump());
             if (sMod.getSkill()==melee) {
                 applyToWeapon(modulBased, modulBased.getCreatureWeapons().get(0), sMod);
             } else if (sMod.getSkill()!=null) {
@@ -178,6 +179,12 @@ public class CreatureTools {
             		modulBased.addSkill(new SkillValue(sMod.getSkill(), 0));
             	modulBased.getSkillValue(sMod.getSkill()).addModification(sMod);
             } else {
+            	// Skill must be chosen.
+            	logger.info("   Ref = "+sMod.getSkill());
+            	if (true) {
+            		logger.warn("   Ignore choice modification without a selection");
+            		return;
+            	}
             	for (Skill skill : SplitterMondCore.getSkills()) {
             		SkillValue sVal = modulBased.getSkillValue(skill);
             		// Check existence condition
@@ -202,7 +209,7 @@ public class CreatureTools {
             		// Eventually add skill
             		// Apply modification
             		if (sVal==null)
-            			throw new NullPointerException("No skill value for "+skill);
+            			throw new NullPointerException("No skill value for "+skill+" - cannot apply "+sMod+" to creature "+modulBased);
             		SkillModification tmp = new SkillModification(skill, sMod.getValue());
             		tmp.setSource(sMod.getSource());
                 	sVal.addModification(tmp);
@@ -445,7 +452,11 @@ public class CreatureTools {
         			logger.error("Trying to remove a spell that does not exist in model");
         		modulBased.removeSpell(sMod.getSpell());
         	} else {
-        		modulBased.addSpell(sMod.getSpell());
+        		if (sMod.getSpell()==null) {
+        			logger.debug("    Ignore spell for now - should have been chosen and applied in phase 6");
+        		} else {
+        			modulBased.addSpell(sMod.getSpell());
+        		}
         	}
         } else if (mod instanceof AllOfModification) {
         	AllOfModification aMod = (AllOfModification)mod;

@@ -87,6 +87,12 @@ public class SkillModification extends ModificationImpl {
 	}
 
 	//-------------------------------------------------------------------
+	public String dump() {
+		return String.format("SkillMod(type=%s, ref=%s, value=%d, modSrc=%s, choiceType=%s, restr=%s)", 
+				String.valueOf(type), ref, value, modSource, choiceType, restrictionType);
+	}
+
+	//-------------------------------------------------------------------
 	public String toString() {
 		String sourceString = source != null ? " (" + source + ")" : "";
 		
