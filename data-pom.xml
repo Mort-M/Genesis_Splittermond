@@ -108,7 +108,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
-			<artifactId>splittermond-zhoijiang</artifactId>
+			<artifactId>splittermond-zhoujiang</artifactId>
 			<version>[1.2.0,)</version>
 		</dependency>
 	</dependencies>
