@@ -102,6 +102,8 @@ public class SplitterMondCore {
 	private final static String PROMOSERVER_CHECK_URL    = "http://license.rpgframework.de:4001/checkPromo?code=%s&secret=%s";
 	private final static String PROMOSERVER_REGISTER_URL = "http://license.rpgframework.de:4001/registerPromo?code=%s&secret=%s";
 
+	private static boolean alreadyInitialized = false;
+	
 	private static PropertyResourceBundle i18NResources;
 	private static PropertyResourceBundle i18NHelpResources;
 	private static Persister serializer;
@@ -180,6 +182,8 @@ public class SplitterMondCore {
 
 	//-------------------------------------------------------------------
 	public static void initialize(RulePlugin<SpliMoCharacter> plugin) {
+		if (alreadyInitialized)
+			return;
 //		try {
 //			throw new RuntimeException("Trace");
 //		} catch (Exception e) {
@@ -220,6 +224,8 @@ public class SplitterMondCore {
 		 * Register to receive commands
 		 */
 		CommandBus.registerBusCommandListener(new SplittermondCommandBus());
+		
+		alreadyInitialized = true;
 	}
 
 	//-------------------------------------------------------------------
@@ -1041,6 +1047,11 @@ public class SplitterMondCore {
 	//-------------------------------------------------------------------
 	public static SpliMoCharacter load(byte[] raw) throws IOException {
 		return load(new StreamSource( new ByteArrayInputStream( raw ) ));
+	}
+
+	//-------------------------------------------------------------------
+	public static SpliMoCharacter load(InputStream ins) throws IOException {
+		return load(new StreamSource( ins ));
 	}
 
 	//-------------------------------------------------------------------
