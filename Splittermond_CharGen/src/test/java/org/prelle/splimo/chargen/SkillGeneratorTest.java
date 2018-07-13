@@ -12,6 +12,7 @@ import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpliMoCharacter;
@@ -38,7 +39,7 @@ public class SkillGeneratorTest {
 	//-------------------------------------------------------------------
 	static {
 		PropertyConfigurator.configure("log4j.properties");
-		RPGFrameworkLoader.getInstance();
+		SplitterMondCore.initialize(new SplittermondRules());
 		power1 = SplitterMondCore.getSkill("blades");
 		power2 = SplitterMondCore.getSkill("empathy");
 	}

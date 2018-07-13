@@ -18,6 +18,7 @@ import org.apache.log4j.PropertyConfigurator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.rpgframework.splittermond.beastmaster.BeastMasterPlugin;
 import org.prelle.rpgframework.splittermond.buu.BestienUndUngeheuerPlugin;
 import org.prelle.rpgframework.splittermond.msk.MondstahlklingenPlugin;
@@ -48,7 +49,7 @@ public class CreatureGeneratorTest implements GenerationEventListener {
 	//-------------------------------------------------------------------
 	static {
 		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
-		RPGFrameworkLoader.getInstance();
+		SplitterMondCore.initialize(new SplittermondRules());
 		(new MondstahlklingenPlugin()).init();
 		(new BestienUndUngeheuerPlugin()).init();
 		(new BeastMasterPlugin()).init();

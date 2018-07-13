@@ -17,6 +17,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.Resource;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SplitterMondCore;
@@ -55,7 +56,7 @@ public class ItemControllerTest {
 	static {
 		RELICSONLY = new Enhancement("reliconly", 2, null, EnhancementType.RELIC);
 		PropertyConfigurator.configure("log4j.properties");
-		RPGFrameworkLoader.getInstance();
+		SplitterMondCore.initialize(new SplittermondRules());
 		SplitterMondCore.addEnhancement(RELICSONLY);
 
 		DAGGER  = SplitterMondCore.getItem("dagger");
@@ -179,8 +180,8 @@ public class ItemControllerTest {
 		System.out.println("Available Materials = "+generator.getAvailableMaterials());
 		generator.setMaterial(JADEIRON);
 		assertEquals(2,model.getArtifactQuality());
-		assertEquals(3,model.getItemQuality());  // min. 3 like material quality
-		assertEquals(6,model.getRelicQuality()); // 2 (artifact), 3 (item), 1 (material)
+		assertEquals(1,model.getItemQuality());  // min. 3 like material quality
+		assertEquals(3,model.getRelicQuality()); // 2 (artifact), 3 (item), 1 (material)
 	}
 
 }

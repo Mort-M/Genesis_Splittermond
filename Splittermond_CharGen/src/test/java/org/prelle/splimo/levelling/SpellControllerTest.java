@@ -17,6 +17,7 @@ import org.apache.log4j.PropertyConfigurator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Spell;
 import org.prelle.splimo.SpellValue;
@@ -67,7 +68,7 @@ public class SpellControllerTest implements GenerationEventListener {
 //		Logger.getLogger("junit").setLevel(Level.DEBUG);
 
 		PropertyConfigurator.configure("log4j.properties");
-		RPGFrameworkLoader.getInstance();
+		SplitterMondCore.initialize(new SplittermondRules());
 		HEALMAGIC = SplitterMondCore.getSkill("healmagic");
 		ENHANCEMAGIC = SplitterMondCore.getSkill("enhancemagic");
 		

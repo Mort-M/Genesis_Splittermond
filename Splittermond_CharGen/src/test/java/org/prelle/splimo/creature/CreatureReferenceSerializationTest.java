@@ -13,6 +13,7 @@ import java.io.StringWriter;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.junit.Test;
+import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.simplepersist.Persister;
 import org.prelle.simplepersist.SerializationException;
 import org.prelle.simplepersist.Serializer;
@@ -71,7 +72,7 @@ public class CreatureReferenceSerializationTest {
 	static {
 		Logger.getRootLogger().setLevel(Level.WARN);
 
-		RPGFrameworkLoader.getInstance();
+		SplitterMondCore.initialize(new SplittermondRules());
 		
 		CHARAC.setName("Mein Lämmchen");
 		CHARAC.setUniqueId(null);

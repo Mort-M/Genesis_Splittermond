@@ -15,6 +15,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillSpecialization;
@@ -50,7 +51,7 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	static {
 		PropertyConfigurator.configure("log4j.properties");
-		RPGFrameworkLoader.getInstance();
+		SplitterMondCore.initialize(new SplittermondRules());
 
 		skill = SplitterMondCore.getSkill("acrobatics");
 		EVADE1 = skill.getMastership("evade1");

@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.Test;
+import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.Power;
 import org.prelle.splimo.PowerReference;
 import org.prelle.splimo.Race;
@@ -44,7 +45,7 @@ public class PowerGeneratorTest {
 	//-------------------------------------------------------------------
 	static {
 		PropertyConfigurator.configure("log4j.properties");
-		RPGFrameworkLoader.getInstance();
+		SplitterMondCore.initialize(new SplittermondRules());
 		ONCE_GENONLY = SplitterMondCore.getPower("attractive");
 		ONCE_ALWAYS = SplitterMondCore.getPower("socialable");
 		MULTI_ALWAYS = SplitterMondCore.getPower("focuspool");

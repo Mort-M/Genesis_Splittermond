@@ -13,6 +13,7 @@ import java.io.StringWriter;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.junit.Test;
+import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.simplepersist.Persister;
 import org.prelle.simplepersist.SerializationException;
 import org.prelle.simplepersist.Serializer;
@@ -190,7 +191,7 @@ public class ModuleBasedCreatureSerializationTest {
 		"   </creaturetypes>\n" + 
 		"</modcreature>\n";
 		
-		RPGFrameworkLoader.getInstance();
+		SplitterMondCore.initialize(new SplittermondRules());
 
 		CreatureModuleReference agile =new CreatureModuleReference(SplitterMondCore.getCreatureModule("agile"));
 		agile.setUniqueId(null);

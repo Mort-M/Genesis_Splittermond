@@ -13,9 +13,12 @@ import java.util.List;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.Test;
+import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
+import org.prelle.splimo.DummyRulePlugin;
 import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
@@ -37,7 +40,7 @@ public class AttributeGeneratorTest implements GenerationEventListener {
 	//-------------------------------------------------------------------
 	static {
 		PropertyConfigurator.configure("log4j.properties");
-		RPGFrameworkLoader.getInstance();
+		SplitterMondCore.initialize(new SplittermondRules());
 	}
 
 	//-------------------------------------------------------------------
