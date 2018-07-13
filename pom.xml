@@ -34,6 +34,7 @@
       <module>Splittermond_Unreich</module>
       <module>Splittermond_World</module>
       <module>Splittermond_Zhoujiang</module>
+      <module>data-pom.xml</module>
       <module>Splittermond_IDExport</module>
 	</modules>
 </project>
