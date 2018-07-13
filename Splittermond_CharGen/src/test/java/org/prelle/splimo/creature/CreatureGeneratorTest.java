@@ -17,6 +17,7 @@ import java.util.Map;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.rpgframework.splittermond.beastmaster.BeastMasterPlugin;
@@ -47,7 +48,11 @@ public class CreatureGeneratorTest implements GenerationEventListener {
 	private Map<Skill, Mastership> selectMasters;
 
 	//-------------------------------------------------------------------
-	static {
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		SplitterMondCore.initialize(new SplittermondRules());
 		(new MondstahlklingenPlugin()).init();
@@ -271,8 +276,11 @@ public class CreatureGeneratorTest implements GenerationEventListener {
 
 		generator = new CreatureGenerator(new ResourceReference(SplitterMondCore.getResource("creature"),1));
 		generator.selectBase(SplitterMondCore.getCreatureModule("agile"));
+		assertEquals( 8,generator.getCreature().getModuleBasedCreature().getSkillValue(SplitterMondCore.getSkill("athletics")).getModifiedValue());
 		generator.selectRole(SplitterMondCore.getCreatureModule("familiar"));
+		assertEquals( 8,generator.getCreature().getModuleBasedCreature().getSkillValue(SplitterMondCore.getSkill("athletics")).getModifiedValue());
 		generator.selectOption(SplitterMondCore.getCreatureModule("tiny"));
+		assertEquals( 4,generator.getCreature().getModuleBasedCreature().getSkillValue(SplitterMondCore.getSkill("athletics")).getModifiedValue());
 		generator.selectOption(SplitterMondCore.getCreatureModule("fairybeing"));
 		ModuleBasedCreature model = generator.getCreature().getModuleBasedCreature();
 

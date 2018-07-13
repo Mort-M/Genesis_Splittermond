@@ -12,8 +12,12 @@ import java.io.StringWriter;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
+import org.prelle.rpgframework.splittermond.beastmaster.BeastMasterPlugin;
+import org.prelle.rpgframework.splittermond.buu.BestienUndUngeheuerPlugin;
+import org.prelle.rpgframework.splittermond.msk.MondstahlklingenPlugin;
 import org.prelle.simplepersist.Persister;
 import org.prelle.simplepersist.SerializationException;
 import org.prelle.simplepersist.Serializer;
@@ -169,7 +173,11 @@ public class ModuleBasedCreatureSerializationTest {
 	static private Serializer m;
 
 	//-------------------------------------------------------------------
-	static {
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 		Logger.getRootLogger().setLevel(Level.WARN);
 		DATA = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" + 
 		"<modcreature>\n" + 
@@ -192,6 +200,9 @@ public class ModuleBasedCreatureSerializationTest {
 		"</modcreature>\n";
 		
 		SplitterMondCore.initialize(new SplittermondRules());
+		(new MondstahlklingenPlugin()).init();
+		(new BestienUndUngeheuerPlugin()).init();
+		(new BeastMasterPlugin()).init();
 
 		CreatureModuleReference agile =new CreatureModuleReference(SplitterMondCore.getCreatureModule("agile"));
 		agile.setUniqueId(null);

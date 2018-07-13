@@ -12,6 +12,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -44,11 +45,19 @@ public class ResourceGeneratorTest {
 	//-------------------------------------------------------------------
 	static {
 		PropertyConfigurator.configure("log4j.properties");
-		SplitterMondCore.initialize(new SplittermondRules());
 		nonBaseResource1 = SplitterMondCore.getResource("relic");
 		nonBaseResource2 = SplitterMondCore.getResource("mentor");
 		resource2 = SplitterMondCore.getResource("reputation");
 		resource3 = SplitterMondCore.getResource("status");
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		SplitterMondCore.initialize(new SplittermondRules());
 	}
 
 	//-------------------------------------------------------------------

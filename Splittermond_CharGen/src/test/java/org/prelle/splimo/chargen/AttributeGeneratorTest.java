@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.Attribute;
@@ -40,6 +41,14 @@ public class AttributeGeneratorTest implements GenerationEventListener {
 	//-------------------------------------------------------------------
 	static {
 		PropertyConfigurator.configure("log4j.properties");
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 		SplitterMondCore.initialize(new SplittermondRules());
 	}
 

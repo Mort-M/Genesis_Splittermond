@@ -12,8 +12,12 @@ import java.io.StringWriter;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
+import org.prelle.rpgframework.splittermond.beastmaster.BeastMasterPlugin;
+import org.prelle.rpgframework.splittermond.buu.BestienUndUngeheuerPlugin;
+import org.prelle.rpgframework.splittermond.msk.MondstahlklingenPlugin;
 import org.prelle.simplepersist.Persister;
 import org.prelle.simplepersist.SerializationException;
 import org.prelle.simplepersist.Serializer;
@@ -69,10 +73,16 @@ public class CreatureReferenceSerializationTest {
 	static private Serializer m;
 
 	//-------------------------------------------------------------------
-	static {
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 		Logger.getRootLogger().setLevel(Level.WARN);
-
 		SplitterMondCore.initialize(new SplittermondRules());
+		(new MondstahlklingenPlugin()).init();
+		(new BestienUndUngeheuerPlugin()).init();
+		(new BeastMasterPlugin()).init();
 		
 		CHARAC.setName("Mein Lämmchen");
 		CHARAC.setUniqueId(null);

@@ -12,6 +12,7 @@ import static org.junit.Assert.assertTrue;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.Power;
@@ -43,7 +44,11 @@ public class PowerGeneratorTest {
 	private PowerGenerator2 generator;
 
 	//-------------------------------------------------------------------
-	static {
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 		PropertyConfigurator.configure("log4j.properties");
 		SplitterMondCore.initialize(new SplittermondRules());
 		ONCE_GENONLY = SplitterMondCore.getPower("attractive");

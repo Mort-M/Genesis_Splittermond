@@ -9,6 +9,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -39,9 +40,17 @@ public class SkillGeneratorTest {
 	//-------------------------------------------------------------------
 	static {
 		PropertyConfigurator.configure("log4j.properties");
-		SplitterMondCore.initialize(new SplittermondRules());
 		power1 = SplitterMondCore.getSkill("blades");
 		power2 = SplitterMondCore.getSkill("empathy");
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		SplitterMondCore.initialize(new SplittermondRules());
 	}
 
 	//-------------------------------------------------------------------
