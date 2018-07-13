@@ -7,6 +7,8 @@ import org.apache.log4j.PropertyConfigurator;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import org.prelle.splimo.DummyRulePlugin;
+import org.prelle.splimo.SplitterMondCore;
 
 import de.rpgframework.RPGFrameworkLoader;
 
@@ -40,6 +42,7 @@ public class SerializationTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		SplitterMondCore.initialize(new DummyRulePlugin<>());
 		RPGFrameworkLoader.getInstance();
 	}
 
