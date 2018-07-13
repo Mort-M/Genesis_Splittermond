@@ -181,8 +181,8 @@ public class CreatureTools {
             } else {
             	// Skill must be chosen.
             	logger.info("   Ref = "+sMod.getSkill());
-            	if (true) {
-            		logger.warn("   Ignore choice modification without a selection");
+            	if (sMod.getRestrictionType()==null) {
+            		logger.warn("   Ignore choice modification without a (normal or restricted) selection");
             		return;
             	}
             	for (Skill skill : SplitterMondCore.getSkills()) {
