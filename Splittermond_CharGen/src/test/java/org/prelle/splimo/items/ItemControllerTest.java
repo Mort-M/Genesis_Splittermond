@@ -15,6 +15,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
@@ -51,9 +52,10 @@ public class ItemControllerTest {
 	private CarriedItem model;
 
 	private int MAX = Integer.MAX_VALUE;
-	
+
 	//-------------------------------------------------------------------
-	static {
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 		RELICSONLY = new Enhancement("reliconly", 2, null, EnhancementType.RELIC);
 		PropertyConfigurator.configure("log4j.properties");
 		SplitterMondCore.initialize(new SplittermondRules());
@@ -180,8 +182,8 @@ public class ItemControllerTest {
 		System.out.println("Available Materials = "+generator.getAvailableMaterials());
 		generator.setMaterial(JADEIRON);
 		assertEquals(2,model.getArtifactQuality());
-		assertEquals(1,model.getItemQuality());  // min. 3 like material quality
-		assertEquals(3,model.getRelicQuality()); // 2 (artifact), 3 (item), 1 (material)
+		assertEquals(3,model.getItemQuality());  // min. 3 like material quality
+		assertEquals(6,model.getRelicQuality()); // 2 (artifact), 3 (item), 1 (material)
 	}
 
 }

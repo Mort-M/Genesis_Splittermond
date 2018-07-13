@@ -200,9 +200,12 @@ public class ModuleBasedCreatureSerializationTest {
 		"</modcreature>\n";
 		
 		SplitterMondCore.initialize(new SplittermondRules());
-		(new MondstahlklingenPlugin()).init();
-		(new BestienUndUngeheuerPlugin()).init();
-		(new BeastMasterPlugin()).init();
+		if (SplitterMondCore.getItem("bergbarte")==null)
+			(new MondstahlklingenPlugin()).init();
+		if (SplitterMondCore.getMaterial("ankuumakrabbe_panzer")==null)
+			(new BestienUndUngeheuerPlugin()).init();
+		if (SplitterMondCore.getCreatureModule("tiny")==null)
+			(new BeastMasterPlugin()).init();
 
 		CreatureModuleReference agile =new CreatureModuleReference(SplitterMondCore.getCreatureModule("agile"));
 		agile.setUniqueId(null);

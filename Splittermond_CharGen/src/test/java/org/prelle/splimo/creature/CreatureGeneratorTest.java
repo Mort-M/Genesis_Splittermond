@@ -55,9 +55,12 @@ public class CreatureGeneratorTest implements GenerationEventListener {
 	public static void setUpBeforeClass() throws Exception {
 		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		SplitterMondCore.initialize(new SplittermondRules());
-		(new MondstahlklingenPlugin()).init();
-		(new BestienUndUngeheuerPlugin()).init();
-		(new BeastMasterPlugin()).init();
+		if (SplitterMondCore.getItem("bergbarte")==null)
+			(new MondstahlklingenPlugin()).init();
+		if (SplitterMondCore.getMaterial("ankuumakrabbe_panzer")==null)
+			(new BestienUndUngeheuerPlugin()).init();
+		if (SplitterMondCore.getCreatureModule("tiny")==null)
+			(new BeastMasterPlugin()).init();
 	}
 
 	//-------------------------------------------------------------------

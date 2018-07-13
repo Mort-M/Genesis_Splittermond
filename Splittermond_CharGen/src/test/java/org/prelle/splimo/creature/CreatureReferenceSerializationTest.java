@@ -80,9 +80,12 @@ public class CreatureReferenceSerializationTest {
 	public static void setUpBeforeClass() throws Exception {
 		Logger.getRootLogger().setLevel(Level.WARN);
 		SplitterMondCore.initialize(new SplittermondRules());
-		(new MondstahlklingenPlugin()).init();
-		(new BestienUndUngeheuerPlugin()).init();
-		(new BeastMasterPlugin()).init();
+		if (SplitterMondCore.getItem("bergbarte")==null)
+			(new MondstahlklingenPlugin()).init();
+		if (SplitterMondCore.getMaterial("ankuumakrabbe_panzer")==null)
+			(new BestienUndUngeheuerPlugin()).init();
+		if (SplitterMondCore.getCreatureModule("tiny")==null)
+			(new BeastMasterPlugin()).init();
 		
 		CHARAC.setName("Mein Lämmchen");
 		CHARAC.setUniqueId(null);

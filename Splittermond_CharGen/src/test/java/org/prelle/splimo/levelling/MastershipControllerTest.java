@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
@@ -49,7 +50,8 @@ public class MastershipControllerTest {
 	private SpliMoCharacter model;
 
 	//-------------------------------------------------------------------
-	static {
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 		PropertyConfigurator.configure("log4j.properties");
 		SplitterMondCore.initialize(new SplittermondRules());
 

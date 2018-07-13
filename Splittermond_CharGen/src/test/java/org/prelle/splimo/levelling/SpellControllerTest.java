@@ -16,6 +16,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.Skill;
@@ -54,9 +55,10 @@ public class SpellControllerTest implements GenerationEventListener {
 	private List<Modification> undoList;
 
 	private List<GenerationEvent> events;
-	
+
 	//-------------------------------------------------------------------
-	static {
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 //		ConsoleAppender console = new ConsoleAppender();
 //		console.setLayout(new PatternLayout("%5p [%c] (%F:%L) - %m%n"));
 //		console.setCustomName("console");
