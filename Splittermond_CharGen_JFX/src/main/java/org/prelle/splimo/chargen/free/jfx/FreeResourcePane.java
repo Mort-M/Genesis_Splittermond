@@ -1,8 +1,12 @@
 package org.prelle.splimo.chargen.free.jfx;
 
-import java.lang.reflect.Field;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
+
+import org.apache.log4j.Logger;
+import org.prelle.splimo.Resource;
+import org.prelle.splimo.free.FreeSelectionGenerator;
+import org.prelle.splimo.modifications.ResourceModification;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -13,25 +17,17 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
-import jfxtras.internal.scene.control.skin.ListSpinnerSkin;
-import jfxtras.internal.scene.control.skin.ListSpinnerSkin.ArrowPosition;
-import jfxtras.scene.control.ListSpinner;
-
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Resource;
-import org.prelle.splimo.free.FreeSelectionGenerator;
-import org.prelle.splimo.modifications.ResourceModification;
 
 public class FreeResourcePane extends HBox implements EventHandler<ActionEvent> {
 	
@@ -165,7 +161,7 @@ class ResourceModCell extends TableCell<ResourceModification, Number> implements
 	
 	private static Logger logger = Logger.getLogger("chargen.ui.resource");
 
-	private ListSpinner<Integer> box;
+	private Spinner<Integer> box;
 	private FreeSelectionGenerator charGen;
 	private boolean setByEvent;
 	private ResourceModification data;
@@ -177,30 +173,28 @@ class ResourceModCell extends TableCell<ResourceModification, Number> implements
 			throw new NullPointerException();
 		this.parent  = parent;
 		this.charGen = charGen;
-		box = new ListSpinner<>(-2,4,1);
+		box = new Spinner<>(-2,4,1);
 		box.valueProperty().addListener(this);
-		box.setCyclic(false);
-		ListSpinnerSkin<Integer> skin = new ListSpinnerSkin<Integer>(box);
-		skin.setArrowPosition(ArrowPosition.SPLIT);
-		box.setSkin(skin);
+//		box.setCyclic(false);
+		box.getStyleClass().add(Spinner.STYLE_CLASS_SPLIT_ARROWS_HORIZONTAL);
 		setAlignment(Pos.CENTER);
 	}
 	
-	//-------------------------------------------------------------------
-	@SuppressWarnings("rawtypes")
-	private void removeScrollHandler(ListSpinner pf) {
-	    try {
-	    	ListSpinnerSkin skin = (ListSpinnerSkin) pf.getSkin();
-			Field f = skin.getClass().getDeclaredField("skinNode");
-			f.setAccessible(true);
-			BorderPane skinNode = (BorderPane) f.get(skin);
-			if (skinNode!=null) {
-				skinNode.setOnScroll(null);
-			}
-		} catch (Exception e) {
-			logger.warn("Error removing scroll handler from spinner: "+e);
-		}
-	}
+//	//-------------------------------------------------------------------
+//	@SuppressWarnings("rawtypes")
+//	private void removeScrollHandler(Spinner pf) {
+//	    try {
+//	    	SpinnerSkin skin = (SpinnerSkin) pf.getSkin();
+//			Field f = skin.getClass().getDeclaredField("skinNode");
+//			f.setAccessible(true);
+//			BorderPane skinNode = (BorderPane) f.get(skin);
+//			if (skinNode!=null) {
+//				skinNode.setOnScroll(null);
+//			}
+//		} catch (Exception e) {
+//			logger.warn("Error removing scroll handler from spinner: "+e);
+//		}
+//	}
 	
 	//-------------------------------------------------------------------
 	/**
@@ -219,7 +213,7 @@ class ResourceModCell extends TableCell<ResourceModification, Number> implements
 			this.setGraphic(null);
 			return;
 		}
-		box.valueProperty().set(data.getValue());
+		box.getValueFactory().setValue(data.getValue());
 		
 		this.setGraphic(box);
 	}
@@ -238,12 +232,12 @@ class ResourceModCell extends TableCell<ResourceModification, Number> implements
 		charGen.set(data.getResource(), val);
 		parent.updateResources();
 		
-		removeScrollHandler(box);
+//		removeScrollHandler(box);
 	}
 	
 	//-------------------------------------------------------------------
 	void setByEvent(int val) {
 		setByEvent = true;
-		box.valueProperty().setValue(val);
+		box.getValueFactory().setValue(val);
 	}
 }

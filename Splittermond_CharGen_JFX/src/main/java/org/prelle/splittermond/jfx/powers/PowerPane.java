@@ -1,6 +1,5 @@
 package org.prelle.splittermond.jfx.powers;
 
-import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.List;
 import java.util.PropertyResourceBundle;
@@ -26,19 +25,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
-import jfxtras.internal.scene.control.skin.ListSpinnerSkin;
-import jfxtras.scene.control.ListSpinner;
 
 public class PowerPane extends VBox implements GenerationEventListener, EventHandler<ActionEvent> {
 	
@@ -252,7 +249,7 @@ public class PowerPane extends VBox implements GenerationEventListener, EventHan
 
 class PowerEditingCell extends TableCell<PowerReference, Object> {
 	
-	private ListSpinner<Integer> box;
+	private Spinner<Integer> box;
 	private CheckBox checkBox;
 	private PowerController charGen;
 	private PowerReference data;
@@ -267,14 +264,14 @@ class PowerEditingCell extends TableCell<PowerReference, Object> {
 				PowerEditingCell.this.changed(arg0, arg1, arg2);
 			}});
 		
-		box = new ListSpinner<>(0, 20, 1);
+		box = new Spinner<>(0, 20, 1);
 		box.valueProperty().addListener(new ChangeListener<Integer>() {
 			public void changed(ObservableValue<? extends Integer> arg0,
 					Integer arg1, Integer arg2) {
 				PowerEditingCell.this.changed(arg0, arg1, arg2);
 			}
 		});
-		box.setCyclic(false);
+//		box.setCyclic(false);
 //		ListSpinnerSkin<Integer> skin = new ListSpinnerSkin<Integer>(box);
 //		skin.setArrowPosition(ArrowPosition.SPLIT);
 //		box.setSkin(skin);
@@ -282,20 +279,20 @@ class PowerEditingCell extends TableCell<PowerReference, Object> {
 		setAlignment(Pos.CENTER);
 	}
 	
-	//-------------------------------------------------------------------
-	@SuppressWarnings("rawtypes")
-	private void removeScrollHandler(ListSpinner pf) {
-	    try {
-	    	ListSpinnerSkin skin = (ListSpinnerSkin) pf.getSkin();
-			Field f = skin.getClass().getDeclaredField("skinNode");
-			f.setAccessible(true);
-			BorderPane skinNode = (BorderPane) f.get(skin);
-			if (skinNode!=null) {
-				skinNode.setOnScroll(null);
-			}
-		} catch (Exception e) {
-		}
-	}
+//	//-------------------------------------------------------------------
+//	@SuppressWarnings("rawtypes")
+//	private void removeScrollHandler(ListSpinner pf) {
+//	    try {
+//	    	ListSpinnerSkin skin = (ListSpinnerSkin) pf.getSkin();
+//			Field f = skin.getClass().getDeclaredField("skinNode");
+//			f.setAccessible(true);
+//			BorderPane skinNode = (BorderPane) f.get(skin);
+//			if (skinNode!=null) {
+//				skinNode.setOnScroll(null);
+//			}
+//		} catch (Exception e) {
+//		}
+//	}
 	
 	//-------------------------------------------------------------------
 	/**
@@ -314,7 +311,7 @@ class PowerEditingCell extends TableCell<PowerReference, Object> {
 		if (data==null)
 			return;
 //		parent.setMapping(resource, this);
-		box.valueProperty().set(data.getCount());
+		box.getValueFactory().setValue(data.getCount());
 		
 		if (item instanceof Number)
 			this.setGraphic(box);
@@ -336,10 +333,10 @@ class PowerEditingCell extends TableCell<PowerReference, Object> {
 			charGen.decrease(data);
 		} else {
 			// Revert back
-			box.valueProperty().set(data.getCount());
+			box.getValueFactory().setValue(data.getCount());
 		}
 		
-		removeScrollHandler(box);
+//		removeScrollHandler(box);
 	}
 
 	//-------------------------------------------------------------------
@@ -348,7 +345,7 @@ class PowerEditingCell extends TableCell<PowerReference, Object> {
 			charGen.deselect(data);
 		}
 		
-		removeScrollHandler(box);
+//		removeScrollHandler(box);
 	}
 
 }

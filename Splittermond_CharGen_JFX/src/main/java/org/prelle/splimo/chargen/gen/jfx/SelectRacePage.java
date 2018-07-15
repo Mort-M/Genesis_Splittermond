@@ -9,20 +9,21 @@ import java.util.Map;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
+import org.apache.log4j.Logger;
+import org.prelle.splimo.Race;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.chargen.LetUserChooseListener;
+import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.scene.Parent;
+import javafx.scene.control.Spinner;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.util.StringConverter;
-import jfxtras.scene.control.ListSpinner;
-
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Race;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.LetUserChooseListener;
 
 /**
  * @author prelle
@@ -40,7 +41,7 @@ public class SelectRacePage extends WizardPage implements ChangeListener<Race> {
 	private SpliMoCharacterGenerator charGen;
 	private LetUserChooseListener choiceCallback;
 	
-	private ListSpinner<Race> raceSpinner;
+	private Spinner<Race> raceSpinner;
 	private ImageView image;
 	
 	private VBox content;
@@ -101,10 +102,10 @@ public class SelectRacePage extends WizardPage implements ChangeListener<Race> {
 		image.setFitHeight(465);
 		image.setFitWidth(500);
 
-		raceSpinner = new ListSpinner<Race>(SplitterMondCore.getRaces());
+		raceSpinner = new Spinner<Race>(FXCollections.observableArrayList(SplitterMondCore.getRaces()));
 		raceSpinner.setPrefWidth(200);
-		raceSpinner.setCyclic(true);
-		raceSpinner.setStringConverter(new StringConverter<Race>() {
+//		raceSpinner.setCyclic(true);
+		raceSpinner.getValueFactory().setConverter(new StringConverter<Race>() {
 			@Override
 			public String toString(Race race) {
 				return ruleResources.getString("race."+race.getKey());
@@ -116,7 +117,7 @@ public class SelectRacePage extends WizardPage implements ChangeListener<Race> {
 		});
 
 		raceSpinner.valueProperty().addListener(this);
-		raceSpinner.indexProperty().set(1);
+		raceSpinner.increment();
 
 //		ListSpinnerSkin<Race> skin = new ListSpinnerSkin<Race>(raceSpinner);
 //		skin.setArrowPosition(ArrowPosition.SPLIT);

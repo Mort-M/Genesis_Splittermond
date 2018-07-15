@@ -27,6 +27,7 @@ import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
@@ -43,7 +44,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
-import jfxtras.scene.control.ListSpinner;
 
 public class ResourcePane extends VBox implements GenerationEventListener, EventHandler<ActionEvent> {
 
@@ -291,16 +291,16 @@ public class ResourcePane extends VBox implements GenerationEventListener, Event
 
 class ResourceEditingCell extends TableCell<ResourceReference, Number> implements ChangeListener<Integer>{
 
-	private ListSpinner<Integer> box;
+	private Spinner<Integer> box;
 	private ResourceController charGen;
 	private ResourceReference resource;
 
 	//-------------------------------------------------------------------
 	public ResourceEditingCell(ResourceController charGen) {
 		this.charGen = charGen;
-		box = new ListSpinner<>(-2, 6, 1);
+		box = new Spinner<>(-2, 6, 1);
 		box.valueProperty().addListener(this);
-		box.setCyclic(false);
+//		box.setCyclic(false);
 		//		ListSpinnerSkin<Integer> skin = new ListSpinnerSkin<Integer>(box);
 		//		skin.setArrowPosition(ArrowPosition.SPLIT);
 		//		box.setSkin(skin);
@@ -325,7 +325,7 @@ class ResourceEditingCell extends TableCell<ResourceReference, Number> implement
 		if (resource==null)
 			return;
 		//		parent.setMapping(resource, this);
-		box.valueProperty().set(resource.getValue());
+		box.getValueFactory().setValue(resource.getValue());
 
 		this.setGraphic(box);
 	}
@@ -342,7 +342,7 @@ class ResourceEditingCell extends TableCell<ResourceReference, Number> implement
 			charGen.decrease(resource);
 		} else {
 			// Revert back
-			box.valueProperty().set(resource.getValue());
+			box.getValueFactory().setValue(resource.getValue());
 		}
 	}
 

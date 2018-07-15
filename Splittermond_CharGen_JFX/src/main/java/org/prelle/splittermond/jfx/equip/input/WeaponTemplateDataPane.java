@@ -24,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
@@ -33,7 +34,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
-import jfxtras.scene.control.ListSpinner;
 
 /**
  * @author prelle
@@ -263,16 +263,16 @@ public class WeaponTemplateDataPane extends GridPane {
 
 class FeatureEditingCell extends TableCell<Feature, Number> implements ChangeListener<Integer>{
 
-	private ListSpinner<Integer> box;
+	private Spinner<Integer> box;
 	private WeaponTemplateDataPane charGen;
 	private Feature feature;
 
 	//-------------------------------------------------------------------
 	public FeatureEditingCell(WeaponTemplateDataPane charGen) {
 		this.charGen = charGen;
-		box = new ListSpinner<>(-1, 6, 1);
+		box = new Spinner<>(-1, 6, 1);
 		box.valueProperty().addListener(this);
-		box.setCyclic(false);
+		box.getStyleClass().add(Spinner.STYLE_CLASS_SPLIT_ARROWS_HORIZONTAL);
 		setAlignment(Pos.CENTER);
 	}
 
@@ -293,7 +293,7 @@ class FeatureEditingCell extends TableCell<Feature, Number> implements ChangeLis
 		if (feature==null)
 			return;
 		//		parent.setMapping(resource, this);
-		box.valueProperty().set(feature.getLevel());
+		box.getValueFactory().setValue(feature.getLevel());
 
 		this.setGraphic(box);
 	}
@@ -313,7 +313,7 @@ class FeatureEditingCell extends TableCell<Feature, Number> implements ChangeLis
 			charGen.refresh();
 		} else {
 			// Revert back
-			box.valueProperty().set(feature.getLevel());
+			box.getValueFactory().setValue(feature.getLevel());
 		}
 	}
 
