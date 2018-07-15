@@ -107,7 +107,7 @@ public class PowerPane extends VBox implements GenerationEventListener, EventHan
 		valueCol = new TableColumn<PowerReference, Object>(UI.getString("label.value"));
 		notesCol = new TableColumn<PowerReference, String>(UI.getString("label.notes"));
 		nameCol.setMinWidth(160);
-		valueCol.setMinWidth(70);
+		valueCol.setMinWidth(90);
 		table.getColumns().addAll(nameCol, valueCol);
 		if (withNotes) 
 			table.getColumns().add(notesCol);
@@ -271,6 +271,7 @@ class PowerEditingCell extends TableCell<PowerReference, Object> {
 				PowerEditingCell.this.changed(arg0, arg1, arg2);
 			}
 		});
+		box.getStyleClass().add(Spinner.STYLE_CLASS_SPLIT_ARROWS_HORIZONTAL);
 //		box.setCyclic(false);
 //		ListSpinnerSkin<Integer> skin = new ListSpinnerSkin<Integer>(box);
 //		skin.setArrowPosition(ArrowPosition.SPLIT);
