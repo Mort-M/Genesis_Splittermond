@@ -49,6 +49,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Spinner;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
@@ -555,6 +556,9 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 	private Label statsArmor;
 	private Label statsShield;
 	private Label statsCommon;
+	private Spinner<Integer> spCount;
+	
+	private transient CarriedItem data;
 	
 	//-------------------------------------------------------------------
 	public CarriedItemCell() {
@@ -566,6 +570,9 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 		extra = new Label();
 		extra.getStyleClass().add("text-secondary-info");
 		extra.setStyle("-fx-text-fill: textcolor-highlight-primary");
+		spCount = new Spinner<>(1, 20, 1);
+		spCount.getStyleClass().add(Spinner.STYLE_CLASS_SPLIT_ARROWS_HORIZONTAL);
+		spCount.setPrefWidth(80);
 		statsWeapon = new Label();
 		statsWeapon.getStyleClass().add("text-secondary-info");
 		statsWeapon.setWrapText(true);
@@ -588,7 +595,14 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 		grid.add(statsArmor , 1, 4);
 		grid.add(statsShield, 1, 5);
 		grid.add(statsCommon, 1, 6);
+		grid.add(spCount    , 2, 0, 1, 7);
 		grid.getStyleClass().add("content");
+		
+		GridPane.setHgrow(name, Priority.ALWAYS);
+		GridPane.setHgrow(extra, Priority.ALWAYS);
+		
+		
+		spCount.valueProperty().addListener( (ov,o,n) -> data.setCount(n));
 	}
 
 	//--------------------------------------------------------------------
@@ -607,6 +621,7 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 	@Override
 	public void updateItem(CarriedItem item, boolean empty) {
 		super.updateItem(item, empty);
+		this.data = item;
 		
 		setGraphicTextGap(0);
 		if (empty || item==null) {
@@ -623,6 +638,7 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 	private void fillGrid(CarriedItem item) {
 		name.setText(item.getName());
 		image.setImage(null);
+		spCount.getValueFactory().setValue(item.getCount());
 		
 		// Weapon
 		grid.getChildren().remove(statsWeapon);			
