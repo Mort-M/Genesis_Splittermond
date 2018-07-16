@@ -1158,9 +1158,10 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 					try {
 						logger.info("Save character "+model.getName());
 						RPGFrameworkLoader.getInstance().getCharacterAndRules().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, null, encoded);
+						logger.info("Saved character "+model.getName()+" successfully");
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+						logger.error("Failed saving character",e);
+						BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Failed saving character.\n"+e);
 					}
 				}
 				
