@@ -1129,7 +1129,11 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 							uiResources.getString("error.chargen.missingdata.text"));
 					return false;
 				}
-				((SpliMoCharacterGenerator)control).generate();
+				if ( ((SpliMoCharacterGenerator)control).generate() == null ) {
+					// Failed to write character
+					logger.fatal("Failed writing character - don't close CharacterViewScreen");
+					return false;
+				}
 			} else {
 				/*
 				 * Write all made modifications to character

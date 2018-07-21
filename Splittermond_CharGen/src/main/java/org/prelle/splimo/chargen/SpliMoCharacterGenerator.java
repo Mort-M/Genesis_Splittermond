@@ -684,7 +684,9 @@ public class SpliMoCharacterGenerator implements CharacterController {
 			}
 		} catch (IOException e) {
 			logger.error("Failed saving created character",e);
-			BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Failed saving created character.\n"+e);
+			logger.debug("Inform user");
+			BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Failed saving created character.\n"+e.getMessage());
+			return null;
 		}
 		
 		return model;
