@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 import org.prelle.splimo.creature.CreatureReference;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.modifications.AttributeModification;
+import org.prelle.splimo.modifications.MastershipModification;
 import org.prelle.splimo.modifications.SkillModification;
 import org.prelle.splittermond.jfx.creatures.AttributeViewPane;
 import org.prelle.splittermond.jfx.creatures.CreatureFeatureViewPane;
@@ -44,6 +45,16 @@ public class SpliMoCharGenJFXUtil {
 				buf.append( ((AttributeModification)mod).getValue());
 			} else if (mod instanceof SkillModification) {
 					buf.append( ((SkillModification)mod).getValue());
+			} else if (mod instanceof MastershipModification) {
+				MastershipModification mmod = (MastershipModification)mod;
+				if (mmod.getMastership()!=null)
+					buf.append(mmod.getMastership().getName());
+				else if (mmod.getSpecialization()!=null) {
+					buf.append(mmod.getSpecialization().getName());
+				} else {
+					logger.warn("Don't know how to display to user: "+mod);
+					buf.append(String.valueOf(mod));
+				}
 			} else {
 				logger.warn("Unsupported modification "+mod.getClass());
 				buf.append(mod.toString());

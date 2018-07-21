@@ -521,10 +521,12 @@ public class EquipmentTools {
 		 */
 		if (item.getMaterial()!=null) {
 			for (Modification mod : item.getMaterial().getModifications()) {
+				mod.setSource(item.getMaterial());
 				if (mod instanceof AttributeModification) {
-					mod.setSource(item.getMaterial());
 					((AttributeModification) mod).setModificationSource(ModificationSource.EQUIPMENT);
 					item.addCharacterModification(mod);
+				} else if (mod instanceof FeatureModification) {
+					item.addItemModification(mod);
 				} else
 					logger.warn("Don't know how to deal with "+mod.getClass());
 			}
