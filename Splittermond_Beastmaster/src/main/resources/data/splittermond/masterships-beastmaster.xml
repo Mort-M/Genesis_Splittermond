@@ -317,7 +317,11 @@
        </mastership>
        <mastership level="1" key="versatile_animal_helper">
             <requires>
-                <spellreq ref="TODO"/>
+              <selreq>
+                <spellreq ref="animal_helper1"/>
+                <spellreq ref="animal_helper2"/>
+                <spellreq ref="animal_helper3"/>
+              </selreq>
             </requires>
        </mastership>
        <mastership level="2" key="lifebond">
