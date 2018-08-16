@@ -2,7 +2,7 @@
 <spells>
   <spell id="anticircle_ghost" diff="21" cost="K12V3" castdur="4T" range="CASTER" spelldur="K" enh="1/+K3V3"> 
     <school skill="antimagic" level="3"/>
-    <school skill="deathmagic" level="2"/>
+    <school skill="deathmagic" level="3"/>
     <type>GHOST_CREATURE</type>
     <type>PROTECTIONFIELD</type>
     <enhancementtype>RELEASETIME</enhancementtype>
