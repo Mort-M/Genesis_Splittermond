@@ -106,6 +106,7 @@ public class CharacterSerialization {
 			+SEP+"   <gender>FEMALE</gender>"
 			+SEP+"   <weaknesses>"
 			+SEP+"      <weakness>Träge</weakness>"
+			+SEP+"      <weakness>Faul</weakness>"
 			+SEP+"   </weaknesses>"
 			+SEP+"   <itemdefs>"
 			+SEP+"      <item avail=\"SMALL_TOWN\" cplx=\"F\" customName=\"Mein irgendetwas\" id=\"customMeinirgendetwas\" load=\"2\" material=\"OTHER\" price=\"0\" robust=\"0\" type=\"\"/>"
@@ -237,6 +238,7 @@ public class CharacterSerialization {
 		CHARAC.addReward(reward1);
 		
 		CHARAC.addWeakness("Träge");
+		CHARAC.addWeakness("Faul");
 		
 		/*
 		 * Add custom item
@@ -298,6 +300,7 @@ public class CharacterSerialization {
 //			assertEquals(0, result.getItems().get(1).getModifications().size());
 //			assertEquals(1, result.getWeaknesses().size());
 			assertEquals("Träge", result.getWeaknesses().get(0));
+			assertEquals("Faul", result.getWeaknesses().get(1));
 		} catch (Exception e) {
 			e.printStackTrace();
 			fail(e.toString());
