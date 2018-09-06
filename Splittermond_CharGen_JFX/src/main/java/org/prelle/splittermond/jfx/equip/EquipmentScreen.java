@@ -94,7 +94,7 @@ public class EquipmentScreen extends ManagedScreen implements GenerationEventLis
 	
 	private SelectItemDialogScreen dia;
 	private ItemLocationType location;
-	
+
 	//--------------------------------------------------------------------
 	/**
 	 */
@@ -559,7 +559,8 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 	private Label statsShield;
 	private Label statsCommon;
 	private Spinner<Integer> spCount;
-	
+
+	private static final Feature FEATURE_IMPROVISED = new Feature(FeatureType.getByName("improvisiert"));
 	private transient CarriedItem data;
 	
 	//-------------------------------------------------------------------
@@ -663,11 +664,11 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 		// Long Range Weapon
 		grid.getChildren().remove(statsLongRg);			
 		if (item.getItem().isType(ItemType.LONG_RANGE_WEAPON)
-				// only if a) the item is not a melee WEAPON or b) the item is also a melee WEAPON and not an improvised throwing weapon
+				// only if the item is not an improvised throwing weapon and a melee WEAPON at the same time
 				// e.g. Dagger will be shown as melee WEAPON (since it's an improvised LONG_RANGE_WEAPON)
 				// Wurfspeer will be shown as LONG_RANGE_WEAPON since it's not improvised.
-				&& (!item.getItem().isType(ItemType.WEAPON)
-						|| !item.getFeatures(ItemType.LONG_RANGE_WEAPON).contains(new Feature(FeatureType.getByName("improvisiert"))))) {
+				&& !(item.getItem().isType(ItemType.WEAPON)
+						&& item.getFeatures(ItemType.LONG_RANGE_WEAPON).contains(FEATURE_IMPROVISED))) {
 			image.setImage(ItemUtils.getItemTypeIcon(ItemType.LONG_RANGE_WEAPON).getImage());
 			LongRangeWeapon weapon = item.getItem().getType(LongRangeWeapon.class);
 
