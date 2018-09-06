@@ -1073,6 +1073,7 @@ public class SplitterTools {
 								&& mastership.getMastership().getKey().equals("shield2")) {
 							sumWithShield -= 1;
 						}
+                    	break;
 					case HANDICAP:
 						if (sum > 0
 								&& mastership.getMastership().getKey().equals("armour1")) {
@@ -1083,6 +1084,7 @@ public class SplitterTools {
 								&& mastership.getMastership().getKey().equals("shield1")) {
 							sumWithShield -= 1;
 						}
+                    	break;
 					default:
 				}
 			}
