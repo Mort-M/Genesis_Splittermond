@@ -667,7 +667,7 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 				// e.g. Dagger will be shown as melee WEAPON (since it's an improvised LONG_RANGE_WEAPON)
 				// Wurfspeer will be shown as LONG_RANGE_WEAPON since it's not improvised.
 				&& (!item.getItem().isType(ItemType.WEAPON)
-						|| !item.getFeatures(ItemType.LONG_RANGE_WEAPON).contains(new Feature(FeatureType.getByName("IMPROVISED"))))) {
+						|| !item.getFeatures(ItemType.LONG_RANGE_WEAPON).contains(new Feature(FeatureType.getByName("improvisiert"))))) {
 			image.setImage(ItemUtils.getItemTypeIcon(ItemType.LONG_RANGE_WEAPON).getImage());
 			LongRangeWeapon weapon = item.getItem().getType(LongRangeWeapon.class);
 
