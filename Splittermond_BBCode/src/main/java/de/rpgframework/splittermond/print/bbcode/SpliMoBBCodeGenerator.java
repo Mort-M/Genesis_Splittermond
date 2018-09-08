@@ -67,6 +67,9 @@ public class SpliMoBBCodeGenerator {
 		// Name
 		addName(spliMoCharacter);
 
+		// Erfahrungspunkte
+		addEP(spliMoCharacter);
+
 		// Ausbildung
 		addEducation(spliMoCharacter);
 
@@ -94,7 +97,7 @@ public class SpliMoBBCodeGenerator {
 			if (it.hasNext())
 				bufWeak.append(", ");
 		}
-		String weakness = spliMoCharacter.getWeaknesses().isEmpty()?null:bufWeak.toString();
+		String weakness = spliMoCharacter.getWeaknesses().isEmpty()?"keine":bufWeak.toString();
 		SingleBBCodeGenerator.addGenericAttribute(bbcodeBuilder,
 				SpliMoLabels.getLabelWeaknesses(), weakness);
 
@@ -174,6 +177,12 @@ public class SpliMoBBCodeGenerator {
 				BBCodes.UNDERLINE).toString();
 		bbcodeBuilder.append(charName).append(SingleBBCodeGenerator.LINE_FEED)
 				.append(SingleBBCodeGenerator.LINE_FEED);
+	}
+
+	private void addEP(SpliMoCharacter character) {
+		String xp = String.valueOf(character.getExperienceInvested());
+		SingleBBCodeGenerator.addGenericAttribute(bbcodeBuilder, SpliMoLabels
+				.getLabelExperience(), xp);
 	}
 
 }
