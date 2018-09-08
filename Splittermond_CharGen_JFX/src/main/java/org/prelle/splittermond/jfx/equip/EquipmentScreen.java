@@ -17,6 +17,7 @@ import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
 import org.prelle.splimo.EquipmentTools;
 import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.ViewMode;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.charctrl.NewItemController;
@@ -560,7 +561,7 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 	private Label statsCommon;
 	private Spinner<Integer> spCount;
 
-	private static final Feature FEATURE_IMPROVISED = new Feature(FeatureType.getByName("improvisiert"));
+	private static final Feature FEATURE_IMPROVISED = new Feature(SplitterMondCore.getFeatureType("IMPROVISED"));
 	private transient CarriedItem data;
 	
 	//-------------------------------------------------------------------
