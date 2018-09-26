@@ -800,7 +800,7 @@
         </rangeweapon>
     </item>
 
-    <item id="buckler" avail="SMALL_TOWN" price="400" load="2" robust="6" cplx="G">
+    <item id="buckler" avail="SMALL_TOWN" price="400" load="2" robust="6" cplx="G" material="METAL">
         <shield def="0" hc="1" tickMalus="0" type="SHIELD">
             <requires>
                 <attrreq attr="AGILITY" val="2"/>
@@ -810,7 +810,7 @@
             </features>
         </shield>
     </item>
-    <item id="lederschild" avail="SMALL_TOWN" price="300" load="2" robust="3" cplx="G">
+    <item id="lederschild" avail="SMALL_TOWN" price="300" load="2" robust="3" cplx="G" material="LEATHER">
         <shield def="1" hc="1" tickMalus="1" type="SHIELD">
             <requires>
                 <attrreq attr="STRENGTH" val="2"/>
@@ -820,7 +820,7 @@
             </features>
         </shield>
     </item>
-    <item id="rundschild" avail="SMALL_TOWN" price="500" load="3" robust="3" cplx="G">
+    <item id="rundschild" avail="SMALL_TOWN" price="500" load="3" robust="3" cplx="G" material="WOOD">
         <shield def="2" hc="2" tickMalus="0" type="SHIELD">
             <requires>
                 <attrreq attr="STRENGTH" val="2"/>
@@ -830,7 +830,7 @@
             </features>
         </shield>
     </item>
-    <item id="großschild" avail="SMALL_TOWN" price="700" load="4" robust="5" cplx="F">
+    <item id="großschild" avail="SMALL_TOWN" price="700" load="4" robust="5" cplx="F" material="METAL">
         <shield def="2" hc="2" tickMalus="1" type="SHIELD">
             <requires>
                 <attrreq attr="STRENGTH" val="3"/>
@@ -840,7 +840,7 @@
             </features>
         </shield>
     </item>
-    <item id="turmschild" avail="LARGE_TOWN" price="1200" load="5" robust="7" cplx="F">
+    <item id="turmschild" avail="LARGE_TOWN" price="1200" load="5" robust="7" cplx="F" material="WOOD">
         <shield def="3" hc="2" tickMalus="2" type="SHIELD">
             <requires>
                 <attrreq attr="STRENGTH" val="4"/>
@@ -852,13 +852,13 @@
         </shield>
     </item>
 
-    <item id="tuchrüstung" avail="SMALL_TOWN" price="600" load="3" robust="2" cplx="G">
+    <item id="tuchrüstung" avail="SMALL_TOWN" price="600" load="3" robust="2" cplx="G" material="FABRIC">
         <armor def="1" dr="0" hc="0" tickMalus="0" type="ARMOR">
             <requires />
             <features/>
         </armor>
     </item>
-    <item id="lederleicht" avail="SMALL_TOWN" price="900" load="3" robust="3" cplx="G">
+    <item id="lederleicht" avail="SMALL_TOWN" price="900" load="3" robust="3" cplx="G" material="LEATHER">
         <armor def="1" dr="1" hc="1" tickMalus="0" type="ARMOR">
             <requires>
                 <attrreq attr="STRENGTH" val="1"/>
@@ -866,7 +866,7 @@
             <features/>
         </armor>
     </item>
-    <item id="ledermittel" avail="SMALL_TOWN" price="1000" load="4" robust="3" cplx="G">
+    <item id="ledermittel" avail="SMALL_TOWN" price="1000" load="4" robust="3" cplx="G" material="LEATHER">
         <armor def="2" dr="1" hc="2" tickMalus="0" type="ARMOR">
             <requires>
                 <attrreq attr="STRENGTH" val="1"/>
@@ -876,7 +876,7 @@
             </features>
         </armor>
     </item>
-    <item id="lederschwer" avail="SMALL_TOWN" price="1100" load="4" robust="3" cplx="F">
+    <item id="lederschwer" avail="SMALL_TOWN" price="1100" load="4" robust="3" cplx="F" material="LEATHER">
         <armor def="3" dr="0" hc="0" tickMalus="1" type="ARMOR">
             <requires>
                 <attrreq attr="STRENGTH" val="1"/>
@@ -884,7 +884,7 @@
             <features/>
         </armor>
     </item>
-    <item id="fellrüstung" avail="VILLAGE" price="400" load="2" robust="2" cplx="U">
+    <item id="fellrüstung" avail="VILLAGE" price="400" load="2" robust="2" cplx="U" material="LEATHER">
         <armor def="1" dr="2" hc="0" tickMalus="1" type="ARMOR">
             <requires>
                 <attrreq attr="STRENGTH" val="1"/>
@@ -894,7 +894,7 @@
             </features>
         </armor>
     </item>
-    <item id="ketteleicht" avail="SMALL_TOWN" price="1200" load="4" robust="6" cplx="G">
+    <item id="ketteleicht" avail="SMALL_TOWN" price="1200" load="4" robust="6" cplx="G" material="METAL">
         <armor def="2" dr="2" hc="1" tickMalus="1" type="ARMOR">
             <requires>
                 <attrreq attr="STRENGTH" val="2"/>
@@ -902,7 +902,7 @@
             <features/>
         </armor>
     </item>
-    <item id="ketteschwer" avail="SMALL_TOWN" price="1500" load="4" robust="6" cplx="F">
+    <item id="ketteschwer" avail="SMALL_TOWN" price="1500" load="4" robust="6" cplx="F" material="METAL">
         <armor def="3" dr="2" hc="3" tickMalus="2" type="ARMOR">
             <requires>
                 <attrreq attr="STRENGTH" val="2"/>
@@ -912,7 +912,7 @@
             </features>
         </armor>
     </item>
-    <item id="schuppe" avail="SMALL_TOWN" price="2000" load="5" robust="7" cplx="F">
+    <item id="schuppe" avail="SMALL_TOWN" price="2000" load="5" robust="7" cplx="F" material="METAL">
         <armor def="4" dr="2" hc="4" tickMalus="2" type="ARMOR">
             <requires>
                 <attrreq attr="STRENGTH" val="3"/>
@@ -922,7 +922,7 @@
             </features>
         </armor>
     </item>
-    <item id="platteleicht" avail="LARGE_TOWN" price="2500" load="5" robust="7" cplx="F">
+    <item id="platteleicht" avail="LARGE_TOWN" price="2500" load="5" robust="7" cplx="F" material="METAL">
         <armor def="3" dr="1" hc="2" tickMalus="1" type="ARMOR">
             <requires>
                 <attrreq attr="STRENGTH" val="3"/>
@@ -932,7 +932,7 @@
             </features>
         </armor>
     </item>
-    <item id="platteschwer" avail="LARGE_TOWN" material="METAL" price="3000" load="6" robust="7" cplx="M">
+    <item id="platteschwer" avail="LARGE_TOWN" price="3000" load="6" robust="7" cplx="M" material="METAL">
         <armor def="4" dr="4" hc="3" tickMalus="3" type="ARMOR">
             <requires>
                 <attrreq attr="STRENGTH" val="4"/>
@@ -946,7 +946,7 @@
     <item id="schreibutensilien" avail="SMALL_TOWN" price="100" load="0" robust="0" cplx="G"/>
     <item id="tagebuch" avail="SMALL_TOWN" price="500" load="1" robust="1" cplx="U"/>
     <item id="verbandszeug" avail="VILLAGE" price="10" load="0" robust="0" cplx="U"/>
-    <item id="brecheisen" avail="VILLAGE" price="200" load="2" robust="6" cplx="U"/>
+    <item id="brecheisen" avail="VILLAGE" price="200" load="2" robust="6" cplx="U" material="METAL"/>
     <item id="dietriche" avail="SMALL_TOWN" price="1500" load="1" robust="6" cplx="F"/>
     <item id="kletterhaken10stück" avail="SMALL_TOWN" price="50" load="1" robust="6" cplx="U"/>
     <item id="wurfhaken" avail="SMALL_TOWN" price="100" load="2" robust="6" cplx="G"/>
