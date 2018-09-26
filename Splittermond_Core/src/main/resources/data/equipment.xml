@@ -203,7 +203,7 @@
             </features>
         </weapon>
     </item>
-    <item id="skavona" avail="SMALL_TOWN" price="1000" load="2" robust="7" cplx="G">
+    <item id="skavona" avail="SMALL_TOWN" price="1000" load="2" robust="7" cplx="G" material="METAL">
         <weapon skill="blades" damage="1W6+2" speed="7" att1="AGILITY" att2="INTUITION">
             <requires>
                 <attrreq attr="AGILITY" val="2"/>
@@ -214,7 +214,7 @@
             </features>
         </weapon>
     </item>
-    <item id="throwingdagger" avail="VILLAGE" price="200" load="1" robust="7" cplx="U">
+    <item id="throwingdagger" avail="VILLAGE" price="200" load="1" robust="7" cplx="U" material="METAL">
         <weapon skill="blades"
                 damage="1W6-1" speed="8" att1="AGILITY" att2="INTUITION">
             <requires>
@@ -235,7 +235,7 @@
             </features>
         </rangeweapon>
     </item>
-    <item id="bihander" avail="LARGE_TOWN" price="2000" load="4" robust="7" cplx="F">
+    <item id="bihander" avail="LARGE_TOWN" price="2000" load="4" robust="7" cplx="F" material="METAL">
         <weapon skill="blades"
                 damage="2W6+4" speed="12" att1="INTUITION" att2="STRENGTH">
             <requires>
@@ -251,7 +251,7 @@
             </features>
         </weapon>
     </item>
-    <item id="doubleaxe" avail="SMALL_TOWN" price="1800" load="4" robust="5" cplx="G">
+    <item id="doubleaxe" avail="SMALL_TOWN" price="1800" load="4" robust="5" cplx="G" material="METAL">
         <weapon skill="slashing"
                 damage="3W6+3" speed="13" att1="INTUITION" att2="STRENGTH">
             <requires>
@@ -266,7 +266,7 @@
             </features>
         </weapon>
     </item>
-    <item id="club" avail="VILLAGE" price="100" load="2" robust="3" cplx="U">
+    <item id="club" avail="VILLAGE" price="100" load="2" robust="3" cplx="U" material="WOOD">
         <weapon skill="slashing"
                 damage="1W6+2" speed="7" att1="CONSTITUTION" att2="STRENGTH">
             <requires>
@@ -277,7 +277,7 @@
             </features>
         </weapon>
     </item>
-    <item id="battleaxe" avail="SMALL_TOWN" price="800" load="2" robust="5" cplx="G">
+    <item id="battleaxe" avail="SMALL_TOWN" price="800" load="2" robust="5" cplx="G" material="METAL">
         <weapon skill="slashing"
                 damage="1W10+3" speed="9" att1="AGILITY" att2="STRENGTH">
             <requires>
@@ -286,7 +286,7 @@
             </requires>
         </weapon>
     </item>
-    <item id="warhammer" avail="SMALL_TOWN" price="1800" load="4" robust="6" cplx="G">
+    <item id="warhammer" avail="SMALL_TOWN" price="1800" load="4" robust="6" cplx="G" material="METAL">
         <weapon skill="slashing"
                 damage="2W10+4" speed="12" att1="CONSTITUTION" att2="STRENGTH">
             <requires>
@@ -300,7 +300,7 @@
             </features>
         </weapon>
     </item>
-    <item id="bat" avail="VILLAGE" price="200" load="1" robust="3" cplx="U">
+    <item id="bat" avail="VILLAGE" price="200" load="1" robust="3" cplx="U" material="WOOD">
         <weapon skill="slashing"
                 damage="1W6+2" speed="6" att1="AGILITY" att2="STRENGTH">
             <features>
@@ -308,7 +308,7 @@
             </features>
         </weapon>
     </item>
-    <item id="pick" avail="VILLAGE" price="400" load="3" robust="5" cplx="U">
+    <item id="pick" avail="VILLAGE" price="400" load="3" robust="5" cplx="U" material="METAL">
         <weapon skill="slashing"
                 damage="3W6" speed="14" att1="CONSTITUTION" att2="STRENGTH">
             <requires>
@@ -323,7 +323,7 @@
             </features>
         </weapon>
     </item>
-    <item id="poleaxe" avail="SMALL_TOWN" price="1600" load="4" robust="5" cplx="G">
+    <item id="poleaxe" avail="SMALL_TOWN" price="1600" load="4" robust="5" cplx="G" material="METAL">
         <weapon skill="slashing"
                 damage="2W10+1" speed="11" att1="CONSTITUTION" att2="STRENGTH">
             <requires>
@@ -337,7 +337,7 @@
             </features>
         </weapon>
     </item>
-    <item id="streithammer" avail="SMALL_TOWN" price="1600" load="3" robust="6" cplx="G">
+    <item id="streithammer" avail="SMALL_TOWN" price="1600" load="3" robust="6" cplx="G" material="METAL">
         <weapon skill="slashing"
                 damage="2W6+3" speed="11" att1="CONSTITUTION" att2="STRENGTH">
             <requires>
@@ -350,7 +350,7 @@
             </features>
         </weapon>
     </item>
-    <item id="mace" avail="SMALL_TOWN" price="800" load="2" robust="5" cplx="G">
+    <item id="mace" avail="SMALL_TOWN" price="800" load="2" robust="5" cplx="G" material="METAL">
         <weapon skill="slashing"
                 damage="1W6+5" speed="9" att1="AGILITY" att2="CONSTITUTION">
             <requires>
@@ -359,7 +359,7 @@
             </requires>
         </weapon>
     </item>
-    <item id="chairleg" avail="VILLAGE" price="0" load="1" robust="1" cplx="U">
+    <item id="chairleg" avail="VILLAGE" price="0" load="1" robust="1" cplx="U" material="WOOD">
         <weapon skill="slashing"
                 damage="1W6+1" speed="9" att1="AGILITY" att2="STRENGTH">
             <features>
@@ -368,7 +368,7 @@
             </features>
         </weapon>
     </item>
-    <item id="throwingaxe" avail="VILLAGE" price="600" load="2" robust="5" cplx="G">
+    <item id="throwingaxe" avail="VILLAGE" price="600" load="2" robust="5" cplx="G" material="METAL">
         <weapon skill="slashing"
                 damage="1W6+1" speed="10" att1="AGILITY" att2="STRENGTH">
             <requires>
@@ -389,7 +389,7 @@
             </features>
         </rangeweapon>
     </item>
-    <item id="throwinghammer" avail="VILLAGE" price="500" load="2" robust="5" cplx="G">
+    <item id="throwinghammer" avail="VILLAGE" price="500" load="2" robust="5" cplx="G" material="METAL">
         <weapon skill="slashing"
                 damage="1W6+2" speed="11" att1="CONSTITUTION" att2="STRENGTH">
             <requires>
@@ -410,7 +410,7 @@
             </features>
         </rangeweapon>
     </item>
-    <item id="fulnicdoublesword" avail="CAPITAL" price="2500" load="3" robust="7" cplx="A">
+    <item id="fulnicdoublesword" avail="CAPITAL" price="2500" load="3" robust="7" cplx="A" material="METAL">
         <weapon skill="staffs"
                 damage="2W10+1" speed="11" att1="AGILITY" att2="INTUITION">
             <requires>
@@ -425,7 +425,7 @@
             </features>
         </weapon>
     </item>
-    <item id="glefe" avail="SMALL_TOWN" price="1200" load="4" robust="4" cplx="F">
+    <item id="glefe" avail="SMALL_TOWN" price="1200" load="4" robust="4" cplx="F" material="METAL">
         <weapon skill="staffs"
                 damage="2W10+1" speed="11" att1="AGILITY" att2="STRENGTH">
             <requires>
@@ -439,7 +439,7 @@
             </features>
         </weapon>
     </item>
-    <item id="halberd" avail="SMALL_TOWN" price="1800" load="4" robust="5" cplx="F">
+    <item id="halberd" avail="SMALL_TOWN" price="1800" load="4" robust="5" cplx="F" material="METAL">
         <weapon skill="staffs"
                 damage="3W6+3" speed="12" att1="AGILITY" att2="STRENGTH">
             <requires>
@@ -464,7 +464,7 @@
             </features>
         </weapon>
     </item>
-    <item id="bladestaff" avail="SMALL_TOWN" price="600" load="3" robust="5" cplx="F">
+    <item id="bladestaff" avail="SMALL_TOWN" price="600" load="3" robust="5" cplx="F" material="METAL">
         <weapon skill="staffs"
                 damage="2W6" speed="9" att1="INTUITION" att2="STRENGTH">
             <requires>
@@ -478,7 +478,7 @@
             </features>
         </weapon>
     </item>
-    <item id="lance" avail="SMALL_TOWN" price="1600" load="4" robust="3" cplx="G">
+    <item id="lance" avail="SMALL_TOWN" price="1600" load="4" robust="3" cplx="G" material="METAL">
         <weapon skill="staffs"
                 damage="2W10+1" speed="15" att1="CONSTITUTION" att2="STRENGTH">
             <requires>
@@ -494,7 +494,7 @@
             </features>
         </weapon>
     </item>
-    <item id="spear" avail="VILLAGE" price="800" load="3" robust="4" cplx="G">
+    <item id="spear" avail="VILLAGE" price="800" load="3" robust="4" cplx="G" material="METAL">
         <weapon skill="staffs"
                 damage="1W10+5" speed="12" att1="AGILITY" att2="STRENGTH">
             <requires>
@@ -508,7 +508,7 @@
             </features>
         </weapon>
     </item>
-    <item id="scythe" avail="VILLAGE" price="400" load="4" robust="5" cplx="U">
+    <item id="scythe" avail="VILLAGE" price="400" load="4" robust="5" cplx="U" material="METAL">
         <weapon skill="staffs"
                 damage="2W10+4" speed="13" att1="AGILITY" att2="CONSTITUTION">
             <requires>
@@ -522,7 +522,7 @@
             </features>
         </weapon>
     </item>
-   <item avail="VILLAGE" cplx="U" id="sturmsense" load="4" material="METAL" price="400" robust="5" type="WEAPON">
+   <item id="sturmsense" avail="VILLAGE" cplx="U" load="4" material="METAL" price="400" robust="5" type="WEAPON">
       <weapon att1="AGILITY" att2="CONSTITUTION" damage="2W10+4" skill="staffs" speed="13" type="WEAPON">
          <requires>
             <attrreq attr="CONSTITUTION" val="3"/>
@@ -535,7 +535,7 @@
          </features>
       </weapon>
    </item>
-    <item id="valkyrjaspear" avail="SMALL_TOWN" price="800" load="2" robust="5" cplx="G">
+    <item id="valkyrjaspear" avail="SMALL_TOWN" price="800" load="2" robust="5" cplx="G" material="METAL">
         <weapon skill="staffs"
                 damage="1W10+2" speed="8" att1="AGILITY" att2="INTUITION">
             <requires>
@@ -558,7 +558,7 @@
             </features>
         </rangeweapon>
     </item>
-    <item id="vangarastaff" avail="LARGE_TOWN" price="1400" load="4" robust="5" cplx="F">
+    <item id="vangarastaff" avail="LARGE_TOWN" price="1400" load="4" robust="5" cplx="F" material="METAL">
         <weapon skill="staffs"
                 damage="3W6+1" speed="13" att1="AGILITY" att2="STRENGTH">
             <requires>
@@ -572,7 +572,7 @@
             </features>
         </weapon>
     </item>
-    <item id="throwingspear" avail="VILLAGE" price="700" load="2" robust="4" cplx="G">
+    <item id="throwingspear" avail="VILLAGE" price="700" load="2" robust="4" cplx="G" material="METAL">
         <weapon skill="staffs"
                 damage="1W6+2" speed="11" att1="AGILITY" att2="STRENGTH">
             <requires>
@@ -597,7 +597,7 @@
             </features>
         </rangeweapon>
     </item>
-    <item id="spikespear" avail="SMALL_TOWN" price="1600" load="3" robust="5" cplx="F">
+    <item id="spikespear" avail="SMALL_TOWN" price="1600" load="3" robust="5" cplx="F" material="METAL">
         <weapon skill="staffs"
                 damage="1W6+5" speed="11" att1="AGILITY" att2="STRENGTH">
             <requires>
@@ -612,7 +612,7 @@
             </features>
         </weapon>
     </item>
-    <item id="chainscythe" avail="LARGE_TOWN" price="1200" load="2" robust="6" cplx="F">
+    <item id="chainscythe" avail="LARGE_TOWN" price="1200" load="2" robust="6" cplx="F" material="METAL">
         <weapon skill="chains"
                 damage="1W10" speed="8" att1="AGILITY" att2="INTUITION">
             <requires>
@@ -627,7 +627,7 @@
             </features>
         </weapon>
     </item>
-    <item id="battleflail" avail="SMALL_TOWN" price="1000" load="4" robust="4" cplx="G">
+    <item id="battleflail" avail="SMALL_TOWN" price="1000" load="4" robust="4" cplx="G" material="METAL">
         <weapon skill="chains"
                 damage="2W10+4" speed="14" att1="CONSTITUTION" att2="STRENGTH">
             <requires>
@@ -653,7 +653,7 @@
             </features>
         </weapon>
     </item>
-    <item id="whip" avail="VILLAGE" price="100" load="2" robust="1" cplx="U">
+    <item id="whip" avail="VILLAGE" price="100" load="2" robust="1" cplx="U" material="LEATHER">
         <weapon skill="chains"
                 damage="1W10-2" speed="15" att1="AGILITY" att2="INTUITION">
             <requires>
@@ -668,7 +668,7 @@
             </features>
         </weapon>
     </item>
-    <item id="crossbow" avail="CAPITAL" price="3000" load="2" robust="4" cplx="A">
+    <item id="crossbow" avail="CAPITAL" price="3000" load="2" robust="4" cplx="A" material="WOOD">
         <rangeweapon skill="longrange"
                damage="1W6+3" speed="7" att1="INTUITION" att2="WILLPOWER" range="8" price_amo="25">
             <requires>
@@ -679,7 +679,7 @@
             </features>
         </rangeweapon>
     </item>
-    <item id="shortbow" avail="VILLAGE" price="800" load="2" robust="3" cplx="U">
+    <item id="shortbow" avail="VILLAGE" price="800" load="2" robust="3" cplx="U" material="WOOD">
         <rangeweapon skill="longrange"
                damage="1W10+1" speed="6" att1="AGILITY" att2="INTUITION" range="20" price_amo="16">
             <requires>
@@ -692,7 +692,7 @@
             </features>
         </rangeweapon>
     </item>
-    <item id="longbow" avail="SMALL_TOWN" price="1500" load="3" robust="3" cplx="G">
+    <item id="longbow" avail="SMALL_TOWN" price="1500" load="3" robust="3" cplx="G" material="WOOD">
         <rangeweapon skill="longrange"
 
                damage="1W10+8" speed="10" att1="INTUITION" att2="STRENGTH" range="35" price_amo="30">
@@ -706,8 +706,7 @@
             </features>
         </rangeweapon>
     </item>
-    <item id="lightcrossbow" avail="SMALL_TOWN" price="2000" load="3" robust="3"
-          cplx="F">
+    <item id="lightcrossbow" avail="SMALL_TOWN" price="2000" load="3" robust="3" cplx="F" material="WOOD">
         <rangeweapon skill="longrange"
                damage="2W6+6" speed="10" att1="INTUITION" att2="WILLPOWER" range="25" price_amo="40">
             <requires>
@@ -720,8 +719,7 @@
             </features>
         </rangeweapon>
     </item>
-    <item id="infantrybow" avail="SMALL_TOWN" price="1000" load="3" robust="3"
-          cplx="G">
+    <item id="infantrybow" avail="SMALL_TOWN" price="1000" load="3" robust="3" cplx="G" material="WOOD">
         <rangeweapon skill="longrange"
                damage="1W10+4" speed="8" att1="INTUITION" att2="STRENGTH" range="25" price_amo="20">
             <requires>
@@ -736,7 +734,7 @@
             </features>
         </rangeweapon>
     </item>
-    <item id="slingshot" avail="VILLAGE" price="50" load="1" robust="1" cplx="U">
+    <item id="slingshot" avail="VILLAGE" price="50" load="1" robust="1" cplx="U" material="OTHER">
         <rangeweapon skill="longrange"
                damage="1W6+4" speed="6" att1="AGILITY" att2="INTUITION" range="15" price_amo="1">
             <requires>
@@ -744,8 +742,7 @@
             </requires>
         </rangeweapon>
     </item>
-    <item id="heavycrossbow" avail="SMALL_TOWN" price="3000" load="4" robust="4"
-          cplx="M">
+    <item id="heavycrossbow" avail="SMALL_TOWN" price="3000" load="4" robust="4" cplx="M" material="WOOD">
         <rangeweapon skill="longrange"
                damage="3W6+4" speed="22" att1="INTUITION" att2="STRENGTH" range="30" price_amo="60">
             <requires>
@@ -759,7 +756,7 @@
             </features>
         </rangeweapon>
     </item>
-    <item id="chakram" avail="LARGE_TOWN" price="800" load="2" robust="7" cplx="G">
+    <item id="chakram" avail="LARGE_TOWN" price="800" load="2" robust="7" cplx="G" material="METAL">
         <rangeweapon skill="throwing"
                damage="2W6" speed="5" att1="INTUITION" att2="STRENGTH" range="8">
             <requires>
@@ -771,7 +768,7 @@
         </rangeweapon>
     </item>
 
-    <item id="stone_mug_boot" avail="VILLAGE" price="0" load="1" robust="1" cplx="U">
+    <item id="stone_mug_boot" avail="VILLAGE" price="0" load="1" robust="1" cplx="U" material="WOOD">
         <rangeweapon skill="throwing"
                damage="1W6-2" speed="6" att1="INTUITION" att2="STRENGTH" range="4">
             <features>
@@ -781,7 +778,7 @@
         </rangeweapon>
     </item>
 
-    <item id="dart" avail="SMALL_TOWN" price="200" load="1" robust="3" cplx="U">
+    <item id="dart" avail="SMALL_TOWN" price="200" load="1" robust="3" cplx="U" material="METAL">
         <rangeweapon skill="throwing"
                damage="1W6" speed="3" att1="AGILITY" att2="INTUITION" range="8">
             <requires>
@@ -794,7 +791,7 @@
         </rangeweapon>
     </item>
 
-    <item id="throwingstar" avail="SMALL_TOWN" price="300" load="1" robust="7" cplx="G">
+    <item id="throwingstar" avail="SMALL_TOWN" price="300" load="1" robust="7" cplx="G" material="METAL">
         <rangeweapon skill="throwing"
                damage="1W6+2" speed="4" att1="AGILITY" att2="INTUITION" range="5">
             <requires>
