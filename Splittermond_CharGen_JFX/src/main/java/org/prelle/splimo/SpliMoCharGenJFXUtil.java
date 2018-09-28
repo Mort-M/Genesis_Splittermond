@@ -42,14 +42,17 @@ public class SpliMoCharGenJFXUtil {
 		for (Iterator<Modification> it=mods.getModifications().iterator(); it.hasNext();) {
 			Modification mod = it.next();
 			if (mod instanceof AttributeModification) {
-				buf.append( ((AttributeModification)mod).getValue());
+				AttributeModification aMod = (AttributeModification)mod;
+				if (aMod.isConditional())
+					continue;
+				buf.append(aMod.getValue());
 			} else if (mod instanceof SkillModification) {
 					buf.append( ((SkillModification)mod).getValue());
 			} else if (mod instanceof MastershipModification) {
 				MastershipModification mmod = (MastershipModification)mod;
-				if (mmod.getMastership()!=null)
+				if (mmod.getMastership()!=null) {
 					buf.append(mmod.getMastership().getName());
-				else if (mmod.getSpecialization()!=null) {
+				} else if (mmod.getSpecialization()!=null) {
 					buf.append(mmod.getSpecialization().getName());
 				} else {
 					logger.warn("Don't know how to display to user: "+mod);
