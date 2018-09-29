@@ -11,7 +11,7 @@
 
 	<groupId>org.prelle.rpgframework</groupId>
 	<artifactId>splittermond-data</artifactId>
-	<version>1.0.3</version>
+	<version>1.0.4</version>
 	<name>Splittermond Data Build</name>
 	<packaging>pom</packaging>
 
@@ -19,7 +19,7 @@
 		<dependency>
 			<groupId>de.rpgframework</groupId>
 			<artifactId>splittermond-bbcode</artifactId>
-			<version>1.2.0</version>
+			<version>1.2.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
@@ -34,17 +34,17 @@
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
 			<artifactId>splittermond-chargen</artifactId>
-			<version>2.5.0</version>
+			<version>2.5.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
 			<artifactId>splittermond-chargen-jfx</artifactId>
-			<version>2.5.3</version>
+			<version>2.5.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
 			<artifactId>splittermond-core</artifactId>
-			<version>2.7.2</version>
+			<version>2.7.3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
