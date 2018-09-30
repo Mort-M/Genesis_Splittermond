@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="SMALL_TOWN" cplx="G" id="valkyrja-spearRanged" load="2" material="METAL" price="800" robust="5" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="AGILITY" att2="STRENGTH" damage="1w10+2" range="12" skill="throwing" speed="7" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="3"/>
+            <attrreq attr="INTUITION" val="3"/>
+         </requires>
+         <features>
+            <feature level="2" type="PENETRATING"/>
+            <feature type="CLOSE_COMBAT_SUITABLE"/>
+         </features>
+      </rangeweapon>
+   </item>
+</items>
