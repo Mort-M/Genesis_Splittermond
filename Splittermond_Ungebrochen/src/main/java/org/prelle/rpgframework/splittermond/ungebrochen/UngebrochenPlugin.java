@@ -112,10 +112,11 @@ public class UngebrochenPlugin implements RulePlugin<SpliMoCharacter> {
 	@Override
 	public void init() {
 		logger.info("START -------------------------------Ungebrochen-------------------------------------------");
-//		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/alchemy-esmoda.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-ungebrochen.xml"), i18NResources, i18NHelpResources);
-//		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-esmoda.xml"), i18NResources, i18NHelpResources);
-//		SplitterMondCore.loadMaterials(this, ClassLoader.getSystemResourceAsStream("data/splittermond/materials-esmoda.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/hiebwaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/schusswaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/stangenwaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/wurfwaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.info("STOP  -------------------------------Ungebrochen-------------------------------------------");
 	}
