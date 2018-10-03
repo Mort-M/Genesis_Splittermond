@@ -430,6 +430,8 @@ public class SplitterMondCore {
 				tmp.setPlugin(plugin);
 				if (logger.isDebugEnabled())
 					logger.debug("* "+tmp.getName()+"  ("+tmp.getSchools()+"  p."+tmp.getPage());
+				tmp.getName();
+				tmp.getPage();
 				tmp.getDescription();
 				tmp.getEnhancementDescription();
 				for (SpellType type : tmp.getTypes()) {

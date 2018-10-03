@@ -6,6 +6,9 @@ package org.prelle.splimo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
@@ -25,6 +28,8 @@ public abstract class BasePluginData implements HardcopyPluginData {
 	protected static Logger logger = Logger.getLogger("splittermond");
 
 	protected static PrintWriter MISSING;
+	protected static PrintWriter MISSING_HELP;
+	protected static List<String> reportedKeys;
 	protected transient ResourceBundle i18n;
 	protected transient ResourceBundle i18nHelp;
 
@@ -32,11 +37,17 @@ public abstract class BasePluginData implements HardcopyPluginData {
 
 	//--------------------------------------------------------------------
 	static {
+		reportedKeys = new ArrayList<String>();
 		try {
-			if (System.getProperty("logdir")==null)
-				MISSING = new PrintWriter(Files.createTempDirectory("genesis")+System.getProperty("file.separator")+"/missing-keys-splimo.txt");
-			else
+			if (System.getProperty("logdir")==null) {
+				Path path = Files.createTempDirectory("genesis");
+				MISSING = new PrintWriter(path+System.getProperty("file.separator")+"/missing-keys-splimo.txt");
+				MISSING_HELP = new PrintWriter(path+System.getProperty("file.separator")+"/missing-keys-help-splimo.txt");
+				path.toFile().deleteOnExit();
+			} else {
 				MISSING = new PrintWriter(System.getProperty("logdir")+System.getProperty("file.separator")+"/missing-keys-splimo.txt");
+				MISSING_HELP = new PrintWriter(System.getProperty("logdir")+System.getProperty("file.separator")+"/missing-keys-help-splimo.txt");
+			}
 		} catch (IOException e) {
 			logger.error("Failed setting up file for missing keys",e);
 		}
@@ -82,9 +93,12 @@ public abstract class BasePluginData implements HardcopyPluginData {
 				return 0;
 			return Integer.parseInt(i18n.getString(key));
 		} catch (MissingResourceException mre) {
-			logger.error("Missing property '"+key+"' in "+i18n.getBaseBundleName()+".properties");
-			if (MISSING!=null)
-				MISSING.println(key+"   \t in "+i18n.getBaseBundleName()+".properties");
+			if (!reportedKeys.contains(mre.getKey())) {
+				reportedKeys.add(mre.getKey());
+				logger.error("Missing property '"+key+"' in "+i18n.getBaseBundleName());
+				if (MISSING!=null)
+					MISSING.println(mre.getKey()+"=");
+			}
 		} catch (NumberFormatException nfe) {
 			if (i18n.getString(key).length()==0)
 				return 0;
@@ -115,9 +129,12 @@ public abstract class BasePluginData implements HardcopyPluginData {
 		try {
 			return i18nHelp.getString(key);
 		} catch (MissingResourceException mre) {
-			logger.warn("Missing property '"+key+"' in "+i18nHelp.getBaseBundleName());
-			if (MISSING!=null)
-				MISSING.println(key+"   \t in "+i18nHelp.getBaseBundleName()+".properties");
+			if (!reportedKeys.contains(key)) {
+				reportedKeys.add(key);
+				logger.error("Missing property '"+key+"' in "+i18nHelp.getBaseBundleName());
+				if (MISSING_HELP!=null)
+					MISSING_HELP.println(mre.getKey()+"=");
+			}
 		}
 		return null;
 	}
@@ -167,9 +184,12 @@ public abstract class BasePluginData implements HardcopyPluginData {
 		try {
 			return i18n.getString("plugin."+getPlugin().getID()+".productname.full");
 		} catch (MissingResourceException e) {
-			logger.error(e.toString()+" in "+i18n.getBaseBundleName());
-			if (MISSING!=null)
-				MISSING.println(e.getKey()+"   \t in "+i18n.getBaseBundleName()+".properties");
+			if (!reportedKeys.contains(e.getKey())) {
+				reportedKeys.add(e.getKey());
+				logger.error(e.toString()+" in "+i18n.getBaseBundleName());
+				if (MISSING!=null)
+					MISSING.println(e.getKey()+"   \t in "+i18n.getBaseBundleName()+".properties");
+			}
 		}
 		return null;
 	}
@@ -184,9 +204,12 @@ public abstract class BasePluginData implements HardcopyPluginData {
 		try {
 			return i18n.getString("plugin."+getPlugin().getID()+".productname.short");
 		} catch (MissingResourceException e) {
-			logger.error(e.toString()+" in "+i18n.getBaseBundleName());
-			if (MISSING!=null)
-				MISSING.println(e.getKey()+"   \t in "+i18n.getBaseBundleName()+".properties");
+			if (!reportedKeys.contains(e.getKey())) {
+				reportedKeys.add(e.getKey());
+				logger.error(e.toString()+" in "+i18n.getBaseBundleName());
+				if (MISSING!=null)
+					MISSING.println(e.getKey()+"   \t in "+i18n.getBaseBundleName()+".properties");
+			}
 		}
 		return null;
 	}
@@ -195,6 +218,8 @@ public abstract class BasePluginData implements HardcopyPluginData {
 	public static void flushMissingKeys() {
 		if (MISSING!=null)
 			MISSING.flush();
+		if (MISSING_HELP!=null)
+			MISSING_HELP.flush();
 	}
 
 }
