@@ -40,5 +40,35 @@
 			
 		</modifications>
 	</education>
+	
+	<education id="merobaudes_horseman" variantof="war_horseman">
+		<modifications>
+		</modifications>
+	</education>
+	
+	<education id="silverBlade_horseman" variantof="war_horseman">
+		<modifications>
+		</modifications>
+	</education>
+	
+	<education id="stormSpear_horseman" variantof="war_horseman">
+		<modifications>
+		</modifications>
+	</education>
+	
+	<education id="guardianOfVanforst" variantof="faithwarrior">
+		<modifications>
+		</modifications>
+	</education>
+	
+	<education id="termarkPigeon" variantof="wandererpriest">
+		<modifications>
+		</modifications>
+	</education>
+	
+	<education id="garstalCastleMagician" variantof="elementalist">
+		<modifications>
+		</modifications>
+	</education>
 
 </educations>
