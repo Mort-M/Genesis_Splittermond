@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<materials>
+	<material id="bonesilver" quality="4" price="500" type="METAL">
+		<modifications>
+			<itemmod attr="ROBUSTNESS" val="2"/>
+			<!-- höhere Haltbarkeit -->
+		</modifications>
+	</material>
+	
+</materials>
