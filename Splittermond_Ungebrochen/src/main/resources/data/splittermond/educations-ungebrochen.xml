@@ -36,8 +36,7 @@
 			<skillmod ref="endurance" value="1" />
 			
 			<mastermod ref="animals/ridingfighter"/>
-			
-			
+			<mastermod skilltype="COMBAT" level="1"/>
 			
 		</modifications>
 	</education>
