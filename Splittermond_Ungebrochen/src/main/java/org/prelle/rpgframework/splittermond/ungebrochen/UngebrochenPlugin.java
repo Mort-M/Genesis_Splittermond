@@ -114,7 +114,7 @@ public class UngebrochenPlugin implements RulePlugin<SpliMoCharacter> {
 		logger.info("START -------------------------------Ungebrochen-------------------------------------------");
 //		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/alchemy-esmoda.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-ungebrochen.xml"), i18NResources, i18NHelpResources);
-//		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-esmoda.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadNameTable(this, ClassLoader.getSystemResourceAsStream("data/splittermond/nametable-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadMaterials(this, ClassLoader.getSystemResourceAsStream("data/splittermond/materials-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
