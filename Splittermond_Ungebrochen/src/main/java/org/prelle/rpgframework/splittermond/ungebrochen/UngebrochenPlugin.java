@@ -76,7 +76,7 @@ public class UngebrochenPlugin implements RulePlugin<SpliMoCharacter> {
 	 */
 	@Override
 	public Collection<String> getRequiredPlugins() {
-		return Arrays.asList("CORE","MSK","World","Beastmaster");
+		return Arrays.asList("CORE","MSK","World");
 	}
 
 	//--------------------------------------------------------------------
@@ -112,7 +112,7 @@ public class UngebrochenPlugin implements RulePlugin<SpliMoCharacter> {
 	@Override
 	public void init() {
 		logger.info("START -------------------------------Ungebrochen-------------------------------------------");
-//		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/alchemy-esmoda.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadMasterships(this, ClassLoader.getSystemResourceAsStream("data/splittermond/masterships-ungebrochen.xml"), i18NResources, i18NHelpResources);		
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadNameTable(this, ClassLoader.getSystemResourceAsStream("data/splittermond/nametable-ungebrochen.xml"), i18NResources, i18NHelpResources);
