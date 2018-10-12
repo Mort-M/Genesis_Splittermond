@@ -578,12 +578,21 @@ public class SplitterMondCore {
 			logger.info("Successfully loaded "+addResources.size()+" resources");
 
 			// Set translation
-			for (Resource tmp : addResources) {
-				tmp.setResourceBundle(resrc);
-				tmp.setHelpResourceBundle(helpResources);
-				tmp.setPlugin(plugin);
-				if (logger.isDebugEnabled())
-					logger.debug("* "+tmp.getName());
+			for (Resource tmp : new ArrayList<Resource>(addResources)) {
+				Resource resource = getResource(tmp.getId());
+				if (resource != null) {
+					resource.setResourceBundle(resrc);
+					resource.setHelpResourceBundle(helpResources);
+					resource.setPlugin(plugin);
+					addResources.remove(tmp);
+				} else {
+					tmp.setResourceBundle(resrc);
+					tmp.setHelpResourceBundle(helpResources);
+					tmp.setPlugin(plugin);
+				}
+				if (logger.isDebugEnabled()) {
+					logger.debug("* " + tmp.getName());
+				}
 			}
 
 			resources.addAll(addResources);

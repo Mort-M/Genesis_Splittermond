@@ -10,4 +10,5 @@
     <resource id="mentor" />
     <resource id="entourage" />
     <resource id="rank" />
+    <resource id="faith" />
 </resources>
