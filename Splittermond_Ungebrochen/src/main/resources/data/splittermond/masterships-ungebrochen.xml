@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+	<skill id="animals">
+		<mastership level="1" key="ride_down">
+			<requires>
+				<selreq>
+					<masterreq ref="melee/knock" />
+					<masterreq ref="slashing/knock" />
+					<masterreq ref="chains/knock" />
+					<masterreq ref="blades/knock" />
+					<masterreq ref="staffs/knock" />
+				</selreq>
+			</requires>
+		</mastership>
+		<mastership level="1" key="riding_master">
+			<!-- enter data if necessary -->
+		</mastership>
+	</skill>
+</skills>

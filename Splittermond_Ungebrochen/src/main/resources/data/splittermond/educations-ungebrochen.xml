@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<educations>
+	<education id="war_horseman">
+		<modifications>
+			<powermod ref="animallover" />
+			<powermod ref="animalfamiliar" />
+
+			<resourcemod ref="creature" value="2" />
+
+			<selmod num="3">
+				<skillmod ref="melee" value="3" />
+				<skillmod ref="slashing" value="3"/>
+				<skillmod ref="chains" value="3"/>
+				<skillmod ref="blades" value="3"/>
+				<skillmod ref="longrange" value="3"/>
+				<skillmod ref="staffs" value="3"/>
+				<skillmod ref="throwing" value="3"/>
+			</selmod>
+
+			<skillmod ref="leadership" value="2" />
+			<skillmod ref="acrobatics" value="2" />
+			<skillmod ref="athletics" value="3" />
+			<skillmod ref="determination" value="2" />
+			<skillmod ref="history" value="1" />
+			<skillmod ref="heal" value="2" />
+			<skillmod ref="nature" value="1" />
+			<skillmod ref="animals" value="3" />
+
+			<selmod num="1">
+				<skillmod ref="survival" value="2" />
+				<skillmod ref="enhancemagic" value="2" />
+				<skillmod ref="naturemagic" value="2" />
+			</selmod>
+
+			<skillmod ref="perception" value="1" />
+			<skillmod ref="endurance" value="1" />
+			
+			<mastermod ref="animals/ridingfighter"/>
+			<mastermod skilltype="COMBAT" level="1"/>
+			
+		</modifications>
+	</education>
+	
+	<education id="merobaudes_horseman" variantof="war_horseman">
+		<modifications>
+			<reqmod type="culture" ref="zwingard" />
+			
+			<powermod ref="animallover" />
+			<powermod ref="animalfamiliar" />
+
+			<resourcemod ref="creature" value="2" />
+			
+			<skillmod ref="staffs" value="3" />
+			<selmod num="2">
+				<skillmod ref="melee" value="3" />
+				<skillmod ref="slashing" value="3"/>
+				<skillmod ref="chains" value="3"/>
+				<skillmod ref="blades" value="3"/>
+				<skillmod ref="longrange" value="3"/>
+				<skillmod ref="throwing" value="3"/>
+			</selmod>
+			
+			<skillmod ref="leadership" value="2" />
+			<skillmod ref="athletics" value="3" />
+			<skillmod ref="determination" value="2" />
+			<skillmod ref="history" value="2" />
+			<skillmod ref="heal" value="2" />
+			<skillmod ref="nature" value="1" />
+			<skillmod ref="animals" value="3" />
+
+			<selmod num="1">
+				<skillmod ref="survival" value="2" />
+				<skillmod ref="enhancemagic" value="2" />
+				<skillmod ref="naturemagic" value="2" />
+			</selmod>
+			
+			<skillmod ref="perception" value="1" />
+			<skillmod ref="endurance" value="2" />
+			
+			<mastermod ref="animals/ride_down"/>
+			
+			<mastermod ref="staffs/knock"/>
+		</modifications>
+	</education>
+	
+	<education id="silverBlade_horseman" variantof="war_horseman">
+		<modifications>
+			<reqmod type="culture" ref="termark" />
+			<skillmod ref="stealth" value="3" />
+			
+			<powermod ref="animallover" />
+			<powermod ref="animalfamiliar" />
+
+			<resourcemod ref="creature" value="2" />
+
+			<selmod num="3">
+				<skillmod ref="melee" value="3" />
+				<skillmod ref="slashing" value="3"/>
+				<skillmod ref="chains" value="3"/>
+				<skillmod ref="blades" value="3"/>
+				<skillmod ref="longrange" value="3"/>
+				<skillmod ref="staffs" value="3"/>
+				<skillmod ref="throwing" value="3"/>
+			</selmod>
+
+			<skillmod ref="leadership" value="2" />
+			<skillmod ref="acrobatics" value="2" />
+			<skillmod ref="athletics" value="3" />
+			<skillmod ref="determination" value="2" />
+			
+			<skillmod ref="heal" value="1" />
+			
+			<skillmod ref="animals" value="3" />
+
+			<selmod num="1">
+				<skillmod ref="survival" value="2" />
+				<skillmod ref="enhancemagic" value="2" />
+				<skillmod ref="naturemagic" value="2" />
+			</selmod>
+
+			<skillmod ref="perception" value="2" />
+			
+			
+			<mastermod ref="animals/ridingfighter"/>
+			<mastermod skilltype="COMBAT" level="1"/>
+			
+		</modifications>
+	</education>
+	
+	<education id="stormSpear_horseman" variantof="war_horseman">
+		<modifications>
+			<reqmod type="culture" ref="tarr" />
+			
+			<powermod ref="animallover" />
+			<powermod ref="animalfamiliar" />
+
+			<resourcemod ref="creature" value="2" />
+
+			<selmod num="2">
+				<skillmod ref="melee" value="3" />
+				<skillmod ref="slashing" value="3"/>
+				<skillmod ref="chains" value="3"/>
+				<skillmod ref="blades" value="3"/>
+				<skillmod ref="longrange" value="3"/>
+				<skillmod ref="staffs" value="3"/>
+				<skillmod ref="throwing" value="3"/>
+			</selmod>
+
+			
+			<skillmod ref="acrobatics" value="2" />
+			<skillmod ref="athletics" value="3" />
+			<skillmod ref="determination" value="2" />
+			<skillmod ref="history" value="1" />
+			<skillmod ref="heal" value="2" />
+			<skillmod ref="nature" value="3" />
+			<skillmod ref="animals" value="3" />
+
+			<selmod num="1">
+				<skillmod ref="survival" value="3" />
+				
+				<skillmod ref="naturemagic" value="3" />
+			</selmod>
+
+			<skillmod ref="perception" value="3" />
+			<skillmod ref="endurance" value="1" />
+			
+			<mastermod ref="animals/riding_master"/>
+			<mastermod skilltype="COMBAT" level="1"/>
+			
+		</modifications>
+	</education>
+	
+	<education id="guardianOfVanforst" variantof="faithwarrior">
+		<modifications>
+		</modifications>
+	</education>
+	
+	<education id="termarkPigeon" variantof="wandererpriest">
+		<modifications>
+		</modifications>
+	</education>
+	
+	<education id="garstalCastleMagician" variantof="elementalist">
+		<modifications>
+		</modifications>
+	</education>
+	
+</educations>
