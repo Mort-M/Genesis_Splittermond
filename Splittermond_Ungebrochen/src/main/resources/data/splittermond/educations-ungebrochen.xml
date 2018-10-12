@@ -79,7 +79,7 @@
 			
 			<mastermod ref="animals/ride_down"/>
 			
-			<!--  defect?<mastermod ref="staffs/knock"/>-->
+			<mastermod ref="staffs/knock"/>
 		</modifications>
 	</education>
 	
