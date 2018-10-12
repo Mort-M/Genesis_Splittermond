@@ -76,7 +76,7 @@ public class UngebrochenPlugin implements RulePlugin<SpliMoCharacter> {
 	 */
 	@Override
 	public Collection<String> getRequiredPlugins() {
-		return Arrays.asList("CORE","MSK","World");
+		return Arrays.asList("CORE","MSK","World","Beastmaster");
 	}
 
 	//--------------------------------------------------------------------
@@ -119,6 +119,8 @@ public class UngebrochenPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadMaterials(this, ClassLoader.getSystemResourceAsStream("data/splittermond/materials-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.info("STOP  -------------------------------Ungebrochen-------------------------------------------");
+//		logger.fatal("Stop here");
+//		System.exit(0);
 	}
 
 	//--------------------------------------------------------------------
