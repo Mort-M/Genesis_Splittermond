@@ -273,18 +273,13 @@
 			<skillmod ref="survival" value="3" />
 			<skillmod ref="endurance" value="1" />
 			
+			<selmod>
+                 <mastermod ref="craftmanship/efficiency" />
+                 <mastermod ref="craftmanship/fairycrafter" />
+                 <mastermod ref="craftmanship/journeyman" />
+                 <mastermod ref="craftmanship/scrimper" />
+             </selmod>
 			
-			<!--  todo craftmanship <selmod>
-                 <mastermod ref="survival/terrainlore_forest" />
-                 <mastermod ref="survival/terrainlore_desert" />
-                 <mastermod ref="survival/terrainlore_mountain" />
-                 <mastermod ref="survival/terrainlore_swamp" />
-                 <mastermod ref="survival/terrainlore_grassland" />
-                 <mastermod ref="survival/terrainlore_ocean" />
-                 <mastermod ref="survival/terrainlore_ice" />
-                 <mastermod ref="survival/terrainlore_jungle" />
-                 <mastermod ref="survival/terrainlore_faerie" />
-             </selmod-->
 			<mastermod ref="antimagic/wardinghand" />
 		</modifications>
 	</education>
