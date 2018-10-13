@@ -299,9 +299,11 @@
 				<powermod ref="literate" />
 			</selmod>
 			
-			<selmod num="2">
-				<resourcemod ref="creature" value="2" />
-				<resourcemod ref="relic" value="2" />
+			<!--  Ressourcen: 2 Punkte frei wählbar aus Ansehen, Kreatur und Relikt statt bestehender Auswahl; -->
+			<selmod dist="2">
+				<resourcemod ref="reputation" />
+				<resourcemod ref="creature" />
+				<resourcemod ref="relic" />
 			</selmod>
 
 			<selmod num="1">
@@ -318,25 +320,21 @@
 				<skillmod ref="survival" value="2" />
 			</selmod>
 			<skillmod ref="endurance" value="2" />
-			<skillmod ref="antimagic" value="2" />
-			<selmod values="4 4 2 2">
-				<skillmod ref="windmagic" />
-				<skillmod ref="stonemagic" />
-				<skillmod ref="firemagic" />
-				<skillmod ref="watermagic" />
+			
+			<skillmod ref="antimagic" value="4" />
+			
+			<skillmod ref="stonemagic" value="4" />
+			<skillmod ref="firemagic" value="4" />
+			
+			<selmod num="1">
+				<mastermod skill="stonemagic" level="1" />
+				<mastermod skill="firemagic" level="1" />
 			</selmod>
 			<selmod num="1">
 				<mastermod skill="stonemagic" level="1" />
 				<mastermod skill="firemagic" level="1" />
-				<mastermod skill="watermagic" level="1" />
-				<mastermod skill="windmagic" level="1" />
 			</selmod>
-			<selmod num="1">
-				<mastermod skill="stonemagic" level="1" />
-				<mastermod skill="firemagic" level="1" />
-				<mastermod skill="watermagic" level="1" />
-				<mastermod skill="windmagic" level="1" />
-			</selmod>
+			<skillmod ref="naturemagic" value="0" />
 		</modifications>
 	</education>
 
