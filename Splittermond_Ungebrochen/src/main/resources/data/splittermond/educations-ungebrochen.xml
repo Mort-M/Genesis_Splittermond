@@ -227,22 +227,22 @@
 	<education id="termarkPigeon" variantof="wandererpriest">
 		<modifications>
 			<reqmod type="culture" ref="termark,nyrdfing" />
-			<resourcemod ref="rank" value="1" /> <!--  Starrekyng-Kirche -->
+			<resourcemod ref="rank" value="1" /> <!-- Starrekyng-Kirche -->
 			<skillmod ref="antimagic" value="4" />
-			
+
 			<selmod>
 				<skillmod ref="insightmagic" value="3" />
 				<skillmod ref="fatemagic" value="3" />
 			</selmod>
-			
+
 			<selmod>
 				<powermod ref="enduring" />
 				<powermod ref="sensesocial" />
 			</selmod>
 			<powermod ref="senseorient" />
 			<powermod ref="priest" />
-			
-			
+
+
 			<selmod>
 				<resourcemod ref="contacts" value="1" />
 				<resourcemod ref="relic" value="1" />
@@ -256,8 +256,8 @@
 				<skillmod ref="longrange" value="2" />
 				<skillmod ref="throwing" value="2" />
 			</selmod>
-			
-			
+
+
 			<skillmod ref="diplomacy" value="1" />
 			<skillmod ref="determination" value="2" />
 			<selmod values="3 2">
@@ -265,21 +265,21 @@
 				<skillmod ref="countrylore" />
 			</selmod>
 			<skillmod ref="craftmanship" value="2" />
-			
+
 			<skillmod ref="heal" value="3" />
-			
+
 			<skillmod ref="hunting" value="1" />
 			<skillmod ref="nature" value="2" />
 			<skillmod ref="survival" value="3" />
 			<skillmod ref="endurance" value="1" />
-			
+
 			<selmod>
-                 <mastermod ref="craftmanship/efficiency" />
-                 <mastermod ref="craftmanship/fairycrafter" />
-                 <mastermod ref="craftmanship/journeyman" />
-                 <mastermod ref="craftmanship/scrimper" />
-             </selmod>
-			
+				<mastermod ref="craftmanship/efficiency" />
+				<mastermod ref="craftmanship/fairycrafter" />
+				<mastermod ref="craftmanship/journeyman" />
+				<mastermod ref="craftmanship/scrimper" />
+			</selmod>
+
 			<mastermod ref="antimagic/wardinghand" />
 		</modifications>
 	</education>
@@ -287,6 +287,56 @@
 	<education id="garstalCastleMagician"
 		variantof="elementalist">
 		<modifications>
+			<reqmod type="culture" ref="termark" />
+			
+			<selmod num="1">
+				<powermod ref="friendearth" />
+				<powermod ref="friendfire" />
+			</selmod>
+			
+			<selmod num="1">
+				<powermod ref="concentrated" />
+				<powermod ref="literate" />
+			</selmod>
+			
+			<selmod num="2">
+				<resourcemod ref="creature" value="2" />
+				<resourcemod ref="relic" value="2" />
+			</selmod>
+
+			<selmod num="1">
+				<skillmod ref="alchemy" value="2" />
+				<skillmod ref="naturemagic" value="2" />
+			</selmod>
+			<skillmod ref="arcanelore" value="3" />
+			<skillmod ref="diplomacy" value="1" />
+			<skillmod ref="determination" value="3" />
+			<skillmod ref="countrylore" value="1" />
+			<skillmod ref="nature" value="2" />
+			<selmod num="1">
+				<skillmod ref="streetlore" value="2" />
+				<skillmod ref="survival" value="2" />
+			</selmod>
+			<skillmod ref="endurance" value="2" />
+			<skillmod ref="antimagic" value="2" />
+			<selmod values="4 4 2 2">
+				<skillmod ref="windmagic" />
+				<skillmod ref="stonemagic" />
+				<skillmod ref="firemagic" />
+				<skillmod ref="watermagic" />
+			</selmod>
+			<selmod num="1">
+				<mastermod skill="stonemagic" level="1" />
+				<mastermod skill="firemagic" level="1" />
+				<mastermod skill="watermagic" level="1" />
+				<mastermod skill="windmagic" level="1" />
+			</selmod>
+			<selmod num="1">
+				<mastermod skill="stonemagic" level="1" />
+				<mastermod skill="firemagic" level="1" />
+				<mastermod skill="watermagic" level="1" />
+				<mastermod skill="windmagic" level="1" />
+			</selmod>
 		</modifications>
 	</education>
 
