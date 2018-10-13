@@ -76,7 +76,7 @@ public class UngebrochenPlugin implements RulePlugin<SpliMoCharacter> {
 	 */
 	@Override
 	public Collection<String> getRequiredPlugins() {
-		return Arrays.asList("CORE","MSK","World");
+		return Arrays.asList("CORE","MSK","World", "JDG");
 	}
 
 	//--------------------------------------------------------------------
