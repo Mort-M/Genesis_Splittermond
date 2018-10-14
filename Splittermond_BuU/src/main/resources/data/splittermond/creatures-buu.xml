@@ -46,4 +46,48 @@
 			<creaturefeature type="WEAK"/>
 		</features>
 	</creature>
+	<creature id="donkey" lvl1="0" lvl2="0">
+		<creaturetypes>
+			<creaturetype type="ANIMAL"/>
+			<creaturetype type="MOUNT"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="1"/>
+			<attr id="AGILITY"      value="4"/>
+			<attr id="INTUITION"    value="2"/>
+			<attr id="CONSTITUTION" value="4"/>
+			<attr id="MYSTIC"       value="0"/>
+			<attr id="STRENGTH"     value="6"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="3"/>
+			<attr id="SIZE"         value="5"/>
+			<attr id="SPEED"        value="9"/>
+			<attr id="LIFE"         value="9"/>
+			<attr id="FOCUS"        value="6"/>
+			<attr id="DEFENSE"      value="18"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="18"/>
+			<attr id="MINDRESIST"   value="19"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="6" dmg="1W6" spd="9" ini="7">
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="acrobatics"    val="10"/>
+			<skillval skill="athletics"     val="18">
+				 <masterref ref="athletics/muscleman"/>
+			</skillval>
+			<skillval skill="determination" val="11"/>
+			<skillval skill="stealth"       val="7"/>
+			<skillval skill="perception"    val="8"/>
+			<skillval skill="endurance"     val="7"/>
+		</skillvals>
+		<features>
+			<creaturefeature type="RESIST_EXHAUSTION"/>
+			<creaturefeature type="COWARD"/>
+			<creaturefeature type="CREATURE" level="2"/>
+		</features>
+		<!-- Beute? Variante? -->
+	</creature>
 </creatures>
