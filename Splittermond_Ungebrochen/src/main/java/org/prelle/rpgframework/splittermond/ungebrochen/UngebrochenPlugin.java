@@ -117,6 +117,7 @@ public class UngebrochenPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/schusswaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/stangenwaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/wurfwaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadSpells(this, ClassLoader.getSystemResourceAsStream("data/splittermond/spells-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.info("STOP  -------------------------------Ungebrochen-------------------------------------------");
 	}
