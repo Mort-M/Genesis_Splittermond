@@ -28,29 +28,4 @@
          </features>
       </weapon>
    </item>
-   <item avail="SMALL_TOWN" cplx="G" id="valkyrja-spear" load="2" material="METAL" price="800" robust="5" type="WEAPON">
-      <weapon att1="AGILITY" att2="INTUITION" damage="1W10+2" skill="staffs" speed="8" type="WEAPON">
-         <requires>
-            <attrreq attr="AGILITY" val="2"/>
-            <attrreq attr="INTUITION" val="3"/>
-         </requires>
-         <features>
-            <feature type="THROWABLE"/>
-         </features>
-      </weapon>
-   </item>
-   <item avail="CAPITAL" cplx="G" id="soartearer" load="3" material="METAL" price="1600" robust="4" type="WEAPON">
-      <weapon att1="AGILITY" att2="STRENGTH" damage="2W10+3" skill="staffs" speed="13" type="WEAPON">
-         <requires>
-            <attrreq attr="AGILITY" val="2"/>
-            <attrreq attr="STRENGTH" val="4"/>
-         </requires>
-         <features>
-            <feature level="2" type="CRITICAL"/>
-            <feature type="LONG_WEAPON"/>
-            <feature type="HEAVY"/>
-            <feature type="TWO_HANDED"/>
-         </features>
-      </weapon>
-   </item>
 </items>
