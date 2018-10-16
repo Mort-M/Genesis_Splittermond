@@ -76,7 +76,7 @@ public class UngebrochenPlugin implements RulePlugin<SpliMoCharacter> {
 	 */
 	@Override
 	public Collection<String> getRequiredPlugins() {
-		return Arrays.asList("CORE","MSK","World");
+		return Arrays.asList("CORE","MSK","World", "JDG");
 	}
 
 	//--------------------------------------------------------------------
@@ -113,8 +113,11 @@ public class UngebrochenPlugin implements RulePlugin<SpliMoCharacter> {
 	public void init() {
 		logger.info("START -------------------------------Ungebrochen-------------------------------------------");
 		SplitterMondCore.loadFeatureTypes(this, ClassLoader.getSystemResourceAsStream("data/splittermond/featuretypes-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadMasterships(this, ClassLoader.getSystemResourceAsStream("data/splittermond/masterships-ungebrochen.xml"), i18NResources, i18NHelpResources);		
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-ungebrochen.xml"), i18NResources, i18NHelpResources);
-		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/hiebwaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadNameTable(this, ClassLoader.getSystemResourceAsStream("data/splittermond/nametable-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadMaterials(this, ClassLoader.getSystemResourceAsStream("data/splittermond/materials-ungebrochen.xml"), i18NResources, i18NHelpResources);SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/hiebwaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/schusswaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/stangenwaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/wurfwaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
