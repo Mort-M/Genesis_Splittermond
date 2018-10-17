@@ -16,4 +16,37 @@
 			<!-- enter data if necessary -->
 		</mastership>
 	</skill>
+	
+	<skill id="longrange">
+		<mastership level="1" key="arrowslit_shooter" />
+	</skill>
+	
+	<skill id="athletics">
+		<mastership level="1" key="giantslayer" />
+	</skill>
+	
+	<skill id="performance">
+		<mastership level="1" key="song_of_watch" />
+	</skill>
+	
+	<skill id="dexterity">
+		<mastership level="2" key="smuggler" />
+	</skill>
+	
+	<skill id="stealth">
+		<mastership level="2" key="fieldscout" />
+	</skill>
+	
+	<skill id="hunting">
+		<mastership level="2" key="dragonhunter" />
+	</skill>
+	
+	<skill id="motionmagic">
+		<mastership level="2" key="longrange_projectile">
+			<requires>
+				<masterreq ref="motionmagic/penetratingprojectile" />
+			</requires>
+		</mastership>
+	</skill>
+	
 </skills>
