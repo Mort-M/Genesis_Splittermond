@@ -162,4 +162,155 @@
 		</features>
 		<!-- Leder (120 Lunar; Jagdkunst gg. 15) -->
 	</creature>
+	
+	<creature id="rye_guardian" lvl1="0" lvl2="0">
+		<!--  origin hunting_dog see BuU -->
+		<creaturetypes>
+			<creaturetype type="ANIMAL"/>
+			<creaturetype type="CANIDS"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="1"/>
+			<attr id="AGILITY"      value="4"/>
+			<attr id="INTUITION"    value="3"/>
+			<attr id="CONSTITUTION" value="1"/>
+			<attr id="MYSTIC"       value="0"/>
+			<attr id="STRENGTH"     value="3"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="2"/>
+			<attr id="SIZE"         value="3"/>
+			<attr id="SPEED"        value="12"/>
+			<attr id="LIFE"         value="4"/>
+			<attr id="FOCUS"        value="4"/>
+			<attr id="DEFENSE"      value="17"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="16"/>
+			<attr id="MINDRESIST"   value="17"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="7" dmg="1w6+2" spd="7" ini="7">
+				<features>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="acrobatics"    val="7"/>
+			<skillval skill="athletics"     val="14">
+			  <masterref ref="athletics/swiftpursuit"/>
+			</skillval>
+			<skillval skill="determination" val="6"/>
+			<skillval skill="stealth"       val="7"/>
+			<skillval skill="hunting"       val="16">
+			  <masterref ref="hunting/tirelesschaser"/>
+			</skillval>
+			<skillval skill="perception"    val="10"/>
+			<skillval skill="endurance"     val="12" />
+		</skillvals>
+		<features>
+			<creaturefeature type="CREATURE" level="3"/>
+			<creaturefeature type="WEAK"/>
+		</features>
+	</creature>
+	
+	<creature id="rudzoha" lvl1="0" lvl2="0">
+		<!--  origin hunting_dog see BuU -->
+		<creaturetypes>
+			<creaturetype type="ANIMAL"/>
+			<creaturetype type="CANIDS"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="1"/>
+			<attr id="AGILITY"      value="4"/>
+			<attr id="INTUITION"    value="3"/>
+			<attr id="CONSTITUTION" value="1"/>
+			<attr id="MYSTIC"       value="0"/>
+			<attr id="STRENGTH"     value="3"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="2"/>
+			<attr id="SIZE"         value="3"/>
+			<attr id="SPEED"        value="14"/>
+			<attr id="LIFE"         value="4"/>
+			<attr id="FOCUS"        value="4"/>
+			<attr id="DEFENSE"      value="17"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="16"/>
+			<attr id="MINDRESIST"   value="17"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="7" dmg="1w6+1" spd="7" ini="7">
+				<features>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="acrobatics"    val="7"/>
+			<skillval skill="athletics"     val="17">
+			  <masterref ref="athletics/swiftpursuit"/>
+			</skillval>
+			<skillval skill="determination" val="6"/>
+			<skillval skill="stealth"       val="7"/>
+			<skillval skill="hunting"       val="12">
+			  <masterref ref="hunting/tirelesschaser"/>
+			</skillval>
+			<skillval skill="perception"    val="10"/>
+			<skillval skill="endurance"     val="12" />
+		</skillvals>
+		<features>
+			<creaturefeature type="CREATURE" level="3"/>
+			<creaturefeature type="WEAK"/>
+		</features>
+	</creature>
+	
+	<creature id="wind_howler" lvl1="0" lvl2="0">
+		<!--  origin herding_dog see BuU -->
+		<creaturetypes>
+			<creaturetype type="ANIMAL"/>
+			<creaturetype type="CANIDS"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="1"/>
+			<attr id="AGILITY"      value="3"/>
+			<attr id="INTUITION"    value="4"/>
+			<attr id="CONSTITUTION" value="2"/>
+			<attr id="MYSTIC"       value="0"/>
+			<attr id="STRENGTH"     value="4"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="2"/>
+			<attr id="SIZE"         value="5"/>
+			<attr id="SPEED"        value="11"/>
+			<attr id="LIFE"         value="7"/>
+			<attr id="FOCUS"        value="4"/>
+			<attr id="DEFENSE"      value="18"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="18"/>
+			<attr id="MINDRESIST"   value="18"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="9" dmg="1w6+2" spd="7" ini="6">
+				<features>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="melee"    val="9">
+				<masterref ref="melee/defender" />
+			</skillval>
+			<skillval skill="acrobatics"    val="7"/>
+			<skillval skill="athletics"     val="11">
+			  <masterref ref="athletics/swiftpursuit"/>
+			</skillval>
+			<skillval skill="determination" val="8"/>
+			<skillval skill="stealth"       val="7"/>
+			<skillval skill="hunting"       val="11">
+			  <masterref ref="hunting/tirelesschaser"/>
+			</skillval>
+			<skillval skill="perception"    val="14">
+				<masterref ref="perception/changedsurrounding"/>
+			</skillval>
+			<skillval skill="endurance"     val="14" />
+		</skillvals>
+		<features>
+			<creaturefeature type="CREATURE" level="4"/>
+		</features>
+	</creature>
 </creatures>
