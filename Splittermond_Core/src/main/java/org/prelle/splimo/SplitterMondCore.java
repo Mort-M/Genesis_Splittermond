@@ -365,6 +365,7 @@ public class SplitterMondCore {
 					realSkill.addMastership(master);
 					if (logger.isDebugEnabled())
 						logger.debug("* "+realSkill.getName()+" / "+master.getName());
+					master.getName();
 					master.getPage();
 					master.getShortDescription();
 					master.getHelpText();
@@ -415,7 +416,7 @@ public class SplitterMondCore {
 
 	//-------------------------------------------------------------------
 	public static void loadSpells(RulePlugin<? extends SpliMoCharacter> plugin, InputStream in, ResourceBundle resources, ResourceBundle helpResources) {
-		logger.info("Load spells (Plugin="+plugin.getID()+")");
+		logger.debug("Load spells (Plugin="+plugin.getID()+")");
 		if (in==null)
 			throw new MissingResourceException("Missing spells.xml", SplitterMondCore.class.getName(), null);
 
@@ -545,6 +546,10 @@ public class SplitterMondCore {
 				// Set modification source
 				for (Modification mod : tmp.getModifications())
 					mod.setSource(tmp);
+				tmp.getName();
+				tmp.getPage();
+				tmp.getShortDescription();
+				tmp.getHelpText();
 			}
 			Collections.sort(addPowers);
 			powers.addAll(addPowers);
@@ -585,13 +590,16 @@ public class SplitterMondCore {
 					resource.setHelpResourceBundle(helpResources);
 					resource.setPlugin(plugin);
 					addResources.remove(tmp);
+					resource.getName();
+					resource.getPage();
+					resource.getHelpText();
 				} else {
 					tmp.setResourceBundle(resrc);
 					tmp.setHelpResourceBundle(helpResources);
 					tmp.setPlugin(plugin);
-				}
-				if (logger.isDebugEnabled()) {
-					logger.debug("* " + tmp.getName());
+					tmp.getName();
+					tmp.getPage();
+					tmp.getHelpText();
 				}
 			}
 
@@ -733,6 +741,9 @@ public class SplitterMondCore {
 				tmp.setResourceBundle(resrc);
 				tmp.setHelpResourceBundle(helpResources);
 				tmp.setPlugin(plugin);
+				tmp.getName();
+				tmp.getPage();
+				tmp.getHelpText();
 				if (logger.isDebugEnabled()) {
 					logger.debug("* "+tmp.getName());
 					tmp.getHelpText();
@@ -1833,6 +1844,7 @@ public class SplitterMondCore {
 				tmp.setResourceBundle(resrc);
 				tmp.setHelpResourceBundle(helpResources);
 				tmp.setPlugin(plugin);
+				tmp.getName();
 				if (logger.isDebugEnabled())
 					logger.debug("* "+tmp.getName()+"  "+(tmp.hasLevel()?"with levels":""));
 			}

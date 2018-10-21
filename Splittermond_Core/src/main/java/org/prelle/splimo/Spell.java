@@ -42,7 +42,8 @@ public class Spell extends BasePluginData implements Comparable<Spell> {
 	public final static int DURATION_MINUTE = 2;
 	public final static int DURATION_HOUR   = 3;
 	public final static int DURATION_DAY    = 4;
-	public final static int DURATION_MONTH  = 5;
+	public final static int DURATION_WEEK   = 5;
+	public final static int DURATION_MONTH  = 6;
 	public final static int DURATION_YEAR   = 7;
 	public final static int DURATION_CHANNELLED = 9;
 
@@ -121,7 +122,7 @@ public class Spell extends BasePluginData implements Comparable<Spell> {
 			if (!reportedKeys.contains(e.getKey())) {
 				reportedKeys.add(e.getKey());
 				if (MISSING!=null)
-					MISSING.println(e.getKey());
+					MISSING.println(e.getKey()+"=");
 				logger.error("Missing key "+e.getKey()+" in "+i18n.getBaseBundleName());
 			}
 		} catch (NumberFormatException e) {
@@ -139,8 +140,7 @@ public class Spell extends BasePluginData implements Comparable<Spell> {
 				reportedKeys.add(e.getKey());
 				logger.error("Missing property '"+e.getKey()+"' in "+i18n.getBaseBundleName());
 				if (MISSING!=null)
-					MISSING.println(e.getKey());
-				logger.error("Missing resource '"+e.getKey()+"' in "+i18nHelp.getBaseBundleName());
+					MISSING.println(e.getKey()+"=");
 			}
 			return e.getKey();
 		}

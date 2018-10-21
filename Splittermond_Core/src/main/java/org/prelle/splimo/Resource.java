@@ -4,6 +4,7 @@
 package org.prelle.splimo;
 
 import java.text.Collator;
+import java.util.MissingResourceException;
 
 import org.prelle.simplepersist.Attribute;
 import org.prelle.simplepersist.Root;
@@ -42,7 +43,19 @@ public class Resource extends BasePluginData implements Comparable<Resource> {
 
 	//-------------------------------------------------------------------
 	public String getName() {
-		return i18n.getString("resource."+id);
+		String searchKey = "resource."+id;
+		try {
+			return i18n.getString(searchKey);
+		} catch (MissingResourceException e) {
+			if (!reportedKeys.contains(e.getKey())) {
+				reportedKeys.add(e.getKey());
+				logger.warn(String.format("key missing:    %s   %s", i18n.getBaseBundleName(), e.getKey()));
+				if (MISSING!=null) {
+					MISSING.println(e.getKey()+"=");
+				}
+			}
+			return searchKey;
+		}
 	}
 
 	//-------------------------------------------------------------------

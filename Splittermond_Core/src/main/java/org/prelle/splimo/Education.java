@@ -7,6 +7,7 @@ import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.MissingResourceException;
 
 import org.prelle.simplepersist.Attribute;
 import org.prelle.simplepersist.Element;
@@ -90,7 +91,19 @@ public class Education extends BasePluginData implements Comparable<Education> {
 			return name;
 		if (i18n==null)
 			i18n = SplitterMondCore.getI18nResources();
-		return i18n.getString("education."+key);
+		String searchKey = "education."+key;
+		try {
+			return i18n.getString(searchKey);
+		} catch (MissingResourceException e) {
+			if (!reportedKeys.contains(e.getKey())) {
+				reportedKeys.add(e.getKey());
+				logger.warn(String.format("key missing:    %s   %s", i18n.getBaseBundleName(), e.getKey()));
+				if (MISSING!=null) {
+					MISSING.println(e.getKey()+"=");
+				}
+			}
+			return key;
+		}
 	}
 
 	//-------------------------------------------------------------------
