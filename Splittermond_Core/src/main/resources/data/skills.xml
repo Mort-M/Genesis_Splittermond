@@ -1871,8 +1871,13 @@
             </requires>
         </mastership>
         <mastership level="4" common="true" key="grandmaster"/>
-
-        <mastership level="1" key="empathy"/>
+        
+        <!-- mastership level="1" key="empathy" >
+            <modifications>
+              <skillmod ref="empathy" value="2"/> Ausgelagert nach masterships.xml, wegen der Referenz auf empathy, die sonst noch nicht auslösbar ist
+            </modifications>
+        </mastership -->
+        
         <mastership level="1" key="willbreaker"/>
         <mastership level="2" key="materialbond1"/>
         <mastership level="2" key="sleeper"/>
