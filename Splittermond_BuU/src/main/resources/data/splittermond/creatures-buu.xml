@@ -149,7 +149,7 @@
 	</creature>
 	
 	<creature id="hunting_dog" lvl1="0" lvl2="0">
-		<!--  origin dog see above Core -->
+		<!--  origin dog see above -->
 		<creaturetypes>
 			<creaturetype type="ANIMAL"/>
 			<creaturetype type="CANIDS"/>
