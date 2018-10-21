@@ -117,8 +117,6 @@ public class BestienUndUngeheuerPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadMaterials(this, ClassLoader.getSystemResourceAsStream("data/splittermond/materials-buu.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.debug("STOP  Initialize");
-//		logger.fatal("Stop here");
-//		System.exit(0);
 	}
 
 	//--------------------------------------------------------------------

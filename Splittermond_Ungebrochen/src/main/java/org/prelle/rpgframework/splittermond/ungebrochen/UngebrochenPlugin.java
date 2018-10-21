@@ -76,7 +76,7 @@ public class UngebrochenPlugin implements RulePlugin<SpliMoCharacter> {
 	 */
 	@Override
 	public Collection<String> getRequiredPlugins() {
-		return Arrays.asList("CORE","MSK","World", "JDG", "Selenia", "BuU");
+		return Arrays.asList("CORE","MSK","World", "JDG", "Selenia");
 	}
 
 	//--------------------------------------------------------------------
@@ -114,7 +114,6 @@ public class UngebrochenPlugin implements RulePlugin<SpliMoCharacter> {
 		logger.info("START -------------------------------Ungebrochen-------------------------------------------");
 		SplitterMondCore.loadMasterships(this, ClassLoader.getSystemResourceAsStream("data/splittermond/masterships-ungebrochen.xml"), i18NResources, i18NHelpResources);		
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-ungebrochen.xml"), i18NResources, i18NHelpResources);
-		SplitterMondCore.loadCreatures(this, ClassLoader.getSystemResourceAsStream("data/splittermond/creatures-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadNameTable(this, ClassLoader.getSystemResourceAsStream("data/splittermond/nametable-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadMaterials(this, ClassLoader.getSystemResourceAsStream("data/splittermond/materials-ungebrochen.xml"), i18NResources, i18NHelpResources);SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/hiebwaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
