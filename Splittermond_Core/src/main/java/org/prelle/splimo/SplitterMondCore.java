@@ -802,6 +802,9 @@ public class SplitterMondCore {
 				tmp.setResourceBundle(resrc);
 				tmp.setHelpResourceBundle(helpResources);
 				tmp.setPlugin(plugin);
+				tmp.getName();
+				tmp.getPage();
+				tmp.getHelpText();
 				if (logger.isDebugEnabled())
 					logger.debug("* "+tmp.getName());
 			}
