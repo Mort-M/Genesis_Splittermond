@@ -292,7 +292,7 @@
 			</cweapon>
 		</weapons>
 		<skillvals>
-			<skillval skill="melee"    val="9">
+			<skillval skill="melee">
 				<masterref ref="melee/defender" />
 			</skillval>
 			<skillval skill="acrobatics"    val="7"/>
