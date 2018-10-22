@@ -1,12 +1,13 @@
 /**
  *
  */
-package org.prelle.rpgframework.splittermond.buu;
+package org.prelle.rpgframework.splittermond.ungebrochen;
 
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
@@ -27,17 +28,17 @@ import de.rpgframework.core.RoleplayingSystem;
  * @author Stefan
  *
  */
-public class BestienUndUngeheuerPlugin implements RulePlugin<SpliMoCharacter> {
+public class UngebrochenPlugin implements RulePlugin<SpliMoCharacter> {
 
-	private static Logger logger = Logger.getLogger("splittermond.buu");
+	private static Logger logger = Logger.getLogger("splittermond.ungebrochen");
 
 	private static PropertyResourceBundle i18NResources;
 	private static PropertyResourceBundle i18NHelpResources;
 
 	//--------------------------------------------------------------------
-	public BestienUndUngeheuerPlugin() {
-		i18NResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/buu");
-		i18NHelpResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/buu-help");
+	public UngebrochenPlugin() {
+		i18NResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/ungebrochen");
+		i18NHelpResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/ungebrochen-help");
 	}
 
 	//--------------------------------------------------------------------
@@ -46,7 +47,7 @@ public class BestienUndUngeheuerPlugin implements RulePlugin<SpliMoCharacter> {
 	 */
 	@Override
 	public String getID() {
-		return "BuU";
+		return "UNGEBROCHEN";
 	}
 
 	//-------------------------------------------------------------------
@@ -57,7 +58,7 @@ public class BestienUndUngeheuerPlugin implements RulePlugin<SpliMoCharacter> {
 	public String getReadableName() {
 		if (this.getClass().getPackage().getImplementationTitle()!=null)
 			return this.getClass().getPackage().getImplementationTitle();
-		return "Bestien und Ungeheuer";
+		return "Ungebrochen";
 	}
 
 	//--------------------------------------------------------------------
@@ -75,7 +76,7 @@ public class BestienUndUngeheuerPlugin implements RulePlugin<SpliMoCharacter> {
 	 */
 	@Override
 	public Collection<String> getRequiredPlugins() {
-		return Arrays.asList("CORE","MSK");
+		return Arrays.asList("CORE","MSK","World", "JDG", "Selenia", "BuU");
 	}
 
 	//--------------------------------------------------------------------
@@ -110,15 +111,19 @@ public class BestienUndUngeheuerPlugin implements RulePlugin<SpliMoCharacter> {
 	 */
 	@Override
 	public void init() {
-		logger.info("START -------------------------------BuU-----------------------------------------------");
-		SplitterMondCore.loadCreatureTypes(this, ClassLoader.getSystemResourceAsStream("data/splittermond/creaturetypes-buu.xml"), i18NResources, i18NHelpResources);
-		SplitterMondCore.loadCreatureFeatureTypes(this, ClassLoader.getSystemResourceAsStream("data/splittermond/creaturefeaturetypes-buu.xml"), i18NResources, i18NHelpResources);
-		SplitterMondCore.loadCreatures(this, ClassLoader.getSystemResourceAsStream("data/splittermond/creatures-buu.xml"), i18NResources, i18NHelpResources);
-		SplitterMondCore.loadMaterials(this, ClassLoader.getSystemResourceAsStream("data/splittermond/materials-buu.xml"), i18NResources, i18NHelpResources);
+		logger.info("START -------------------------------Ungebrochen-------------------------------------------");
+		SplitterMondCore.loadMasterships(this, ClassLoader.getSystemResourceAsStream("data/splittermond/masterships-ungebrochen.xml"), i18NResources, i18NHelpResources);		
+		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadCreatures(this, ClassLoader.getSystemResourceAsStream("data/splittermond/creatures-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadNameTable(this, ClassLoader.getSystemResourceAsStream("data/splittermond/nametable-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadMaterials(this, ClassLoader.getSystemResourceAsStream("data/splittermond/materials-ungebrochen.xml"), i18NResources, i18NHelpResources);SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/hiebwaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/schusswaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/stangenwaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/wurfwaffen-ungebrochen.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadSpells(this, ClassLoader.getSystemResourceAsStream("data/splittermond/spells-ungebrochen.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
-		logger.debug("STOP  Initialize");
-//		logger.fatal("Stop here");
-//		System.exit(0);
+		logger.info("STOP  -------------------------------Ungebrochen-------------------------------------------");
 	}
 
 	//--------------------------------------------------------------------
@@ -147,7 +152,15 @@ public class BestienUndUngeheuerPlugin implements RulePlugin<SpliMoCharacter> {
 	 */
 	@Override
 	public InputStream getAboutHTML() {
-		return ClassLoader.getSystemResourceAsStream("i18n/splittermond/buu.html");
+		return ClassLoader.getSystemResourceAsStream("i18n/splittermond/ungebrochen.html");
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.RulePlugin#getLanguages()
+	 */
+	public List<String> getLanguages() {
+		return Arrays.asList(Locale.GERMAN.getLanguage());
 	}
 
 }

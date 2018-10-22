@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<spells>
+  <spell id="bonfire" diff="18" cost="4V1" castdur="3T" range="CASTER" enh="1/+1V1"> 
+    <school skill="lightmagic" level="1"/>
+    <school skill="illusionmagic" level="2"/>
+    <type>ILLUMINATION</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+  </spell>
+  
+  <spell id="stone_to_dust" diff="24" cost="12V3" castdur="2m" range="5m" enh="1/+3V3"> 
+    <school skill="stonemagic" level="3"/>
+    <school skill="transformationmagic" level="3"/>
+    <type>ELEMENTALCONTROL</type>
+    <type>OBJECT</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+    <enhancementtype>EFFECT_RANGE</enhancementtype>
+  </spell>
+</spells>
