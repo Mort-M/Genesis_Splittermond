@@ -86,11 +86,6 @@ public class Power extends BasePluginData implements Comparable<Power> {
 
 	//-------------------------------------------------------------------
 	public String getDescription() {
-		return super.getHelpText();
-	}
-
-	//-------------------------------------------------------------------
-	public String getShortDescription() {
 		try {
 			return i18n.getString("power."+id+".desc");
 		} catch (MissingResourceException e) {

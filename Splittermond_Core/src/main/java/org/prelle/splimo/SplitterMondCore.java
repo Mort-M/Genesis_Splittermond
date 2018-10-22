@@ -548,7 +548,7 @@ public class SplitterMondCore {
 					mod.setSource(tmp);
 				tmp.getName();
 				tmp.getPage();
-				tmp.getShortDescription();
+				tmp.getDescription();
 				tmp.getHelpText();
 			}
 			Collections.sort(addPowers);
