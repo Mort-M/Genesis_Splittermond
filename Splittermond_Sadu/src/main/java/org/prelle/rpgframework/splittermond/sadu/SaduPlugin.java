@@ -153,7 +153,7 @@ public class SaduPlugin implements RulePlugin<SpliMoCharacter> {
 	/**
 	 * @see de.rpgframework.RulePlugin#getLanguages()
 	 */
-	@Override
+//	@Override
 	public List<String> getLanguages() {
 		return Arrays.asList(Locale.GERMAN.getLanguage());
 	}

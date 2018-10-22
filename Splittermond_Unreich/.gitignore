@@ -2,3 +2,4 @@
 /target/
 /dist/
 /pom.xml.releaseBackup
+/.classpath

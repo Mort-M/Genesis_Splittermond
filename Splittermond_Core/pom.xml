@@ -12,7 +12,7 @@
 
 	<groupId>org.prelle.rpgframework</groupId>
 	<artifactId>splittermond-core</artifactId>
-	<version>2.7.4-SNAPSHOT</version>
+	<version>2.7.4</version>
 
 	<name>Splittermond Core</name>
 	<description>Data structures for Splittermond</description>
