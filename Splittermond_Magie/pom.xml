@@ -12,7 +12,7 @@
 
   <groupId>org.prelle.rpgframework</groupId>
   <artifactId>splittermond-magie</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>Splittermond_Magie</name>
 
   <dependencies>

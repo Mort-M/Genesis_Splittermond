@@ -11,7 +11,7 @@
 
 	<groupId>org.prelle.rpgframework</groupId>
 	<artifactId>splittermond-data</artifactId>
-	<version>1.1.0</version>
+	<version>1.1.1</version>
 	<name>Splittermond Data Build</name>
 	<packaging>pom</packaging>
 
@@ -84,7 +84,7 @@
         <dependency>
             <groupId>org.prelle.rpgframework</groupId>
             <artifactId>splittermond-magie</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
