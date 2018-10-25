@@ -440,8 +440,7 @@
     </spell>
     <spell id="aura_repair" diff="24" cost="K12V3" castdur="3m"
         range="CASTER" spelldur="K" effectRange="10" enh="2/+K3V3">
-        <school skill="protectionmagic" level="2" />
-        <school skill="watermagic" level="1" />
+        <school skill="healmagic" level="3" />
         <type>AURA</type>
         <type>OBJECT</type>
         <type>REGENERATION</type>
@@ -1907,7 +1906,7 @@
     </spell>
     <spell id="protective_mirror_image" diff="18" cost="4V1" castdur="2T" range="5m" spelldur="60T" enh="2/+1V1">
         <school skill="illusionmagic" level="1" />
-        <school skill="shadowmagic" level="2" />
+        <school skill="protectionmagic" level="2" />
         <type>CAMOUFLAGE</type>
         <type>PHANTASMAGORIA</type>
         <enhancementtype>RELEASETIME</enhancementtype>
