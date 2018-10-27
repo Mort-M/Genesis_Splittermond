@@ -185,7 +185,7 @@ public class CreatureTools {
             	modulBased.getSkillValue(sMod.getSkill()).addModification(sMod);
             } else {
             	// Skill must be chosen.
-            	logger.info("   Ref = "+sMod.getSkill());
+            	logger.debug("   Restrict = "+sMod.getRestrictionType());
             	if (sMod.getRestrictionType()==null) {
             		logger.warn("   Ignore choice modification without a (normal or restricted) selection");
             		return;
@@ -206,7 +206,9 @@ public class CreatureTools {
             			break;
             		case ANY:
             		}
-            		// Check type condition
+//                	logger.info("   mustExist = "+exists);
+//                	logger.info("   ChoiceType = "+sMod.getChoiceType());
+          		// Check type condition
             		if (sMod.getChoiceType()!=null) {
             			if (sMod.getChoiceType()!=skill.getType())
             				continue;
@@ -923,6 +925,7 @@ public class CreatureTools {
         if (mod instanceof ModificationChoice) return true;
         if (mod instanceof SkillModification) {
         	SkillModification sMod = (SkillModification)mod;
+//            logger.info("needsToBeAppliedLater("+mod+") = "+(sMod.getSkill()==null));
         	return (sMod.getSkill()==null);
         } 
         if (mod instanceof SpellModification) {
@@ -930,6 +933,7 @@ public class CreatureTools {
         	return (sMod.getSpell()==null);
         } 
    	
+//        logger.info("needsToBeAppliedLater("+mod+") = false");
         return false;
     }
 
@@ -1000,7 +1004,7 @@ public class CreatureTools {
     		choice.setOriginChoice(mod);
     		ref.addChoice(choice);
 //    		choices.add(choice);
-    		logger.debug("  Added choice for "+mod);
+    		logger.debug("  Added choice for "+mod+" = "+choice);
     	} else {
     		ref.addModification(mod);
     		logger.debug("  Added modification "+mod);

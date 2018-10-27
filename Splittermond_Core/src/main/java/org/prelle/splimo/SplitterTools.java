@@ -909,13 +909,35 @@ public class SplitterTools {
 		 */
 		for (CreatureReference ref : data.getCreatures()) {
 			if (ref.getModuleBasedCreature()!=null) {
-				logger.info("  calculate creature "+ref+" from modules");
+				logger.info("  calculate creature "+ref.getName()+" from modules");
 				// Create modifications
+				logger.debug("    set role modifications: "+ref.getModuleBasedCreature().getRole().getModule().getModifications());
 				ref.getModuleBasedCreature().getRole().setModifications(ref.getModuleBasedCreature().getRole().getModule().getModifications());
 				// Fix originModule
-				for (NecessaryChoice choice : ref.getModuleBasedCreature().getRole().getChoices()) 
+				logger.debug("    set role choices: "+ref.getModuleBasedCreature().getRole().getChoices());
+				for (NecessaryChoice choice : ref.getModuleBasedCreature().getRole().getChoices()) {
 					choice.originModule = ref.getModuleBasedCreature().getRole();
+					// Replace original modifications from role with those from choices
+					if (choice.getMadeChoice()!=null) {
+						logger.debug("    replace option "+choice.getOriginChoice()+" with choice "+choice.getMadeChoice());
+						boolean couldNotReplace = true;
+						for (Modification mod : new ArrayList<Modification>(ref.getModuleBasedCreature().getRole().getModifications())) {
+							if (mod.equals(choice.getOriginChoice())) {
+								logger.info("    Creature "+ref.getName()+", Role "+ref.getModuleBasedCreature().getRole().getModule().getId()+": replace option "+choice.getOriginChoice()+" with choice '"+choice.getMadeChoice()+"'");
+								ref.getModuleBasedCreature().getRole().removeModification(mod);
+								ref.getModuleBasedCreature().getRole().addModification(choice.getMadeChoice());
+								couldNotReplace = false;
+								break;
+							}
+						}
+						if (couldNotReplace) {
+							logger.error("Creature "+ref.getName()+", Role "+ref.getModuleBasedCreature().getRole().getModule().getId()+": Could not find option "+choice.getOriginChoice()+" to replace decision with");
+						}
+					}
+				}
+				logger.debug("    process options");
 				for (CreatureModuleReference origin : ref.getModuleBasedCreature().getOptions()) {
+					logger.debug("* Option "+origin.getModule().getId());
 					for (Modification mod : origin.getModule().getModifications()) {
 						CreatureTools.instantiateModification(ref.getModuleBasedCreature(), origin, mod);
 					}
