@@ -103,7 +103,12 @@ public class CreatureTools {
 
 	        if (modulBased.getRole()!=null) {
 	            logger.debug("4. Late modifications Role");
-	            modulBased.getRole().getModifications().stream().filter(mod -> needsToBeAppliedLater(mod)).forEach(mod -> apply(modulBased, mod));
+	            try {
+					modulBased.getRole().getModifications().stream().filter(mod -> needsToBeAppliedLater(mod)).forEach(mod -> apply(modulBased, mod));
+				} catch (Exception e) {
+					logger.error("Error applying role "+modulBased.getRole().getModule().getId(),e);
+					BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Fehler beim Berechnen der Kreatur, genauer der Rolle "+modulBased.getRole().getModule().getName()+"\n\nDer Charakter kann geöffnet werden, aber die Werte für den Familiar sind falsch.");
+				}
 	        }
 	        for (CreatureModuleReference ref : modulBased.getOptions()) {
 	            logger.debug("5. Late modifications Option: "+ref);
