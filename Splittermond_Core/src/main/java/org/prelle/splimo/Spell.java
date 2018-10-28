@@ -148,21 +148,16 @@ public class Spell extends BasePluginData implements Comparable<Spell> {
 
 	//-------------------------------------------------------------------
 	public String getDescription() {
-		try {
-			return i18nHelp.getString("spell."+id+".descr");
-		} catch (MissingResourceException e) {
-			if (!reportedKeys.contains(e.getKey())) {
-				reportedKeys.add(e.getKey());
-				if (MISSING_HELP!=null)
-					MISSING_HELP.println(e.getKey()+"=");
-				logger.error("Missing resource '"+e.getKey()+"' in "+i18nHelp.getBaseBundleName());
-			}
-			return e.getKey();
-		}
+		return getHelpText();
 	}
 
 	//-------------------------------------------------------------------
 	public String getEnhancementDescription() {
+		if (i18nHelp==null)
+			return null;
+		if (!SplitterMondCore.hasLicense())
+			return null;
+		
 		try {
 			return i18nHelp.getString("spell."+id+".enhancedescr");
 		} catch (MissingResourceException e) {

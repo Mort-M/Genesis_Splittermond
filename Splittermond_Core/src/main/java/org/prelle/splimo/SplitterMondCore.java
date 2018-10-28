@@ -190,7 +190,7 @@ public class SplitterMondCore {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		missingLicense = !RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(RoleplayingSystem.SPLITTERMOND, plugin.getID());
+		missingLicense = !RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(RoleplayingSystem.SPLITTERMOND, "ALL");
 
 		loadPowers(plugin, ClassLoader.getSystemResourceAsStream("data/powers.xml"), i18NResources, i18NHelpResources);
 		loadSkills(plugin, ClassLoader.getSystemResourceAsStream("data/skills.xml"), i18NResources, i18NHelpResources);
