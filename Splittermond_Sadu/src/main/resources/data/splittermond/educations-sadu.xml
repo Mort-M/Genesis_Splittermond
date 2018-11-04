@@ -3,7 +3,7 @@
 	
 	<education id="swamppilot" variantof="explorer">
         <modifications>
-            // die Modifikatoren des Sumpflotsen auf S.30 machen keinen Sinn. Errata abwarten.
+            // die Modifikatoren des Sumpflotsen auf S.30 machen keinen Sinn. Errata abwarten. Vermutlich Kundschafter und kein Entdecker 
             <selmod>
                 <powermod ref="goodmemory"/>
                 <powermod ref="literate"/>
@@ -87,25 +87,20 @@
                 <skillmod ref="longrange" />
                 <skillmod ref="throwing" />
             </selmod>
-            
             <skillmod ref="chains" value="3"/>
             <skillmod ref="acrobatics" value="2"/>
             <skillmod ref="seafaring" value="2"/>
             <skillmod ref="swim" value="2"/>
-            
             <selmod num="1">
                 <skillmod ref="leadership" value="1"/>
                 <skillmod ref="animals" value="1"/>
             </selmod>
-            
             <skillmod ref="athletics" value="3"/>
             <skillmod ref="determination" value="3"/>
-                        
             <selmod num="1">
                 <skillmod ref="heal" value="2"/>
                 <skillmod ref="enhancemagic" value="2"/>
             </selmod>
-            
             <skillmod ref="survival" value="1"/>
             <skillmod ref="perception" value="2"/>
             <skillmod ref="endurance" value="3"/>
@@ -116,5 +111,140 @@
         </modifications>
     </education>
 
+	<education id="horizonhorseman" variantof="ranger">
+        <modifications>
+        	<reqmod type="culture" ref="tuntungan"/>
+        	        
+            <powermod ref="enduring"/>
+            <powermod ref="animalfamiliar"/>
+                        
+            <resourcemod ref="creature" value="2"/>
+                        
+            <selmod num="1">
+                <skillmod ref="slashing" value="3" />
+                <skillmod ref="melee"  value="3" />
+                <skillmod ref="chains" value="3" />
+                <skillmod ref="blades" value="3" />
+                <skillmod ref="staffs" value="3" />
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="longrange"  value="3"/>
+                <skillmod ref="throwing" value="3"/>
+            </selmod>
+            <skillmod ref="acrobatics" value="3"/>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="hunting" value="1"/>
+            <skillmod ref="nature" value="3"/>
+            <skillmod ref="animals" value="3"/>
+            <selmod values="3 1">
+                <skillmod ref="windmagic" />
+                <skillmod ref="naturemagic" />
+            </selmod>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+            
+            <mastermod ref="animals/ridingfighter" />
+            <selmod num="1">
+               <mastermod skill="throwing" level="1"/>
+               <mastermod skill="longrange" level="1"/>
+            </selmod>
+        </modifications>
+    </education>
+
+	<education id="huekho_mountainguide" variantof="scout">
+        <modifications>
+            <reqmod type="culture" ref="huekho"/>
+                        
+            <powermod ref="swift"/>
+            <powermod ref="senseorient"/>
+
+            <selmod dist="2">
+                <resourcemod ref="creature"/>
+                <resourcemod ref="relic"/>
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="longrange" value="2"/>
+                <skillmod ref="throwing" value="2"/>
+            </selmod>
+            <skillmod ref="acrobatics" value="2"/>
+            <skillmod ref="athletics" value="3"/>
+            <selmod num="1">
+                <skillmod ref="craftmanship" value="2"/>
+                <skillmod ref="countrylore" value="2"/>
+            </selmod>
+            <skillmod ref="stealth" value="3"/>
+            <skillmod ref="hunting" value="3"/>
+            <skillmod ref="nature" value="3"/>
+            <skillmod ref="survival" value="3"/>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="stonemagic" value="3"/>
+            <selmod num="1">
+                <skillmod ref="endurance" value="2"/>
+                <skillmod ref="naturemagic" value="2"/>
+            </selmod>
+            <mastermod spec="stealth/naturalenvironment"/>
+            <selmod num="1">
+                <mastermod spec="perception/hear"/>
+                <mastermod spec="perception/see"/>
+            </selmod>
+        </modifications>
+    </education>
+    
+    <education id="jadejudge" variantof="warrior">
+           <modifications>
+               <reqmod type="culture" ref="sadu"/>
+               
+               <powermod ref="literate"/>
+               <selmod num="1">
+                   <powermod ref="goodmemory"/>
+                   <powermod ref="concentrated"/>
+                   <powermod ref="sensesocial"/>
+               </selmod>
+               
+               <resourcemod ref="reputation" value="2"/>
+                   
+               <selmod num="1">
+                   <skillmod ref="slashing" value="3"/>
+                   <skillmod ref="chains"  value="3"/>
+                   <skillmod ref="blades"  value="3"/>
+                   <skillmod ref="staffs"  value="3"/>
+                   <skillmod ref="longrange"  value="3"/>
+                   <skillmod ref="throwing" value="3"/>
+               </selmod>
+               <skillmod ref="melee" value="3" />
+               <selmod num="1">
+                   <skillmod ref="acrobatics" value="2"/>
+                   <skillmod ref="athletics" value="2"/>
+               </selmod>
+               <selmod num="1">
+                   <skillmod ref="arcanelore" value="1"/>
+                   <skillmod ref="heal" value="1"/>
+               </selmod>
+               <selmod num="1">
+                   <skillmod ref="motionmagic" value="3"/>
+                   <skillmod ref="enhancemagic" value="3"/>
+               </selmod>        
+               <skillmod ref="diplomacy" value="3"/>
+               <skillmod ref="empathy" value="2"/>
+               <skillmod ref="determination" value="3"/>
+               <skillmod ref="history" value="3"/>
+               <skillmod ref="countrylore" value="3"/>
+               <skillmod ref="eloquence" value="1"/>
+               <skillmod ref="perception" value="1"/>
+               <skillmod ref="endurance" value="2"/>
+               
+               <mastermod ref="diplomacy/diplomat"/>
+               <mastermod spec="countrylore/law"/>
+          </modifications>
+    </education>
 
 </educations>
