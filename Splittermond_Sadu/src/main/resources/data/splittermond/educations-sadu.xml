@@ -51,7 +51,7 @@
 
 	<education id="hatangabi_chainwarrior" variantof="fighter">
         <modifications>
-            <reqmod type="culture" ref="bawalin"/>
+            <reqmod type="culture" ref="pirate_bawalin"/>
             
             <powermod ref="sturdy"/>
             
@@ -95,7 +95,7 @@
 
 	<education id="horizonhorseman" variantof="ranger">
         <modifications>
-        	<reqmod type="culture" ref="tuntungan"/>
+        	<reqmod type="culture" ref="steppehorseman_tuntungan"/>
         	        
             <powermod ref="enduring"/>
             <powermod ref="animalfamiliar"/>
