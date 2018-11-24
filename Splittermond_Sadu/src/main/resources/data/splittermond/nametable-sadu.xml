@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <nametable culture="sadu">
 	<maleFirstNames>
+		<!-- Beginn Kopie aus Zhoujiang -->
 		<entry>Aang</entry>
 		<entry>Akuma</entry>
 		<entry>Bonian</entry>
@@ -31,12 +32,14 @@
 		<entry>Yuen</entry>
 		<entry>Zhaoming</entry>
 		<entry>Zhi</entry>
+		<!-- Ende Kopie aus Zhoujiang -->
 		<entry>Sungantujuu</entry>
 		<entry>Gaiko</entry>
 		<entry>Kuang</entry>
 		<entry>Latawak</entry>
 	</maleFirstNames>
 	<femaleFirstNames>
+		<!-- Beginn Kopie aus Zhoujiang -->
 		<entry>Ailin</entry>
 		<entry>Airen</entry>
 		<entry>Bao</entry>
@@ -87,11 +90,13 @@
 		<entry>Yamei</entry>
 		<entry>Yue</entry>
 		<entry>Zeng</entry>
+		<!-- Ende Kopie aus Zhoujiang -->
 		<entry>Sungantujuu</entry>
 		<entry>Kuang</entry>
 		<entry>Suisheko</entry>
 	</femaleFirstNames>
 	<lastNames>
+		<!-- Beginn Kopie aus Zhoujiang -->
 		<entry>Ai</entry>
 		<entry>An</entry>
 		<entry>Ao</entry>
@@ -392,9 +397,9 @@
 		<entry>Zuo</entry>
 		<entry>Zuoqiu</entry>
 		<entry>Hanabi</entry>
+		<!-- Ende Kopie aus Zhoujiang -->
 		<entry>Wanli</entry>
 		<entry>Gempanung</entry>
 		<entry>Paligapam</entry>
 	</lastNames>
-
 </nametable>

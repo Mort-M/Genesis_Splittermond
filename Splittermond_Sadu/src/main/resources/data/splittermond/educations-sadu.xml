@@ -3,7 +3,7 @@
 	
 	<education id="swamppilot" variantof="scout">
         <modifications>
-            // Sumpflotse ist ein Kundschafter, kein Entdecker. Im Forum bestätigt
+            <!-- Sumpflotse ist ein Kundschafter, kein Entdecker. Im Forum bestätigt https://forum.splittermond.de/index.php?topic=6493.0 -->
             <powermod ref="swift"/>
             <powermod ref="senseorient"/>
 
