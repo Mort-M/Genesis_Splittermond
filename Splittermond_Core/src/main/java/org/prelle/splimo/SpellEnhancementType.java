@@ -12,6 +12,7 @@ public enum SpellEnhancementType {
     CHANNELIZED_FOCUS,
     RANGE,
     EFFECT_RANGE,
+    DAMAGE
     ;
 
 

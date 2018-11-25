@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<powers>
+	<power id="intuitive_attunement" cost="1"  />
+    <power id="fast_attunement"  cost="1" />
+</powers>

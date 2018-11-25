@@ -53,7 +53,17 @@ public class Power extends BasePluginData implements Comparable<Power> {
 
 	//-------------------------------------------------------------------
 	public String getName() {
-		return i18n.getString("power."+id);
+		try {
+			return i18n.getString("power."+id);
+		} catch (MissingResourceException e) {
+			if (!reportedKeys.contains(e.getKey())) {
+				reportedKeys.add(e.getKey());
+				logger.error("Missing property '"+e.getKey()+"' in "+i18n.getBaseBundleName());
+				if (MISSING!=null)
+					MISSING.println(e.getKey()+"=");
+			}
+			return e.getKey();
+		}
 	}
 
 	//-------------------------------------------------------------------
@@ -79,7 +89,12 @@ public class Power extends BasePluginData implements Comparable<Power> {
 		try {
 			return i18n.getString("power."+id+".desc");
 		} catch (MissingResourceException e) {
-			logger.warn("Can't find key '"+e.getKey()+"' in "+i18n.getBaseBundleName());
+			if (!reportedKeys.contains(e.getKey())) {
+				reportedKeys.add(e.getKey());
+				logger.error("Missing property '"+e.getKey()+"' in "+i18n.getBaseBundleName());
+				if (MISSING!=null)
+					MISSING.println(e.getKey()+"=");
+			}
 			return "";
 		}
 	}

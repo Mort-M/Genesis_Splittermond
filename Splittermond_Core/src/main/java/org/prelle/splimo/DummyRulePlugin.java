@@ -92,4 +92,10 @@ public class DummyRulePlugin<C extends RuleSpecificCharacterObject> implements R
 		
 	}
 
+//	@Override
+	public List<String> getLanguages() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

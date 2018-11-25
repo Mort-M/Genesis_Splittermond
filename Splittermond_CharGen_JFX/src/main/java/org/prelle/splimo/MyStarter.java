@@ -1,14 +1,8 @@
 package org.prelle.splimo;
 
-import javafx.application.Application;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.prelle.javafx.ModernUI;
 import org.prelle.javafx.ScreenManager;
 import org.prelle.rpgframework.splittermond.beastmaster.BeastMasterPlugin;
 import org.prelle.rpgframework.splittermond.buu.BestienUndUngeheuerPlugin;
@@ -44,6 +38,11 @@ import org.prelle.splittermond.jfx.equip.ItemGeneratorPane;
 import org.prelle.splittermond.jfx.resources.ResourceScreen;
 import org.prelle.splittermond.jfx.skills.SkillPane;
 import org.prelle.splittermond.jfx.skills.SkillScreen2;
+
+import javafx.application.Application;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class MyStarter extends Application {
 

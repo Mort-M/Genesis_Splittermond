@@ -89,6 +89,7 @@
           <selmod num="1">
           	<resourcemod ref="mentor" value="2"/>
           	<resourcemod ref="relic" value="2"/>
+          	<resourcemod ref="faith" value="2"/>
           </selmod>
           <selmod num="1">
           	<resourcemod ref="status" value="-1"/>
@@ -141,6 +142,7 @@
             <selmod>
                 <resourcemod ref="wealth" value="1"/>
                 <resourcemod ref="refuge" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <skillmod ref="craftmanship" value="1"/>
             <skillmod ref="nature" value="1"/>
@@ -222,11 +224,15 @@
     </background>
     <background id="priests">
         <modifications>
-            <resourcemod ref="reputation" value="1"/>
+            <selmod>
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="faith" value="1"/>
+            </selmod>
             <selmod>
                 <resourcemod ref="contacts" value="1"/>
                 <resourcemod ref="creature" value="1"/>
                 <resourcemod ref="refuge" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <resourcemod ref="mentor" value="1"/>
             <resourcemod ref="relic" value="1"/>

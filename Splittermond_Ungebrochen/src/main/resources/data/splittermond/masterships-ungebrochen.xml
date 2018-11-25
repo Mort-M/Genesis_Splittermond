@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+	<skill id="animals">
+		<mastership level="1" key="ride_down">
+			<requires>
+				<selreq>
+					<masterreq ref="melee/knock" />
+					<masterreq ref="slashing/knock" />
+					<masterreq ref="chains/knock" />
+					<masterreq ref="blades/knock" />
+					<masterreq ref="staffs/knock" />
+				</selreq>
+			</requires>
+		</mastership>
+		<mastership level="1" key="riding_master">
+			<!-- enter data if necessary -->
+		</mastership>
+	</skill>
+	
+	<skill id="longrange">
+		<mastership level="1" key="arrowslit_shooter" />
+	</skill>
+	
+	<skill id="athletics">
+		<mastership level="1" key="giantslayer" />
+	</skill>
+	
+	<skill id="performance">
+		<mastership level="1" key="song_of_watch" />
+	</skill>
+	
+	<skill id="dexterity">
+		<mastership level="2" key="smuggler" />
+	</skill>
+	
+	<skill id="stealth">
+		<mastership level="2" key="fieldscout" />
+	</skill>
+	
+	<skill id="hunting">
+		<mastership level="2" key="dragonhunter" />
+	</skill>
+	
+	<skill id="motionmagic">
+		<mastership level="2" key="longrange_projectile">
+			<requires>
+				<masterreq ref="motionmagic/penetratingprojectile" />
+			</requires>
+		</mastership>
+	</skill>
+	
+</skills>

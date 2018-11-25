@@ -829,7 +829,7 @@
   </spell>
   <spell id="animateshadow" diff="24" cost="K12V3" castdur="9T" range="CASTER" spelldur="K" enh="1/+K3V3" >
     <school skill="shadowmagic" level="3"/>
-    <type>ANIMATION</type>
+    <type>ENLIVEMENT</type>
   </spell>
   <spell id="bodyofshadow" diff="27" cost="K16V4" castdur="21T" range="CASTER" spelldur="K" enh="1/+K4V4" >
     <school skill="shadowmagic" level="4"/>

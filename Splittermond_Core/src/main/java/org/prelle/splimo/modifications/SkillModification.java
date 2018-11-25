@@ -87,6 +87,20 @@ public class SkillModification extends ModificationImpl {
 	}
 
 	//-------------------------------------------------------------------
+	public boolean equals(Object o) {
+		if (o instanceof SkillModification) {
+			SkillModification other = (SkillModification)o;
+			if (ref!=other.getSkill()) return false;
+			if (value!=other.getValue()) return false;
+			if (type!=other.getType()) return false;
+			if (choiceType!=other.getChoiceType()) return false;
+			if (restrictionType!=other.restrictionType) return false;
+			return true;
+		}
+		return false;
+	}
+
+	//-------------------------------------------------------------------
 	public String dump() {
 		return String.format("SkillMod(type=%s, ref=%s, value=%d, modSrc=%s, choiceType=%s, restr=%s)", 
 				String.valueOf(type), ref, value, modSource, choiceType, restrictionType);
@@ -249,7 +263,8 @@ public class SkillModification extends ModificationImpl {
 	 * @param restrictionType the restrictionType to set
 	 */
 	public void setRestrictionType(RestrictionType restrictionType) {
-		this.restrictionType = restrictionType;
+		throw new RuntimeException("Should not call this");
+//		this.restrictionType = restrictionType;
 	}
 
 }

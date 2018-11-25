@@ -495,6 +495,7 @@
                 <resourcemod ref="reputation" value="1"/>
                 <resourcemod ref="relic" value="1"/>
                 <resourcemod ref="status" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <selmod>
                 <resourcemod ref="mentor" value="1"/>
@@ -547,6 +548,7 @@
                 <resourcemod ref="reputation" value="1"/>
                 <resourcemod ref="relic" value="1"/>
                 <resourcemod ref="status" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <selmod>
                 <resourcemod ref="mentor" value="1"/>
@@ -604,6 +606,7 @@
                 <resourcemod ref="reputation" value="1"/>
                 <resourcemod ref="relic" value="1"/>
                 <resourcemod ref="status" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <resourcemod ref="rank" value="1"/>
             <selmod values="3 2">
@@ -647,6 +650,7 @@
                 <resourcemod ref="reputation" value="1"/>
                 <resourcemod ref="relic" value="1"/>
                 <resourcemod ref="status" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <selmod>
                 <resourcemod ref="mentor" value="1"/>
@@ -703,6 +707,7 @@
                 <resourcemod ref="reputation" value="1"/>
                 <resourcemod ref="relic" value="1"/>
                 <resourcemod ref="status" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <selmod>
                 <resourcemod ref="mentor" value="1"/>
@@ -1656,6 +1661,7 @@
             <selmod>
                 <resourcemod ref="rank" value="1"/>
                 <resourcemod ref="relic" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <selmod>
                 <skillmod ref="alchemy" value="1"/>
@@ -1756,6 +1762,7 @@
             <selmod>
                 <resourcemod ref="rank" value="1"/>
                 <resourcemod ref="relic" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <selmod>
                 <skillmod ref="alchemy" value="1"/>
@@ -1813,6 +1820,7 @@
             <selmod>
                 <resourcemod ref="rank" value="1"/>
                 <resourcemod ref="relic" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <selmod>
                 <skillmod ref="alchemy" value="1"/>
@@ -1874,6 +1882,7 @@
             <selmod>
                 <resourcemod ref="rank" value="1"/>
                 <resourcemod ref="relic" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <selmod>
                 <skillmod ref="alchemy" value="1"/>
@@ -3008,6 +3017,7 @@
              <selmod>
                  <resourcemod ref="contacts" value="1"/>
                  <resourcemod ref="relic" value="1"/>
+                 <resourcemod ref="faith" value="1"/>
              </selmod>
              <selmod>
                  <skillmod ref="slashing" value="2"/>
@@ -3072,6 +3082,7 @@
             <selmod>
                 <resourcemod ref="contacts" value="1"/>
                 <resourcemod ref="relic" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <selmod>
                 <skillmod ref="slashing" value="2"/>
@@ -3125,6 +3136,7 @@
             <selmod>
                 <resourcemod ref="contacts" value="1"/>
                 <resourcemod ref="relic" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <selmod>
                 <skillmod ref="slashing" value="2"/>
@@ -3253,6 +3265,7 @@
                 <resourcemod ref="contacts" value="1"/>
                 <resourcemod ref="relic" value="1"/>
                 <resourcemod ref="creature" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <selmod>
                 <skillmod ref="slashing" value="2"/>

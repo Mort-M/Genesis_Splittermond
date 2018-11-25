@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 
 import org.apache.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
@@ -240,6 +241,15 @@ public class SplittermondRules implements RulePlugin<SpliMoCharacter>, CommandBu
 			logger.error("Failed getting developer mode value",e);
 		}
 		return false;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.RulePlugin#getLanguages()
+	 */
+//	@Override
+	public List<String> getLanguages() {
+		return Arrays.asList(Locale.GERMAN.getLanguage());
 	}
 
 }

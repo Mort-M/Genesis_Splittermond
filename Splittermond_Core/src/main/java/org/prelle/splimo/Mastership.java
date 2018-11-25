@@ -118,12 +118,19 @@ public class Mastership extends BasePluginData implements MastershipOrSpecializa
 	 */
 	@Override
 	public String getName() {
+		String mastershipKey = "mastership."+key;
 		try {
 			if (focus!=null)
-				return i18n.getString("mastership."+key)+" ("+focus.getName()+")";
-			return i18n.getString("mastership."+key);
+				return i18n.getString(mastershipKey)+" ("+focus.getName()+")";
+			return i18n.getString(mastershipKey);
 		} catch (MissingResourceException e) {
-			logger.warn(String.format("key missing:    %s   %s", i18n.getBaseBundleName(), e.getKey()));
+			if (!reportedKeys.contains(e.getKey())) {
+				reportedKeys.add(e.getKey());
+				logger.warn(String.format("key missing:    %s   %s", i18n.getBaseBundleName(), e.getKey()));
+				if (MISSING!=null) {
+					MISSING.println(e.getKey()+"=");
+				}
+			}
 			return key;
 		}
 	}
@@ -136,7 +143,13 @@ public class Mastership extends BasePluginData implements MastershipOrSpecializa
 			String page = String.valueOf(getPage());
 			return  String.format("%s (%s %s)", shortDescription, getProductNameShort(), page);
 		} catch (MissingResourceException e){
-			logger.warn(String.format("key missing:   %s   %s", i18n.getBaseBundleName(), mastershipDescriptionKey));
+			if (!reportedKeys.contains(mastershipDescriptionKey)) {
+				reportedKeys.add(mastershipDescriptionKey);
+				logger.warn(String.format("key missing:   %s   %s", i18n.getBaseBundleName(), mastershipDescriptionKey));
+				if (MISSING!=null) {
+					MISSING.println(mastershipDescriptionKey+"=");
+				}
+			}
 			return " ";
 		}
 	}

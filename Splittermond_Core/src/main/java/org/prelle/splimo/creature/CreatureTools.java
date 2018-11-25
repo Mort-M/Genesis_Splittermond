@@ -103,7 +103,12 @@ public class CreatureTools {
 
 	        if (modulBased.getRole()!=null) {
 	            logger.debug("4. Late modifications Role");
-	            modulBased.getRole().getModifications().stream().filter(mod -> needsToBeAppliedLater(mod)).forEach(mod -> apply(modulBased, mod));
+	            try {
+					modulBased.getRole().getModifications().stream().filter(mod -> needsToBeAppliedLater(mod)).forEach(mod -> apply(modulBased, mod));
+				} catch (Exception e) {
+					logger.error("Error applying role "+modulBased.getRole().getModule().getId(),e);
+					BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Fehler beim Berechnen der Kreatur, genauer der Rolle "+modulBased.getRole().getModule().getName()+"\n\nDer Charakter kann geöffnet werden, aber die Werte für den Familiar sind falsch.");
+				}
 	        }
 	        for (CreatureModuleReference ref : modulBased.getOptions()) {
 	            logger.debug("5. Late modifications Option: "+ref);
@@ -180,7 +185,7 @@ public class CreatureTools {
             	modulBased.getSkillValue(sMod.getSkill()).addModification(sMod);
             } else {
             	// Skill must be chosen.
-            	logger.info("   Ref = "+sMod.getSkill());
+            	logger.debug("   Restrict = "+sMod.getRestrictionType());
             	if (sMod.getRestrictionType()==null) {
             		logger.warn("   Ignore choice modification without a (normal or restricted) selection");
             		return;
@@ -201,7 +206,9 @@ public class CreatureTools {
             			break;
             		case ANY:
             		}
-            		// Check type condition
+//                	logger.info("   mustExist = "+exists);
+//                	logger.info("   ChoiceType = "+sMod.getChoiceType());
+          		// Check type condition
             		if (sMod.getChoiceType()!=null) {
             			if (sMod.getChoiceType()!=skill.getType())
             				continue;
@@ -918,6 +925,7 @@ public class CreatureTools {
         if (mod instanceof ModificationChoice) return true;
         if (mod instanceof SkillModification) {
         	SkillModification sMod = (SkillModification)mod;
+//            logger.info("needsToBeAppliedLater("+mod+") = "+(sMod.getSkill()==null));
         	return (sMod.getSkill()==null);
         } 
         if (mod instanceof SpellModification) {
@@ -925,6 +933,7 @@ public class CreatureTools {
         	return (sMod.getSpell()==null);
         } 
    	
+//        logger.info("needsToBeAppliedLater("+mod+") = false");
         return false;
     }
 
@@ -995,7 +1004,7 @@ public class CreatureTools {
     		choice.setOriginChoice(mod);
     		ref.addChoice(choice);
 //    		choices.add(choice);
-    		logger.debug("  Added choice for "+mod);
+    		logger.debug("  Added choice for "+mod+" = "+choice);
     	} else {
     		ref.addModification(mod);
     		logger.debug("  Added modification "+mod);

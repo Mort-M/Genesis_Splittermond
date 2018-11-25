@@ -117,6 +117,12 @@ public class CreatureModuleReference extends UniqueObject implements Comparable<
 			modifications.add(mod);
 	}
 
+	//-------------------------------------------------------------------
+	public void removeModification(Modification... mods) {
+		for (Modification mod : mods)
+			modifications.remove(mod);
+	}
+
 	//--------------------------------------------------------------------
 	/**
 	 * @return the modifications

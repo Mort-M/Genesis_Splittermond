@@ -42,7 +42,8 @@ public class Spell extends BasePluginData implements Comparable<Spell> {
 	public final static int DURATION_MINUTE = 2;
 	public final static int DURATION_HOUR   = 3;
 	public final static int DURATION_DAY    = 4;
-	public final static int DURATION_MONTH  = 5;
+	public final static int DURATION_WEEK   = 5;
+	public final static int DURATION_MONTH  = 6;
 	public final static int DURATION_YEAR   = 7;
 	public final static int DURATION_CHANNELLED = 9;
 
@@ -118,7 +119,12 @@ public class Spell extends BasePluginData implements Comparable<Spell> {
 		try {
 			return Integer.parseInt(i18n.getString(getPageI18NKey()));
 		} catch (MissingResourceException e) {
-			logger.error("Missing key "+e.getKey()+" in "+i18n.getBaseBundleName());
+			if (!reportedKeys.contains(e.getKey())) {
+				reportedKeys.add(e.getKey());
+				if (MISSING!=null)
+					MISSING.println(e.getKey()+"=");
+				logger.error("Missing key "+e.getKey()+" in "+i18n.getBaseBundleName());
+			}
 		} catch (NumberFormatException e) {
 			logger.error("Not a number in key "+getPageI18NKey()+" in "+i18n.getBaseBundleName());
 		}
@@ -130,27 +136,37 @@ public class Spell extends BasePluginData implements Comparable<Spell> {
 		try {
 			return i18n.getString("spell."+id);
 		} catch (MissingResourceException e) {
-			logger.error("Missing resource '"+e.getKey()+"' in "+i18nHelp.getBaseBundleName());
+			if (!reportedKeys.contains(e.getKey())) {
+				reportedKeys.add(e.getKey());
+				logger.error("Missing property '"+e.getKey()+"' in "+i18n.getBaseBundleName());
+				if (MISSING!=null)
+					MISSING.println(e.getKey()+"=");
+			}
 			return e.getKey();
 		}
 	}
 
 	//-------------------------------------------------------------------
 	public String getDescription() {
-		try {
-			return i18nHelp.getString("spell."+id+".descr");
-		} catch (MissingResourceException e) {
-			logger.error("Missing resource '"+e.getKey()+"' in "+i18nHelp.getBaseBundleName());
-			return e.getKey();
-		}
+		return getHelpText();
 	}
 
 	//-------------------------------------------------------------------
 	public String getEnhancementDescription() {
+		if (i18nHelp==null)
+			return null;
+		if (!SplitterMondCore.hasLicense())
+			return null;
+		
 		try {
 			return i18nHelp.getString("spell."+id+".enhancedescr");
 		} catch (MissingResourceException e) {
-			logger.error("Missing resource '"+e.getKey()+"' in "+i18nHelp.getBaseBundleName());
+			if (!reportedKeys.contains(e.getKey())) {
+				reportedKeys.add(e.getKey());
+				if (MISSING_HELP!=null)
+					MISSING_HELP.println(e.getKey()+"=");
+				logger.error("Missing resource '"+e.getKey()+"' in "+i18nHelp.getBaseBundleName());
+			}
 			return e.getKey();
 		}
 	}

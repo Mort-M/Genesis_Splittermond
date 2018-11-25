@@ -30,6 +30,8 @@ public class SpellDurationConverter implements StringValueConverter<Integer> {
 			count += Spell.DURATION_HOUR;
 		else if (suffix.equals("D"))
 			count += Spell.DURATION_DAY;
+		else if (suffix.equals("W"))
+			count += Spell.DURATION_WEEK;
 		else if (suffix.equals("M"))
 			count += Spell.DURATION_MONTH;
 		else if (suffix.equals("Y"))
@@ -62,6 +64,7 @@ public class SpellDurationConverter implements StringValueConverter<Integer> {
 		case Spell.DURATION_MINUTE: val=count+"m"; break;
 		case Spell.DURATION_HOUR  : val=count+"h"; break;
 		case Spell.DURATION_DAY   : val=count+"D"; break;
+		case Spell.DURATION_WEEK  : val=count+"W"; break;
 		case Spell.DURATION_MONTH : val=count+"M"; break;
 		case Spell.DURATION_YEAR  : val=count+">"; break;
 		case Spell.DURATION_CHANNELLED: val="K"; break;

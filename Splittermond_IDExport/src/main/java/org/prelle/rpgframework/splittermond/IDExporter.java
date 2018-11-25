@@ -30,7 +30,11 @@ import org.prelle.splimo.creature.CreatureFeatureType;
 import org.prelle.splimo.creature.CreatureType;
 import org.prelle.splimo.items.FeatureType;
 
+import de.rpgframework.ConfigOption;
+import de.rpgframework.RPGFramework;
+import de.rpgframework.RPGFrameworkInitCallback;
 import de.rpgframework.RPGFrameworkLoader;
+import de.rpgframework.boot.StandardBootSteps;
 
 /**
  * @author prelle
@@ -52,7 +56,18 @@ public class IDExporter {
 	 */
 	public static void main(String[] args) throws IOException {
 		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
-		RPGFrameworkLoader.getInstance();
+		RPGFramework framework = RPGFrameworkLoader.getInstance();
+		framework.addBootStep(StandardBootSteps.FRAMEWORK_PLUGINS);
+		framework.addBootStep(StandardBootSteps.ROLEPLAYING_SYSTEMS);
+		framework.initialize(new RPGFrameworkInitCallback() {
+			public void showConfigOptions(String arg0, List<ConfigOption<?>> arg1) {
+			}
+			public void progressChanged(double arg0) {
+			}
+			public void message(String mess) {System.out.println(mess);}
+			public void errorOccurred(String arg0, String arg1, Throwable arg2) {
+			}
+		});
 		
 		generateMastershipsBySkills();
 		generateSpells();

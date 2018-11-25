@@ -52,6 +52,22 @@ public class SpellModification extends ModificationImpl {
 	}
 
 	//--------------------------------------------------------------------
+	public boolean equals(Object o) {
+		if (o instanceof SpellModification) {
+			SpellModification other = (SpellModification)o;
+			if (spell==null) {
+				if (other.spell!=null) return false;
+			} else {
+				if (other.spell==null) return false;
+				if (spell.getSpell()!=other.spell.getSpell()) return false;
+				if (spell.getSkill()!=other.spell.getSkill()) return false;
+			}
+			return true;
+		}
+		return false;
+	}
+
+	//--------------------------------------------------------------------
 	public String toString() {
 		StringBuffer buf = new StringBuffer();
 		if (remove) buf.append("Remove ");

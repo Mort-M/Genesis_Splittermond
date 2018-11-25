@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="CAPITAL" id="spearthorn" load="2" material="METAL" price="2500" robust="3" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="AGILITY" att2="STRENGTH" damage="2w6+2" range="10" skill="throwing" speed="9" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="2"/>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="2" type="PENETRATING"/>
+            <feature type="FRAGILE"/>
+         </features>
+      </rangeweapon>
+   </item>
+</items>

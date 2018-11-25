@@ -21,6 +21,8 @@ public class SpellRangeConverter implements StringValueConverter<Integer> {
 				return Spell.RANGE_CASTER;
 			if (v.equalsIgnoreCase("TOUCH"))
 				return Spell.RANGE_TOUCH;
+			if (v.endsWith("km"))
+				return Integer.parseInt(v.substring(0, v.indexOf("km")))*1000;
 			if (v.endsWith("m"))
 				return Integer.parseInt(v.substring(0, v.indexOf("m")));
 			System.err.println("Unknown spell range: "+v);
@@ -41,6 +43,8 @@ public class SpellRangeConverter implements StringValueConverter<Integer> {
 		case Spell.RANGE_CASTER: return "CASTER"; 
 		case Spell.RANGE_TOUCH: return "TOUCH"; 
 		default:
+			if (v>1000)
+				return String.valueOf(v/1000)+"km";
 			return String.valueOf(v)+"m";
 		}
 	}
