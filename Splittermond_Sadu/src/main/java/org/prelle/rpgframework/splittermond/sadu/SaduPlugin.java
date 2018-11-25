@@ -112,7 +112,7 @@ public class SaduPlugin implements RulePlugin<SpliMoCharacter> {
 	@Override
 	public void init() {
 		logger.info("START -------------------------------Sadu-------------------------------------------");
-		SplitterMondCore.loadCultures(this, ClassLoader.getSystemResourceAsStream("data/splittermond/masterships-sadu.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadCultures(this, ClassLoader.getSystemResourceAsStream("data/splittermond/cultures-sadu.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEquipment(this, ClassLoader.getSystemResourceAsStream("data/splittermond/equipment-sadu.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-sadu.xml"), i18NResources, i18NHelpResources);
 		SplitterMondCore.loadNameTable(this, ClassLoader.getSystemResourceAsStream("data/splittermond/nametable-sadu.xml"), i18NResources, i18NHelpResources);
