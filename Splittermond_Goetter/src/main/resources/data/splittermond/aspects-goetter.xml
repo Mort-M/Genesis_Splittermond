@@ -72,7 +72,7 @@
     <aspect id="fischerei" />
     <aspect id="fleiß" />
     <aspect id="flug" />
-    <aspect id="fluss und see" />
+    <aspect id="flussundsee" />
     <aspect id="flut" />
     <aspect id="forschung" />
     <aspect id="freiheit" />
@@ -137,7 +137,7 @@
     <aspect id="jugend" />
     <aspect id="kameradschaft" />
     <aspect id="kampf" />
-    <aspect id="kampf gegen die finsternis" />
+    <aspect id="kampfgegendiefinsternis" />
     <aspect id="klatsch" />
     <aspect id="klugheit" />
     <aspect id="kraft" />
@@ -201,7 +201,7 @@
     <aspect id="redekunst" />
     <aspect id="regen" />
     <aspect id="regeneration" />
-    <aspect id="reiche beute" />
+    <aspect id="reichebeute" />
     <aspect id="reichtum" />
     <aspect id="reinheit" />
     <aspect id="reise" />
@@ -225,7 +225,7 @@
     <aspect id="schöpfung" />
     <aspect id="seefahrt" />
     <aspect id="sex" />
-    <aspect id="sicheres geleit" />
+    <aspect id="sicheresgeleit" />
     <aspect id="sippe" />
     <aspect id="sommer" />
     <aspect id="sonne" />
@@ -236,7 +236,7 @@
     <aspect id="spott" />
     <aspect id="standhaftigkeit" />
     <aspect id="standhaftigkeit" />
-    <aspect id="weitere je nach valkyrja" />
+    <aspect id="weiterejenachvalkyrja" />
     <aspect id="sterne" />
     <aspect id="stillstand" />
     <aspect id="stolz" />
@@ -260,7 +260,7 @@
     <aspect id="ufer" />
     <aspect id="umbruch" />
     <aspect id="unbarmherzigkeit" />
-    <aspect id="unberechenbare natur" />
+    <aspect id="unberechenbarenatur" />
     <aspect id="unberechenbarkeit" />
     <aspect id="unerbittlichkeit" />
     <aspect id="unglück" />

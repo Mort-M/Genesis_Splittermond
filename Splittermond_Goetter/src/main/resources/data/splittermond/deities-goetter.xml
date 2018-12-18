@@ -446,8 +446,7 @@
     <aspects>
       <aspect ref="glück"/>
       <aspect ref="feuer"/>
-      <aspect ref="fluss"/>
-      und see
+      <aspect ref="flussundsee"/>
       <aspect ref="rache"/>
       <aspect ref="standhaftigkeit"/>
     </aspects>
@@ -1957,11 +1956,9 @@
       <aspect ref="schutz"/>
       <aspect ref="meer"/>
       <aspect ref="seefahrt"/>
-      <aspect ref="reiche"/>
-      beute
+      <aspect ref="reichebeute"/>
       <aspect ref="gemeinschaft"/>
-      <aspect ref="sicheres"/>
-      geleit
+      <aspect ref="sicheresgeleit"/>
     </aspects>
     <modifications>
       <skillmod ref="naturemagic"/>
@@ -2053,8 +2050,7 @@
       <aspect ref="gemeinschaft"/>
       <aspect ref="gehorsam"/>
       <aspect ref="schutz"/>
-      <aspect ref="kampf"/>
-      gegen die finsternis
+      <aspect ref="kampfgegendiefinsternis"/>
     </aspects>
     <modifications>
       <skillmod ref="antimagic"/>
@@ -2353,8 +2349,7 @@
       <aspect ref="schutz"/>
       <aspect ref="wache"/>
       <aspect ref="standhaftigkeit"/>
-      <aspect ref="weitere"/>
-      je nach valkyrja
+      <aspect ref="weiterejenachvalkyrja"/>
     </aspects>
     <modifications>
       <skillmod ref="combatmagic"/>
@@ -2404,8 +2399,7 @@
   <deity id="varnu">
     <aspects>
       <aspect ref="leidenschaft"/>
-      <aspect ref="unberechenbare"/>
-      natur
+      <aspect ref="unberechenbarenatur"/>
       <aspect ref="list"/>
       <aspect ref="zerstörung"/>
       <aspect ref="strenge"/>
@@ -2639,5 +2633,4 @@
       <edumod ref="voice_of_ghosts"/>
     </modifications>
   </deity>
-
 </deities>

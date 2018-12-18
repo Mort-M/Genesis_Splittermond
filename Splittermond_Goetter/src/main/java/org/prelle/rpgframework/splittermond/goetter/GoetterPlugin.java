@@ -66,7 +66,7 @@ public class GoetterPlugin implements RulePlugin<SpliMoCharacter> {
 	 */
 	@Override
 	public Collection<String> getRequiredPlugins() {
-		return Arrays.asList("CORE","MSK");
+		return Arrays.asList("CORE","MSK","Selenia");
 	}
 
 	//--------------------------------------------------------------------
@@ -115,7 +115,7 @@ public class GoetterPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadPowers(this, ClassLoader.getSystemResourceAsStream("data/splittermond/powers-goetter.xml"), i18NResources, i18NHelpResources);		
 		SplitterMondCore.loadMasterships(this, ClassLoader.getSystemResourceAsStream("data/splittermond/masterships-goetter.xml"), i18NResources, i18NHelpResources);		
 		SplitterMondCore.loadAspects(this, ClassLoader.getSystemResourceAsStream("data/splittermond/aspects-goetter.xml"), i18NResources, i18NHelpResources);		
-		SplitterMondCore.loadDeities(this, ClassLoader.getSystemResourceAsStream("data/splittermond/deities-goetter.xml"), i18NResources, i18NHelpResources);		
+
 		SplitterMondCore.loadSpells(this, ClassLoader.getSystemResourceAsStream("data/splittermond/spells-goetter.xml"), i18NResources, i18NHelpResources);		
 		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-goetter.xml"), i18NResources, i18NHelpResources);
 //		logger.fatal("Stop here");
@@ -123,7 +123,8 @@ public class GoetterPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEnhancements(this, ClassLoader.getSystemResourceAsStream("data/splittermond/enhancements-goetter.xml"), i18NResources, i18NHelpResources);		
 		SplitterMondCore.loadMaterials(this, ClassLoader.getSystemResourceAsStream("data/splittermond/materials-goetter.xml"), i18NResources, i18NHelpResources);		
 		SplitterMondCore.loadDeityTypes(this, ClassLoader.getSystemResourceAsStream("data/splittermond/deitytypes-goetter.xml"), i18NResources, i18NHelpResources);		
-		SplitterMondCore.loadHolyPowers(this, ClassLoader.getSystemResourceAsStream("data/splittermond/holypowers-goetter.xml"), i18NResources, i18NHelpResources);		
+		SplitterMondCore.loadHolyPowers(this, ClassLoader.getSystemResourceAsStream("data/splittermond/holypowers-goetter.xml"), i18NResources, i18NHelpResources);
+		SplitterMondCore.loadDeities(this, ClassLoader.getSystemResourceAsStream("data/splittermond/deities-goetter.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.info("STOP  Initialize");
 //		logger.fatal("Stop here");
