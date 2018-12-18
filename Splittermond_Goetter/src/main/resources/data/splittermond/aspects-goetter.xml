@@ -15,7 +15,6 @@
     <aspect id="ausgestoßene" />
     <aspect id="ausgleich" />
     <aspect id="barbarei" />
-    <aspect id="becheidenheit" />
     <aspect id="berge" />
     <aspect id="bescheidenheit" />
     <aspect id="beständigkeit" />
@@ -28,7 +27,6 @@
     <aspect id="brillanz" />
     <aspect id="buße" />
     <aspect id="bündnis" />
-    <aspect id="bündnisse" />
     <aspect id="demut" />
     <aspect id="drachen" />
     <aspect id="drogen" />
@@ -48,13 +46,11 @@
     <aspect id="emotionen" />
     <aspect id="ende" />
     <aspect id="entdeckung" />
-    <aspect id="entdeckungen" />
     <aspect id="erde" />
     <aspect id="erfolg" />
     <aspect id="erhabenheit" />
     <aspect id="erinnerung" />
     <aspect id="erkenntnis" />
-    <aspect id="erkenntnisse" />
     <aspect id="ernte" />
     <aspect id="ernährung" />
     <aspect id="eroberung" />
@@ -62,7 +58,6 @@
     <aspect id="ewigkeit" />
     <aspect id="familie" />
     <aspect id="farbe" />
-    <aspect id="farben" />
     <aspect id="fehden" />
     <aspect id="fehlverhalten" />
     <aspect id="feier" />
@@ -78,7 +73,6 @@
     <aspect id="freiheit" />
     <aspect id="freude" />
     <aspect id="friede" />
-    <aspect id="frieden" />
     <aspect id="fruchtbarkeit" />
     <aspect id="frühling" />
     <aspect id="fürsorge" />
@@ -101,12 +95,10 @@
     <aspect id="geschichten" />
     <aspect id="geschwindigkeit" />
     <aspect id="gesetz" />
-    <aspect id="gesetze" />
     <aspect id="gewitter" />
     <aspect id="gewitztheit" />
     <aspect id="gier" />
     <aspect id="gift" />
-    <aspect id="gifte" />
     <aspect id="glück" />
     <aspect id="glücksspiel" />
     <aspect id="gnade" />
@@ -164,7 +156,6 @@
     <aspect id="magie" />
     <aspect id="mathematik" />
     <aspect id="meer" />
-    <aspect id="meere" />
     <aspect id="meereskreaturen" />
     <aspect id="meuchelmord" />
     <aspect id="meuchler" />
@@ -173,7 +164,6 @@
     <aspect id="musik" />
     <aspect id="mut" />
     <aspect id="mutter" />
-    <aspect id="mysterien" />
     <aspect id="mysterium" />
     <aspect id="männlichkeit" />
     <aspect id="nachsicht" />
@@ -188,7 +178,6 @@
     <aspect id="osten" />
     <aspect id="perfektion" />
     <aspect id="pferd" />
-    <aspect id="pferde" />
     <aspect id="pflanzen" />
     <aspect id="pflicht" />
     <aspect id="pflichterfüllung" />
@@ -205,7 +194,6 @@
     <aspect id="reichtum" />
     <aspect id="reinheit" />
     <aspect id="reise" />
-    <aspect id="reisen" />
     <aspect id="reiter" />
     <aspect id="richter" />
     <aspect id="rohstoffe" />
@@ -270,7 +258,6 @@
     <aspect id="vergessen" />
     <aspect id="vergänglichkeit" />
     <aspect id="verhandlung" />
-    <aspect id="verhandlungen" />
     <aspect id="vermittlung" />
     <aspect id="vernunft" />
     <aspect id="verrat" />
@@ -283,7 +270,6 @@
     <aspect id="vollkommenheit" />
     <aspect id="vulkan" />
     <aspect id="vögel" />
-    <aspect id="wache" />
     <aspect id="wachsamkeit" />
     <aspect id="wachstum" />
     <aspect id="wacht" />
@@ -304,7 +290,6 @@
     <aspect id="wiedergutmachung" />
     <aspect id="wildheit" />
     <aspect id="wind" />
-    <aspect id="winde" />
     <aspect id="winter" />
     <aspect id="wissen" />
     <aspect id="witz" />

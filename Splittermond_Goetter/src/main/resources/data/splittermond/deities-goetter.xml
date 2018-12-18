@@ -219,7 +219,7 @@
   <deity id="avyn">
     <aspects>
       <aspect ref="lebensfreude"/>
-      <aspect ref="farben"/>
+      <aspect ref="farbe"/>
       <aspect ref="sommer"/>
       <aspect ref="reise"/>
       <aspect ref="leidenschaft"/>
@@ -295,7 +295,7 @@
       <aspect ref="handel"/>
       <aspect ref="demut"/>
       <aspect ref="tüchtigkeit"/>
-      <aspect ref="becheidenheit"/>
+      <aspect ref="bescheidenheit"/>
     </aspects>
     <modifications>
       <skillmod ref="controlmagic"/>
@@ -334,7 +334,7 @@
       <aspect ref="geheimnisse"/>
       <aspect ref="verrat"/>
       <aspect ref="intrige"/>
-      <aspect ref="mysterien"/>
+      <aspect ref="mysterium"/>
     </aspects>
     <modifications>
       <skillmod ref="controlmagic"/>
@@ -484,7 +484,7 @@
       <aspect ref="treue"/>
       <aspect ref="geschichte"/>
       <aspect ref="gedächtnis"/>
-      <aspect ref="mysterien"/>
+      <aspect ref="mysterium"/>
     </aspects>
     <modifications>
       <skillmod ref="insightmagic"/>
@@ -498,9 +498,9 @@
   <deity id="egaris">
     <aspects>
       <aspect ref="geheimnisse"/>
-      <aspect ref="mysterien"/>
+      <aspect ref="mysterium"/>
       <aspect ref="rätsel"/>
-      <aspect ref="erkenntnisse"/>
+      <aspect ref="erkenntnis"/>
       <aspect ref="tiefdunkel"/>
       <aspect ref="entdeckung"/>
     </aspects>
@@ -985,7 +985,7 @@
   <deity id="kanatauna">
     <aspects>
       <aspect ref="bewahrung"/>
-      <aspect ref="wache"/>
+      <aspect ref="wacht"/>
       <aspect ref="tradition"/>
       <aspect ref="stärke"/>
       <aspect ref="tüchtigkeit"/>
@@ -1065,7 +1065,7 @@
       <aspect ref="wissen"/>
       <aspect ref="forschung"/>
       <aspect ref="geheimnisse"/>
-      <aspect ref="mysterien"/>
+      <aspect ref="mysterium"/>
       <aspect ref="dunkelheit"/>
       <aspect ref="meer"/>
     </aspects>
@@ -1231,7 +1231,7 @@
       <aspect ref="fürsorge"/>
       <aspect ref="leidenschaft"/>
       <aspect ref="schönheit"/>
-      <aspect ref="entdeckungen"/>
+      <aspect ref="entdeckung"/>
       <aspect ref="fruchtbarkeit"/>
       <aspect ref="geburt"/>
     </aspects>
@@ -1351,7 +1351,7 @@
     <aspects>
       <aspect ref="regen"/>
       <aspect ref="fruchtbarkeit"/>
-      <aspect ref="winde"/>
+      <aspect ref="wind"/>
       <aspect ref="aufbrausen"/>
       <aspect ref="leben"/>
       <aspect ref="wetter"/>
@@ -1409,7 +1409,7 @@
       <aspect ref="jugend"/>
       <aspect ref="fehden"/>
       <aspect ref="vergebung"/>
-      <aspect ref="reisen"/>
+      <aspect ref="reise"/>
       <aspect ref="gewitter"/>
     </aspects>
     <modifications>
@@ -1442,7 +1442,7 @@
     <aspects>
       <aspect ref="felsen"/>
       <aspect ref="stolz"/>
-      <aspect ref="gesetze"/>
+      <aspect ref="gesetz"/>
       <aspect ref="handel"/>
       <aspect ref="tradition"/>
       <aspect ref="handwerk"/>
@@ -1502,7 +1502,7 @@
       <aspect ref="sonne"/>
       <aspect ref="mutter"/>
       <aspect ref="licht"/>
-      <aspect ref="frieden"/>
+      <aspect ref="friede"/>
       <aspect ref="weisheit"/>
       <aspect ref="leben"/>
     </aspects>
@@ -1610,7 +1610,7 @@
   <deity id="omabarka">
     <aspects>
       <aspect ref="handel"/>
-      <aspect ref="gifte"/>
+      <aspect ref="gift"/>
       <aspect ref="intrige"/>
       <aspect ref="geduld"/>
       <aspect ref="meuchler"/>
@@ -1667,7 +1667,7 @@
     <aspects>
       <aspect ref="gutmütigkeit"/>
       <aspect ref="hilfsbereitschaft"/>
-      <aspect ref="frieden"/>
+      <aspect ref="friede"/>
       <aspect ref="kreativität"/>
       <aspect ref="gesang"/>
       <aspect ref="freude"/>
@@ -1869,7 +1869,7 @@
   <deity id="rraika">
     <aspects>
       <aspect ref="zusammenhalt"/>
-      <aspect ref="verhandlungen"/>
+      <aspect ref="verhandlung"/>
       <aspect ref="alter"/>
       <aspect ref="weiblichkeit"/>
       <aspect ref="wald"/>
@@ -1922,9 +1922,9 @@
     <aspects>
       <aspect ref="handel"/>
       <aspect ref="verständigung"/>
-      <aspect ref="bündnisse"/>
+      <aspect ref="bündnis"/>
       <aspect ref="list"/>
-      <aspect ref="verhandlungen"/>
+      <aspect ref="verhandlung"/>
     </aspects>
     <modifications>
       <skillmod ref="insightmagic"/>
@@ -1938,7 +1938,7 @@
     <aspects>
       <aspect ref="gemeinschaft"/>
       <aspect ref="familie"/>
-      <aspect ref="frieden"/>
+      <aspect ref="friede"/>
       <aspect ref="sanftmut"/>
       <aspect ref="wiedergutmachung"/>
       <aspect ref="heilung"/>
@@ -2067,7 +2067,7 @@
     <aspects>
       <aspect ref="sterne"/>
       <aspect ref="wahrheit"/>
-      <aspect ref="gesetze"/>
+      <aspect ref="gesetz"/>
       <aspect ref="gemeinschaft"/>
       <aspect ref="recht"/>
       <aspect ref="treue"/>
@@ -2310,7 +2310,7 @@
     <aspects>
       <aspect ref="wasser"/>
       <aspect ref="unnachgiebigkeit"/>
-      <aspect ref="meere"/>
+      <aspect ref="meer"/>
       <aspect ref="schöpfung"/>
       <aspect ref="meer"/>
     </aspects>
@@ -2347,7 +2347,7 @@
       <aspect ref="gemeinschaft"/>
       <aspect ref="kampf"/>
       <aspect ref="schutz"/>
-      <aspect ref="wache"/>
+      <aspect ref="wacht"/>
       <aspect ref="standhaftigkeit"/>
       <aspect ref="weiterejenachvalkyrja"/>
     </aspects>
@@ -2509,7 +2509,7 @@
   </deity>
   <deity id="yelat">
     <aspects>
-      <aspect ref="pferde"/>
+      <aspect ref="pferd"/>
       <aspect ref="freiheit"/>
       <aspect ref="stolz"/>
       <aspect ref="sturm"/>
