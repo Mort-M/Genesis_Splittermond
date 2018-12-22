@@ -65,8 +65,6 @@ public class CreatureScreen extends ManagedScreen implements GenerationEventList
 
 	private TilePane flow;
 	
-	private Button btnCreateCreature;
-	private MenuItem btnAddCreature;
 	private Button btnDel;
 	
 	private ObjectProperty<CreatureReference> selected;
@@ -115,14 +113,13 @@ public class CreatureScreen extends ManagedScreen implements GenerationEventList
 		imgCreate.setFitWidth(64);
 		imgDelete.setFitHeight(64);
 		imgDelete.setFitWidth(64);
-		btnAddCreature = new MenuItem(UI.getString("tooltip.creature.add"), new FontIcon("\uE0C5", 40));
-		btnCreateCreature = new Button(null, imgCreate);
+//		btnAddCreature = new MenuItem(UI.getString("tooltip.creature.add"), new Label("\uE0C5"));
+//		btnCreateCreature = new MenuItem(UI.getString("tooltip.creature.create"), imgCreate);
 		btnDel = new Button(null, imgDelete);
 //		btnAddCreature.setTooltip(new Tooltip(UI.getString("tooltip.creature.add")));
-		btnCreateCreature.setTooltip(new Tooltip(UI.getString("tooltip.creature.create")));
 		btnDel.setTooltip(new Tooltip(UI.getString("tooltip.creature.delete")));
 		btnDel.setDisable(true);
-		getStaticButtons().addAll(btnAddCreature);
+//		getStaticButtons().addAll(btnAddCreature);
 //		getStaticButtons().addAll(btnCreateCreature);
 		getContextButtons().addAll(btnDel);
 		
@@ -140,6 +137,7 @@ public class CreatureScreen extends ManagedScreen implements GenerationEventList
 		menuAddCreature    = new MenuItem(UI.getString("screen.creature.add.add_creature"));
 		menuCreateCreature = new MenuItem(UI.getString("screen.creature.add.create_creature"));
 		menuCreateEntourage= new MenuItem(UI.getString("screen.creature.add.create_entourage"));
+		getStaticButtons().addAll(menuAddCreature, menuCreateCreature);
 		menuAddCreature.setOnAction( event -> addCreatureClicked());
 		menuCreateCreature.setOnAction( event -> createCreatureClicked());
 //		ctxMenuAdd.getItems().addAll(menuAddCreature);
@@ -162,8 +160,8 @@ public class CreatureScreen extends ManagedScreen implements GenerationEventList
 
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
-		btnAddCreature.setOnAction(event -> showAddCreaturePopupMenu(event));
-		btnCreateCreature.setOnMouseClicked(event -> creatureCreateClicked());
+//		btnAddCreature.setOnAction(event -> addCreatureClicked());
+//		btnCreateCreature.setOnAction(event -> creatureCreateClicked());
 		btnDel.setOnMouseClicked(event -> remove());
 		selected.addListener( (ov,o,n) -> btnDel.setDisable(n==null));
 	}
@@ -257,10 +255,12 @@ public class CreatureScreen extends ManagedScreen implements GenerationEventList
 	private void showAddCreaturePopupMenu(ActionEvent event) {
 		logger.debug("creatureAddClicked");
 
-		ContextMenu popup = ctxMenuAdd;
-		popup.setAnchorLocation(AnchorLocation.CONTENT_BOTTOM_RIGHT);
-//		popup.show(btnAddCreature, event.getScreenX(), event.getScreenY());
-		logger.error("Re-Implement: show context menu");
+//		ContextMenu popup = ctxMenuAdd;
+//		popup.setAnchorLocation(AnchorLocation.CONTENT_BOTTOM_RIGHT);
+////		popup.show(btnAddCreature, event.getScreenX(), event.getScreenY());
+//		logger.error("Re-Implement: show context menu");
+		
+		addCreatureClicked();
 	}
 
 	//-------------------------------------------------------------------
