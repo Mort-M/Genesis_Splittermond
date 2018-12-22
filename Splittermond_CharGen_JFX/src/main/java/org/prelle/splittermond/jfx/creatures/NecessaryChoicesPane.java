@@ -98,7 +98,7 @@ public class NecessaryChoicesPane extends VBox {
 		Modification[] result = adapter.letUserChoose(tmp.originModule.getModule().getName(), choice);
 		logger.debug("  letUserChoose returned "+Arrays.toString(result)+" // size="+result.length);
 		if (result.length!=1) {
-			logger.error("Expect only one choice returned");
+			logger.error("Expect only one selection, but received "+result.length);
 			return null;
 //		} else if (tmp.madeChoice==null) {
 //			logger.debug("  Another choice is necessary");
