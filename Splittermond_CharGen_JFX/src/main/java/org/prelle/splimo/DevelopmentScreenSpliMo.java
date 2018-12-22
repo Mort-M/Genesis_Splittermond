@@ -14,6 +14,7 @@ import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.skin.ManagedScreenDialogSkin;
 import org.prelle.rpgframework.jfx.DevelopmentScreen;
+import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventType;
@@ -41,12 +42,15 @@ public class DevelopmentScreenSpliMo extends DevelopmentScreen {
 	//-------------------------------------------------------------------
 	/**
 	 */
-	public DevelopmentScreenSpliMo() {
+	public DevelopmentScreenSpliMo(CharacterController ctrl) {
 		super(UI);
+		model = ctrl.getModel();
+		logger.info("<init>()");
 		setConverter(new StringConverter<Modification>() {
 			public String toString(Modification arg0) {  return SplitterTools.getModificationString(arg0);}
 			public Modification fromString(String arg0) {return null;}
 		});
+		setData(ctrl.getModel());
 	}
 
 	//-------------------------------------------------------------------
@@ -181,7 +185,7 @@ public class DevelopmentScreenSpliMo extends DevelopmentScreen {
 			if (reward.getId()!=null)  {
 				Adventure adv = sessServ.getAdventure(RoleplayingSystem.SPLITTERMOND, reward.getId());
 				if (adv==null) {
-					logger.warn("Reference o an unknown adventure: "+reward.getId());
+					logger.warn("Reference to an unknown adventure: "+reward.getId());
 				} else
 					((HistoryElementImpl)elem).setAdventure(adv);
 

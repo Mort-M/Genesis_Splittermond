@@ -14,7 +14,38 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.log4j.Logger;
+import org.prelle.javafx.ManagedScreen;
+import org.prelle.javafx.ResponsiveVBox;
+import org.prelle.javafx.TriStateCheckBox;
+import org.prelle.javafx.TriStateCheckBox.State;
+import org.prelle.javafx.WindowMode;
+import org.prelle.javafx.fluent.CommandBar;
+import org.prelle.javafx.fluent.NodeWithTitle;
+import org.prelle.rpgframework.jfx.AttentionPane;
+import org.prelle.rpgframework.jfx.FreePointsNode;
+import org.prelle.rpgframework.jfx.SettingsAndCommandBar;
+import org.prelle.splimo.Skill;
+import org.prelle.splimo.Skill.SkillType;
+import org.prelle.splimo.SkillSpecialization;
+import org.prelle.splimo.SkillValue;
+import org.prelle.splimo.Spell;
+import org.prelle.splimo.SpellType;
+import org.prelle.splimo.SpellValue;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.SplitterTools;
+import org.prelle.splimo.charctrl.CharacterController;
+import org.prelle.splimo.charctrl.MastershipController;
+import org.prelle.splimo.charctrl.SpellController;
+import org.prelle.splimo.charctrl.SpellController.FreeSelection;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.jfx.skills.ListElemSpecialization;
+import org.prelle.splittermond.jfx.skills.SkillSpecListCell;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
@@ -24,6 +55,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.control.ToggleButton;
@@ -36,45 +68,15 @@ import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
 
-import org.apache.log4j.Logger;
-import org.prelle.javafx.CloseType;
-import org.prelle.javafx.ManagedScreen;
-import org.prelle.javafx.TriStateCheckBox;
-import org.prelle.javafx.TriStateCheckBox.State;
-import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
-import org.prelle.rpgframework.jfx.AttentionPane;
-import org.prelle.splimo.PointsPane;
-import org.prelle.splimo.Skill;
-import org.prelle.splimo.Skill.SkillType;
-import org.prelle.splimo.SkillSpecialization;
-import org.prelle.splimo.SkillValue;
-import org.prelle.splimo.Spell;
-import org.prelle.splimo.SpellType;
-import org.prelle.splimo.SpellValue;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.SplitterTools;
-import org.prelle.splimo.ViewMode;
-import org.prelle.splimo.charctrl.CharacterController;
-import org.prelle.splimo.charctrl.Generator;
-import org.prelle.splimo.charctrl.MastershipController;
-import org.prelle.splimo.charctrl.SpellController;
-import org.prelle.splimo.charctrl.SpellController.FreeSelection;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splittermond.jfx.skills.ListElemSpecialization;
-import org.prelle.splittermond.jfx.skills.SkillSpecListCell;
-
 /**
  * @author prelle
  *
  */
-public class SpellScreen extends ManagedScreen implements GenerationEventListener {
+public class SpellScreen extends ManagedScreen implements GenerationEventListener, NodeWithTitle {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private final static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 	
 	// Used as user data for slider
 	class SelectionOption {
@@ -84,7 +86,14 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 	}
 
 	private CharacterController control;
-	private ViewMode mode;
+	
+	private Label lbExpTotal;
+	private Label lbExpInvested;
+	private FreePointsNode freePoints;
+	private Label lbLevel;
+	private CommandBar commands;
+	private SettingsAndCommandBar firstLine;
+	
 	private SpliMoCharacter model;
 	private Skill selectedSkill;
 	private int selectedSpellRow = -1;
@@ -99,30 +108,25 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 	private GridPane spellGrid;
 	private Map<Integer, List<Node>> spellNodesByLine;
 	private VBox descrPane;
+	private Label lbSpellRef;
 	private ListView<ListElemSpecialization> specializations;
-	
-	private PointsPane points;
-	private HBox content;
 	
 	private boolean isRefreshing;
 	
 	//-------------------------------------------------------------------
 	/**
 	 */
-	public SpellScreen(CharacterController control, ViewMode mode) {
+	public SpellScreen(CharacterController control) {
 		this.control = control;
-		this.mode    = mode;
 		
 		initComponents();
 		initLayout();
 		initInteractivity();
-		setSkin(new ManagedScreenStructuredSkin(this));
 		GenerationEventDispatcher.addListener(this);
 	}
 
 	//-------------------------------------------------------------------
 	private void initComponents() {
-		getNavigButtons().add(CloseType.BACK);
 		setTitle(UI.getString("screen.spells.title"));
 		
 		tgSpellSchools  = new ToggleGroup();
@@ -134,6 +138,8 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 		slidersBySpell  = new HashMap<>();
 		labelsBySpell   = new HashMap<>();
 		attentionsBySchool = new HashMap<>();
+		lbSpellRef      = new Label();
+		lbSpellRef.getStyleClass().add("base");
 
 		spellSchools.setOrientation(Orientation.HORIZONTAL);
 		specializations.setCellFactory(new Callback<ListView<ListElemSpecialization>, ListCell<ListElemSpecialization>>() {
@@ -145,24 +151,44 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 		/*
 		 * Exp & Co.
 		 */
-		points = new PointsPane(mode);
-		if (control.getSpellController() instanceof Generator)
-			points.setGenerator((Generator) control.getSpellController());
+		freePoints = new FreePointsNode();
+		freePoints.setStyle("-fx-max-height: 3em; -fx-max-width: 3em");
+		freePoints.setPoints(control.getModel().getExperienceFree());
+		freePoints.setName(UI.getString("label.ep.free"));
+		Label hdExpTotal    = new Label(SpliMoCharGenConstants.RES.getString("label.ep.total")+": ");
+		Label hdExpInvested = new Label(SpliMoCharGenConstants.RES.getString("label.ep.used")+": ");
+		Label hdLevel       = new Label(SpliMoCharGenConstants.RES.getString("label.level")+": ");
+		lbExpTotal    = new Label("?");
+		lbExpInvested = new Label("?");
+		lbLevel       = new Label("?");
+		lbExpTotal.getStyleClass().add("base");
+		lbExpInvested.getStyleClass().add("base");
+		lbLevel.getStyleClass().add("base");
+		lbExpTotal.setText(String.valueOf(control.getModel().getExperienceInvested()+control.getModel().getExperienceFree()));
+		lbExpInvested.setText(control.getModel().getExperienceInvested()+"");
+		lbLevel.setText(control.getModel().getLevel()+"");
+		
+		commands = new CommandBar();
+		commands.getItems().add(new MenuItem("Drucken", new Label("\uD83D\uDDB6")));
+		
+		HBox expLine = new HBox(5);
+		expLine.getChildren().addAll(hdExpTotal, lbExpTotal, hdExpInvested, lbExpInvested, hdLevel, lbLevel);
+		HBox.setMargin(hdLevel, new Insets(0,0,0,20));
+		expLine.getStyleClass().add("character-document-view-firstline");
+		
+		firstLine = new SettingsAndCommandBar();
+		firstLine.setSettings(expLine);
+//		firstLine.setCommandBar(commands);
 	}
 
 	//-------------------------------------------------------------------
 	private void initLayout() {
 		// Spell schools
-		Label lblSchools = new Label(UI.getString("label.schools"));
-		lblSchools.getStyleClass().add("text-subheader");
-		VBox bxSchools   = new VBox(20);
-		bxSchools.getStyleClass().add("content");
-		bxSchools.getChildren().addAll(lblSchools, spellSchools);
 		VBox.setVgrow(spellSchools, Priority.NEVER);
 		spellSchools.setVgap(20);
 		spellSchools.setHgap(20);
 		spellSchools.setMaxWidth(Double.MAX_VALUE);
-		bxSchools.setMaxWidth(Double.MAX_VALUE);
+		spellSchools.setMaxWidth(Double.MAX_VALUE);
 		
 		// Spells
 		ScrollPane spellGridFlow = new ScrollPane(spellGrid);
@@ -186,7 +212,8 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 		lblDescr.getStyleClass().add("text-subheader");
 		VBox bxDescr   = new VBox(20);
 		bxDescr.getStyleClass().add("content");
-		bxDescr.getChildren().addAll(lblDescr, descrPane);
+		bxDescr.setStyle("-fx-padding: 0.5em");
+		bxDescr.getChildren().addAll(lblDescr, lbSpellRef, descrPane);
 		bxDescr.setPrefWidth(300);
 		
 		// Masteries
@@ -201,23 +228,30 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 		
 		// Flow
 		HBox lowerLine = new HBox(20);
-		lowerLine.getChildren().addAll(attentionSpells, bxDescr, attentionSpecs);
+		lowerLine.getChildren().addAll(freePoints, attentionSpells, bxDescr, attentionSpecs);
 		lowerLine.setMaxHeight(Double.MAX_VALUE);
+		lowerLine.setStyle("-fx-spacing: 1em");
 		HBox.setHgrow(bxDescr, Priority.NEVER);
 		VBox flow = new VBox(20);
-		flow.getChildren().addAll(bxSchools, lowerLine);
+		flow.getChildren().addAll(spellSchools, lowerLine);
 		flow.setMaxWidth(Double.MAX_VALUE);
-		VBox.setVgrow(bxSchools, Priority.NEVER);
+		VBox.setVgrow(spellSchools, Priority.NEVER);
 		VBox.setVgrow(lowerLine, Priority.ALWAYS);
 		
 		
-		content = new HBox();
+		VBox content = new ResponsiveVBox() {
+			@Override
+			public void setResponsiveMode(WindowMode value) {
+				bxDescr.setManaged(value==WindowMode.EXPANDED);
+				lblDescr.setManaged(value==WindowMode.EXPANDED);
+				bxDescr.setVisible(value==WindowMode.EXPANDED);
+				lblDescr.setVisible(value==WindowMode.EXPANDED);
+			}
+		};
 		content.setSpacing(20);
-		content.getChildren().addAll(points, flow);
-		HBox.setMargin(points, new Insets(0,0,20,0));
-		HBox.setMargin(flow, new Insets(0,20,20,0));
-		HBox.setHgrow(flow, Priority.ALWAYS);
-		content.getStyleClass().add("text-body");
+		content.getChildren().addAll(firstLine, flow);
+		VBox.setVgrow(flow, Priority.ALWAYS);
+		content.getStyleClass().add("spell-screen");
 		
 		setContent(content);
 	}
@@ -456,12 +490,14 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 	private void updateDescription(Spell spell) {
 		descrPane.getChildren().clear();
 		
+		lbSpellRef.setText(spell.getProductName()+" "+spell.getPage());
+		
 		StringBuffer buf;
 		
 		// Type
 		Label headType = new Label(UI.getString("label.spell.type")+": ");
 		Label lblType  = new Label();
-		headType.getStyleClass().add("text-small-subheader");
+		headType.getStyleClass().add("base");
 		buf = new StringBuffer();
 		for (Iterator<SpellType> it=spell.getTypes().iterator(); it.hasNext(); ) {
 			buf.append(it.next().getName());
@@ -473,31 +509,31 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 		// Difficulty
 		Label headDiff = new Label(UI.getString("label.spell.difficulty")+": ");
 		Label lblDiff  = new Label();
-		headDiff.getStyleClass().add("text-small-subheader");
+		headDiff.getStyleClass().add("base");
 		lblDiff.setText(String.valueOf(spell.getDifficultyString()));
 		
 		// Cost
 		Label headCost = new Label(UI.getString("label.spell.cost")+": ");
 		Label lblCost  = new Label();
-		headCost.getStyleClass().add("text-small-subheader");
+		headCost.getStyleClass().add("base");
 		lblCost.setText(SplitterTools.getFocusString(spell.getCost()));
 		
 		// Cast duration
 		Label headDur  = new Label(UI.getString("label.spell.castduration")+": ");
 		Label lblDur   = new Label();
-		headDur.getStyleClass().add("text-small-subheader");
+		headDur.getStyleClass().add("base");
 		lblDur.setText(spell.getCastDurationString());
 
 		// Range
 		Label headRange= new Label(UI.getString("label.spell.castrange")+": ");
 		Label lblRange = new Label();
-		headRange.getStyleClass().add("text-small-subheader");
+		headRange.getStyleClass().add("base");
 		lblRange.setText(spell.getCastRangeString());
 
 		// Spell Duration
 		Label headSpDur= new Label(UI.getString("label.spell.duration")+": ");
 		Label lblSpDur = new Label();
-		headSpDur.getStyleClass().add("text-small-subheader");
+		headSpDur.getStyleClass().add("base");
 		lblSpDur.setText(spell.getSpellDurationString());
 		
 		// Effect
@@ -509,7 +545,7 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 		Label lblEnhCost = new Label(spell.getEnhancementString());
 		Label lblEnhan = new Label(spell.getEnhancementDescription());
 		lblEnhan.setWrapText(true);
-		headEnhan.getStyleClass().add("text-small-subheader");
+		headEnhan.getStyleClass().add("base");
 
 		
 		HBox boxEnhan = new HBox(headEnhan, lblEnhCost);
@@ -531,6 +567,8 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 	//-------------------------------------------------------------------
 	private void refreshSpells() {
 		logger.debug("refreshSpells");
+		if (tgSpellSchools.getSelectedToggle()==null)
+			return;
 		isRefreshing = true;
 		Skill school = (Skill)tgSpellSchools.getSelectedToggle().getUserData();
 		SpellController spellCtrl = control.getSpellController();
@@ -654,7 +692,10 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 		switch (event.getType()) {
 		case EXPERIENCE_CHANGED:
 			logger.debug("rcv "+event.getType()+"   "+Arrays.toString((int[])event.getValue()));
-			points.refresh();
+			lbExpTotal.setText(String.valueOf(control.getModel().getExperienceInvested()+control.getModel().getExperienceFree()));
+			lbExpInvested.setText(control.getModel().getExperienceInvested()+"");
+			lbLevel.setText(control.getModel().getLevel()+"");
+			freePoints.setPoints(control.getModel().getExperienceFree());
 			break;
 		case SKILL_CHANGED:
 			logger.debug("rcv "+event.getType()+"   "+Arrays.toString((int[])event.getValue()));
@@ -662,10 +703,12 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 			if (((Skill)event.getKey())==selectedSkill) {
 				refreshSpecializations();
 			}
-			points.refresh();
+			lbExpInvested.setText(control.getModel().getExperienceInvested()+"");
+			lbLevel.setText(control.getModel().getLevel()+"");
 			break;
 		case SPELL_FREESELECTION_CHANGED:
-			points.refresh();
+			lbExpInvested.setText(control.getModel().getExperienceInvested()+"");
+			lbLevel.setText(control.getModel().getLevel()+"");
 		case SPELL_ADDED:
 		case SPELL_CHANGED:
 		case SPELL_OFFER_CHANGED:
@@ -689,24 +732,6 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 		default:
 			break;
 		}		
-	}
-
-	//-------------------------------------------------------------------
-	/**
-	 * @see org.prelle.javafx.ManagedScreen#close(org.prelle.javafx.ManagedScreen.CloseType)
-	 */
-	@Override
-	public boolean close(CloseType type) {
-		GenerationEventDispatcher.removeListener(this);
-		return true;
-	}
-
-	//-------------------------------------------------------------------
-	/**
-	 * @see org.prelle.javafx.ManagedScreen#childClosed(org.prelle.javafx.ManagedScreen, org.prelle.javafx.ManagedScreen.CloseType)
-	 */
-	@Override
-	public void childClosed(ManagedScreen child, CloseType type) {
 	}
 
 	//-------------------------------------------------------------------
@@ -759,6 +784,8 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 	public void setData(SpliMoCharacter model) {
 		this.model = model;
 		
+		lbExpInvested.setText(model.getExperienceInvested()+"");
+		lbLevel.setText(model.getLevel()+"");
 		spellSchools.getChildren().clear();
 		tgSpellSchools.getToggles().clear();
 		attentionsBySchool.clear();
@@ -778,8 +805,6 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 		specializations.getItems().clear();
 //		focusAttributeName.setText(Attribute.CHARISMA.getName());
 //		focusAttributeDescription.setText(uiResources.getString("descr.attribute.charisma"));
-		
-		points.setData(model);
 		
 		if (!tgSpellSchools.getToggles().isEmpty())
 			tgSpellSchools.selectToggle(tgSpellSchools.getToggles().get(0));

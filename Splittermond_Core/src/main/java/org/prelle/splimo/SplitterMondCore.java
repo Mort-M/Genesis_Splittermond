@@ -1600,6 +1600,8 @@ public class SplitterMondCore {
 				if (logger.isDebugEnabled()) {
 					logger.debug("* "+tmp.getName());
 				}
+				tmp.getName();
+				tmp.getPage();
 				tmp.getHelpText();
 				tmp.getEffectText();
 			}
@@ -2079,7 +2081,7 @@ public class SplitterMondCore {
 			Collections.sort(deities);
 		} catch (Exception e) {
 			logger.fatal("Failed loading deities: "+e,e);
-			System.exit(0);
+//			System.exit(0);
 			return;
 		}
 	}

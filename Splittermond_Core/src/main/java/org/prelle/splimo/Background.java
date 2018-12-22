@@ -37,6 +37,13 @@ public class Background extends BasePluginData implements Comparable<Background>
 		this.key = id;
 		modifications = new ModificationList();
 	}
+	
+	//-------------------------------------------------------------------
+	public Background(String id, String customName) {
+		this.key = id;
+		this.name= customName;
+		modifications = new ModificationList();
+	}
 
 	//-------------------------------------------------------------------
 	/**
@@ -77,6 +84,8 @@ public class Background extends BasePluginData implements Comparable<Background>
 		
 		Background other = (Background)o;
 		if (!key.equals(other.getKey())) return false;
+		if (name!=null && !name.equals(other.name)) return false;
+		if (other.name!=null && !other.name.equals(name)) return false;
 		
 		return modifications.equals(other.getModifications());
 	}

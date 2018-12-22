@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
@@ -147,6 +148,12 @@ public class UnreichPlugin implements RulePlugin<SpliMoCharacter> {
 	@Override
 	public InputStream getAboutHTML() {
 		return ClassLoader.getSystemResourceAsStream("i18n/splittermond/unreich.html");
+	}
+
+	//-------------------------------------------------------------------
+	@Override
+	public List<String> getLanguages() {
+		return Arrays.asList(Locale.GERMAN.getLanguage());
 	}
 
 }

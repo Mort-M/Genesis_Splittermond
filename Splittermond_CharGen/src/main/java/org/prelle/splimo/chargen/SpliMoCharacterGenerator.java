@@ -11,7 +11,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -610,14 +609,27 @@ public class SpliMoCharacterGenerator implements CharacterController {
 			logger.trace("  race   "+selectedRace);
 			logger.trace("  cult   "+selectedCulture);
 			logger.trace("  back   "+backgrounds.getSelected());
-			logger.trace("  educ   "+educations.getSelected());
+//			logger.trace("  educ   "+educations.getSelected());
 			logger.trace("  splint "+model.getSplinter());
 			logger.trace("  attr   "+attributes.getPointsLeft());
 			logger.trace("  power  "+powers.getPointsLeft());
 			logger.trace("  resrc  "+resources.getPointsLeft());
 			logger.trace("  skill  "+skills.getPointsLeft());
 		} 
-		boolean result = Optional.ofNullable(model.getName()).filter(n -> !n.isEmpty()).isPresent() 
+		
+		if (model.getName()==null) logger.debug("model.getName() = null");
+		else if (model.getName().length()==0) logger.debug("model.getName().length = 0");
+		if (selectedRace==null) logger.debug("selectedRace = null");
+		if (selectedCulture==null) logger.debug("selectedCulture = null");
+		if (backgrounds.getSelected()==null) logger.debug("backgrounds = null");
+//		if (educations.getSelected()==null) logger.debug("educations = null");
+		if (model.getSplinter()==null) logger.debug("splinter = null");
+		if (attributes.getPointsLeft()>0) logger.debug("attributes.getPointsLeft() > 0");
+		if (powers.getPointsLeft()>0) logger.debug("powers.getPointsLeft() > 0");
+		if (resources.getPointsLeft()>0) logger.debug("resources.getPointsLeft() > 0");
+		if (skills.getPointsLeft()>0) logger.debug("skills.getPointsLeft() > 0");
+		
+		boolean result = (model.getName()!=null && model.getName().length()>0) 
 				&& selectedRace!=null 
 				&& selectedCulture!=null
 				&& backgrounds.getSelected()!=null
@@ -627,7 +639,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 				&& resources.getPointsLeft()==0
 				&& skills.getPointsLeft()==0
 				; 
-		logger.debug("has enough data returns "+result);
+		logger.warn("has enough data returns "+result);
 		return result;
 				
 	}
@@ -642,6 +654,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 				&& selectedCulture!=null
 				&& backgrounds.getSelected()!=null
 				&& model.getSplinter()!=null
+				&& (model.getName()!=null && model.getName().length()>0) 
 				;
 	}
 
@@ -997,6 +1010,15 @@ public class SpliMoCharacterGenerator implements CharacterController {
 		ret.addAll(languages.getToDos());
 		ret.addAll(spells2.getToDos());
 		return ret;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.splimo.charctrl.CharacterController#getModel()
+	 */
+	@Override
+	public SpliMoCharacter getModel() {
+		return model;
 	}
 
 }

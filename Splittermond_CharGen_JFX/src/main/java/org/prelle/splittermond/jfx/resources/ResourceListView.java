@@ -56,7 +56,7 @@ public class ResourceListView extends ListView<Resource> {
 		Label ph = new Label(UI.getString("placeholder.resources.available"));
 		ph.setWrapText(true);
         setPlaceholder(ph);
-        setStyle("-fx-pref-width: 15em; -fx-background-color: transparent; -fx-border-width: 1px; -fx-border-color: black;");
+        setStyle("-fx-min-width: 10em; -fx-pref-width: 15em; -fx-background-color: transparent; -fx-border-width: 1px; -fx-border-color: black;");
  	}
 
 	//-------------------------------------------------------------------

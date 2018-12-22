@@ -44,7 +44,8 @@ public class ResourceGeneratorTest {
 
 	//-------------------------------------------------------------------
 	static {
-		PropertyConfigurator.configure("log4j.properties");
+		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
+		SplitterMondCore.initialize(new SplittermondRules());
 		nonBaseResource1 = SplitterMondCore.getResource("relic");
 		nonBaseResource2 = SplitterMondCore.getResource("mentor");
 		resource2 = SplitterMondCore.getResource("reputation");

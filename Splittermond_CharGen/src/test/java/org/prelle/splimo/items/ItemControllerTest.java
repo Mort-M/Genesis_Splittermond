@@ -19,6 +19,7 @@ import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
+import org.prelle.rpgframework.splittermond.msk.MondstahlklingenPlugin;
 import org.prelle.splimo.Resource;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SplitterMondCore;
@@ -57,8 +58,9 @@ public class ItemControllerTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		RELICSONLY = new Enhancement("reliconly", 2, null, EnhancementType.RELIC);
-		PropertyConfigurator.configure("log4j.properties");
+		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		SplitterMondCore.initialize(new SplittermondRules());
+		(new MondstahlklingenPlugin()).init();
 		SplitterMondCore.addEnhancement(RELICSONLY);
 
 		DAGGER  = SplitterMondCore.getItem("dagger");

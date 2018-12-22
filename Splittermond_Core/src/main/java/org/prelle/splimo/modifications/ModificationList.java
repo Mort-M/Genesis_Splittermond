@@ -46,6 +46,7 @@ import de.rpgframework.genericrpg.modification.Modification;
     @ElementList(entry="itemfeaturemod", type=ItemFeatureModification.class),
     @ElementList(entry="featuremod", type=FeatureModification.class),
     @ElementList(entry="moneymod", type=MoneyModification.class),
+    @ElementList(entry="limitmod", type=LimitModification.class),
 //    @ElementList(entry="subselmod", type=SubModificationChoice.class),
  })
 public class ModificationList extends ArrayList<Modification> {

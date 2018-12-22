@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 
 import org.apache.log4j.Logger;
 import org.prelle.javafx.ScreenManager;
@@ -36,12 +37,11 @@ import de.rpgframework.core.RoleplayingSystem;
  */
 public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, CommandBusListener {
 	
-	private final static Logger logger = Logger.getLogger("splittermond");
+	private final static Logger logger = Logger.getLogger("splittermond.jfx");
 	
 	private final static String CSS = "css/splittermond.css";
 
 	private static List<RulePluginFeatures> FEATURES = new ArrayList<RulePluginFeatures>();
-	private static ConfigOption<Boolean>    developerMode;
 	private static ConfigOption<Double>     hgFactor;
 	
 	//-------------------------------------------------------------------
@@ -116,7 +116,6 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	public void attachConfigurationTree(ConfigContainer addBelow) {
 		logger.debug("attach");
 		ConfigContainer splittermond = (ConfigContainer)addBelow.getChild("splittermond");
-		developerMode= (ConfigOption<Boolean>) splittermond.getChild(SplittermondRules.PROP_DEVELOPER_MODE);
 		hgFactor     = (ConfigOption<Double> ) splittermond.getChild(SplittermondRules.PROP_EXPERIENCE_FACTOR);
 //		System.exit(0);
 	}
@@ -169,7 +168,8 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 		ScreenManager manager;
 		CharacterController control;
 		SpliMoCharacter model;
-		CharacterViewScreenSpliMo screen;
+//		CharacterViewScreenSpliMo screen;
+		SplittermondCharGenView screen;
 		switch (type) {
 		case SHOW_CHARACTER_MODIFICATION_GUI:
 			logger.debug("start character modification");
@@ -177,7 +177,8 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 			control = new CharacterLeveller(model, hgFactor);
 			CharacterHandle handle = (CharacterHandle)values[2];			
 			manager = (ScreenManager)values[4];
-			screen = new CharacterViewScreenSpliMo(control, ViewMode.MODIFICATION);
+			screen = new SplittermondCharGenView(control, manager, handle);
+//			screen = new CharacterViewScreenSpliMo(control, ViewMode.MODIFICATION);
 //			OldCharacterViewScreen screen = new OldCharacterViewScreen((CharacterLeveller) control, ViewMode.MODIFICATION);
 			screen.setData(model, handle);
 			manager.show(screen, CSS);
@@ -192,7 +193,8 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 			control = new SpliMoCharacterGenerator(model);
 			manager = (ScreenManager)values[2];
 			
-			screen = new CharacterViewScreenSpliMo(control, ViewMode.GENERATION);
+			screen = new SplittermondCharGenView(control, manager, null);
+//			screen = new CharacterViewScreenSpliMo(control, ViewMode.GENERATION);
 //			screen = new OldCharacterViewScreen((CharacterLeveller) control, ViewMode.MODIFICATION);
 			manager.show(screen, CSS);
 			screen.startGeneration(model);
@@ -230,6 +232,12 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	@Override
 	public InputStream getAboutHTML() {
 		return ClassLoader.getSystemResourceAsStream("i18n/splittermond-chargen.html");
+	}
+
+	//-------------------------------------------------------------------
+	@Override
+	public List<String> getLanguages() {
+		return Arrays.asList(Locale.GERMAN.getLanguage());
 	}
 
 }

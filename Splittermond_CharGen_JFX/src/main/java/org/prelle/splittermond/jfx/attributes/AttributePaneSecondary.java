@@ -9,6 +9,8 @@ import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
 import org.apache.log4j.Logger;
+import org.prelle.javafx.ResponsiveControl;
+import org.prelle.javafx.WindowMode;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.SpliMoCharGenJFXUtil;
@@ -18,44 +20,26 @@ import org.prelle.splimo.charctrl.AttributeController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
-import javafx.scene.control.Button;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 
 /**
  * @author prelle
  *
  */
-public class AttributePaneSecondary extends GridPane implements GenerationEventListener {
+public class AttributePaneSecondary extends GridPane implements GenerationEventListener, ResponsiveControl {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
-	
-	class AttributeField extends HBox {
-		private Button dec, inc;
-		private TextField value;
-		
-		public AttributeField() {
-			dec  = new Button("<");
-			inc  = new Button(">");
-			value = new TextField();
-			value.setPrefColumnCount(1);
-			this.getChildren().addAll(dec, value, inc);
-		}
-		public void setText(String val) {
-			this.value.setText(val);
-		}
-	}
+	private static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private AttributeController control;
 	private SpliMoCharacter     model;
@@ -157,6 +141,7 @@ public class AttributePaneSecondary extends GridPane implements GenerationEventL
 			y++;
 			Label longName  = new Label(attr.getName());
 			Label shortName = new Label(attr.getShortName());
+			shortName.setId("short");
 			Label modVal    = modification.get(attr);
 			Label eqModVal  = eqModification.get(attr);
 			Label points    = derived.get(attr);
@@ -295,6 +280,26 @@ public class AttributePaneSecondary extends GridPane implements GenerationEventL
 		
 		GenerationEventDispatcher.removeListener(this);	
 		GenerationEventDispatcher.addListener(this);	
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.ResponsiveControl#setResponsiveMode(org.prelle.javafx.WindowMode)
+	 */
+	@Override
+	public void setResponsiveMode(WindowMode value) {
+		headDMod.setVisible(value==WindowMode.EXPANDED);
+		headDMod.setManaged(value==WindowMode.EXPANDED);
+		for (Node node : getChildren()) {
+			if (modification.values().contains(node)) {
+				node.setVisible(value==WindowMode.EXPANDED);
+				node.setManaged(value==WindowMode.EXPANDED);
+			}
+			if (node.getId()!=null && node.getId().equals("short")) {
+				node.setVisible(value==WindowMode.EXPANDED);
+				node.setManaged(value==WindowMode.EXPANDED);
+			}
+		}
 	}
 
 }

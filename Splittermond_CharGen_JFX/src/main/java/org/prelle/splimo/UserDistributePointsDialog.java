@@ -14,7 +14,6 @@ import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.skin.ManagedScreenDialogSkin;
-import org.prelle.splimo.chargen.lvl.jfx.SkillField;
 import org.prelle.splimo.modifications.ModificationChoice;
 import org.prelle.splimo.modifications.ResourceModification;
 import org.prelle.splimo.modifications.SkillModification;

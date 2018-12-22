@@ -344,4 +344,13 @@ public class CharacterLeveller implements CharacterController, GenerationEventLi
 		return ret;
 	}
 
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.splimo.charctrl.CharacterController#getModel()
+	 */
+	@Override
+	public SpliMoCharacter getModel() {
+		return data;
+	}
+
 }

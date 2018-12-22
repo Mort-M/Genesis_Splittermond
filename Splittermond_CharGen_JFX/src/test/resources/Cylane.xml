@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<splimochar bground="sailor" culture="albseebund" edu="warlock" expfree="201" expinv="549" race="alben" splinter="MOONPOWER">
+   <name>Cylane</name>
+   <culturelores>
+      <cultloreref ref="albseebund"/>
+      <cultloreref ref="daemmeralb"/>
+   </culturelores>
+   <languages>
+      <languageref ref="basargnomisch"/>
+      <languageref ref="vintial"/>
+      <languageref ref="antial"/>
+   </languages>
+   <powerrefs>
+      <powerref count="1" ref="attractive"/>
+      <powerref count="1" ref="goodhearing"/>
+      <powerref count="1" ref="lowlight"/>
+      <powerref count="1" ref="sensebalance"/>
+      <powerref count="1" ref="sensefairy"/>
+      <!--powerref count="1" ref="childnature"/-->
+      <powerref count="1" ref="resistsick"/>
+      <powerref count="1" ref="goodsight"/>
+   </powerrefs>
+   <resourcerefs>
+      <resourceref description="unbeschriebenes Blatt" ref="reputation"/>
+      <resourceref description="seealbische Bürgerin" ref="status"/>
+      <resourceref description="eine Handvoll Freunse" ref="contacts"/>
+      <resourceref description="einfach" ref="wealth"/>
+      <resourceref description="Ilyra von Karing" ref="mentor" val="3"/>
+      <resourceref description="Ganzkörpertätowierung" idRef="6f3eadd4-7f53-4f07-b59f-af8416abb488" ref="relic" val="5"/>
+   </resourcerefs>
+   <attributes>
+      <attr id="CHARISMA" start="3" value="5"/>
+      <attr id="AGILITY" start="3" value="5"/>
+      <attr id="INTUITION" start="3" value="5"/>
+      <attr id="CONSTITUTION" start="2" value="5"/>
+      <attr id="MYSTIC" start="4" value="7"/>
+      <attr id="STRENGTH" start="1" value="1"/>
+      <attr id="MIND" start="2" value="3"/>
+      <attr id="WILLPOWER" start="2" value="4"/>
+   </attributes>
+   <skillvals>
+      <skillval skill="melee" val="6">
+         <masterref free="1" ref="melee/block"/>
+      </skillval>
+      <skillval skill="slashing"/>
+      <skillval skill="chains"/>
+      <skillval skill="blades"/>
+      <skillval skill="longrange"/>
+      <skillval skill="staffs"/>
+      <skillval skill="throwing"/>
+      <skillval skill="acrobatics" val="6">
+         <masterref free="1" ref="acrobatics/evade1"/>
+      </skillval>
+      <skillval skill="alchemy" val="6">
+         <masterref free="1" ref="alchemy/journeyman"/>
+      </skillval>
+      <skillval skill="leadership"/>
+      <skillval skill="arcanelore" val="6">
+         <masterref free="1" ref="arcanelore/arcanedefense1"/>
+      </skillval>
+      <skillval skill="athletics"/>
+      <skillval skill="performance" val="4"/>
+      <skillval skill="diplomacy"/>
+      <skillval skill="clscraft"/>
+      <skillval skill="empathy" val="6">
+         <masterref free="1" ref="empathy/calm"/>
+      </skillval>
+      <skillval skill="determination" val="6">
+         <masterref free="1" ref="determination/keepcool1"/>
+      </skillval>
+      <skillval skill="dexterity"/>
+      <skillval skill="history"/>
+      <skillval skill="craftmanship"/>
+      <skillval skill="heal" val="12">
+         <masterref free="1" ref="heal/fielddignostics"/>
+         <masterref free="2" ref="heal/vetinary"/>
+         <masterref free="3" ref="heal/creaturespecialist"/>
+      </skillval>
+      <skillval skill="stealth"/>
+      <skillval skill="hunting"/>
+      <skillval skill="countrylore"/>
+      <skillval skill="nature" val="12">
+         <masterref free="1" spec="nature/herbsearch/1"/>
+         <masterref free="1" ref="nature/conservation"/>
+         <masterref free="2" ref="nature/fastforager"/>
+         <masterref free="3" ref="nature/herbhag"/>
+      </skillval>
+      <skillval skill="eloquence" val="12">
+         <masterref free="1" spec="eloquence/lieanddeceive/1"/>
+         <masterref free="2" ref="eloquence/talentedlier"/>
+         <masterref free="3" ref="eloquence/wouldilietoyou"/>
+      </skillval>
+      <skillval skill="locksntraps"/>
+      <skillval skill="swim"/>
+      <skillval skill="seafaring"/>
+      <skillval skill="streetlore"/>
+      <skillval skill="animals"/>
+      <skillval skill="survival" val="6">
+         <masterref free="1" ref="survival/terrainlore_jungle"/>
+      </skillval>
+      <skillval skill="perception" val="6">
+         <masterref free="1" ref="perception/surroundingsenses_jungle"/>
+      </skillval>
+      <skillval skill="endurance" val="6">
+         <masterref free="1" spec="endurance/drinking/1"/>
+      </skillval>
+      <skillval skill="antimagic"/>
+      <skillval skill="controlmagic"/>
+      <skillval skill="motionmagic"/>
+      <skillval skill="insightmagic"/>
+      <skillval skill="stonemagic"/>
+      <skillval skill="firemagic"/>
+      <skillval skill="healmagic" val="12">
+         <masterref free="1" ref="healmagic/savingcaster"/>
+         <masterref free="2" ref="healmagic/enforcehealing"/>
+         <masterref ref="healmagic/arcanediagnosis"/>
+         <masterref free="3" ref="healmagic/corporesana"/>
+      </skillval>
+      <skillval skill="illusionmagic"/>
+      <skillval skill="combatmagic"/>
+      <skillval skill="lightmagic"/>
+      <skillval skill="naturemagic"/>
+      <skillval skill="shadowmagic"/>
+      <skillval skill="fatemagic" val="9">
+         <masterref free="1" ref="fatemagic/focuscontrol"/>
+         <masterref free="1" ref="fatemagic/castershand"/>
+         <masterref free="2" ref="fatemagic/nothinghappend"/>
+      </skillval>
+      <skillval skill="protectionmagic"/>
+      <skillval skill="enhancemagic"/>
+      <skillval skill="deathmagic"/>
+      <skillval skill="transformationmagic" val="12">
+         <masterref free="1" ref="transformationmagic/favoredform"/>
+         <masterref free="1" ref="transformationmagic/freedomofform"/>
+         <masterref free="2" ref="transformationmagic/animalskin"/>
+      </skillval>
+      <skillval skill="watermagic"/>
+      <skillval skill="windmagic"/>
+   </skillvals>
+   <spellvals>
+      <spellval school="healmagic" spell="refresh"/>
+      <spellval free="1" school="healmagic" spell="dontgoyet"/>
+      <spellval free="2" school="healmagic" spell="minorhealing"/>
+      <spellval school="fatemagic" spell="fortune"/>
+      <!--spellval free="1" school="fatemagic" spell="animal_scout"/-->
+      <spellval school="transformationmagic" spell="claws"/>
+      <spellval free="1" school="transformationmagic" spell="barkskin"/>
+      <spellval free="2" school="transformationmagic" spell="smallanimalshape"/>
+      <spellval free="2" school="fatemagic" spell="curseofpain"/>
+      <spellval free="-1" school="transformationmagic" spell="cateyes"/>
+      <spellval free="3" school="healmagic" spell="antidote"/>
+      <spellval free="3" school="transformationmagic" spell="birdshape"/>
+      <spellval free="-1" school="transformationmagic" spell="animalshape"/>
+   </spellvals>
+   <hairColor>weißblond</hairColor>
+   <eyeColor>grün</eyeColor>
+   <furColor>sehr hell</furColor>
+   <birthPlace>Albensee</birthPlace>
+   <size>185</size>
+   <weight>71</weight>
+   <gender>FEMALE</gender>
+   <carries>
+      <item count="1" location="SOMEWHEREELSE" ref="decke" uniqueid="8a79c607-b6c8-4f3f-abc3-9f5267db1d63"/>
+      <item count="1" location="SOMEWHEREELSE" ref="essgeschirr" uniqueid="8e1d40c8-8d3a-454b-b0e9-662e803ce4f9"/>
+      <item count="1" location="SOMEWHEREELSE" ref="feuersteinstahlundzunder" uniqueid="df1622c3-31e9-4b5c-a4a6-bef2e62cbd86"/>
+      <item count="5" location="SOMEWHEREELSE" ref="fackel" uniqueid="47d65cae-c643-4376-a659-162d94da3f5a"/>
+      <item count="3" location="SOMEWHEREELSE" ref="marschrationprotag" uniqueid="e37a6e49-fa86-45b1-bb42-67749649d396"/>
+   </carries>
+   <history>
+      <attrmod attr="AGILITY" date="2018-06-07T19:00:22.174+02:00" expCost="10" type="abs" val="4"/>
+      <attrmod attr="INTUITION" date="2018-06-07T19:00:22.174+02:00" expCost="10" type="abs" val="4"/>
+      <attrmod attr="CONSTITUTION" date="2018-06-07T19:00:22.174+02:00" expCost="10" type="abs" val="3"/>
+      <attrmod attr="MYSTIC" date="2018-06-07T19:00:22.174+02:00" expCost="10" type="abs" val="5"/>
+      <attrmod attr="WILLPOWER" date="2018-06-07T19:00:22.174+02:00" expCost="10" type="abs" val="3"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="arcanelore" type="abs" value="6"/>
+      <mastermod date="2018-06-07T19:00:22.174+02:00" ref="arcanelore/arcanedefense1" skill="arcanelore"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="performance" type="abs" value="2"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="performance" type="abs" value="3"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="performance" type="abs" value="4"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="endurance" type="abs" value="2"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="endurance" type="abs" value="3"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="endurance" type="abs" value="4"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="survival" type="abs" value="6"/>
+      <mastermod date="2018-06-07T19:00:22.174+02:00" ref="survival/terrainlore_jungle" skill="survival"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="perception" type="abs" value="4"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="perception" type="abs" value="5"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="perception" type="abs" value="6"/>
+      <mastermod date="2018-06-07T19:00:22.174+02:00" ref="perception/surroundingsenses_jungle" skill="perception"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="eloquence" type="abs" value="1"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="eloquence" type="abs" value="2"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="eloquence" type="abs" value="3"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="eloquence" type="abs" value="4"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="eloquence" type="abs" value="5"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="eloquence" type="abs" value="6"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="endurance" type="abs" value="5"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="endurance" type="abs" value="6"/>
+      <mastermod date="2018-06-07T19:00:22.174+02:00" skill="endurance" spec="endurance/drinking/1"/>
+      <mastermod date="2018-06-07T19:00:22.174+02:00" skill="eloquence" spec="eloquence/lieanddeceive/1"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="empathy" type="abs" value="4"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="alchemy" type="abs" value="6"/>
+      <mastermod date="2018-06-07T19:00:22.174+02:00" ref="alchemy/journeyman" skill="alchemy"/>
+      <attrmod attr="MYSTIC" date="2018-06-07T19:00:22.174+02:00" expCost="15" type="abs" val="6"/>
+      <attrmod attr="INTUITION" date="2018-06-07T19:00:22.174+02:00" expCost="15" type="abs" val="5"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="fatemagic" type="abs" value="5"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="fatemagic" type="abs" value="6"/>
+      <mastermod date="2018-06-07T19:00:22.174+02:00" ref="fatemagic/castershand" skill="fatemagic"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="melee" type="abs" value="4"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="melee" type="abs" value="5"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="melee" type="abs" value="6"/>
+      <mastermod date="2018-06-07T19:00:22.174+02:00" ref="melee/block" skill="melee"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="5" ref="eloquence" type="abs" value="7"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="5" ref="eloquence" type="abs" value="8"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="5" ref="eloquence" type="abs" value="9"/>
+      <mastermod date="2018-06-07T19:00:22.174+02:00" ref="eloquence/talentedlier" skill="eloquence"/>
+      <spellmod date="2018-06-07T19:00:22.174+02:00">
+         <spell free="2" school="fatemagic" spell="curseofpain"/>
+      </spellmod>
+      <spellmod date="2018-06-07T19:00:22.174+02:00" expCost="6">
+         <spell free="-1" school="transformationmagic" spell="cateyes"/>
+      </spellmod>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="5" ref="heal" type="abs" value="7"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="5" ref="nature" type="abs" value="7"/>
+      <skillmod date="2018-06-07T19:00:22.174+02:00" expCost="3" ref="empathy" type="abs" value="5"/>
+      <languagemod date="2018-06-07T19:01:20.724+02:00" expCost="5" ref="antial"/>
+      <cultureloremod date="2018-06-07T19:01:20.724+02:00" expCost="7" ref="daemmeralb"/>
+      <attrmod attr="CHARISMA" date="2018-06-07T19:36:41.639+02:00" expCost="10" type="abs" val="4"/>
+      <attrmod attr="CONSTITUTION" date="2018-06-07T19:36:41.639+02:00" expCost="15" type="abs" val="4"/>
+      <attrmod attr="MIND" date="2018-06-07T19:36:41.639+02:00" expCost="10" type="abs" val="3"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="5" ref="heal" type="abs" value="8"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="5" ref="heal" type="abs" value="9"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="3" ref="empathy" type="abs" value="6"/>
+      <mastermod date="2018-06-07T19:36:41.639+02:00" ref="empathy/calm" skill="empathy"/>
+      <mastermod date="2018-06-07T19:36:41.639+02:00" ref="heal/vetinary" skill="heal"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="5" ref="nature" type="abs" value="8"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="5" ref="nature" type="abs" value="9"/>
+      <mastermod date="2018-06-07T19:36:41.639+02:00" ref="nature/fastforager" skill="nature"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="3" ref="acrobatics" type="abs" value="1"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="3" ref="acrobatics" type="abs" value="2"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="3" ref="acrobatics" type="abs" value="3"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="3" ref="acrobatics" type="abs" value="4"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="3" ref="acrobatics" type="abs" value="5"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="3" ref="acrobatics" type="abs" value="6"/>
+      <mastermod date="2018-06-07T19:36:41.639+02:00" ref="acrobatics/evade1" skill="acrobatics"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="3" ref="determination" type="abs" value="2"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="3" ref="determination" type="abs" value="3"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="5" ref="healmagic" type="abs" value="7"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="5" ref="healmagic" type="abs" value="8"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="5" ref="healmagic" type="abs" value="9"/>
+      <mastermod date="2018-06-07T19:36:41.639+02:00" ref="healmagic/enforcehealing" skill="healmagic"/>
+      <mastermod date="2018-06-07T19:36:41.639+02:00" expCost="10" ref="healmagic/arcanediagnosis" skill="healmagic"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="5" ref="transformationmagic" type="abs" value="7"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="5" ref="transformationmagic" type="abs" value="8"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="5" ref="transformationmagic" type="abs" value="9"/>
+      <spellmod date="2018-06-07T19:36:41.639+02:00">
+         <spell free="3" school="healmagic" spell="antidote"/>
+      </spellmod>
+      <spellmod date="2018-06-07T19:36:41.639+02:00">
+         <spell free="3" school="transformationmagic" spell="birdshape"/>
+      </spellmod>
+      <spellmod date="2018-06-07T19:36:41.639+02:00" expCost="9">
+         <spell free="-1" school="transformationmagic" spell="animalshape"/>
+      </spellmod>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="3" ref="determination" type="abs" value="4"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="3" ref="determination" type="abs" value="5"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="3" ref="determination" type="abs" value="6"/>
+      <mastermod date="2018-06-07T19:36:41.639+02:00" ref="determination/keepcool1" skill="determination"/>
+      <skillmod date="2018-06-07T19:36:41.639+02:00" expCost="5" ref="fatemagic" type="abs" value="7"/>
+      <mastermod date="2018-06-07T19:40:03.236+02:00" ref="transformationmagic/animalskin" skill="transformationmagic"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="5" ref="fatemagic" type="abs" value="8"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="5" ref="fatemagic" type="abs" value="9"/>
+      <mastermod date="2018-06-07T19:40:03.236+02:00" ref="fatemagic/nothinghappend" skill="fatemagic"/>
+      <attrmod attr="AGILITY" date="2018-06-07T19:40:03.236+02:00" expCost="15" type="abs" val="5"/>
+      <attrmod attr="CONSTITUTION" date="2018-06-07T19:40:03.236+02:00" expCost="20" type="abs" val="5"/>
+      <attrmod attr="MYSTIC" date="2018-06-07T19:40:03.236+02:00" expCost="20" type="abs" val="7"/>
+      <attrmod attr="WILLPOWER" date="2018-06-07T19:40:03.236+02:00" expCost="15" type="abs" val="4"/>
+      <attrmod attr="CHARISMA" date="2018-06-07T19:40:03.236+02:00" expCost="15" type="abs" val="5"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="heal" type="abs" value="10"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="heal" type="abs" value="11"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="heal" type="abs" value="12"/>
+      <mastermod date="2018-06-07T19:40:03.236+02:00" ref="heal/creaturespecialist" skill="heal"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="nature" type="abs" value="10"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="nature" type="abs" value="11"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="nature" type="abs" value="12"/>
+      <mastermod date="2018-06-07T19:40:03.236+02:00" ref="nature/herbhag" skill="nature"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="eloquence" type="abs" value="10"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="eloquence" type="abs" value="11"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="eloquence" type="abs" value="12"/>
+      <mastermod date="2018-06-07T19:40:03.236+02:00" ref="eloquence/wouldilietoyou" skill="eloquence"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="transformationmagic" type="abs" value="10"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="transformationmagic" type="abs" value="11"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="transformationmagic" type="abs" value="12"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="healmagic" type="abs" value="10"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="healmagic" type="abs" value="11"/>
+      <skillmod date="2018-06-07T19:40:03.236+02:00" expCost="7" ref="healmagic" type="abs" value="12"/>
+      <mastermod date="2018-06-07T19:40:03.236+02:00" ref="healmagic/corporesana" skill="healmagic"/>
+   </history>
+   <rewards>
+      <reward date="2018-06-07T18:38:49.318+02:00" exp="15">
+         <title>Erschaffung</title>
+      </reward>
+      <reward date="2018-06-07T18:52:44.000+02:00" exp="735">
+         <title>Testbuild</title>
+      </reward>
+   </rewards>
+</splimochar>

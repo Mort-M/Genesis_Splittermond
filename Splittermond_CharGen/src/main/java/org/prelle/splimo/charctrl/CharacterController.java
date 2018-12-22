@@ -3,6 +3,7 @@
  */
 package org.prelle.splimo.charctrl;
 
+import org.prelle.splimo.SpliMoCharacter;
 
 /**
  * Common interface for creating and leveling a character
@@ -11,6 +12,9 @@ package org.prelle.splimo.charctrl;
  *
  */
 public interface CharacterController extends Controller {
+	
+	//-------------------------------------------------------------------
+	public SpliMoCharacter getModel();
 	
 	//-------------------------------------------------------------------
 	public AttributeController getAttributeController();

@@ -85,8 +85,8 @@ public enum SpellType {
 	WEAKEN,
 	WEAPON,
 	WILDERNESS,
-	WATER_CREATURE,
 	WIND_CREATURE,
+	WATER_CREATURE,
 	;
 	
 	public String getName() {

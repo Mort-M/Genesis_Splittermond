@@ -5,126 +5,175 @@
     lighter: derive(rgb(155, 209, 245), +25%);
     light: derive(rgb(155, 209, 245), +50%);
    -fx-background-color: transparent;
-   background: rgb(155, 209, 245); 
-   areacolor-action : derive( background, -50%); 
+   -fx-background: rgb(155, 209, 245); 
+   background: -fx-base; 
+   textcolor-highlight-primary  : rgba(255,0,0, 1);
+   textcolor-stopper: red;
+   textcolor-warning: orange;
 }
 
-.navigation-area {
-  -fx-background-image: url("../data/Splittermond_hochkant.png");
-  -fx-background-position: bottom center;
-  -fx-background-insets: 30 30 30px 30;
-  -fx-min-width: 120px;
+/*******************************
+ * Generic changes
+ *******************************/
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
 }
-.action-area {
-	-fx-text-fill: light;
-}
-.action-area .font-icon-text {
-	-fx-fill: light;
+.scroll-pane {
+	-fx-background-color: transparent;
 }
 
-.page {
+.list-cell {
+  -fx-background-color: transparent;
+}
+
+.list-cell:selected {
+    -fx-background-color: dark;
+    -fx-text-fill: light;
+}
+.list-cell:hover {
+    -fx-background-color: darker;
+    -fx-text-fill: light;
+}
+.list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-padding: 0.1em 0.2em 0.1em 0.2em;
+}
+.combo-box-base  {
+    -fx-font-size: 1em; /* 16 */
+}
+.combo-box .list-view {
+  -fx-background-color: -fx-base;
+}
+
+
+/*
+ * Navigation View / ScreenManager
+ */
+
+.navigation-view {
     -fx-background-color: background;
 }
 
-.content {
-    -fx-background-color: light;
+.navigation-view-title {
+    -fx-background-color: background;
 }
  
-.base-block {
-    -fx-background-color: dark;	
+
+/*******************************
+ * Character Document
+ *******************************/
+.character-document-view-grid {
+   -fx-background-color: transparent;
 }
- 
-.base-block .label {
-    -fx-text-fill: light;
-    -fx-min-width: 2em;
-    -fx-pref-width: 3em;
+.character-document-view-scroll {
+   -fx-background-color: transparent;
+}
+.character-document-view-layout {
+   -fx-background-color: transparent;
+   -fx-background-image: url('../images/Tiai3.png');
+   -fx-background-position: right bottom;
+   -fx-background-repeat: no-repeat;
 }
 
-.dialog-outside {
-	-fx-background-color: rgba(0,0,0, 0.8);
-	-fx-opacity: 1;
+.character-document-view-todos {
+  -fx-max-width: 8em;
 }
- 
-.drop-target {
-    -fx-background-insets: 10px 0 0 0;
-	-fx-border-width: 5px 0 0 0;
-	-fx-border-style: solid;
-	-fx-border-color: red;
+.character-document-view-content {
+  -fx-background-color: transparent;
+  -fx-border-width: 0px;
+  -fx-padding: 0.2em;
 }
-
-.chardata-tile {
-	-fx-border-color: dark;
-	-fx-border-width: 2px;
-	-fx-border-style: solid;
+.character-document-view-title {
+  -fx-font-size: 200%;
+  -fx-padding: 0 0.5em 0 0.5em;
 }
-
-/* Used by race dialog */
-.stats-block {
-	-fx-border-style: solid;
-	-fx-border-color: black;
-	-fx-border-width: 1px;
-	-fx-font-family: "Segoe UI Symbol";
-	-fx-padding: 0.2em;
+.character-document-view-description {
+  -fx-background-color: transparent;
+  -fx-padding: 0.2em;
+  -fx-max-width: 20em;
+  -fx-min-width: 15em;
+}
+.character-document-view-description .description-text {
+  -fx-background-color: rgba(155, 209, 245, 0.8);
 }
 
-.section-bar {
-	-fx-background-color: dark;
-	-fx-padding: 0 4 4 4;
-}
-.section-bar .label {
-	-fx-text-fill: lighter;
-}
-.section-bar .radio-button {
-	-fx-text-fill: lighter;
-}
-.section-bar .text {
-	-fx-text-fill: lighter;
-}
-.section-bar .font-icon-text {
-	-fx-fill: lighter;
-}
-.section-head {
-	-fx-text-fill: dark;
-}
-.flip-icon {
-	-fx-text-fill: lighter;
-	-fx-font-family: "Segoe UI Symbol";
-	-fx-padding: 8;
-	-fx-effect: dropshadow( one-pass-box , black , 10 , 0.7 , 0 , 0 );
+.character-document-view > .settings-and-commandbar {
+    -fx-background-color: transparent;
+    -fx-border-style: none none solid none;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: dark;
+    -fx-padding: 0 0.5em 0 0.5em;
 }
 
-.toggle-button {
-	-fx-background-color: transparent;
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
-    -fx-border-color: transparent, darker;
-    -fx-border-insets: 0,1;
-    -fx-border-width: 1,1
-}
-.toggle-button:selected {
-	-fx-background-color: dark;
-	-fx-text-fill: light;
-}
-.toggle-button:hover {
-    -fx-border-color: blue,darker;
-}
-.toggle-button:focused {
-    -fx-color: darker;
-    -fx-background-color: -fx-focus-color, -fx-body-color;
-    -fx-background-insets: 0;
-    -fx-background-radius: 0;
-}
-.emphasized {
-	-fx-text-fill: red;
+.character-document-view > .settings-and-commandbar .label {
+    -fx-font-size: 120%;
 }
 
-/*
+.free-points {
+  -fx-background-color: #4e9a06;
+}
+
+.free-points .points {
+  -fx-font-size: 150%;
+  -fx-font-weight: bold;
+  -fx-text-fill: white;
+}
+
+.free-points .name {
+  -fx-text-fill: white;
+  -fx-padding: 0.1em;
+}
+
+.skill-screen-normal {
+   -fx-background-color: background;
+   -fx-background-image: url('../images/BG_SkillsNormal.png');
+   -fx-background-position: right bottom;
+   -fx-background-repeat: no-repeat;
+}
+
+.skill-screen-combat {
+   -fx-background-color: background;
+   -fx-background-image: url('../images/BG_SkillsCombat.png');
+   -fx-background-position: right bottom;
+   -fx-background-repeat: no-repeat;
+}
+
+.skill-screen-magic {
+   -fx-background-color: background;
+   -fx-background-image: url('../images/BG_SkillsMagic.png');
+   -fx-background-position: right bottom;
+   -fx-background-repeat: no-repeat;
+}
+
+.spell-screen {
+   -fx-background-color: background;
+   -fx-background-image: url('../images/BG_Spells.png');
+   -fx-background-position: right bottom;
+   -fx-background-repeat: no-repeat;
+}
+
+.equipment-screen {
+   -fx-background-color: background;
+   -fx-background-image: url('../images/BG_Equipment.png');
+   -fx-background-position: right bottom;
+   -fx-background-repeat: no-repeat;
+}
+
+.resource-screen {
+   -fx-background-color: background;
+   -fx-background-image: url('../images/BG_SkillsCombat.png');
+   -fx-background-position: right bottom;
+   -fx-background-repeat: no-repeat;
+}
+
+
+/*******************************
  * Tables
- */
+ *******************************/
 .table-head {
 	-fx-background-color: dark;
   	-fx-text-fill: light;
-	-fx-padding: 2px;
+  	-fx-font-weight: bold;
+	-fx-padding: 0.2em;
 }
 .table .label {
 	-fx-padding: 2px;
@@ -146,82 +195,9 @@
 	-fx-border-width: 0 2 0 2;
 }
 
-
-/*
- * Some common styles
- */
-.bordered {
-	-fx-border-style: solid;
-	-fx-border-color: black;
-	-fx-border-width: 1px;
-}
-.invalid-data {
-	-fx-border-style: solid;
-	-fx-border-color: red;
-	-fx-border-width: 2px;
-}
-.list-view .bordered {
-	-fx-border-style: solid;
-	-fx-border-color: black;
-	-fx-border-width: 1px;
-	-fx-padding: 0px;
-}
- 
-.border-bottom {
-	-fx-border-color: dark;
-	-fx-border-width: 0 0 2 0;
-}
-
-.border-left {
-	-fx-border-color: dark;
-	-fx-border-width: 0 0 0 2;
-}
-
-.border-right {
-	-fx-border-color: dark;
-	-fx-border-width: 0 2 0 0;
-}
-
-.border-bottom-left {
-	-fx-border-color: dark;
-	-fx-border-width: 0 0 2 2;
-}
-
-.border-top {
-	-fx-border-color: dark;
-	-fx-border-width: 2 0 0 0;
-}
-.border-bottom-right {
-	-fx-border-color: dark;
-	-fx-border-width: 0 2 2 0;
-}
-
-.border-all-rightleft {
-	-fx-border-color: dark;
-	-fx-border-width: 1 2 1 2;
-}
-
-.border-all {
-	-fx-border-color: dark;
-	-fx-border-width: 1 1 1 1;
-}
-
-.list-cell {
-  -fx-background-color: transparent;
-}
-
-.list-cell:selected {
-    -fx-background-color: darker;
-    -fx-text-fill: light;
-}
-
-.selectable-list-item {
-  -fx-background-color: white;
-}
-
-.unselectable-list-item {
-  -fx-background-color: lightgrey;
-}
+/****
+ * Selections and highlight
+ ****/
 
 .highlighted {
   -fx-background-color: darker;
@@ -232,88 +208,57 @@
   -fx-text-fill: light;
 }
 
-.selectedcreaturebox  {
-  -fx-background-color: white;
-  -fx-border-color: white;
-  -fx-border-width: 0 0 20 0;
+
+/****
+ * Powers
+ ****/
+.power-list-control {
+	-fx-min-width: 30em;
+}
+.power-reference-cell {
+	-fx-border-width: 2px;
+}
+.weakness-list-control {
+	-fx-pref-width: 25em;
+}
+.weakness-cell {
+	-fx-border-width: 2px;
 }
 
-.combx-box {
-	-fx-background-color: background;
+/****
+ * Culture Lores
+ ****/
+.cultlore-list-control {
+	-fx-fixed-cell-size: 1em;
+}
+.language-list-control {
+	-fx-fixed-cell-size: 1em;
 }
 
-.transparent-textfield {
-	-fx-background-color: transparent;
-	-fx-text-fill: light;
-	-fx-font-size: 120%;
-	-fx-border-color: light;
-	-fx-border-width: 0 0 1 0;
-	-fx-padding: 0px;
-}
 
-.tile-pane {
-	-fx-background-color: transparent;
-}
-
-.scroll-pane {
-	-fx-background-color: transparent;
-}
-
-.tiled-list-view {
-	-fx-background-color: transparent;
-}
-.scroll-pane > .viewport {
-   -fx-background-color: transparent;
-}
-.viewport {
-   -fx-background-color: transparent;
-}
-.tiled-list-cell:selected {
-	-fx-background-color: darker;
-}
-.tiled-list-cell {
-	-fx-background-color: light;
-	-fx-pref-width: 20em;
-	-fx-max-width: 30em;
-}
-
-.tiled-list-cell:hover {
-	-fx-background-color: lighter;
-}
-
-/*******************************************************************************************
- * Tab panes
- *******************************************************************************************/
-.tab-pane .tab-header-area .tab-header-background {
-    -fx-opacity: 0.2;
-    -fx-background-color: darker;
-}
-.tab-pane:top * .tab-header-area {
+/*****************************
+ * Historical
+ *****************************/
+.section-bar {
 	-fx-background-color: dark;
-	-fx-background-insets: 0;
-	-fx-padding: 0.2;
+	-fx-padding: 0 4 4 4;
 }
-.tab-pane *.tab-header-background {
-    -fx-effect: null;
+.section-bar .label {
+	-fx-text-fill: lighter;
 }
-
-
-.tab-pane {
-	-fx-tab-min-width: 1em;
-	-fx-tab-max-width: 60em;
-	-fx-tab-min-height: 1em;
-	-fx-tab-max-height: 60em;
+.section-bar .radio-button {
+	-fx-text-fill: lighter;
 }
-
-.tab {
-	-fx-background-color: transparent;
-	-fx-background-insets: -1;
-	-fx-border-width: 1;
+.section-bar .text {
+	-fx-text-fill: lighter;
 }
-.tab          .tab-label { -fx-alignment:CENTER; -fx-text-fill: textcolor-primary; -fx-font-size: 100%; -fx-font-weight: bold; }
-.tab:selected .tab-label { -fx-text-fill: textcolor-highlight-primary; -fx-padding: 0 1em 0 1em; }
-
-.tab-label {
-	-fx-background-color: transparent;
+.section-bar .font-icon-text {
+	-fx-fill: lighter;
 }
 
+
+.content {
+    -fx-background-color: light;
+}
+
+ 

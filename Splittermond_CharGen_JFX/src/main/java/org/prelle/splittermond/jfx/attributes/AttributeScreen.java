@@ -70,6 +70,7 @@ public class AttributeScreen extends ManagedScreen implements GenerationEventLis
 		initInteractivity();
 		setSkin(new ManagedScreenStructuredSkin(this));
 		GenerationEventDispatcher.addListener(this);
+		setData(control.getModel());
 	}
 
 	//-------------------------------------------------------------------

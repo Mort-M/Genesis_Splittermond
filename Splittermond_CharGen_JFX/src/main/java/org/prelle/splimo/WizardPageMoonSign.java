@@ -23,16 +23,16 @@ public class WizardPageMoonSign extends WizardPage {
 	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
 
 	private SpliMoCharacterGenerator charGen;
-	
+
 	private MoonSignPane content;
-	
+
 	//-------------------------------------------------------------------
 	public WizardPageMoonSign(Wizard wizard, SpliMoCharacterGenerator chGen) {
 		super(wizard);
 		this.charGen = chGen;
-		
+
 		initComponents();
-		
+
 		nextButton.set(false);
 		finishButton.set(false);
 	}
@@ -46,12 +46,12 @@ public class WizardPageMoonSign extends WizardPage {
 		content.selectedProperty().addListener( (ov,o,n) -> {
 			nextButton.set(n!=null);
 			charGen.selectSplinter(n);
-			finishButton.set(true);
+			finishButton.set(getWizard().canBeFinished());
 		});
-		
+
 		setContent(content);
 	}
-	
+
 	//-------------------------------------------------------------------
 	/**
 	 * @see org.prelle.javafx.WizardPage#pageLeft(org.prelle.javafx.CloseType)

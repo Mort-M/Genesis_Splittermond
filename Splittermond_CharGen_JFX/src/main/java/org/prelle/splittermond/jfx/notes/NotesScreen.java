@@ -16,6 +16,7 @@ import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.TextArea;
@@ -29,9 +30,9 @@ import javafx.scene.layout.Priority;
 public class NotesScreen extends ManagedScreen implements
 		GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("ubiquity.jfx");
+	private static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ubiquity/chargenui");
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private CharacterController control;
 
@@ -43,12 +44,14 @@ public class NotesScreen extends ManagedScreen implements
 	 */
 	public NotesScreen(CharacterController control) {
 		this.control = control;
+		model = control.getModel();
 		
 		initComponents();
 		initLayout();
 		initInteractivity();
 		setSkin(new ManagedScreenStructuredSkin(this));
 		GenerationEventDispatcher.addListener(this);
+		tfNotes.setText(model.getNotes());
  	}
 
 	//-------------------------------------------------------------------

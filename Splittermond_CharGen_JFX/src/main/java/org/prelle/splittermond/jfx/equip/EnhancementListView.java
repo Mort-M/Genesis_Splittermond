@@ -166,7 +166,7 @@ class EnhancementListCell extends ListCell<Enhancement> {
 		layout.getStyleClass().add("content");
 		HBox.setMargin(cost, new Insets(0,5,0,5));
 		
-		name.getStyleClass().add("text-small-subheader");
+		name.getStyleClass().add("base");
 		flow.getStyleClass().add("text-tertiary-info");
 		cost.getStyleClass().add("text-subheader");
 		

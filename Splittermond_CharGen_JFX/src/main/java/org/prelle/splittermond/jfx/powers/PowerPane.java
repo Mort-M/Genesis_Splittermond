@@ -106,8 +106,8 @@ public class PowerPane extends VBox implements GenerationEventListener, EventHan
 		nameCol = new TableColumn<PowerReference, String>(UI.getString("label.power"));
 		valueCol = new TableColumn<PowerReference, Object>(UI.getString("label.value"));
 		notesCol = new TableColumn<PowerReference, String>(UI.getString("label.notes"));
-		nameCol.setMinWidth(160);
-		valueCol.setMinWidth(90);
+		nameCol.setMinWidth(220);
+		valueCol.setMinWidth(140);
 		table.getColumns().addAll(nameCol, valueCol);
 		if (withNotes) 
 			table.getColumns().add(notesCol);

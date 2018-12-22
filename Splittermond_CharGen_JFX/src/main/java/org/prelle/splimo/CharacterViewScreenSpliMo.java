@@ -18,9 +18,9 @@ import org.prelle.javafx.FlipControl;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.ScreenManager;
 import org.prelle.javafx.ScreenManagerProvider;
+import org.prelle.javafx.fluent.CloseableContent;
 import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
 import org.prelle.rpgframework.jfx.AttentionPane;
-import org.prelle.rpgframework.jfx.CharacterViewScreen;
 import org.prelle.splimo.BaseDataBlockSpliMo.View;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.charctrl.CharacterController;
@@ -86,7 +86,7 @@ import javafx.scene.layout.VBox;
  * @author prelle
  *
  */
-public class CharacterViewScreenSpliMo extends ManagedScreen implements GenerationEventListener, ScreenManagerProvider {
+public class CharacterViewScreenSpliMo extends ManagedScreen implements GenerationEventListener, ScreenManagerProvider, CloseableContent {
 
 	private final static Logger logger = Logger.getLogger("splittermond.jfx");
 	
@@ -170,6 +170,15 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		initInteractivity();
 	
 		GenerationEventDispatcher.addListener(this);
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.ManagedScreen#getStyleSheets()
+	 */
+	@Override
+	public String[] getStyleSheets() {
+		return new String[] {"css/splittermond.css"};
 	}
 
 	//-------------------------------------------------------------------
@@ -682,30 +691,29 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 
 	//-------------------------------------------------------------------
 	private void openSkills(SkillType type) {
-		SkillScreen2 toShow = new SkillScreen2(control, mode, type);
+		SkillScreen2 toShow = new SkillScreen2(control, manager, type);
 		toShow.setData(model);
-		manager.show(toShow);
+//		manager.show(toShow);
 	}
 
 	//-------------------------------------------------------------------
 	private void openPowers() {
-		PowerScreen toShow = new PowerScreen(control, mode);
+		PowerScreen toShow = new PowerScreen(control);
 		toShow.setData(model);
 		manager.show(toShow);
 	}
 
 	//-------------------------------------------------------------------
 	private void openResources() {
-		ResourceScreen toShow = new ResourceScreen(control, mode);
-		toShow.setData(model);
-		manager.show(toShow);
+		ResourceScreen toShow = new ResourceScreen(control, manager);
+		manager.replaceContent(toShow);
 	}
 
 	//-------------------------------------------------------------------
 	private void openCultureLores() {
-		CultureLoreScreen toShow = new CultureLoreScreen(control.getCultureLoreController(), mode);
+		CultureLoreScreen toShow = new CultureLoreScreen(control);
 		toShow.setData(model);
-		manager.show(toShow);
+//		manager.show(toShow);
 	}
 
 	//-------------------------------------------------------------------
@@ -718,23 +726,22 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 	//-------------------------------------------------------------------
 	private void openDevelopment() {
 		logger.debug("openDevelopment");
-		DevelopmentScreenSpliMo toShow = new DevelopmentScreenSpliMo();
+		DevelopmentScreenSpliMo toShow = new DevelopmentScreenSpliMo(control);
 		toShow.setData(model);
 		manager.show(toShow);
 	}
 
 	//-------------------------------------------------------------------
 	private void openSpells() {
-		SpellScreen toShow = new SpellScreen(control, mode);
+		SpellScreen toShow = new SpellScreen(control);
 		toShow.setData(model);
-		manager.show(toShow);
+		manager.replaceContent(toShow);
 	}
 
 	//-------------------------------------------------------------------
 	private void openEquipment() {
-		EquipmentScreen toShow = new EquipmentScreen(control, mode);
-		toShow.setData(model);
-		manager.show(toShow);
+		EquipmentScreen toShow = new EquipmentScreen(control, mode, this);
+//		manager.show(toShow);
 	}
 
 	//-------------------------------------------------------------------
@@ -1097,6 +1104,16 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		wizard = new CharGenWizardSpliMo(model, (SpliMoCharacterGenerator)control);
 		manager.show(wizard);
 		updateAttentionFlags();
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.fluent.CloseableContent#close()
+	 */
+	@Override
+	public void close() {
+		// TODO Auto-generated method stub
+		logger.warn("CLOSE()");
 	}
 	
 	//-------------------------------------------------------------------

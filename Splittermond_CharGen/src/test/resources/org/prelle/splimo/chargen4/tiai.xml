@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<splimochar bground="merchant" culture="albseebund" edu="bladedancer" expinv="15" race="alben" splinter="FLASH">
+   <name>Tiai Schimmersee</name>
+   <powerrefs>
+      <powerref ref="animalfamiliar"/>
+      <powerref count="2" ref="focuspool"/>
+      <powerref ref="sensebalance"/>
+      <powerref ref="attractive"/>
+      <powerref ref="goodhearing"/>
+      <powerref ref="lowlight"/>
+   </powerrefs>
+   <resourcerefs>
+      <resourceref ref="reputation"/>
+      <resourceref ref="status"/>
+      <resourceref ref="contacts"/>
+      <resourceref ref="wealth" val="2"/>
+      <resourceref ref="refuge" val="1"/>
+      <resourceref ref="mentor" val="1"/>
+      <resourceref idRef="7442a918-49d3-4294-bcfa-198574fc25fa" ref="creature" val="4"/>
+   </resourcerefs>
+   <attributes>
+      <attr id="CHARISMA" start="3" value="1"/>
+      <attr id="AGILITY" start="5" value="1"/>
+      <attr id="INTUITION" start="2" value="1"/>
+      <attr id="CONSTITUTION" start="1" value="1"/>
+      <attr id="MYSTIC" start="3" value="1"/>
+      <attr id="STRENGTH" start="2" value="1"/>
+      <attr id="MIND" start="2" value="1"/>
+      <attr id="WILLPOWER" start="2" value="1"/>
+   </attributes>
+   <skillvals>
+      <skillval skill="melee"/>
+      <skillval skill="slashing"/>
+      <skillval skill="chains" val="6">
+         <masterref free="1" ref="chains/knock"/>
+         <masterref free="1" ref="chains/ignoreshield"/>
+      </skillval>
+      <skillval skill="blades" val="3"/>
+      <skillval skill="longrange"/>
+      <skillval skill="staffs"/>
+      <skillval skill="throwing"/>
+      <skillval skill="acrobatics" val="6">
+         <masterref free="1" ref="acrobatics/evade1"/>
+         <masterref ref="acrobatics/flashreflexes"/>
+      </skillval>
+      <skillval skill="alchemy"/>
+      <skillval skill="leadership"/>
+      <skillval skill="arcanelore" val="6">
+         <masterref free="1" ref="arcanelore/arcanedefense1"/>
+      </skillval>
+      <skillval skill="athletics" val="2"/>
+      <skillval skill="performance" val="1"/>
+      <skillval skill="diplomacy" val="4"/>
+      <skillval skill="clscraft"/>
+      <skillval skill="empathy" val="1"/>
+      <skillval skill="determination" val="4"/>
+      <skillval skill="dexterity"/>
+      <skillval skill="history" val="1"/>
+      <skillval skill="craftmanship"/>
+      <skillval skill="heal" val="1"/>
+      <skillval skill="stealth"/>
+      <skillval skill="hunting"/>
+      <skillval skill="countrylore" val="3"/>
+      <skillval skill="nature"/>
+      <skillval skill="eloquence" val="1"/>
+      <skillval skill="locksntraps"/>
+      <skillval skill="swim" val="3"/>
+      <skillval skill="seafaring" val="3"/>
+      <skillval skill="streetlore"/>
+      <skillval skill="animals"/>
+      <skillval skill="survival"/>
+      <skillval skill="perception"/>
+      <skillval skill="endurance" val="1"/>
+      <skillval skill="antimagic"/>
+      <skillval skill="controlmagic"/>
+      <skillval skill="motionmagic"/>
+      <skillval skill="insightmagic"/>
+      <skillval skill="stonemagic"/>
+      <skillval skill="firemagic"/>
+      <skillval skill="healmagic"/>
+      <skillval skill="illusionmagic"/>
+      <skillval skill="combatmagic" val="3">
+         <masterref free="1" ref="combatmagic/aimedspells"/>
+      </skillval>
+      <skillval skill="lightmagic"/>
+      <skillval skill="naturemagic"/>
+      <skillval skill="shadowmagic"/>
+      <skillval skill="fatemagic"/>
+      <skillval skill="protectionmagic" val="3"/>
+      <skillval skill="enhancemagic"/>
+      <skillval skill="deathmagic"/>
+      <skillval skill="transformationmagic"/>
+      <skillval skill="watermagic" val="6">
+         <masterref free="1" ref="watermagic/wavechild"/>
+         <masterref free="1" ref="watermagic/savingcaster"/>
+      </skillval>
+      <skillval skill="windmagic"/>
+   </skillvals>
+   <spellvals>
+      <spellval school="combatmagic" spell="ghostdagger"/>
+      <spellval free="1" school="combatmagic" spell="flamingweapon"/>
+      <spellval school="protectionmagic" spell="minorprotectmagic"/>
+      <spellval free="1" school="protectionmagic" spell="minormagicarmor"/>
+      <spellval school="watermagic" spell="quickwash"/>
+      <spellval free="1" school="watermagic" spell="freeze"/>
+      <spellval free="2" school="watermagic" spell="icelance"/>
+      <spellval free="-1" school="combatmagic" spell="harmitem"/>
+   </spellvals>
+   <birthPlace>Tairon</birthPlace>
+   <size>192</size>
+   <weight>70</weight>
+   <gender>FEMALE</gender>
+   <history>
+      <skillmod date="2018-12-17T22:31:24.935+01:00" expCost="3" ref="watermagic" type="rel" value="5"/>
+      <skillmod date="2018-12-17T22:31:24.936+01:00" expCost="3" ref="watermagic" type="rel" value="6"/>
+      <skillmod date="2018-12-17T22:31:24.937+01:00" expCost="3" ref="protectionmagic" type="rel" value="3"/>
+      <mastermod date="2018-12-17T22:31:24.965+01:00" expCost="5" ref="acrobatics/flashreflexes" skill="acrobatics"/>
+      <spellmod date="2018-12-17T22:31:24.973+01:00" expCost="1">
+         <spell free="-1" school="combatmagic" spell="harmitem"/>
+      </spellmod>
+   </history>
+   <rewards>
+      <reward date="2018-12-17T22:31:24.925+01:00" exp="15">
+         <title>Start-Exp</title>
+      </reward>
+   </rewards>
+</splimochar>

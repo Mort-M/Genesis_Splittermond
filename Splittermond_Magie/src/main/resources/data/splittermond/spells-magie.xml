@@ -2535,10 +2535,9 @@
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
     <spell id="spell_intuitiveness" diff="18" cost="K4V1" castdur="3m" range="CASTER" spelldur="K" enh="1/+K1V1">
-        <school skill="motionmagic" level="2" />
-        <school skill="windmagic" level="1" />
-        <type>OBJECT</type>
-        <type>TELEKINESIS</type>
+        <school skill="insightmagic" level="1" />
+        <type>PERCEPTION</type>
+        <type>CLAIRVOYANCE</type>
         <enhancementtype>RELEASETIME</enhancementtype>
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>

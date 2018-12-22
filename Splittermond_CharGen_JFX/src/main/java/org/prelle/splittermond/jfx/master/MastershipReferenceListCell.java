@@ -6,6 +6,10 @@ package org.prelle.splittermond.jfx.master;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
+import org.prelle.splimo.MastershipReference;
+import org.prelle.splimo.SkillSpecializationValue;
+import org.prelle.splimo.charctrl.MastershipController;
+
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.SnapshotParameters;
@@ -18,13 +22,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-
-import org.prelle.splimo.Mastership;
-import org.prelle.splimo.MastershipReference;
-import org.prelle.splimo.SkillSpecialization;
-import org.prelle.splimo.SkillSpecializationValue;
-import org.prelle.splimo.charctrl.MastershipController;
-import org.prelle.splittermond.jfx.skills.SkillField;
 
 /**
  * @author prelle
@@ -60,7 +57,7 @@ public class MastershipReferenceListCell extends ListCell<MastershipReference> {
 		lblLevel   = new Label();
 		field      = new ValueField();
 		
-		lblName.getStyleClass().add("text-small-subheader");
+		lblName.getStyleClass().add("base");
 		lblLevel.getStyleClass().add("text-subheader");
 	}
 	

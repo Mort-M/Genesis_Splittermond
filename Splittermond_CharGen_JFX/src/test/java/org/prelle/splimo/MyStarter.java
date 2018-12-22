@@ -124,13 +124,13 @@ public class MyStarter extends Application {
 			rref.setDescription("Wächterbund");
 //			charGen.getResourceController().increase(rref);
 			model.getResources().add(rref);
-			ResourceScreen screen = new ResourceScreen(charGen, ViewMode.GENERATION);
+			ResourceScreen screen = new ResourceScreen(charGen, manager);
 			dia = manager;
-			manager.show(screen);
-//			dia = new ResourcePane2(charGen.getResourceController(), true);
-//			((ResourcePane2)dia).setManager(manager);
-//			((ResourcePane2)dia).setData(model);
-			screen.setData(model);
+//			manager.show(screen);
+////			dia = new ResourcePane2(charGen.getResourceController(), true);
+////			((ResourcePane2)dia).setManager(manager);
+////			((ResourcePane2)dia).setData(model);
+//			screen.setData(model);
 			break;
 		case 13:
 			item = new CarriedItem();
@@ -197,9 +197,9 @@ public class MyStarter extends Application {
 		case 18:
 			model.getSkillValue(SplitterMondCore.getSkill("hunting")).setValue(5);
 			charGen = new CharacterLeveller(model, null);
-			SkillScreen2 screen4 = new SkillScreen2(charGen, ViewMode.MODIFICATION, SkillType.NORMAL);
+			SkillScreen2 screen4 = new SkillScreen2(charGen, manager, SkillType.NORMAL);
 			dia = manager;
-			manager.show(screen4);
+//			manager.show(screen4);
 			break;
 		case 19:
 			CreatureGenerator creaCtrl = new CreatureGenerator(new ResourceReference(SplitterMondCore.getResource("creature"), 4));
@@ -214,6 +214,8 @@ public class MyStarter extends Application {
 			dia = manager;
 			manager.show(creaWiz);
 			break;
+		case 21:
+			
 		}
 
 		dia.getStyleClass().add("page");

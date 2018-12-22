@@ -100,12 +100,10 @@
   
   <material id="thaumarium" quality="2" price="1500" type="METAL">
     <modifications>
-      <!-- <skillmod ref="diplomacy" value="1" cond="true"/>-->
     </modifications>
   </material>
   <material id="oreofthedead" quality="2" price="1500" type="METAL">
     <modifications>
-      <skillmod ref="diplomacy" value="1" cond="true"/>
     </modifications>
   </material>
   <material id="jadeiron" quality="3" price="2500" type="METAL">

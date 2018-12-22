@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo;
 
@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
 
 import org.apache.log4j.Logger;
 import org.prelle.javafx.CloseType;
@@ -22,6 +23,7 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventType;
 
+import de.rpgframework.RPGFramework;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
@@ -47,7 +49,9 @@ public class AppearanceScreen extends ManagedScreen {
 
 	private final static Logger logger = Logger.getLogger("splimo.jfx");
 	private final static String INVALID = "invalid-data";
-	
+
+	private static Preferences CONFIG = Preferences.userRoot().node(RPGFramework.LAST_OPEN_DIR);
+
 	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
 
 	private CharacterController control;
@@ -63,18 +67,18 @@ public class AppearanceScreen extends ManagedScreen {
 	private TextField tfBirthPlace;
 	private ChoiceBox<Gender> cbGender;
 	private ChoiceBox<Moonsign> cbMoonsign;
-	
+
 	private ImageView ivPortrait;
 	private Button    btnOpen;
 	private Button    btnDel;
-	
+
 	//-------------------------------------------------------------------
 	/**
 	 */
 	public AppearanceScreen(CharacterController control, ViewMode mode) {
 		this.control = control;
 		this.mode    = mode;
-		
+
 		initComponents();
 		initLayout();
 		initInteractivity();
@@ -85,8 +89,8 @@ public class AppearanceScreen extends ManagedScreen {
 	private void initComponents() {
 		getNavigButtons().add(CloseType.BACK);
 		setTitle(uiResources.getString("label.appearance"));
-		
-		tfName = new TextField();		
+
+		tfName = new TextField();
 		tfSize = new TextField();
 		tfWeight = new TextField();
 		tfHair = new TextField();
@@ -97,7 +101,7 @@ public class AppearanceScreen extends ManagedScreen {
 		cbGender.getItems().addAll(Gender.values());
 		cbMoonsign = new ChoiceBox<>();
 		cbMoonsign.getItems().addAll(Moonsign.values());
-		
+
 		ivPortrait = new ImageView();
 		ivPortrait.setFitHeight(400);
 		ivPortrait.setFitWidth(400);
@@ -116,14 +120,14 @@ public class AppearanceScreen extends ManagedScreen {
 		Label heaBirthPlace    = new Label(uiResources.getString("label.birthplace"));
 		Label heaGender    = new Label(uiResources.getString("label.gender"));
 		Label heaMoonsign  = new Label(uiResources.getString("label.moonsign"));
-		
+
 		HBox sizeLine = new HBox(5);
 		sizeLine.getChildren().addAll(tfSize, new Label(uiResources.getString("label.size.unit")));
 		HBox wghtLine = new HBox(5);
 		wghtLine.getChildren().addAll(tfWeight, new Label(uiResources.getString("label.weight.unit")));
 		sizeLine.setAlignment(Pos.CENTER_LEFT);
 		wghtLine.setAlignment(Pos.CENTER_LEFT);
-		
+
 		GridPane grid = new GridPane();
 		grid.add(heaName  , 0, 0);
 		grid.add( tfName  , 1, 0);
@@ -146,16 +150,16 @@ public class AppearanceScreen extends ManagedScreen {
 
 		grid.setHgap(20);
 		grid.setVgap(20);
-		
+
 		TilePane buttons = new TilePane(Orientation.HORIZONTAL, 10, 10);
 		buttons.getChildren().addAll(btnOpen, btnDel);
 		buttons.setAlignment(Pos.CENTER);
 		VBox bxPortrait = new VBox(20);
 		bxPortrait.getChildren().addAll(ivPortrait, buttons);
-		
+
 		HBox content = new HBox(40);
 		content.getChildren().addAll(grid, bxPortrait);
-		
+
 		setContent(content);
 	}
 
@@ -181,7 +185,7 @@ public class AppearanceScreen extends ManagedScreen {
 				setTitle(model.getName()+" / "+uiResources.getString("label.appearance"));
 				});
 		}
-		
+
 		btnDel.setOnAction(event -> {
 			model.setImage(null);
 			ivPortrait.setImage(null);
@@ -190,13 +194,16 @@ public class AppearanceScreen extends ManagedScreen {
 		btnOpen.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				FileChooser chooser = new FileChooser();
-				chooser.setInitialDirectory(new File(System.getProperty("user.home")));
+				String lastDir = CONFIG.get(RPGFramework.PROP_LAST_OPEN_IMAGE_DIR, System.getProperty("user.home"));
+				chooser.setInitialDirectory(new File(lastDir));
 				chooser.getExtensionFilters().addAll(
+		                new FileChooser.ExtensionFilter("All", "*.*"),
 		                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
 		                new FileChooser.ExtensionFilter("PNG", "*.png")
 		            );
 				File selection = chooser.showOpenDialog(new Stage());
 				if (selection!=null) {
+					CONFIG.put(RPGFramework.PROP_LAST_OPEN_IMAGE_DIR, selection.getParentFile().getAbsolutePath().toString());
 					try {
 						byte[] imgBytes = Files.readAllBytes(selection.toPath());
 						ivPortrait.setImage(new Image(new ByteArrayInputStream(imgBytes)));
@@ -231,14 +238,14 @@ public class AppearanceScreen extends ManagedScreen {
 			tfWeight.getStyleClass().add(INVALID);
 			return false;
 		}
-		
+
 		model.setHairColor(tfHair.getText());
 		model.setEyeColor(tfEyes.getText());
 		model.setFurColor(tfSkin.getText());
 		model.setBirthPlace(tfBirthPlace.getText());
 		model.setGender(cbGender.getValue());
 		model.setSplinter(cbMoonsign.getValue());
-		
+
 		logger.info("fire event");
 		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.BASE_DATA_CHANGED, null));
 		return true;
@@ -257,17 +264,17 @@ public class AppearanceScreen extends ManagedScreen {
 	public void setData(SpliMoCharacter model) {
 		this.model = model;
 		setTitle(model.getName()+" / "+uiResources.getString("label.appearance"));
-		
+
 		tfName.setText(model.getName());
 //		if (model.getRace()!=null)
 //			cbRace.getSelectionModel().select(model.getRace());
-//		
+//
 //		// Culture
 //		if (model.getCulture()!=null) {
 //			tfCulture.setText(model.getCulture().getName());
 //			cbCulture.getSelectionModel().select(model.getCulture());
 //		}
-		
+
 		tfSize.setText(String.valueOf(model.getSize()));
 		tfWeight.setText(String.valueOf(model.getWeight()));
 		tfHair.setText(model.getHairColor());
@@ -277,7 +284,7 @@ public class AppearanceScreen extends ManagedScreen {
 		cbGender.setValue(model.getGender());
 		cbMoonsign.setValue(model.getSplinter());
 		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.BASE_DATA_CHANGED, null));
-		
+
 		if (model.getImage()!=null) {
 			logger.debug("Found image with "+model.getImage().length+" bytes");
 			ivPortrait.setImage(new Image(new ByteArrayInputStream(model.getImage())));

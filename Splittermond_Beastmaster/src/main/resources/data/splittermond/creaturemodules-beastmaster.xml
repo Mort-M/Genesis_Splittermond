@@ -730,7 +730,7 @@
     <attrmod attr="INITIATIVE" val="-1"/>
     <selmod num="1">
       <itemfeaturemod feature="BLUNT" remove="true" />
-      <itemfeaturemod feature="PIERCING" level="1" />
+      <itemfeaturemod feature="PENETRATING" level="1" />
     </selmod>
  	<skillmod ref="acrobatics"	value="1"/>
  	<skillmod ref="athletics"	value="1"/>
