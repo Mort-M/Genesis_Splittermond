@@ -293,6 +293,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 			getScreenManager().show(scrEquipment);
 		});
 		menuCompanions.setOnAction(ev -> {
+			scrCompanions.setData(model);
 			getScreenManager().show(scrCompanions);
 		});
 		menuDevelopment.setOnAction(ev -> {

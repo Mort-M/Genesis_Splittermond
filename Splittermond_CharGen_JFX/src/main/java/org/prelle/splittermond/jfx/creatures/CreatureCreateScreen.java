@@ -94,6 +94,15 @@ public class CreatureCreateScreen extends ManagedScreen implements GenerationEve
 		GenerationEventDispatcher.addListener(this);
 	}
 
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.fluent.NavigableContentNode#getStyleSheets()
+	 */
+	@Override
+	public String[] getStyleSheets() {
+		return new String[0];
+	}
+
 	//--------------------------------------------------------------------
 	private void initComponents() {
 		lbPointsLeft = new Label();
