@@ -334,6 +334,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 	public void handleGenerationEvent(GenerationEvent event) {
 		switch (event.getType()) {
 		case BASE_DATA_CHANGED:
+			logger.debug("RCV "+event.getType());
 			setTitle(model.getName());
 			break;
 		case POINTS_LEFT_ATTRIBUTES:

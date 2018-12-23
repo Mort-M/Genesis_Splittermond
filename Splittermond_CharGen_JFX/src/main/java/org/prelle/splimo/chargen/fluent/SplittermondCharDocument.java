@@ -117,7 +117,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 
 	//-------------------------------------------------------------------
 	private void initBaseData() {
-		baseData = new BaseDataGrid(control);
+		baseData = new BaseDataGrid(control, handle);
 		baseData.setStyle("-fx-spacing: 2em; -fx-background-color: white; -fx-effect: dropshadow(three-pass-box, black, 5, 0.5, 2, 2); -fx-padding: 1em; -fx-border-width: 2px;");
 		Section sec = new Section();
 		sec.setContent(baseData);
@@ -492,6 +492,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 	public void handleGenerationEvent(GenerationEvent event) {
 		switch (event.getType()) {
 		case BASE_DATA_CHANGED:
+			logger.debug("RCV "+event.getType());
 			setTitle(model.getName());
 			break;
 		case POINTS_LEFT_ATTRIBUTES:

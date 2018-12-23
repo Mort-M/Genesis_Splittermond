@@ -4,6 +4,7 @@
 package org.prelle.splimo.chargen.fluent;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.PropertyResourceBundle;
 
@@ -19,7 +20,14 @@ import org.prelle.splimo.SpliMoCharacter.Gender;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventType;
 
+import de.rpgframework.RPGFrameworkLoader;
+import de.rpgframework.character.CharacterHandle;
+import de.rpgframework.core.BabylonEventBus;
+import de.rpgframework.core.BabylonEventType;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -45,6 +53,7 @@ public class BaseDataGrid extends GridPane {
 	private static PropertyResourceBundle RES = SpliMoCharGenConstants.RES;
 	
 	private CharacterController  control;
+	private CharacterHandle      handle;
 	
 	private TextField            tfName;
 	private ComboBox<Education>  cbEducation;
@@ -65,12 +74,14 @@ public class BaseDataGrid extends GridPane {
 	private Button               btnPortrait;
 
 	//-------------------------------------------------------------------
-	public BaseDataGrid(CharacterController control) {
+	public BaseDataGrid(CharacterController control, CharacterHandle handle) {
 		this.control = control;
+		this.handle  = handle;
 		initComponents();
 		initLayout();
 		
 		refresh();
+		initInteractivity();
 	}
 
 	//-------------------------------------------------------------------
@@ -93,6 +104,7 @@ public class BaseDataGrid extends GridPane {
 		cbEducation.setEditable(true);
 		cbCulture.setEditable(true);
 		cbBackground.setEditable(true);
+		cbDeity.setDisable(true);
 		
 		cbEducation.setConverter(new StringConverter<Education>() {
 			public String toString(Education value) { return (value!=null)?value.getName():"?";}
@@ -161,6 +173,10 @@ public class BaseDataGrid extends GridPane {
 //			public String toString(Gender value) { return value.toString());}
 //			public Gender fromString(String string) { return null; }
 //		});
+		cbDeity.setConverter(new StringConverter<Deity>() {
+			public String toString(Deity value) { return (value!=null)?value.getName():"?";}
+			public Deity fromString(String string) { return null; }
+		});
 		
 		ivPortrait  = new ImageView();
 		ivPortrait.setPreserveRatio(true);
@@ -245,6 +261,30 @@ public class BaseDataGrid extends GridPane {
 		}
 		
 		setMaxWidth(Double.MAX_VALUE);
+	}
+	
+	//-------------------------------------------------------------------
+	public void initInteractivity() {
+		tfName.textProperty().addListener( (ov,o,n) -> {
+			if (n==null) {
+				logger.error("Ignore renaming to null");
+				return;
+			}
+			logger.info("rename character from "+control.getModel().getName()+" to "+n);
+			control.getModel().setName(n);
+			try {
+				RPGFrameworkLoader.getInstance().getCharacterService().renameCharacter(handle, n);
+			} catch (IOException e) {
+				logger.error("Renaming failed",e);
+				BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Renaming failed: "+e);
+			}
+			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.BASE_DATA_CHANGED, control.getModel()));
+			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, control.getModel()));
+		});
+		cbDeity.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
+			logger.warn("TODO: implement setting deity");
+//			control.getModel().setDeity(n);
+		});
 	}
 	
 	//-------------------------------------------------------------------
