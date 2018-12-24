@@ -111,7 +111,7 @@ public class GoetterdienerPlugin implements RulePlugin<SpliMoCharacter> {
 	 */
 	@Override
 	public void init() {
-		logger.info("START -------------------------------Goetter---------------------------------------------");
+		logger.info("START -------------------------------Goetterdiener---------------------------------------");
 		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-goetterdiener.xml"), i18NResources, i18NHelpResources);
 		BasePluginData.flushMissingKeys();
 		logger.info("STOP  Initialize");

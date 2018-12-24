@@ -290,7 +290,7 @@
 <aspect id="Wache"/>
 <aspect id="Wachsamkeit"/>
 <aspect id="Wachstum"/>
-<aspect id="Wacht"/>
+<aspect id="Wache"/>
 <aspect id="Wahnsinn"/>
 <aspect id="Wahrheit"/>
 <aspect id="Wahrnehmung"/>

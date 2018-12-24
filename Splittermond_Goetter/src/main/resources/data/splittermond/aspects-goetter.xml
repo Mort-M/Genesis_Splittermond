@@ -272,7 +272,7 @@
     <aspect id="vögel" />
     <aspect id="wachsamkeit" />
     <aspect id="wachstum" />
-    <aspect id="wacht" />
+    <aspect id="wache" />
     <aspect id="wahnsinn" />
     <aspect id="wahrheit" />
     <aspect id="wahrnehmung" />
@@ -308,4 +308,15 @@
     <aspect id="überfall" />
     <aspect id="übergang" />
     <aspect id="übergangsriten" />
+    <aspect id="düstermond"/>
+    <aspect id="schatten"/>
+    <aspect id="gefühle"/>
+    <aspect id="waffen"/>
+    <aspect id="helligkeit"/>
+    <aspect id="ehrverlust"/>
+    <aspect id="feldfrüchte"/>
+    <aspect id="traum"/>
+    <aspect id="jenseits"/>
+    <aspect id="meerestiere"/>
+    <aspect id="widerstandsfähigkeit"/>
 </aspects>
