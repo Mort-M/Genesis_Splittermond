@@ -3,6 +3,7 @@
   <deity id="aand">
     <aspects>
       <aspect ref="licht"/>
+      <aspect ref="helligkeit"/>
       <aspect ref="sonne"/>
       <aspect ref="schöpfung"/>
       <aspect ref="stolz"/>
@@ -380,7 +381,7 @@
   <deity id="darunwal">
     <aspects>
       <aspect ref="splittermond"/>
-      <aspect ref="wacht"/>
+      <aspect ref="wache"/>
       <aspect ref="pflicht"/>
       <aspect ref="buße"/>
       <aspect ref="standhaftigkeit"/>
@@ -431,6 +432,7 @@
       <aspect ref="saat"/>
       <aspect ref="fleiß"/>
       <aspect ref="ernte"/>
+      <aspect ref="feldfrüchte"/>
       <aspect ref="wachstum"/>
       <aspect ref="tüchtigkeit"/>
     </aspects>
@@ -630,6 +632,8 @@
       <aspect ref="hinterlist"/>
       <aspect ref="geduld"/>
       <aspect ref="dunkelheit"/>
+      <aspect ref="düstermond"/>
+      <aspect ref="schatten"/>
       <aspect ref="täuschung"/>
       <aspect ref="eigensinn"/>
     </aspects>
@@ -917,6 +921,7 @@
       <aspect ref="ufer"/>
       <aspect ref="grenzen"/>
       <aspect ref="widerstandskraft"/>
+      <aspect ref="widerstandsfähigkeit"/>
       <aspect ref="trennung"/>
       <aspect ref="standhaftigkeit"/>
     </aspects>
@@ -985,7 +990,7 @@
   <deity id="kanatauna">
     <aspects>
       <aspect ref="bewahrung"/>
-      <aspect ref="wacht"/>
+      <aspect ref="wache"/>
       <aspect ref="tradition"/>
       <aspect ref="stärke"/>
       <aspect ref="tüchtigkeit"/>
@@ -1023,6 +1028,7 @@
   <deity id="karzadai">
     <aspects>
       <aspect ref="totenwelt"/>
+      <aspect ref="jenseits"/>
       <aspect ref="wissen"/>
       <aspect ref="gesetz"/>
       <aspect ref="tod"/>
@@ -1637,6 +1643,7 @@
       <aspect ref="eitelkeit"/>
       <aspect ref="spott"/>
       <aspect ref="emotionen"/>
+      <aspect ref="gefühle"/>
     </aspects>
     <modifications>
       <skillmod ref="illusionmagic"/>
@@ -1706,6 +1713,7 @@
       <aspect ref="meer"/>
       <aspect ref="heimat"/>
       <aspect ref="meereskreaturen"/>
+      <aspect ref="meerestiere" />
       <aspect ref="hilfsbereitschaft"/>
       <aspect ref="gesetz"/>
       <aspect ref="gastfreundschaft"/>
@@ -1831,6 +1839,7 @@
     <aspects>
       <aspect ref="fehlverhalten"/>
       <aspect ref="ehrlosigkeit"/>
+      <aspect ref="ehrverlust"/>
       <aspect ref="buße"/>
       <aspect ref="verrat"/>
       <aspect ref="blut"/>
@@ -1853,6 +1862,7 @@
       <aspect ref="heimlichkeit"/>
       <aspect ref="beständigkeit"/>
       <aspect ref="aufopferung"/>
+      <aspect ref="düstermond"/>
       <aspect ref="schutz"/>
     </aspects>
     <modifications>
@@ -1886,6 +1896,7 @@
   <deity id="ruchorr">
     <aspects>
       <aspect ref="herrschaft"/>
+      <aspect ref="waffen"/>
       <aspect ref="kampf"/>
       <aspect ref="jagd"/>
       <aspect ref="stärke"/>
@@ -2089,6 +2100,7 @@
     <aspects>
       <aspect ref="gemeinschaft"/>
       <aspect ref="emotionen"/>
+      <aspect ref="gefühle"/>
       <aspect ref="zusammenhalt"/>
       <aspect ref="handel"/>
       <aspect ref="spionage"/>
@@ -2167,6 +2179,7 @@
       <aspect ref="tod"/>
       <aspect ref="fruchtbarkeit"/>
       <aspect ref="krieg"/>
+      <aspect ref="düstermond"/>
     </aspects>
     <modifications>
       <skillmod ref="combatmagic"/>
@@ -2328,6 +2341,7 @@
     <aspects>
       <aspect ref="hochmut"/>
       <aspect ref="ehrlosigkeit"/>
+      <aspect ref="ehrverlust"/>
       <aspect ref="verrat"/>
       <aspect ref="machtgier"/>
       <aspect ref="stolz"/>
@@ -2347,7 +2361,7 @@
       <aspect ref="gemeinschaft"/>
       <aspect ref="kampf"/>
       <aspect ref="schutz"/>
-      <aspect ref="wacht"/>
+      <aspect ref="wache"/>
       <aspect ref="standhaftigkeit"/>
       <aspect ref="weiterejenachvalkyrja"/>
     </aspects>
@@ -2476,6 +2490,7 @@
       <aspect ref="mutter"/>
       <aspect ref="tod"/>
       <aspect ref="schlaf"/>
+      <aspect ref="traum"/>
       <aspect ref="ende"/>
       <aspect ref="vergänglichkeit"/>
       <aspect ref="vergessen"/>
