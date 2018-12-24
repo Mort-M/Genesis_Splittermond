@@ -34,7 +34,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class CultureLoreGenerator implements CultureLoreController, GenerationEventListener {
 	
-	private static Logger logger = Logger.getLogger("splittermond.level.resource");
+	private static Logger logger = Logger.getLogger("splittermond.level.cultlore");
 
 	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
 
@@ -92,6 +92,8 @@ public class CultureLoreGenerator implements CultureLoreController, GenerationEv
 	 */
 	@Override
 	public boolean canBeSelected(CultureLore lore) {
+		if (lore==null)
+			return false;
 		// Can character afford culture lore?
 		if ( (model.getExperienceFree() < 7) && freeSelected!=null)
 			return false;
@@ -149,10 +151,9 @@ public class CultureLoreGenerator implements CultureLoreController, GenerationEv
 	@Override
 	public CultureLoreReference select(CultureLore lore) {
 		logger.debug("select "+lore);
-		try {
-			throw new RuntimeException("select culture lore "+lore+" mode="+mode+"  freeSelected="+freeSelected);
-		} catch (Exception e) {
-			logger.error("Trace",e);
+		if (!canBeSelected(lore)) {
+			logger.error("Trying to select CultureLore "+lore+" which cannot be selected");
+			return null;
 		}
 		/*
 		 * If in GENERATION mode and no free culture lore is selected yet,
@@ -171,12 +172,12 @@ public class CultureLoreGenerator implements CultureLoreController, GenerationEv
 		
 		int expNeeded = 7 ;
 		if (model.getExperienceFree()<expNeeded) {
-			logger.debug("Cannot select "+lore+" - Exp missing");
+			logger.warn("Cannot select "+lore+" - Exp missing");
 			return null;
 		}
 		
 		if (model.hasCultureLore(lore)) {
-			logger.debug("Cannot select "+lore+" - already selected");
+			logger.warn("Cannot select "+lore+" - already selected");
 			return null;
 		}
 

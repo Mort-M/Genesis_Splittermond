@@ -61,6 +61,8 @@ import org.prelle.splimo.requirements.Requirement;
 import org.prelle.splimo.requirements.SkillRequirement;
 
 import de.rpgframework.RPGFrameworkLoader;
+import de.rpgframework.core.BabylonEventBus;
+import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.RoleplayingSystem;
 import de.rpgframework.genericrpg.Datable;
 import de.rpgframework.genericrpg.Reward;
@@ -139,7 +141,7 @@ public class SplitterTools {
 			AttributeModification aMod = (AttributeModification)mod;
 			if (aMod.getValue()<0)
 				return aMod.getAttribute().getName()+" "+aMod.getValue();
-			return aMod.getAttribute().getName()+" +"+aMod.getValue();
+			return aMod.getAttribute().getName()+" "+aMod.getValue();
 		}
 		if (mod instanceof SkillModification) {
 			SkillModification sMod = (SkillModification)mod;
@@ -167,7 +169,7 @@ public class SplitterTools {
 			} else {
 				if (sMod.getValue()<0)
 					return sMod.getSkill().getName()+" "+sMod.getValue();
-				return sMod.getSkill().getName()+" +"+sMod.getValue();
+				return sMod.getSkill().getName()+" "+sMod.getValue();
 			}
 			
 		}
@@ -412,7 +414,12 @@ public class SplitterTools {
 		 */
 		List<HistoryElementImpl> ret = new ArrayList<HistoryElementImpl>();
 		HistoryElementImpl current = null;
-		ProductService sessServ = RPGFrameworkLoader.getInstance().getProductService();
+		ProductService sessServ = null;
+		try {
+			sessServ = RPGFrameworkLoader.getInstance().getProductService();
+		} catch (Exception e) {
+			logger.error("Failed loading session service",e);
+		}
 
 		for (Datable item : rewardsAndMods) {
 			if (item instanceof RewardImpl) {
@@ -420,7 +427,8 @@ public class SplitterTools {
 				Adventure adv = null;
 				System.err.println("Reward "+reward+" / "+reward.getTitle());
 				if (reward.getId()!=null) {
-					adv = sessServ.getAdventure(RoleplayingSystem.SPLITTERMOND, reward.getId());
+					if (sessServ!=null)
+						adv = sessServ.getAdventure(RoleplayingSystem.SPLITTERMOND, reward.getId());
 					if (adv==null) {
 						logger.warn("Rewards of character '"+charac.getName()+"' reference an unknown adventure: "+reward.getId());
 					}
@@ -908,49 +916,50 @@ public class SplitterTools {
 		 * Calculate ModuleBasedCreatures
 		 */
 		for (CreatureReference ref : data.getCreatures()) {
-			if (ref.getModuleBasedCreature()!=null) {
+			if (ref.getModuleBasedCreature()!=null) {				
 				logger.info("  calculate creature "+ref.getName()+" from modules");
-				// Create modifications
-				logger.debug("    set role modifications: "+ref.getModuleBasedCreature().getRole().getModule().getModifications());
-				ref.getModuleBasedCreature().getRole().setModifications(ref.getModuleBasedCreature().getRole().getModule().getModifications());
-				// Fix originModule
-				logger.debug("    set role choices: "+ref.getModuleBasedCreature().getRole().getChoices());
-				for (NecessaryChoice choice : ref.getModuleBasedCreature().getRole().getChoices()) {
-					choice.originModule = ref.getModuleBasedCreature().getRole();
-					// Replace original modifications from role with those from choices
-					if (choice.getMadeChoice()!=null) {
-						logger.debug("    replace option "+choice.getOriginChoice()+" with choice "+choice.getMadeChoice());
-						boolean couldNotReplace = true;
-						for (Modification mod : new ArrayList<Modification>(ref.getModuleBasedCreature().getRole().getModifications())) {
-							if (mod.equals(choice.getOriginChoice())) {
-								logger.info("    Creature "+ref.getName()+", Role "+ref.getModuleBasedCreature().getRole().getModule().getId()+": replace option "+choice.getOriginChoice()+" with choice '"+choice.getMadeChoice()+"'");
-								ref.getModuleBasedCreature().getRole().removeModification(mod);
-								ref.getModuleBasedCreature().getRole().addModification(choice.getMadeChoice());
-								couldNotReplace = false;
-								break;
+				try {
+					// Create modifications
+					logger.debug("    set role modifications: "+ref.getModuleBasedCreature().getRole().getModule().getModifications());
+					ref.getModuleBasedCreature().getRole().setModifications(ref.getModuleBasedCreature().getRole().getModule().getModifications());
+					// Fix originModule
+					logger.debug("    set role choices: "+ref.getModuleBasedCreature().getRole().getChoices());
+					for (NecessaryChoice choice : ref.getModuleBasedCreature().getRole().getChoices()) {
+						choice.originModule = ref.getModuleBasedCreature().getRole();
+						// Replace original modifications from role with those from choices
+						if (choice.getMadeChoice()!=null) {
+							logger.debug("    replace option "+choice.getOriginChoice()+" with choice "+choice.getMadeChoice());
+							boolean couldNotReplace = true;
+							for (Modification mod : new ArrayList<Modification>(ref.getModuleBasedCreature().getRole().getModifications())) {
+								if (mod.equals(choice.getOriginChoice())) {
+									logger.info("    Creature "+ref.getName()+", Role "+ref.getModuleBasedCreature().getRole().getModule().getId()+": replace option "+choice.getOriginChoice()+" with choice '"+choice.getMadeChoice()+"'");
+									ref.getModuleBasedCreature().getRole().removeModification(mod);
+									ref.getModuleBasedCreature().getRole().addModification(choice.getMadeChoice());
+									couldNotReplace = false;
+									break;
+								}
+							}
+							if (couldNotReplace) {
+								logger.error("Creature "+ref.getName()+", Role "+ref.getModuleBasedCreature().getRole().getModule().getId()+": Could not find option "+choice.getOriginChoice()+" to replace decision with");
 							}
 						}
-						if (couldNotReplace) {
-							logger.error("Creature "+ref.getName()+", Role "+ref.getModuleBasedCreature().getRole().getModule().getId()+": Could not find option "+choice.getOriginChoice()+" to replace decision with");
-						}
 					}
-				}
-				logger.debug("    process options");
+					logger.debug("    process options");
 				for (CreatureModuleReference origin : ref.getModuleBasedCreature().getOptions()) {
 					logger.debug("* Option "+origin.getModule().getId());
 					for (Modification mod : origin.getModule().getModifications()) {
 						CreatureTools.instantiateModification(ref.getModuleBasedCreature(), origin, mod);
 					}
-					logger.debug("  ..."+origin);
-					for (NecessaryChoice choice : origin.getChoices()) {
-						choice.originModule = origin;
-					}
-				}
-				
-				logger.info("  START: Calculate values for "+ref);
-				CreatureTools.calculateModuleBasedCreature(ref.getModuleBasedCreature());
-				logger.info("  STOP : Calculate values for "+ref);
+
+					logger.info("  START: Calculate values for "+ref);
+					CreatureTools.calculateModuleBasedCreature(ref.getModuleBasedCreature());
+					logger.info("  STOP : Calculate values for "+ref);
 //				System.exit(0);
+				}
+				} catch (Exception e) {
+					logger.error("Error processing modifications of creature "+ref,e);
+					BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Fehler beim Berechnen der Daten für die Kreatur "+ref.getName());
+				}
 			}
 			CreatureTools.calculateTrainings(ref);
 		}

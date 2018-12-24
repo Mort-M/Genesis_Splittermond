@@ -123,7 +123,7 @@
       <skillmod ref="protectionmagic"/>
       <skillmod ref="deathmagic" value="-1"/>
       <edumod ref="elementalist"/>
-      <edumod ref="titanchild"/>
+      <edumod ref="titanchild_priest"/>
       <edumod ref="soulguide"/>
     </modifications>
   </deity>
@@ -1020,7 +1020,7 @@
       <skillmod ref="deathmagic"/>
       <skillmod ref="insightmagic" value="-1"/>
       <edumod ref="elementalist"/>
-      <edumod ref="titanchild"/>
+      <edumod ref="titanchild_priest"/>
       <edumod ref="mystic"/>
       <edumod ref="firedancer"/>
     </modifications>
@@ -1459,7 +1459,7 @@
       <skillmod ref="enhancemagic"/>
       <skillmod ref="windmagic" value="-1"/>
       <edumod ref="elementalist"/>
-      <edumod ref="titanchild"/>
+      <edumod ref="titanchild_priest"/>
       <edumod ref="mystic"/>
       <edumod ref="wondermaker"/>
     </modifications>
@@ -1815,7 +1815,7 @@
       <skillmod ref="windmagic"/>
       <skillmod ref="stonemagic" value="-1"/>
       <edumod ref="elementalist"/>
-      <edumod ref="titanchild"/>
+      <edumod ref="titanchild_priest"/>
       <edumod ref="wandererpriest"/>
     </modifications>
   </deity>
@@ -2333,7 +2333,7 @@
       <skillmod ref="watermagic"/>
       <skillmod ref="firemagic" value="-1"/>
       <edumod ref="elementalist"/>
-      <edumod ref="titanchild"/>
+      <edumod ref="titanchild_priest"/>
       <edumod ref="mystic"/>
     </modifications>
   </deity>

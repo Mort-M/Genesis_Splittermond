@@ -353,8 +353,9 @@ class EnhancementReferenceListCell extends ListCell<EnhancementReference> {
 		checkBox= new CheckBox();
 		name    = new Label();
 		layout.getChildren().addAll(checkBox, name);
+		layout.getStyleClass().add("content");
 		
-		name.getStyleClass().add("text-small-subheader");
+		name.getStyleClass().add("base");
 		checkBox.getStyleClass().add("text-subheader");
 		
 
@@ -420,8 +421,8 @@ class EnhancementReferenceListCell extends ListCell<EnhancementReference> {
 			if (item.getSpellValue()!=null) 
 				name.setText(String.format(UI.getString("screen.enhancements.embedspell.cell"), item.getSpellValue().getSpell().getName()));
 //			if (charGen.canBeDeselected(item)) {
-				layout.getStyleClass().clear();
-				layout.getStyleClass().add("selectable-list-item");
+//				layout.getStyleClass().clear();
+//				layout.getStyleClass().add("selectable-list-item");
 //			} else {
 //				layout.getStyleClass().clear();
 //				layout.getStyleClass().add("unselectable-list-item");

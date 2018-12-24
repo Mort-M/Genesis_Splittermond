@@ -66,4 +66,21 @@ public class NotBackgroundModification extends ModificationImpl {
 		return ret;
 	}
 
+	//-------------------------------------------------------------------
+	/**
+	 * @return the ref
+	 */
+	public List<Background> getBackgroundsToRemove() {
+		List<Background> ret = new ArrayList<>();
+		for (String blockBG : ids.split(",")) {
+			Background data = SplitterMondCore.getBackground(blockBG.trim());
+			if (data!=null)
+				ret.add(data);
+			else
+				System.err.println("Unknown background: ["+blockBG+"]");
+		}
+		
+		return ret;
+	}
+
 }

@@ -52,7 +52,7 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		PropertyConfigurator.configure("log4j.properties");
+		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		SplitterMondCore.initialize(new SplittermondRules());
 
 		skill = SplitterMondCore.getSkill("acrobatics");

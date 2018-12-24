@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
@@ -211,6 +212,12 @@ public class BBCodePlugin implements RulePlugin<SpliMoCharacter>, CommandBusList
 	@Override
 	public InputStream getAboutHTML() {
 		return ClassLoader.getSystemResourceAsStream("i18n/splittermond/print_bbcode.html");
+	}
+
+	//-------------------------------------------------------------------
+	@Override
+	public List<String> getLanguages() {
+		return Arrays.asList(Locale.GERMAN.getLanguage());
 	}
 
 }

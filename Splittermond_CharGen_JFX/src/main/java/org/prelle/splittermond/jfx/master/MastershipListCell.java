@@ -62,7 +62,7 @@ public class MastershipListCell extends ListCell<MastershipOrSpecialization> {
 		lblRequire = new Label();
 		lblLevel   = new Label();
 		
-		lblName.getStyleClass().add("text-small-subheader");
+		lblName.getStyleClass().add("baser");
 		lblLevel.getStyleClass().add("text-subheader");
 		lblRequire.setStyle("-fx-text-fill: red");
 	}

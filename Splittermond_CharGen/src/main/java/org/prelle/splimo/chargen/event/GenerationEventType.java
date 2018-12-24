@@ -9,6 +9,9 @@ package org.prelle.splimo.chargen.event;
  */
 public enum GenerationEventType {
 
+	/** Key is Character */
+	CHARACTER_CHANGED,
+
 	/** Key is Attribute, Value is AttributeValue */
 	ATTRIBUTE_CHANGED,
 	/** Key is null, Value is Array [ExpFree, ExpInvested] */

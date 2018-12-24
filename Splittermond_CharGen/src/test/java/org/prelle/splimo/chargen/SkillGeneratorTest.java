@@ -39,7 +39,7 @@ public class SkillGeneratorTest {
 
 	//-------------------------------------------------------------------
 	static {
-		PropertyConfigurator.configure("log4j.properties");
+		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		power1 = SplitterMondCore.getSkill("blades");
 		power2 = SplitterMondCore.getSkill("empathy");
 	}

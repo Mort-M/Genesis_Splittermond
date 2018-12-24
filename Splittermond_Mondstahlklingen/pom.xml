@@ -6,13 +6,13 @@
    <parent>
       <groupId>de.rpgframework</groupId>
       <artifactId>splittermond-common</artifactId>
-      <version>1.0</version>
+      <version>1.1</version>
       <relativePath>../common.xml</relativePath>
    </parent>
 
   <groupId>org.prelle.rpgframework</groupId>
   <artifactId>splittermond-msk</artifactId>
-  <version>2.3.0</version>
+  <version>2.4.0</version>
   <name>Splittermond 'Mondstahlklingen'</name>
   <description>Splittermond supplement 'Mondstahklklingen' </description>
 

@@ -3,17 +3,24 @@
  */
 package org.prelle.splimo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import org.prelle.simplepersist.AttribConvert;
 import org.prelle.simplepersist.Attribute;
+import org.prelle.splimo.modifications.ResourceModification;
 import org.prelle.splimo.persist.ResourceConverter;
+
+import de.rpgframework.genericrpg.modification.Modification;
+import de.rpgframework.genericrpg.modification.Modifyable;
+import de.rpgframework.genericrpg.modification.ModifyableImpl;
 
 /**
  * @author prelle
  *
  */
-public class ResourceReference implements Comparable<ResourceReference> {
+public class ResourceReference extends ModifyableImpl implements Comparable<ResourceReference> {
 
 	
 	@Attribute(name="ref")
@@ -32,10 +39,12 @@ public class ResourceReference implements Comparable<ResourceReference> {
 
 	//-------------------------------------------------------------------
 	public ResourceReference() {
+		modifications = new ArrayList<>();
 	}
 
 	//-------------------------------------------------------------------
 	public ResourceReference(Resource resource, int value) {
+		this();
 		if (resource==null)
 			throw new NullPointerException("Resource may not be null");
 		this.resource = resource;
@@ -44,7 +53,7 @@ public class ResourceReference implements Comparable<ResourceReference> {
 
 	//-------------------------------------------------------------------
 	public String toString() {
-		return String.valueOf(resource)+" "+value;
+		return String.valueOf(resource)+" "+getModifiedValue();
 	}
 
 	//-------------------------------------------------------------------
@@ -61,6 +70,19 @@ public class ResourceReference implements Comparable<ResourceReference> {
 	 */
 	public int getValue() {
 		return value;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @return the value
+	 */
+	public int getModifiedValue() {
+		int sum = value;
+		for (Modification mod : modifications) {
+			if (mod instanceof ResourceModification && ((ResourceModification)mod).getResource()==resource)
+				sum+= ((ResourceModification)mod).getValue();
+		}
+		return sum;
 	}
 
 	//-------------------------------------------------------------------

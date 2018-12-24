@@ -10,16 +10,17 @@ import java.util.ResourceBundle;
 import org.apache.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
+import org.prelle.javafx.fluent.CommandBar;
 import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
-import org.prelle.splimo.PointsPane;
+import org.prelle.rpgframework.jfx.FreePointsNode;
+import org.prelle.rpgframework.jfx.SettingsAndCommandBar;
 import org.prelle.splimo.Power;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.ViewMode;
 import org.prelle.splimo.charctrl.CharacterController;
-import org.prelle.splimo.charctrl.Generator;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -38,14 +39,19 @@ import javafx.scene.text.TextAlignment;
  */
 public class PowerScreen extends ManagedScreen implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("splimo.jfx");
+	private final static Logger logger = Logger.getLogger("splittermond.jfx");
 	
 	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
 
 	private CharacterController control;
-	private ViewMode mode;
+	
+	private Label lbExpTotal;
+	private Label lbExpInvested;
+	private FreePointsNode freePoints;
+	private Label lbLevel;
+	private CommandBar commands;
+	private SettingsAndCommandBar firstLine;
 
-	private PointsPane points;
 	private PowerPane powers;
 	private WeaknessPane weaknesses;
 	private Label pageRef;
@@ -55,9 +61,8 @@ public class PowerScreen extends ManagedScreen implements GenerationEventListene
 	//--------------------------------------------------------------------
 	/**
 	 */
-	public PowerScreen(CharacterController control, ViewMode mode) {
+	public PowerScreen(CharacterController control) {
 		this.control = control;
-		this.mode    = mode;
 		
 		initComponents();
 		initLayout();
@@ -94,14 +99,38 @@ public class PowerScreen extends ManagedScreen implements GenerationEventListene
 		/*
 		 * Exp & Co.
 		 */
-		points = new PointsPane(mode);
-		if (control instanceof Generator)
-			points.setGenerator((Generator) control);
+		freePoints = new FreePointsNode();
+		freePoints.setStyle("-fx-max-height: 3em; -fx-max-width: 3em");
+		freePoints.setPoints(control.getModel().getExperienceFree());
+		freePoints.setName(UI.getString("label.ep.free"));
+		Label hdExpTotal    = new Label(SpliMoCharGenConstants.RES.getString("label.ep.total")+": ");
+		Label hdExpInvested = new Label(SpliMoCharGenConstants.RES.getString("label.ep.used")+": ");
+		Label hdLevel       = new Label(SpliMoCharGenConstants.RES.getString("label.level")+": ");
+		lbExpTotal    = new Label("?");
+		lbExpInvested = new Label("?");
+		lbLevel       = new Label("?");
+		lbExpTotal.getStyleClass().add("base");
+		lbExpInvested.getStyleClass().add("base");
+		lbLevel.getStyleClass().add("base");
+		lbExpTotal.setText(String.valueOf(control.getModel().getExperienceInvested()+control.getModel().getExperienceFree()));
+		lbExpInvested.setText(control.getModel().getExperienceInvested()+"");
+		lbLevel.setText(control.getModel().getLevel()+"");
+		
+		commands = new CommandBar();
+//		commands.getItems().add(new MenuItem("Drucken", new Label("\uD83D\uDDB6")));
+		
+		HBox expLine = new HBox(5);
+		expLine.getChildren().addAll(hdExpTotal, lbExpTotal, hdExpInvested, lbExpInvested, hdLevel, lbLevel);
+		HBox.setMargin(hdLevel, new Insets(0,0,0,20));
+		expLine.getStyleClass().add("character-document-view-firstline");
+		
+		firstLine = new SettingsAndCommandBar();
+		firstLine.setSettings(expLine);
+		firstLine.setCommandBar(commands);
 	}
 
 	//-------------------------------------------------------------------
 	private void initLayout() {
-		getStyleClass().add("text-body");
 		
 		// Powers
 		Label lblPower = new Label(UI.getString("label.powers"));
@@ -135,16 +164,20 @@ public class PowerScreen extends ManagedScreen implements GenerationEventListene
 		flow.setHgap(20);
 		ColumnConstraints col1 = new ColumnConstraints();
 		ColumnConstraints col2 = new ColumnConstraints();
-        col1.setPercentWidth(66);
-        col2.setPercentWidth(33);
+        col1.setPercentWidth(70);
+        col2.setPercentWidth(30);
         flow.getColumnConstraints().addAll(col1, col2);
 
-		HBox content = new HBox();
-		content.setSpacing(20);
-		content.getChildren().addAll(points, flow);
+		HBox flow2 = new HBox();
+		flow2.getChildren().addAll(freePoints, flow);
+		flow2.setStyle("-fx-spacing: 1em");
 		HBox.setHgrow(flow, Priority.ALWAYS);
-		HBox.setMargin(points, new Insets(0,0,20,0));
-		HBox.setMargin(flow  , new Insets(0,0,20,0));
+
+		VBox content = new VBox();
+		content.setSpacing(20);
+		content.getChildren().addAll(firstLine, flow2);
+		VBox.setVgrow(flow2, Priority.ALWAYS);
+		VBox.setMargin(flow2  , new Insets(0,0,20,0));
 		setContent(content);
 	}
 
@@ -179,13 +212,11 @@ public class PowerScreen extends ManagedScreen implements GenerationEventListene
 
 	//-------------------------------------------------------------------
 	public void setData(SpliMoCharacter model) {
-		points.setData(model);
 		powers.setData(model);
 		weaknesses.setData(model);
-		if (control.getPowerController() instanceof Generator) {
-			points.setGenerator((Generator)control.getPowerController());
-			points.refresh();
-		}
+		
+		lbExpInvested.setText(model.getExperienceInvested()+"");
+		lbLevel.setText(model.getLevel()+"");
 	}
 
 	//--------------------------------------------------------------------
@@ -197,10 +228,16 @@ public class PowerScreen extends ManagedScreen implements GenerationEventListene
 		switch (event.getType()) {
 		case EXPERIENCE_CHANGED:
 			logger.debug("rcv "+event.getType()+"   "+Arrays.toString((int[])event.getValue()));
-			points.refresh();
+			lbExpTotal.setText(String.valueOf(control.getModel().getExperienceInvested()+control.getModel().getExperienceFree()));
+			lbExpInvested.setText(control.getModel().getExperienceInvested()+"");
+			lbLevel.setText(control.getModel().getLevel()+"");
+			freePoints.setPoints(control.getModel().getExperienceFree());
 			break;
 		case POINTS_LEFT_POWERS:
-			points.refresh();
+			lbExpTotal.setText(String.valueOf(control.getModel().getExperienceInvested()+control.getModel().getExperienceFree()));
+			lbExpInvested.setText(control.getModel().getExperienceInvested()+"");
+			lbLevel.setText(control.getModel().getLevel()+"");
+			freePoints.setPoints(control.getModel().getExperienceFree());
 			break;
 		default:
 			break;

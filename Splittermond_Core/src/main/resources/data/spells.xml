@@ -1168,7 +1168,7 @@
     <school skill="illusionmagic" level="5"/>
     <type>CAMOUFLAGE</type>
   </spell>
-  <spell id="turnundead" diff="KW" cost="8V2" castdur="7T" range="1m" enh="2/+2V2" >
+  <spell id="turnundead" diff="KW" cost="8V2" castdur="7T" range="10m" enh="2/+2V2" >
     <school skill="antimagic" level="2"/>
     <school skill="lightmagic" level="2"/>
     <school skill="deathmagic" level="3"/>

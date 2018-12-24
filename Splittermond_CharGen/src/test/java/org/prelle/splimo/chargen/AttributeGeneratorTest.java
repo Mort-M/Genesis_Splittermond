@@ -40,7 +40,7 @@ public class AttributeGeneratorTest implements GenerationEventListener {
 
 	//-------------------------------------------------------------------
 	static {
-		PropertyConfigurator.configure("log4j.properties");
+		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 	}
 
 	//-------------------------------------------------------------------

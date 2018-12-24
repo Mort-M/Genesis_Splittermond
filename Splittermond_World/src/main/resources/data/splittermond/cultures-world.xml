@@ -1942,6 +1942,7 @@
             <racemod ref="gnome"/>
             <racemod ref="alben"/>
             <racemod ref="varg"/>
+            <racemod ref="dwarf"/>
 
             <notbackmod ids="nobility,courtier"/>
 

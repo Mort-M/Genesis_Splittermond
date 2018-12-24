@@ -229,14 +229,13 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 	 */
 	@Override
 	public void changed(ObservableValue<? extends String> textfield, String oldVal,	String newVal) {
-		logger.debug("changed "+textfield+" from "+oldVal+" to "+newVal);
-		
 		String n = name.getText();
 		if (n.indexOf('<')>0) { n = n.substring(0, n.indexOf('<')); name.setText(n); }
 		if (n.indexOf('>')>0) { n = n.substring(0, n.indexOf('>')); name.setText(n); }
 		if (n.indexOf('"')>0) { n = n.substring(0, n.indexOf('"')); name.setText(n); }
 		if (n.indexOf('&')>0) { n = n.substring(0, n.indexOf('&')); name.setText(n); }
 
+		copyToCharacter();
 		if (
 				name.getText().length()>0 && 
 				hairColor.getText().length()>0 &&
@@ -287,6 +286,8 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 			});
 			break;
 		default:
+			logger.debug("RCV "+event.getType());
+			finishButton.set(wizard.canBeFinished());
 		}
 	}
 	

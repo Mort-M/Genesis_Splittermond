@@ -12,6 +12,7 @@ import java.io.StringWriter;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
@@ -178,6 +179,7 @@ public class ModuleBasedCreatureSerializationTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		Logger.getRootLogger().setLevel(Level.WARN);
 		DATA = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" + 
 		"<modcreature>\n" + 

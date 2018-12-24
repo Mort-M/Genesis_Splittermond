@@ -77,11 +77,11 @@ public class RangeWeaponDataPane extends GridPane {
 		 * Styles
 		 */
 		this.getStyleClass().addAll("content","text-body","bordered");
-		heaDamage.getStyleClass().add("text-small-subheader");
-		heaSpeed.getStyleClass().add("text-small-subheader");
-		heaAttribute.getStyleClass().add("text-small-subheader");
-		heaRequired.getStyleClass().add("text-small-subheader");
-		heaFeatures.getStyleClass().add("text-small-subheader");
+		heaDamage.getStyleClass().add("base");
+		heaSpeed.getStyleClass().add("base");
+		heaAttribute.getStyleClass().add("base");
+		heaRequired.getStyleClass().add("base");
+		heaFeatures.getStyleClass().add("base");
 	}
 
 	//-------------------------------------------------------------------

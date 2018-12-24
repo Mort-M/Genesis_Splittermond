@@ -11,9 +11,11 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 import org.apache.log4j.Logger;
+import org.prelle.javafx.AlertType;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.ScreenManager;
 import org.prelle.javafx.ScreenManagerProvider;
+import org.prelle.javafx.fluent.NodeWithTitle;
 import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
@@ -172,7 +174,7 @@ public class NewItemGeneratorPane extends VBox implements GenerationEventListene
 	private void initLayout() {
 		setStyle("-fx-spacing: 2em");
 		Label lbName = new Label(RES.getString("label.name"));
-		lbName.getStyleClass().add("text-small-subheader");
+		lbName.getStyleClass().add("base");
 
 		boxDescr = new VBox(5);
 		boxDescr.getChildren().addAll(heaDescr, paneDescr);
@@ -204,12 +206,10 @@ public class NewItemGeneratorPane extends VBox implements GenerationEventListene
 		/*
 		 * Material and personalizations
 		 */
-		Label heaMaterial = new Label(RES.getString("label.material"));
 		Label heaPers1 = new Label(RES.getString("label.personalization.first"));
 		Label heaPers2 = new Label(RES.getString("label.personalization.second"));
-		heaMaterial.getStyleClass().add("text-small-subheader");
-		heaPers1.getStyleClass().add("text-small-subheader");
-		heaPers2.getStyleClass().add("text-small-subheader");
+		heaPers1.getStyleClass().add("base");
+		heaPers2.getStyleClass().add("base");
 		GridPane gridPers = new GridPane();
 		gridPers.setVgap(5);
 		gridPers.setHgap(5);
@@ -437,7 +437,7 @@ public class NewItemGeneratorPane extends VBox implements GenerationEventListene
 	//--------------------------------------------------------------------
 	private void openSubScreen(EnhancementType type) {
 		logger.debug("openSubScreen("+type+")");
-		ManagedScreen screen = null;
+		NodeWithTitle screen = null;
 		switch (type) {
 		case SAINT:
 			screen = new SaintPowersScreen(type, control);
@@ -447,7 +447,7 @@ public class NewItemGeneratorPane extends VBox implements GenerationEventListene
 		}
 		GenerationEventDispatcher.addListener((GenerationEventListener) screen);
 
-		manager.showAndWait(screen);
+		manager.showAlertAndCall(AlertType.CONFIRMATION, screen.getTitle(), screen.getContent());
 		GenerationEventDispatcher.removeListener((GenerationEventListener) screen);
 	}
 
@@ -457,8 +457,9 @@ public class NewItemGeneratorPane extends VBox implements GenerationEventListene
 		MaterialScreen screen = new MaterialScreen(control);
 		GenerationEventDispatcher.addListener(screen);
 
-		Object obj = manager.showAndWait(screen);
-		logger.info("obj = "+obj);
+//		Object obj = manager.showAndWait(screen);
+		manager.showAlertAndCall(AlertType.CONFIRMATION, screen.getTitle(), screen.getContent());
+//		logger.info("obj = "+obj);
 		GenerationEventDispatcher.removeListener(screen);
 	}
 

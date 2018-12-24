@@ -528,7 +528,7 @@ public class EquipmentTools {
 				} else if (mod instanceof FeatureModification) {
 					item.addItemModification(mod);
 				} else
-					logger.warn("Don't know how to deal with "+mod.getClass());
+					logger.warn("Material: Don't know how to deal with "+mod.getClass()+": "+mod);
 			}
 		}
 		
@@ -572,7 +572,11 @@ public class EquipmentTools {
 			skill = item.getItem().getSkill();
 			spec  = new SkillSpecialization(skill, SkillSpecializationType.NORMAL, item.getItem().getID());
 		}
-		SplitterTools.applyToCharacter(model, mods, skill, spec);
+		try {
+			SplitterTools.applyToCharacter(model, mods, skill, spec);
+		} catch (Exception e) {
+			logger.error("Error equipping "+item,e);
+		}
 		
 		item.setItemLocation(ItemLocationType.BODY);
 		

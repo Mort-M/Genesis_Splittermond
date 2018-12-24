@@ -1275,9 +1275,16 @@ public class MastershipLevellerAndGenerator implements MastershipController, Gen
 	@Override
 	public List<String> getToDos(Skill skill) {
 		List<String> ret = new ArrayList<>();
+		if (skill==null)
+			return ret;
 		for (FreeMastershipSelection tmp : freeSelections) {
-			if (tmp.getUsedFor()==null && tmp.getSkill()==skill) {
-				ret.add(String.format(RES.getString("mastergen.todo.free"), tmp.getLevel(), tmp.getSkill().getName()));
+			try {
+				if (tmp.getUsedFor()==null && tmp.getSkill()==skill) {
+					ret.add(String.format(RES.getString("mastergen.todo.free"), tmp.getLevel(), tmp.getSkill().getName()));
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 		SkillValue val = data.getSkillValue(skill);

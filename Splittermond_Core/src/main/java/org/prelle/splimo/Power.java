@@ -89,6 +89,7 @@ public class Power extends BasePluginData implements Comparable<Power> {
 		try {
 			return i18n.getString("power."+id+".desc");
 		} catch (MissingResourceException e) {
+			logger.warn("Can't find key '"+e.getKey()+"' in "+i18nHelp.getBaseBundleName());
 			if (!reportedKeys.contains(e.getKey())) {
 				reportedKeys.add(e.getKey());
 				logger.error("Missing property '"+e.getKey()+"' in "+i18n.getBaseBundleName());
@@ -152,6 +153,14 @@ public class Power extends BasePluginData implements Comparable<Power> {
 	 */
 	public void setSelectable(SelectionType selectable) {
 		this.selectable = selectable;
+	}
+
+	//--------------------------------------------------------------------
+	/**
+	 * @return the selectable
+	 */
+	public boolean canBeUsedMultipleTimes() {
+		return selectable!=null && (selectable==SelectionType.LEVEL || selectable==SelectionType.MAX3 || selectable==SelectionType.MULTIPLE);
 	}
 
 }

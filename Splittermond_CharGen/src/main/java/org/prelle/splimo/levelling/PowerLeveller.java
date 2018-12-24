@@ -137,6 +137,8 @@ public class PowerLeveller implements PowerController, GenerationEventListener {
 	 */
 	@Override
 	public boolean canBeSelected(Power power) {
+		if (power==null)
+			return false;
 		// Can character afford power?
 		if (model.getExperienceFree() < power.getCost()*7)
 			return false;

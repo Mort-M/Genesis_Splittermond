@@ -6,23 +6,12 @@ package org.prelle.splittermond.jfx.attributes;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
-
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.HPos;
-import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
 
 import org.apache.log4j.Logger;
+import org.prelle.javafx.ResponsiveControl;
+import org.prelle.javafx.WindowMode;
 import org.prelle.splimo.Attribute;
+import org.prelle.splimo.AttributeField;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.ViewMode;
@@ -31,38 +20,34 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.HPos;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 
 /**
  * @author prelle
  *
  */
-public class AttributePanePrimary extends GridPane implements GenerationEventListener {
+public class AttributePanePrimary extends GridPane implements GenerationEventListener, ResponsiveControl {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private final static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
-	
-	class AttributeField extends HBox {
-		private Button dec, inc;
-		private TextField value;
-		
-		public AttributeField() {
-			dec  = new Button("<");
-			inc  = new Button(">");
-			value = new TextField();
-			value.setPrefColumnCount(1);
-			this.getChildren().addAll(dec, value, inc);
-		}
-		public void setText(String val) {
-			this.value.setText(val);
-		}
-	}
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private AttributeController control;
 	private SpliMoCharacter     model;
 	private ViewMode         	mode;
 
-	private Label headAttr, headPoints, headMod, headStart, headValue, headTemp;
+	private Label headAttr, headPoints, headMod, headStart, headValue, headCost;
 	private Map<Attribute, Label> modification;
 	private Map<Attribute, AttributeField> distributed;
 	private Map<Attribute, Label> finalValue;
@@ -99,20 +84,20 @@ public class AttributePanePrimary extends GridPane implements GenerationEventLis
 		headMod    = new Label(UI.getString("label.modified.short"));
 		headStart  = new Label(UI.getString("label.start"));
 		headValue  = new Label(UI.getString("label.value"));
-		headTemp   = new Label(UI.getString("label.cost"));
+		headCost   = new Label(UI.getString("label.cost"));
 		headAttr.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		headPoints.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		headMod.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		headStart.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		headValue.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
-		headTemp.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+		headCost.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		
 		headAttr.getStyleClass().add("table-head");
 		headPoints.getStyleClass().add("table-head");
 		headMod.getStyleClass().add("table-head");
 		headStart.getStyleClass().add("table-head");
 		headValue.getStyleClass().add("table-head");
-		headTemp.getStyleClass().add("table-head");
+		headCost.getStyleClass().add("table-head");
 		
 		headPoints.setAlignment(Pos.CENTER);
 		headValue.setAlignment(Pos.CENTER);
@@ -145,7 +130,7 @@ public class AttributePanePrimary extends GridPane implements GenerationEventLis
 			this.add(headAttr  , 0,0, 2,1);
 			this.add(headStart , 2,0);
 			this.add(headValue , 3,0);
-			this.add(headTemp  , 4,0);
+			this.add(headCost  , 4,0);
 			break;
 		}
 		
@@ -154,6 +139,7 @@ public class AttributePanePrimary extends GridPane implements GenerationEventLis
 			y++;
 			Label longName  = new Label(attr.getName());
 			Label shortName = new Label(attr.getShortName());
+			shortName.setId("short");
 			Label modVal    = modification.get(attr);
 			AttributeField points = distributed.get(attr);
 			Label finVal    = finalValue.get(attr);
@@ -320,6 +306,26 @@ public class AttributePanePrimary extends GridPane implements GenerationEventLis
 		
 		GenerationEventDispatcher.removeListener(this);	
 		GenerationEventDispatcher.addListener(this);	
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.ResponsiveControl#setResponsiveMode(org.prelle.javafx.WindowMode)
+	 */
+	@Override
+	public void setResponsiveMode(WindowMode value) {
+		headCost.setVisible(value==WindowMode.EXPANDED);
+		headCost.setManaged(value==WindowMode.EXPANDED);
+		for (Node node : getChildren()) {
+			if (costValue.values().contains(node)) {
+				node.setVisible(value==WindowMode.EXPANDED);
+				node.setManaged(value==WindowMode.EXPANDED);
+			}
+			if (node.getId()!=null && node.getId().equals("short")) {
+				node.setVisible(value==WindowMode.EXPANDED);
+				node.setManaged(value==WindowMode.EXPANDED);
+			}
+		}
 	}
 
 }

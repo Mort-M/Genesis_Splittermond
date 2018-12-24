@@ -97,8 +97,9 @@ public class LetUserChooseAdapter implements LetUserChooseListener {
 		dialog.setOnAction(CloseType.OK, event -> {
 				provider.getScreenManager().close(dialog, CloseType.OK);
 		});
-		provider.getScreenManager().showAndWait(dialog);
-		logger.debug("Choice was "+Arrays.toString(dialog.getChoice()));
+		CloseType ret = (CloseType) provider.getScreenManager().showAndWait(dialog);
+		dialog.setCloseType(ret);
+		logger.debug("Choice was "+Arrays.toString(dialog.getChoice())+" and CloseType "+dialog.getCloseType());
 		if (dialog.getCloseType()==CloseType.OK) {
 			return dialog.getChoice();
 		}

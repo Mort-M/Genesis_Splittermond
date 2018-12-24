@@ -30,6 +30,7 @@ import org.prelle.splimo.npc.NPCGenerator;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -43,7 +44,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.TilePane;
@@ -65,10 +65,6 @@ public class CreatureScreen extends ManagedScreen implements GenerationEventList
 
 	private TilePane flow;
 	
-	private Button btnCreateCreature;
-	private Button btnAddCreature;
-	private Button btnDel;
-	
 	private ObjectProperty<CreatureReference> selected;
 	
 	private ContextMenu ctxMenuAdd;
@@ -88,6 +84,8 @@ public class CreatureScreen extends ManagedScreen implements GenerationEventList
 		initInteractivity();
 		setSkin(new ManagedScreenStructuredSkin(this));
 		GenerationEventDispatcher.addListener(this);
+		
+		setData(control.getModel());
  	}
 
 	//-------------------------------------------------------------------
@@ -97,32 +95,6 @@ public class CreatureScreen extends ManagedScreen implements GenerationEventList
 		getNavigButtons().add(CloseType.BACK);
 		setTitle(UI.getString("screen.creatures.title"));
 		
-		/*
-		 * Buttons
-		 */
-		ImageView imgAdd    = new ImageView(new Image(ClassLoader.getSystemResourceAsStream("images/icon_creature_add.png")));
-		ImageView imgCreate = new ImageView(new Image(ClassLoader.getSystemResourceAsStream("images/icon_beast_large.png")));
-		ImageView imgDelete = new ImageView(new Image(ClassLoader.getSystemResourceAsStream("images/icon_trash.png")));
-		imgAdd.getStyleClass().add("action-icon");
-		imgCreate.getStyleClass().add("action-icon");
-		imgDelete.getStyleClass().add("action-icon");
-
-		imgAdd.setFitHeight(64);
-		imgAdd.setFitWidth(64);
-		imgCreate.setFitHeight(64);
-		imgCreate.setFitWidth(64);
-		imgDelete.setFitHeight(64);
-		imgDelete.setFitWidth(64);
-		btnAddCreature = new Button(null, new FontIcon("\uE0C5", 40));
-		btnCreateCreature = new Button(null, imgCreate);
-		btnDel = new Button(null, imgDelete);
-		btnAddCreature.setTooltip(new Tooltip(UI.getString("tooltip.creature.add")));
-		btnCreateCreature.setTooltip(new Tooltip(UI.getString("tooltip.creature.create")));
-		btnDel.setTooltip(new Tooltip(UI.getString("tooltip.creature.delete")));
-		btnDel.setDisable(true);
-		getStaticButtons().addAll(btnAddCreature);
-//		getStaticButtons().addAll(btnCreateCreature);
-		getContextButtons().addAll(btnDel);
 		
 		flow = new TilePane(Orientation.HORIZONTAL);
 		flow.setPrefRows(1);
@@ -138,6 +110,7 @@ public class CreatureScreen extends ManagedScreen implements GenerationEventList
 		menuAddCreature    = new MenuItem(UI.getString("screen.creature.add.add_creature"));
 		menuCreateCreature = new MenuItem(UI.getString("screen.creature.add.create_creature"));
 		menuCreateEntourage= new MenuItem(UI.getString("screen.creature.add.create_entourage"));
+		getStaticButtons().addAll(menuAddCreature, menuCreateCreature);
 		menuAddCreature.setOnAction( event -> addCreatureClicked());
 		menuCreateCreature.setOnAction( event -> createCreatureClicked());
 //		ctxMenuAdd.getItems().addAll(menuAddCreature);
@@ -160,10 +133,6 @@ public class CreatureScreen extends ManagedScreen implements GenerationEventList
 
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
-		btnAddCreature.setOnMouseClicked(event -> showAddCreaturePopupMenu(event));
-		btnCreateCreature.setOnMouseClicked(event -> creatureCreateClicked());
-		btnDel.setOnMouseClicked(event -> remove());
-		selected.addListener( (ov,o,n) -> btnDel.setDisable(n==null));
 	}
 
 	//-------------------------------------------------------------------
@@ -202,11 +171,15 @@ public class CreatureScreen extends ManagedScreen implements GenerationEventList
 		col.setUserData(ref);
 		Label heading = new Label(ref.getName());
 		heading.getStyleClass().add("text-subheader");
-		Button btnEdit = new Button(null, new FontIcon("\uE0DD\uE0D8"));
+		Button btnDel = new Button(null, new FontIcon("\uE107"));
+		btnDel.setTooltip(new Tooltip(UI.getString("tooltip.creature.delete")));
+		btnDel.setOnAction(event -> {remove(ref); update();});
+		Button btnEdit = new Button(null, new FontIcon("\uE0D8"));
 		btnEdit.setOnAction(event -> {askName(ref); update();});
 		
-		HBox headline = new HBox(20);
-		headline.getChildren().addAll(heading, btnEdit);
+		HBox headline = new HBox(10);
+		headline.getChildren().addAll(heading, btnDel, btnEdit);
+		HBox.setMargin(btnDel, new Insets(0,0,0,10));
 		HBox.setHgrow(heading, Priority.ALWAYS);
 		heading.setMaxWidth(Double.MAX_VALUE);
 		headline.setMaxWidth(Double.MAX_VALUE);
@@ -241,24 +214,16 @@ public class CreatureScreen extends ManagedScreen implements GenerationEventList
 	}
 
 	//-------------------------------------------------------------------
-	private void remove() {
-		if (selected!=null) {
-			logger.info("Remove creature/follower "+selected.getName());
-			model.removeCreature(selected.get());
-			VBox col = getBox(selected.get());
+	private void remove(CreatureReference ref) {
+		if (ref!=null) {
+			logger.info("Remove creature/follower "+ref.getName());
+			model.removeCreature(ref);
+			VBox col = getBox(ref);
 			flow.getChildren().remove(col);
 			selected.set(null);
 		}
 	}
 
-	//-------------------------------------------------------------------
-	private void showAddCreaturePopupMenu(MouseEvent event) {
-		logger.debug("creatureAddClicked");
-
-		ContextMenu popup = ctxMenuAdd;
-		popup.setAnchorLocation(AnchorLocation.CONTENT_BOTTOM_RIGHT);
-		popup.show(btnAddCreature, event.getScreenX(), event.getScreenY());
-	}
 
 	//-------------------------------------------------------------------
 	private void addCreatureClicked() {

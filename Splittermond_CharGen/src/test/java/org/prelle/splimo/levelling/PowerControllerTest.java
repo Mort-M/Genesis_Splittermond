@@ -65,7 +65,7 @@ public class PowerControllerTest implements GenerationEventListener {
 //		Logger.getLogger("splimo.level.resource").setLevel(Level.DEBUG);
 //		Logger.getLogger("junit").setLevel(Level.DEBUG);
 
-		PropertyConfigurator.configure("log4j.properties");
+		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		SplitterMondCore.initialize(new SplittermondRules());
 		ONCE_GENONLY = SplitterMondCore.getPower("attractive");
 		ONCE_ALWAYS = SplitterMondCore.getPower("socialable");

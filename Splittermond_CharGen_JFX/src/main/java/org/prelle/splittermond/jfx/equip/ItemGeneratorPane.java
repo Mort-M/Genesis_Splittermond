@@ -130,7 +130,7 @@ public class ItemGeneratorPane extends Region implements GenerationEventListener
 	//--------------------------------------------------------------------
 	private void initLayout() {
 		Label lbName = new Label(RES.getString("label.name"));
-		lbName.getStyleClass().add("text-small-subheader");
+		lbName.getStyleClass().add("base");
 
 		// Enhancements column
 		Label lbEnhance = new Label(RES.getString("label.enhancements.applied"));
@@ -153,9 +153,9 @@ public class ItemGeneratorPane extends Region implements GenerationEventListener
 		Label heaMaterial = new Label(RES.getString("label.material"));
 		Label heaPers1 = new Label(RES.getString("label.personalization.first"));
 		Label heaPers2 = new Label(RES.getString("label.personalization.second"));
-		heaMaterial.getStyleClass().add("text-small-subheader");
-		heaPers1.getStyleClass().add("text-small-subheader");
-		heaPers2.getStyleClass().add("text-small-subheader");
+		heaMaterial.getStyleClass().add("base");
+		heaPers1.getStyleClass().add("base");
+		heaPers2.getStyleClass().add("base");
 		GridPane gridPers = new GridPane();
 		gridPers.setVgap(5);
 		gridPers.setHgap(5);

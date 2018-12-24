@@ -15,7 +15,6 @@ import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.ResourceController;
 import org.prelle.splimo.chargen.LetUserChooseListener;
 import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.levelling.ResourceLeveller;
 
@@ -65,7 +64,6 @@ public class ResourcePane2 extends HBox implements GenerationEventListener {
 	public ResourcePane2(ResourceController ctrl, boolean withContext, LetUserChooseListener callback) {
 		this.control = ctrl;
 
-		GenerationEventDispatcher.addListener(this);
 		initComponents(callback);
 		initLayout();
 		if (withContext)

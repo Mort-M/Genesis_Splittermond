@@ -15,6 +15,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
+      <module>common.xml</module>
       <module>Splittermond_BBCode</module>
       <module>Splittermond_Beastmaster</module>
       <module>Splittermond_BuU</module>
@@ -38,6 +39,5 @@
       <module>Splittermond_World</module>
       <module>Splittermond_Zhoujiang</module>
       <module>data-pom.xml</module>
-      <module>Splittermond_IDExport</module>
 	</modules>
 </project>

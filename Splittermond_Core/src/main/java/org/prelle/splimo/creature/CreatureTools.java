@@ -118,11 +118,11 @@ public class CreatureTools {
 	        logger.debug("6. Choices");
 	        for (CreatureModuleReference.NecessaryChoice ref : getChoicesToMake(modulBased)) {
 	        	if (ref.disabled) {
-	        		logger.debug("   * Choice disabled for: "+ref.originModule.getModule().getId()+"/"+ref.getOriginChoice());            
+	        		logger.debug("   * Choice disabled for: "+ref.originModule+"/"+ref.getOriginChoice());            
 	        	} else if (ref.getMadeChoice()==null) {
-	        		logger.debug("   * No choice made for: "+ref.originModule.getModule().getId()+"/"+ref.getOriginChoice());            
+	        		logger.debug("   * No choice made for: "+ref.originModule+"/"+ref.getOriginChoice());            
 	        	} else {
-	        		logger.debug("   * Choice made for: "+ref.originModule.getModule().getId()+"/"+ref.getOriginChoice()+" = "+ref.getMadeChoice());            
+	        		logger.debug("   * Choice made for: "+ref.originModule+"/"+ref.getOriginChoice()+" = "+ref.getMadeChoice());            
 	        		apply(modulBased, ref.getMadeChoice());
 	        	}
 	        }

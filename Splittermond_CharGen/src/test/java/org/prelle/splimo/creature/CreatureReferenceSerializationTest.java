@@ -12,6 +12,7 @@ import java.io.StringWriter;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
@@ -79,6 +80,7 @@ public class CreatureReferenceSerializationTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		Logger.getRootLogger().setLevel(Level.WARN);
+		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		SplitterMondCore.initialize(new SplittermondRules());
 		if (SplitterMondCore.getItem("bergbarte")==null)
 			(new MondstahlklingenPlugin()).init();

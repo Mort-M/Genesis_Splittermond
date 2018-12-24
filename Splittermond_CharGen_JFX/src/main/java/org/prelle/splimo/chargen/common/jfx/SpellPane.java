@@ -1,5 +1,6 @@
 package org.prelle.splimo.chargen.common.jfx;
 
+import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -367,6 +368,10 @@ public class SpellPane extends VBox implements GenerationEventListener {
 		updateContent();
 	}
 
+	//--------------------------------------------------------------------
+	public ReadOnlyObjectProperty<SpellValue> selectedSpellProperty() {
+		return table.getSelectionModel().selectedItemProperty();
+	}
 }
 
 class UndoSelectionCell extends TableCell<SpellValue, Boolean> implements EventHandler<ActionEvent> {

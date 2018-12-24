@@ -3,25 +3,33 @@
  */
 package org.prelle.splimo;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.geometry.Pos;
-import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.layout.HBox;
-import javafx.util.Callback;
-import org.apache.log4j.Logger;
-import org.prelle.javafx.CloseType;
-import org.prelle.javafx.Wizard;
-import org.prelle.javafx.WizardPage;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.LetUserChooseListener;
-
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
+
+import org.apache.log4j.Logger;
+import org.prelle.javafx.CloseType;
+import org.prelle.javafx.Wizard;
+import org.prelle.javafx.WizardPage;
+import org.prelle.splimo.chargen.LetUserChooseListener;
+import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TreeCell;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
+import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
+import javafx.util.Callback;
 
 /**
  * @author prelle
@@ -44,6 +52,8 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 	
 	private HBox content;
 	private Label description;
+	private Label heading;
+	private Label reference;
 	
 	private Education selected;
 
@@ -77,6 +87,13 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 		description = new Label();
 		description.setWrapText(true);
 		description.getStyleClass().add("text-body");
+
+		heading = new Label();
+		heading.setWrapText(true);
+		heading.getStyleClass().add("text-subheader");
+
+		reference = new Label();
+		reference.getStyleClass().add("base");
 		
 		root = new TreeItem<Education>();
 		tree = new TreeView<Education>(root);
@@ -105,8 +122,12 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 		tree.setMinWidth(200);
 		tree.setMinHeight(400);
 		
+		VBox box = new VBox(heading, reference, description);
+		VBox.setMargin(description, new Insets(20,0,0,0));
+		VBox.setVgrow(description, Priority.ALWAYS);
+		
 		// Description scroll
-		ScrollPane scroll = new ScrollPane(description);
+		ScrollPane scroll = new ScrollPane(box);
 		scroll.setMinWidth(300);
 		scroll.setMaxWidth(500);
 		scroll.setFitToWidth(true);
@@ -141,6 +162,8 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 		finishButton.set(selected!=null);
 
 		// Update text
+		heading.setText(selected.getName());
+		reference.setText(selected.getProductName()+" "+selected.getPage());
 		description.setText(selected.getHelpText());
 
 		// Update image

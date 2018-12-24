@@ -131,7 +131,7 @@
       </armor>
    </item>
    <item avail="LARGE_TOWN" cplx="F" id="platteleicht" load="5" material="METAL" price="2500" robust="7" type="ARMOR">
-      <armor def="3" dr="1" hc="1" tickMalus="1" type="ARMOR">
+      <armor def="3" dr="1" hc="2" tickMalus="1" type="ARMOR">
          <requires>
             <attrreq attr="STRENGTH" val="3"/>
          </requires>

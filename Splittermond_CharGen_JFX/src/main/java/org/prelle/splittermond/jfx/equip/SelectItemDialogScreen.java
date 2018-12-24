@@ -19,6 +19,7 @@ import org.prelle.javafx.CloseType;
 import org.prelle.javafx.FontIcon;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.ScreenManager;
+import org.prelle.javafx.fluent.NodeWithTitleSkeleton;
 import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.ResourceReference;
@@ -36,6 +37,7 @@ import org.prelle.splittermond.jfx.equip.input.EnterItemTemplatePane;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
@@ -47,12 +49,14 @@ import javafx.scene.layout.Region;
  * @author prelle
  *
  */
-public class SelectItemDialogScreen extends ManagedScreen {
+public class SelectItemDialogScreen extends NodeWithTitleSkeleton {
 
 	private final static Logger logger = Logger.getLogger("splittermond.jfx");
 	
 	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
 
+	private ScreenManager manager;
+	
 	private ItemTemplateListView selectPane;
     private CommonItemGeneratorMethods dataView;
     private ImageView imageView;
@@ -62,20 +66,21 @@ public class SelectItemDialogScreen extends ManagedScreen {
     private int qualityLimit;
     private ResourceReference asRelic;
 
-    private Button btnAdd;
+    private MenuItem btnAdd;
     private Button btnEdit;
     private Button btnDelete;
 	private boolean developerMode;
 
     //-------------------------------------------------------------------
-	public SelectItemDialogScreen() {
+	public SelectItemDialogScreen(ScreenManager manager) {
+		this.manager = manager;
 		initComponents();
 		initLayout();
 		initInteractivity();
 		
-		getNavigButtons().addAll(CloseType.OK, CloseType.CANCEL);
+//		getNavigButtons().addAll(CloseType.OK, CloseType.CANCEL);
 		setTitle(UI.getString("screen.selectequipment.title"));
-		setSkin(new ManagedScreenStructuredSkin(this));
+//		setSkin(new ManagedScreenStructuredSkin(this));
 		
 		qualityLimit = Integer.MAX_VALUE;
 		
@@ -86,8 +91,8 @@ public class SelectItemDialogScreen extends ManagedScreen {
 	}
 
     //-------------------------------------------------------------------
-	public SelectItemDialogScreen(int limit, ResourceReference asRelic) {
-		this();
+	public SelectItemDialogScreen(ScreenManager manager, int limit, ResourceReference asRelic) {
+		this(manager);
 		qualityLimit = limit;
 		this.asRelic = asRelic;
 	}
@@ -103,19 +108,21 @@ public class SelectItemDialogScreen extends ManagedScreen {
 			}
 		});
 		developerMode = SplittermondRules.isDeveloperMode();
+//		developerMode = true;
 		if (developerMode)
 			dataView  = new NewItemGeneratorPane();
 		else
 			dataView  = new ItemGeneratorPane();
+		dataView.setScreenManager(manager);
 		imageView = new ImageView();
 
 		// Add button
 		FontIcon iconAdd = new FontIcon();
 		iconAdd.addFontSymbol("\uE17E\uE109");
-		btnAdd   = new Button(null, iconAdd);
-		btnAdd  .setTooltip(new Tooltip(UI.getString("button.customItem.add")));
+		btnAdd   = new MenuItem(UI.getString("button.customItem.add"), iconAdd);
+//		btnAdd  .setTooltip(new Tooltip(UI.getString("button.customItem.add")));
 		btnAdd  .setStyle("-fx-padding: 8px");
-		getStaticButtons().add(btnAdd);
+//		getStaticButtons().add(btnAdd);
 
 		// Edit button
 		FontIcon iconEdit = new FontIcon();
@@ -151,33 +158,22 @@ public class SelectItemDialogScreen extends ManagedScreen {
 		btnDelete.setOnAction(event -> customDeleteClicked());
 	}
 
-	//-------------------------------------------------------------------
-	@Override
-	public void setScreenManager(ScreenManager manager) {
-		super.setScreenManager(manager);
-		dataView.setScreenManager(manager);
-	}
+//	//-------------------------------------------------------------------
+//	@Override
+//	public void setScreenManager(ScreenManager manager) {
+//		super.setScreenManager(manager);
+//		dataView.setScreenManager(manager);
+//	}
 
 	//-------------------------------------------------------------------
 	private void selectionChanged(ItemTemplate item) {
 		logger.debug("Selected "+item);
-		if (item==null) {
-			getContextButtons().clear();
-			return;
-		}
-		
-		// Change buttons depending if it is a custom item or not
-		boolean isCustom = item.getID().startsWith("custom");
 		
 		selectedItem = new CarriedItem();
 		selectedItem.setResource(asRelic); // Mark as relic
 		selectedItem.setItem(item);
 		control = new ItemLevellerAndGenerator(selectedItem, qualityLimit);
 		dataView.setData(control);
-		
-		getContextButtons().clear();
-		if (isCustom)
-			getContextButtons().addAll(btnDelete, btnEdit);
 	}
 
 	//-------------------------------------------------------------------

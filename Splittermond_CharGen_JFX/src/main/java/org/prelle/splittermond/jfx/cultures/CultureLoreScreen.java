@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.geometry.Insets;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
@@ -17,16 +18,24 @@ import javafx.scene.layout.VBox;
 import org.apache.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
+import org.prelle.javafx.fluent.CommandBar;
+import org.prelle.javafx.fluent.NodeWithTitleSkeleton;
 import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
+import org.prelle.rpgframework.jfx.FreePointsNode;
+import org.prelle.rpgframework.jfx.SettingsAndCommandBar;
 import org.prelle.splimo.CultureLore;
 import org.prelle.splimo.PointsPane;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.ViewMode;
+import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.charctrl.CultureLoreController;
 import org.prelle.splimo.charctrl.Generator;
+import org.prelle.splimo.charctrl.LanguageController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.jfx.languages.LanguagePane;
 
 /**
  * @author Stefan
@@ -38,12 +47,21 @@ public class CultureLoreScreen extends ManagedScreen implements GenerationEventL
 	
 	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
 
-	private CultureLoreController control;
-	private ViewMode mode;
+	private CharacterController charGen;
+	private CultureLoreController controlCult;
+	private LanguageController control;
 
-	private PointsPane points;
+	
+	private Label lbExpTotal;
+	private Label lbExpInvested;
+	private FreePointsNode freePoints;
+	private Label lbLevel;
+	private CommandBar commands;
+	private SettingsAndCommandBar firstLine;
+
 	private AvailableCultureLorePane available;
 	private CultureLorePane cultures;
+	private LanguagePane languages;
 	
 	private VBox descLayout;
 	private Label    lblDescription;
@@ -53,29 +71,30 @@ public class CultureLoreScreen extends ManagedScreen implements GenerationEventL
 	//--------------------------------------------------------------------
 	/**
 	 */
-	public CultureLoreScreen(CultureLoreController control, ViewMode mode) {
-		this.control = control;
-		this.mode    = mode;
-		if (control==null)
+	public CultureLoreScreen(CharacterController charGen) {
+		this.charGen = charGen;
+		this.controlCult = charGen.getCultureLoreController();
+		this.control = charGen.getLanguageController();
+		if (controlCult==null)
 			throw new NullPointerException("Controller is null");
 		
 		initComponents();
 		initLayout();
 		initInteractivity();
-		setSkin(new ManagedScreenStructuredSkin(this));
 		GenerationEventDispatcher.addListener(this);
  	}
 
 	//-------------------------------------------------------------------
 	private void initComponents() {
-		getNavigButtons().add(CloseType.BACK);
 		setTitle(UI.getString("culturelorescreen.title"));
 		
-		available = new AvailableCultureLorePane(control, AvailableCultureLorePane.DisplayMode.AVAILABLE);
+		available = new AvailableCultureLorePane(controlCult, AvailableCultureLorePane.DisplayMode.AVAILABLE);
 		available.getStyleClass().add("content");
 		
-		cultures  = new CultureLorePane(control);
+		cultures  = new CultureLorePane(controlCult);
 		cultures.getStyleClass().add("content");
+		languages = new LanguagePane(control);
+//		languages.getStyleClass().add("content");
 
 		lblDescription = new Label(UI.getString("culturelorescreen.lblDesc"));
 		lblDescription.setWrapText(true);
@@ -86,19 +105,43 @@ public class CultureLoreScreen extends ManagedScreen implements GenerationEventL
 		lblIncludeUnavailable = new Label(UI.getString("culturelorescreen.lblIncl"));
 		lblIncludeUnavailable.setWrapText(true);
 		lblIncludeUnavailable.getStyleClass().add("body");
+
 		
 		/*
 		 * Exp & Co.
 		 */
-		points = new PointsPane(mode);
-		if (control instanceof Generator)
-			points.setGenerator((Generator) control);
+		freePoints = new FreePointsNode();
+		freePoints.setStyle("-fx-max-height: 3em; -fx-max-width: 3em");
+		freePoints.setPoints(charGen.getModel().getExperienceFree());
+		freePoints.setName(UI.getString("label.ep.free"));
+		Label hdExpTotal    = new Label(SpliMoCharGenConstants.RES.getString("label.ep.total")+": ");
+		Label hdExpInvested = new Label(SpliMoCharGenConstants.RES.getString("label.ep.used")+": ");
+		Label hdLevel       = new Label(SpliMoCharGenConstants.RES.getString("label.level")+": ");
+		lbExpTotal    = new Label("?");
+		lbExpInvested = new Label("?");
+		lbLevel       = new Label("?");
+		lbExpTotal.getStyleClass().add("base");
+		lbExpInvested.getStyleClass().add("base");
+		lbLevel.getStyleClass().add("base");
+		lbExpTotal.setText(String.valueOf(charGen.getModel().getExperienceInvested()+charGen.getModel().getExperienceFree()));
+		lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
+		lbLevel.setText(charGen.getModel().getLevel()+"");
+		
+		commands = new CommandBar();
+		commands.getItems().add(new MenuItem("Drucken", new Label("\uD83D\uDDB6")));
+		
+		HBox expLine = new HBox(5);
+		expLine.getChildren().addAll(hdExpTotal, lbExpTotal, hdExpInvested, lbExpInvested, hdLevel, lbLevel);
+		HBox.setMargin(hdLevel, new Insets(0,0,0,20));
+		expLine.getStyleClass().add("character-document-view-firstline");
+		
+		firstLine = new SettingsAndCommandBar();
+		firstLine.setSettings(expLine);
+//		firstLine.setCommandBar(commands);
 	}
 
 	//-------------------------------------------------------------------
 	private void initLayout() {
-		getStyleClass().add("text-body");
-		
 		// Available
 		Label lblAvailable = new Label(UI.getString("label.available"));
 		available.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
@@ -122,17 +165,25 @@ public class CultureLoreScreen extends ManagedScreen implements GenerationEventL
 		descLayout.setStyle("-fx-pref-width: 20em");
 		descLayout.getChildren().addAll(lblDesc, lblDescription, chkIncludeUnavailable, lblIncludeUnavailable);
 
+		// Languages
+		Label lblLanguages = new Label(UI.getString("label.languages"));
+		languages.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+		HBox.setHgrow(languages, Priority.ALWAYS);
+		lblLanguages.getStyleClass().add("text-subheader");
+		VBox boxLanguages = new VBox(20);
+		boxLanguages.getChildren().addAll(lblLanguages, languages);
+
 		// Flow; Resources and Powers
 		HBox flow = new HBox(40);
-		flow.getChildren().addAll(boxAvailable, boxCultLores, descLayout);
+		flow.getChildren().addAll(freePoints, boxLanguages, boxAvailable, boxCultLores, descLayout);
+		HBox.setMargin(boxLanguages, new Insets(0, 0, 0, -20));
 
-		HBox content = new HBox();
+		VBox content = new VBox();
 		content.setSpacing(20);
-		content.getChildren().addAll(points, flow);
+		content.getChildren().addAll(firstLine, flow);
 		content.setMaxHeight(Double.MAX_VALUE);
-		HBox.setHgrow(flow, Priority.ALWAYS);
-		HBox.setMargin(points, new Insets(0,0,20,0));
-		HBox.setMargin(flow  , new Insets(0,0,20,0));
+		VBox.setVgrow(flow, Priority.ALWAYS);
+		VBox.setMargin(flow  , new Insets(0,0,20,0));
 		setContent(content);
 	}
 
@@ -140,31 +191,33 @@ public class CultureLoreScreen extends ManagedScreen implements GenerationEventL
 	private void initInteractivity() {
 		chkIncludeUnavailable.selectedProperty().addListener( (ov,o,n) -> {
 			logger.debug("---switch "+n);
-			control.showCultureLoresWithUnmetRequirements(n);
+			controlCult.showCultureLoresWithUnmetRequirements(n);
 		});
 		
 		available.getList().setOnSwipeRight(event -> {
 			CultureLore selected = available.selectedItemProperty().get();
 			logger.debug("Swiped right: "+selected);
-			if (selected!=null && control.canBeSelected(selected)) {
-				control.select(selected);
+			if (selected!=null && controlCult.canBeSelected(selected)) {
+				controlCult.select(selected);
 			}
 		});
 		available.setOnAction(event -> {
 			logger.debug("Action "+event.getSource());
 			CultureLore selected = (CultureLore)event.getSource();
-			if (selected!=null && control.canBeSelected(selected)) {
+			if (selected!=null && controlCult.canBeSelected(selected)) {
 				logger.debug("Select "+selected);
-				control.select(selected);
+				controlCult.select(selected);
 			}
 		});
 	}
 
 	//-------------------------------------------------------------------
 	public void setData(SpliMoCharacter model) {
-		points.setData(model);
+		lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
+		lbLevel.setText(charGen.getModel().getLevel()+"");
 		available.setData(model);
 		cultures.setData(model);
+		languages.setData(model);
 	}
 
 	//--------------------------------------------------------------------
@@ -176,29 +229,22 @@ public class CultureLoreScreen extends ManagedScreen implements GenerationEventL
 		switch (event.getType()) {
 		case EXPERIENCE_CHANGED:
 			logger.debug("rcv "+event.getType()+"   "+Arrays.toString((int[])event.getValue()));
-			points.refresh();
+			lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
+			lbLevel.setText(charGen.getModel().getLevel()+"");
 			break;
 		case LANGUAGE_ADDED:
 		case LANGUAGE_REMOVED:
-			points.refresh();
+			lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
+			lbLevel.setText(charGen.getModel().getLevel()+"");
 			break;
 		case CULTURELORE_ADDED:
 		case CULTURELORE_REMOVED:
-			points.refresh();
+			lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
+			lbLevel.setText(charGen.getModel().getLevel()+"");
 			break;
 		default:
 			break;
 		}		
-	}
-
-	//-------------------------------------------------------------------
-	/**
-	 * @see org.prelle.javafx.ManagedScreen#close(org.prelle.javafx.CloseType)
-	 */
-	@Override
-	public boolean close(CloseType closeType) {
-		GenerationEventDispatcher.removeListener(this);
-		return true;
 	}
 
 }

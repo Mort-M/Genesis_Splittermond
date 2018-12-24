@@ -45,6 +45,15 @@ public class Education extends BasePluginData implements Comparable<Education> {
 		modifications = new ModificationList();
 		variants      = new ArrayList<Education>();
 	}
+	
+	//-------------------------------------------------------------------
+	public Education(String id, String variantOf, String customName) {
+		this.key      = id;
+		this.variantOf= variantOf;
+		this.name     = new String(customName);
+		modifications = new ModificationList();
+		variants      = new ArrayList<Education>();
+	}
 
 	//--------------------------------------------------------------------
 	/**
@@ -66,16 +75,19 @@ public class Education extends BasePluginData implements Comparable<Education> {
 
 	//-------------------------------------------------------------------
 	public String toString() {
-		return key;
+		return key+" / "+name+" /"+super.toString();
 	}
 
 	//-------------------------------------------------------------------
 	public boolean equals(Object o) {
+		if (o==this) return true;
 		if (!(o instanceof Education))
 			return false;
 		
 		Education other = (Education)o;
 		if (!key.equals(other.getKey())) return false;
+		if (name!=null && !name.equals(other.name)) return false;
+		if (other.name!=null && !other.name.equals(name)) return false;
 		
 		return modifications.equals(other.getModifications());
 	}
@@ -109,6 +121,7 @@ public class Education extends BasePluginData implements Comparable<Education> {
 	//-------------------------------------------------------------------
 	public void setName(String name) {
 		this.name = name;
+		throw new RuntimeException("Got you!");
 	}
 
 	//-------------------------------------------------------------------

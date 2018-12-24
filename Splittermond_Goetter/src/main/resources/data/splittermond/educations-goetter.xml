@@ -1409,7 +1409,7 @@
   	</education>
 
   	<!-- titanchild###################################################################### -->
-	<education id="titanchild" variantof="elementalist">
+	<education id="titanchild_priest" variantof="elementalist">
     	<modifications>
     		<reqmod type="culture" ref="strominseln" />
     		<powermod ref="priest"/>

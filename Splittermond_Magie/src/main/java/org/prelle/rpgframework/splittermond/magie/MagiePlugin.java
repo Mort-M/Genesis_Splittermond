@@ -117,6 +117,7 @@ public class MagiePlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadMasterships(this, ClassLoader.getSystemResourceAsStream("data/splittermond/masterships-magie.xml"), i18NResources, i18NHelpResources);		
 		SplitterMondCore.loadSpells(this, ClassLoader.getSystemResourceAsStream("data/splittermond/spells-magie.xml"), i18NResources, i18NHelpResources);		
 		SplitterMondCore.loadEducations(this, ClassLoader.getSystemResourceAsStream("data/splittermond/educations-magie.xml"), i18NResources, i18NHelpResources);		
+		SplitterMondCore.loadEnhancements(this, ClassLoader.getSystemResourceAsStream("data/splittermond/enhancements-magie.xml"), i18NResources, i18NHelpResources);		
 		BasePluginData.flushMissingKeys();
 //		logger.fatal("STOP here");
 //		System.exit(0);

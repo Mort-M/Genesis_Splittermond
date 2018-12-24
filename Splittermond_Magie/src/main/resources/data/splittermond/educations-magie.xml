@@ -218,6 +218,7 @@
                 <skillmod ref="naturemagic"/>
                 <skillmod ref="shadowmagic"/>
                 <skillmod ref="deathmagic"/>
+                <skillmod ref="watermagic"/>
                 <skillmod ref="windmagic"/>
             </selmod>
                         
@@ -251,6 +252,7 @@
                 <skillmod ref="lightmagic"/>
                 <skillmod ref="naturemagic"/>
                 <skillmod ref="shadowmagic"/>
+                <skillmod ref="watermagic"/>
                 <skillmod ref="windmagic"/>
             </selmod>
                         
@@ -295,6 +297,7 @@
                 <skillmod ref="naturemagic"/>
                 <skillmod ref="shadowmagic"/>
                 <skillmod ref="deathmagic"/>
+                <skillmod ref="watermagic"/>
                 <skillmod ref="windmagic"/>
             </selmod>
                         
@@ -343,6 +346,7 @@
                 <skillmod ref="firemagic"/>
                 <skillmod ref="naturemagic"/>
                 <skillmod ref="windmagic"/>
+                <skillmod ref="watermagic"/>
             </selmod>
                         
             <mastermod skill="arcanelore"/>

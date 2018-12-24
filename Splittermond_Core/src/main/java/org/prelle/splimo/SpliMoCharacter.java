@@ -703,6 +703,8 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 	 */
 	@Override
 	public SkillValue getSkillValue(Skill skill) {
+		if (skill==null)
+			throw new NullPointerException();
 		for (SkillValue tmp : skillvals)
 			if (tmp.getSkill()==skill)
 				return tmp;
@@ -824,6 +826,8 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 
 	//-------------------------------------------------------------------
 	public boolean hasMastership(Mastership master) {
+		if (master==null)
+			return false;
 		for (MastershipReference ref : getSkillValue(master.getSkill()).getMasterships()) {
 			if (ref.getMastership()==null)
 				continue;

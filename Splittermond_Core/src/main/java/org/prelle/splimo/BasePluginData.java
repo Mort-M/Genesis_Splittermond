@@ -15,7 +15,6 @@ import java.util.ResourceBundle;
 import org.apache.log4j.Logger;
 
 import de.rpgframework.HardcopyPluginData;
-import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.RulePlugin;
 import de.rpgframework.character.RuleSpecificCharacterObject;
 

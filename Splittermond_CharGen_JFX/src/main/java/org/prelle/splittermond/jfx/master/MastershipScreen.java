@@ -14,8 +14,11 @@ import java.util.ResourceBundle;
 import org.apache.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
+import org.prelle.javafx.fluent.CommandBar;
 import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
 import org.prelle.rpgframework.jfx.AttentionPane;
+import org.prelle.rpgframework.jfx.FreePointsNode;
+import org.prelle.rpgframework.jfx.SettingsAndCommandBar;
 import org.prelle.rpgframework.jfx.ThreeColumnPane;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.MastershipOrSpecialization;
@@ -30,11 +33,13 @@ import org.prelle.splimo.SpellType;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.ViewMode;
+import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.charctrl.Generator;
 import org.prelle.splimo.charctrl.MastershipController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.persist.MastershipConverter;
 import org.prelle.splimo.persist.SpecializationConverter;
 
@@ -69,7 +74,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	private final static SpecializationConverter CONVERT_SPECIAL = new SpecializationConverter();
 	
 	private MastershipController control;
-	private ViewMode mode;
+	private CharacterController charGen;
 	private SkillValue sVal;
 
 	private RadioButton rbMaster;
@@ -82,16 +87,22 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	private Label lblName;
 	private Label lblProduct;
 	private Label lblDescr;
-	private PointsPane points;
+	
+	private Label lbExpTotal;
+	private Label lbExpInvested;
+	private FreePointsNode freePoints;
+	private Label lbLevel;
+	private CommandBar commands;
+	private SettingsAndCommandBar firstLine;
 	
 	private String searchFilter;
 
 	//-------------------------------------------------------------------
 	/**
 	 */
-	public MastershipScreen(MastershipController ctrl, ViewMode mode) {
-		this.control = ctrl;
-		this.mode    = mode;
+	public MastershipScreen(CharacterController ctrl) {
+		this.charGen = ctrl;
+		this.control = ctrl.getMastershipController();
 		
 		initComponents();
 		initLayout();
@@ -131,9 +142,34 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 		/*
 		 * Exp & Co.
 		 */
-		points = new PointsPane(mode);
-		if (control instanceof Generator)
-			points.setGenerator((Generator) control);
+		freePoints = new FreePointsNode();
+		freePoints.setStyle("-fx-max-height: 3em; -fx-max-width: 3em");
+		freePoints.setPoints(charGen.getModel().getExperienceFree());
+		freePoints.setName(UI.getString("label.ep.free"));
+		Label hdExpTotal    = new Label(SpliMoCharGenConstants.RES.getString("label.ep.total")+": ");
+		Label hdExpInvested = new Label(SpliMoCharGenConstants.RES.getString("label.ep.used")+": ");
+		Label hdLevel       = new Label(SpliMoCharGenConstants.RES.getString("label.level")+": ");
+		lbExpTotal    = new Label("?");
+		lbExpInvested = new Label("?");
+		lbLevel       = new Label("?");
+		lbExpTotal.getStyleClass().add("base");
+		lbExpInvested.getStyleClass().add("base");
+		lbLevel.getStyleClass().add("base");
+		lbExpTotal.setText(String.valueOf(charGen.getModel().getExperienceInvested()+charGen.getModel().getExperienceFree()));
+		lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
+		lbLevel.setText(charGen.getModel().getLevel()+"");
+		
+		commands = new CommandBar();
+//		commands.getItems().add(new MenuItem("Drucken", new Label("\uD83D\uDDB6")));
+		
+		HBox expLine = new HBox(5);
+		expLine.getChildren().addAll(hdExpTotal, lbExpTotal, hdExpInvested, lbExpInvested, hdLevel, lbLevel);
+		HBox.setMargin(hdLevel, new Insets(0,0,0,20));
+		expLine.getStyleClass().add("character-document-view-firstline");
+		
+		firstLine = new SettingsAndCommandBar();
+		firstLine.setSettings(expLine);
+//		firstLine.setCommandBar(commands);
 	}
 
 	//-------------------------------------------------------------------
@@ -172,13 +208,21 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 		box.getChildren().addAll(lineQuestion, lineSearch, threeCol);
 		VBox.setVgrow(threeCol, Priority.ALWAYS);
 		
-		HBox content = new HBox();
-		content.setSpacing(20);
-		content.getChildren().addAll(points, box);
-		HBox.setMargin(points, new Insets(0,0,20,0));
+		HBox flow = new HBox();
+		flow.setSpacing(20);
+		flow.getChildren().addAll(freePoints, box);
+		HBox.setMargin(freePoints, new Insets(0,0,20,0));
 		HBox.setMargin(box, new Insets(0,0,20,0));
 		HBox.setHgrow(threeCol, Priority.ALWAYS);
-		content.getStyleClass().add("text-body");
+		flow.getStyleClass().add("text-body");
+
+		VBox content = new VBox();
+		content.setSpacing(20);
+		content.getChildren().addAll(firstLine, flow);
+		VBox.setVgrow(flow, Priority.ALWAYS);
+		VBox.setMargin(flow  , new Insets(0,0,20,0));
+		setContent(content);
+		content.getStyleClass().add("mastership-screen");
 		
 		setContent(content);
 	}
@@ -271,7 +315,10 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 			refresh();
 			break;
 		case EXPERIENCE_CHANGED:
-			points.refresh();
+			lbExpTotal.setText(String.valueOf(charGen.getModel().getExperienceInvested()+charGen.getModel().getExperienceFree()));
+			lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
+			lbLevel.setText(charGen.getModel().getLevel()+"");
+			freePoints.setPoints(charGen.getModel().getExperienceFree());
 			break;
 		case POINTS_LEFT_MASTERSHIPS:
 		default:
@@ -324,7 +371,10 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 		this.sVal  = sVal;
 		
 		refresh();
-		points.setData(model);
+		lbExpTotal.setText(String.valueOf(charGen.getModel().getExperienceInvested()+charGen.getModel().getExperienceFree()));
+		lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
+		lbLevel.setText(charGen.getModel().getLevel()+"");
+		freePoints.setPoints(charGen.getModel().getExperienceFree());
 		setTitle(sVal.getSkill().getName()+"/"+UI.getString("screen.masterships.title"));
 	}
 

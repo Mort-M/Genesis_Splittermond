@@ -8,15 +8,17 @@ import java.util.List;
 
 import org.prelle.simplepersist.AttribConvert;
 import org.prelle.simplepersist.Attribute;
+import org.prelle.splimo.modifications.PowerModification;
 import org.prelle.splimo.persist.PowerConverter;
 
 import de.rpgframework.genericrpg.modification.Modification;
+import de.rpgframework.genericrpg.modification.ModifyableImpl;
 
 /**
  * @author prelle
  *
  */
-public class PowerReference implements Comparable<PowerReference> {
+public class PowerReference extends ModifyableImpl implements Comparable<PowerReference> {
 
 	
 	@Attribute(name="ref")
@@ -25,16 +27,10 @@ public class PowerReference implements Comparable<PowerReference> {
 	@Attribute(required=false)
 	private int count;
 
-	/**
-	 * For stackable powers with attached attribute modifications (e.g. "sturdy"),
-	 * the previous made modifications are listed here to allow to modify them
-	 */
-	private transient List<Modification> modifications;
 	
 	//-------------------------------------------------------------------
 	public PowerReference() {
 		count = 1;
-		modifications  = new ArrayList<>();
 	}
 
 	//-------------------------------------------------------------------
@@ -68,7 +64,9 @@ public class PowerReference implements Comparable<PowerReference> {
 
 	//-------------------------------------------------------------------
 	public String toString() {
-		return String.valueOf(power)+" "+count;
+		if (power!=null && power.canBeUsedMultipleTimes())
+			return String.valueOf(power)+" "+getModifiedCount()+" (mods="+modifications+")";
+		return String.valueOf(power)+" (mods="+modifications+")";
 	}
 
 	//-------------------------------------------------------------------
@@ -110,6 +108,19 @@ public class PowerReference implements Comparable<PowerReference> {
 	 */
 	public List<Modification> getModifications() {
 		return modifications;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @return the value
+	 */
+	public int getModifiedCount() {
+		int sum = count;
+		for (Modification mod : modifications) {
+			if (mod instanceof PowerModification && ((PowerModification)mod).getPower()==power)
+				sum+= 1;
+		}
+		return sum;
 	}
 
 }

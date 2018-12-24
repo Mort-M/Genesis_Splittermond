@@ -67,11 +67,11 @@ public class BasicItemDataPane extends GridPane {
 		 * Styles
 		 */
 		this.getStyleClass().addAll("content","text-body","bordered");
-		heaAvailability.getStyleClass().add("text-small-subheader");
-		heaPrice.getStyleClass().add("text-small-subheader");
-		heaLoad.getStyleClass().add("text-small-subheader");
-		heaRigidity.getStyleClass().add("text-small-subheader");
-		heaComplexity.getStyleClass().add("text-small-subheader");
+		heaAvailability.getStyleClass().add("base");
+		heaPrice.getStyleClass().add("base");
+		heaLoad.getStyleClass().add("baser");
+		heaRigidity.getStyleClass().add("base");
+		heaComplexity.getStyleClass().add("base");
 	}
 
 	//-------------------------------------------------------------------

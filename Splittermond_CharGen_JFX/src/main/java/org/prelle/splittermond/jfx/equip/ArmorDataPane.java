@@ -81,12 +81,12 @@ public class ArmorDataPane extends GridPane {
 		 * Styles
 		 */
 		this.getStyleClass().addAll("content","text-body","bordered");
-		heaDefense  .getStyleClass().add("text-small-subheader");
-		heaReduction.getStyleClass().add("text-small-subheader");
-		heaHandicap .getStyleClass().add("text-small-subheader");
-		heaTickMalus.getStyleClass().add("text-small-subheader");
-		heaMinStr   .getStyleClass().add("text-small-subheader");
-		heaFeatures .getStyleClass().add("text-small-subheader");
+		heaDefense  .getStyleClass().add("base");
+		heaReduction.getStyleClass().add("base");
+		heaHandicap .getStyleClass().add("base");
+		heaTickMalus.getStyleClass().add("base");
+		heaMinStr   .getStyleClass().add("base");
+		heaFeatures .getStyleClass().add("base");
 	}
 
 	//-------------------------------------------------------------------

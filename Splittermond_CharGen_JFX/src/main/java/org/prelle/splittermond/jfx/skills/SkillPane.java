@@ -13,12 +13,14 @@ import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
 import org.apache.log4j.Logger;
-import org.prelle.javafx.FontIcon;
+import org.prelle.javafx.ResponsiveControl;
+import org.prelle.javafx.WindowMode;
 import org.prelle.rpgframework.jfx.AttentionPane;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
+import org.prelle.splimo.SkillField;
 import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpliMoCharGenJFXUtil;
@@ -28,7 +30,6 @@ import org.prelle.splimo.charctrl.SkillController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.lvl.jfx.SkillField;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -47,7 +48,7 @@ import javafx.scene.layout.Priority;
  * @author prelle
  *
  */
-public class SkillPane extends GridPane implements GenerationEventListener, EventHandler<ActionEvent> {
+public class SkillPane extends GridPane implements GenerationEventListener, EventHandler<ActionEvent>, ResponsiveControl {
 
 	private static Logger logger = Logger.getLogger("splittermond.jfx");
 
@@ -159,7 +160,7 @@ public class SkillPane extends GridPane implements GenerationEventListener, Even
 
 		GridPane.setHgrow(headMastery, Priority.ALWAYS);
 
-		headName.setStyle("-fx-pref-width: 20em");
+		headName.setStyle("-fx-pref-width: 15em");
 		headAtt1.setStyle("-fx-min-width: 3.3em");
 		headAtt2.setStyle("-fx-min-width: 3.3em");
 		headMastery.setStyle("-fx-min-width: 20em");
@@ -176,6 +177,7 @@ public class SkillPane extends GridPane implements GenerationEventListener, Even
 			
 			// Field name
 			Label lblName    = new Label(sVal.getName());
+			lblName.setStyle("-fx-min-width: 7em");
 			lblName.setContentDisplay(ContentDisplay.RIGHT);
 			lblName.setGraphic(null);
 
@@ -239,9 +241,12 @@ public class SkillPane extends GridPane implements GenerationEventListener, Even
 					buf.append(",");
 			}
 			Label master = new Label(buf.toString());
-			FontIcon edit = new FontIcon();
-			edit.addFontSymbol("\uE104",14);
-			Button button = new Button(null, edit);
+			master.setWrapText(true);
+//			FontIcon edit = new FontIcon();
+//			edit.addFontSymbol("\uE104",14);
+			Button button = new Button("\uE227\uE104");
+//			button.setFont(Font.font(button.getFont().getName(), button.getFont().getSize()*1.5));
+//			button.getStyleClass().add("mini-button");
 			button.setAlignment(Pos.CENTER_LEFT);
 
 			/*
@@ -255,7 +260,10 @@ public class SkillPane extends GridPane implements GenerationEventListener, Even
 			}
 			value.getStyleClass().add(lineStyle);
 			modVal.getStyleClass().add(lineStyle);
-			// Final valiue
+			button.setStyle("-fx-font-family: \"Segoe UI Symbol\"; -fx-font-size: 140%; -fx-padding: 0.1em; -fx-background-color: "+(((y%2)==0)?"transparent":"derive(light, -10%)"));
+			button.getStyleClass().addAll(lineStyle);
+//			logger.info("Button = "+button.getStyle());
+			// Final value
 			finVal.getStyleClass().addAll(lineStyle, "border-all");
 			finVal.getStyleClass().addAll(lineStyle, "border-right");
 			if (withMaster) {
@@ -454,6 +462,33 @@ public class SkillPane extends GridPane implements GenerationEventListener, Even
 	//-------------------------------------------------------------------
 	public ObjectProperty<SkillValue> selectedSkillProperty() {
 		return selectedSkill;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.ResponsiveControl#setResponsiveMode(org.prelle.javafx.WindowMode)
+	 */
+	@Override
+	public void setResponsiveMode(WindowMode value) {
+		boolean expand = value==WindowMode.EXPANDED;
+		headAtt1.setVisible(expand);
+		headAtt1.setManaged(expand);
+		for (Label lbl : attrib1.values()) {
+			lbl.setVisible(expand);
+			lbl.setManaged(expand);
+		}
+		headAtt2.setVisible(expand);
+		headAtt2.setManaged(expand);
+		for (Label lbl : attrib2.values()) {
+			lbl.setVisible(expand);
+			lbl.setManaged(expand);
+		}
+		headMod.setVisible(expand);
+		headMod.setManaged(expand);
+		for (Label lbl : modification.values()) {
+			lbl.setVisible(expand);
+			lbl.setManaged(expand);
+		}
 	}
 
 }

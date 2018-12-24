@@ -1,0 +1,319 @@
+.root {
+   -fx-base: rgb(155, 209, 245);   /*  #9BD1F5 */
+    dark: derive(rgb(155, 209, 245), -50%);  /* #749DB8 */
+    darker: derive(rgb(155, 209, 245), -25%);
+    lighter: derive(rgb(155, 209, 245), +25%);
+    light: derive(rgb(155, 209, 245), +50%);
+   -fx-background-color: transparent;
+   background: rgb(155, 209, 245); 
+   areacolor-action : derive( background, -50%); 
+}
+
+.navigation-area {
+  -fx-background-image: url("../data/Splittermond_hochkant.png");
+  -fx-background-position: bottom center;
+  -fx-background-insets: 30 30 30px 30;
+  -fx-min-width: 120px;
+}
+.action-area {
+	-fx-text-fill: light;
+}
+.action-area .font-icon-text {
+	-fx-fill: light;
+}
+
+.page {
+    -fx-background-color: background;
+}
+
+.content {
+    -fx-background-color: light;
+}
+ 
+.base-block {
+    -fx-background-color: dark;	
+}
+ 
+.base-block .label {
+    -fx-text-fill: light;
+    -fx-min-width: 2em;
+    -fx-pref-width: 3em;
+}
+
+.dialog-outside {
+	-fx-background-color: rgba(0,0,0, 0.8);
+	-fx-opacity: 1;
+}
+ 
+.drop-target {
+    -fx-background-insets: 10px 0 0 0;
+	-fx-border-width: 5px 0 0 0;
+	-fx-border-style: solid;
+	-fx-border-color: red;
+}
+
+.chardata-tile {
+	-fx-border-color: dark;
+	-fx-border-width: 2px;
+	-fx-border-style: solid;
+}
+
+/* Used by race dialog */
+.stats-block {
+	-fx-border-style: solid;
+	-fx-border-color: black;
+	-fx-border-width: 1px;
+	-fx-font-family: "Segoe UI Symbol";
+	-fx-padding: 0.2em;
+}
+
+.section-bar {
+	-fx-background-color: dark;
+	-fx-padding: 0 4 4 4;
+}
+.section-bar .label {
+	-fx-text-fill: lighter;
+}
+.section-bar .radio-button {
+	-fx-text-fill: lighter;
+}
+.section-bar .text {
+	-fx-text-fill: lighter;
+}
+.section-bar .font-icon-text {
+	-fx-fill: lighter;
+}
+.section-head {
+	-fx-text-fill: dark;
+}
+.flip-icon {
+	-fx-text-fill: lighter;
+	-fx-font-family: "Segoe UI Symbol";
+	-fx-padding: 8;
+	-fx-effect: dropshadow( one-pass-box , black , 10 , 0.7 , 0 , 0 );
+}
+
+.toggle-button {
+	-fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent, darker;
+    -fx-border-insets: 0,1;
+    -fx-border-width: 1,1
+}
+.toggle-button:selected {
+	-fx-background-color: dark;
+	-fx-text-fill: light;
+}
+.toggle-button:hover {
+    -fx-border-color: blue,darker;
+}
+.toggle-button:focused {
+    -fx-color: darker;
+    -fx-background-color: -fx-focus-color, -fx-body-color;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+.emphasized {
+	-fx-text-fill: red;
+}
+
+/*
+ * Tables
+ */
+.table-head {
+	-fx-background-color: dark;
+  	-fx-text-fill: light;
+	-fx-padding: 2px;
+}
+.table .label {
+	-fx-padding: 2px;
+}
+
+.odd {
+	-fx-background-color: derive(light, -10%);
+	-fx-padding: 3 8 3 8;
+}
+
+.even {
+	-fx-background-color: transparent;
+	-fx-padding: 3 8 3 8;
+}
+
+.gridsep {
+	-fx-background-color: transparent;
+	-fx-border-color: dark;
+	-fx-border-width: 0 2 0 2;
+}
+
+
+/*
+ * Some common styles
+ */
+.bordered {
+	-fx-border-style: solid;
+	-fx-border-color: black;
+	-fx-border-width: 1px;
+}
+.invalid-data {
+	-fx-border-style: solid;
+	-fx-border-color: red;
+	-fx-border-width: 2px;
+}
+.list-view .bordered {
+	-fx-border-style: solid;
+	-fx-border-color: black;
+	-fx-border-width: 1px;
+	-fx-padding: 0px;
+}
+ 
+.border-bottom {
+	-fx-border-color: dark;
+	-fx-border-width: 0 0 2 0;
+}
+
+.border-left {
+	-fx-border-color: dark;
+	-fx-border-width: 0 0 0 2;
+}
+
+.border-right {
+	-fx-border-color: dark;
+	-fx-border-width: 0 2 0 0;
+}
+
+.border-bottom-left {
+	-fx-border-color: dark;
+	-fx-border-width: 0 0 2 2;
+}
+
+.border-top {
+	-fx-border-color: dark;
+	-fx-border-width: 2 0 0 0;
+}
+.border-bottom-right {
+	-fx-border-color: dark;
+	-fx-border-width: 0 2 2 0;
+}
+
+.border-all-rightleft {
+	-fx-border-color: dark;
+	-fx-border-width: 1 2 1 2;
+}
+
+.border-all {
+	-fx-border-color: dark;
+	-fx-border-width: 1 1 1 1;
+}
+
+.list-cell {
+  -fx-background-color: transparent;
+}
+
+.list-cell:selected {
+    -fx-background-color: darker;
+    -fx-text-fill: light;
+}
+
+.selectable-list-item {
+  -fx-background-color: white;
+}
+
+.unselectable-list-item {
+  -fx-background-color: lightgrey;
+}
+
+.highlighted {
+  -fx-background-color: darker;
+}
+
+.selected {
+  -fx-background-color: dark;
+  -fx-text-fill: light;
+}
+
+.selectedcreaturebox  {
+  -fx-background-color: white;
+  -fx-border-color: white;
+  -fx-border-width: 0 0 20 0;
+}
+
+.combx-box {
+	-fx-background-color: background;
+}
+
+.transparent-textfield {
+	-fx-background-color: transparent;
+	-fx-text-fill: light;
+	-fx-font-size: 120%;
+	-fx-border-color: light;
+	-fx-border-width: 0 0 1 0;
+	-fx-padding: 0px;
+}
+
+.tile-pane {
+	-fx-background-color: transparent;
+}
+
+.scroll-pane {
+	-fx-background-color: transparent;
+}
+
+.tiled-list-view {
+	-fx-background-color: transparent;
+}
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+.viewport {
+   -fx-background-color: transparent;
+}
+.tiled-list-cell:selected {
+	-fx-background-color: darker;
+}
+.tiled-list-cell {
+	-fx-background-color: light;
+	-fx-pref-width: 20em;
+	-fx-max-width: 30em;
+}
+
+.tiled-list-cell:hover {
+	-fx-background-color: lighter;
+}
+
+/*******************************************************************************************
+ * Tab panes
+ *******************************************************************************************/
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0.2;
+    -fx-background-color: darker;
+}
+.tab-pane:top * .tab-header-area {
+	-fx-background-color: dark;
+	-fx-background-insets: 0;
+	-fx-padding: 0.2;
+}
+.tab-pane *.tab-header-background {
+    -fx-effect: null;
+}
+
+
+.tab-pane {
+	-fx-tab-min-width: 1em;
+	-fx-tab-max-width: 60em;
+	-fx-tab-min-height: 1em;
+	-fx-tab-max-height: 60em;
+}
+
+.tab {
+	-fx-background-color: transparent;
+	-fx-background-insets: -1;
+	-fx-border-width: 1;
+}
+.tab          .tab-label { -fx-alignment:CENTER; -fx-text-fill: textcolor-primary; -fx-font-size: 100%; -fx-font-weight: bold; }
+.tab:selected .tab-label { -fx-text-fill: textcolor-highlight-primary; -fx-padding: 0 1em 0 1em; }
+
+.tab-label {
+	-fx-background-color: transparent;
+}
+

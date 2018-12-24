@@ -48,6 +48,9 @@ import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.ResourceController;
 import org.prelle.splimo.chargen.LetUserChooseListener;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.creature.CreatureFeature;
 import org.prelle.splimo.creature.CreatureGenerator;
@@ -111,7 +114,7 @@ public class ResourceReferenceListView extends ListView<ResourceReference> {
 		Label ph = new Label(UI.getString("placeholder.resources.selected"));
 		ph.setWrapText(true);
         setPlaceholder(ph);
-        setStyle("-fx-min-width: 26em; -fx-background-color: transparent; -fx-border-width: 1px; -fx-border-color: black;");
+        setStyle("-fx-min-width: 15em; -fx-pref-width: 22em; -fx-background-color: transparent; -fx-border-width: 1px; -fx-border-color: black; -fx-padding: 2px");
 	}
 
 	//-------------------------------------------------------------------
@@ -214,9 +217,9 @@ class ResourceReferenceListCell extends ListCell<ResourceReference> {
 		name    = new Label();
 		tfDescr = new Label();
 		btnEdit = new Button("\uE1C2");
-		btnDec  = new Button("-");
+		btnDec  = new Button("\uE738");
 		lblVal  = new Label("?");
-		btnInc  = new Button("+");
+		btnInc  = new Button("\uE710");
 
 		initStyle();
 		initLayout();
@@ -234,7 +237,7 @@ class ResourceReferenceListCell extends ListCell<ResourceReference> {
 
 		btnEdit.setStyle("-fx-background-color: transparent");
 
-		setStyle("-fx-pref-width: 24em");
+		setStyle("-fx-pref-width: 15em");
 		layout.getStyleClass().add("content");
 	}
 
@@ -390,13 +393,14 @@ class ResourceReferenceListCell extends ListCell<ResourceReference> {
 		});
 		NavigButtonControl control = new NavigButtonControl();
 		btnAdd.setOnAction(event -> {
-			SelectItemDialogScreen select = new SelectItemDialogScreen(ref.getValue(), ref);
+			SelectItemDialogScreen select = new SelectItemDialogScreen(parent.getManager(), ref.getValue(), ref);
 			select.startListenForEvents();
-			CloseType closed = (CloseType) parent.getManager().showAndWait(select);
+//			CloseType closed = (CloseType) parent.getManager().showAndWait(select);
+			CloseType closed = (CloseType) parent.getManager().showAlertAndCall(AlertType.QUESTION, select.getTitle(), select.getContent());
 			select.stopListenForEvents();
 			if (closed==CloseType.OK) {
 				CarriedItem ref2 = select.getSelectedItem();
-				logger.debug("Selected item was "+ref2);
+				logger.info("Selected item had Q"+ref2.getItemQuality()+"/"+ref2.getArtifactQuality()+" and was "+ref2);
 				parent.getData().addItem(ref2);
 				listAvailable.getItems().add(ref2);
 				listAvailable.getSelectionModel().select(ref2);
@@ -425,6 +429,7 @@ class ResourceReferenceListCell extends ListCell<ResourceReference> {
 				control);
 		if (close==CloseType.OK) {
 			CarriedItem item = listAvailable.getSelectionModel().getSelectedItem();
+			logger.debug("Closed with item "+item);
 			if (item!=null) {
 				if (group.getSelectedToggle()==option2) {
 					// Levelling the item
@@ -444,6 +449,7 @@ class ResourceReferenceListCell extends ListCell<ResourceReference> {
 				ref.setDescription(item.getName());
 				tfDescr.setText(item.getName());
 
+				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, parent.getCharacter()));
 			}
 		}
 
@@ -639,8 +645,9 @@ class ResourceReferenceListCell extends ListCell<ResourceReference> {
 				item.setResource(data);
 				tfDescr.setText(item.getName());
 
-				logger.info("Add creature to character");
+				logger.info("Add creature "+item.getName()+" to character");
 				parent.getCharacter().addCreature(item);
+				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, parent.getCharacter()));
 			}
 		}
 

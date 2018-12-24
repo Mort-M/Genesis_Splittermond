@@ -6,6 +6,7 @@ package org.prelle.splimo;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.MissingResourceException;
 
 import org.prelle.simplepersist.Attribute;
 import org.prelle.simplepersist.Element;
@@ -52,6 +53,13 @@ public class Culture extends BasePluginData implements Comparable<Culture> {
 	}
 
 	//-------------------------------------------------------------------
+	public Culture(String id, String customName) {
+		this.key = id;
+		this.name = customName;
+		modifications = new ModificationList();
+	}
+
+	//-------------------------------------------------------------------
 	/**
 	 * @see org.prelle.splimo.BasePluginData#getPageI18NKey()
 	 */
@@ -71,7 +79,7 @@ public class Culture extends BasePluginData implements Comparable<Culture> {
 
 	//-------------------------------------------------------------------
 	public String toString() {
-		if (key!=null && i18n!=null)
+		if ( name!=null || (key!=null && i18n!=null))
 			return getName();
 		return key;
 	}
@@ -85,7 +93,19 @@ public class Culture extends BasePluginData implements Comparable<Culture> {
 	public String getName() {
 		if (name!=null)
 			return name;
-		return i18n.getString("culture."+key);
+		String searchKey = "culture."+key;
+		try {
+			return i18n.getString(searchKey);
+		} catch (MissingResourceException e) {
+			if (!reportedKeys.contains(e.getKey())) {
+				reportedKeys.add(e.getKey());
+				logger.warn(String.format("key missing:    %s   %s", i18n.getBaseBundleName(), e.getKey()));
+				if (MISSING!=null) {
+					MISSING.println(e.getKey()+"=");
+				}
+			}
+			return key;
+		}
 	}
 
 	//-------------------------------------------------------------------

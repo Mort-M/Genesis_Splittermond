@@ -69,7 +69,7 @@ public class SpellControllerTest implements GenerationEventListener {
 //		Logger.getLogger("splimo.level.spell").setLevel(Level.DEBUG);
 //		Logger.getLogger("junit").setLevel(Level.DEBUG);
 
-		PropertyConfigurator.configure("log4j.properties");
+		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		SplitterMondCore.initialize(new SplittermondRules());
 		HEALMAGIC = SplitterMondCore.getSkill("healmagic");
 		ENHANCEMAGIC = SplitterMondCore.getSkill("enhancemagic");
