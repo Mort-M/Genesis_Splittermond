@@ -37,7 +37,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  * @author prelle
  *
  */
-public class NewSpellLevellerAndGenerator implements SpellController, SpliMoCharacterProcessor {
+public class NewSpellGenerator implements SpellController, SpliMoCharacterProcessor {
 
 	private static Logger logger = Logger.getLogger("splittermond.chargen.spells");
 
@@ -52,69 +52,12 @@ public class NewSpellLevellerAndGenerator implements SpellController, SpliMoChar
 	//-------------------------------------------------------------------
 	/**
 	 */
-	public NewSpellLevellerAndGenerator(SplitterEngineCharacterGenerator charGen) {
+	public NewSpellGenerator(SplitterEngineCharacterGenerator charGen) {
 		this.charGen  = charGen;
 		model = charGen.getModel();
 		todos = new ArrayList<>();
 		freeSelections = new ArrayList<FreeSelection>();
-		
-		updateTokens();
-	}
-
-	//--------------------------------------------------------------------
-	private void updateTokens() {
-		boolean changed = false; // Has the list of tokens changed
-		
-		for (Skill school : SplitterMondCore.getSkills(SkillType.MAGIC)) {
-			SkillValue value = model.getSkillValue(school);
-			// How many free selections are expected for this school
-			int expect = ((value.getValue()>0)?1:0) + value.getValue()/3;
-			int highestLevel = expect-1;
-			/* Count existing. Remove those which level is higher
-			 * than the expected level
-			 */
-			boolean[] found = new boolean[expect];
-			for (FreeSelection token : new ArrayList<>(freeSelections)) {
-				// Ignore those from other schools
-				if (token.getSchool()!=school)
-					continue;
-				// Remove those which level is too high
-				if (token.getLevel()>highestLevel) {
-					logger.debug("Free selection in "+school+" level "+token.getLevel()+" deleted: "+token.getUsedFor());
-					// Check if there is a free selected spell to be removed
-					if (token.getUsedFor()!=null) {
-						deselect(token.getUsedFor());
-					}
-					token.setUsedFor(null);
-					freeSelections.remove(token);
-					changed = true;
-					continue;
-				}
-				// Mark as found. Check by the way if there are multiple
-				// tokens for the same level
-				if (found[token.getLevel()]) {
-					logger.warn("Found two free selection tokens for the same level in the same school. Removing one");
-					token.setUsedFor(null);
-					freeSelections.remove(token);
-					changed = true;
-				}
-				// Mark as found
-				found[token.getLevel()] = true;
-			}
-			/* Ensure that for each expected level a token has been found
-			 * If not, create it */
-			 for (int lvl=0; lvl<found.length; lvl++) {
-				 if (!found[lvl]) {
-					 freeSelections.add( new FreeSelection(school, lvl) );
-					 changed = true;
-					 logger.debug("Added a free selection token for "+school+" level "+lvl);
-				 }
-			 }
-		}		
-		
-		if (changed) 
-			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.SPELL_FREESELECTION_CHANGED, null, freeSelections));
-		
+		process(model, new ArrayList<>());
 	}
 
 	//--------------------------------------------------------------------
@@ -143,12 +86,7 @@ public class NewSpellLevellerAndGenerator implements SpellController, SpliMoChar
 	 */
 	@Override
 	public List<ToDoElement> getToDos() {
-		List<ToDoElement> ret = new ArrayList<>();
-		for (FreeSelection free : freeSelections) {
-			if (free.getUsedFor()==null)
-				ret.add(new ToDoElement(Severity.WARNING, String.format(RES.getString("spellgen.todo.free"), free.getLevel(), free.getSchool().getName())));
-		}
-		return ret;
+		return todos;
 	}
 
 	//-------------------------------------------------------------------
@@ -198,7 +136,6 @@ public class NewSpellLevellerAndGenerator implements SpellController, SpliMoChar
 	 */
 	@Override
 	public Collection<FreeSelection> getFreeSelections() {
-		updateTokens();
 		return freeSelections;
 	}
 
@@ -262,7 +199,6 @@ public class NewSpellLevellerAndGenerator implements SpellController, SpliMoChar
 		 * Search all tokens which are suitable to free select this
 		 * spell. Return the one with the lowest level.
 		 */
-		updateTokens();
 		return findLowestPossibleToken(search);
 	}
 
@@ -272,30 +208,14 @@ public class NewSpellLevellerAndGenerator implements SpellController, SpliMoChar
 	 */
 	@Override
 	public void select(FreeSelection token, SpellValue spell) {
-		// Ensure that it is a valid token
-		if (!freeSelections.contains(token)) {
-			logger.warn("Trying to select for free with invalid token");
-			return;
-		}
-		// Ensure token is not used yet
-		if (token.getUsedFor()!=null) {
-			logger.warn("Trying to select with spent token: "+token.getUsedFor());
+		if (canBeFreeSelected(spell)==null) {
+			logger.warn("Trying to select "+spell+" for free which is not possible");
 			return;
 		}
 		
 		logger.info("Adding spell "+spell+" using free selection "+token);
 		// Add to character
 		model.addSpell(spell);
-		// Mark token spent
-		token.setUsedFor(spell);
-		spell.setFreeLevel(token.getLevel());
-		// Prepare undo
-		SpellModification mod = new SpellModification(spell);
-		mod.setDate(new Date());
-		model.getHistory().add(mod);
-		
-		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.SPELL_ADDED, spell));
-		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.SPELL_FREESELECTION_CHANGED, freeSelections));
 		charGen.runProcessors();
 	}
 
@@ -405,25 +325,8 @@ public class NewSpellLevellerAndGenerator implements SpellController, SpliMoChar
 		}
 
 		// Select
-		int lvl = spell.getSpell().getLevelInSchool(spell.getSkill());
-		int expCost = (lvl==0)?1:(lvl*3);
-		logger.info("Select spell "+spell+" for "+expCost+" exp");
+		logger.info("Select spell "+spell);
 		model.addSpell(spell);
-		model.setExperienceFree(model.getExperienceFree()-expCost);
-		model.setExperienceInvested(model.getExperienceInvested()+expCost);
-		
-		// Add to undo list
-		SpellModification mod = new SpellModification(spell);
-		mod.setDate(new Date());
-		mod.setExpCost(expCost);
-		model.addToHistory(mod);
-
-		// Inform listener
-		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.SPELL_ADDED, spell));
-		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.EXPERIENCE_CHANGED, null, new int[]{
-				model.getExperienceFree(),
-				model.getExperienceInvested()
-		}));
 
 		charGen.runProcessors();
 		return true;
@@ -435,8 +338,16 @@ public class NewSpellLevellerAndGenerator implements SpellController, SpliMoChar
 	 */
 	@Override
 	public boolean deselect(SpellValue spell) {
-		// TODO Auto-generated method stub
-		return false;
+		if (!canBeDeSelected(spell)) {
+			logger.warn("Trying to deselect a spell which cannot be deselected: "+spell);
+			return false;
+		}
+
+		logger.info("Deselect spell "+spell);
+		model.removeSpell(spell);
+
+		charGen.runProcessors();
+		return true;
 	}
 
 	//-------------------------------------------------------------------
@@ -445,7 +356,63 @@ public class NewSpellLevellerAndGenerator implements SpellController, SpliMoChar
 	 */
 	@Override
 	public List<Modification> process(SpliMoCharacter model, List<Modification> previous) {
-		// TODO Auto-generated method stub
+
+		logger.trace("START: process");
+		try {
+			todos.clear();
+
+			/* Rebuild free selections */
+			freeSelections.clear();
+			for (Skill school : SplitterMondCore.getSkills(SkillType.MAGIC)) {
+				SkillValue value = model.getSkillValue(school);
+				if (value.getModifiedValue()>=1)
+					freeSelections.add(new FreeSelection(school, 0));
+				if (value.getModifiedValue()>=3)
+					freeSelections.add(new FreeSelection(school, 1));
+				if (value.getModifiedValue()==6)
+					freeSelections.add(new FreeSelection(school, 2));
+			}
+
+			/* Assign spells to free selections */
+			int expInvest = 0;
+			for (SpellValue spell : model.getSpells()) {
+				FreeSelection free = findLowestPossibleToken(spell);
+				if (free!=null) {
+					free.setUsedFor(spell);
+					spell.setFreeLevel(free.getLevel());
+					logger.info("* Use free spell slot '"+free+"' for "+spell);
+				} else {
+					int expCost = 0;
+					switch (spell.getSpellLevel()) {
+					case 0: expCost = 1; break;
+					case 1: expCost = 3; break;
+					case 2: expCost = 6; break;
+					}
+					logger.info("* Pay "+expCost+" EP for "+spell);
+					
+					SpellModification mod = new SpellModification(spell);
+					mod.setExpCost(expCost);
+					model.addToHistory(mod);
+					expInvest+=expCost;
+				}
+			}
+			
+			// Find unused free selections
+			for (FreeSelection free : freeSelections) {
+				if (free.getUsedFor()==null) {
+					todos.add(new ToDoElement(Severity.INFO, String.format(RES.getString("spellgen.todo.free"), free.getLevel(), free.getSchool().getName())));
+				}
+			}
+			
+			if (expInvest>0) {
+				todos.add(new ToDoElement(Severity.INFO, String.format(RES.getString("spellgen.todo.experience"), expInvest)));
+				model.setExperienceFree( model.getExperienceFree() - expInvest );
+				model.setExperienceInvested( model.getExperienceInvested() + expInvest );
+			}
+			
+		} finally {
+			logger.trace("STOP : process()");
+		}
 		return previous;
 	}
 

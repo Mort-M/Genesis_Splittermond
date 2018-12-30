@@ -26,6 +26,8 @@ import de.rpgframework.genericrpg.modification.Modification;
 
 public class SkillGeneratorTest {
 	
+	private final static int MAX = 10;
+	
 	private static Skill FIREMAGIC;
 	private static Skill ATHLETICS;
 	
@@ -64,7 +66,7 @@ public class SkillGeneratorTest {
 			}
 		};
 		GenerationEventDispatcher.clear();
-		skillGen = new NewSkillGenerator(parent, 10);
+		skillGen = new NewSkillGenerator(parent, MAX);
 	}
 
 	//-------------------------------------------------------------------
@@ -131,7 +133,7 @@ public class SkillGeneratorTest {
 		assertEquals(4, testModel.getSkillValue(FIREMAGIC).getModifier());
 		assertEquals(0, testModel.getSkillValue(FIREMAGIC).getValue());
 		assertEquals(4, testModel.getSkillValue(FIREMAGIC).getModifiedValue());
-		assertEquals(6, skillGen.getPointsLeft());
+		assertEquals(MAX-4, skillGen.getPointsLeft());
 		
 		SkillValue key = testModel.getSkillValue(FIREMAGIC);
 		assertTrue(skillGen.increase(key)); // 5
@@ -142,7 +144,7 @@ public class SkillGeneratorTest {
 		assertEquals(4, testModel.getSkillValue(FIREMAGIC).getModifier());
 		assertEquals(2, testModel.getSkillValue(FIREMAGIC).getValue());
 		assertEquals(6, testModel.getSkillValue(FIREMAGIC).getModifiedValue());
-		assertEquals(4, skillGen.getPointsLeft());
+		assertEquals(MAX-6, skillGen.getPointsLeft());
 		assertFalse(skillGen.canBeIncreased(key));
 		
 		// After removing the modification, increasing should be possible
@@ -160,7 +162,7 @@ public class SkillGeneratorTest {
 		assertEquals(0, testModel.getSkillValue(FIREMAGIC).getModifier());
 		assertEquals(6, testModel.getSkillValue(FIREMAGIC).getValue());
 		assertEquals(6, testModel.getSkillValue(FIREMAGIC).getModifiedValue());
-		assertEquals(4, skillGen.getPointsLeft());
+		assertEquals(MAX-6, skillGen.getPointsLeft());
 
 		// Now adding the +4 modification should reduce the points to 2
 		previous.add(mod);
@@ -168,7 +170,22 @@ public class SkillGeneratorTest {
 		assertEquals(4, testModel.getSkillValue(FIREMAGIC).getModifier());
 		assertEquals(2, testModel.getSkillValue(FIREMAGIC).getValue());
 		assertEquals(6, testModel.getSkillValue(FIREMAGIC).getModifiedValue());
-		assertEquals(4, skillGen.getPointsLeft());
+		assertEquals(MAX-6, skillGen.getPointsLeft());
+	}
+
+	//-------------------------------------------------------------------
+	@Test
+	public void testDecreaseModification() {
+		SkillModification mod = new SkillModification(FIREMAGIC, 4);
+		previous.add(mod);
+		skillGen.process(testModel, previous);
+		
+		assertTrue(skillGen.canBeDecreased(testModel.getSkillValue(FIREMAGIC)));
+		assertTrue(skillGen.decrease(testModel.getSkillValue(FIREMAGIC)));
+		assertEquals(4, testModel.getSkillValue(FIREMAGIC).getModifier());
+		assertEquals(-1, testModel.getSkillValue(FIREMAGIC).getValue());
+		assertEquals(3, testModel.getSkillValue(FIREMAGIC).getModifiedValue());
+		assertEquals(MAX-3, skillGen.getPointsLeft());
 	}
 	
 }

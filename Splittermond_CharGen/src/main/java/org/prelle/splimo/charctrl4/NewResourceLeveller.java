@@ -25,22 +25,22 @@ public class NewResourceLeveller extends NewResourceGenerator {
 
 	//-------------------------------------------------------------------
 	protected int getMaxValue() {
-		switch (parent.getMode()) {
-		case FINISHED:
+//		switch (parent.getMode()) {
+//		case FINISHED:
 			return 4 + model.getLevel()*2;
-		default:
-			return super.getMaxValue();
-		}
+//		default:
+//			return super.getMaxValue();
+//		}
 	}
 
 	//-------------------------------------------------------------------
 	protected int getMinValue() {
-		switch (parent.getMode()) {
-		case FINISHED:
+//		switch (parent.getMode()) {
+//		case FINISHED:
 			return 4 + model.getLevel()*2;
-		default:
-			return super.getMinValue();
-		}
+//		default:
+//			return super.getMinValue();
+//		}
 	}
 
 	//--------------------------------------------------------------------

@@ -237,7 +237,6 @@ public class NewSpliMoCharacterLeveller extends SplitterEngineCharacterGenerator
 		stop();
 
 		this.model = model;
-		mode = Mode.CREATION;
 		
 		races      = new RaceGenerator(this);
 		cultures   = new NewCultureGenerator(this);
@@ -251,7 +250,7 @@ public class NewSpliMoCharacterLeveller extends SplitterEngineCharacterGenerator
 //		moonsign   = new MoonsignProcessor();
 ////		spells     = new SpellGenerator(skills, model);
 //		educations = new EducationGenerator();
-		spells     = new NewSpellLevellerAndGenerator(this);
+		spells     = new NewSpellGenerator(this);
 //		languages  = new LanguageGenerator(model, new ArrayList<>(), CharGenMode.CREATING);
 //		cultlores  = new CultureLoreGenerator(model, new ArrayList<>(), CharGenMode.CREATING);
 
@@ -272,80 +271,6 @@ public class NewSpliMoCharacterLeveller extends SplitterEngineCharacterGenerator
 		runProcessors();
 	}
 
-	//-------------------------------------------------------------------
-	public void startTuningMode() {
-		logger.info("------Change to tuning mode----------------");
-		
-		/*
-		 * Fix attributes
-		 */
-		for (Attribute key : Attribute.primaryValues()) {
-			AttributeValue val = model.getAttribute(key);
-			val.setDistributed(val.getValue());
-			val.setStart(val.getDistributed());
-			val.getModifications().clear();
-		}
-		
-		/*
-		 * Fix skills
-		 */
-		for (Skill key : SplitterMondCore.getSkills()) {
-			SkillValue val = model.getSkillValue(key);
-			val.setValue(val.getModifiedValue());
-			val.getModifications().clear();
-		}
-		
-//		/*
-//		 * Fix masterships
-//		 */
-//		for (Skill key : SplitterMondCore.getSkills()) {
-//			SkillValue val = model.getSkillValue(key);
-//			if (!val.getMasterships().isEmpty()) {
-//				logger.info("masterships for "+key+" = "+val.getMasterships());
-//			}
-//		}
-		
-		/*
-		 * Fix resources
-		 */
-		for (ResourceReference ref : model.getResources()) {
-			ref.setValue(ref.getModifiedValue());
-			ref.clearModifications();
-		}
-		
-		/*
-		 * Fix Powers
-		 */
-		for (PowerReference ref : model.getPowers()) {
-			if (ref.getPower().canBeUsedMultipleTimes())
-				ref.setCount(ref.getModifiedCount());
-			else
-				ref.setCount(0);
-			ref.clearModifications();
-		}
-		
-		
-		mode = Mode.TUNING;
-		attributes = new LevellingAttributeGenerator(this, 0);
-		skills     = new NewSkillLeveller(this);
-		master     = new NewMastershipLeveller(this, 3);
-		resources  = new NewResourceLeveller(this, 8);
-		processChain.clear();
-		processChain.add( new ClearAllModificationsProcessor() );
-		processChain.add( new CalculateDerivedAttributesProcessor() );
-		processChain.add( new CalculateLevelProcessor() );
-		processChain.add( new ModifyDerivedValuesByLevelProcessor() );
-		processChain.add( (SpliMoCharacterProcessor) attributes );
-//		processChain.add( new ResetModificationsOnGeneration());
-//		processChain.add( (SpliMoCharacterProcessor) backgrounds );
-//		processChain.add( (SpliMoCharacterProcessor) attributes );
-		processChain.add( (SpliMoCharacterProcessor) skills );
-		processChain.add( (SpliMoCharacterProcessor) resources );
-		processChain.add( (SpliMoCharacterProcessor) master );
-		processChain.add( (SpliMoCharacterProcessor) spells );
-		
-		runProcessors();
-	}
 
 	//--------------------------------------------------------------------
 	public void stop() {

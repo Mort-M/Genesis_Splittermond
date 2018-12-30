@@ -238,25 +238,28 @@ public class ExampleCharactersTest {
 		/* 
 		 * Step 9: Start-Exp
 		 */
-		Reward reward = new RewardImpl(15, "Start-Exp");
-		reward.setDate(new Date(System.currentTimeMillis()));
-		model.setExperienceFree(15);
-		model.addReward(reward);
-		charGen.startTuningMode();
+//		Reward reward = new RewardImpl(15, "Start-Exp");
+//		reward.setDate(new Date(System.currentTimeMillis()));
+//		model.setExperienceFree(15);
+//		model.addReward(reward);
+//		charGen.startTuningMode();
 		
 		// Increase with exp
 		skCtrl = charGen.getSkillController();
 //		assertEquals(3, ((Generator)charGen.getMastershipController()).getPointsLeft());
 		assertEquals(15, model.getExperienceFree());
+		assertEquals(0, model.getHistory().size());
 		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("watermagic"))); // 4->5
 		assertEquals(12, model.getExperienceFree());
+		assertEquals(1, model.getHistory().size());
+		
 		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("watermagic"))); // 5->6
 		assertEquals( 9, model.getExperienceFree());
+		assertEquals( 1, model.getHistory().size());
+		
 		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("protectionmagic"))); // 2->3
 		assertEquals( 6, model.getExperienceFree());
-		// Cannot spend 5 exp for acrobatics mastership, since there is still one free
-		// History should contain 3 items here
-		assertEquals(3, model.getHistory().size());
+		assertEquals( 1, model.getHistory().size()); // 3 points in watermagic
 		
 		/*
 		 * Step 10: Start finetuning
@@ -271,15 +274,16 @@ public class ExampleCharactersTest {
 		// Fake attached creature for this ressource
 		creature.setIdReference(UUID.randomUUID());
 		// Change enhancemagic to combatmagic
+		assertTrue(skCtrl.decrease(model.getSkillValue(SplitterMondCore.getSkill("enhancemagic")))); // Grant 3 EP invested for water- & protectionmagic
+		assertEquals( 9, model.getExperienceFree());
 		assertTrue(skCtrl.decrease(model.getSkillValue(SplitterMondCore.getSkill("enhancemagic"))));
-		assertEquals( 6, model.getExperienceFree());
 		assertTrue(skCtrl.decrease(model.getSkillValue(SplitterMondCore.getSkill("enhancemagic"))));
-		assertTrue(skCtrl.decrease(model.getSkillValue(SplitterMondCore.getSkill("enhancemagic"))));
-		assertEquals( 6, model.getExperienceFree());
+		assertEquals(15, model.getExperienceFree());
+		assertTrue(skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("combatmagic"))));
+		assertEquals(12, model.getExperienceFree());
+		assertTrue(skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("combatmagic"))));
 		assertTrue(skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("combatmagic"))));
 		assertEquals( 6, model.getExperienceFree());
-		assertTrue(skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("combatmagic"))));
-		assertTrue(skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("combatmagic"))));
 		// Replace free generation mastership with another
 		MastershipReference sailorslegs = null;
 		for (MastershipReference ref : model.getSkillValue(SplitterMondCore.getSkill("seafaring")).getMasterships()) {
@@ -297,9 +301,11 @@ public class ExampleCharactersTest {
 		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("arcanelore").getMastership("arcanedefense1")));
 		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("watermagic").getMastership("savingcaster")));
 		// Pay with 5 EP (from Step 9)
-		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("acrobatics").getMastership("flashreflexes")));
+		assertEquals(6, model.getExperienceFree());
+		assertNotNull("Cannot buy mastership with EXP", maCtrl.select(SplitterMondCore.getSkill("acrobatics").getMastership("flashreflexes")));
 		assertEquals(1, model.getExperienceFree());
-		assertEquals(4, model.getHistory().size());
+		assertEquals(2, model.getHistory().size());
+
 		// Spells
 		SpellController spCtrl = charGen.getSpellController();
 		Iterator<FreeSelection> it = spCtrl.getUnusedFreeSelections(SplitterMondCore.getSkill("combatmagic")).iterator(); 
@@ -315,7 +321,7 @@ public class ExampleCharactersTest {
 		assertEquals( 1, model.getExperienceFree());
 		spCtrl.select(new SpellValue(SplitterMondCore.getSpell("harmitem"), SplitterMondCore.getSkill("combatmagic")));
 		assertEquals(0, model.getExperienceFree());
-		assertEquals(5, model.getHistory().size());
+		assertEquals(3, model.getHistory().size());
 		
 		
 		model.setName("Tiai Schimmersee");
@@ -324,7 +330,7 @@ public class ExampleCharactersTest {
 		model.setBirthPlace("Tairon");
 		model.setGender(Gender.FEMALE);
 		
-		assertTrue(charGen.getToDos().isEmpty());
+		assertEquals(3, charGen.getToDos().size());
 		
 		// Finalize
 		charGen.stop();
@@ -556,11 +562,6 @@ public class ExampleCharactersTest {
 		/* 
 		 * Step 9: Start-Exp
 		 */
-		Reward reward = new RewardImpl(15, "Start-Exp");
-		reward.setDate(new Date(System.currentTimeMillis()));
-		model.setExperienceFree(15);
-		model.addReward(reward);
-		charGen.startTuningMode();
 		
 		// Increase with exp
 		reCtrl = charGen.getResourceController();

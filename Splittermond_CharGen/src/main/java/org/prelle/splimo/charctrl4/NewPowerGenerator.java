@@ -445,8 +445,13 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 			 */
 			for (PowerReference ref : new ArrayList<>(model.getPowers())) {
 				if (ref.isSystemAssigned()) {
-					logger.trace("  clear system assigned power "+ref);
-					model.removePower(ref);
+					if (ref.getCount()==0) {
+						logger.trace("  clear system assigned power "+ref);
+						model.removePower(ref);
+					} else if (!ref.getPower().canBeUsedMultipleTimes()){
+						ref.clearModifications();
+						logger.trace("   remove all modifications from user selected "+ref);
+					}
 				}
 			}
 			
@@ -490,7 +495,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 			 */
 			pointsLeft = pointsMax;
 			List<PowerReference> powers = model.getPowers();
-			logger.debug("Powers unsorted = "+powers);
+			logger.trace("  Powers unsorted = "+powers);
 			// Sort power in a way that expensive powers are first, allowing
 			// them to be payed with GP
 			Collections.sort(powers, new Comparator<PowerReference>() {
@@ -500,7 +505,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 					return o1.getPower().getName().compareTo(o2.getPower().getName());
 				}
 			});
-			logger.debug("Powers sorted   = "+powers);
+			logger.trace("  Powers sorted   = "+powers);
 			int expInvested = 0;
 			for (PowerReference ref : powers) {
 				logger.debug("* "+ref);

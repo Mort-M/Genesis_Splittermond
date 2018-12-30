@@ -26,10 +26,15 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class ResetModificationsOnGeneration implements SpliMoCharacterProcessor {
 
-	private final static Logger logger = Logger.getLogger("shadowrun.proc");
+	private final static Logger logger = Logger.getLogger("splittermond.chargen");
 
 	//-------------------------------------------------------------------
 	private void clearCharacter(SpliMoCharacter model) {
+		model.setExperienceFree(15);
+		model.setExperienceInvested(0);
+		for (Modification mod : model.getHistory()) {
+			model.removeFromHistory(mod);
+		}
 		// Reset resources
 		for (ResourceReference ref : new ArrayList<>(model.getResources())) {
 			ref.clearModifications();

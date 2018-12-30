@@ -235,11 +235,11 @@ public class ExampleCharactersLevellingTest {
 		/* 
 		 * Step 9: Start-Exp
 		 */
-		Reward reward = new RewardImpl(15, "Start-Exp");
-		reward.setDate(new Date(System.currentTimeMillis()));
-		model.setExperienceFree(15);
-		model.addReward(reward);
-		charGen.startTuningMode();
+//		Reward reward = new RewardImpl(15, "Start-Exp");
+//		reward.setDate(new Date(System.currentTimeMillis()));
+//		model.setExperienceFree(15);
+//		model.addReward(reward);
+//		charGen.startTuningMode();
 		
 		// Increase with exp
 		skCtrl = charGen.getSkillController();

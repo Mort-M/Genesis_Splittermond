@@ -117,7 +117,7 @@ public class NewSkillGenerator implements SkillController, Generator, SpliMoChar
 	 */
 	@Override
 	public boolean canBeDecreased(SkillValue data) {
-		return data.getValue()>0;
+		return data.getModifiedValue()>0;
 	}
 
 	//-------------------------------------------------------------------
@@ -136,8 +136,10 @@ public class NewSkillGenerator implements SkillController, Generator, SpliMoChar
 
 	//-------------------------------------------------------------------
 	public boolean decrease(SkillValue data) {
-		if (!canBeDecreased(data))
+		if (!canBeDecreased(data)) {
+			logger.warn("Trying to decrease skill "+data+" which cannot be decreased");
 			return false;
+		}
 
 		logger.info("decrease "+data);
 		int oldVal = data.getValue();
@@ -176,7 +178,7 @@ public class NewSkillGenerator implements SkillController, Generator, SpliMoChar
 	 */
 	@Override
 	public List<ToDoElement> getToDos() {
-		ArrayList<ToDoElement> ret = new ArrayList<>();
+		ArrayList<ToDoElement> ret = new ArrayList<>(todos);
 		if (getPointsLeft()>0)
 			ret.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("skillgen.todo.points"), getPointsLeft())));
 		// Find grouped skills without focus
@@ -315,10 +317,12 @@ public class NewSkillGenerator implements SkillController, Generator, SpliMoChar
 				pointsLeft -= val.getModifiedValue();
 				if (pointsLeft<0 && pointsLeft<last) {
 					int investHere = (last>=0)?Math.abs(pointsLeft):(pointsLeft - last);
-					logger.debug("Invested "+(investHere*3)+" EP in "+key);
+					logger.info("Invested "+(investHere*3)+" EP in "+key);
 					SkillModification mod = new SkillModification(key, val.getModifiedValue());
+					mod.setOldValue(val.getModifiedValue()-investHere);
 					mod.setExpCost(investHere*3);
 					model.addToHistory(mod);
+//					todos.add(new ToDoElement(Severity.INFO, String.format(RES.getString("skillgen.todo.experience"), exp)));
 				}
 			}
 			
@@ -337,11 +341,9 @@ public class NewSkillGenerator implements SkillController, Generator, SpliMoChar
 			
 			
 			logger.debug("From "+maxPointsToSpend+" points have been "+(maxPointsToSpend-pointsLeft)+" invested and are "+pointsLeft+" left");
-			if (pointsLeft>0) {
-				todos.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("skillgen.todo.points"), pointsLeft)));
-//			} else if (pointsLeft<0) {
-//				todos.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("skillgen.todo.points2"), pointsLeft)));
-			}
+//			if (pointsLeft>0) {
+//				todos.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("skillgen.todo.points"), pointsLeft)));
+//			}
 
 		} finally {
 			logger.trace("STOP : process() ends with "+unprocessed.size()+" modifications still to process");

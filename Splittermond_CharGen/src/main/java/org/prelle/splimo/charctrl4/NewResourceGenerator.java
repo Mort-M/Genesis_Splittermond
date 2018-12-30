@@ -14,9 +14,6 @@ import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CharGenConstants;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.modifications.ResourceModification;
 import org.prelle.splimo.processor.SpliMoCharacterProcessor;
 

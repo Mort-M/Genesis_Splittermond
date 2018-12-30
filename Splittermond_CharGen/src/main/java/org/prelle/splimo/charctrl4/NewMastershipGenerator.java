@@ -67,6 +67,7 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 
 	private SplitterEngineCharacterGenerator charGen;
 	private List<ToDoElement> todos;
+	private List<Mastership> explicitRemoved;
 
 	//-------------------------------------------------------------------
 	/**
@@ -79,6 +80,8 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 		freeSelections = new ArrayList<MastershipController.FreeMastershipSelection>();
 //		byModification = new HashMap<>();
 		todos = new ArrayList<>();
+		explicitRemoved = new ArrayList<>();
+		pointsLeft = toSpend;
 
 		updateFreeSelections();
 //		detectFreeSelectionsUsage();
@@ -523,9 +526,10 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 		}
 
 		// Does character fulfill skill requirement
+//		if (data.getSkillValue(master.getSkill()).getModifiedValue()==6) {
 		if (data.getSkillPoints(master.getSkill())< (master.getLevel()*3)+3) {
-//			if (logger.isTraceEnabled())
-//				logger.trace("cannot select "+skill+": value ("+data.getSkillPoints(skill)+" not met and no free selections)");
+			if (logger.isTraceEnabled())
+				logger.trace("cannot select "+skill+": value requirement 6 not met ("+data.getSkillPoints(skill)+") and no free selections)");
 			return false;
 		}
 
@@ -758,10 +762,8 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 		if (sVal.getSpecializationLevel(special)==0) {
 			logger.info("Removed specialization '"+special+"'");
 			sVal.removeSpecialization(special);
-			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.MASTERSHIP_REMOVED, skill, ref));
 		} else {
 			logger.info("Reduced specialization '"+special+"'");
-			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.MASTERSHIP_CHANGED, skill, ref));
 		}
 
 		/*
@@ -771,7 +773,6 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 			if (token.getUsedFor()==ref) {
 				logger.info("Free used FreeSelection "+token);
 				unlink(token, ref);
-				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_MASTERSHIPS, skill, getFreeMasterships(skill)));
 				break;
 			}
 		}
@@ -805,27 +806,7 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 			}
 		}
 
-//		List<MastershipModification> stack = masteryUndoStack.get(skill);
-//		for (MastershipModification tmp : stack) {
-//			if (tmp.getSpecialization()==null) continue;
-//			if (tmp.getSpecialization().getSpecial()==special && tmp.getSpecialization().getLevel()==level) {
-//				mod = tmp;
-//				break;
-//			}
-//		}
-//		stack.remove(mod);
-		if (mod!=null) {
-//			undoList.remove(mod);
-//			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.UNDO_LIST_CHANGED, undoList));
-
-			// If exp was paid, return it
-			if (mod.getExpCost()>0) {
-				data.setExperienceFree(data.getExperienceFree()+mod.getExpCost());
-				data.setExperienceInvested(data.getExperienceInvested()-mod.getExpCost());
-				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.EXPERIENCE_CHANGED, null, new int[]{data.getExperienceFree(), data.getExperienceInvested()}));
-			}
-		}
-
+		charGen.runProcessors();
 		return true;
 	}
 
@@ -845,40 +826,21 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 				logger.debug("Found a free selection token to select '"+master+"' from "+skill.getId());
 				MastershipReference ref = new MastershipReference(master);
 				token.setUsedFor(ref);
-				MastershipModification mod = new MastershipModification(master);
-//				masteryUndoStack.get(skill).add(mod);
 				link(token, ref);
-//				logger.debug("UndoList = "+undoList);
-//				undoList.add(mod);
 				// Add to model
 				data.getSkillValue(skill).addMastership(ref);
-//				applyModifications(master);
 				logger.info("Add mastership '"+master+"' using a free selection");
-				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.MASTERSHIP_ADDED, skill, ref));
-				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_MASTERSHIPS, skill, getFreeMasterships(skill)));
-//				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.UNDO_LIST_CHANGED, undoList));
 				
 				charGen.runProcessors();
 				return ref;
 			}
 		}
 
-		// Buy mastership
-		int expNeeded = master.getLevel()*5;
-		MastershipModification mod = new MastershipModification(master);
-		mod.setExpCost(expNeeded);
-//		masteryUndoStack.get(skill).add(mod);
-//		undoList.add(mod);
 		// Add to model
 		MastershipReference ref = new MastershipReference(master);
 		data.getSkillValue(skill).addMastership(ref);
 		logger.info("Add mastership '"+master+"' using exp");
-//		applyModifications(master);
-		data.setExperienceInvested(data.getExperienceInvested()+expNeeded);
-		data.setExperienceFree(data.getExperienceFree()-expNeeded);
-		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.MASTERSHIP_ADDED, skill, ref));
-//		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.UNDO_LIST_CHANGED, undoList));
-		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.EXPERIENCE_CHANGED, null, new int[]{data.getExperienceFree(), data.getExperienceInvested()}));
+		charGen.runProcessors();
 		return ref;
 	}
 
@@ -914,90 +876,82 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 		logger.debug("Remove before : "+data.getSkillValue(skill).getMasterships());
 		data.getSkillValue(skill).removeMastership(master);
 		logger.debug("Remove after  : "+data.getSkillValue(skill).getMasterships());
-//		undoModifications(master);
 		logger.info("Removed mastership '"+master+"'");
-
-		// Check if it was system added
-//		for (MastershipModification mod : systemAdded.keySet()) {
-//			if (mod.getMastership()==master) {
-//				logger.debug("Remove marking as system added for "+master);
-//				systemAdded.remove(mod);
+		
+		/*
+		 * If the mastership was given by a module and is now removed,
+		 * prevent it from being reselected in process()
+		 */
+		if (ref.canBeCleared()) {
+			logger.debug("  mark "+master+" as explicit removed");
+			explicitRemoved.add(master);
+		}
+//
+//		// Check if it was system added
+////		for (MastershipModification mod : systemAdded.keySet()) {
+////			if (mod.getMastership()==master) {
+////				logger.debug("Remove marking as system added for "+master);
+////				systemAdded.remove(mod);
+////				break;
+////			}
+////		}
+//		logger.debug("Free selection was "+ref.getFree());
+//
+//		/*
+//		 * Free an eventually claimed free selection token
+//		 */
+//		for (FreeMastershipSelection token : freeSelections) {
+//			if (token.getUsedFor()==ref) {
+//				logger.info("Free used FreeSelection: "+token);
+//				unlink(token, ref);
+//				logger.debug("Make free selection usable for other skills");
+////				token.setSkill(null);
+//				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_MASTERSHIPS, skill, getFreeMasterships(skill)));
 //				break;
 //			}
 //		}
-		logger.debug("Free selection was "+ref.getFree());
-
-//		/*
-//		 * If bought with EXP, grant them
-//		 */
-//		for (Modification mod : data.getHistory()) {
-//			if (!(mod instanceof MastershipModification))
-//				continue;
-//			MastershipModification mMod = (MastershipModification)mod;
-//			if (mMod.getMastership()==master && mMod.getExpCost()>0) {
-//				int toFree = mMod.getExpCost();
-//				logger.info("Free "+toFree+" EP");
-//				data.setExperienceFree(data.getExperienceFree()+toFree);
-//				data.setExperienceInvested(data.getExperienceInvested()-toFree);
-//				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_MASTERSHIPS, skill, getFreeMasterships(skill)));
-//			}
-//		}
-
-
-		/*
-		 * Free an eventually claimed free selection token
-		 */
-		for (FreeMastershipSelection token : freeSelections) {
-			if (token.getUsedFor()==ref) {
-				logger.info("Free used FreeSelection: "+token);
-				unlink(token, ref);
-				logger.debug("Make free selection usable for other skills");
-//				token.setSkill(null);
-				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_MASTERSHIPS, skill, getFreeMasterships(skill)));
-				break;
-			}
-		}
-		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.MASTERSHIP_REMOVED, skill, ref));
-
-		// Find the matching modification in session history
-//		List<MastershipModification> stack = masteryUndoStack.get(skill);
-		MastershipModification mod = null;
-//		for (Modification tmp : undoList) {
+//		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.MASTERSHIP_REMOVED, skill, ref));
+//
+//		// Find the matching modification in session history
+////		List<MastershipModification> stack = masteryUndoStack.get(skill);
+//		MastershipModification mod = null;
+////		for (Modification tmp : undoList) {
+////			if (!(tmp instanceof MastershipModification))
+////					continue;
+////			MastershipModification tmp2 = (MastershipModification)tmp;
+////			if (tmp2.getMastership()==master) {
+////				mod = tmp2;
+////				logger.trace("  recent modification "+mod);
+////				break;
+////			}
+////		}
+//		// If necessary find modification in character history
+//		for (Modification tmp : data.getHistory()) {
 //			if (!(tmp instanceof MastershipModification))
 //					continue;
 //			MastershipModification tmp2 = (MastershipModification)tmp;
 //			if (tmp2.getMastership()==master) {
 //				mod = tmp2;
-//				logger.trace("  recent modification "+mod);
+//				logger.trace("  character history modification "+mod);
 //				break;
 //			}
 //		}
-		// If necessary find modification in character history
-		for (Modification tmp : data.getHistory()) {
-			if (!(tmp instanceof MastershipModification))
-					continue;
-			MastershipModification tmp2 = (MastershipModification)tmp;
-			if (tmp2.getMastership()==master) {
-				mod = tmp2;
-				logger.trace("  character history modification "+mod);
-				break;
-			}
-		}
+//
+//		if (mod!=null) {
+////			undoList.remove(mod);
+//			data.removeFromHistory(mod);
+////			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.UNDO_LIST_CHANGED, undoList));
+//
+//			// If exp was paid, return it
+//			if (mod.getExpCost()>0) {
+//				logger.info("Free "+mod.getExpCost()+" EP");
+//				data.setExperienceFree(data.getExperienceFree()+mod.getExpCost());
+//				data.setExperienceInvested(data.getExperienceInvested()-mod.getExpCost());
+//				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.EXPERIENCE_CHANGED, null, new int[]{data.getExperienceFree(), data.getExperienceInvested()}));
+//			}
+//		}
 
-		if (mod!=null) {
-//			undoList.remove(mod);
-			data.removeFromHistory(mod);
-//			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.UNDO_LIST_CHANGED, undoList));
-
-			// If exp was paid, return it
-			if (mod.getExpCost()>0) {
-				logger.info("Free "+mod.getExpCost()+" EP");
-				data.setExperienceFree(data.getExperienceFree()+mod.getExpCost());
-				data.setExperienceInvested(data.getExperienceInvested()-mod.getExpCost());
-				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.EXPERIENCE_CHANGED, null, new int[]{data.getExperienceFree(), data.getExperienceInvested()}));
-			}
-		}
-
+		charGen.runProcessors();
 		return true;
 	}
 
@@ -1006,7 +960,19 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 		Mastership master = mod.getMastership();
 		SkillSpecializationValue specVal = mod.getSpecialization();
 		Skill skill = mod.getSkill();
-		logger.debug("  addModification: master="+master+"  specVal="+specVal+"  skill="+skill+"   skilltype="+mod.getSkillType());
+		logger.trace("  addModification: master="+master+"  specVal="+specVal+"  skill="+skill+"   skilltype="+mod.getSkillType());
+		
+		// Ignore modifications for skills with value 0
+		if (data.getSkillValue(skill).getModifiedValue()==0) {
+			logger.warn("Ignore adding mastership modification to skill with value 0: "+skill+" , "+master);
+			return;
+		}
+		
+		// Ignore modifcations explicitly removed
+		if (explicitRemoved.contains(master)) {
+			logger.debug("* ignore adding mastership '"+master+"' from "+mod.getSource()+" that has been explicitly removed");
+			return;
+		}
 
 		if (master!=null) {
 			skill = master.getSkill();
@@ -1029,11 +995,13 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 				}
 				if (!found) {
 					logger.error("Cannot add mastership modification - no free selection");
+					for (FreeMastershipSelection sel : freeSelections) {
+						logger.error("* Used "+sel+" for "+sel.getUsedFor());
+					}
 					return;
 				}
 				data.getSkillValue(skill).addMastership(ref);
 				logger.info("  Added mastership '"+master+"' by system");
-				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.MASTERSHIP_ADDED, skill, ref));
 			}
 		} else if (specVal!=null) {
 			boolean found = false;
@@ -1058,7 +1026,6 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 				link(token, ref);
 //				systemAdded.put(mod, token);
 				logger.info("  Added skill specialization '"+specVal+"' by system");
-				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.MASTERSHIP_ADDED, skill, ref));
 			} else {
 				logger.error("  Adding skill specialization "+specVal+" while current level is "+currLevel+" is not supported");
 				System.exit(0);
@@ -1080,32 +1047,8 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 				return;
 			}
 			token.setSkill(skill);
-//			FreeMastershipSelection token = new FreeMastershipSelection(skill, mod.getLevel());
-//			freeSelections.add(0,token);
-//			systemAdded.put(mod, token);
 			logger.info("  Added free selection in "+token+" by system");
 			logger.debug("  Get free masterships after : "+getFreeMasterships(skill));
-			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_MASTERSHIPS, skill, getFreeMasterships(skill)));
-//		} else if (mod.getSkillType()!=null) {
-//			// Fill a free mastership slot
-//			boolean found = false;
-//			FreeMastershipSelection token = null;
-//			for (FreeMastershipSelection free : freeSelections) {
-//				if (free.getUsedFor()==null && free.getSkill()==null) {
-//					token = free;
-//					logger.debug("Use "+free+" for "+mod);
-//					found = true;
-//					break;
-//				}
-//			}
-//			if (!found) {
-//				logger.error("Cannot add mastership modification - no free selection");
-//				return;
-//			}
-//			token.setSkill(skill);
-//			logger.info("  Added free selection in "+token+" by system");
-//			logger.debug("  Get free masterships after : "+getFreeMasterships(skill));
-//			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_MASTERSHIPS, skill, getFreeMasterships(skill)));
 		} else {
 			logger.error("Cannot add this modification: "+mod);
 		}
@@ -1223,20 +1166,6 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 			/*
 			 * Clear all masterships that have been given by modification
 			 */
-//			for (FreeMastershipSelection free : byModification.values()) {
-//				MastershipReference ref = free.getUsedFor();
-//				if (ref.getMastership()!=null) {
-//					SkillValue sVal = model.getSkillValue( ref.getMastership().getSkill() );
-//					sVal.removeMastership(ref.getMastership());
-//					logger.debug("  clear mastership from previous run: "+ref);
-//				} else {
-//					SkillValue sVal = model.getSkillValue( ref.getSpecialization().getSpecial().getSkill());
-//					sVal.removeSpecialization(ref.getSpecialization().getSpecial());
-//					logger.debug("  clear specialization from previous run: "+ref);
-//				}
-//			}
-//			byModification.clear();
-			
 			for (SkillValue sVal : model.getSkills()) {
 				for (MastershipReference ref : new ArrayList<MastershipReference>(sVal.getMasterships())) {
 					if (ref.canBeCleared()) {
@@ -1264,24 +1193,6 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 			}
 			Collections.reverse(freeSelections);
 			pointsLeft = freeSelections.size();
-
-			/*
-			 * Now assign the existing user selected masterships to free selections.
-			 * All system assigned masterships have been cleared before
-			 */
-			for (SkillValue sval : model.getSkills()) {
-				for (MastershipReference ref : sval.getMasterships()) {
-					logger.debug("* "+ref);
-					FreeMastershipSelection free = getFreeSelectionFor(sval.getSkill(), ref.getMastership().getLevel());
-					if (free!=null) {
-						logger.debug(" use "+free+" for "+sval.getSkill().getId()+"/"+ref.getMastership());
-						link(free, ref);
-						freeSelections.remove(free);
-					} else {
-						logger.warn(" no free mastership found for "+sval.getSkill().getId()+"/"+ref.getMastership());
-					}
-				}
-			}
 			
 			/* 
 			 * Now process system given masterships
@@ -1289,19 +1200,45 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 			for (Modification mod : previous) {
 				if (mod instanceof MastershipModification) {
 					MastershipModification mmod = (MastershipModification)mod;
-					logger.debug("mmod = "+mmod+" (from "+mod.getSource()+")");
 					addModification(mmod);
 				} else
 					unprocessed.add(mod);
+			}
+
+			/*
+			 * Now assign the existing user selected masterships to free selections.
+			 * All system assigned masterships have been cleared before
+			 */
+			for (SkillValue sval : model.getSkills()) {
+				for (MastershipReference ref : sval.getMasterships()) {
+					FreeMastershipSelection free = getFreeSelectionFor(sval.getSkill(), ref.getMastership().getLevel());
+					if (free!=null) {
+						logger.debug("* use "+free+" for "+sval.getSkill().getId()+"/"+ref.getMastership());
+						link(free, ref);
+						freeSelections.remove(free);
+					} else {
+						logger.debug("* no free mastership found for "+sval.getSkill().getId()+"/"+ref.getMastership());
+					}
+				}
 			}
 			
 			/* 
 			 * Count free unused masterships 
 			 */
+			int expCost = 0;
 			for (SkillValue sval : model.getSkills()) {
 				for (MastershipReference ref : sval.getMasterships()) {
+					logger.debug("  check "+ref);
 					if (ref.getFree()>0)
 						pointsLeft--;
+					else {
+						logger.info("  use 5 EP for "+ref);
+						expCost+=5;
+						// Log to history
+						MastershipModification mod = new MastershipModification(ref.getMastership());
+						mod.setExpCost(5);
+						model.addToHistory(mod);
+					}
 				}
 			}
 			
@@ -1314,7 +1251,13 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 			}
 			
 			
-			logger.debug("There are "+pointsLeft+" free masterships left to select");
+			if (expCost>0) {
+				todos.add(new ToDoElement(Severity.INFO, String.format(RES.getString("mastergen.todo.experience"), expCost)));
+				model.setExperienceFree( model.getExperienceFree() - expCost );
+				model.setExperienceInvested( model.getExperienceInvested() + expCost );
+			}
+			
+			logger.debug("There are "+pointsLeft+" free masterships left to select and "+expCost+" have been spent");
 			if (pointsLeft>0) {
 				todos.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("mastergen.todo.free.any"), pointsLeft)));
 			} else if (pointsLeft<0) {

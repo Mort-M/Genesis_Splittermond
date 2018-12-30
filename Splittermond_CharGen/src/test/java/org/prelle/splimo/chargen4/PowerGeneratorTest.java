@@ -123,6 +123,17 @@ public class PowerGeneratorTest {
 
 	//-------------------------------------------------------------------
 	@Test
+	public void testDoubleSelection() {
+		previous.add(new PowerModification(MULTI_ALWAYS));
+		gen.process(testModel, previous);
+		assertTrue(gen.canBeIncreased(testModel.getPower(MULTI_ALWAYS)));
+		assertTrue(gen.increase(testModel.getPower(MULTI_ALWAYS)));
+		assertEquals(MAX-MULTI_ALWAYS.getCost()*2, gen.getPointsLeft());
+		assertEquals(1, testModel.getPowers().size());
+	}
+
+	//-------------------------------------------------------------------
+	@Test
 	public void testIdleCanBeIncreased() {
 		assertFalse(gen.canBeIncreased(new PowerReference(ONCE_GENONLY)));
 		assertFalse(gen.canBeIncreased(new PowerReference(ONCE_ALWAYS)));
@@ -236,16 +247,24 @@ public class PowerGeneratorTest {
 		
 		gen.select(ONCE_GENONLY);
 		assertEquals(MAX-ONCE_GENONLY.getCost(), gen.getPointsLeft());
+		assertEquals(1, testModel.getPowers().size());
+		assertEquals(1, testModel.getPower(ONCE_GENONLY).getCount());
+		assertEquals(1, testModel.getPower(ONCE_GENONLY).getModifiedCount());
+		// Now add it again as modification - this should change nothing
 		previous.add(mod1);
 		gen.process(testModel, previous);
 		assertEquals(MAX-ONCE_GENONLY.getCost(), gen.getPointsLeft());
+		assertEquals(1, testModel.getPower(ONCE_GENONLY).getCount());
+		assertEquals(1, testModel.getPower(ONCE_GENONLY).getModifiedCount());
 		assertEquals(1, testModel.getPowers().size());
 		
 		// Now remove automatic mod
 		previous.remove(mod1);
 		gen.process(testModel, previous);
-		assertEquals(MAX, gen.getPointsLeft());
-		assertEquals(0, testModel.getPowers().size());
+		assertEquals(MAX-ONCE_GENONLY.getCost(), gen.getPointsLeft());
+		assertEquals(1, testModel.getPowers().size());
+		assertEquals(1, testModel.getPower(ONCE_GENONLY).getCount());
+		assertEquals(1, testModel.getPower(ONCE_GENONLY).getModifiedCount());
 	}
 
 	//-------------------------------------------------------------------

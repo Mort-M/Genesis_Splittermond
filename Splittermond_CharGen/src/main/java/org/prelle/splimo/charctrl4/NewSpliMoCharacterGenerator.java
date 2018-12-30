@@ -5,6 +5,7 @@ package org.prelle.splimo.charctrl4;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -13,6 +14,7 @@ import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.Moonsign;
 import org.prelle.splimo.PowerReference;
 import org.prelle.splimo.ResourceReference;
+import org.prelle.splimo.RewardImpl;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpliMoCharacter;
@@ -36,6 +38,7 @@ import de.rpgframework.character.CharacterProvider;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.RoleplayingSystem;
+import de.rpgframework.genericrpg.Reward;
 import de.rpgframework.genericrpg.ToDoElement;
 import de.rpgframework.genericrpg.ToDoElement.Severity;
 import de.rpgframework.genericrpg.modification.DecisionToMake;
@@ -348,16 +351,6 @@ public class NewSpliMoCharacterGenerator extends SplitterEngineCharacterGenerato
 				ret.addAll( ((Controller)step).getToDos() );
 			}
 		}
-//		ret.addAll(((Controller)races).getToDos());
-//		ret.addAll(((Controller)cultures).getToDos());
-//		ret.addAll(((Controller)backgrounds).getToDos());
-//		ret.addAll(((Controller)educations).getToDos());
-//		ret.addAll(((Controller)powers).getToDos());
-//		ret.addAll(((Controller)attributes).getToDos());
-//		ret.addAll(((Controller)resources).getToDos());
-//		ret.addAll(((Controller)skills).getToDos());
-//		ret.addAll(((Controller)master).getToDos());
-//		ret.addAll(moonsign.getToDos());
 		
 		// Find decisions not made yet
 		for (DecisionToMake dec : getDecisionsToMake()) {
@@ -399,7 +392,6 @@ public class NewSpliMoCharacterGenerator extends SplitterEngineCharacterGenerato
 		stop();
 
 		this.model = model;
-		mode = Mode.CREATION;
 		
 		races      = new RaceGenerator(this);
 		cultures   = new NewCultureGenerator(this);
@@ -413,7 +405,7 @@ public class NewSpliMoCharacterGenerator extends SplitterEngineCharacterGenerato
 //		moonsign   = new MoonsignProcessor();
 ////		spells     = new SpellGenerator(skills, model);
 //		educations = new EducationGenerator();
-		spells     = new NewSpellLevellerAndGenerator(this);
+		spells     = new NewSpellGenerator(this);
 		languages  = new NewLanguageGenerator(this, 2);
 		cultlores  = new NewCultureLoreGenerator(this, 1);
 
@@ -431,25 +423,97 @@ public class NewSpliMoCharacterGenerator extends SplitterEngineCharacterGenerato
 		processChain.add( (SpliMoCharacterProcessor) spells );
 		processChain.add( (SpliMoCharacterProcessor) languages );
 		processChain.add( (SpliMoCharacterProcessor) cultlores );
+		processChain.add( new CalculateDerivedAttributesProcessor() );
 		processChain.add( moonsign );
 		
 		runProcessors();
 	}
 
-	//-------------------------------------------------------------------
-	public void startTuningMode() {
-		logger.info("------Change to tuning mode----------------");
-		
-		/*
-		 * Fix attributes
-		 */
-		for (Attribute key : Attribute.primaryValues()) {
-			AttributeValue val = model.getAttribute(key);
-			val.setDistributed(val.getValue());
-			val.setStart(val.getDistributed());
-			val.getModifications().clear();
-		}
-		
+//	//-------------------------------------------------------------------
+//	public void startTuningMode() {
+//		logger.info("------Change to tuning mode----------------");
+//		
+//		/*
+//		 * Fix attributes
+//		 */
+//		for (Attribute key : Attribute.primaryValues()) {
+//			AttributeValue val = model.getAttribute(key);
+//			val.setDistributed(val.getValue());
+//			val.setStart(val.getDistributed());
+//			val.getModifications().clear();
+//		}
+//		
+//		/*
+//		 * Fix skills
+//		 */
+//		for (Skill key : SplitterMondCore.getSkills()) {
+//			SkillValue val = model.getSkillValue(key);
+//			val.setValue(val.getModifiedValue());
+//			val.getModifications().clear();
+//		}
+//		
+////		/*
+////		 * Fix masterships
+////		 */
+////		for (Skill key : SplitterMondCore.getSkills()) {
+////			SkillValue val = model.getSkillValue(key);
+////			if (!val.getMasterships().isEmpty()) {
+////				logger.info("masterships for "+key+" = "+val.getMasterships());
+////			}
+////		}
+//		
+//		/*
+//		 * Fix resources
+//		 */
+//		for (ResourceReference ref : model.getResources()) {
+//			ref.setValue(ref.getModifiedValue());
+//			ref.clearModifications();
+//		}
+//		
+//		/*
+//		 * Fix Powers
+//		 */
+//		for (PowerReference ref : model.getPowers()) {
+//			if (ref.getPower().canBeUsedMultipleTimes())
+//				ref.setCount(ref.getModifiedCount());
+//			else
+//				ref.setCount(0);
+//			ref.clearModifications();
+//		}
+//		
+//		// Culture lores
+//		cultlores = new NewCultureLoreLeveller(this);
+//		languages = new NewLanguageLeveller(this);
+//		
+//		mode = Mode.TUNING;
+//		attributes = new LevellingAttributeGenerator(this, 0);
+////		skills     = new NewSkillLeveller(this);
+//		master     = new NewMastershipLeveller(this, 3);
+////		resources  = new NewResourceLeveller(this, 8);
+//		processChain.clear();
+//		processChain.add( new ClearAllModificationsProcessor() );
+//		processChain.add( new CalculateDerivedAttributesProcessor() );
+//		processChain.add( new CalculateLevelProcessor() );
+//		processChain.add( new ModifyDerivedValuesByLevelProcessor() );
+//		processChain.add( (SpliMoCharacterProcessor) attributes );
+////		processChain.add( new ResetModificationsOnGeneration());
+////		processChain.add( (SpliMoCharacterProcessor) backgrounds );
+////		processChain.add( (SpliMoCharacterProcessor) attributes );
+//		processChain.add( (SpliMoCharacterProcessor) skills );
+//		processChain.add( (SpliMoCharacterProcessor) resources );
+//		processChain.add( (SpliMoCharacterProcessor) master );
+//		processChain.add( (SpliMoCharacterProcessor) spells );
+//		processChain.add( (SpliMoCharacterProcessor) languages );
+//		processChain.add( (SpliMoCharacterProcessor) cultlores );
+//		
+//		runProcessors();
+//	}
+
+	//--------------------------------------------------------------------
+	public void stop() {
+		if (model==null)
+			return;
+		logger.info("Stop generation");
 		/*
 		 * Fix skills
 		 */
@@ -458,16 +522,6 @@ public class NewSpliMoCharacterGenerator extends SplitterEngineCharacterGenerato
 			val.setValue(val.getModifiedValue());
 			val.getModifications().clear();
 		}
-		
-//		/*
-//		 * Fix masterships
-//		 */
-//		for (Skill key : SplitterMondCore.getSkills()) {
-//			SkillValue val = model.getSkillValue(key);
-//			if (!val.getMasterships().isEmpty()) {
-//				logger.info("masterships for "+key+" = "+val.getMasterships());
-//			}
-//		}
 		
 		/*
 		 * Fix resources
@@ -488,37 +542,16 @@ public class NewSpliMoCharacterGenerator extends SplitterEngineCharacterGenerato
 			ref.clearModifications();
 		}
 		
-		// Culture lores
-		cultlores = new NewCultureLoreLeveller(this);
-		languages = new NewLanguageLeveller(this);
-		
-		mode = Mode.TUNING;
-		attributes = new LevellingAttributeGenerator(this, 0);
-//		skills     = new NewSkillLeveller(this);
-		master     = new NewMastershipLeveller(this, 3);
-//		resources  = new NewResourceLeveller(this, 8);
-		processChain.clear();
-		processChain.add( new ClearAllModificationsProcessor() );
-		processChain.add( new CalculateDerivedAttributesProcessor() );
-		processChain.add( new CalculateLevelProcessor() );
-		processChain.add( new ModifyDerivedValuesByLevelProcessor() );
-		processChain.add( (SpliMoCharacterProcessor) attributes );
-//		processChain.add( new ResetModificationsOnGeneration());
-//		processChain.add( (SpliMoCharacterProcessor) backgrounds );
-//		processChain.add( (SpliMoCharacterProcessor) attributes );
-		processChain.add( (SpliMoCharacterProcessor) skills );
-		processChain.add( (SpliMoCharacterProcessor) resources );
-		processChain.add( (SpliMoCharacterProcessor) master );
-		processChain.add( (SpliMoCharacterProcessor) spells );
-		processChain.add( (SpliMoCharacterProcessor) languages );
-		processChain.add( (SpliMoCharacterProcessor) cultlores );
-		
-		runProcessors();
-	}
-
-	//--------------------------------------------------------------------
-	public void stop() {
-		logger.info("Stop generation");
+		/*
+		 * Log first 15 exp reward and assign dates to history
+		 */
+		Reward reward = new RewardImpl(15, "Start-Exp");
+		reward.setDate(new Date());
+		model.setExperienceFree(15);
+		model.addReward(reward);
+		for (Modification mod : model.getHistory()) {
+			mod.setDate(new Date(System.currentTimeMillis()+1));
+		}
 	}
 
 	//-------------------------------------------------------------------

@@ -343,7 +343,7 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 	public int getSkillPoints(Skill key) {
 		for (SkillValue tmp : skillvals)
 			if (tmp.getSkill()==key)
-				return tmp.getValue();
+				return tmp.getModifiedValue();
 		throw new NoSuchElementException();
 	}
 

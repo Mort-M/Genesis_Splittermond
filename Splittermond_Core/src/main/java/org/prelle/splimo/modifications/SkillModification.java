@@ -37,6 +37,11 @@ public class SkillModification extends ModificationImpl {
 	private Skill ref;
 	@Attribute(required=false)
 	private int value;
+	/**
+	 * Used for history
+	 */
+	@Attribute(required=false)
+	private int oldValue;
 	@org.prelle.simplepersist.Attribute(name="modsrc")
     private ModificationSource modSource;
 	@Attribute(required=false,name="choice")
@@ -138,6 +143,8 @@ public class SkillModification extends ModificationImpl {
 		
 		if (type==ModificationValueType.ABSOLUT) {
 			buf.append(" and set it to "+value);
+		} else if (oldValue>0) {
+			buf.append(" "+oldValue+" --> "+value);
 		} else {
 			buf.append(" and add "+value);
 		}
@@ -265,6 +272,22 @@ public class SkillModification extends ModificationImpl {
 	public void setRestrictionType(RestrictionType restrictionType) {
 		throw new RuntimeException("Should not call this");
 //		this.restrictionType = restrictionType;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @return the oldValue
+	 */
+	public int getOldValue() {
+		return oldValue;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @param oldValue the oldValue to set
+	 */
+	public void setOldValue(int oldValue) {
+		this.oldValue = oldValue;
 	}
 
 }

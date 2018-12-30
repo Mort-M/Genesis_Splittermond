@@ -7,12 +7,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
-import java.util.ResourceBundle;
 
 import org.apache.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.modifications.ModificationChoice;
 import org.prelle.splimo.processor.SpliMoCharacterProcessor;
 
@@ -30,14 +27,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public abstract class SplitterEngineCharacterGenerator implements CharacterController {
 	
-	protected enum Mode {
-		FINISHED,
-		CREATION,
-		TUNING
-	}
-	
 	private static Logger logger = Logger.getLogger("splitter.chargen");
-	private static Random RANDOM = new Random();
 	
 	protected SpliMoCharacter model;
 	
@@ -63,7 +53,6 @@ public abstract class SplitterEngineCharacterGenerator implements CharacterContr
 	 * Memorizes all choices made by the user. 
 	 */
 	private Map<ModificationChoice, Modification[]> choices;
-	protected Mode mode;
 	
 	//-------------------------------------------------------------------
 	/**
@@ -78,11 +67,6 @@ public abstract class SplitterEngineCharacterGenerator implements CharacterContr
 	//--------------------------------------------------------------------
 	public SpliMoCharacter getModel() {
 		return model;
-	}
-
-	//--------------------------------------------------------------------
-	public Mode getMode() {
-		return mode;
 	}
 
 	//-------------------------------------------------------------------
@@ -270,19 +254,17 @@ public abstract class SplitterEngineCharacterGenerator implements CharacterContr
 	public void start(SpliMoCharacter model) {
 		// Stop previous
 		stop();
-
-		mode = Mode.CREATION;
 		
 		choices    = new HashMap<ModificationChoice, Modification[]>();
 	}
 
-	//-------------------------------------------------------------------
-	public void startTuningMode() {
-		logger.info("------Change to tuning mode----------------");
-		mode = Mode.TUNING;
-		
-		runProcessors();
-	}
+//	//-------------------------------------------------------------------
+//	public void startTuningMode() {
+//		logger.info("------Change to tuning mode----------------");
+//		mode = Mode.TUNING;
+//		
+//		runProcessors();
+//	}
 
 	//--------------------------------------------------------------------
 	public void stop() {
