@@ -1,2651 +1,3122 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <deities>
   <deity id="aand">
+    <cultures>
+      <culture id="daemmeralb" />
+    </cultures>
     <aspects>
-      <aspect ref="licht"/>
-      <aspect ref="helligkeit"/>
-      <aspect ref="sonne"/>
-      <aspect ref="schöpfung"/>
-      <aspect ref="stolz"/>
-      <aspect ref="treue"/>
-      <aspect ref="aufrichtigkeit"/>
+      <aspect ref="licht" />
+      <aspect ref="helligkeit" />
+      <aspect ref="sonne" />
+      <aspect ref="schöpfung" />
+      <aspect ref="stolz" />
+      <aspect ref="treue" />
+      <aspect ref="aufrichtigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="shadowmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="mystic"/>
+      <skillmod ref="lightmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="shadowmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="mystic" />
     </modifications>
   </deity>
   <deity id="adalu">
+    <cultures>
+      <culture id="mahaluu" />
+    </cultures>
     <aspects>
-      <aspect ref="feuer"/>
-      <aspect ref="leidenschaft"/>
-      <aspect ref="natur"/>
-      <aspect ref="eifersucht"/>
-      <aspect ref="gier"/>
-      <aspect ref="wetter"/>
+      <aspect ref="feuer" />
+      <aspect ref="leidenschaft" />
+      <aspect ref="natur" />
+      <aspect ref="eifersucht" />
+      <aspect ref="gier" />
+      <aspect ref="wetter" />
     </aspects>
     <modifications>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="firemagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="deathmagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="controlmagic" />
+      <skillmod ref="firemagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="deathmagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="aewynna">
+    <cultures>
+      <culture id="wintholt" />
+    </cultures>
     <aspects>
-      <aspect ref="liebe"/>
-      <aspect ref="fest"/>
-      <aspect ref="freude"/>
-      <aspect ref="sommer"/>
-      <aspect ref="schönheit"/>
-      <aspect ref="weiblichkeit"/>
+      <aspect ref="liebe" />
+      <aspect ref="fest" />
+      <aspect ref="freude" />
+      <aspect ref="sommer" />
+      <aspect ref="schönheit" />
+      <aspect ref="weiblichkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="lightmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="agomai">
+    <cultures>
+      <culture id="kungaitan" />
+    </cultures>
     <aspects>
-      <aspect ref="eisen"/>
-      <aspect ref="handwerk"/>
-      <aspect ref="schaffenskraft"/>
-      <aspect ref="bodenschätze"/>
-      <aspect ref="alchemie"/>
-      <aspect ref="landwirtschaft"/>
+      <aspect ref="eisen" />
+      <aspect ref="handwerk" />
+      <aspect ref="schaffenskraft" />
+      <aspect ref="bodenschätze" />
+      <aspect ref="alchemie" />
+      <aspect ref="landwirtschaft" />
     </aspects>
     <modifications>
-      <skillmod ref="stonemagic"/>
-      <skillmod ref="firemagic"/>
-      <skillmod ref="transformationmagic"/>
-      <skillmod ref="antimagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="stonemagic" />
+      <skillmod ref="firemagic" />
+      <skillmod ref="transformationmagic" />
+      <skillmod ref="antimagic" value="-1" />
+      <edumod ref="wandererpriest" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="ahas">
+    <cultures>
+      <culture id="zhoujiang " />
+    </cultures>
     <aspects>
-      <aspect ref="überfall"/>
-      <aspect ref="taktik"/>
-      <aspect ref="täuschung"/>
-      <aspect ref="kampf"/>
-      <aspect ref="beweglichkeit"/>
+      <aspect ref="überfall" />
+      <aspect ref="taktik" />
+      <aspect ref="täuschung" />
+      <aspect ref="kampf" />
+      <aspect ref="beweglichkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="deathmagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="voice_of_ghosts"/>
-      <edumod ref="cultist"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="deathmagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="voice_of_ghosts" />
+      <edumod ref="cultist" />
     </modifications>
   </deity>
   <deity id="akahara">
+    <cultures>
+      <culture id="zhoujiang" />
+      <culture id="sadu" />
+    </cultures>
     <aspects>
-      <aspect ref="geschwindigkeit"/>
-      <aspect ref="sonne"/>
-      <aspect ref="farbe"/>
-      <aspect ref="regeneration"/>
-      <aspect ref="beweglichkeit"/>
-      <aspect ref="leben"/>
+      <aspect ref="geschwindigkeit" />
+      <aspect ref="sonne" />
+      <aspect ref="farbe" />
+      <aspect ref="regeneration" />
+      <aspect ref="beweglichkeit" />
+      <aspect ref="leben" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="firemagic"/>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="shadowmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="voice_of_ghosts"/>
-      <edumod ref="mystic"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="firemagic" />
+      <skillmod ref="lightmagic" />
+      <skillmod ref="shadowmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="voice_of_ghosts" />
+      <edumod ref="mystic" />
     </modifications>
   </deity>
   <deity id="alo">
+    <cultures>
+      <culture id="strominseln" />
+    </cultures>
     <aspects>
-      <aspect ref="sanftheit"/>
-      <aspect ref="leben"/>
-      <aspect ref="pflanzen"/>
-      <aspect ref="fürsorge"/>
-      <aspect ref="schöpfung"/>
+      <aspect ref="sanftheit" />
+      <aspect ref="leben" />
+      <aspect ref="pflanzen" />
+      <aspect ref="fürsorge" />
+      <aspect ref="schöpfung" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="deathmagic" value="-1"/>
-      <edumod ref="elementalist"/>
-      <edumod ref="titanchild_priest"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="deathmagic" value="-1" />
+      <edumod ref="elementalist" />
+      <edumod ref="titanchild_priest" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="alwodin">
+    <cultures>
+      <culture id="wintholt" />
+    </cultures>
     <aspects>
-      <aspect ref="sturm"/>
-      <aspect ref="umbruch"/>
-      <aspect ref="herbst"/>
-      <aspect ref="launenhaftigkeit"/>
-      <aspect ref="würde"/>
+      <aspect ref="sturm" />
+      <aspect ref="umbruch" />
+      <aspect ref="herbst" />
+      <aspect ref="launenhaftigkeit" />
+      <aspect ref="würde" />
     </aspects>
     <modifications>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="firemagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="combatmagic" />
+      <skillmod ref="firemagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="amantia">
+    <cultures>
+      <culture id="sadu " />
+    </cultures>
     <aspects>
-      <aspect ref="fruchtbarkeit"/>
-      <aspect ref="pilze"/>
-      <aspect ref="alchemie"/>
-      <aspect ref="rausch"/>
-      <aspect ref="wind"/>
-      <aspect ref="heilung"/>
+      <aspect ref="fruchtbarkeit" />
+      <aspect ref="pilze" />
+      <aspect ref="alchemie" />
+      <aspect ref="rausch" />
+      <aspect ref="wind" />
+      <aspect ref="heilung" />
     </aspects>
     <modifications>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="transformationmagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="naturemagic" />
+      <skillmod ref="transformationmagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="anding">
+    <cultures>
+      <culture id="sadu " />
+    </cultures>
     <aspects>
-      <aspect ref="meereskreaturen"/>
-      <aspect ref="ruhe"/>
-      <aspect ref="kraft"/>
-      <aspect ref="wasser"/>
-      <aspect ref="meer"/>
-      <aspect ref="stärke"/>
+      <aspect ref="meereskreaturen" />
+      <aspect ref="ruhe" />
+      <aspect ref="kraft" />
+      <aspect ref="wasser" />
+      <aspect ref="meer" />
+      <aspect ref="stärke" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="anios">
+    <cultures>
+      <culture id="albseebund" />
+    </cultures>
     <aspects>
-      <aspect ref="fischerei"/>
-      <aspect ref="ernährung"/>
-      <aspect ref="rohstoffe"/>
-      <aspect ref="meer"/>
-      <aspect ref="hilfsbereitschaft"/>
-      <aspect ref="heilung"/>
-      <aspect ref="handwerk"/>
+      <aspect ref="fischerei" />
+      <aspect ref="ernährung" />
+      <aspect ref="rohstoffe" />
+      <aspect ref="meer" />
+      <aspect ref="hilfsbereitschaft" />
+      <aspect ref="heilung" />
+      <aspect ref="handwerk" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="deathmagic" value="-1"/>
-      <edumod ref="soulguide"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="deathmagic" value="-1" />
+      <edumod ref="soulguide" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="asha-vera">
+    <cultures>
+      <culture id="immersomm" />
+    </cultures>
     <aspects>
-      <aspect ref="sommer"/>
-      <aspect ref="natur"/>
-      <aspect ref="reinheit"/>
-      <aspect ref="schönheit"/>
-      <aspect ref="jugend"/>
-      <aspect ref="vollkommenheit"/>
+      <aspect ref="sommer" />
+      <aspect ref="natur" />
+      <aspect ref="reinheit" />
+      <aspect ref="schönheit" />
+      <aspect ref="jugend" />
+      <aspect ref="vollkommenheit" />
     </aspects>
     <modifications>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="lightmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="avyn">
+    <cultures>
+      <culture id="teleshai" />
+    </cultures>
     <aspects>
-      <aspect ref="lebensfreude"/>
-      <aspect ref="farbe"/>
-      <aspect ref="sommer"/>
-      <aspect ref="reise"/>
-      <aspect ref="leidenschaft"/>
-      <aspect ref="vögel"/>
+      <aspect ref="lebensfreude" />
+      <aspect ref="farbe" />
+      <aspect ref="sommer" />
+      <aspect ref="reise" />
+      <aspect ref="leidenschaft" />
+      <aspect ref="vögel" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="soulguide"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="healmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="soulguide" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="balang">
+    <cultures>
+      <culture id="sadu " />
+    </cultures>
     <aspects>
-      <aspect ref="weiblichkeit"/>
-      <aspect ref="eleganz"/>
-      <aspect ref="westen"/>
-      <aspect ref="geburt"/>
-      <aspect ref="leben"/>
-      <aspect ref="schönheit"/>
+      <aspect ref="weiblichkeit" />
+      <aspect ref="eleganz" />
+      <aspect ref="westen" />
+      <aspect ref="geburt" />
+      <aspect ref="leben" />
+      <aspect ref="schönheit" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="lightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="baruo">
+    <cultures>
+      <culture id="albseebund" />
+    </cultures>
     <aspects>
-      <aspect ref="meereskreaturen"/>
-      <aspect ref="kampf"/>
-      <aspect ref="schutz"/>
-      <aspect ref="richter"/>
-      <aspect ref="recht"/>
-      <aspect ref="meer"/>
+      <aspect ref="meereskreaturen" />
+      <aspect ref="kampf" />
+      <aspect ref="schutz" />
+      <aspect ref="richter" />
+      <aspect ref="recht" />
+      <aspect ref="meer" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="illusionmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="baruopriest"/>
-      <edumod ref="inquisitor"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="combatmagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="illusionmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="baruopriest" />
+      <edumod ref="inquisitor" />
     </modifications>
   </deity>
   <deity id="bawalin">
+    <cultures>
+      <culture id="sadu " />
+    </cultures>
     <aspects>
-      <aspect ref="erfolg"/>
-      <aspect ref="seefahrt"/>
-      <aspect ref="jahreszeiten"/>
-      <aspect ref="anführer"/>
-      <aspect ref="erhabenheit"/>
+      <aspect ref="erfolg" />
+      <aspect ref="seefahrt" />
+      <aspect ref="jahreszeiten" />
+      <aspect ref="anführer" />
+      <aspect ref="erhabenheit" />
     </aspects>
     <modifications>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="illusionmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="fatemagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="illusionmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="cabrid">
+    <cultures>
+      <culture id="patalis" />
+    </cultures>
     <aspects>
-      <aspect ref="fleiß"/>
-      <aspect ref="wissen"/>
-      <aspect ref="handwerk"/>
-      <aspect ref="handel"/>
-      <aspect ref="demut"/>
-      <aspect ref="tüchtigkeit"/>
-      <aspect ref="bescheidenheit"/>
+      <aspect ref="fleiß" />
+      <aspect ref="wissen" />
+      <aspect ref="handwerk" />
+      <aspect ref="handel" />
+      <aspect ref="demut" />
+      <aspect ref="tüchtigkeit" />
+      <aspect ref="bescheidenheit" />
     </aspects>
     <modifications>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="lorepriest"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="controlmagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="lorepriest" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="caran">
+    <cultures>
+      <culture id="selenia" />
+    </cultures>
     <aspects>
-      <aspect ref="spiel"/>
-      <aspect ref="wettkampf"/>
-      <aspect ref="verhandlung"/>
-      <aspect ref="meuchelmord"/>
-      <aspect ref="list"/>
-      <aspect ref="täuschung"/>
+      <aspect ref="spiel" />
+      <aspect ref="wettkampf" />
+      <aspect ref="verhandlung" />
+      <aspect ref="meuchelmord" />
+      <aspect ref="list" />
+      <aspect ref="täuschung" />
     </aspects>
     <modifications>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="lightmagic" value="-1"/>
-      <edumod ref="cultist"/>
-      <edumod ref="shadowblade"/>
-      <edumod ref="caransassassin"/>
-      <edumod ref="wandererpriest"/>
-      <edumod ref="lunarseeker"/>
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="lightmagic" value="-1" />
+      <edumod ref="cultist" />
+      <edumod ref="shadowblade" />
+      <edumod ref="caransassassin" />
+      <edumod ref="wandererpriest" />
+      <edumod ref="lunarseeker" />
     </modifications>
   </deity>
   <deity id="cashu">
+    <cultures>
+      <culture id="gulong" />
+    </cultures>
     <aspects>
-      <aspect ref="gedächtnis"/>
-      <aspect ref="wissen"/>
-      <aspect ref="geheimnisse"/>
-      <aspect ref="verrat"/>
-      <aspect ref="intrige"/>
-      <aspect ref="mysterium"/>
+      <aspect ref="gedächtnis" />
+      <aspect ref="wissen" />
+      <aspect ref="geheimnisse" />
+      <aspect ref="verrat" />
+      <aspect ref="intrige" />
+      <aspect ref="mysterium" />
     </aspects>
     <modifications>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="naturemagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="lorepriest"/>
+      <skillmod ref="controlmagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="naturemagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="lorepriest" />
     </modifications>
   </deity>
   <deity id="dagener">
+    <cultures>
+      <culture id="nyrdfing" />
+    </cultures>
     <aspects>
-      <aspect ref="pflichterfüllung"/>
-      <aspect ref="tüchtigkeit"/>
-      <aspect ref="handwerk"/>
-      <aspect ref="ordnung"/>
-      <aspect ref="standhaftigkeit"/>
+      <aspect ref="pflichterfüllung" />
+      <aspect ref="tüchtigkeit" />
+      <aspect ref="handwerk" />
+      <aspect ref="ordnung" />
+      <aspect ref="standhaftigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="dal-sinbara">
+    <cultures>
+      <culture id="jagodien" />
+    </cultures>
     <aspects>
-      <aspect ref="meer"/>
-      <aspect ref="launenhaftigkeit"/>
-      <aspect ref="sturm"/>
-      <aspect ref="flut"/>
-      <aspect ref="seefahrt"/>
+      <aspect ref="meer" />
+      <aspect ref="launenhaftigkeit" />
+      <aspect ref="sturm" />
+      <aspect ref="flut" />
+      <aspect ref="seefahrt" />
     </aspects>
     <modifications>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="fatemagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="darunwal">
+    <cultures>
+      <culture id="zwingard" />
+    </cultures>
     <aspects>
-      <aspect ref="splittermond"/>
-      <aspect ref="wache"/>
-      <aspect ref="pflicht"/>
-      <aspect ref="buße"/>
-      <aspect ref="standhaftigkeit"/>
+      <aspect ref="splittermond" />
+      <aspect ref="wache" />
+      <aspect ref="pflicht" />
+      <aspect ref="buße" />
+      <aspect ref="standhaftigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="lightmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="lightmagic" value="-1" />
+      <edumod ref="faithwarrior" />
     </modifications>
   </deity>
   <deity id="dernwan">
+    <cultures>
+      <culture id="zwingard" />
+    </cultures>
     <aspects>
-      <aspect ref="splittermond"/>
-      <aspect ref="verrat"/>
-      <aspect ref="eigennutz"/>
-      <aspect ref="lüge"/>
-      <aspect ref="täuschung"/>
+      <aspect ref="splittermond" />
+      <aspect ref="verrat" />
+      <aspect ref="eigennutz" />
+      <aspect ref="lüge" />
+      <aspect ref="täuschung" />
     </aspects>
     <modifications>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="lightmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="cultist"/>
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="lightmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="cultist" />
     </modifications>
   </deity>
   <deity id="din-loh">
+    <cultures>
+      <culture id="kungaitan" />
+    </cultures>
     <aspects>
-      <aspect ref="sonne"/>
-      <aspect ref="wahrheit"/>
-      <aspect ref="kreativität"/>
-      <aspect ref="himmel"/>
-      <aspect ref="gemeinschaft"/>
+      <aspect ref="sonne" />
+      <aspect ref="wahrheit" />
+      <aspect ref="kreativität" />
+      <aspect ref="himmel" />
+      <aspect ref="gemeinschaft" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="stonemagic" value="-1"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="stonemagic" value="-1" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="dornius">
+    <cultures>
+      <culture id="midstad" />
+      <culture id="patalis" />
+      <culture id="elyrea" />
+      <culture id="selenia" />
+    </cultures>
     <aspects>
-      <aspect ref="saat"/>
-      <aspect ref="fleiß"/>
-      <aspect ref="ernte"/>
-      <aspect ref="feldfrüchte"/>
-      <aspect ref="wachstum"/>
-      <aspect ref="tüchtigkeit"/>
+      <aspect ref="saat" />
+      <aspect ref="fleiß" />
+      <aspect ref="ernte" />
+      <aspect ref="feldfrüchte" />
+      <aspect ref="wachstum" />
+      <aspect ref="tüchtigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="stonemagic"/>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="stonemagic" />
+      <skillmod ref="healmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="drachenfisch">
+    <cultures>
+      <culture id="zhoujiang" />
+      <culture id="sadu" />
+    </cultures>
     <aspects>
-      <aspect ref="glück"/>
-      <aspect ref="feuer"/>
-      <aspect ref="flussundsee"/>
-      <aspect ref="rache"/>
-      <aspect ref="standhaftigkeit"/>
+      <aspect ref="glück" />
+      <aspect ref="feuer" />
+      <aspect ref="flussundsee" />
+      <aspect ref="rache" />
+      <aspect ref="standhaftigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="firemagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="stonemagic" value="-1"/>
-      <edumod ref="cultist"/>
-      <edumod ref="disciple_dragonfish"/>
+      <skillmod ref="firemagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="stonemagic" value="-1" />
+      <edumod ref="cultist" />
+      <edumod ref="disciple_dragonfish" />
     </modifications>
   </deity>
   <deity id="drugon">
+    <cultures>
+      <culture id="selenia" />
+    </cultures>
     <aspects>
-      <aspect ref="handwerk"/>
-      <aspect ref="wanderschaft"/>
-      <aspect ref="hilfsbereitschaft"/>
-      <aspect ref="unterricht"/>
-      <aspect ref="standhaftigkeit"/>
-      <aspect ref="tüchtigkeit"/>
+      <aspect ref="handwerk" />
+      <aspect ref="wanderschaft" />
+      <aspect ref="hilfsbereitschaft" />
+      <aspect ref="unterricht" />
+      <aspect ref="standhaftigkeit" />
+      <aspect ref="tüchtigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="stonemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
-      <edumod ref="drugonjourneyman"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="stonemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="wandererpriest" />
+      <edumod ref="drugonjourneyman" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="durbash">
+    <cultures>
+      <culture id="keshabid" />
+    </cultures>
     <aspects>
-      <aspect ref="tradition"/>
-      <aspect ref="treue"/>
-      <aspect ref="geschichte"/>
-      <aspect ref="gedächtnis"/>
-      <aspect ref="mysterium"/>
+      <aspect ref="tradition" />
+      <aspect ref="treue" />
+      <aspect ref="geschichte" />
+      <aspect ref="gedächtnis" />
+      <aspect ref="mysterium" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="transformationmagic" value="-1"/>
-      <edumod ref="lorepriest"/>
-      <edumod ref="adeshbid"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="transformationmagic" value="-1" />
+      <edumod ref="lorepriest" />
+      <edumod ref="adeshbid" />
     </modifications>
   </deity>
   <deity id="egaris">
+    <cultures>
+      <culture id="dalmarien" />
+      <culture id="shahandir" />
+    </cultures>
     <aspects>
-      <aspect ref="geheimnisse"/>
-      <aspect ref="mysterium"/>
-      <aspect ref="rätsel"/>
-      <aspect ref="erkenntnis"/>
-      <aspect ref="tiefdunkel"/>
-      <aspect ref="entdeckung"/>
+      <aspect ref="geheimnisse" />
+      <aspect ref="mysterium" />
+      <aspect ref="rätsel" />
+      <aspect ref="erkenntnis" />
+      <aspect ref="tiefdunkel" />
+      <aspect ref="entdeckung" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="lorepriest"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="lorepriest" />
     </modifications>
   </deity>
   <deity id="eughos">
+    <cultures>
+      <culture id="ioria" />
+      <culture id="afali" />
+    </cultures>
     <aspects>
-      <aspect ref="weisheit"/>
-      <aspect ref="schutz"/>
-      <aspect ref="vernunft"/>
-      <aspect ref="wahrnehmung"/>
-      <aspect ref="ordnung"/>
-      <aspect ref="sanftmut"/>
-      <aspect ref="schöpfung"/>
-      <aspect ref="wahrheit"/>
+      <aspect ref="weisheit" />
+      <aspect ref="schutz" />
+      <aspect ref="vernunft" />
+      <aspect ref="wahrnehmung" />
+      <aspect ref="ordnung" />
+      <aspect ref="sanftmut" />
+      <aspect ref="schöpfung" />
+      <aspect ref="wahrheit" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="lorepriest"/>
-      <edumod ref="keeperofsecrets"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="lorepriest" />
+      <edumod ref="keeperofsecrets" />
     </modifications>
   </deity>
   <deity id="fatargon">
+    <cultures>
+      <culture id="westergrom" />
+    </cultures>
     <aspects>
-      <aspect ref="handwerk"/>
-      <aspect ref="ordnung"/>
-      <aspect ref="kreativität"/>
-      <aspect ref="fleiß"/>
-      <aspect ref="perfektion"/>
-      <aspect ref="tüchtigkeit"/>
+      <aspect ref="handwerk" />
+      <aspect ref="ordnung" />
+      <aspect ref="kreativität" />
+      <aspect ref="fleiß" />
+      <aspect ref="perfektion" />
+      <aspect ref="tüchtigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="stonemagic"/>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="stonemagic" />
+      <skillmod ref="lightmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="firrgin">
+    <cultures>
+      <culture id="raugarr" />
+    </cultures>
     <aspects>
-      <aspect ref="weisheit"/>
-      <aspect ref="list"/>
-      <aspect ref="täuschung"/>
-      <aspect ref="magie"/>
-      <aspect ref="geheimnisse"/>
+      <aspect ref="weisheit" />
+      <aspect ref="list" />
+      <aspect ref="täuschung" />
+      <aspect ref="magie" />
+      <aspect ref="geheimnisse" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="fleadyne">
+    <cultures>
+      <culture id="wintholt" />
+      <culture id="selenia" />
+    </cultures>
     <aspects>
-      <aspect ref="frühling"/>
-      <aspect ref="schöpfung"/>
-      <aspect ref="geburt"/>
-      <aspect ref="kreativität"/>
-      <aspect ref="heilung"/>
-      <aspect ref="pflanzen"/>
-      <aspect ref="leben"/>
-      <aspect ref="natur"/>
+      <aspect ref="frühling" />
+      <aspect ref="schöpfung" />
+      <aspect ref="geburt" />
+      <aspect ref="kreativität" />
+      <aspect ref="heilung" />
+      <aspect ref="pflanzen" />
+      <aspect ref="leben" />
+      <aspect ref="natur" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="transformationmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="healer"/>
-      <edumod ref="priesthelphand"/>
-      <edumod ref="soulguide"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="transformationmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="healer" />
+      <edumod ref="priesthelphand" />
+      <edumod ref="soulguide" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="furbrom">
+    <cultures>
+      <culture id="fugand" />
+      <culture id="borombri" />
+    </cultures>
     <aspects>
-      <aspect ref="feuer"/>
-      <aspect ref="schutz"/>
-      <aspect ref="leben"/>
-      <aspect ref="vulkan"/>
-      <aspect ref="schöpfung"/>
-      <aspect ref="tradition"/>
+      <aspect ref="feuer" />
+      <aspect ref="schutz" />
+      <aspect ref="leben" />
+      <aspect ref="vulkan" />
+      <aspect ref="schöpfung" />
+      <aspect ref="tradition" />
     </aspects>
     <modifications>
-      <skillmod ref="stonemagic"/>
-      <skillmod ref="firemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="watermagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
-      <edumod ref="hammerpriest"/>
+      <skillmod ref="stonemagic" />
+      <skillmod ref="firemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="watermagic" value="-1" />
+      <edumod ref="wandererpriest" />
+      <edumod ref="hammerpriest" />
     </modifications>
   </deity>
   <deity id="fyrbrom">
+    <cultures>
+      <culture id="frynjord" />
+    </cultures>
     <aspects>
-      <aspect ref="feuer"/>
-      <aspect ref="schutz"/>
-      <aspect ref="leben"/>
-      <aspect ref="vulkan"/>
-      <aspect ref="schöpfung"/>
-      <aspect ref="tradition"/>
+      <aspect ref="feuer" />
+      <aspect ref="schutz" />
+      <aspect ref="leben" />
+      <aspect ref="vulkan" />
+      <aspect ref="schöpfung" />
+      <aspect ref="tradition" />
     </aspects>
     <modifications>
-      <skillmod ref="stonemagic"/>
-      <skillmod ref="firemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="watermagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
-      <edumod ref="hammerpriest"/>
+      <skillmod ref="stonemagic" />
+      <skillmod ref="firemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="watermagic" value="-1" />
+      <edumod ref="wandererpriest" />
+      <edumod ref="hammerpriest" />
     </modifications>
   </deity>
   <deity id="gagamba">
+    <cultures>
+      <culture id="zhoujiang" />
+      <culture id="sadu" />
+    </cultures>
     <aspects>
-      <aspect ref="hinterlist"/>
-      <aspect ref="geduld"/>
-      <aspect ref="dunkelheit"/>
-      <aspect ref="düstermond"/>
-      <aspect ref="schatten"/>
-      <aspect ref="täuschung"/>
-      <aspect ref="eigensinn"/>
+      <aspect ref="hinterlist" />
+      <aspect ref="geduld" />
+      <aspect ref="dunkelheit" />
+      <aspect ref="düstermond" />
+      <aspect ref="schatten" />
+      <aspect ref="täuschung" />
+      <aspect ref="eigensinn" />
     </aspects>
     <modifications>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="protectionmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="voice_of_ghosts"/>
-      <edumod ref="cultist"/>
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="protectionmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="voice_of_ghosts" />
+      <edumod ref="cultist" />
     </modifications>
   </deity>
   <deity id="golgara">
+    <cultures>
+      <culture id="jogodai" />
+    </cultures>
     <aspects>
-      <aspect ref="leben"/>
-      <aspect ref="arbeit"/>
-      <aspect ref="familie"/>
-      <aspect ref="gemeinschaft"/>
-      <aspect ref="ackerbau"/>
-      <aspect ref="sippe"/>
-      <aspect ref="schutz"/>
+      <aspect ref="leben" />
+      <aspect ref="arbeit" />
+      <aspect ref="familie" />
+      <aspect ref="gemeinschaft" />
+      <aspect ref="ackerbau" />
+      <aspect ref="sippe" />
+      <aspect ref="schutz" />
     </aspects>
     <modifications>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="shadowmagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="naturemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="shadowmagic" value="-1" />
+      <edumod ref="wandererpriest" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="gorri">
+    <cultures>
+      <culture id="vaigarr" />
+    </cultures>
     <aspects>
-      <aspect ref="zusammenkünfte"/>
-      <aspect ref="sex"/>
-      <aspect ref="drogen"/>
-      <aspect ref="geschichten"/>
-      <aspect ref="sterne"/>
-      <aspect ref="himmel"/>
+      <aspect ref="zusammenkünfte" />
+      <aspect ref="sex" />
+      <aspect ref="drogen" />
+      <aspect ref="geschichten" />
+      <aspect ref="sterne" />
+      <aspect ref="himmel" />
     </aspects>
     <modifications>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="illusionmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="mystic"/>
+      <skillmod ref="controlmagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="illusionmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="mystic" />
     </modifications>
   </deity>
   <deity id="grimman">
+    <cultures>
+      <culture id="nyrdfing" />
+    </cultures>
     <aspects>
-      <aspect ref="adel"/>
-      <aspect ref="lebenslust"/>
-      <aspect ref="schlacht"/>
-      <aspect ref="gegenwart"/>
-      <aspect ref="blut"/>
-      <aspect ref="stärke"/>
-      <aspect ref="herrschaft"/>
+      <aspect ref="adel" />
+      <aspect ref="lebenslust" />
+      <aspect ref="schlacht" />
+      <aspect ref="gegenwart" />
+      <aspect ref="blut" />
+      <aspect ref="stärke" />
+      <aspect ref="herrschaft" />
     </aspects>
     <modifications>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
+      <skillmod ref="controlmagic" />
+      <skillmod ref="combatmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="faithwarrior" />
     </modifications>
   </deity>
   <deity id="gunwar">
+    <cultures>
+      <culture id="selenia" />
+    </cultures>
     <aspects>
-      <aspect ref="geburt"/>
-      <aspect ref="tod"/>
-      <aspect ref="leben"/>
-      <aspect ref="vergänglichkeit"/>
-      <aspect ref="ewigkeit"/>
-      <aspect ref="reise"/>
+      <aspect ref="geburt" />
+      <aspect ref="tod" />
+      <aspect ref="leben" />
+      <aspect ref="vergänglichkeit" />
+      <aspect ref="ewigkeit" />
+      <aspect ref="reise" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="deathmagic"/>
-      <skillmod ref="transformationmagic" value="-1"/>
-      <edumod ref="healer"/>
-      <edumod ref="priesthelphand"/>
-      <edumod ref="mystic"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="deathmagic" />
+      <skillmod ref="transformationmagic" value="-1" />
+      <edumod ref="healer" />
+      <edumod ref="priesthelphand" />
+      <edumod ref="mystic" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="hanib">
+    <cultures>
+      <culture id="keshabid" />
+    </cultures>
     <aspects>
-      <aspect ref="handwerk"/>
-      <aspect ref="heilung"/>
-      <aspect ref="beständigkeit"/>
-      <aspect ref="kreativität"/>
-      <aspect ref="tüchtigkeit"/>
+      <aspect ref="handwerk" />
+      <aspect ref="heilung" />
+      <aspect ref="beständigkeit" />
+      <aspect ref="kreativität" />
+      <aspect ref="tüchtigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="deathmagic" value="-1"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="deathmagic" value="-1" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="hekaria">
+    <cultures>
+      <culture id="midstad" />
+      <culture id="zwingard" />
+      <culture id="termark" />
+    </cultures>
     <aspects>
-      <aspect ref="zauberei"/>
-      <aspect ref="schicksal"/>
-      <aspect ref="hexerei"/>
-      <aspect ref="kreuzwege"/>
-      <aspect ref="wachsamkeit"/>
-      <aspect ref="grenzen"/>
+      <aspect ref="zauberei" />
+      <aspect ref="schicksal" />
+      <aspect ref="hexerei" />
+      <aspect ref="kreuzwege" />
+      <aspect ref="wachsamkeit" />
+      <aspect ref="grenzen" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="transformationmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="mystic"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="transformationmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="mystic" />
     </modifications>
   </deity>
   <deity id="helarianakarathaa">
+    <cultures>
+      <culture id="puntani" />
+    </cultures>
     <aspects>
-      <aspect ref="natur"/>
-      <aspect ref="fruchtbarkeit"/>
-      <aspect ref="wachstum"/>
-      <aspect ref="verwandlung"/>
+      <aspect ref="natur" />
+      <aspect ref="fruchtbarkeit" />
+      <aspect ref="wachstum" />
+      <aspect ref="verwandlung" />
     </aspects>
     <modifications>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="controlmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="hüeng">
+    <cultures>
+      <culture id="zhoujiang" />
+    </cultures>
     <aspects>
-      <aspect ref="brillanz"/>
-      <aspect ref="goldglanz"/>
-      <aspect ref="würde"/>
-      <aspect ref="herrschaft"/>
-      <aspect ref="wiedergeburt"/>
-      <aspect ref="tradition"/>
-      <aspect ref="ordnung"/>
+      <aspect ref="brillanz" />
+      <aspect ref="goldglanz" />
+      <aspect ref="würde" />
+      <aspect ref="herrschaft" />
+      <aspect ref="wiedergeburt" />
+      <aspect ref="tradition" />
+      <aspect ref="ordnung" />
     </aspects>
     <modifications>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="shadowmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="voice_of_ghosts"/>
-      <edumod ref="mystic"/>
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="shadowmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="voice_of_ghosts" />
+      <edumod ref="mystic" />
     </modifications>
   </deity>
   <deity id="iosaris">
+    <cultures>
+      <culture id="dragorea" />
+      <culture id="ioria" />
+      <culture id="mertstaedt" />
+    </cultures>
     <aspects>
-      <aspect ref="licht"/>
-      <aspect ref="dunkelheit"/>
-      <aspect ref="herrschaft"/>
-      <aspect ref="rache"/>
-      <aspect ref="eigennutz"/>
-      <aspect ref="schicksal"/>
+      <aspect ref="licht" />
+      <aspect ref="dunkelheit" />
+      <aspect ref="herrschaft" />
+      <aspect ref="rache" />
+      <aspect ref="eigennutz" />
+      <aspect ref="schicksal" />
     </aspects>
     <modifications>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="cultist"/>
+      <skillmod ref="lightmagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="cultist" />
     </modifications>
   </deity>
   <deity id="iruka">
+    <cultures>
+      <culture id="zhoujiang" />
+      <culture id="sadu" />
+    </cultures>
     <aspects>
-      <aspect ref="weisheit"/>
-      <aspect ref="verständigung"/>
-      <aspect ref="spiel"/>
-      <aspect ref="loyalität"/>
-      <aspect ref="wasser"/>
-      <aspect ref="treue"/>
+      <aspect ref="weisheit" />
+      <aspect ref="verständigung" />
+      <aspect ref="spiel" />
+      <aspect ref="loyalität" />
+      <aspect ref="wasser" />
+      <aspect ref="treue" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="voice_of_ghosts"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="voice_of_ghosts" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="isageir">
+    <cultures>
+      <culture id="wintholt" />
+      <culture id="immersomm" />
+    </cultures>
     <aspects>
-      <aspect ref="winter"/>
-      <aspect ref="kälte"/>
-      <aspect ref="kampf"/>
-      <aspect ref="jagd"/>
-      <aspect ref="unerbittlichkeit"/>
+      <aspect ref="winter" />
+      <aspect ref="kälte" />
+      <aspect ref="kampf" />
+      <aspect ref="jagd" />
+      <aspect ref="unerbittlichkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="combatmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="isgar">
+    <cultures>
+      <culture id="selenia" />
+    </cultures>
     <aspects>
-      <aspect ref="krieg"/>
-      <aspect ref="ehre"/>
-      <aspect ref="loyalität"/>
-      <aspect ref="stärke"/>
-      <aspect ref="mut"/>
-      <aspect ref="heldentum"/>
-      <aspect ref="unnachgiebigkeit"/>
-      <aspect ref="stolz"/>
+      <aspect ref="krieg" />
+      <aspect ref="ehre" />
+      <aspect ref="loyalität" />
+      <aspect ref="stärke" />
+      <aspect ref="mut" />
+      <aspect ref="heldentum" />
+      <aspect ref="unnachgiebigkeit" />
+      <aspect ref="stolz" />
     </aspects>
     <modifications>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="inquisitor"/>
+      <skillmod ref="combatmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="inquisitor" />
     </modifications>
   </deity>
   <deity id="jaga-mersaj">
+    <cultures>
+      <culture id="jagodien" />
+    </cultures>
     <aspects>
-      <aspect ref="himmel"/>
-      <aspect ref="licht"/>
-      <aspect ref="berge"/>
-      <aspect ref="unbarmherzigkeit"/>
-      <aspect ref="stärke"/>
-      <aspect ref="reinheit"/>
+      <aspect ref="himmel" />
+      <aspect ref="licht" />
+      <aspect ref="berge" />
+      <aspect ref="unbarmherzigkeit" />
+      <aspect ref="stärke" />
+      <aspect ref="reinheit" />
     </aspects>
     <modifications>
-      <skillmod ref="stonemagic"/>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="shadowmagic" value="-1"/>
-      <edumod ref="mystic"/>
+      <skillmod ref="stonemagic" />
+      <skillmod ref="lightmagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="shadowmagic" value="-1" />
+      <edumod ref="mystic" />
     </modifications>
   </deity>
   <deity id="jarakah">
+    <cultures>
+      <culture id="ioria" />
+      <culture id="afali" />
+    </cultures>
     <aspects>
-      <aspect ref="wahrheit"/>
-      <aspect ref="klugheit"/>
-      <aspect ref="weisheit"/>
-      <aspect ref="wissen"/>
-      <aspect ref="gedächtnis"/>
-      <aspect ref="strenge"/>
-      <aspect ref="meer"/>
+      <aspect ref="wahrheit" />
+      <aspect ref="klugheit" />
+      <aspect ref="weisheit" />
+      <aspect ref="wissen" />
+      <aspect ref="gedächtnis" />
+      <aspect ref="strenge" />
+      <aspect ref="meer" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="lorepriest"/>
-      <edumod ref="keeperofsecrets"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="lorepriest" />
+      <edumod ref="keeperofsecrets" />
     </modifications>
   </deity>
   <deity id="jasane">
+    <cultures>
+      <culture id="dalmarien" />
+    </cultures>
     <aspects>
-      <aspect ref="krieg"/>
-      <aspect ref="wettkampf"/>
-      <aspect ref="macht"/>
-      <aspect ref="stärke"/>
-      <aspect ref="kampf"/>
-      <aspect ref="blut"/>
+      <aspect ref="krieg" />
+      <aspect ref="wettkampf" />
+      <aspect ref="macht" />
+      <aspect ref="stärke" />
+      <aspect ref="kampf" />
+      <aspect ref="blut" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="protectionmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="inquisitor"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="combatmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="protectionmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="inquisitor" />
     </modifications>
   </deity>
   <deity id="jausei">
+    <cultures>
+      <culture id="zhoujiang " />
+    </cultures>
     <aspects>
-      <aspect ref="ufer"/>
-      <aspect ref="grenzen"/>
-      <aspect ref="widerstandskraft"/>
-      <aspect ref="widerstandsfähigkeit"/>
-      <aspect ref="trennung"/>
-      <aspect ref="standhaftigkeit"/>
+      <aspect ref="ufer" />
+      <aspect ref="grenzen" />
+      <aspect ref="widerstandskraft" />
+      <aspect ref="widerstandsfähigkeit" />
+      <aspect ref="trennung" />
+      <aspect ref="standhaftigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="stonemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="insightmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="voice_of_ghosts"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="stonemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="antimagic" />
+      <skillmod ref="insightmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="voice_of_ghosts" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="jesavis">
+    <cultures>
+      <culture id="dragorea" />
+      <culture id="ioria" />
+      <culture id="mertstaedt" />
+    </cultures>
     <aspects>
-      <aspect ref="licht"/>
-      <aspect ref="dunkelheit"/>
-      <aspect ref="herrschaft"/>
-      <aspect ref="rache"/>
-      <aspect ref="eigennutz"/>
-      <aspect ref="schicksal"/>
+      <aspect ref="licht" />
+      <aspect ref="dunkelheit" />
+      <aspect ref="herrschaft" />
+      <aspect ref="rache" />
+      <aspect ref="eigennutz" />
+      <aspect ref="schicksal" />
     </aspects>
     <modifications>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="cultist"/>
+      <skillmod ref="lightmagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="cultist" />
     </modifications>
   </deity>
   <deity id="jivon">
+    <cultures>
+      <culture id="termark" />
+    </cultures>
     <aspects>
-      <aspect ref="blut"/>
-      <aspect ref="rache"/>
-      <aspect ref="kampf"/>
-      <aspect ref="zorn"/>
-      <aspect ref="aufbrausen"/>
-      <aspect ref="strenge"/>
+      <aspect ref="blut" />
+      <aspect ref="rache" />
+      <aspect ref="kampf" />
+      <aspect ref="zorn" />
+      <aspect ref="aufbrausen" />
+      <aspect ref="strenge" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="combatmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="faithwarrior" />
     </modifications>
   </deity>
   <deity id="jord">
+    <cultures>
+      <culture id="frynjord" />
+    </cultures>
     <aspects>
-      <aspect ref="kameradschaft"/>
-      <aspect ref="gemeinschaft"/>
-      <aspect ref="zusammenhalt"/>
-      <aspect ref="standhaftigkeit"/>
+      <aspect ref="kameradschaft" />
+      <aspect ref="gemeinschaft" />
+      <aspect ref="zusammenhalt" />
+      <aspect ref="standhaftigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="warrior"/>
-      <edumod ref="disciple_jord"/>
-      <edumod ref="wondermaker"/>
-      <edumod ref="firnbezwinger"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="warrior" />
+      <edumod ref="disciple_jord" />
+      <edumod ref="wondermaker" />
+      <edumod ref="firnbezwinger" />
     </modifications>
   </deity>
   <deity id="kanatauna">
+    <cultures>
+      <culture id="mahaluu" />
+    </cultures>
     <aspects>
-      <aspect ref="bewahrung"/>
-      <aspect ref="wache"/>
-      <aspect ref="tradition"/>
-      <aspect ref="stärke"/>
-      <aspect ref="tüchtigkeit"/>
-      <aspect ref="ertüchtigung"/>
+      <aspect ref="bewahrung" />
+      <aspect ref="wache" />
+      <aspect ref="tradition" />
+      <aspect ref="stärke" />
+      <aspect ref="tüchtigkeit" />
+      <aspect ref="ertüchtigung" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="illusionmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="glow_walker"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="illusionmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="glow_walker" />
     </modifications>
   </deity>
   <deity id="kar">
+    <cultures>
+      <culture id="strominseln" />
+    </cultures>
     <aspects>
-      <aspect ref="launenhaftigkeit"/>
-      <aspect ref="feuer"/>
-      <aspect ref="licht"/>
-      <aspect ref="vulkan"/>
-      <aspect ref="tod"/>
-      <aspect ref="vergessen"/>
+      <aspect ref="launenhaftigkeit" />
+      <aspect ref="feuer" />
+      <aspect ref="licht" />
+      <aspect ref="vulkan" />
+      <aspect ref="tod" />
+      <aspect ref="vergessen" />
     </aspects>
     <modifications>
-      <skillmod ref="firemagic"/>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="deathmagic"/>
-      <skillmod ref="insightmagic" value="-1"/>
-      <edumod ref="elementalist"/>
-      <edumod ref="titanchild_priest"/>
-      <edumod ref="mystic"/>
-      <edumod ref="firedancer"/>
+      <skillmod ref="firemagic" />
+      <skillmod ref="lightmagic" />
+      <skillmod ref="deathmagic" />
+      <skillmod ref="insightmagic" value="-1" />
+      <edumod ref="elementalist" />
+      <edumod ref="titanchild_priest" />
+      <edumod ref="mystic" />
+      <edumod ref="firedancer" />
     </modifications>
   </deity>
   <deity id="karzadai">
+    <cultures>
+      <culture id="daemmeralb" />
+    </cultures>
     <aspects>
-      <aspect ref="totenwelt"/>
-      <aspect ref="jenseits"/>
-      <aspect ref="wissen"/>
-      <aspect ref="gesetz"/>
-      <aspect ref="tod"/>
-      <aspect ref="stillstand"/>
-      <aspect ref="ordnung"/>
-      <aspect ref="nacht"/>
+      <aspect ref="totenwelt" />
+      <aspect ref="jenseits" />
+      <aspect ref="wissen" />
+      <aspect ref="gesetz" />
+      <aspect ref="tod" />
+      <aspect ref="stillstand" />
+      <aspect ref="ordnung" />
+      <aspect ref="nacht" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="deathmagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="lorepriest"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="deathmagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="lorepriest" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="kashrok">
+    <cultures>
+      <culture id="westergrom" />
+    </cultures>
     <aspects>
-      <aspect ref="kampf"/>
-      <aspect ref="feuer"/>
-      <aspect ref="elemente"/>
-      <aspect ref="vulkan"/>
-      <aspect ref="handwerk"/>
-      <aspect ref="standhaftigkeit"/>
+      <aspect ref="kampf" />
+      <aspect ref="feuer" />
+      <aspect ref="elemente" />
+      <aspect ref="vulkan" />
+      <aspect ref="handwerk" />
+      <aspect ref="standhaftigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="stonemagic"/>
-      <skillmod ref="firemagic"/>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="watermagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="wandererpriest"/>
-      <edumod ref="hammerpriest"/>
+      <skillmod ref="stonemagic" />
+      <skillmod ref="firemagic" />
+      <skillmod ref="combatmagic" />
+      <skillmod ref="watermagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="wandererpriest" />
+      <edumod ref="hammerpriest" />
     </modifications>
   </deity>
   <deity id="katiar">
+    <cultures>
+      <culture id="albseebund" />
+    </cultures>
     <aspects>
-      <aspect ref="handwerk"/>
-      <aspect ref="wissen"/>
-      <aspect ref="forschung"/>
-      <aspect ref="geheimnisse"/>
-      <aspect ref="mysterium"/>
-      <aspect ref="dunkelheit"/>
-      <aspect ref="meer"/>
+      <aspect ref="handwerk" />
+      <aspect ref="wissen" />
+      <aspect ref="forschung" />
+      <aspect ref="geheimnisse" />
+      <aspect ref="mysterium" />
+      <aspect ref="dunkelheit" />
+      <aspect ref="meer" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="lorepriest"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="lorepriest" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="kronar">
+    <cultures>
+      <culture id="tarr" />
+    </cultures>
     <aspects>
-      <aspect ref="kampf"/>
-      <aspect ref="wildheit"/>
-      <aspect ref="blutdurst"/>
-      <aspect ref="mond"/>
-      <aspect ref="kraft"/>
+      <aspect ref="kampf" />
+      <aspect ref="wildheit" />
+      <aspect ref="blutdurst" />
+      <aspect ref="mond" />
+      <aspect ref="kraft" />
     </aspects>
     <modifications>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
+      <skillmod ref="combatmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="faithwarrior" />
     </modifications>
   </deity>
   <deity id="kunmai">
+    <cultures>
+      <culture id="kungaitan" />
+    </cultures>
     <aspects>
-      <aspect ref="wind"/>
-      <aspect ref="seefahrt"/>
-      <aspect ref="handel"/>
-      <aspect ref="schicksal"/>
-      <aspect ref="reise"/>
-      <aspect ref="entdeckung"/>
-      <aspect ref="veränderung"/>
-      <aspect ref="macht"/>
+      <aspect ref="wind" />
+      <aspect ref="seefahrt" />
+      <aspect ref="handel" />
+      <aspect ref="schicksal" />
+      <aspect ref="reise" />
+      <aspect ref="entdeckung" />
+      <aspect ref="veränderung" />
+      <aspect ref="macht" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="lightmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="lorepriest"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="lightmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="lorepriest" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="lao">
+    <cultures>
+      <culture id="zhoujiang " />
+    </cultures>
     <aspects>
-      <aspect ref="eigennutz"/>
-      <aspect ref="bewegung"/>
-      <aspect ref="ästhetik"/>
-      <aspect ref="kraft"/>
-      <aspect ref="kampf"/>
+      <aspect ref="eigennutz" />
+      <aspect ref="bewegung" />
+      <aspect ref="ästhetik" />
+      <aspect ref="kraft" />
+      <aspect ref="kampf" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="voice_of_ghosts"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="combatmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="inquisitor" />
+      <edumod ref="voice_of_ghosts" />
     </modifications>
   </deity>
   <deity id="liabar">
+    <cultures>
+      <culture id="albseebund" />
+    </cultures>
     <aspects>
-      <aspect ref="schöngeistigkeit"/>
-      <aspect ref="abenteuerlust"/>
-      <aspect ref="freiheit"/>
-      <aspect ref="aufbruch"/>
-      <aspect ref="reise"/>
-      <aspect ref="meer"/>
+      <aspect ref="schöngeistigkeit" />
+      <aspect ref="abenteuerlust" />
+      <aspect ref="freiheit" />
+      <aspect ref="aufbruch" />
+      <aspect ref="reise" />
+      <aspect ref="meer" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="lukton">
+    <cultures>
+      <culture id="sadu " />
+    </cultures>
     <aspects>
-      <aspect ref="männlichkeit"/>
-      <aspect ref="bewegung"/>
-      <aspect ref="stärke"/>
-      <aspect ref="osten"/>
-      <aspect ref="wettkampf"/>
+      <aspect ref="männlichkeit" />
+      <aspect ref="bewegung" />
+      <aspect ref="stärke" />
+      <aspect ref="osten" />
+      <aspect ref="wettkampf" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="insightmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="combatmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="insightmagic" value="-1" />
+      <edumod ref="faithwarrior" />
     </modifications>
   </deity>
   <deity id="luseria">
+    <cultures>
+      <culture id="patalis" />
+    </cultures>
     <aspects>
-      <aspect ref="mond"/>
-      <aspect ref="mysterium"/>
-      <aspect ref="weisheit"/>
-      <aspect ref="ästhetik"/>
-      <aspect ref="vollkommenheit"/>
-      <aspect ref="verhandlung"/>
+      <aspect ref="mond" />
+      <aspect ref="mysterium" />
+      <aspect ref="weisheit" />
+      <aspect ref="ästhetik" />
+      <aspect ref="vollkommenheit" />
+      <aspect ref="verhandlung" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="shadowmagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="intriguer"/>
-      <edumod ref="silvershadow"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="lightmagic" />
+      <skillmod ref="shadowmagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="intriguer" />
+      <edumod ref="silvershadow" />
     </modifications>
   </deity>
   <deity id="lyxa">
+    <cultures>
+      <culture id="dragorea" />
+      <culture id="mertstaedt" />
+      <culture id="ioria" />
+      <culture id="patalis" />
+    </cultures>
     <aspects>
-      <aspect ref="geschichten"/>
-      <aspect ref="gewitztheit"/>
-      <aspect ref="humor"/>
-      <aspect ref="kreativität"/>
-      <aspect ref="lüge"/>
-      <aspect ref="rätsel"/>
-      <aspect ref="redekunst"/>
-      <aspect ref="täuschung"/>
+      <aspect ref="geschichten" />
+      <aspect ref="gewitztheit" />
+      <aspect ref="humor" />
+      <aspect ref="kreativität" />
+      <aspect ref="lüge" />
+      <aspect ref="rätsel" />
+      <aspect ref="redekunst" />
+      <aspect ref="täuschung" />
     </aspects>
     <modifications>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="cultist"/>
-      <edumod ref="mystic"/>
+      <skillmod ref="controlmagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="cultist" />
+      <edumod ref="mystic" />
     </modifications>
   </deity>
   <deity id="lyxerion">
+    <cultures>
+      <culture id="teleshai" />
+    </cultures>
     <aspects>
-      <aspect ref="list"/>
-      <aspect ref="witz"/>
-      <aspect ref="klugheit"/>
-      <aspect ref="licht"/>
-      <aspect ref="vögel"/>
-      <aspect ref="eigensinn"/>
+      <aspect ref="list" />
+      <aspect ref="witz" />
+      <aspect ref="klugheit" />
+      <aspect ref="licht" />
+      <aspect ref="vögel" />
+      <aspect ref="eigensinn" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="cultist"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="cultist" />
     </modifications>
   </deity>
   <deity id="maddad">
+    <cultures>
+      <culture id="farukan " />
+    </cultures>
     <aspects>
-      <aspect ref="regen"/>
-      <aspect ref="ernte"/>
-      <aspect ref="fürsorge"/>
-      <aspect ref="leidenschaft"/>
-      <aspect ref="schönheit"/>
-      <aspect ref="entdeckung"/>
-      <aspect ref="fruchtbarkeit"/>
-      <aspect ref="geburt"/>
+      <aspect ref="regen" />
+      <aspect ref="ernte" />
+      <aspect ref="fürsorge" />
+      <aspect ref="leidenschaft" />
+      <aspect ref="schönheit" />
+      <aspect ref="entdeckung" />
+      <aspect ref="fruchtbarkeit" />
+      <aspect ref="geburt" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="deathmagic" value="-1"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="deathmagic" value="-1" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="mairir">
+    <cultures>
+      <culture id="raugarr" />
+    </cultures>
     <aspects>
-      <aspect ref="schöpfung"/>
-      <aspect ref="fruchtbarkeit"/>
-      <aspect ref="leidenschaft"/>
-      <aspect ref="leben"/>
-      <aspect ref="geburt"/>
+      <aspect ref="schöpfung" />
+      <aspect ref="fruchtbarkeit" />
+      <aspect ref="leidenschaft" />
+      <aspect ref="leben" />
+      <aspect ref="geburt" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="deathmagic" value="-1"/>
-      <edumod ref="soulguide"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="deathmagic" value="-1" />
+      <edumod ref="soulguide" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="mamawawilla">
+    <cultures>
+      <culture id="dakardsmyr" />
+    </cultures>
     <aspects>
-      <aspect ref="handwerk"/>
-      <aspect ref="alchemie"/>
-      <aspect ref="familie"/>
-      <aspect ref="heilung"/>
-      <aspect ref="elemente"/>
-      <aspect ref="gemeinschaft"/>
+      <aspect ref="handwerk" />
+      <aspect ref="alchemie" />
+      <aspect ref="familie" />
+      <aspect ref="heilung" />
+      <aspect ref="elemente" />
+      <aspect ref="gemeinschaft" />
     </aspects>
     <modifications>
-      <skillmod ref="firemagic"/>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="deathmagic" value="-1"/>
-      <edumod ref="soulguide"/>
-      <edumod ref="wondermaker"/>
-      <edumod ref="athanorier"/>
+      <skillmod ref="firemagic" />
+      <skillmod ref="healmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="deathmagic" value="-1" />
+      <edumod ref="soulguide" />
+      <edumod ref="wondermaker" />
+      <edumod ref="athanorier" />
     </modifications>
   </deity>
   <deity id="maneldin">
+    <cultures>
+      <culture id="zwingard" />
+    </cultures>
     <aspects>
-      <aspect ref="mond"/>
-      <aspect ref="krieg"/>
-      <aspect ref="richter"/>
-      <aspect ref="strenge"/>
-      <aspect ref="gnadenlosigkeit"/>
+      <aspect ref="mond" />
+      <aspect ref="krieg" />
+      <aspect ref="richter" />
+      <aspect ref="strenge" />
+      <aspect ref="gnadenlosigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="cultist"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="controlmagic" />
+      <skillmod ref="combatmagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="cultist" />
     </modifications>
   </deity>
   <deity id="manildan">
+    <cultures>
+      <culture id="zwingard" />
+    </cultures>
     <aspects>
-      <aspect ref="mond"/>
-      <aspect ref="krieg"/>
-      <aspect ref="richter"/>
-      <aspect ref="strenge"/>
-      <aspect ref="ehre"/>
+      <aspect ref="mond" />
+      <aspect ref="krieg" />
+      <aspect ref="richter" />
+      <aspect ref="strenge" />
+      <aspect ref="ehre" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="controlmagic" />
+      <skillmod ref="combatmagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="inquisitor" />
     </modifications>
   </deity>
   <deity id="mersiela">
+    <cultures>
+      <culture id="elyrea" />
+    </cultures>
     <aspects>
-      <aspect ref="glück"/>
-      <aspect ref="wetter"/>
-      <aspect ref="unglück"/>
-      <aspect ref="schicksal"/>
-      <aspect ref="wind"/>
-      <aspect ref="sturm"/>
-      <aspect ref="launenhaftigkeit"/>
+      <aspect ref="glück" />
+      <aspect ref="wetter" />
+      <aspect ref="unglück" />
+      <aspect ref="schicksal" />
+      <aspect ref="wind" />
+      <aspect ref="sturm" />
+      <aspect ref="launenhaftigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="stonemagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="fatemagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="stonemagic" value="-1" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="monbogara">
+    <cultures>
+      <culture id="jogodai" />
+    </cultures>
     <aspects>
-      <aspect ref="stärke"/>
-      <aspect ref="zähigkeit"/>
-      <aspect ref="hierarchie"/>
-      <aspect ref="herrschaft"/>
-      <aspect ref="wettkampf"/>
+      <aspect ref="stärke" />
+      <aspect ref="zähigkeit" />
+      <aspect ref="hierarchie" />
+      <aspect ref="herrschaft" />
+      <aspect ref="wettkampf" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="controlmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="monsun">
+    <cultures>
+      <culture id="sadu " />
+    </cultures>
     <aspects>
-      <aspect ref="regen"/>
-      <aspect ref="fruchtbarkeit"/>
-      <aspect ref="wind"/>
-      <aspect ref="aufbrausen"/>
-      <aspect ref="leben"/>
-      <aspect ref="wetter"/>
+      <aspect ref="regen" />
+      <aspect ref="fruchtbarkeit" />
+      <aspect ref="wind" />
+      <aspect ref="aufbrausen" />
+      <aspect ref="leben" />
+      <aspect ref="wetter" />
     </aspects>
     <modifications>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="naturemagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="morkai">
+    <cultures>
+      <culture id="selenia" />
+    </cultures>
     <aspects>
-      <aspect ref="neugier"/>
-      <aspect ref="wissen"/>
-      <aspect ref="wachsamkeit"/>
-      <aspect ref="suche"/>
-      <aspect ref="entdeckung"/>
-      <aspect ref="mysterium"/>
+      <aspect ref="neugier" />
+      <aspect ref="wissen" />
+      <aspect ref="wachsamkeit" />
+      <aspect ref="suche" />
+      <aspect ref="entdeckung" />
+      <aspect ref="mysterium" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="arcanesage"/>
-      <edumod ref="morkaipriest"/>
-      <edumod ref="lorepriest"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="arcanesage" />
+      <edumod ref="morkaipriest" />
+      <edumod ref="lorepriest" />
     </modifications>
   </deity>
   <deity id="moroun">
+    <cultures>
+      <culture id="tarr" />
+    </cultures>
     <aspects>
-      <aspect ref="tod"/>
-      <aspect ref="gemeinschaft"/>
-      <aspect ref="alter"/>
-      <aspect ref="vergänglichkeit"/>
-      <aspect ref="geister"/>
+      <aspect ref="tod" />
+      <aspect ref="gemeinschaft" />
+      <aspect ref="alter" />
+      <aspect ref="vergänglichkeit" />
+      <aspect ref="geister" />
     </aspects>
     <modifications>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="deathmagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="ghosttearer"/>
-      <edumod ref="soulguide"/>
-      <edumod ref="ghostseeker"/>
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="deathmagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="ghosttearer" />
+      <edumod ref="soulguide" />
+      <edumod ref="ghostseeker" />
     </modifications>
   </deity>
   <deity id="morri">
+    <cultures>
+      <culture id="vaigarr" />
+    </cultures>
     <aspects>
-      <aspect ref="jagd"/>
-      <aspect ref="jugend"/>
-      <aspect ref="fehden"/>
-      <aspect ref="vergebung"/>
-      <aspect ref="reise"/>
-      <aspect ref="gewitter"/>
+      <aspect ref="jagd" />
+      <aspect ref="jugend" />
+      <aspect ref="fehden" />
+      <aspect ref="vergebung" />
+      <aspect ref="reise" />
+      <aspect ref="gewitter" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="stonemagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="stonemagic" value="-1" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="morwano">
+    <cultures>
+      <culture id="jagodien" />
+    </cultures>
     <aspects>
-      <aspect ref="pferd"/>
-      <aspect ref="reiter"/>
-      <aspect ref="mond"/>
-      <aspect ref="sonne"/>
-      <aspect ref="gemeinschaft"/>
-      <aspect ref="erhabenheit"/>
+      <aspect ref="pferd" />
+      <aspect ref="reiter" />
+      <aspect ref="mond" />
+      <aspect ref="sonne" />
+      <aspect ref="gemeinschaft" />
+      <aspect ref="erhabenheit" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="transformationmagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="lightmagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="transformationmagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="mua">
+    <cultures>
+      <culture id="strominseln" />
+    </cultures>
     <aspects>
-      <aspect ref="felsen"/>
-      <aspect ref="stolz"/>
-      <aspect ref="gesetz"/>
-      <aspect ref="handel"/>
-      <aspect ref="tradition"/>
-      <aspect ref="handwerk"/>
+      <aspect ref="felsen" />
+      <aspect ref="stolz" />
+      <aspect ref="gesetz" />
+      <aspect ref="handel" />
+      <aspect ref="tradition" />
+      <aspect ref="handwerk" />
     </aspects>
     <modifications>
-      <skillmod ref="stonemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="windmagic" value="-1"/>
-      <edumod ref="elementalist"/>
-      <edumod ref="titanchild_priest"/>
-      <edumod ref="mystic"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="stonemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="windmagic" value="-1" />
+      <edumod ref="elementalist" />
+      <edumod ref="titanchild_priest" />
+      <edumod ref="mystic" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="myuriko">
+    <cultures>
+      <culture id="kintai" />
+    </cultures>
     <aspects>
-      <aspect ref="krieg"/>
-      <aspect ref="vollkommenheit"/>
-      <aspect ref="schönheit"/>
-      <aspect ref="politik"/>
-      <aspect ref="erhabenheit"/>
-      <aspect ref="stolz"/>
+      <aspect ref="krieg" />
+      <aspect ref="vollkommenheit" />
+      <aspect ref="schönheit" />
+      <aspect ref="politik" />
+      <aspect ref="erhabenheit" />
+      <aspect ref="stolz" />
     </aspects>
     <modifications>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="deathmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="warrior"/>
-      <edumod ref="kantioku"/>
+      <skillmod ref="combatmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="deathmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="inquisitor" />
+      <edumod ref="warrior" />
+      <edumod ref="kantioku" />
     </modifications>
   </deity>
   <deity id="nahid">
+    <cultures>
+      <culture id="farukan " />
+    </cultures>
     <aspects>
-      <aspect ref="nacht"/>
-      <aspect ref="wachsamkeit"/>
-      <aspect ref="eroberung"/>
-      <aspect ref="kampf"/>
-      <aspect ref="machtgier"/>
+      <aspect ref="nacht" />
+      <aspect ref="wachsamkeit" />
+      <aspect ref="eroberung" />
+      <aspect ref="kampf" />
+      <aspect ref="machtgier" />
     </aspects>
     <modifications>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="lightmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="cultist"/>
+      <skillmod ref="combatmagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="lightmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="inquisitor" />
+      <edumod ref="cultist" />
     </modifications>
   </deity>
   <deity id="naraka">
+    <cultures>
+      <culture id="tarr" />
+    </cultures>
     <aspects>
-      <aspect ref="sanftmut"/>
-      <aspect ref="sonne"/>
-      <aspect ref="mutter"/>
-      <aspect ref="licht"/>
-      <aspect ref="friede"/>
-      <aspect ref="weisheit"/>
-      <aspect ref="leben"/>
+      <aspect ref="sanftmut" />
+      <aspect ref="sonne" />
+      <aspect ref="mutter" />
+      <aspect ref="licht" />
+      <aspect ref="friede" />
+      <aspect ref="weisheit" />
+      <aspect ref="leben" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="lorepriest"/>
-      <edumod ref="scriptseeker"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="lightmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="lorepriest" />
+      <edumod ref="scriptseeker" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="niangur">
+    <cultures>
+      <culture id="dalmarien" />
+    </cultures>
     <aspects>
-      <aspect ref="schönheit"/>
-      <aspect ref="herrschaft"/>
-      <aspect ref="adel"/>
-      <aspect ref="kreativität"/>
-      <aspect ref="kunst"/>
+      <aspect ref="schönheit" />
+      <aspect ref="herrschaft" />
+      <aspect ref="adel" />
+      <aspect ref="kreativität" />
+      <aspect ref="kunst" />
     </aspects>
     <modifications>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="controlmagic" />
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="niantaui">
+    <cultures>
+      <culture id="mahaluu" />
+    </cultures>
     <aspects>
-      <aspect ref="freude"/>
-      <aspect ref="leben"/>
-      <aspect ref="natur"/>
-      <aspect ref="liebe"/>
-      <aspect ref="glück"/>
-      <aspect ref="nachsicht"/>
-      <aspect ref="güte"/>
-      <aspect ref="mitgefühl"/>
+      <aspect ref="freude" />
+      <aspect ref="leben" />
+      <aspect ref="natur" />
+      <aspect ref="liebe" />
+      <aspect ref="glück" />
+      <aspect ref="nachsicht" />
+      <aspect ref="güte" />
+      <aspect ref="mitgefühl" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="nigali">
+    <cultures>
+      <culture id="farukan " />
+    </cultures>
     <aspects>
-      <aspect ref="seefahrt"/>
-      <aspect ref="reise"/>
-      <aspect ref="navigation"/>
-      <aspect ref="handel"/>
-      <aspect ref="meer"/>
-      <aspect ref="wettkampf"/>
+      <aspect ref="seefahrt" />
+      <aspect ref="reise" />
+      <aspect ref="navigation" />
+      <aspect ref="handel" />
+      <aspect ref="meer" />
+      <aspect ref="wettkampf" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
-      <edumod ref="stormcaller"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="wandererpriest" />
+      <edumod ref="stormcaller" />
     </modifications>
   </deity>
   <deity id="nunogoumbawatahang">
+    <cultures>
+      <culture id="puntani" />
+    </cultures>
     <aspects>
-      <aspect ref="natur"/>
-      <aspect ref="rastlosigkeit"/>
-      <aspect ref="pflanzen"/>
-      <aspect ref="erde"/>
-      <aspect ref="dunkelheit"/>
-      <aspect ref="wachstum"/>
+      <aspect ref="natur" />
+      <aspect ref="rastlosigkeit" />
+      <aspect ref="pflanzen" />
+      <aspect ref="erde" />
+      <aspect ref="dunkelheit" />
+      <aspect ref="wachstum" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="cultist"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="cultist" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="nurghon">
+    <cultures>
+      <culture id="farukan " />
+    </cultures>
     <aspects>
-      <aspect ref="tod"/>
-      <aspect ref="tradition"/>
-      <aspect ref="wissen"/>
-      <aspect ref="erinnerung"/>
-      <aspect ref="ordnung"/>
-      <aspect ref="gedächtnis"/>
+      <aspect ref="tod" />
+      <aspect ref="tradition" />
+      <aspect ref="wissen" />
+      <aspect ref="erinnerung" />
+      <aspect ref="ordnung" />
+      <aspect ref="gedächtnis" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="deathmagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="soulguide"/>
-      <edumod ref="mystic"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="deathmagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="soulguide" />
+      <edumod ref="mystic" />
     </modifications>
   </deity>
   <deity id="omabarka">
+    <cultures>
+      <culture id="dakardsmyr" />
+    </cultures>
     <aspects>
-      <aspect ref="handel"/>
-      <aspect ref="gift"/>
-      <aspect ref="intrige"/>
-      <aspect ref="geduld"/>
-      <aspect ref="meuchler"/>
-      <aspect ref="tod"/>
-      <aspect ref="list"/>
-      <aspect ref="schicksal"/>
-      <aspect ref="zukunft"/>
-      <aspect ref="glück"/>
+      <aspect ref="handel" />
+      <aspect ref="gift" />
+      <aspect ref="intrige" />
+      <aspect ref="geduld" />
+      <aspect ref="meuchler" />
+      <aspect ref="tod" />
+      <aspect ref="list" />
+      <aspect ref="schicksal" />
+      <aspect ref="zukunft" />
+      <aspect ref="glück" />
     </aspects>
     <modifications>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="deathmagic"/>
-      <skillmod ref="lightmagic" value="-1"/>
-      <edumod ref="cultist"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="deathmagic" />
+      <skillmod ref="lightmagic" value="-1" />
+      <edumod ref="cultist" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="onkelswentu">
+    <cultures>
+      <culture id="dakardsmyr" />
+    </cultures>
     <aspects>
-      <aspect ref="ästhetik"/>
-      <aspect ref="kunst"/>
-      <aspect ref="musik"/>
-      <aspect ref="eitelkeit"/>
-      <aspect ref="spott"/>
-      <aspect ref="emotionen"/>
-      <aspect ref="gefühle"/>
+      <aspect ref="ästhetik" />
+      <aspect ref="kunst" />
+      <aspect ref="musik" />
+      <aspect ref="eitelkeit" />
+      <aspect ref="spott" />
+      <aspect ref="emotionen" />
+      <aspect ref="gefühle" />
     </aspects>
     <modifications>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="transformationmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="transformationmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="padraik">
+    <cultures>
+      <culture id="westergrom" />
+    </cultures>
     <aspects>
-      <aspect ref="handel"/>
-      <aspect ref="gerechtigkeit"/>
-      <aspect ref="verträge"/>
-      <aspect ref="schutz"/>
-      <aspect ref="tradition"/>
+      <aspect ref="handel" />
+      <aspect ref="gerechtigkeit" />
+      <aspect ref="verträge" />
+      <aspect ref="schutz" />
+      <aspect ref="tradition" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="illusionmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="illusionmagic" value="-1" />
+      <edumod ref="inquisitor" />
     </modifications>
   </deity>
   <deity id="pajur">
+    <cultures>
+      <culture id="piriwatu" />
+    </cultures>
     <aspects>
-      <aspect ref="gutmütigkeit"/>
-      <aspect ref="hilfsbereitschaft"/>
-      <aspect ref="friede"/>
-      <aspect ref="kreativität"/>
-      <aspect ref="gesang"/>
-      <aspect ref="freude"/>
-      <aspect ref="natur"/>
+      <aspect ref="gutmütigkeit" />
+      <aspect ref="hilfsbereitschaft" />
+      <aspect ref="friede" />
+      <aspect ref="kreativität" />
+      <aspect ref="gesang" />
+      <aspect ref="freude" />
+      <aspect ref="natur" />
     </aspects>
     <modifications>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="soulguide"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="soulguide" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="papadrugo">
+    <cultures>
+      <culture id="dakardsmyr" />
+    </cultures>
     <aspects>
-      <aspect ref="viehzucht"/>
-      <aspect ref="genuss"/>
-      <aspect ref="reichtum"/>
-      <aspect ref="mathematik"/>
-      <aspect ref="schlaf"/>
-      <aspect ref="handwerk"/>
-      <aspect ref="handel"/>
+      <aspect ref="viehzucht" />
+      <aspect ref="genuss" />
+      <aspect ref="reichtum" />
+      <aspect ref="mathematik" />
+      <aspect ref="schlaf" />
+      <aspect ref="handwerk" />
+      <aspect ref="handel" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="antimagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="antimagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="porukalaos">
+    <cultures>
+      <culture id="porukala" />
+    </cultures>
     <aspects>
-      <aspect ref="meer"/>
-      <aspect ref="heimat"/>
-      <aspect ref="meereskreaturen"/>
+      <aspect ref="meer" />
+      <aspect ref="heimat" />
+      <aspect ref="meereskreaturen" />
       <aspect ref="meerestiere" />
-      <aspect ref="hilfsbereitschaft"/>
-      <aspect ref="gesetz"/>
-      <aspect ref="gastfreundschaft"/>
+      <aspect ref="hilfsbereitschaft" />
+      <aspect ref="gesetz" />
+      <aspect ref="gastfreundschaft" />
     </aspects>
     <modifications>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="soulguide"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="naturemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="soulguide" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="pudjari">
+    <cultures>
+      <culture id="farukan " />
+    </cultures>
     <aspects>
-      <aspect ref="natur"/>
-      <aspect ref="fruchtbarkeit"/>
-      <aspect ref="wildheit"/>
-      <aspect ref="launenhaftigkeit"/>
-      <aspect ref="kraft"/>
-      <aspect ref="aufbrausen"/>
+      <aspect ref="natur" />
+      <aspect ref="fruchtbarkeit" />
+      <aspect ref="wildheit" />
+      <aspect ref="launenhaftigkeit" />
+      <aspect ref="kraft" />
+      <aspect ref="aufbrausen" />
     </aspects>
     <modifications>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="transformationmagic"/>
-      <skillmod ref="insightmagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="naturemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="transformationmagic" />
+      <skillmod ref="insightmagic" value="-1" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="pudschu">
+    <cultures>
+      <culture id="piriwatu" />
+    </cultures>
     <aspects>
-      <aspect ref="launenhaftigkeit"/>
-      <aspect ref="stärke"/>
-      <aspect ref="kampf"/>
-      <aspect ref="natur"/>
-      <aspect ref="wildheit"/>
+      <aspect ref="launenhaftigkeit" />
+      <aspect ref="stärke" />
+      <aspect ref="kampf" />
+      <aspect ref="natur" />
+      <aspect ref="wildheit" />
     </aspects>
     <modifications>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="illusionmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="naturemagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="illusionmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="pusa">
+    <cultures>
+      <culture id="zhoujiang" />
+      <culture id="sadu" />
+    </cultures>
     <aspects>
-      <aspect ref="eigensinn"/>
-      <aspect ref="witz"/>
-      <aspect ref="heimlichkeit"/>
-      <aspect ref="unberechenbarkeit"/>
-      <aspect ref="freiheit"/>
-      <aspect ref="magie"/>
+      <aspect ref="eigensinn" />
+      <aspect ref="witz" />
+      <aspect ref="heimlichkeit" />
+      <aspect ref="unberechenbarkeit" />
+      <aspect ref="freiheit" />
+      <aspect ref="magie" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="transformationmagic"/>
-      <skillmod ref="antimagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="voice_of_ghosts"/>
-      <edumod ref="cultist"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="transformationmagic" />
+      <skillmod ref="antimagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="voice_of_ghosts" />
+      <edumod ref="cultist" />
     </modifications>
   </deity>
   <deity id="rahidi">
+    <cultures>
+      <culture id="farukan " />
+    </cultures>
     <aspects>
-      <aspect ref="wahrheit"/>
-      <aspect ref="weisheit"/>
-      <aspect ref="gerechtigkeit"/>
-      <aspect ref="ausgleich"/>
-      <aspect ref="tüchtigkeit"/>
-      <aspect ref="verständigung"/>
-      <aspect ref="vernunft"/>
+      <aspect ref="wahrheit" />
+      <aspect ref="weisheit" />
+      <aspect ref="gerechtigkeit" />
+      <aspect ref="ausgleich" />
+      <aspect ref="tüchtigkeit" />
+      <aspect ref="verständigung" />
+      <aspect ref="vernunft" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="lorepriest"/>
-      <edumod ref="discipleofrahidis"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="honorguard"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="lorepriest" />
+      <edumod ref="discipleofrahidis" />
+      <edumod ref="inquisitor" />
+      <edumod ref="honorguard" />
     </modifications>
   </deity>
   <deity id="rii">
+    <cultures>
+      <culture id="strominseln" />
+    </cultures>
     <aspects>
-      <aspect ref="list"/>
-      <aspect ref="wind"/>
-      <aspect ref="wetter"/>
-      <aspect ref="seefahrt"/>
-      <aspect ref="gemeinschaft"/>
+      <aspect ref="list" />
+      <aspect ref="wind" />
+      <aspect ref="wetter" />
+      <aspect ref="seefahrt" />
+      <aspect ref="gemeinschaft" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="stonemagic" value="-1"/>
-      <edumod ref="elementalist"/>
-      <edumod ref="titanchild_priest"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="stonemagic" value="-1" />
+      <edumod ref="elementalist" />
+      <edumod ref="titanchild_priest" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="rimgara">
+    <cultures>
+      <culture id="jogodai" />
+    </cultures>
     <aspects>
-      <aspect ref="tradition"/>
-      <aspect ref="gesetz"/>
-      <aspect ref="recht"/>
-      <aspect ref="gemeinschaft"/>
-      <aspect ref="geschichte"/>
+      <aspect ref="tradition" />
+      <aspect ref="gesetz" />
+      <aspect ref="recht" />
+      <aspect ref="gemeinschaft" />
+      <aspect ref="geschichte" />
     </aspects>
     <modifications>
-      <skillmod ref="stonemagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
+      <skillmod ref="stonemagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="inquisitor" />
     </modifications>
   </deity>
   <deity id="ronash">
+    <cultures>
+      <culture id="farukan" />
+    </cultures>
     <aspects>
-      <aspect ref="fehlverhalten"/>
-      <aspect ref="ehrlosigkeit"/>
-      <aspect ref="ehrverlust"/>
-      <aspect ref="buße"/>
-      <aspect ref="verrat"/>
-      <aspect ref="blut"/>
-      <aspect ref="splittermond"/>
-      <aspect ref="zorn"/>
+      <aspect ref="fehlverhalten" />
+      <aspect ref="ehrlosigkeit" />
+      <aspect ref="ehrverlust" />
+      <aspect ref="buße" />
+      <aspect ref="verrat" />
+      <aspect ref="blut" />
+      <aspect ref="splittermond" />
+      <aspect ref="zorn" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="illusionmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="combatmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="illusionmagic" value="-1" />
+      <edumod ref="faithwarrior" />
     </modifications>
   </deity>
   <deity id="ronay">
+    <cultures>
+      <culture id="farukan" />
+    </cultures>
     <aspects>
-      <aspect ref="bescheidenheit"/>
-      <aspect ref="ehrlichkeit"/>
-      <aspect ref="standhaftigkeit"/>
-      <aspect ref="heimlichkeit"/>
-      <aspect ref="beständigkeit"/>
-      <aspect ref="aufopferung"/>
-      <aspect ref="düstermond"/>
-      <aspect ref="schutz"/>
+      <aspect ref="bescheidenheit" />
+      <aspect ref="ehrlichkeit" />
+      <aspect ref="standhaftigkeit" />
+      <aspect ref="heimlichkeit" />
+      <aspect ref="beständigkeit" />
+      <aspect ref="aufopferung" />
+      <aspect ref="düstermond" />
+      <aspect ref="schutz" />
     </aspects>
     <modifications>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="cultist"/>
-      <edumod ref="ronite"/>
-      <edumod ref="mystic"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="cultist" />
+      <edumod ref="ronite" />
+      <edumod ref="mystic" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="rraika">
+    <cultures>
+      <culture id="vaigarr" />
+    </cultures>
     <aspects>
-      <aspect ref="zusammenhalt"/>
-      <aspect ref="verhandlung"/>
-      <aspect ref="alter"/>
-      <aspect ref="weiblichkeit"/>
-      <aspect ref="wald"/>
-      <aspect ref="gemeinschaft"/>
+      <aspect ref="zusammenhalt" />
+      <aspect ref="verhandlung" />
+      <aspect ref="alter" />
+      <aspect ref="weiblichkeit" />
+      <aspect ref="wald" />
+      <aspect ref="gemeinschaft" />
     </aspects>
     <modifications>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="deathmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="naturemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="deathmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="ruchorr">
+    <cultures>
+      <culture id="raugarr" />
+    </cultures>
     <aspects>
-      <aspect ref="herrschaft"/>
-      <aspect ref="waffen"/>
-      <aspect ref="kampf"/>
-      <aspect ref="jagd"/>
-      <aspect ref="stärke"/>
-      <aspect ref="wildheit"/>
+      <aspect ref="herrschaft" />
+      <aspect ref="waffen" />
+      <aspect ref="kampf" />
+      <aspect ref="jagd" />
+      <aspect ref="stärke" />
+      <aspect ref="wildheit" />
     </aspects>
     <modifications>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="illusionmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="combatmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="illusionmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="shalenki">
+    <cultures>
+      <culture id="farukan " />
+    </cultures>
     <aspects>
-      <aspect ref="hilfsbereitschaft"/>
-      <aspect ref="gemeinschaft"/>
-      <aspect ref="friede"/>
-      <aspect ref="vergebung"/>
-      <aspect ref="ausgleich"/>
-      <aspect ref="heilung"/>
+      <aspect ref="hilfsbereitschaft" />
+      <aspect ref="gemeinschaft" />
+      <aspect ref="friede" />
+      <aspect ref="vergebung" />
+      <aspect ref="ausgleich" />
+      <aspect ref="heilung" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="shandirr">
+    <cultures>
+      <culture id="tarr" />
+    </cultures>
     <aspects>
-      <aspect ref="handel"/>
-      <aspect ref="verständigung"/>
-      <aspect ref="bündnis"/>
-      <aspect ref="list"/>
-      <aspect ref="verhandlung"/>
+      <aspect ref="handel" />
+      <aspect ref="verständigung" />
+      <aspect ref="bündnis" />
+      <aspect ref="list" />
+      <aspect ref="verhandlung" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="shanezi">
+    <cultures>
+      <culture id="keshabid" />
+    </cultures>
     <aspects>
-      <aspect ref="gemeinschaft"/>
-      <aspect ref="familie"/>
-      <aspect ref="friede"/>
-      <aspect ref="sanftmut"/>
-      <aspect ref="wiedergutmachung"/>
-      <aspect ref="heilung"/>
+      <aspect ref="gemeinschaft" />
+      <aspect ref="familie" />
+      <aspect ref="friede" />
+      <aspect ref="sanftmut" />
+      <aspect ref="wiedergutmachung" />
+      <aspect ref="heilung" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="sharanar">
+    <cultures>
+      <culture id="schaedel" />
+      <culture id="anuu" />
+    </cultures>
     <aspects>
-      <aspect ref="schutz"/>
-      <aspect ref="meer"/>
-      <aspect ref="seefahrt"/>
-      <aspect ref="reichebeute"/>
-      <aspect ref="gemeinschaft"/>
-      <aspect ref="sicheresgeleit"/>
+      <aspect ref="schutz" />
+      <aspect ref="meer" />
+      <aspect ref="seefahrt" />
+      <aspect ref="reichebeute" />
+      <aspect ref="gemeinschaft" />
+      <aspect ref="sicheresgeleit" />
     </aspects>
     <modifications>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="mystic"/>
+      <skillmod ref="naturemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="mystic" />
     </modifications>
   </deity>
   <deity id="shasandiri">
+    <cultures>
+      <culture id="farukan " />
+    </cultures>
     <aspects>
-      <aspect ref="handel"/>
-      <aspect ref="intrige"/>
-      <aspect ref="list"/>
-      <aspect ref="täuschung"/>
-      <aspect ref="glücksspiel"/>
+      <aspect ref="handel" />
+      <aspect ref="intrige" />
+      <aspect ref="list" />
+      <aspect ref="täuschung" />
+      <aspect ref="glücksspiel" />
     </aspects>
     <modifications>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="cultist"/>
+      <skillmod ref="controlmagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="cultist" />
     </modifications>
   </deity>
   <deity id="sheiniu">
+    <cultures>
+      <culture id="zhoujiang" />
+    </cultures>
     <aspects>
-      <aspect ref="stärke"/>
-      <aspect ref="geruchskraft"/>
-      <aspect ref="ordnung"/>
-      <aspect ref="geduld"/>
-      <aspect ref="tradition"/>
-      <aspect ref="beständigkeit"/>
+      <aspect ref="stärke" />
+      <aspect ref="geruchskraft" />
+      <aspect ref="ordnung" />
+      <aspect ref="geduld" />
+      <aspect ref="tradition" />
+      <aspect ref="beständigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="voice_of_ghosts"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="inquisitor" />
+      <edumod ref="voice_of_ghosts" />
     </modifications>
   </deity>
   <deity id="siala">
+    <cultures>
+      <culture id="daemmeralb" />
+    </cultures>
     <aspects>
-      <aspect ref="geisterwelt"/>
-      <aspect ref="zauberei"/>
-      <aspect ref="geheimnisse"/>
-      <aspect ref="nebel"/>
-      <aspect ref="übergang"/>
-      <aspect ref="zwielicht"/>
+      <aspect ref="geisterwelt" />
+      <aspect ref="zauberei" />
+      <aspect ref="geheimnisse" />
+      <aspect ref="nebel" />
+      <aspect ref="übergang" />
+      <aspect ref="zwielicht" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="lorepriest"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="lightmagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="lorepriest" />
     </modifications>
   </deity>
   <deity id="sinbara">
+    <cultures>
+      <culture id="nyrdfing" />
+      <culture id="selenia" />
+      <culture id="midstad" />
+    </cultures>
     <aspects>
-      <aspect ref="meer"/>
-      <aspect ref="sturm"/>
-      <aspect ref="wetter"/>
-      <aspect ref="schönheit"/>
-      <aspect ref="weiblichkeit"/>
-      <aspect ref="launenhaftigkeit"/>
-      <aspect ref="feier"/>
+      <aspect ref="meer" />
+      <aspect ref="sturm" />
+      <aspect ref="wetter" />
+      <aspect ref="schönheit" />
+      <aspect ref="weiblichkeit" />
+      <aspect ref="launenhaftigkeit" />
+      <aspect ref="feier" />
     </aspects>
     <modifications>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="stonemagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="naturemagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="stonemagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="skalangor">
+    <cultures>
+      <culture id="waechter" />
+    </cultures>
     <aspects>
-      <aspect ref="drachen"/>
-      <aspect ref="treue"/>
-      <aspect ref="gemeinschaft"/>
-      <aspect ref="gehorsam"/>
-      <aspect ref="schutz"/>
-      <aspect ref="kampfgegendiefinsternis"/>
+      <aspect ref="drachen" />
+      <aspect ref="treue" />
+      <aspect ref="gemeinschaft" />
+      <aspect ref="gehorsam" />
+      <aspect ref="schutz" />
+      <aspect ref="kampfgegendiefinsternis" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="firemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="watermagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="lorepriest"/>
-      <edumod ref="drakeguardian"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="firemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="watermagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="lorepriest" />
+      <edumod ref="drakeguardian" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="starrekyng">
+    <cultures>
+      <culture id="nyrdfing" />
+    </cultures>
     <aspects>
-      <aspect ref="sterne"/>
-      <aspect ref="wahrheit"/>
-      <aspect ref="gesetz"/>
-      <aspect ref="gemeinschaft"/>
-      <aspect ref="recht"/>
-      <aspect ref="treue"/>
-      <aspect ref="vermittlung"/>
+      <aspect ref="sterne" />
+      <aspect ref="wahrheit" />
+      <aspect ref="gesetz" />
+      <aspect ref="gemeinschaft" />
+      <aspect ref="recht" />
+      <aspect ref="treue" />
+      <aspect ref="vermittlung" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="nighthawk"/>
-      <edumod ref="magicmediator"/>
-      <edumod ref="goden"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="nighthawk" />
+      <edumod ref="magicmediator" />
+      <edumod ref="goden" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="sylar">
+    <cultures>
+      <culture id="albseebund" />
+    </cultures>
     <aspects>
-      <aspect ref="gemeinschaft"/>
-      <aspect ref="emotionen"/>
-      <aspect ref="gefühle"/>
-      <aspect ref="zusammenhalt"/>
-      <aspect ref="handel"/>
-      <aspect ref="spionage"/>
-      <aspect ref="meer"/>
+      <aspect ref="gemeinschaft" />
+      <aspect ref="emotionen" />
+      <aspect ref="gefühle" />
+      <aspect ref="zusammenhalt" />
+      <aspect ref="handel" />
+      <aspect ref="spionage" />
+      <aspect ref="meer" />
     </aspects>
     <modifications>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="deathmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="deathmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="tamtamkamara">
+    <cultures>
+      <culture id="gotor" />
+      <culture id="marakatam" />
+    </cultures>
     <aspects>
-      <aspect ref="einzelgängertum"/>
-      <aspect ref="klugheit"/>
-      <aspect ref="wahnsinn"/>
-      <aspect ref="rastlosigkeit"/>
-      <aspect ref="witz"/>
-      <aspect ref="list"/>
-      <aspect ref="reise"/>
-      <aspect ref="eigensinn"/>
+      <aspect ref="einzelgängertum" />
+      <aspect ref="klugheit" />
+      <aspect ref="wahnsinn" />
+      <aspect ref="rastlosigkeit" />
+      <aspect ref="witz" />
+      <aspect ref="list" />
+      <aspect ref="reise" />
+      <aspect ref="eigensinn" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="cultist"/>
-      <edumod ref="mystic"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="cultist" />
+      <edumod ref="mystic" />
     </modifications>
   </deity>
   <deity id="tanglang">
+    <cultures>
+      <culture id="zhoujiang" />
+    </cultures>
     <aspects>
-      <aspect ref="gnade"/>
-      <aspect ref="überblick"/>
-      <aspect ref="erhabenheit"/>
-      <aspect ref="fleiß"/>
-      <aspect ref="tüchtigkeit"/>
-      <aspect ref="stolz"/>
+      <aspect ref="gnade" />
+      <aspect ref="überblick" />
+      <aspect ref="erhabenheit" />
+      <aspect ref="fleiß" />
+      <aspect ref="tüchtigkeit" />
+      <aspect ref="stolz" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="deathmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="voice_of_ghosts"/>
-      <edumod ref="wondermaker"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="controlmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="deathmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="voice_of_ghosts" />
+      <edumod ref="wondermaker" />
     </modifications>
   </deity>
   <deity id="tantekanja">
+    <cultures>
+      <culture id="dakardsmyr" />
+    </cultures>
     <aspects>
-      <aspect ref="spionage"/>
-      <aspect ref="klatsch"/>
-      <aspect ref="magie"/>
-      <aspect ref="drogen"/>
-      <aspect ref="erkenntnis"/>
-      <aspect ref="geheimnisse"/>
+      <aspect ref="spionage" />
+      <aspect ref="klatsch" />
+      <aspect ref="magie" />
+      <aspect ref="drogen" />
+      <aspect ref="erkenntnis" />
+      <aspect ref="geheimnisse" />
     </aspects>
     <modifications>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="lightmagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="controlmagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="lightmagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="taomai">
+    <cultures>
+      <culture id="kungaitan" />
+    </cultures>
     <aspects>
-      <aspect ref="blut"/>
-      <aspect ref="geburt"/>
-      <aspect ref="tod"/>
-      <aspect ref="fruchtbarkeit"/>
-      <aspect ref="krieg"/>
-      <aspect ref="düstermond"/>
+      <aspect ref="blut" />
+      <aspect ref="geburt" />
+      <aspect ref="tod" />
+      <aspect ref="fruchtbarkeit" />
+      <aspect ref="krieg" />
+      <aspect ref="düstermond" />
     </aspects>
     <modifications>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="deathmagic"/>
-      <skillmod ref="lightmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="combatmagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="deathmagic" />
+      <skillmod ref="lightmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="tayru">
+    <cultures>
+      <culture id="farukan" />
+    </cultures>
     <aspects>
-      <aspect ref="ehre"/>
-      <aspect ref="sonne"/>
-      <aspect ref="herrschaft"/>
-      <aspect ref="ordnung"/>
-      <aspect ref="tag"/>
-      <aspect ref="licht"/>
-      <aspect ref="gesetz"/>
-      <aspect ref="stolz"/>
+      <aspect ref="ehre" />
+      <aspect ref="sonne" />
+      <aspect ref="herrschaft" />
+      <aspect ref="ordnung" />
+      <aspect ref="tag" />
+      <aspect ref="licht" />
+      <aspect ref="gesetz" />
+      <aspect ref="stolz" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="shadowmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="lightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="shadowmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="thatarr">
+    <cultures>
+      <culture id="vaigarr" />
+    </cultures>
     <aspects>
-      <aspect ref="kampf"/>
-      <aspect ref="wettstreit"/>
-      <aspect ref="übergangsriten"/>
-      <aspect ref="männlichkeit"/>
-      <aspect ref="tiere"/>
-      <aspect ref="erhabenheit"/>
+      <aspect ref="kampf" />
+      <aspect ref="wettstreit" />
+      <aspect ref="übergangsriten" />
+      <aspect ref="männlichkeit" />
+      <aspect ref="tiere" />
+      <aspect ref="erhabenheit" />
     </aspects>
     <modifications>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="combatmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="theris">
+    <cultures>
+      <culture id="ioria" />
+      <culture id="afali" />
+    </cultures>
     <aspects>
-      <aspect ref="ehre"/>
-      <aspect ref="recht"/>
-      <aspect ref="treue"/>
-      <aspect ref="wahrheit"/>
-      <aspect ref="tapferkeit"/>
-      <aspect ref="wachsamkeit"/>
-      <aspect ref="schutz"/>
+      <aspect ref="ehre" />
+      <aspect ref="recht" />
+      <aspect ref="treue" />
+      <aspect ref="wahrheit" />
+      <aspect ref="tapferkeit" />
+      <aspect ref="wachsamkeit" />
+      <aspect ref="schutz" />
     </aspects>
     <modifications>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="whitewatcher"/>
+      <skillmod ref="combatmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="whitewatcher" />
     </modifications>
   </deity>
   <deity id="turagorr">
+    <cultures>
+      <culture id="vaigarr" />
+    </cultures>
     <aspects>
-      <aspect ref="ausgestoßene"/>
-      <aspect ref="barbarei"/>
-      <aspect ref="blutdurst"/>
-      <aspect ref="einzelgängertum"/>
-      <aspect ref="wildheit"/>
-      <aspect ref="kraft"/>
+      <aspect ref="ausgestoßene" />
+      <aspect ref="barbarei" />
+      <aspect ref="blutdurst" />
+      <aspect ref="einzelgängertum" />
+      <aspect ref="wildheit" />
+      <aspect ref="kraft" />
     </aspects>
     <modifications>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="healmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="combatmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="healmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="ulmon">
+    <cultures>
+      <culture id="mertstaedt" />
+    </cultures>
     <aspects>
-      <aspect ref="herrschaft"/>
-      <aspect ref="einheit"/>
-      <aspect ref="ordnung"/>
-      <aspect ref="bündnis"/>
-      <aspect ref="zusammenhalt"/>
-      <aspect ref="verständigung"/>
+      <aspect ref="herrschaft" />
+      <aspect ref="einheit" />
+      <aspect ref="ordnung" />
+      <aspect ref="bündnis" />
+      <aspect ref="zusammenhalt" />
+      <aspect ref="verständigung" />
     </aspects>
     <modifications>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="controlmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="unggoy">
+    <cultures>
+      <culture id="zhoujiang" />
+      <culture id="sadu" />
+    </cultures>
     <aspects>
-      <aspect ref="list"/>
-      <aspect ref="familie"/>
-      <aspect ref="fruchtbarkeit"/>
-      <aspect ref="lebensfreude"/>
-      <aspect ref="spaß"/>
-      <aspect ref="beweglichkeit"/>
+      <aspect ref="list" />
+      <aspect ref="familie" />
+      <aspect ref="fruchtbarkeit" />
+      <aspect ref="lebensfreude" />
+      <aspect ref="spaß" />
+      <aspect ref="beweglichkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="deathmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="voice_of_ghosts"/>
-      <edumod ref="cultist"/>
+      <skillmod ref="naturemagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="healmagic" />
+      <skillmod ref="deathmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="voice_of_ghosts" />
+      <edumod ref="cultist" />
     </modifications>
   </deity>
   <deity id="urgano">
+    <cultures>
+      <culture id="westergrom" />
+      <culture id="elyrea" />
+    </cultures>
     <aspects>
-      <aspect ref="schutz"/>
-      <aspect ref="ernte"/>
-      <aspect ref="hirten"/>
-      <aspect ref="gemeinschaft"/>
-      <aspect ref="natur"/>
+      <aspect ref="schutz" />
+      <aspect ref="ernte" />
+      <aspect ref="hirten" />
+      <aspect ref="gemeinschaft" />
+      <aspect ref="natur" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="soulguide"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="soulguide" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="uru">
+    <cultures>
+      <culture id="strominseln" />
+    </cultures>
     <aspects>
-      <aspect ref="wasser"/>
-      <aspect ref="unnachgiebigkeit"/>
-      <aspect ref="meer"/>
-      <aspect ref="schöpfung"/>
-      <aspect ref="meer"/>
+      <aspect ref="wasser" />
+      <aspect ref="unnachgiebigkeit" />
+      <aspect ref="meer" />
+      <aspect ref="schöpfung" />
+      <aspect ref="meer" />
     </aspects>
     <modifications>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="elementalist"/>
-      <edumod ref="titanchild_priest"/>
-      <edumod ref="mystic"/>
+      <skillmod ref="naturemagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="elementalist" />
+      <edumod ref="titanchild_priest" />
+      <edumod ref="mystic" />
     </modifications>
   </deity>
   <deity id="uryat">
+    <cultures>
+      <culture id="farukan" />
+    </cultures>
     <aspects>
-      <aspect ref="hochmut"/>
-      <aspect ref="ehrlosigkeit"/>
-      <aspect ref="ehrverlust"/>
-      <aspect ref="verrat"/>
-      <aspect ref="machtgier"/>
-      <aspect ref="stolz"/>
-      <aspect ref="heimlichkeit"/>
+      <aspect ref="hochmut" />
+      <aspect ref="ehrlosigkeit" />
+      <aspect ref="ehrverlust" />
+      <aspect ref="verrat" />
+      <aspect ref="machtgier" />
+      <aspect ref="stolz" />
+      <aspect ref="heimlichkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic" value="-1"/>
-      <edumod ref="cultist"/>
-      <edumod ref="mystic"/>
+      <skillmod ref="lightmagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" value="-1" />
+      <edumod ref="cultist" />
+      <edumod ref="mystic" />
     </modifications>
   </deity>
   <deity id="valkyrji">
+    <cultures>
+      <culture id="zwingard" />
+      <culture id="termark" />
+    </cultures>
     <aspects>
-      <aspect ref="gemeinschaft"/>
-      <aspect ref="kampf"/>
-      <aspect ref="schutz"/>
-      <aspect ref="wache"/>
-      <aspect ref="standhaftigkeit"/>
-      <aspect ref="weiterejenachvalkyrja"/>
+      <aspect ref="gemeinschaft" />
+      <aspect ref="kampf" />
+      <aspect ref="schutz" />
+      <aspect ref="wache" />
+      <aspect ref="standhaftigkeit" />
+      <aspect ref="weiterejenachvalkyrja" />
     </aspects>
     <modifications>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="illusionmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="shieldmaid"/>
+      <skillmod ref="combatmagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="illusionmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="shieldmaid" />
     </modifications>
   </deity>
   <deity id="vangara">
+    <cultures>
+      <culture id="waechter" />
+      <culture id="selenia" />
+    </cultures>
     <aspects>
-      <aspect ref="wachsamkeit"/>
-      <aspect ref="standhaftigkeit"/>
-      <aspect ref="treue"/>
-      <aspect ref="unerbittlichkeit"/>
-      <aspect ref="zähigkeit"/>
-      <aspect ref="kampf"/>
-      <aspect ref="standhaftigkeit"/>
+      <aspect ref="wachsamkeit" />
+      <aspect ref="standhaftigkeit" />
+      <aspect ref="treue" />
+      <aspect ref="unerbittlichkeit" />
+      <aspect ref="zähigkeit" />
+      <aspect ref="kampf" />
+      <aspect ref="standhaftigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="antimagic"/>
-      <skillmod ref="lightmagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="deathmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="inquisitor"/>
+      <skillmod ref="antimagic" />
+      <skillmod ref="lightmagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="deathmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="inquisitor" />
     </modifications>
   </deity>
   <deity id="vanusuri">
+    <cultures>
+      <culture id="badashan" />
+    </cultures>
     <aspects>
-      <aspect ref="schicksal"/>
-      <aspect ref="wahrheit"/>
-      <aspect ref="bewahrung"/>
-      <aspect ref="zusammenhänge"/>
-      <aspect ref="opferbereitschaft"/>
-      <aspect ref="schöpfung"/>
+      <aspect ref="schicksal" />
+      <aspect ref="wahrheit" />
+      <aspect ref="bewahrung" />
+      <aspect ref="zusammenhänge" />
+      <aspect ref="opferbereitschaft" />
+      <aspect ref="schöpfung" />
     </aspects>
     <modifications>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="controlmagic" />
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="varnu">
+    <cultures>
+      <culture id="feuerläufer" />
+    </cultures>
     <aspects>
-      <aspect ref="leidenschaft"/>
-      <aspect ref="unberechenbarenatur"/>
-      <aspect ref="list"/>
-      <aspect ref="zerstörung"/>
-      <aspect ref="strenge"/>
-      <aspect ref="richter"/>
-      <aspect ref="strafe"/>
-      <aspect ref="feuer"/>
+      <aspect ref="leidenschaft" />
+      <aspect ref="unberechenbarenatur" />
+      <aspect ref="list" />
+      <aspect ref="zerstörung" />
+      <aspect ref="strenge" />
+      <aspect ref="richter" />
+      <aspect ref="strafe" />
+      <aspect ref="feuer" />
     </aspects>
     <modifications>
-      <skillmod ref="stonemagic"/>
-      <skillmod ref="firemagic"/>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="watermagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="cultist"/>
-      <edumod ref="mystic"/>
+      <skillmod ref="stonemagic" />
+      <skillmod ref="firemagic" />
+      <skillmod ref="combatmagic" />
+      <skillmod ref="watermagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="cultist" />
+      <edumod ref="mystic" />
     </modifications>
   </deity>
   <deity id="viela">
+    <cultures>
+      <culture id="daemmeralb" />
+    </cultures>
     <aspects>
-      <aspect ref="leben"/>
-      <aspect ref="wachstum"/>
-      <aspect ref="kampf"/>
-      <aspect ref="liebe"/>
-      <aspect ref="natur"/>
-      <aspect ref="tag"/>
+      <aspect ref="leben" />
+      <aspect ref="wachstum" />
+      <aspect ref="kampf" />
+      <aspect ref="liebe" />
+      <aspect ref="natur" />
+      <aspect ref="tag" />
     </aspects>
     <modifications>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="transformationmagic"/>
-      <skillmod ref="deathmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="combatmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="transformationmagic" />
+      <skillmod ref="deathmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="vordan">
+    <cultures>
+      <culture id="patalis" />
+      <culture id="elyrea" />
+    </cultures>
     <aspects>
-      <aspect ref="herrschaft"/>
-      <aspect ref="gerechtigkeit"/>
-      <aspect ref="adel"/>
-      <aspect ref="ordnung"/>
-      <aspect ref="bescheidenheit"/>
-      <aspect ref="strenge"/>
+      <aspect ref="herrschaft" />
+      <aspect ref="gerechtigkeit" />
+      <aspect ref="adel" />
+      <aspect ref="ordnung" />
+      <aspect ref="bescheidenheit" />
+      <aspect ref="strenge" />
     </aspects>
     <modifications>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="illusionmagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="wandererpriest"/>
-      <edumod ref="vordanshield"/>
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="illusionmagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="wandererpriest" />
+      <edumod ref="vordanshield" />
     </modifications>
   </deity>
   <deity id="wesantia">
+    <cultures>
+      <culture id="zwingard" />
+    </cultures>
     <aspects>
-      <aspect ref="mutter"/>
-      <aspect ref="familie"/>
-      <aspect ref="leben"/>
-      <aspect ref="heilung"/>
-      <aspect ref="schöpfung"/>
-      <aspect ref="geburt"/>
+      <aspect ref="mutter" />
+      <aspect ref="familie" />
+      <aspect ref="leben" />
+      <aspect ref="heilung" />
+      <aspect ref="schöpfung" />
+      <aspect ref="geburt" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="deathmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="deathmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="wesinta">
+    <cultures>
+      <culture id="zwingard" />
+    </cultures>
     <aspects>
-      <aspect ref="mutter"/>
-      <aspect ref="tod"/>
-      <aspect ref="schlaf"/>
-      <aspect ref="traum"/>
-      <aspect ref="ende"/>
-      <aspect ref="vergänglichkeit"/>
-      <aspect ref="vergessen"/>
+      <aspect ref="mutter" />
+      <aspect ref="tod" />
+      <aspect ref="schlaf" />
+      <aspect ref="traum" />
+      <aspect ref="ende" />
+      <aspect ref="vergänglichkeit" />
+      <aspect ref="vergessen" />
     </aspects>
     <modifications>
-      <skillmod ref="healmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="deathmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="soulguide"/>
-      <edumod ref="galstarsinger"/>
+      <skillmod ref="healmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="deathmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="soulguide" />
+      <edumod ref="galstarsinger" />
     </modifications>
   </deity>
   <deity id="wugei">
+    <cultures>
+      <culture id="zhoujiang" />
+    </cultures>
     <aspects>
-      <aspect ref="ruhe"/>
-      <aspect ref="schutz"/>
-      <aspect ref="wasser"/>
-      <aspect ref="gelassenheit"/>
-      <aspect ref="langsamkeit"/>
+      <aspect ref="ruhe" />
+      <aspect ref="schutz" />
+      <aspect ref="wasser" />
+      <aspect ref="gelassenheit" />
+      <aspect ref="langsamkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="stonemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="motionmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="voice_of_ghosts"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="stonemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="motionmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="voice_of_ghosts" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="yelat">
+    <cultures>
+      <culture id="farukan" />
+      <culture id="jagodien" />
+    </cultures>
     <aspects>
-      <aspect ref="pferd"/>
-      <aspect ref="freiheit"/>
-      <aspect ref="stolz"/>
-      <aspect ref="sturm"/>
-      <aspect ref="wetter"/>
-      <aspect ref="bewegung"/>
+      <aspect ref="pferd" />
+      <aspect ref="freiheit" />
+      <aspect ref="stolz" />
+      <aspect ref="sturm" />
+      <aspect ref="wetter" />
+      <aspect ref="bewegung" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="controlmagic" value="-1"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="controlmagic" value="-1" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="yonnus">
+    <cultures>
+      <culture id="selenia" />
+      <culture id="midstad" />
+    </cultures>
     <aspects>
-      <aspect ref="mond"/>
-      <aspect ref="schöpfung"/>
-      <aspect ref="herrschaft"/>
-      <aspect ref="schutz"/>
-      <aspect ref="schicksal"/>
-      <aspect ref="wachsamkeit"/>
-      <aspect ref="erhabenheit"/>
-      <aspect ref="stolz"/>
+      <aspect ref="mond" />
+      <aspect ref="schöpfung" />
+      <aspect ref="herrschaft" />
+      <aspect ref="schutz" />
+      <aspect ref="schicksal" />
+      <aspect ref="wachsamkeit" />
+      <aspect ref="erhabenheit" />
+      <aspect ref="stolz" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="fatemagic"/>
-      <skillmod ref="protectionmagic"/>
-      <skillmod ref="lightmagic" value="-1"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="lorepriest"/>
-      <edumod ref="yonnuspriest"/>
-      <edumod ref="soulguide"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="fatemagic" />
+      <skillmod ref="protectionmagic" />
+      <skillmod ref="lightmagic" value="-1" />
+      <edumod ref="inquisitor" />
+      <edumod ref="lorepriest" />
+      <edumod ref="yonnuspriest" />
+      <edumod ref="soulguide" />
     </modifications>
   </deity>
   <deity id="ysgarr">
+    <cultures>
+      <culture id="raugarr" />
+    </cultures>
     <aspects>
-      <aspect ref="winter"/>
-      <aspect ref="kälte"/>
-      <aspect ref="jahreszeiten"/>
-      <aspect ref="wetter"/>
-      <aspect ref="launenhaftigkeit"/>
+      <aspect ref="winter" />
+      <aspect ref="kälte" />
+      <aspect ref="jahreszeiten" />
+      <aspect ref="wetter" />
+      <aspect ref="launenhaftigkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="naturemagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="zarusz">
+    <cultures>
+      <culture id="zaruszai" />
+    </cultures>
     <aspects>
-      <aspect ref="schlangen"/>
-      <aspect ref="schöpfung"/>
-      <aspect ref="weisheit"/>
-      <aspect ref="wiedergeburt"/>
-      <aspect ref="leben"/>
-      <aspect ref="heilung"/>
-      <aspect ref="gift"/>
+      <aspect ref="schlangen" />
+      <aspect ref="schöpfung" />
+      <aspect ref="weisheit" />
+      <aspect ref="wiedergeburt" />
+      <aspect ref="leben" />
+      <aspect ref="heilung" />
+      <aspect ref="gift" />
     </aspects>
     <modifications>
-      <skillmod ref="insightmagic"/>
-      <skillmod ref="naturemagic"/>
-      <skillmod ref="transformationmagic"/>
-      <skillmod ref="firemagic" value="-1"/>
-      <edumod ref="mystic"/>
-      <edumod ref="wandererpriest"/>
+      <skillmod ref="insightmagic" />
+      <skillmod ref="naturemagic" />
+      <skillmod ref="transformationmagic" />
+      <skillmod ref="firemagic" value="-1" />
+      <edumod ref="mystic" />
+      <edumod ref="wandererpriest" />
     </modifications>
   </deity>
   <deity id="zeshid">
+    <cultures>
+      <culture id="keshabid" />
+    </cultures>
     <aspects>
-      <aspect ref="heimlichkeit"/>
-      <aspect ref="verschlagenheit"/>
-      <aspect ref="handel"/>
-      <aspect ref="lüge"/>
-      <aspect ref="täuschung"/>
+      <aspect ref="heimlichkeit" />
+      <aspect ref="verschlagenheit" />
+      <aspect ref="handel" />
+      <aspect ref="lüge" />
+      <aspect ref="täuschung" />
     </aspects>
     <modifications>
-      <skillmod ref="controlmagic"/>
-      <skillmod ref="illusionmagic"/>
-      <skillmod ref="shadowmagic"/>
-      <skillmod ref="lightmagic" value="-1"/>
-      <edumod ref="cultist"/>
+      <skillmod ref="controlmagic" />
+      <skillmod ref="illusionmagic" />
+      <skillmod ref="shadowmagic" />
+      <skillmod ref="lightmagic" value="-1" />
+      <edumod ref="cultist" />
     </modifications>
   </deity>
   <deity id="zulgara">
+    <cultures>
+      <culture id="jogodai" />
+    </cultures>
     <aspects>
-      <aspect ref="mut"/>
-      <aspect ref="zorn"/>
-      <aspect ref="opferung"/>
-      <aspect ref="stärke"/>
-      <aspect ref="kampf"/>
+      <aspect ref="mut" />
+      <aspect ref="zorn" />
+      <aspect ref="opferung" />
+      <aspect ref="stärke" />
+      <aspect ref="kampf" />
     </aspects>
     <modifications>
-      <skillmod ref="firemagic"/>
-      <skillmod ref="combatmagic"/>
-      <skillmod ref="enhancemagic"/>
-      <skillmod ref="illusionmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
+      <skillmod ref="firemagic" />
+      <skillmod ref="combatmagic" />
+      <skillmod ref="enhancemagic" />
+      <skillmod ref="illusionmagic" value="-1" />
+      <edumod ref="faithwarrior" />
     </modifications>
   </deity>
   <deity id="zuru">
+    <cultures>
+      <culture id="zhoujiang" />
+      <culture id="sadu" />
+    </cultures>
     <aspects>
-      <aspect ref="wasser"/>
-      <aspect ref="achtung"/>
-      <aspect ref="flug"/>
-      <aspect ref="kunstfertigkeit"/>
-      <aspect ref="kreativität"/>
-      <aspect ref="wachsamkeit"/>
+      <aspect ref="wasser" />
+      <aspect ref="achtung" />
+      <aspect ref="flug" />
+      <aspect ref="kunstfertigkeit" />
+      <aspect ref="kreativität" />
+      <aspect ref="wachsamkeit" />
     </aspects>
     <modifications>
-      <skillmod ref="motionmagic"/>
-      <skillmod ref="watermagic"/>
-      <skillmod ref="windmagic"/>
-      <skillmod ref="combatmagic" value="-1"/>
-      <edumod ref="faithwarrior"/>
-      <edumod ref="inquisitor"/>
-      <edumod ref="voice_of_ghosts"/>
+      <skillmod ref="motionmagic" />
+      <skillmod ref="watermagic" />
+      <skillmod ref="windmagic" />
+      <skillmod ref="combatmagic" value="-1" />
+      <edumod ref="faithwarrior" />
+      <edumod ref="inquisitor" />
+      <edumod ref="voice_of_ghosts" />
     </modifications>
   </deity>
 </deities>
