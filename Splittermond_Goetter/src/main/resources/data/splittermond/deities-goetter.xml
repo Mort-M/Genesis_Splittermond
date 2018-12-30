@@ -131,6 +131,7 @@
   <deity id="alo">
     <cultures>
       <culture id="strominseln" />
+      <culture id="stromsiprangu" />
     </cultures>
     <aspects>
       <aspect ref="sanftheit" />
@@ -171,7 +172,7 @@
   </deity>
   <deity id="amantia">
     <cultures>
-      <culture id="sadu " />
+      <culture id="sadu" />
     </cultures>
     <aspects>
       <aspect ref="fruchtbarkeit" />
@@ -192,7 +193,7 @@
   </deity>
   <deity id="anding">
     <cultures>
-      <culture id="sadu " />
+      <culture id="sadu" />
     </cultures>
     <aspects>
       <aspect ref="meereskreaturen" />
@@ -277,7 +278,7 @@
   </deity>
   <deity id="balang">
     <cultures>
-      <culture id="sadu " />
+      <culture id="sadu" />
     </cultures>
     <aspects>
       <aspect ref="weiblichkeit" />
@@ -319,7 +320,7 @@
   </deity>
   <deity id="bawalin">
     <cultures>
-      <culture id="sadu " />
+      <culture id="sadu" />
     </cultures>
     <aspects>
       <aspect ref="erfolg" />
@@ -1195,6 +1196,7 @@
   <deity id="kar">
     <cultures>
       <culture id="strominseln" />
+      <culture id="stromsiprangu" />
     </cultures>
     <aspects>
       <aspect ref="launenhaftigkeit" />
@@ -1371,7 +1373,7 @@
   </deity>
   <deity id="lukton">
     <cultures>
-      <culture id="sadu " />
+      <culture id="sadu" />
     </cultures>
     <aspects>
       <aspect ref="männlichkeit" />
@@ -1602,7 +1604,7 @@
   </deity>
   <deity id="monsun">
     <cultures>
-      <culture id="sadu " />
+      <culture id="sadu" />
     </cultures>
     <aspects>
       <aspect ref="regen" />
@@ -1709,6 +1711,7 @@
   <deity id="mua">
     <cultures>
       <culture id="strominseln" />
+      <culture id="stromsiprangu" />
     </cultures>
     <aspects>
       <aspect ref="felsen" />
@@ -2124,6 +2127,7 @@
   <deity id="rii">
     <cultures>
       <culture id="strominseln" />
+      <culture id="stromsiprangu" />
     </cultures>
     <aspects>
       <aspect ref="list" />
@@ -2491,8 +2495,7 @@
   </deity>
   <deity id="tamtamkamara">
     <cultures>
-      <culture id="gotor" />
-      <culture id="marakatam" />
+      <culture id="gotmarkut" />
     </cultures>
     <aspects>
       <aspect ref="einzelgängertum" />
@@ -2733,6 +2736,7 @@
   <deity id="uru">
     <cultures>
       <culture id="strominseln" />
+      <culture id="stromsiprangu" />
     </cultures>
     <aspects>
       <aspect ref="wasser" />
@@ -2840,7 +2844,7 @@
   </deity>
   <deity id="varnu">
     <cultures>
-      <culture id="feuerläufer" />
+      <culture id="feuerlauf" />
     </cultures>
     <aspects>
       <aspect ref="leidenschaft" />
