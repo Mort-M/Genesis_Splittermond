@@ -705,9 +705,9 @@ public class NewMastershipLeveller implements MastershipController, SpliMoCharac
 	 * @see org.prelle.splimo.charctrl.MastershipController#setSelected(org.prelle.splimo.Skill, org.prelle.splimo.Mastership, boolean)
 	 */
 	@Override
-	public boolean select(Mastership master) {
+	public MastershipReference select(Mastership master) {
 		if (!canBeSelected(master))
-			return false;
+			return null;
 
 		Skill skill = master.getSkill();
 		// Check if there is a free mastership for this
@@ -729,7 +729,7 @@ public class NewMastershipLeveller implements MastershipController, SpliMoCharac
 				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_MASTERSHIPS, skill, getFreeMasterships(skill)));
 //				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.UNDO_LIST_CHANGED, undoList));
 				parent.runProcessors();
-				return true;
+				return ref;
 			}
 		}
 
@@ -751,7 +751,7 @@ public class NewMastershipLeveller implements MastershipController, SpliMoCharac
 //		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.UNDO_LIST_CHANGED, undoList));
 		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.EXPERIENCE_CHANGED, null, new int[]{data.getExperienceFree(), data.getExperienceInvested()}));
 		parent.runProcessors();
-		return true;
+		return ref;
 	}
 
 	//-------------------------------------------------------------------

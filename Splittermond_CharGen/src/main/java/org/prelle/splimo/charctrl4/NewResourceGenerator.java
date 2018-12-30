@@ -14,6 +14,7 @@ import org.prelle.splimo.Resource;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.charctrl.CharGenConstants;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventType;
@@ -31,17 +32,18 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class NewResourceGenerator implements ResourceController, Generator, SpliMoCharacterProcessor {
 	
-	private static Logger logger = Logger.getLogger("splittermond.chargen.resrc");
+	protected static Logger logger = Logger.getLogger("splittermond.chargen.resrc");
 
-	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
+	private final static ResourceBundle RES = CharGenConstants.RES;
 	
 	 static List<Resource> BASE_RESOURCES;
 
-	private SplitterEngineCharacterGenerator parent; 
+	protected SplitterEngineCharacterGenerator parent; 
 	private int maxPointsToSpend;
 //	private int pointsFree;
+	private int minValue;
 	private int maxValue;
-	private SpliMoCharacter model;
+	protected SpliMoCharacter model;
 	private List<Resource> available;
 	private List<ToDoElement> todos;
 	private List<DecisionToMake> decisions;
@@ -55,6 +57,7 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 //		this.pointsFree = toSpend;
 		this.parent   = charGen;
 		this.maxValue = 4;
+		this.minValue = 0;
 		this.model    = charGen.getModel();
 		available     = new ArrayList<Resource>();
 		todos = new ArrayList<>();
@@ -80,6 +83,22 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 		for (Resource res : SplitterMondCore.getResources())
 			if (!BASE_RESOURCES.contains(res))
 				available.add(res);
+	}
+
+	//-------------------------------------------------------------------
+	public void setAllowExtremeResourcesOnGeneration(boolean allow) {
+		maxValue = allow?6:4;
+		minValue = allow?-2:0;
+	}
+
+	//-------------------------------------------------------------------
+	protected int getMaxValue() {
+		return maxValue;
+	}
+
+	//-------------------------------------------------------------------
+	protected int getMinValue() {
+		return minValue;
 	}
 
 	//-------------------------------------------------------------------
@@ -110,7 +129,6 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 		return null;
 	}
 
-
 	//--------------------------------------------------------------------
 	/**
 	 * @see org.prelle.splimo.charctrl.ResourceController#canBeIncreased(org.prelle.splimo.ResourceReference)
@@ -119,11 +137,11 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 	public boolean canBeIncreased(ResourceReference ref) {
 		logger.debug("canBeIncreased("+ref+")  "+getPointsLeft());
 		// Prevent increasing above the maximum
-		if (ref.getValue()>=maxValue)
+		if (ref.getValue()>=getMaxValue())
 			return false;
 		
 		// Only allow when there are points left
-		return getPointsLeft()>0;
+		return getPointsLeft()>0 || model.getExperienceFree()>=7;
 	}
 
 	//-------------------------------------------------------------------
@@ -140,15 +158,14 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 				currentSpent += tmp.getValue();
 		
 		// Compare with expected minimum
-		boolean gamemasterException = maxValue==6;
 		int expectedMin = 0;
-		if (BASE_RESOURCES.contains(ref.getResource()) && gamemasterException)
-			expectedMin = -2;
+		if (BASE_RESOURCES.contains(ref.getResource()))
+				expectedMin = getMinValue();
 //		if (minValByModifications.containsKey(ref.getResource()))
 //			expectedMin = minValByModifications.get(ref.getResource());
 		
 		// Prevent decreasing below the minimum
-		if (currentSpent<=expectedMin && !(BASE_RESOURCES.contains(ref.getResource()) && gamemasterException)) {
+		if (currentSpent<=expectedMin ) {
 			logger.debug("Cannot decrease "+ref+" ... current="+currentSpent+"  expectedMin="+expectedMin);
 			return false;
 		}
@@ -315,7 +332,7 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 		for (int i=1; i<resources.length; i++) 
 			sum += resources[i].getValue();
 				
-		return sum<=maxValue;
+		return sum<=getMaxValue();
 	}
 
 	//--------------------------------------------------------------------
@@ -496,7 +513,7 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 				if (ref.getResource().getId().equals("creature") || ref.getResource().getId().equals("relic")) {
 					todos.add(new ToDoElement(Severity.WARNING, String.format(RES.getString("resourcegen.todo.select"), ref.getResource().getName()+" "+ref.getValue())));
 				}
-				if (ref.getValue()>maxValue) {
+				if (ref.getValue()>getMaxValue()) {
 					todos.add(new ToDoElement(Severity.WARNING, String.format(RES.getString("resourcegen.todo.withgm"), ref.getResource().getName()+" "+ref.getValue())));
 				}
 			}

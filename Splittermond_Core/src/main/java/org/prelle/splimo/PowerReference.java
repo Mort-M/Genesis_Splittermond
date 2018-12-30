@@ -3,7 +3,6 @@
  */
 package org.prelle.splimo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.prelle.simplepersist.AttribConvert;
@@ -26,7 +25,12 @@ public class PowerReference extends ModifyableImpl implements Comparable<PowerRe
 	private Power power;
 	@Attribute(required=false)
 	private int count;
-
+	
+	/** Is assigned from a module - and not actively from the user */
+	private transient boolean systemAssigned;
+	/** Cannot be deselected by user (e.g. because it originates from race) */
+	@Attribute
+	private boolean fixed;
 	
 	//-------------------------------------------------------------------
 	public PowerReference() {
@@ -121,6 +125,38 @@ public class PowerReference extends ModifyableImpl implements Comparable<PowerRe
 				sum+= 1;
 		}
 		return sum;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @return the systemAssigned
+	 */
+	public boolean isSystemAssigned() {
+		return systemAssigned;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @param systemAssigned the systemAssigned to set
+	 */
+	public void setSystemAssigned(boolean systemAssigned) {
+		this.systemAssigned = systemAssigned;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @return the fixed
+	 */
+	public boolean isFixed() {
+		return fixed;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @param fixed the fixed to set
+	 */
+	public void setFixed(boolean fixed) {
+		this.fixed = fixed;
 	}
 
 }

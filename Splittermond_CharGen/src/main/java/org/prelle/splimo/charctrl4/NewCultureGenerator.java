@@ -70,7 +70,7 @@ public class NewCultureGenerator implements CultureController, SpliMoCharacterPr
 			 */
 			Culture selected = model.getCulture();
 			if (selected==null) {
-				todos.add(new ToDoElement(Severity.STOPPER, RES.getString("cultgen.todo")));
+				todos.add(new ToDoElement(Severity.WARNING, RES.getString("cultgen.todo")));
 			} else {
 				// A race has been selected
 				for (Modification mod : selected.getModifications()) {

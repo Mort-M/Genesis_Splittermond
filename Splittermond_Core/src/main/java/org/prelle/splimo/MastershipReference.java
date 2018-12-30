@@ -38,6 +38,8 @@ public class MastershipReference implements Comparable<MastershipReference> {
 	private SkillSpecializationValue spec;
 	@Attribute(required=false)
 	private int free;
+	
+	private transient boolean canBeCleared;
 
 	//-------------------------------------------------------------------
 	public MastershipReference() {
@@ -116,6 +118,23 @@ public class MastershipReference implements Comparable<MastershipReference> {
 	 */
 	public void setFree(int free) {
 		this.free = free;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * Can the mastership be cleared when running CharacterProcessors?
+	 * @return the canBeCleared
+	 */
+	public boolean canBeCleared() {
+		return canBeCleared;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @param canBeCleared the canBeCleared to set
+	 */
+	public void setCanBeCleared(boolean canBeCleared) {
+		this.canBeCleared = canBeCleared;
 	}
 
 }

@@ -2,6 +2,8 @@ package org.prelle.splimo.chargen4;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
@@ -13,7 +15,9 @@ import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.prelle.rpgframework.splittermond.jdg.JenseitsDerGrenzenPlugin;
 import org.prelle.splimo.Attribute;
+import org.prelle.splimo.Culture;
 import org.prelle.splimo.DummyRulePlugin;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Moonsign;
@@ -58,6 +62,7 @@ public class ExampleCharactersTest {
 	public static void setUpBeforeClass() throws Exception {
 		PropertyConfigurator.configure(ClassLoader.getSystemResource("log4j.properties"));
 		SplitterMondCore.initialize(new DummyRulePlugin<SpliMoCharacter>());
+		(new JenseitsDerGrenzenPlugin()).init();
 //		System.exit(0);
 	}
 
@@ -237,7 +242,6 @@ public class ExampleCharactersTest {
 		reward.setDate(new Date(System.currentTimeMillis()));
 		model.setExperienceFree(15);
 		model.addReward(reward);
-		System.exit(0);
 		charGen.startTuningMode();
 		
 		// Increase with exp
@@ -286,14 +290,14 @@ public class ExampleCharactersTest {
 		}
 		MastershipController maCtrl = charGen.getMastershipController();
 		assertTrue(maCtrl.deselect(sailorslegs.getMastership()));
-		assertTrue(maCtrl.select(SplitterMondCore.getSkill("combatmagic").getMastership("aimedspells")));
+		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("combatmagic").getMastership("aimedspells")));
 		// Remaining 4 free masterships granted by 6 points in skill
-		assertTrue(maCtrl.select(SplitterMondCore.getSkill("chains").getMastership("ignoreshield")));
-		assertTrue(maCtrl.select(SplitterMondCore.getSkill("acrobatics").getMastership("evade1")));
-		assertTrue(maCtrl.select(SplitterMondCore.getSkill("arcanelore").getMastership("arcanedefense1")));
-		assertTrue(maCtrl.select(SplitterMondCore.getSkill("watermagic").getMastership("savingcaster")));
+		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("chains").getMastership("ignoreshield")));
+		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("acrobatics").getMastership("evade1")));
+		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("arcanelore").getMastership("arcanedefense1")));
+		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("watermagic").getMastership("savingcaster")));
 		// Pay with 5 EP (from Step 9)
-		assertTrue(maCtrl.select(SplitterMondCore.getSkill("acrobatics").getMastership("flashreflexes")));
+		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("acrobatics").getMastership("flashreflexes")));
 		assertEquals(1, model.getExperienceFree());
 		assertEquals(4, model.getHistory().size());
 		// Spells
@@ -355,4 +359,236 @@ public class ExampleCharactersTest {
 //		return null;
 //	}
 
+	//-------------------------------------------------------------------
+	/*
+	 * Generate Carimea
+	 */
+	@Test
+	public void generateFree() {
+
+		/* 
+		 * Culture
+		 */
+		CultureController cuCtrl = charGen.getCultureController();
+		assertEquals(1, cuCtrl.getToDos().size());
+//		charGen.getModel().setOwnCulture(new Culture("custom", "Feen"));
+		
+		/*
+		 * Race
+		 */
+		RaceController raCtrl = charGen.getRaceController();
+		assertEquals(5, raCtrl.getAvailableRaces().size());
+		raCtrl.selectRace(SplitterMondCore.getRace("human"));
+		// Make a decision
+		raCtrl.decide(raCtrl.getDecisionsToMake().get(0), Arrays.asList(
+				((ModificationChoice)raCtrl.getDecisionsToMake().get(0).getChoice()).getOptionList().get(5),
+				((ModificationChoice)raCtrl.getDecisionsToMake().get(0).getChoice()).getOptionList().get(6)
+				));
+//		assertEquals(5, (((Generator)charGen.getPowerController()).getPointsLeft()));
+//		assertEquals(8, ((Generator)charGen.getResourceController()).getPointsLeft());
+//		assertEquals(40, (((Generator)charGen.getSkillController()).getPointsLeft()));
+//		assertEquals(2, ((Generator)charGen.getMastershipController()).getPointsLeft());
+//		assertEquals(10, (((Generator)charGen.getAttributeController()).getPointsLeft()));
+
+		/*
+		 * Attributes
+		 */
+		charGen.getAttributeController().increase(Attribute.CHARISMA);
+		charGen.getAttributeController().increase(Attribute.AGILITY);
+		charGen.getAttributeController().increase(Attribute.AGILITY);
+		charGen.getAttributeController().increase(Attribute.INTUITION);
+		charGen.getAttributeController().increase(Attribute.CONSTITUTION);
+		charGen.getAttributeController().increase(Attribute.MYSTIC);
+		charGen.getAttributeController().increase(Attribute.MYSTIC);
+		charGen.getAttributeController().increase(Attribute.STRENGTH);
+		charGen.getAttributeController().increase(Attribute.STRENGTH);
+		charGen.getAttributeController().increase(Attribute.WILLPOWER);
+		
+		assertEquals(2, model.getAttribute(Attribute.CHARISMA).getValue());
+		assertEquals(3, model.getAttribute(Attribute.AGILITY).getValue());
+		assertEquals(2, model.getAttribute(Attribute.INTUITION).getValue());
+		assertEquals(2, model.getAttribute(Attribute.CONSTITUTION).getValue());
+		assertEquals(4, model.getAttribute(Attribute.MYSTIC).getValue());
+		assertEquals(4, model.getAttribute(Attribute.STRENGTH).getValue());
+		assertEquals(1, model.getAttribute(Attribute.MIND).getValue());
+		assertEquals(2, model.getAttribute(Attribute.WILLPOWER).getValue());
+		
+		assertEquals(12, model.getAttribute(Attribute.FOCUS).getValue());
+		
+		/*
+		 * Powers
+		 */
+		PowerController pwCtrl = charGen.getPowerController();
+		assertEquals(8, ((Generator)charGen.getPowerController()).getPointsLeft());
+		pwCtrl.select(SplitterMondCore.getPower("resistheat"));
+		assertEquals(7, ((Generator)charGen.getPowerController()).getPointsLeft());
+		pwCtrl.select(SplitterMondCore.getPower("childfire"));
+		assertEquals(5, ((Generator)charGen.getPowerController()).getPointsLeft());
+		pwCtrl.select(SplitterMondCore.getPower("friendfire"));
+		assertEquals(4, ((Generator)charGen.getPowerController()).getPointsLeft());
+		pwCtrl.select(SplitterMondCore.getPower("focuspool"));
+		assertEquals(2, ((Generator)charGen.getPowerController()).getPointsLeft());
+		pwCtrl.select(SplitterMondCore.getPower("attractive"));
+		assertEquals(1, ((Generator)charGen.getPowerController()).getPointsLeft());
+		pwCtrl.select(SplitterMondCore.getPower("sensefairy"));
+		assertEquals(0, ((Generator)charGen.getPowerController()).getPointsLeft());
+		assertEquals(17, model.getAttribute(Attribute.FOCUS).getValue());
+
+		/*
+		 * Resources
+		 */
+		ResourceController reCtrl = charGen.getResourceController();
+		ResourceReference relic1 = reCtrl.openResource(SplitterMondCore.getResource("relic"));
+		reCtrl.increase(relic1);
+		reCtrl.increase(relic1);
+		reCtrl.increase(relic1);
+		reCtrl.increase(relic1);
+		reCtrl.setAllowExtremeResourcesOnGeneration(true);
+		assertTrue( reCtrl.canBeIncreased(relic1));
+		reCtrl.setAllowExtremeResourcesOnGeneration(false);
+		ResourceReference relic2 = reCtrl.openResource(SplitterMondCore.getResource("relic"));
+		reCtrl.increase(relic2);
+		reCtrl.increase(relic2);
+		reCtrl.increase(relic2);
+		assertEquals(0, ((Generator)charGen.getResourceController()).getPointsLeft());
+		assertFalse( reCtrl.canBeIncreased(relic1));
+		
+		/*
+		 * Skills
+		 */
+		MastershipController maCtrl = charGen.getMastershipController();
+		assertEquals(3, maCtrl.getFreeMasterships());
+
+		SkillController skCtrl = charGen.getSkillController();
+		assertEquals(55, ((Generator)charGen.getSkillController()).getPointsLeft());
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("blades"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("blades"))); // 2
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("blades"))); // 3
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("blades"))); // 4
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("blades"))); // 5
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("blades"))); // 6
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("leadership"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("leadership"))); // 2
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("arcanelore"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("arcanelore"))); // 2
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("arcanelore"))); // 3
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("athletics"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("athletics"))); // 2
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("athletics"))); // 3
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("athletics"))); // 4
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("athletics"))); // 5
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("athletics"))); // 6
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("diplomacy"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("diplomacy"))); // 2
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("diplomacy"))); // 3
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("empathy"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("empathy"))); // 2
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("empathy"))); // 3
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("determination"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("determination"))); // 2
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("determination"))); // 3
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("determination"))); // 4
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("nature"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("eloquence"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("eloquence"))); // 2
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("eloquence"))); // 3
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("eloquence"))); // 4
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("survival"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("survival"))); // 2
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("perception"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("perception"))); // 2
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("endurance"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("endurance"))); // 2
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("endurance"))); // 3
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("endurance"))); // 4
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("endurance"))); // 5
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("endurance"))); // 6
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("antimagic"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("firemagic"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("firemagic"))); // 2
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("firemagic"))); // 3
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("firemagic"))); // 4
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("firemagic"))); // 5
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("firemagic"))); // 6
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("protectionmagic"))); // 1
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("protectionmagic"))); // 2
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("protectionmagic"))); // 3
+//		assertEquals(0, ((Generator)charGen.getSkillController()).getPointsLeft());
+		// Seltsam - keine Ahnung wie da die Startwerte waren
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("arcanelore"))); // 4
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("arcanelore"))); // 5
+		skCtrl.increase(model.getSkillValue(SplitterMondCore.getSkill("determination"))); // 6
+		assertEquals(0, ((Generator)charGen.getSkillController()).getPointsLeft());
+		
+		/*
+		 * Select 3 free masterships
+		 */
+		maCtrl = charGen.getMastershipController();
+		assertEquals(7, maCtrl.getFreeMasterships());
+		// Those where level is not 6 yet
+		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("arcanelore").getMastership("fairylore1")));
+		assertEquals(6, maCtrl.getFreeMasterships());
+		maCtrl.select(SplitterMondCore.getSkill("arcanelore").getMastership("orientOtherworld1"));
+		maCtrl.select(SplitterMondCore.getSkill("diplomacy").getMastership("fairytongue"));
+		assertEquals(4, maCtrl.getFreeMasterships());
+		assertNotNull( maCtrl.select(SplitterMondCore.getSkill("endurance").getMastership("armour1")) );
+		assertEquals(3, maCtrl.getFreeMasterships());
+		assertNotNull( maCtrl.select(SplitterMondCore.getSkill("blades").getMastership("knock")) );
+		assertEquals(2, maCtrl.getFreeMasterships());
+		assertNotNull( maCtrl.select(SplitterMondCore.getSkill("firemagic").getMastership("flameheart")) );
+		assertEquals(1, maCtrl.getFreeMasterships());
+		// This should not work - only a mastership for athletics is still open
+		assertNull( maCtrl.select(SplitterMondCore.getSkill("firemagic").getMastership("fireresistence1")) );
+		assertEquals(1, maCtrl.getFreeMasterships());
+		assertNotNull( maCtrl.select(SplitterMondCore.getSkill("athletics").getMastership("longjump")) );
+		assertEquals(0, maCtrl.getFreeMasterships());
+		
+		/*
+		 * Language and culture lore
+		 */
+		assertNotNull(charGen.getLanguageController().select(SplitterMondCore.getLanguage("feeisch")));
+		
+		/*
+		 * Step 8: Moonsign and weaknesses
+		 */
+		charGen.selectSplinter(Moonsign.BLOODMOON);
+		
+		/* 
+		 * Step 9: Start-Exp
+		 */
+		Reward reward = new RewardImpl(15, "Start-Exp");
+		reward.setDate(new Date(System.currentTimeMillis()));
+		model.setExperienceFree(15);
+		model.addReward(reward);
+		charGen.startTuningMode();
+		
+		// Increase with exp
+		reCtrl = charGen.getResourceController();
+		assertFalse( reCtrl.canBeIncreased(relic1));
+		reCtrl.setAllowExtremeResourcesOnGeneration(true);
+		assertTrue( reCtrl.canBeIncreased(relic1));
+		assertEquals(0, ((Generator)charGen.getResourceController()).getPointsLeft());
+		assertTrue("Could not increase beyond 4", reCtrl.increase(relic1));
+		assertEquals(8, model.getExperienceFree());
+		assertNull(reCtrl.openResource(SplitterMondCore.getResource("wealth")));
+		ResourceReference wealth = reCtrl.findResourceReference(SplitterMondCore.getResource("wealth"), null, null);
+		assertNotNull(wealth);
+		assertTrue( reCtrl.canBeIncreased(wealth) );
+		assertTrue( reCtrl.increase(wealth));
+		wealth.setDescription("Deal mit Feen");
+		assertEquals(1, model.getExperienceFree());
+
+		// Finalize
+		charGen.stop();
+
+		try {
+			System.out.println("Save "+model.getName());
+			byte[] data = SplitterMondCore.save(model);
+			System.out.println(new String(data));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 }

@@ -4,20 +4,14 @@
 package org.prelle.splimo.charctrl4;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
 import org.apache.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.charctrl.CharGenConstants;
 import org.prelle.splimo.modifications.AttributeModification;
 import org.prelle.splimo.processor.SpliMoCharacterProcessor;
 
@@ -34,13 +28,12 @@ public class NewAttributeGenerator implements AttributeController, Generator, Sp
 
 	private static Logger logger = Logger.getLogger("splittermond.chargen.attr");
 
-	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
+	private final static ResourceBundle RES = CharGenConstants.RES;
 
 	private SplitterEngineCharacterGenerator parent;
 	private SpliMoCharacter model;
 	private int pointsForAttributes;
 	private int pointsLeft;
-	private Map<Attribute, Collection<AttributeModification>> modifications;
 	private List<ToDoElement> todos;
 	private List<DecisionToMake> decisions;
 
@@ -49,11 +42,11 @@ public class NewAttributeGenerator implements AttributeController, Generator, Sp
 	 */
 	public NewAttributeGenerator(SplitterEngineCharacterGenerator parent, int points) {
 		this.parent = parent;
-		this.model = ((NewSpliMoCharacterGenerator)parent).getModel();
+		this.model = parent.getModel();
 		pointsForAttributes = points;
-		modifications = new HashMap<>();
 		todos = new ArrayList<>();
 		decisions = new ArrayList<>();
+		pointsLeft = points;
 
 		for (Attribute attr : Attribute.primaryValues()) {		
 			// Value should have average of 2
@@ -63,43 +56,6 @@ public class NewAttributeGenerator implements AttributeController, Generator, Sp
 
 		// Splinter points
 		set(Attribute.SPLINTER, 3);
-
-		calculateDerived();
-	}
-
-	//-------------------------------------------------------------------
-	private void calculateDerived() {
-		set(Attribute.SPEED     , get(Attribute.SIZE) + get(Attribute.AGILITY));
-		set(Attribute.INITIATIVE,                  10 - get(Attribute.INTUITION));
-		set(Attribute.LIFE      , get(Attribute.SIZE) + get(Attribute.CONSTITUTION));
-		set(Attribute.FOCUS     , 2*(get(Attribute.MYSTIC) + get(Attribute.WILLPOWER)) );
-		set(Attribute.DEFENSE   , 12 + get(Attribute.AGILITY) + get(Attribute.STRENGTH));
-		set(Attribute.MINDRESIST, 12 + get(Attribute.MIND) + get(Attribute.WILLPOWER));
-		set(Attribute.BODYRESIST, 12 + get(Attribute.CONSTITUTION) + get(Attribute.WILLPOWER));
-	}
-
-	//-------------------------------------------------------------------
-	public void addModification(AttributeModification mod) {
-		logger.debug("addModification");
-		Collection<AttributeModification> modList = modifications.get(mod.getAttribute());		
-		modList.add(mod);
-		model.getAttribute(mod.getAttribute()).addModification(mod);
-		GenerationEvent event = new GenerationEvent(GenerationEventType.ATTRIBUTE_CHANGED, mod.getAttribute(), model.getAttribute(mod.getAttribute()));
-		GenerationEventDispatcher.fireEvent(event);
-
-		calculateDerived();
-	}
-
-	//-------------------------------------------------------------------
-	public void removeModification(AttributeModification mod) {
-		logger.debug("remove Modification");
-		Collection<AttributeModification> modList = modifications.get(mod.getAttribute());		
-		modList.remove(mod);
-		model.getAttribute(mod.getAttribute()).removeModification(mod);
-		GenerationEvent event = new GenerationEvent(GenerationEventType.ATTRIBUTE_CHANGED, mod.getAttribute(), model.getAttribute(mod.getAttribute()));
-		GenerationEventDispatcher.fireEvent(event);
-
-		calculateDerived();
 	}
 
 	//--------------------------------------------------------------------
@@ -108,61 +64,43 @@ public class NewAttributeGenerator implements AttributeController, Generator, Sp
 	 */
 	@Override
 	public boolean increase(Attribute attrib) {
-		if (!attrib.isPrimary()) {
-			logger.debug(attrib+" is not primary");
-			return true;
+		if (!canBeIncreased(attrib)) {
+			logger.error("Trying to increase "+attrib+" which cannot be increased");
+			return false;
 		}
 
 		AttributeValue val = model.getAttribute(attrib);
-		if (val.getDistributed()>=3)
-			return true;
-		if (pointsForAttributes==0)
+		
+		// Change model
+		if (pointsLeft>0 && val.getDistributed()<3) {
+			val.setDistributed(val.getDistributed()+1);
+			logger.info("INCREASE "+attrib+ " with free points");
+		} else if (model.getExperienceFree()>=10) {
+			val.setDistributed(val.getDistributed()+1);
+			logger.info("INCREASE "+attrib+ " with 10 exp");
+		} else {
+			logger.error("canBeIncreased is true, but don't know what to do");
 			return false;
+		}
 
-		logger.info("INCREASE "+attrib);
-
-		// Modify attribute. This also fires an event
-		set(attrib, val.getDistributed()+1);
-
-		// Update derived values. This also fires eventually events
-		calculateDerived();
-
+		
 		parent.runProcessors();
-
-		//		GenerationEvent event = new GenerationEvent(GenerationEventType.POINTS_LEFT_ATTRIBUTES, null, pointsForAttributes);
-		//		GenerationEventDispatcher.fireEvent(event);
 
 		return true;
 	}
 
-	//	//-------------------------------------------------------------------
-	//	private void checkIncreaseButtons() {
-	//		if (attribCallback==null) return;
-	//		
-	//		for (Attribute attr : Attribute.primaryValues()) {
-	//			PerAttribute perAttrib = values.get(attr);
-	//			attribCallback.setIncreaseButton(attr, (pointsForAttributes>0) && (perAttrib.getDistributed()<3));
-	//		}
-	//	}
-
 	//-------------------------------------------------------------------
 	public boolean decrease(Attribute attrib) {
-		if (!attrib.isPrimary())
+		if (!canBeDecreased(attrib)) {
+			logger.warn("Trying to decrease "+attrib+" which already is at minimum");
 			return false;
+		}
 
 		AttributeValue val = model.getAttribute(attrib);
-		if (val.getDistributed()<=0)
-			return false;
 
+		// Modify attribute. 
 		logger.info("DECREASE "+attrib);
-		// Modify attribute. This also fires an event
-		set(attrib, val.getDistributed()-1);
-
-		// Update derived values. This also fires eventually events
-		calculateDerived();
-
-		//		GenerationEvent event = new GenerationEvent(GenerationEventType.POINTS_LEFT_ATTRIBUTES, null, pointsForAttributes);
-		//		GenerationEventDispatcher.fireEvent(event);
+		val.setDistributed(val.getDistributed()-1);
 
 		parent.runProcessors();
 
@@ -184,7 +122,10 @@ public class NewAttributeGenerator implements AttributeController, Generator, Sp
 	 */
 	@Override
 	public boolean canBeIncreased(Attribute key) {
-		return key.isPrimary() && pointsForAttributes>0 && model.getAttribute(key).getDistributed()<3;
+		return key.isPrimary() 
+				&& (
+				(pointsLeft>0 && model.getAttribute(key).getDistributed()<3) || model.getExperienceFree()>=10 
+				);
 	}
 
 	//--------------------------------------------------------------------
@@ -197,25 +138,9 @@ public class NewAttributeGenerator implements AttributeController, Generator, Sp
 	}
 
 	//-------------------------------------------------------------------
-	public int get(Attribute attr) {
-		return model.getAttribute(attr).getValue();
-	}
-
-	//-------------------------------------------------------------------
-	void set(Attribute attr, int val) {
+	private void set(Attribute attr, int val) {
 		AttributeValue data = model.getAttribute(attr);
-
-		//		int oldVal = data.getValue();
-		//		int oldDist= data.getDistributed();
-
 		data.setDistributed(val);
-		//		
-		//		// Fire event if changed
-		//		if (oldDist!=val || oldVal!=data.getValue()) {
-		//			logger.debug("Attribute "+attr+" changed");
-		//			GenerationEvent event = new GenerationEvent(GenerationEventType.ATTRIBUTE_CHANGED, attr, data);
-		//			GenerationEventDispatcher.fireEvent(event);
-		//		}
 	}
 
 	//--------------------------------------------------------------------
@@ -234,15 +159,6 @@ public class NewAttributeGenerator implements AttributeController, Generator, Sp
 	@Override
 	public List<ToDoElement> getToDos() {
 		return todos;
-	}
-
-	//-------------------------------------------------------------------
-	private DecisionToMake findDecision(Modification mod) {
-		for (DecisionToMake tmp : decisions) {
-			if (tmp.getChoice()==mod)
-				return tmp;
-		}
-		return null;
 	}
 
 	//-------------------------------------------------------------------
@@ -269,26 +185,18 @@ public class NewAttributeGenerator implements AttributeController, Generator, Sp
 		try {
 
 			todos.clear();
-
+			
 			/*
-			 * Calculate points left to spend
+			 * Clear all modifications from previous runs
 			 */
-			pointsLeft = pointsForAttributes;
 			for (Attribute key : Attribute.primaryValues()) {
-				AttributeValue val = model.getAttribute(key);
-				logger.trace("  "+val.getDistributed()+" for "+key);
-				pointsLeft -= val.getDistributed();
-				if (val.getDistributed()>3) {
-					logger.warn("Too many points distributed in "+key.toString());
-				}
+				model.getAttribute(key).clearModifications();
 			}
-			logger.debug("From "+pointsForAttributes+" points have been "+(pointsForAttributes-pointsLeft)+" invested and are "+pointsLeft+" left");
-			if (pointsLeft>0) {
-				todos.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("attrgen.todo"), pointsLeft)));
-			} else if (pointsLeft<0) {
-				todos.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("attrgen.todo2"), pointsLeft)));
-			}
-
+			model.getAttribute(Attribute.SPLINTER).clearModifications();
+			
+			/*
+			 * Apply modifications
+			 */
 			for (Modification mod : previous) {
 				if (mod instanceof AttributeModification) {
 					AttributeModification amod = (AttributeModification)mod;
@@ -301,6 +209,52 @@ public class NewAttributeGenerator implements AttributeController, Generator, Sp
 				} else
 					unprocessed.add(mod);
 			}
+
+			/*
+			 * Calculate points left to spend
+			 */
+			pointsLeft = pointsForAttributes;
+			for (Attribute key : Attribute.primaryValues()) {
+				AttributeValue val = model.getAttribute(key);
+				int maxWithPoints = Math.min(3, pointsLeft);
+				
+				if (val.getDistributed()<= maxWithPoints) {
+					// Normal case - everything is payed with free points
+					pointsLeft -= val.getDistributed();
+					val.setStart(val.getValue());
+					logger.debug("Invest "+val.getDistributed()+" points in "+key);
+				} else if (val.getDistributed() == (maxWithPoints+1)) {
+					// One point more invested than possible - pay with exp
+					val.setStart((val.getDistributed()-1) + val.getModifier());
+					logger.debug("Invest "+(val.getDistributed()-1)+" points and 10 exp in "+key);
+					pointsLeft -= val.getDistributed()-1;
+					model.setExperienceFree(model.getExperienceFree() - 10);
+					model.setExperienceInvested(model.getExperienceInvested() + 10);
+					todos.add(new ToDoElement(Severity.INFO, String.format(RES.getString("attrgen.todo.expinvested"), 10, key.getName())));
+				} else {
+					 // Distributed points more than 1 higher than available points allow - reduce them
+					val.setDistributed(pointsLeft+1);
+					logger.warn("Corrected "+key+" to "+val.getDistributed()+" points");
+					val.setStart(pointsLeft + val.getModifier());
+					pointsLeft = 0;
+					model.setExperienceFree(model.getExperienceFree() - 10);
+					model.setExperienceInvested(model.getExperienceInvested() + 10);
+				}
+				logger.trace("  Start value of "+key+" is "+val.getStart());
+				
+			}
+			logger.debug("From "+pointsForAttributes+" points have been "+(pointsForAttributes-pointsLeft)+" invested and are "+pointsLeft+" left");
+			
+			/*
+			 * Calculate start value
+			 */
+			
+			if (pointsLeft>0) {
+				todos.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("attrgen.todo"), pointsLeft)));
+			} else if (pointsLeft<0) {
+				todos.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("attrgen.todo2"), pointsLeft)));
+			}
+
 
 		} finally {
 			logger.trace("STOP : process() ends with "+unprocessed.size()+" modifications still to process");

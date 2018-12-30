@@ -8,8 +8,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
 import org.apache.log4j.Logger;
 import org.prelle.splimo.Attribute;
@@ -32,8 +30,6 @@ import de.rpgframework.genericrpg.modification.Modification;
 public class LevellingAttributeGenerator implements AttributeController, Generator, SpliMoCharacterProcessor {
 	
 	private static Logger logger = Logger.getLogger("splittermond.chargen");
-
-	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
 	
 	private SplitterEngineCharacterGenerator parent;
 	private SpliMoCharacter model;
@@ -48,7 +44,7 @@ public class LevellingAttributeGenerator implements AttributeController, Generat
 	 */
 	public LevellingAttributeGenerator(SplitterEngineCharacterGenerator parent, int points) {
 		this.parent = parent;
-		this.model = ((NewSpliMoCharacterGenerator)parent).getModel();
+		this.model = parent.getModel();
 		pointsForAttributes = points;
 		modifications = new HashMap<>();
 		todos = new ArrayList<>();

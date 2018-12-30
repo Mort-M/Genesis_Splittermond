@@ -488,12 +488,15 @@ public class NewSpliMoCharacterGenerator extends SplitterEngineCharacterGenerato
 			ref.clearModifications();
 		}
 		
+		// Culture lores
+		cultlores = new NewCultureLoreLeveller(this);
+		languages = new NewLanguageLeveller(this);
 		
 		mode = Mode.TUNING;
 		attributes = new LevellingAttributeGenerator(this, 0);
-		skills     = new NewSkillLeveller(this);
+//		skills     = new NewSkillLeveller(this);
 		master     = new NewMastershipLeveller(this, 3);
-		resources  = new NewResourceLeveller(this, 8);
+//		resources  = new NewResourceLeveller(this, 8);
 		processChain.clear();
 		processChain.add( new ClearAllModificationsProcessor() );
 		processChain.add( new CalculateDerivedAttributesProcessor() );

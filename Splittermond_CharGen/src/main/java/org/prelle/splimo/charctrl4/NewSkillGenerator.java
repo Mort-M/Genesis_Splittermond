@@ -15,9 +15,6 @@ import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.modifications.SkillModification;
 import org.prelle.splimo.processor.SpliMoCharacterProcessor;
 
@@ -53,42 +50,44 @@ public class NewSkillGenerator implements SkillController, Generator, SpliMoChar
 		this.model    = parent.getModel();
 		todos = new ArrayList<>();
 		decisions = new ArrayList<>();
-	}
-
-	//-------------------------------------------------------------------
-	private void fireChange(int oldVal, SkillValue skillVal) {
-		logger.debug("Inform of "+skillVal);
-		int val = skillVal.getValue();
-		GenerationEvent event = new GenerationEvent(GenerationEventType.SKILL_CHANGED, skillVal.getSkill(), new int[]{oldVal, val});
-		GenerationEventDispatcher.fireEvent(event);
 		
-		parent.runProcessors();
+		pointsLeft = points;
 	}
 
-	//-------------------------------------------------------------------
-	void addModification(SkillModification mod) {
-		SkillValue ref = model.getSkillValue(mod.getSkill());
-		int oldVal = ref.getValue();
-
-		int maxRaise = maxValue - oldVal;
-		int add      = Math.min(getPointsLeft(), Math.min(mod.getValue(), maxRaise));
-		logger.debug("Add "+add+" to "+ref);
-		ref.setValue(oldVal + add);
-
-		fireChange(oldVal, ref);
-	}
-
-	//-------------------------------------------------------------------
-	void removeModification(SkillModification mod) {
-		SkillValue ref = model.getSkillValue(mod.getSkill());
-		int oldVal = ref.getValue();
-
-		int maxSub = Math.min(oldVal, mod.getValue());
-		logger.info("Remove "+maxSub+" from "+ref);
-		ref.setValue(oldVal - maxSub);
-
-		fireChange(oldVal, ref);
-	}
+//	//-------------------------------------------------------------------
+//	private void fireChange(int oldVal, SkillValue skillVal) {
+//		logger.debug("Inform of "+skillVal);
+//		int val = skillVal.getValue();
+//		GenerationEvent event = new GenerationEvent(GenerationEventType.SKILL_CHANGED, skillVal.getSkill(), new int[]{oldVal, val});
+//		GenerationEventDispatcher.fireEvent(event);
+//		
+//		parent.runProcessors();
+//	}
+//
+//	//-------------------------------------------------------------------
+//	void addModification(SkillModification mod) {
+//		SkillValue ref = model.getSkillValue(mod.getSkill());
+//		int oldVal = ref.getValue();
+//
+//		int maxRaise = maxValue - oldVal;
+//		int add      = Math.min(getPointsLeft(), Math.min(mod.getValue(), maxRaise));
+//		logger.debug("Add "+add+" to "+ref);
+//		ref.setValue(oldVal + add);
+//
+//		fireChange(oldVal, ref);
+//	}
+//
+//	//-------------------------------------------------------------------
+//	void removeModification(SkillModification mod) {
+//		SkillValue ref = model.getSkillValue(mod.getSkill());
+//		int oldVal = ref.getValue();
+//
+//		int maxSub = Math.min(oldVal, mod.getValue());
+//		logger.info("Remove "+maxSub+" from "+ref);
+//		ref.setValue(oldVal - maxSub);
+//
+//		fireChange(oldVal, ref);
+//	}
 
 	//--------------------------------------------------------------------
 	/**
@@ -103,13 +102,13 @@ public class NewSkillGenerator implements SkillController, Generator, SpliMoChar
 	public boolean canBeIncreased(SkillValue data) {
 		if (!model.getSkills().contains(data))
 			return false;
-		int value = data.getValue();
+		int value = data.getModifiedValue();
 		// Prevent increasing above the maximum
 		if (value>=maxValue)
 			return false;
 
-		// Only allow when there are points left
-		return getPointsLeft()>0;
+		// Only allow when there are points or exp left
+		return getPointsLeft()>0 || model.getExperienceFree()>=3;
 	}
 
 	//-------------------------------------------------------------------
@@ -131,7 +130,7 @@ public class NewSkillGenerator implements SkillController, Generator, SpliMoChar
 		int oldVal = data.getValue();
 		data.setValue(oldVal +1);
 
-		fireChange(oldVal, data);
+		parent.runProcessors();
 		return true;
 	}
 
@@ -144,7 +143,7 @@ public class NewSkillGenerator implements SkillController, Generator, SpliMoChar
 		int oldVal = data.getValue();
 		data.setValue(oldVal -1);
 
-		fireChange(oldVal, data);
+		parent.runProcessors();
 		return true;
 	}
 
@@ -293,8 +292,7 @@ public class NewSkillGenerator implements SkillController, Generator, SpliMoChar
 				} else
 					unprocessed.add(mod);
 			}
-
-
+			
 			/*
 			 * Calculate points left to spend
 			 */
@@ -302,16 +300,47 @@ public class NewSkillGenerator implements SkillController, Generator, SpliMoChar
 			for (Skill key : SplitterMondCore.getSkills()) {
 				SkillValue val = model.getSkillValue(key);
 				logger.trace("  "+val.getModifiedValue()+" for "+key);
+
+				// Ensure no value above 6
+				if (val.getModifiedValue()>6) {
+					int substract = val.getModifiedValue() -6;
+					if (val.getValue()>=substract) {
+						val.setValue( val.getValue()-substract);
+						logger.warn("Value for "+key.getId()+" too high - reduce it by "+substract+" to "+val.getModifiedValue());
+					}
+				}				
+				
+				// Pay
+				int last = pointsLeft;
 				pointsLeft -= val.getModifiedValue();
-				if (val.getValue()>6) {
-					logger.warn("Too many points distributed in "+key.toString());
+				if (pointsLeft<0 && pointsLeft<last) {
+					int investHere = (last>=0)?Math.abs(pointsLeft):(pointsLeft - last);
+					logger.debug("Invested "+(investHere*3)+" EP in "+key);
+					SkillModification mod = new SkillModification(key, val.getModifiedValue());
+					mod.setExpCost(investHere*3);
+					model.addToHistory(mod);
 				}
 			}
+			
+			/*
+			 * If there have been more points invested than available, pay
+			 * with experience points
+			 */
+			if (pointsLeft<0) {
+				int exp = -3 * pointsLeft;
+				logger.debug("Invest additional "+exp+" exp for skills");
+				todos.add(new ToDoElement(Severity.INFO, String.format(RES.getString("skillgen.todo.experience"), exp)));
+				model.setExperienceFree( model.getExperienceFree() - exp);
+				model.setExperienceInvested( model.getExperienceInvested() + exp);
+				pointsLeft = 0;
+			}
+			
+			
 			logger.debug("From "+maxPointsToSpend+" points have been "+(maxPointsToSpend-pointsLeft)+" invested and are "+pointsLeft+" left");
 			if (pointsLeft>0) {
 				todos.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("skillgen.todo.points"), pointsLeft)));
-			} else if (pointsLeft<0) {
-				todos.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("skillgen.todo.points2"), pointsLeft)));
+//			} else if (pointsLeft<0) {
+//				todos.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("skillgen.todo.points2"), pointsLeft)));
 			}
 
 		} finally {

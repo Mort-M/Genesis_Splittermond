@@ -36,8 +36,6 @@ public abstract class SplitterEngineCharacterGenerator implements CharacterContr
 		TUNING
 	}
 	
-	private final static ResourceBundle CORE = SplitterMondCore.getI18nResources();
-	
 	private static Logger logger = Logger.getLogger("splitter.chargen");
 	private static Random RANDOM = new Random();
 	
@@ -46,13 +44,6 @@ public abstract class SplitterEngineCharacterGenerator implements CharacterContr
 	protected List<Modification> unitTestModifications;
 	protected List<SpliMoCharacterProcessor> processChain;
 	
-	/**
-	 * If TRUE uncommon cultures for the selected race shall also be included
-	 */
-	private boolean includeUncommonCultures;
-	/**
-	 * If TRUE uncommon backgrounds for the selected culture shall also be included
-	 */
 	protected RaceController races;
 	protected CultureController cultures;
 	protected AttributeController attributes;
@@ -87,6 +78,11 @@ public abstract class SplitterEngineCharacterGenerator implements CharacterContr
 	//--------------------------------------------------------------------
 	public SpliMoCharacter getModel() {
 		return model;
+	}
+
+	//--------------------------------------------------------------------
+	public Mode getMode() {
+		return mode;
 	}
 
 	//-------------------------------------------------------------------

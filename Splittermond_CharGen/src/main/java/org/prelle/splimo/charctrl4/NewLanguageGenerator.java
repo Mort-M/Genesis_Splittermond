@@ -29,7 +29,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class NewLanguageGenerator implements LanguageController, Generator, SpliMoCharacterProcessor {
 
-	private static Logger logger = Logger.getLogger("splittermond.chargen.language");
+	protected static Logger logger = Logger.getLogger("splittermond.chargen.language");
 
 	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
 

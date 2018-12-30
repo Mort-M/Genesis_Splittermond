@@ -15,6 +15,9 @@ import org.prelle.splimo.ResourceReference;
 public interface ResourceController extends Controller {
 	
 	//-------------------------------------------------------------------
+	public void setAllowExtremeResourcesOnGeneration(boolean allow);
+	
+	//-------------------------------------------------------------------
 	/**
 	 * Return those resources that can be added/opened
 	 */

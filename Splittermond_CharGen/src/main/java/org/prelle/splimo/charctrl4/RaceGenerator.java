@@ -93,10 +93,13 @@ public class RaceGenerator implements RaceController, SpliMoCharacterProcessor {
 			if (selected==null) {
 				todos.add(new ToDoElement(Severity.STOPPER, RES.getString("racegen.todo")));
 			} else {
+				logger.warn("1: "+selected.getModifications());
 				// A race has been selected
 				for (Modification mod : selected.getModifications()) {
+					logger.warn(" 2: "+mod);
 					if (mod instanceof ModificationChoice) {
 						DecisionToMake decision = findDecision(mod);
+						logger.warn(" 3: "+decision);
 						if (decision==null) {
 							// Error: Should have been filled by selectRace(Race)
 							logger.error("Missing decision to make for "+mod);

@@ -67,7 +67,7 @@ public interface MastershipController extends Controller {
 	public boolean deselect(SkillSpecialization special, int level);
 
 	//-------------------------------------------------------------------
-	public boolean select(Mastership master);
+	public MastershipReference select(Mastership master);
 
 	//-------------------------------------------------------------------
 	public boolean deselect(Mastership master);

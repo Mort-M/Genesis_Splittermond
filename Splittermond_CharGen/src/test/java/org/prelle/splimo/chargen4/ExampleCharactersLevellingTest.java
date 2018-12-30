@@ -2,6 +2,7 @@ package org.prelle.splimo.chargen4;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
@@ -286,14 +287,14 @@ public class ExampleCharactersLevellingTest {
 		}
 		MastershipController maCtrl = charGen.getMastershipController();
 		assertTrue(maCtrl.deselect(sailorslegs.getMastership()));
-		assertTrue(maCtrl.select(SplitterMondCore.getSkill("combatmagic").getMastership("aimedspells")));
+		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("combatmagic").getMastership("aimedspells")));
 		// Remaining 4 free masterships granted by 6 points in skill
-		assertTrue(maCtrl.select(SplitterMondCore.getSkill("chains").getMastership("ignoreshield")));
-		assertTrue(maCtrl.select(SplitterMondCore.getSkill("acrobatics").getMastership("evade1")));
-		assertTrue(maCtrl.select(SplitterMondCore.getSkill("arcanelore").getMastership("arcanedefense1")));
-		assertTrue(maCtrl.select(SplitterMondCore.getSkill("watermagic").getMastership("savingcaster")));
+		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("chains").getMastership("ignoreshield")));
+		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("acrobatics").getMastership("evade1")));
+		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("arcanelore").getMastership("arcanedefense1")));
+		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("watermagic").getMastership("savingcaster")));
 		// Pay with 5 EP (from Step 9)
-		assertTrue(maCtrl.select(SplitterMondCore.getSkill("acrobatics").getMastership("flashreflexes")));
+		assertNotNull(maCtrl.select(SplitterMondCore.getSkill("acrobatics").getMastership("flashreflexes")));
 		assertEquals(1, model.getExperienceFree());
 		assertEquals(4, model.getHistory().size());
 		// Spells

@@ -4,6 +4,8 @@
 package org.prelle.splimo.charctrl4;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,8 +44,6 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 
 	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
 
-	private Map<PowerReference, Stack<PowerModification>> powerUndoStack;
-
 	private SpliMoCharacter model;
 	private SplitterEngineCharacterGenerator charGen;
 	/** up to date list of available powers */
@@ -65,10 +65,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 		available       = new ArrayList<Power>();
 		todos = new ArrayList<>();
 		decisions = new ArrayList<>();
-
-		powerUndoStack = new HashMap<PowerReference, Stack<PowerModification>>();
-		for (PowerReference key : model.getPowers())
-			powerUndoStack.put(key, new Stack<PowerModification>());
+		pointsLeft      = pointsToSpend;
 
 		updateAvailable();
 	}
@@ -94,7 +91,8 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 			if (!canBeSelected(power)) {
 				if (logger.isTraceEnabled())
 					logger.trace(power+" is not available anymore");
-				available.remove(power);
+				boolean success = available.remove(power);
+				logger.debug("Remove from available: "+power+" was successful = "+success);
 				removed.add(power);
 			}
 		}
@@ -110,12 +108,12 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 				continue;
 			if (!available.contains(power) && canBeSelected(power)) {
 				if (logger.isTraceEnabled())
-					logger.trace(power+" is available anymore");
+					logger.trace(power+" is available now");
 				available.add(power);
 				added.add(power);
 			}
 		}
-		
+		logger.info("Available size is "+available.size());
 		if (!removed.isEmpty())
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POWER_AVAILABLE_REMOVED, removed));
 		if (!added.isEmpty())
@@ -128,10 +126,6 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 	 */
 	@Override
 	public boolean canBeSelected(Power power) {
-		// Can character afford power?
-		if (getPointsLeft() < power.getCost())
-			return false;
-
 //		logger.debug("canBeSelected("+power+")  hasPower="+model.hasPower(power));
 		// Check if already selected
 		if (model.hasPower(power)) {
@@ -162,6 +156,11 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 				return false;
 			}
 		}
+
+		// Can character afford power?
+		if (getPointsLeft() < power.getCost() && model.getExperienceFree()<(power.getCost()*7))
+			return false;
+
 		
 		return true;
 	}
@@ -172,22 +171,11 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 	 */
 	@Override
 	public boolean canBeDeselected(PowerReference ref) {
-		Stack<PowerModification> stack = powerUndoStack.get(ref);
+		if (!model.getPowers().contains(ref))
+			return false;
 		
-		switch (ref.getPower().getSelectable()) {
-		case ALWAYS:
-		case GENERATION:
-			if (stack==null || stack.isEmpty())
-				return false;
-			for (PowerModification pMod : stack) {
-				if (pMod.getSource()==null || !(pMod.getSource() instanceof Race) )
-					return true;
-			}
-			return false;
-		default:
-			return false;
-			//			return ref.getCount()<=1 && canBeDecreased(ref);
-		}
+		// Cannot deselect powers from race selection
+		return !ref.isFixed();
 	}
 
 	//--------------------------------------------------------------------
@@ -228,6 +216,10 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 	 */
 	@Override
 	public PowerReference select(Power power) {
+		if (!canBeSelected(power)) {
+			logger.warn("Trying to select power that cannot be selected: "+power);
+			return null;
+		}
 		int expNeeded = power.getCost();
 		if (getPointsLeft()<expNeeded) 
 			return null;
@@ -253,12 +245,6 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 		model.addPower(ref);
 		logger.info("Selected power "+power);
 
-		// make it undoable
-		PowerModification mod = new PowerModification(power);
-		mod.setExpCost(power.getCost());
-		powerUndoStack.put(ref, new Stack<PowerModification>());
-		powerUndoStack.get(ref).push(mod);
-
 		updateAvailable();
 
 		charGen.runProcessors();
@@ -278,7 +264,6 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 	public boolean deselect(PowerReference ref) {
 		if (canBeDeselected(ref)) {
 			// Update model
-			powerUndoStack.get(ref).pop();
 			logger.info("Deselect "+ref);
 			ref.setCount(0);
 			model.removePower(ref);
@@ -334,25 +319,11 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 	@Override
 	public boolean canBeDecreased(PowerReference ref) {
 		logger.info("canBeDecreased("+ref+")");
+		
+		if (!model.getPowers().contains(ref))
+			return false;
 
-		Stack<PowerModification> stack = powerUndoStack.get(ref);
-
-		//		switch (ref.getPower().getSelectable()) {
-//		case ALWAYS:
-//		case GENERATION:
-//			return false;
-//		default:
-//			logger.debug(" powerUndoStack  = "+powerUndoStack);
-//			logger.debug(" powerUndoStack2 = "+powerUndoStack.containsKey(ref));
-//			logger.debug(" powerUndoStack3 = "+powerUndoStack.get(ref));
-			if (stack==null || stack.isEmpty())
-				return false;
-			for (PowerModification pMod : stack) {
-				if (pMod.getSource()==null || !(pMod.getSource() instanceof Race) )
-					return ref.getCount()>0;
-			}
-			return ref.getCount()>1;
-//		}
+		return ref.getCount()>0;
 	}
 
 	//--------------------------------------------------------------------
@@ -374,9 +345,6 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 			// Add to undo list
 			PowerModification mod = new PowerModification(ref.getPower());
 			mod.setExpCost(expNeeded);
-			if (!powerUndoStack.containsKey(ref))
-				powerUndoStack.put(ref, new Stack<PowerModification>());
-			powerUndoStack.get(ref).push(mod);
 			updateAvailable();
 
 			// Inform listener
@@ -399,7 +367,6 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 
 		if (canBeDecreased(ref)) {
 			// Update model
-			powerUndoStack.get(ref).pop();
 			logger.info("Decrease "+ref+" from "+ref.getCount()+" to "+newVal);
 			ref.setCount(newVal);
 			if (newVal==0) {
@@ -426,132 +393,6 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 	@Override
 	public int getPointsLeft() {
 		return pointsLeft;
-	}
-	
-	//-------------------------------------------------------------------
-	void addModification(PowerModification pMod) {
-		logger.debug("Add modification "+pMod+" // src="+pMod.getSource());
-
-		Power power = pMod.getPower();
-		pMod.setExpCost(power.getCost());
-		// Check if there already is a PowerReference
-		PowerReference ref = model.getPower(pMod.getPower());
-		if (ref==null) {
-			ref = new PowerReference(pMod.getPower());				
-			// Copy modifications from power to power reference. This allows to stack them
-			for (Modification mod : power.getModifications()) {
-				if (mod instanceof AttributeModification) {
-					Modification clone = ((AttributeModification)mod).clone();
-					ref.getModifications().add(clone);
-					clone.setSource(ref);
-				} else if (mod instanceof SkillModification) { 
-					Modification clone = ((SkillModification)mod).clone();
-					ref.getModifications().add(clone);
-					clone.setSource(ref);
-				} else {
-					ref.getModifications().add(mod);
-				}
-			}
-			
-			model.addPower(ref);
-			logger.info("Added by modification: "+ref);
-			Stack<PowerModification> stack = powerUndoStack.get(ref);
-			if (ref!=null) {
-				stack = new Stack<PowerModification>();
-				powerUndoStack.put(ref, stack);
-			}
-			stack.push(pMod);
-			
-			GenerationEvent event = new GenerationEvent(GenerationEventType.POWER_ADDED, ref);
-			GenerationEventDispatcher.fireEvent(event);
-		} else {
-
-			/*
-			 * Power has already been selected. Further actions depend
-			 * how often the power can be selected
-			 */
-
-			GenerationEvent event = new GenerationEvent(GenerationEventType.POWER_CHANGED, ref);
-			switch (power.getSelectable()) {
-			case MAX3:
-				/*
-				 * Allow increasing if maximum is not reached yet.
-				 * Otherwise continue fo further cases where one
-				 * of the user selections is converted to a system selection
-				 */
-				if (ref.getCount()<3) {
-					ref.setCount(ref.getCount()+1);
-					GenerationEventDispatcher.fireEvent(event);
-//					// Now distribute modifications attached to the power
-//					applyModification(pMod.getPower());
-					break;
-				}
-			case GENERATION:
-			case ALWAYS:
-			case LEVEL:
-//				/* 
-//				 * May be only selected once, so reimburse the points spent here.
-//				 * For powers that have been user selected, remove them from
-//				 * being undoable.
-//				 */
-//				pointsFree += power.getCost();
-//				if (canBeDeselected(ref)) {
-//					// Update model
-//					powerUndoStack.get(ref).pop();
-//					logger.info("Convert user selection to system selection of "+power);
-//				}
-//				GenerationEventDispatcher.fireEvent(event);
-//				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_POWERS, pointsFree));
-				break;
-			case MULTIPLE:			
-				ref.setCount(ref.getCount()+1);
-				GenerationEventDispatcher.fireEvent(event);
-//				// Now distribute modifications attached to the power
-//				applyModification(pMod.getPower());
-				break;
-			}
-		}
-
-		// Update list of available selections
-		updateAvailable();
-		charGen.runProcessors();
-	}
-
-	//-------------------------------------------------------------------
-	void removeModification(PowerModification pMod) {
-		logger.debug("remove modification "+pMod);
-
-		if (!model.hasPower(pMod.getPower())) {
-			logger.warn("Remove a power that the model does not have");
-			return;
-		}
-
-		PowerReference ref = model.getPower(pMod.getPower());
-		switch (pMod.getPower().getSelectable()) {
-		case MAX3:
-		case MULTIPLE:
-		case LEVEL:
-			if (ref.getCount()>1) {
-				ref.setCount(ref.getCount()-1);
-				logger.info("Reduced count on power '"+pMod.getPower()+"' to "+ref.getCount());
-				GenerationEvent event = new GenerationEvent(GenerationEventType.POWER_CHANGED, ref);
-				GenerationEventDispatcher.fireEvent(event);
-//				// Now undo modifications attached to the power
-//				undoModification(pMod.getPower());
-				return;
-			}
-			// New count would be 0 - same as remove operation below
-		default:
-			model.removePower(ref);
-			GenerationEvent event = new GenerationEvent(GenerationEventType.POWER_REMOVED, ref);
-			GenerationEventDispatcher.fireEvent(event);
-		}
-
-
-		//		modifications.remove(pMod);
-		//		model.removePower(new PowerReference(pMod.getPower()));
-		//		fireChange(pMod.getPower(), false);
-		charGen.runProcessors();
 	}
 
 	//-------------------------------------------------------------------
@@ -610,9 +451,17 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 		logger.trace("START: process");
 		try {
 			todos.clear();
-			// All backgrounds are available - remove if not recommended
-			available = new ArrayList<>(SplitterMondCore.getPowers());
 
+			/*
+			 * Clear all powers that are not user selected
+			 */
+			for (PowerReference ref : new ArrayList<>(model.getPowers())) {
+				if (ref.isSystemAssigned()) {
+					logger.trace("  clear system assigned power "+ref);
+					model.removePower(ref);
+				}
+			}
+			
 			/*
 			 * Process incoming modifications
 			 */
@@ -624,15 +473,22 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 					boolean found = model.hasPower(power);
 					if (found) {
 						PowerReference ref = model.getPower(power);
-						if (power.canBeUsedMultipleTimes() && ref.getModifiedCount()>0)
+						if (power.canBeUsedMultipleTimes() && ref.getModifiedCount()>0) {
 							logger.debug(" * increase power '"+power.getId()+" +1' from "+pMod.getSource());
-						else
-							logger.debug(" * add power '"+power.getId()+"' from "+pMod.getSource());
-						ref.addModification(pMod);
+						} else {
+							logger.debug(" * Ignore "+pMod+" from "+pMod.getSource()+" because it cannot be selected multiple times");
+						}
+						ref.setSystemAssigned(true);
+						if (pMod.getSource()!=null && pMod.getSource() instanceof Race)
+							ref.setFixed(true);
 					} else {
 						PowerReference toAdd = new PowerReference(power, 0);
+						if (power.canBeUsedMultipleTimes())
+							toAdd.setCount(1);
+						if (pMod.getSource()!=null && pMod.getSource() instanceof Race)
+							toAdd.setFixed(true);
 						logger.debug(" * Add power '"+toAdd+"  from "+pMod.getSource());
-						toAdd.addModification(pMod);
+						toAdd.setSystemAssigned(true);
 						model.addPower(toAdd);
 					}
 
@@ -645,18 +501,52 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 			 * Check points spent in powers
 			 */
 			pointsLeft = pointsMax;
-			for (PowerReference ref : model.getPowers()) {
-				int cost = ref.getPower().getCost()* ref.getModifiedCount();
-				logger.debug(" Invest "+cost+" points for "+ref);
-				pointsLeft -= cost;
+			List<PowerReference> powers = model.getPowers();
+			logger.debug("Powers unsorted = "+powers);
+			// Sort power in a way that expensive powers are first, allowing
+			// them to be payed with GP
+			Collections.sort(powers, new Comparator<PowerReference>() {
+				public int compare(PowerReference o1, PowerReference o2) {
+					int cmp = (new Integer(o1.getPower().getCost()*o1.getModifiedCount())).compareTo(o2.getPower().getCost()*o2.getModifiedCount());
+					if (cmp!=0) return cmp;
+					return o1.getPower().getName().compareTo(o2.getPower().getName());
+				}
+			});
+			logger.debug("Powers sorted   = "+powers);
+			int expInvested = 0;
+			for (PowerReference ref : powers) {
+				logger.debug("* "+ref);
+				int cost = ref.getPower().getCost();
+				if (ref.getModifiedCount()>0)
+					cost *= ref.getModifiedCount();
+				int expCost = cost*7;
+				if (cost<=pointsLeft) {
+					logger.debug(" Invest "+cost+" points for "+ref);
+					pointsLeft -= cost;
+				} else if (expCost<model.getExperienceFree()) {
+					logger.debug(" Invest "+expCost+" EP for "+ref);
+					model.setExperienceFree( model.getExperienceFree() - expCost );
+					model.setExperienceInvested( model.getExperienceInvested() + expCost );
+					PowerModification mod = new PowerModification(ref.getPower());
+					mod.setExpCost(expCost);
+					model.addToHistory(mod);
+					expInvested += expCost;
+				} else {
+					logger.error("There are neither "+cost+" GP nor "+expCost+" EP left to pay the power "+ref+" - removing it");
+					model.removePower(ref);
+				}
 			}
-			logger.debug("  Invested "+(pointsMax-pointsLeft)+" of "+pointsMax+" points for powers");
+			// Calculate needed exp
+			
+			logger.debug("  Invested "+(pointsMax-pointsLeft)+" GP and "+expInvested+" EP for powers");
 			
 			/*
 			 * Check all points are spent
 			 */
 			if (pointsLeft>0)
 				todos.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("powergen.todo"), getPointsLeft())));
+			if (expInvested>0)
+				todos.add(new ToDoElement(Severity.INFO, String.format(RES.getString("powergen.todo.experience"), expInvested)));
 			
 			/*
 			 * Insert modifications attached to power
