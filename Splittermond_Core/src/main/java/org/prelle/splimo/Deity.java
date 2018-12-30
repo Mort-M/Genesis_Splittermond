@@ -127,7 +127,11 @@ public class Deity extends BasePluginData implements Comparable<Deity> {
 	}
 	//-------------------------------------------------------------------
 	public CultureList getFavoredCultures() {
-		return cultures;
+		CultureList list = new CultureList();
+		for (Culture culture: cultures) {
+			list.add(SplitterMondCore.getCulture(culture.getKey()));
+		}
+		return list;
 	}
 
 }

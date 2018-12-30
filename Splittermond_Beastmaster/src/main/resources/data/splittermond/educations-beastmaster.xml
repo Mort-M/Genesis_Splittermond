@@ -243,7 +243,7 @@
 	
 	<education id="monkeyhand" variantof="animalleader">
 		<modifications>
-			<reqmod type="culture" ref="fedirin,aitushar,demerai,ashurmazaan,pashtar,turubar,badashah,chorash,shahandir"/>
+			<reqmod type="culture" ref="fedirin,aitushar,demerai,ashurmazaan,pashtar,turubar,badashan,chorrash,shahandir"/>
 			
 			<powermod ref="animallover"/>
 			<powermod ref="sensesocial"/>

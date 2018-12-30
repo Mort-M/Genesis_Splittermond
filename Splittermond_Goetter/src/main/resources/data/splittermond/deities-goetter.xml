@@ -86,7 +86,7 @@
   </deity>
   <deity id="ahas">
     <cultures>
-      <culture id="zhoujiang " />
+      <culture id="zhoujiang" />
     </cultures>
     <aspects>
       <aspect ref="überfall" />
@@ -505,7 +505,8 @@
     <cultures>
       <culture id="midstad" />
       <culture id="patalis" />
-      <culture id="elyrea" />
+      <culture id="elyrrose" />
+      <culture id="elyrvolk" />
       <culture id="selenia" />
     </cultures>
     <aspects>
@@ -589,7 +590,7 @@
   </deity>
   <deity id="egaris">
     <cultures>
-      <culture id="dalmarien" />
+      <culture id="dalmreich" />
       <culture id="shahandir" />
     </cultures>
     <aspects>
@@ -701,7 +702,7 @@
   </deity>
   <deity id="furbrom">
     <cultures>
-      <culture id="fugand" />
+      <culture id="furgand" />
       <culture id="borombri" />
     </cultures>
     <aspects>
@@ -768,7 +769,8 @@
   </deity>
   <deity id="golgara">
     <cultures>
-      <culture id="jogodai" />
+      <culture id="jagodsklav" />
+      <culture id="jagodstamm" />
     </cultures>
     <aspects>
       <aspect ref="leben" />
@@ -937,7 +939,24 @@
   </deity>
   <deity id="iosaris">
     <cultures>
-      <culture id="dragorea" />
+      <culture id="wintholt" />
+      <culture id="immersomm" />
+      <culture id="dalmreich" />
+      <culture id="tirdurghachan" />
+      <culture id="nyrdfing" />
+      <culture id="vaigarr" />
+      <culture id="dakardsmyr" />
+      <culture id="selenia" />
+      <culture id="waechter" />
+      <culture id="unreich" />
+      <culture id="westergrom" />
+      <culture id="midstad" />
+      <culture id="patalis" />
+      <culture id="elyrvolk" />
+      <culture id="elyrrose" />
+      <culture id="zwingard" />
+      <culture id="termark" />
+      <culture id="jagodien" />
       <culture id="ioria" />
       <culture id="mertstaedt" />
     </cultures>
@@ -1068,7 +1087,7 @@
   </deity>
   <deity id="jasane">
     <cultures>
-      <culture id="dalmarien" />
+      <culture id="dalmreich" />
     </cultures>
     <aspects>
       <aspect ref="krieg" />
@@ -1089,7 +1108,7 @@
   </deity>
   <deity id="jausei">
     <cultures>
-      <culture id="zhoujiang " />
+      <culture id="zhoujiang" />
     </cultures>
     <aspects>
       <aspect ref="ufer" />
@@ -1111,7 +1130,24 @@
   </deity>
   <deity id="jesavis">
     <cultures>
-      <culture id="dragorea" />
+      <culture id="wintholt" />
+      <culture id="immersomm" />
+      <culture id="dalmreich" />
+      <culture id="tirdurghachan" />
+      <culture id="nyrdfing" />
+      <culture id="vaigarr" />
+      <culture id="dakardsmyr" />
+      <culture id="selenia" />
+      <culture id="waechter" />
+      <culture id="unreich" />
+      <culture id="westergrom" />
+      <culture id="midstad" />
+      <culture id="patalis" />
+      <culture id="elyrvolk" />
+      <culture id="elyrrose" />
+      <culture id="zwingard" />
+      <culture id="termark" />
+      <culture id="jagodien" />
       <culture id="ioria" />
       <culture id="mertstaedt" />
     </cultures>
@@ -1331,7 +1367,7 @@
   </deity>
   <deity id="lao">
     <cultures>
-      <culture id="zhoujiang " />
+      <culture id="zhoujiang" />
     </cultures>
     <aspects>
       <aspect ref="eigennutz" />
@@ -1414,7 +1450,24 @@
   </deity>
   <deity id="lyxa">
     <cultures>
-      <culture id="dragorea" />
+      <culture id="wintholt" />
+      <culture id="immersomm" />
+      <culture id="dalmreich" />
+      <culture id="tirdurghachan" />
+      <culture id="nyrdfing" />
+      <culture id="vaigarr" />
+      <culture id="dakardsmyr" />
+      <culture id="selenia" />
+      <culture id="waechter" />
+      <culture id="unreich" />
+      <culture id="westergrom" />
+      <culture id="midstad" />
+      <culture id="patalis" />
+      <culture id="elyrvolk" />
+      <culture id="elyrrose" />
+      <culture id="zwingard" />
+      <culture id="termark" />
+      <culture id="jagodien" />
       <culture id="mertstaedt" />
       <culture id="ioria" />
       <culture id="patalis" />
@@ -1460,7 +1513,16 @@
   </deity>
   <deity id="maddad">
     <cultures>
-      <culture id="farukan " />
+      <culture id="farukhur" />
+      <culture id="ashurmazaan" />
+      <culture id="fedirin" />
+      <culture id="aitushar" />
+      <culture id="demerai" />
+      <culture id="pashtar" />
+      <culture id="turubar" />
+      <culture id="badashan" />
+      <culture id="chorrash" />
+      <culture id="shahandir" />
     </cultures>
     <aspects>
       <aspect ref="regen" />
@@ -1563,7 +1625,8 @@
   </deity>
   <deity id="mersiela">
     <cultures>
-      <culture id="elyrea" />
+      <culture id="elyrrose" />
+      <culture id="elyrvolk" />
     </cultures>
     <aspects>
       <aspect ref="glück" />
@@ -1584,7 +1647,8 @@
   </deity>
   <deity id="monbogara">
     <cultures>
-      <culture id="jogodai" />
+      <culture id="jagodsklav" />
+      <culture id="jagodstamm" />
     </cultures>
     <aspects>
       <aspect ref="stärke" />
@@ -1734,7 +1798,8 @@
   </deity>
   <deity id="myuriko">
     <cultures>
-      <culture id="kintai" />
+      <culture id="schwertadel" />
+      <culture id="schwertvolk" />
     </cultures>
     <aspects>
       <aspect ref="krieg" />
@@ -1757,7 +1822,16 @@
   </deity>
   <deity id="nahid">
     <cultures>
-      <culture id="farukan " />
+      <culture id="farukhur" />
+      <culture id="ashurmazaan" />
+      <culture id="fedirin" />
+      <culture id="aitushar" />
+      <culture id="demerai" />
+      <culture id="pashtar" />
+      <culture id="turubar" />
+      <culture id="badashan" />
+      <culture id="chorrash" />
+      <culture id="shahandir" />
     </cultures>
     <aspects>
       <aspect ref="nacht" />
@@ -1801,7 +1875,7 @@
   </deity>
   <deity id="niangur">
     <cultures>
-      <culture id="dalmarien" />
+      <culture id="dalmreich" />
     </cultures>
     <aspects>
       <aspect ref="schönheit" />
@@ -1844,7 +1918,16 @@
   </deity>
   <deity id="nigali">
     <cultures>
-      <culture id="farukan " />
+      <culture id="farukhur" />
+      <culture id="ashurmazaan" />
+      <culture id="fedirin" />
+      <culture id="aitushar" />
+      <culture id="demerai" />
+      <culture id="pashtar" />
+      <culture id="turubar" />
+      <culture id="badashan" />
+      <culture id="chorrash" />
+      <culture id="shahandir" />
     </cultures>
     <aspects>
       <aspect ref="seefahrt" />
@@ -1886,7 +1969,16 @@
   </deity>
   <deity id="nurghon">
     <cultures>
-      <culture id="farukan " />
+      <culture id="farukhur" />
+      <culture id="ashurmazaan" />
+      <culture id="fedirin" />
+      <culture id="aitushar" />
+      <culture id="demerai" />
+      <culture id="pashtar" />
+      <culture id="turubar" />
+      <culture id="badashan" />
+      <culture id="chorrash" />
+      <culture id="shahandir" />
     </cultures>
     <aspects>
       <aspect ref="tod" />
@@ -2039,7 +2131,16 @@
   </deity>
   <deity id="pudjari">
     <cultures>
-      <culture id="farukan " />
+      <culture id="farukhur" />
+      <culture id="ashurmazaan" />
+      <culture id="fedirin" />
+      <culture id="aitushar" />
+      <culture id="demerai" />
+      <culture id="pashtar" />
+      <culture id="turubar" />
+      <culture id="badashan" />
+      <culture id="chorrash" />
+      <culture id="shahandir" />
     </cultures>
     <aspects>
       <aspect ref="natur" />
@@ -2102,7 +2203,16 @@
   </deity>
   <deity id="rahidi">
     <cultures>
-      <culture id="farukan " />
+      <culture id="farukhur" />
+      <culture id="ashurmazaan" />
+      <culture id="fedirin" />
+      <culture id="aitushar" />
+      <culture id="demerai" />
+      <culture id="pashtar" />
+      <culture id="turubar" />
+      <culture id="badashan" />
+      <culture id="chorrash" />
+      <culture id="shahandir" />
     </cultures>
     <aspects>
       <aspect ref="wahrheit" />
@@ -2148,7 +2258,8 @@
   </deity>
   <deity id="rimgara">
     <cultures>
-      <culture id="jogodai" />
+      <culture id="jagodsklav" />
+      <culture id="jagodstamm" />
     </cultures>
     <aspects>
       <aspect ref="tradition" />
@@ -2167,7 +2278,16 @@
   </deity>
   <deity id="ronash">
     <cultures>
-      <culture id="farukan" />
+      <culture id="farukhur" />
+      <culture id="ashurmazaan" />
+      <culture id="fedirin" />
+      <culture id="aitushar" />
+      <culture id="demerai" />
+      <culture id="pashtar" />
+      <culture id="turubar" />
+      <culture id="badashan" />
+      <culture id="chorrash" />
+      <culture id="shahandir" />
     </cultures>
     <aspects>
       <aspect ref="fehlverhalten" />
@@ -2189,7 +2309,16 @@
   </deity>
   <deity id="ronay">
     <cultures>
-      <culture id="farukan" />
+      <culture id="farukhur" />
+      <culture id="ashurmazaan" />
+      <culture id="fedirin" />
+      <culture id="aitushar" />
+      <culture id="demerai" />
+      <culture id="pashtar" />
+      <culture id="turubar" />
+      <culture id="badashan" />
+      <culture id="chorrash" />
+      <culture id="shahandir" />
     </cultures>
     <aspects>
       <aspect ref="bescheidenheit" />
@@ -2255,7 +2384,16 @@
   </deity>
   <deity id="shalenki">
     <cultures>
-      <culture id="farukan " />
+      <culture id="farukhur" />
+      <culture id="ashurmazaan" />
+      <culture id="fedirin" />
+      <culture id="aitushar" />
+      <culture id="demerai" />
+      <culture id="pashtar" />
+      <culture id="turubar" />
+      <culture id="badashan" />
+      <culture id="chorrash" />
+      <culture id="shahandir" />
     </cultures>
     <aspects>
       <aspect ref="hilfsbereitschaft" />
@@ -2338,7 +2476,16 @@
   </deity>
   <deity id="shasandiri">
     <cultures>
-      <culture id="farukan " />
+      <culture id="farukhur" />
+      <culture id="ashurmazaan" />
+      <culture id="fedirin" />
+      <culture id="aitushar" />
+      <culture id="demerai" />
+      <culture id="pashtar" />
+      <culture id="turubar" />
+      <culture id="badashan" />
+      <culture id="chorrash" />
+      <culture id="shahandir" />
     </cultures>
     <aspects>
       <aspect ref="handel" />
@@ -2582,7 +2729,16 @@
   </deity>
   <deity id="tayru">
     <cultures>
-      <culture id="farukan" />
+      <culture id="farukhur" />
+      <culture id="ashurmazaan" />
+      <culture id="fedirin" />
+      <culture id="aitushar" />
+      <culture id="demerai" />
+      <culture id="pashtar" />
+      <culture id="turubar" />
+      <culture id="badashan" />
+      <culture id="chorrash" />
+      <culture id="shahandir" />
     </cultures>
     <aspects>
       <aspect ref="ehre" />
@@ -2715,7 +2871,8 @@
   <deity id="urgano">
     <cultures>
       <culture id="westergrom" />
-      <culture id="elyrea" />
+      <culture id="elyrrose" />
+      <culture id="elyrvolk" />
     </cultures>
     <aspects>
       <aspect ref="schutz" />
@@ -2757,7 +2914,16 @@
   </deity>
   <deity id="uryat">
     <cultures>
-      <culture id="farukan" />
+      <culture id="farukhur" />
+      <culture id="ashurmazaan" />
+      <culture id="fedirin" />
+      <culture id="aitushar" />
+      <culture id="demerai" />
+      <culture id="pashtar" />
+      <culture id="turubar" />
+      <culture id="badashan" />
+      <culture id="chorrash" />
+      <culture id="shahandir" />
     </cultures>
     <aspects>
       <aspect ref="hochmut" />
@@ -2890,7 +3056,8 @@
   <deity id="vordan">
     <cultures>
       <culture id="patalis" />
-      <culture id="elyrea" />
+      <culture id="elyrrose" />
+      <culture id="elyrvolk" />
     </cultures>
     <aspects>
       <aspect ref="herrschaft" />
@@ -2975,7 +3142,16 @@
   </deity>
   <deity id="yelat">
     <cultures>
-      <culture id="farukan" />
+      <culture id="farukhur" />
+      <culture id="ashurmazaan" />
+      <culture id="fedirin" />
+      <culture id="aitushar" />
+      <culture id="demerai" />
+      <culture id="pashtar" />
+      <culture id="turubar" />
+      <culture id="badashan" />
+      <culture id="chorrash" />
+      <culture id="shahandir" />
       <culture id="jagodien" />
     </cultures>
     <aspects>
@@ -3042,7 +3218,7 @@
   </deity>
   <deity id="zarusz">
     <cultures>
-      <culture id="zaruszai" />
+      <culture id="gulong" />
     </cultures>
     <aspects>
       <aspect ref="schlangen" />
@@ -3083,7 +3259,8 @@
   </deity>
   <deity id="zulgara">
     <cultures>
-      <culture id="jogodai" />
+      <culture id="jagodsklav" />
+      <culture id="jagodstamm" />
     </cultures>
     <aspects>
       <aspect ref="mut" />
