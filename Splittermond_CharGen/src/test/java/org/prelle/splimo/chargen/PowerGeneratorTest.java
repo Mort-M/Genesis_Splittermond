@@ -22,7 +22,6 @@ import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.modifications.PowerModification;
 
-import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.genericrpg.modification.Modification;
 
 /**

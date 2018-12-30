@@ -4,7 +4,6 @@
 package org.prelle.splimo;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 import org.prelle.simplepersist.AttribConvert;
@@ -13,7 +12,6 @@ import org.prelle.splimo.modifications.ResourceModification;
 import org.prelle.splimo.persist.ResourceConverter;
 
 import de.rpgframework.genericrpg.modification.Modification;
-import de.rpgframework.genericrpg.modification.Modifyable;
 import de.rpgframework.genericrpg.modification.ModifyableImpl;
 
 /**
@@ -36,6 +34,8 @@ public class ResourceReference extends ModifyableImpl implements Comparable<Reso
 	 */
 	@Attribute(required=false)
 	private UUID idRef;
+	/** Is assigned from a module - and not actively from the user */
+	private transient boolean systemAssigned;
 
 	//-------------------------------------------------------------------
 	public ResourceReference() {
@@ -73,16 +73,21 @@ public class ResourceReference extends ModifyableImpl implements Comparable<Reso
 	}
 
 	//-------------------------------------------------------------------
-	/**
-	 * @return the value
-	 */
-	public int getModifiedValue() {
-		int sum = value;
+	public int getModifier() {
+		int sum = 0;
 		for (Modification mod : modifications) {
 			if (mod instanceof ResourceModification && ((ResourceModification)mod).getResource()==resource)
 				sum+= ((ResourceModification)mod).getValue();
 		}
 		return sum;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @return the value
+	 */
+	public int getModifiedValue() {
+		return value + getModifier();
 	}
 
 	//-------------------------------------------------------------------
@@ -132,6 +137,22 @@ public class ResourceReference extends ModifyableImpl implements Comparable<Reso
 	 */
 	public void setIdReference(UUID idref) {
 		this.idRef = idref;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @return the systemAssigned
+	 */
+	public boolean isSystemAssigned() {
+		return systemAssigned;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @param systemAssigned the systemAssigned to set
+	 */
+	public void setSystemAssigned(boolean systemAssigned) {
+		this.systemAssigned = systemAssigned;
 	}
 
 }

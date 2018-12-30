@@ -6,12 +6,9 @@ package org.prelle.splimo.charctrl4;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
-import java.util.Stack;
 
 import org.apache.log4j.Logger;
 import org.prelle.splimo.Power;
@@ -429,15 +426,6 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 		choice.setDecision(choosen);
 		// Recalculate
 		charGen.runProcessors();
-	}
-
-	//-------------------------------------------------------------------
-	private DecisionToMake findDecision(Modification mod) {
-		for (DecisionToMake tmp : decisions) {
-			if (tmp.getChoice()==mod)
-				return tmp;
-		}
-		return null;
 	}
 
 	//-------------------------------------------------------------------

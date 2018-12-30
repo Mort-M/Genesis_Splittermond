@@ -6,7 +6,6 @@ package org.prelle.splimo.charctrl4;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
 import org.apache.log4j.Logger;
@@ -62,6 +61,7 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 		available     = new ArrayList<Resource>();
 		todos = new ArrayList<>();
 		decisions = new ArrayList<>();
+		pointsLeft    = toSpend;
 
 		BASE_RESOURCES = new ArrayList<Resource>(Arrays.asList(new Resource[]{
 				SplitterMondCore.getResource("reputation"),
@@ -137,7 +137,7 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 	public boolean canBeIncreased(ResourceReference ref) {
 		logger.debug("canBeIncreased("+ref+")  "+getPointsLeft());
 		// Prevent increasing above the maximum
-		if (ref.getValue()>=getMaxValue())
+		if (ref.getModifiedValue()>=getMaxValue())
 			return false;
 		
 		// Only allow when there are points left
@@ -145,6 +145,9 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 	}
 
 	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.splimo.charctrl4.ResourceController#canBeDecreased(org.prelle.splimo.ResourceReference)
+	 */
 	@Override
 	public boolean canBeDecreased(ResourceReference ref) {
 		logger.debug("canBeDecreased("+ref+")");
@@ -155,7 +158,7 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 		int currentSpent = 0;
 		for (ResourceReference tmp : model.getResources())
 			if (tmp.getResource()==ref.getResource())
-				currentSpent += tmp.getValue();
+				currentSpent += tmp.getModifiedValue();
 		
 		// Compare with expected minimum
 		int expectedMin = 0;
@@ -185,10 +188,6 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 		ref.setValue( ref.getValue()+1 );
 		logger.info("increased resource "+ref.getResource()+" to "+ref.getValue());
 		
-		GenerationEventDispatcher.fireEvent(
-				new GenerationEvent(GenerationEventType.RESOURCES_CHANGED, ref));
-		GenerationEventDispatcher.fireEvent(
-				new GenerationEvent(GenerationEventType.POINTS_LEFT_RESOURCES, null, getPointsLeft()));
 		parent.runProcessors();
 		return true;
 	}
@@ -197,8 +196,10 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 	@Override
 	public boolean decrease(ResourceReference ref) {
 		logger.debug("decrease "+ref);
-		if (!canBeDecreased(ref))
+		if (!canBeDecreased(ref)) {
+			logger.warn("Trying to decrease resource "+ref+" which cannot be decreased");
 			return false;
+		}
 		
 		ref.setValue( ref.getValue()-1 );
 //		pointsFree++;
@@ -207,15 +208,8 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 		if (ref.getValue()==0 && !BASE_RESOURCES.contains(ref.getResource())) {
 			logger.debug("Remove oblivious non-base resource");
 			model.removeResource(ref);			
-			GenerationEventDispatcher.fireEvent(
-					new GenerationEvent(GenerationEventType.RESOURCE_REMOVED, ref));
-		} else		
-			GenerationEventDispatcher.fireEvent(
-				new GenerationEvent(GenerationEventType.RESOURCES_CHANGED, ref));
+		}
 		
-		
-		GenerationEventDispatcher.fireEvent(
-				new GenerationEvent(GenerationEventType.POINTS_LEFT_RESOURCES, null, getPointsLeft()));
 		parent.runProcessors();
 		return true;
 	}
@@ -223,23 +217,22 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 	//--------------------------------------------------------------------
 	@Override
 	public ResourceReference openResource(Resource res) {
-		if (getPointsLeft()<=0)
+		if (getPointsLeft()<=0 && model.getExperienceFree()<7)
 			return null;
 
 		// Cannot have base resources multiple times
-		if (BASE_RESOURCES.contains(res))
-			return getFirstValueFor(res);
+		if (BASE_RESOURCES.contains(res)) {
+			ResourceReference ref = getFirstValueFor(res);
+			if (ref.getValue()==0 && canBeIncreased(ref))
+				ref.setValue(1);
+			parent.runProcessors();
+			return ref;
+		}
 		
 		ResourceReference ref = new ResourceReference(res, 1);
 		model.addResource(ref);
-//		pointsFree--;
 		
 		logger.info(" User added resource "+res.getId());
-		
-		GenerationEventDispatcher.fireEvent(
-				new GenerationEvent(GenerationEventType.RESOURCE_ADDED, ref));
-		GenerationEventDispatcher.fireEvent(
-				new GenerationEvent(GenerationEventType.POINTS_LEFT_RESOURCES, null, getPointsLeft()));
 		
 		parent.runProcessors();
 		return ref;
@@ -259,21 +252,14 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 			return false;
 		
 		ref.setValue( ref.getValue()-1 );
-//		pointsFree++;
 		logger.info("Resource decreased to "+ref);
 		
 		if (ref.getValue()==0 && !BASE_RESOURCES.contains(ref.getResource())) {
 			logger.debug("Remove oblivious non-base resource");
 			model.removeResource(ref);			
-			GenerationEventDispatcher.fireEvent(
-					new GenerationEvent(GenerationEventType.RESOURCE_REMOVED, ref));
-		} else		
-			GenerationEventDispatcher.fireEvent(
-				new GenerationEvent(GenerationEventType.RESOURCES_CHANGED, ref));
+		}
 		
-		
-		GenerationEventDispatcher.fireEvent(
-				new GenerationEvent(GenerationEventType.POINTS_LEFT_RESOURCES, null, getPointsLeft()));
+		parent.runProcessors();
 		return true;
 	}
 
@@ -286,7 +272,7 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 		if (BASE_RESOURCES.contains(ref.getResource()))
 			return false;
 		
-		return ref.getValue()>1;
+		return ref.getModifiedValue()>1;
 	}
 
 	//--------------------------------------------------------------------
@@ -295,19 +281,19 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 	 */
 	@Override
 	public ResourceReference split(ResourceReference ref) {
-		if (!canBeSplit(ref))
+		if (!canBeSplit(ref)) {
+			logger.warn("Trying to split an unsplittable resource: "+ref);
 			return null;
+		}
 		
 		// Reduce current resource by one
 		ref.setValue(ref.getValue()-1);
+		
 		// Add new resource with value 1
 		ResourceReference newRef = new ResourceReference(ref.getResource(), 1);
 		model.addResource(newRef);
 		
-		GenerationEventDispatcher.fireEvent(
-				new GenerationEvent(GenerationEventType.RESOURCE_CHANGED, ref));		
-		GenerationEventDispatcher.fireEvent(
-				new GenerationEvent(GenerationEventType.RESOURCE_ADDED, newRef));		
+		parent.runProcessors();
 		return newRef;
 	}
 
@@ -328,9 +314,9 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 				return false;
 
 		// Sum of all values may not be exceed maximum
-		int sum = resources[0].getValue();
+		int sum = resources[0].getModifiedValue();
 		for (int i=1; i<resources.length; i++) 
-			sum += resources[i].getValue();
+			sum += resources[i].getModifiedValue();
 				
 		return sum<=getMaxValue();
 	}
@@ -351,12 +337,9 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 			keep.setValue(keep.getValue() + resources[i].getValue());
 			// Remove joined resource
 			model.removeResource(resources[i]);
-			GenerationEventDispatcher.fireEvent(
-					new GenerationEvent(GenerationEventType.RESOURCE_REMOVED, resources[i]));		
 		}
 		
-		GenerationEventDispatcher.fireEvent(
-				new GenerationEvent(GenerationEventType.RESOURCE_CHANGED, resources[0]));		
+		parent.runProcessors();
 	}
 
 	//-------------------------------------------------------------------
@@ -437,15 +420,6 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 	}
 
 	//-------------------------------------------------------------------
-	private DecisionToMake findDecision(Modification mod) {
-		for (DecisionToMake tmp : decisions) {
-			if (tmp.getChoice()==mod)
-				return tmp;
-		}
-		return null;
-	}
-
-	//-------------------------------------------------------------------
 	/**
 	 * @see org.prelle.splimo.processor.SpliMoCharacterProcessor#process(org.prelle.splimo.SpliMoCharacter, java.util.List)
 	 */
@@ -456,6 +430,17 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 		logger.trace("START: process");
 		try {
 			todos.clear();
+
+			/*
+			 * Clear all powers that are not user selected
+			 */
+			for (ResourceReference ref : new ArrayList<>(model.getResources())) {
+				if (ref.isSystemAssigned() && ref.getValue()==0) {
+					logger.trace("  clear system assigned resource "+ref);
+					model.removeResource(ref);
+				}
+				ref.clearModifications();
+			}
 
 			/*
 			 * Process incoming modifications
@@ -476,6 +461,7 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 					if (notFound) {
 						logger.debug(" * Add resource '"+rMod.getResource().getId()+" "+rMod.getValue()+"' from "+rMod.getSource());
 						ResourceReference toAdd = new ResourceReference(rMod.getResource(), 0);
+						toAdd.setSystemAssigned(true);
 						model.addResource(toAdd);
 						toAdd.addModification(rMod);
 					}
@@ -489,10 +475,29 @@ public class NewResourceGenerator implements ResourceController, Generator, Spli
 			 */
 			pointsLeft = maxPointsToSpend;
 			for (ResourceReference ref : model.getResources()) {
-				logger.debug(" Invest "+ref.getModifiedValue()+" points for "+ref);
-				pointsLeft -= ref.getModifiedValue();
+				if (ref.getModifiedValue()<0) {
+					if (BASE_RESOURCES.contains(ref.getResource()) && ref.getModifiedValue()>-2) {
+						logger.debug(" Gain "+Math.abs(ref.getModifiedValue())+" points for "+ref);
+						pointsLeft -= ref.getModifiedValue();
+					} else {
+						logger.debug(" Remove negative resource "+ref);
+						model.removeResource(ref);
+					}
+				} else {
+					logger.debug(" Invest "+ref.getModifiedValue()+" points for "+ref);
+					pointsLeft -= ref.getModifiedValue();
+				}
 			}
-			logger.debug("  Invested "+(maxPointsToSpend-pointsLeft)+" of "+maxPointsToSpend+" points for resources");
+			int expCost = 0;
+			if (pointsLeft<0) {
+				expCost = 7*Math.abs(pointsLeft);
+				pointsLeft = 0;
+				model.setExperienceFree( model.getExperienceFree() - expCost );
+				model.setExperienceInvested( model.getExperienceInvested() + expCost);
+				todos.add(new ToDoElement(Severity.INFO, String.format(RES.getString("resourcegen.todo.experience"), expCost)));
+			}
+			
+			logger.debug("  Invested "+(maxPointsToSpend-pointsLeft)+" points and "+expCost+" EP for resources");
 			
 			/*
 			 * Check all points are spent
