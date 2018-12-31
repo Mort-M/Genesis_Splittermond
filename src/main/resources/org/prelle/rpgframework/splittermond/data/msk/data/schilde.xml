@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="SMALL_TOWN" cplx="G" id="buckler" load="2" material="METAL" price="400" robust="6" type="SHIELD">
+      <shield hc="1" type="SHIELD">
+         <requires>
+            <attrreq attr="AGILITY" val="2"/>
+         </requires>
+         <features>
+            <feature level="2" type="DEFENSIVE"/>
+         </features>
+      </shield>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="dreiecksschild" load="3" material="METAL" price="500" robust="5" type="SHIELD">
+      <shield def="1" hc="2" tickMalus="1" type="SHIELD">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="DEFENSIVE"/>
+         </features>
+      </shield>
+   </item>
+   <item avail="SMALL_TOWN" cplx="F" id="großschild" load="4" material="METAL" price="700" robust="5" type="SHIELD">
+      <shield def="2" hc="2" tickMalus="1" type="SHIELD">
+         <requires>
+            <attrreq attr="STRENGTH" val="3"/>
+         </requires>
+         <features>
+            <feature level="2" type="DEFENSIVE"/>
+         </features>
+      </shield>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="lederschild" load="2" material="LEATHER" price="300" robust="3" type="SHIELD">
+      <shield def="1" hc="1" tickMalus="1" type="SHIELD">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="2" type="DEFENSIVE"/>
+         </features>
+      </shield>
+   </item>
+   <item avail="SMALL_TOWN" cplx="G" id="rundschild" load="3" material="WOOD" price="500" robust="3" type="SHIELD">
+      <shield def="2" hc="2" type="SHIELD">
+         <requires>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature level="1" type="DEFENSIVE"/>
+         </features>
+      </shield>
+   </item>
+   <item avail="LARGE_TOWN" cplx="F" id="turmschild" load="5" material="WOOD" price="1200" robust="7" type="SHIELD">
+      <shield def="3" hc="2" tickMalus="2" type="SHIELD">
+         <requires>
+            <attrreq attr="STRENGTH" val="4"/>
+         </requires>
+         <features>
+            <feature level="1" type="DEFENSIVE"/>
+            <feature type="COVER"/>
+         </features>
+      </shield>
+   </item>
+</items>

@@ -1,0 +1,2222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+    <skill id="melee" type="COMBAT" attr1="AGILITY" attr2="STRENGTH">
+        <specialization id="bite"/>
+        <specialization id="punch"/>
+        <specialization id="hold"/>
+        <specialization id="headbutt"/>
+        <specialization id="kick"/>
+        <mastership level="1" common="true" key="push"/>
+        <mastership level="1" common="true" key="improvise"/>
+        <mastership level="1" common="true" key="biweapon"/>
+        <mastership level="1" common="true" key="withdraw"/>
+        <mastership level="1" common="true" key="clutch"/>
+        <mastership level="1" common="true" key="knock"/>
+        <mastership level="1" common="true" key="defender"/>
+        <mastership level="1" common="true" key="rush"/>
+        <mastership level="2" common="true" key="bihandedparry">
+            <requires>
+                <masterreq ref="biweapon"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="bihandedattack">
+            <requires>
+                <masterreq ref="biweapon"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="disarm"/>
+        <mastership level="2" common="true" key="sweepingblow"/>
+        <mastership level="3" common="true" key="dancingblade"/>
+        <mastership level="3" common="true" key="bihandedmastery">
+            <requires>
+                <masterreq ref="bihandedparry"/>
+                <masterreq ref="bihandedattack"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="block"/>
+        <mastership level="1" key="hold"/>
+        <mastership level="1" key="confusion"/>
+        <mastership level="2" key="painful"/>
+        <mastership level="2" key="lethal"/>
+        <mastership level="2" key="betterknock"/>
+        <mastership level="3" key="betterdisarm"/>
+        <mastership level="3" key="strangehold"/>
+    </skill>
+    <skill id="slashing" type="COMBAT">
+        <mastership level="1" common="true" key="push"/>
+        <mastership level="1" common="true" key="improvise"/>
+        <mastership level="1" common="true" key="biweapon"/>
+        <mastership level="1" common="true" key="withdraw"/>
+        <mastership level="1" common="true" key="clutch"/>
+        <mastership level="1" common="true" key="knock"/>
+        <mastership level="1" common="true" key="defender"/>
+        <mastership level="1" common="true" key="rush"/>
+        <mastership level="2" common="true" key="bihandedparry">
+            <requires>
+                <masterreq ref="biweapon"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="bihandedattack">
+        <requires>
+            <masterreq ref="biweapon"/>
+        </requires>
+        </mastership>
+        <mastership level="2" common="true" key="disarm"/>
+        <mastership level="2" common="true" key="sweepingblow"/>
+        <mastership level="3" common="true" key="dancingblade"/>
+        <mastership level="3" common="true" key="bihandedmastery">
+            <requires>
+                <masterreq ref="bihandedparry"/>
+                <masterreq ref="bihandedattack"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+        <mastership level="1" key="berserk"/>
+        <mastership level="1" key="shieldbreaker"/>
+        <mastership level="1" key="deathblow"/>
+        <mastership level="2" key="hammerblow"/>
+        <mastership level="2" key="hardsweepingblow">
+        <requires>
+            <masterreq ref="sweepingblow"/>
+        </requires>
+        </mastership>
+        <mastership level="2" key="dashingblow"/>
+        <mastership level="3" key="bonebreaker">
+            <requires>
+                <masterreq ref="dashingblow"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="hardhammerblow">
+            <requires>
+                <masterreq ref="hammerblow"/>
+            </requires>
+        </mastership>
+    </skill>
+    <skill id="chains" type="COMBAT">
+        <mastership level="1" common="true" key="push"/>
+        <mastership level="1" common="true" key="improvise"/>
+        <mastership level="1" common="true" key="biweapon"/>
+        <mastership level="1" common="true" key="withdraw"/>
+        <mastership level="1" common="true" key="clutch"/>
+        <mastership level="1" common="true" key="knock"/>
+        <mastership level="1" common="true" key="defender"/>
+        <mastership level="1" common="true" key="rush"/>
+        <mastership level="2" common="true" key="bihandedparry">
+            <requires>
+                <masterreq ref="chains/biweapon"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="bihandedattack">
+            <requires>
+                <masterreq ref="biweapon"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="disarm"/>
+        <mastership level="2" common="true" key="sweepingblow"/>
+        <mastership level="3" common="true" key="dancingblade"/>
+        <mastership level="3" common="true" key="bihandedmastery">
+            <requires>
+                <masterreq ref="bihandedparry"/>
+                <masterreq ref="bihandedattack"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+        <mastership level="1" key="berserk"/>
+        <mastership level="1" key="ignoreshield"/>
+        <mastership level="1" key="whirlingdefense"/>
+        <mastership level="2" key="longwhirlingdefense">
+            <requires>
+                <masterreq ref="whirlingdefense"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="hammerblow"/>
+        <mastership level="2" key="relentless"/>
+        <mastership level="3" key="sweepingslash"/>
+        <mastership level="3" key="chainshackles"/>
+    </skill>
+    <skill id="blades" type="COMBAT">
+        <mastership level="1" common="true" key="push"/>
+        <mastership level="1" common="true" key="improvise"/>
+        <mastership level="1" common="true" key="biweapon"/>
+        <mastership level="1" common="true" key="withdraw"/>
+        <mastership level="1" common="true" key="clutch"/>
+        <mastership level="1" common="true" key="knock"/>
+        <mastership level="1" common="true" key="defender"/>
+        <mastership level="1" common="true" key="rush"/>
+        <mastership level="2" common="true" key="bihandedparry">
+            <requires>
+                <masterreq ref="biweapon"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="bihandedattack">
+            <requires>
+                <masterreq ref="biweapon"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="disarm"/>
+        <mastership level="2" common="true" key="sweepingblow"/>
+        <mastership level="3" common="true" key="dancingblade"/>
+        <mastership level="3" common="true" key="bihandedmastery">
+            <requires>
+                <masterreq ref="bihandedparry"/>
+                <masterreq ref="bihandedattack"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+        <mastership level="1" key="sortie"/>
+        <mastership level="1" key="whirlingdefense"/>
+        <mastership level="1" key="confusion"/>
+        <mastership level="2" key="targetedhit"/>
+        <mastership level="2" key="whirlingblades"/>
+        <mastership level="2" key="riposte"/>
+        <mastership level="3" key="bloodletting" >
+            <requires>
+                <masterreq ref="targetedhit"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="elegantwhirlingblades">
+            <requires>
+                <masterreq ref="whirlingblades"/>
+            </requires>
+        </mastership>
+    </skill>
+    <skill id="staffs" type="COMBAT">
+        <mastership level="1" common="true" key="push"/>
+        <mastership level="1" common="true" key="improvise"/>
+        <mastership level="1" common="true" key="biweapon"/>
+        <mastership level="1" common="true" key="withdraw"/>
+        <mastership level="1" common="true" key="clutch"/>
+        <mastership level="1" common="true" key="knock"/>
+        <mastership level="1" common="true" key="defender"/>
+        <mastership level="1" common="true" key="rush"/>
+        <mastership level="2" common="true" key="bihandedparry">
+            <requires>
+                <masterreq ref="biweapon"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="bihandedattack">
+            <requires>
+                <masterreq ref="biweapon"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="disarm"/>
+        <mastership level="2" common="true" key="sweepingblow"/>
+        <mastership level="3" common="true" key="dancingblade"/>
+        <mastership level="3" common="true" key="bihandedmastery">
+            <requires>
+                <masterreq ref="bihandedparry"/>
+                <masterreq ref="bihandedattack"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="sortie"/>
+        <mastership level="1" key="opportunist"/>
+        <mastership level="1" key="assault">
+            <requires>
+                <masterreq ref="rush"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="targetedhit"/>
+        <mastership level="2" key="whirlingblades"/>
+        <mastership level="2" key="dashingblow"/>
+        <mastership level="3" key="standclear"/>
+        <mastership level="3" key="longrangewhirlingblades" >
+            <requires>
+                <masterreq ref="whirlingblades"/>
+            </requires>
+        </mastership>
+    </skill>
+    <skill id="longrange" type="COMBAT">
+
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="siegeshooter"/>
+        <mastership level="1" key="marksman"/>
+        <mastership level="1" key="fastshooter1"/>
+        <mastership level="2" key="targetedshots1">
+            <requires>
+                <masterreq ref="siegeshooter"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="sienewcutter"/>
+        <mastership level="2" key="goodaim">
+            <requires>
+                <masterreq ref="marksman"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="targetedshots2" >
+            <requires>
+                <masterreq ref="targetedshots1"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="mastershot" >
+            <requires>
+                <masterreq ref="marksman"/>
+            </requires>
+
+        </mastership>
+        <mastership level="3" key="fastshooter2">
+            <requires>
+                <masterreq ref="fastshooter1"/>
+            </requires>
+        </mastership>
+    </skill>
+    <skill id="throwing" type="COMBAT">
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="improvise"/>
+        <mastership level="1" key="marksman"/>
+        <mastership level="1" key="strongthrowing"/>
+        <mastership level="2" key="hardthrow" >
+            <requires>
+                <masterreq ref="strongthrowing"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="doublethrow"/>
+        <mastership level="2" key="closecombatthrow"/>
+        <mastership level="3" key="missilevolley" >
+            <requires>
+                <masterreq ref="doublethrow"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="masterthrow" >
+            <requires>
+                <masterreq ref="marksman"/>
+            </requires>
+        </mastership>
+    </skill>
+
+    <skill id="acrobatics" attr1="AGILITY" attr2="STRENGTH">
+        <specialization id="evade"/>
+        <specialization id="balance"/>
+        <specialization id="unlash"/>
+        <specialization id="contour"/>
+        <specialization id="stunts"/>
+        <specialization id="breakfall"/>
+        <specialization id="iceskating"/>
+        <mastership level="1" key="evade1">
+        	<modifications>
+        	  <attrmod attr="DEFENSE" val="2" cond="true"/>
+        	</modifications>
+        </mastership>
+        <mastership level="1" key="balance"/>
+        <mastership level="1" key="flashreflexes">
+        	<modifications>
+       			<attrmod type="rel" attr="INITIATIVE" val="-3"/>
+        	</modifications>
+        </mastership>
+        <mastership level="1" key="flashreflexes2">
+            <requires>
+                <masterreq ref="flashreflexes"/>
+            </requires>
+        	<modifications>
+       			<attrmod type="rel" attr="INITIATIVE" val="-3"/>
+        	</modifications>
+        </mastership>
+        <mastership level="1" key="skipjack"/>
+        <mastership level="2" key="roll"/>
+        <mastership level="2" key="evade2" >
+            <requires>
+                <masterreq ref="acrobatics/evade1"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="escapologist"/>
+        <mastership level="2" key="coordevade">
+            <requires>
+                <masterreq ref="acrobatics/evade1"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="masterbalance">
+            <requires>
+                <masterreq ref="balance"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="evademovement">
+            <requires>
+                <masterreq ref="evade2"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="evade3">
+            <requires>
+                <masterreq ref="evade2"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="contortionist">
+            <requires>
+                <masterreq ref="escapologist"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+
+    <skill id="alchemy" attr1="MYSTIC" attr2="MIND">
+        <specialization id="poison"/>
+        <specialization id="cure"/>
+        <specialization id="elixir"/>
+        <specialization id="potion"/>
+        <mastership level="1" key="efficiency"/>
+          <mastership level="1" key="journeyman"/>
+        <mastership level="1" key="scrimper"/>
+        <mastership level="2" key="talentedalchemist"/>
+          <mastership level="2" key="expert">
+            <requires>
+                <masterreq ref="journeyman"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="wonderworker">
+            <requires>
+                <masterreq ref="efficiency"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="hardendbycustom">
+            <requires>
+                <specialreq ref="alchemy/poison"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="master">
+            <requires>
+                <masterreq ref="expert"/>
+            </requires>
+        </mastership>
+        <mastership level="4" key="masterpiece">
+            <requires>
+                <masterreq ref="master"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="leadership" attr1="CHARISMA" attr2="WILLPOWER">
+        <specialization id="intimidate"/>
+        <specialization id="flamingspeech"/>
+        <specialization id="coordinate"/>
+        <specialization id="morale"/>
+        <specialization id="tactics"/>
+        <specialization id="planofaction"/>
+        <mastership level="1" key="challenge"/>
+        <mastership level="1" key="coordinator"/>
+        <mastership level="1" key="troopup"/>
+        <mastership level="2" key="inspire"/>
+        <mastership level="2" key="attackplan">
+            <requires>
+                <masterreq ref="troopup"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="defenseplan">
+            <requires>
+                <masterreq ref="troopup"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="lastarray">
+            <requires>
+                <masterreq ref="inspire"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="tacticalmastermind">
+            <requires>
+                <masterreq ref="attackplan"/>
+                <masterreq ref="defenseplan"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="arcanelore" attr1="MYSTIC" attr2="MIND">
+        <specialization id="artifacts"/>
+        <specialization id="magiccreatures"/>
+        <specialization id="magicphenomenons"/>
+        <specialization id="orientfairy"/>
+        <specialization id="rituals"/>
+        <specialization id="symbols"/>
+        <specialization id="predictions"/>
+        <specialization id="spells"/>
+        <specialization id="elementalcreatures"/>
+        <mastership level="1" key="arcanedefense1"/>
+        <mastership level="1" key="artifactlore"/>
+        <mastership level="1" key="createscroll1"/>
+        <mastership level="2" key="arcanedefense2" >
+            <requires>
+                <masterreq ref="arcanedefense1"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="huntersupernatural" multiple="true">
+            <requires>
+                <specialreq ref="magiccreatures"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="createscroll2">
+            <requires>
+                <masterreq ref="createscroll1"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="fortuneteller"/>
+        <mastership level="3" key="beasthunter" multiple="true">
+            <requires>
+                <masterreq ref="huntersupernatural"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="createscroll3" >
+            <requires>
+                <masterreq ref="createscroll2"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="athletics" attr1="AGILITY" attr2="STRENGTH">
+        <specialization id="climbing"/>
+        <specialization id="strength"/>
+        <specialization id="running"/>
+        <specialization id="jumping"/>
+        <specialization id="throwing"/>
+        <mastership level="1" key="monkey"/>
+        <mastership level="1" key="sprinter" multiple="true">
+        	<modifications>
+        	  <attrmod attr="SPEED" val="1" cond="false"/>
+        	</modifications>
+        </mastership>
+        <mastership level="1" key="sprinter2">
+            <requires>
+                <masterreq ref="sprinter"/>
+            </requires>
+        	<modifications>
+        	  <attrmod attr="SPEED" val="1" cond="false"/>
+        	</modifications>
+        </mastership>
+        <mastership level="1" key="longjump"/>
+        <mastership level="2" key="swiftpursuit">
+            <requires>
+                <masterreq ref="sprinter"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="steeplechaser"/>
+        <mastership level="2" key="muscleman"/>
+        <mastership level="3" key="freeclimber">
+            <requires>
+                <masterreq ref="monkey"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="wallclimber">
+            <requires>
+                <masterreq ref="steeplechaser"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="performance" attr1="CHARISMA" attr2="WILLPOWER" grouped="true">
+        <specialization id="acrobatperform"/>
+        <specialization id="ventriloquize"/>
+        <specialization id="poetry"/>
+        <specialization id="jugglery"/>
+        <specialization id="instrumentwind"/>
+        <specialization id="instrumentstring"/>
+        <specialization id="instrumentperc"/>
+        <specialization id="composition"/>
+        <specialization id="publicspeech"/>
+        <specialization id="acting"/>
+        <specialization id="singing"/>
+        <specialization id="fakevoice"/>
+        <specialization id="dancing"/>
+        <mastership level="1" key="influenceattitude"/>
+        <mastership level="1" key="fascinate"/>
+        <mastership level="1" key="journeyman"/>
+        <mastership level="1" key="watchit"/>
+        <mastership level="1" key="crowdpleaser"/>
+        <mastership level="2" key="bansong"/>
+        <mastership level="2" key="talentedartist"/>
+        <mastership level="2" key="expert">
+            <requires>
+                <masterreq ref="journeyman"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="hahascoundrel">
+            <requires>
+                <masterreq ref="watchit"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="diatribehymn">
+            <requires>
+                <masterreq ref="influenceattitude"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="laughmedicine"/>
+        <mastership level="3" key="rebellionsong">
+            <requires>
+                <masterreq ref="diatribehymn"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="master">
+            <requires>
+                <masterreq ref="expert"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="diplomacy" attr1="CHARISMA" attr2="MIND">
+        <specialization id="proselytize"/>
+        <specialization id="haggle"/>
+        <specialization id="rumours"/>
+        <specialization id="heraldry"/>
+        <specialization id="seekinformation"/>
+        <specialization id="courtlylove"/>
+        <specialization id="publicspeech"/>
+        <specialization id="politics"/>
+        <specialization id="etiquettes"/>
+        <specialization id="negotiate"/>
+        <mastership level="1" key="diplomat"/>
+        <mastership level="1" key="haggler"/>
+        <mastership level="1" key="stylegrace"/>
+        <mastership level="2" key="sharptongue"/>
+        <mastership level="2" key="missionary"/>
+        <!-- TODO: Voraussetzung für Stärke -->
+        <mastership level="2" key="etiquettes"/>
+        <mastership level="3" key="investor"/>
+        <!-- TODO: Voraussetzung für Ressource -->
+        <mastership level="3" key="knowhoiam"/>
+        <!-- TODO: Voraussetzung für Ressource -->
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="clscraft" attr1="INTUITION" attr2="MIND" grouped="true">
+        <specialization id="architecture"/>
+        <specialization id="glassblowing"/>
+        <specialization id="engraving"/>
+        <specialization id="jeweler"/>
+        <specialization id="calligraphy"/>
+        <specialization id="cartography"/>
+        <specialization id="painting"/>
+        <specialization id="tatooing"/>
+        <specialization id="cooking"/>
+        <mastership level="1" key="efficiency"/>
+        <mastership level="1" key="journeyman"  multiple="true"/>
+        <mastership level="1" key="scrimper"/>
+        <mastership level="2" key="talentedtradesman"/>
+        <mastership level="2" key="expert"  multiple="true" >
+            <requires>
+                <masterreq ref="journeyman"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="wonderworker">
+            <requires>
+                <masterreq ref="efficiency"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="skilledsalvage">
+            <requires>
+                <masterreq ref="efficiency"/>
+                <masterreq ref="scrimper"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="master" multiple="true">
+            <requires>
+                <masterreq ref="expert"/>
+            </requires>
+        </mastership>
+        <mastership level="4" key="masterpiece">
+            <requires>
+                <masterreq ref="master"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="empathy" attr1="INTUITION" attr2="MIND">
+        <specialization id="calm"/>
+        <specialization id="detectlies"/>
+        <specialization id="knowmotivation"/>
+        <specialization id="judgepersonality"/>
+        <mastership level="1" key="calm"/>
+        <mastership level="1" key="readfoe1"/>
+        <mastership level="1" key="speaktome"/>
+        <mastership level="2" key="judgecharacter"/>
+        <mastership level="2" key="readfoe2" >
+            <requires>
+                <masterreq ref="readfoe1"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="judgeattribute"/>
+        <mastership level="3" key="mentalmaster">
+            <requires>
+                <masterreq ref="calm"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="hypnosis"/>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+
+    <skill id="determination" attr1="CHARISMA" attr2="WILLPOWER">
+        <specialization id="resistcontrolmagic"/>
+        <specialization id="resistfear"/>
+        <specialization id="keepprinciples"/>
+        <specialization id="resisteloquence"/>
+        <specialization id="resistinterrupts"/>
+        <mastership level="1" key="ironwill"/>
+        <mastership level="1" key="keepcool1"/>
+        <mastership level="1" key="imperturbable"/>
+        <mastership level="2" key="talentedpighead"/>
+        <mastership level="2" key="instransparent"/>
+        <mastership level="2" key="effortofwill">
+            <requires>
+                <masterreq ref="imperturbable"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="healthydistrust"/>
+        <mastership level="3" key="keepcool2">
+            <requires>
+                <masterreq ref="keepcool1"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+
+    <skill id="dexterity" attr1="CHARISMA" attr2="AGILITY">
+        <specialization id="unleash"/>
+        <specialization id="cheating"/>
+        <specialization id="chaining"/>
+        <specialization id="hideobject"/>
+        <specialization id="pickpocketing"/>
+        <specialization id="sleightofhand"/>
+        <mastership level="1" key="solverofknots"/>
+        <mastership level="1" key="creativedistraction"/>
+        <mastership level="1" key="quickdrawer"/>
+        <mastership level="2" key="talentedfingerartist"/>
+        <mastership level="2" key="calmhand"/>
+        <mastership level="2" key="hidemagicgestures"/>
+        <mastership level="3" key="wasnotme" >
+            <requires>
+                <specialreq ref="pickpocketing"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="weaponoutofnothing">
+            <requires>
+                <masterreq ref="quickdrawer"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+
+    <skill id="history" attr1="MYSTIC" attr2="MIND">
+        <specialization id="epoche"/>
+        <specialization id="pantheon"/>
+        <specialization id="region"/>
+        <specialization id="theme"/>
+        <specialization id="peoples"/>
+        <specialization id="legendarycreatures"/>
+        <specialization id="prophecies"/>
+        <specialization id="creationmyths"/>
+        <mastership level="1" key="bibliophile"/>
+        <mastership level="1" key="fieldstudy"/>
+        <mastership level="1" key="legendsinger"/>
+        <mastership level="2" key="talentedhistorian"/>
+        <mastership level="2" key="librarian" >
+            <requires>
+                <masterreq ref="bibliophile"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="hunteroffables" multiple="true">
+            <requires>
+                <specialreq ref="legendarycreatures"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="truthwithin"/>
+        <mastership level="3" key="legendhunter" multiple="true">
+            <requires>
+                <masterreq ref="hunteroffables"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="craftmanship" attr1="CONSTITUTION" attr2="MIND" grouped="true">
+        <specialization id="woodworking"/>
+        <specialization id="tailoring"/>
+        <specialization id="forging"/>
+        <specialization id="stoneworking"/>
+        <specialization id="cooking"/>
+
+        <mastership level="1" key="efficiency"/>
+          <mastership level="1" key="journeyman"  multiple="true"/>
+        <mastership level="1" key="scrimper"/>
+        <mastership level="2" key="talentedcraftsman"/>
+          <mastership level="2" key="expert"  multiple="true" >
+            <requires>
+                <masterreq ref="journeyman"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="wonderworker">
+            <requires>
+                <masterreq ref="efficiency"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="skilledrescue">
+            <requires>
+                <masterreq ref="efficiency"/>
+                <masterreq ref="scrimper"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="master" multiple="true">
+            <requires>
+                <masterreq ref="expert"/>
+            </requires>
+        </mastership>
+        <mastership level="4" key="masterpiece">
+            <requires>
+                <masterreq ref="master"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster" />
+    </skill>
+    <skill id="heal" attr1="INTUITION" attr2="MIND">
+        <specialization id="poison"/>
+        <specialization id="determinehealingherbs"/>
+        <specialization id="illness"/>
+        <specialization id="wounds"/>
+        <specialization id="conditions"/>
+        <mastership level="1" key="fielddignostics"/>
+        <mastership level="1" key="healingluck"/>
+        <mastership level="1" key="lifesaver"/>
+        <mastership level="2" key="skilledhealer"/>
+        <mastership level="2" key="supporthealing">
+            <requires>
+                <masterreq ref="healingluck"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="vetinary">
+            <requires>
+                <skillreq ref="nature" value="6"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="creaturespecialist" >
+            <requires>
+                <masterreq ref="vetinary"/>
+                <selreq>
+                    <skillreq ref="arcanelore" value="6"/>
+                    <skillreq ref="history"  value="6"/>
+                </selreq>
+            </requires>
+        </mastership>
+        <mastership level="3" key="surgeon">
+            <requires>
+                <masterreq ref="lifesaver"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster" />
+    </skill>
+
+    <skill id="stealth" attr1="AGILITY" attr2="INTUITION">
+        <specialization id="tailing"/>
+        <specialization id="ambush"/>
+        <specialization id="naturalenvironment"/>
+        <specialization id="tiptoe"/>
+        <specialization id="covertracks"/>
+        <specialization id="urbanenvironment"/>
+        <specialization id="hide"/>
+        <mastership level="1" key="creeper"/>
+        <mastership level="1" key="sneakattack1"/>
+        <mastership level="1" key="unobstrusive"/>
+        <mastership level="2" key="skilledcreeper"/>
+        <mastership level="2" key="ambush"/>
+        <mastership level="2" key="sneakattack2" >
+            <requires>
+                <masterreq ref="sneakattack1"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="soundlessness">
+            <requires>
+                <masterreq ref="creeper"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="sneakattack3">
+            <requires>
+                <masterreq ref="sneakattack2"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="hunting" attr1="CONSTITUTION" attr2="MIND">
+        <specialization id="traps"/>
+        <specialization id="foraging"/>
+        <specialization id="tracking"/>
+        <specialization id="bearhunting"/>
+        <specialization id="biggamehunting"/>
+        <specialization id="caninehunting"/>
+        <specialization id="felinehunting"/>
+        <specialization id="insecthunting"/>
+        <specialization id="smallgamehunting"/>
+        <specialization id="reptilehunting"/>
+        <specialization id="spiderhunting"/>
+        <specialization id="birdhunting"/>
+        <specialization id="fishhunting"/>
+        <specialization id="processing"/>
+        <mastership level="1" key="animaladept_bear"/>
+        <mastership level="1" key="animaladept_biggame"/>
+        <mastership level="1" key="animaladept_canine"/>
+        <mastership level="1" key="animaladept_feline"/>
+        <mastership level="1" key="animaladept_insect"/>
+        <mastership level="1" key="animaladept_smallgame"/>
+        <mastership level="1" key="animaladept_reptile"/>
+        <mastership level="1" key="animaladept_spider"/>
+        <mastership level="1" key="animaladept_bird"/>
+        <mastership level="1" key="animaladept_fish"/>
+        <mastership level="1" key="tirelesschaser"/>
+        <mastership level="1" key="hunter"/>
+        <mastership level="2" key="skilledtracker"/>
+        <mastership level="2" key="animalexpert_bear" >
+            <requires>
+                <masterreq ref="animaladept_bear"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="animalexpert_biggame">
+            <requires>
+                <masterreq ref="animaladept_biggame"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="animalexpert_canine">
+            <requires>
+                <masterreq ref="animaladept_canine"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="animalexpert_feline">
+            <requires>
+                <masterreq ref="animaladept_feline"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="animalexpert_insect" >
+            <requires>
+                <masterreq ref="animaladept_insect"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="animalexpert_smallgame">
+            <requires>
+                <masterreq ref="animaladept_smallgame"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="animalexpert_reptile">
+            <requires>
+                <masterreq ref="animaladept_reptile"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="animalexpert_spider">
+            <requires>
+                <masterreq ref="animaladept_spider"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="animalexpert_bird">
+            <requires>
+                <masterreq ref="animaladept_bird"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="animalexpert_fish">
+            <requires>
+                <masterreq ref="animaladept_fish"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="fasthunter">
+            <requires>
+                <specialreq ref="foraging"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="chesthit_bear">
+            <requires>
+                <masterreq ref="animalexpert_bear"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="chesthit_biggame">
+            <requires>
+                <masterreq ref="animalexpert_biggame"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="chesthit_canine" >
+            <requires>
+                <masterreq ref="animalexpert_canine"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="chesthit_feline" >
+            <requires>
+                <masterreq ref="animalexpert_feline"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="chesthit_insect">
+            <requires>
+                <masterreq ref="animalexpert_insect"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="chesthit_smallgame">
+            <requires>
+                <masterreq ref="animalexpert_smallgame"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="chesthit_reptile">
+            <requires>
+                <masterreq ref="animalexpert_reptile"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="chesthit_spider" >
+            <requires>
+                <masterreq ref="animalexpert_spider"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="chesthit_bird" >
+            <requires>
+                <masterreq ref="animalexpert_bird"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="chesthit_fish" >
+            <requires>
+                <masterreq ref="animalexpert_fish"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="efficienthunter">
+            <requires>
+                <masterreq ref="hunter"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="countrylore" attr1="INTUITION" attr2="MIND">
+        <specialization id="culture"/>
+        <specialization id="region"/>
+        <specialization id="geography"/>
+        <specialization id="philosophy"/>
+        <specialization id="law"/>
+        <mastership level="1" key="fastreader"/>
+        <mastership level="1" key="giftedinlanguage"/>
+        <mastership level="1" key="polymath"/>
+        <mastership level="2" key="skilledscholar"/>
+        <mastership level="2" key="goodeducation">
+            <requires>
+                <masterreq ref="polymath"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="philosopher" >
+            <requires>
+                <specialreq ref="philosophy"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="wayoftheworld">
+            <requires>
+                <masterreq ref="polymath"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="handyknowledge">
+            <requires>
+                <masterreq ref="polymath"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="nature" attr1="INTUITION" attr2="MIND">
+        <specialization id="dragons"/>
+        <specialization id="terrain_desert"/>
+        <specialization id="terrain_ocean"/>
+        <specialization id="terrain_swamp"/>
+        <specialization id="terrain_forest"/>
+        <specialization id="terrain_mountain"/>
+        <specialization id="terrain_ice"/>
+        <specialization id="terrain_grassland"/>
+        <specialization id="terrain_jungle"/>
+        <specialization id="terrain_faerie"/>
+        <specialization id="mineralogy"/>
+        <specialization id="herbsearch"/>
+        <specialization id="creaturesofdarkness"/>
+        <specialization id="foraging"/>
+        <specialization id="botany"/>
+        <specialization id="astronomy"/>
+        <specialization id="zoology"/>
+        <specialization id="weatherforecast"/>
+        <mastership level="1" key="alchemistsassistant"/>
+        <mastership level="1" key="conservation"/>
+        <mastership level="1" key="hunter_bear"/>
+        <mastership level="1" key="hunter_biggame"/>
+        <mastership level="1" key="hunter_canine"/>
+        <mastership level="1" key="hunter_feline"/>
+        <mastership level="1" key="hunter_insect"/>
+        <mastership level="1" key="hunter_smallgame"/>
+        <mastership level="1" key="hunter_reptile"/>
+        <mastership level="1" key="hunter_spider"/>
+        <mastership level="1" key="hunter_bird"/>
+        <mastership level="1" key="hunter_fish"/>
+        <mastership level="2" key="enemy" multiple="true"/>
+        <mastership level="2" key="masterhunter_bear" >
+            <requires>
+                <masterreq ref="hunter_bear"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="masterhunter_biggame">
+            <requires>
+                <masterreq ref="hunter_biggame"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="masterhunter_canine">
+            <requires>
+                <masterreq ref="hunter_canine"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="masterhunter_feline">
+            <requires>
+                <masterreq ref="hunter_feline"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="masterhunter_insect" >
+            <requires>
+                <masterreq ref="hunter_insect"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="masterhunter_smallgame">
+            <requires>
+                <masterreq ref="hunter_smallgame"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="masterhunter_reptile">
+            <requires>
+                <masterreq ref="hunter_reptile"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="masterhunter_spider">
+            <requires>
+                <masterreq ref="hunter_spider"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="masterhunter_bird">
+            <requires>
+                <masterreq ref="hunter_bird"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="masterhunter_fish">
+            <requires>
+                <masterreq ref="hunter_fish"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="fastforager">
+            <requires>
+                <selreq>
+                    <specialreq ref="foraging"/>
+                    <specialreq ref="herbsearch"/>
+                </selreq>
+            </requires>
+        </mastership>
+        <mastership level="3" key="archenemy">
+            <requires>
+                <masterreq ref="enemy"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="herbhag">
+            <requires>
+                <masterreq ref="conservation"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="eloquence" attr1="CHARISMA" attr2="WILLPOWER">
+        <specialization id="bargaining"/>
+        <specialization id="lieanddeceive"/>
+        <specialization id="persuade"/>
+        <specialization id="seduce"/>
+        <specialization id="dressup"/>
+        <mastership level="1" key="distract"/>
+        <mastership level="1" key="taunt"/>
+        <mastership level="1" key="improviseddressup"/>
+        <mastership level="2" key="talentedlier"/>
+        <mastership level="2" key="notintheface"/>
+        <mastership level="2" key="cover"/>
+        <mastership level="3" key="wouldilietoyou"/>
+        <mastership level="3" key="withoutwords"/>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="locksntraps" attr1="INTUITION" attr2="AGILITY">
+        <specialization id="findtraps"/>
+        <specialization id="disarmtraps"/>
+        <specialization id="buildtraps"/>
+        <specialization id="mechanics"/>
+        <specialization id="picklocks"/>
+        <mastership level="1" key="observant"/>
+        <mastership level="1" key="improvisationartist"/>
+        <mastership level="1" key="caution1"/>
+        <mastership level="2" key="swiftpicklocks"/>
+        <mastership level="2" key="goodreflexes">
+            <requires>
+                <masterreq ref="caution1"/>
+            </requires>
+        	<modifications>
+        	  <attrmod attr="DEFENSE" val="1"/>
+        	</modifications>
+        </mastership>
+        <mastership level="2" key="lockhammer"/>
+        <mastership level="3" key="magictricks">
+            <requires>
+                <skillreq ref="arcanelore" value="6"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="caution2">
+            <requires>
+                <masterreq ref="caution1"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="swim" attr1="STRENGTH" attr2="CONSTITUTION">
+        <specialization id="shortdistance"/>
+        <specialization id="longdistance"/>
+        <specialization id="diving"/>
+        <specialization id="treadwater"/>
+        <mastership level="1" key="workunderwater"/>
+        <mastership level="1" key="riverdiver"/>
+        <mastership level="1" key="longdistanceswimmer"/>
+        <mastership level="2" key="skilledswimmer"/>
+        <mastership level="2" key="fightunderwater">
+            <requires>
+                <masterreq ref="workunderwater"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="oceandiver">
+            <requires>
+                <masterreq ref="riverdiver"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="apnoe">
+            <requires>
+                <masterreq ref="longdistanceswimmer"/>
+                <masterreq ref="oceandiver"/>
+                <skillreq ref="endurance" value="6" />
+            </requires>
+        </mastership>
+        <mastership level="3" key="deepseadiver" >
+            <requires>
+                <masterreq ref="oceandiver"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+    <skill id="seafaring" attr1="AGILITY" attr2="CONSTITUTION">
+        <specialization id="boats"/>
+        <specialization id="knots"/>
+        <specialization id="fishing"/>
+        <specialization id="streamshipping"/>
+        <specialization id="navigation"/>
+        <specialization id="rowingships"/>
+        <specialization id="seashipping"/>
+        <specialization id="sailingships"/>
+        <mastership level="1" key="sailorslegs"/>
+        <mastership level="1" key="stargaze"/>
+        <mastership level="1" key="seadog"/>
+        <mastership level="2" key="skilledsailor"/>
+        <mastership level="2" key="nutshellcaptain"/>
+        <mastership level="2" key="corsar"/>
+        <mastership level="3" key="herooftheseas">
+            <requires>
+                <masterreq ref="seadog"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="firmamentmymap">
+            <requires>
+                <masterreq ref="stargaze"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+
+    <skill id="streetlore" attr1="CHARISMA" attr2="INTUITION">
+        <specialization id="specialcity"/>
+        <specialization id="gossip"/>
+        <specialization id="orientation"/>
+        <specialization id="blackmarket"/>
+        <specialization id="crimescene"/>
+        <specialization id="comealong"/>
+        <mastership level="1" key="heargossip"/>
+        <mastership level="1" key="gambler"/>
+        <mastership level="1" key="blackmarket"/>
+        <mastership level="2" key="skilledstreetwalker"/>
+        <mastership level="2" key="fittingtone" >
+            <requires>
+                <masterreq ref="streetlore/blackmarket"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="athomeeverywhere"/>
+        <mastership level="3" key="tellgossip">
+            <requires>
+                <masterreq ref="streetlore/heargossip"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="likemypocket" multiple="true">
+            <requires>
+                <specialreq ref="streetlore/specialcity"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+
+    <skill id="animals" attr1="CHARISMA" attr2="AGILITY">
+        <specialization id="trainanimal"/>
+        <specialization id="vehicle"/>
+        <specialization id="animaltype"/>
+        <specialization id="riding"/>
+        <specialization id="calmanimal"/>
+        <specialization id="intimidateanimal"/>
+        <mastership level="1" key="dompteur"/>
+        <mastership level="1" key="ridingfighter"/>
+        <mastership level="1" key="estimateanimal"/>
+        <mastership level="2" key="beastmaster">
+            <requires>
+                <masterreq ref="dompteur"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="warrider">
+            <requires>
+                <masterreq ref="ridingfighter"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="arenaveteran"/>
+        <mastership level="3" key="freehand"/>
+        <mastership level="3" key="twosoulsonethought">
+            <requires>
+                <masterreq ref="warrider"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+
+    <skill id="survival" attr1="INTUITION" attr2="CONSTITUTION">
+        <specialization id="makefire"/>
+        <specialization id="makecamp"/>
+        <specialization id="weatherforecast"/>
+        <specialization id="orientation"/>
+        <specialization id="wilderness"/>
+        <specialization id="cooking"/>
+        <mastership level="1" key="terrainlore_forest" />
+        <mastership level="1" key="terrainlore_desert" />
+        <mastership level="1" key="terrainlore_mountain" />
+        <mastership level="1" key="terrainlore_swamp" />
+        <mastership level="1" key="terrainlore_grassland" />
+        <mastership level="1" key="terrainlore_ocean" />
+        <mastership level="1" key="terrainlore_ice" />
+        <mastership level="1" key="terrainlore_jungle" />
+        <mastership level="1" key="terrainlore_faerie" />
+        <mastership level="1" key="meteologist">
+            <requires>
+                <specialreq ref="weatherforecast"/>
+            </requires>
+        </mastership>
+        <mastership level="1" key="wildernessrunner"/>
+        <mastership level="2" key="costsavingjourney"/>
+        <mastership level="2" key="cleverleader"/>
+        <mastership level="2" key="weatherproof">
+            <requires>
+                <masterreq ref="meteologist"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="perfectorientation">
+            <requires>
+                <specialreq ref="orientation"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="shadowwalker">
+            <requires>
+                <skillreq ref="stealth" value="6"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+
+    <skill id="perception" attr1="INTUITION" attr2="WILLPOWER">
+        <specialization id="smell"/>
+        <specialization id="taste"/>
+        <specialization id="feel"/>
+        <specialization id="hear"/>
+        <specialization id="see"/>
+        <specialization id="search"/>
+        <specialization id="ambush"/>
+        <mastership level="1" key="perfecthearing"/>
+        <mastership level="1" key="perfecttaste"/>
+        <mastership level="1" key="surroundingsenses_city" />
+        <mastership level="1" key="surroundingsenses_forest" />
+        <mastership level="1" key="surroundingsenses_mountain" />
+        <mastership level="1" key="surroundingsenses_swamp" />
+        <mastership level="1" key="surroundingsenses_grassland" />
+        <mastership level="1" key="surroundingsenses_ice" />
+        <mastership level="1" key="surroundingsenses_jungle" />
+        <mastership level="1" key="surroundingsenses_faerie" />
+        <mastership level="1" key="surroundingsenses_desert" />
+        <mastership level="1" key="surroundingsenses_ocean" />
+        <mastership level="2" key="skilledscout"/>
+        <mastership level="2" key="quicksearch"/>
+        <mastership level="2" key="changedsurrounding"/>
+        <mastership level="3" key="nobodywashere"/>
+        <mastership level="3" key="warning"/>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+
+
+    <skill id="endurance" attr1="CONSTITUTION" attr2="WILLPOWER">
+        <specialization id="resistpoison"/>
+        <specialization id="resistexhaustion"/>
+        <specialization id="resistsickness"/>
+        <specialization id="resistspells"/>
+        <specialization id="drinking"/>
+        <specialization id="resistheat"/>
+        <specialization id="resistcold"/>
+        <mastership level="1" key="armour1"/>
+        <mastership level="1" key="quickupagain"/>
+        <mastership level="1" key="shield1"/>
+        <mastership level="1" key="alertness"/>
+        <mastership level="2" key="armour2" >
+            <requires>
+                <masterreq ref="armour1"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="shield2">
+            <requires>
+                <masterreq ref="shield1"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="resistpain1"/>
+        <mastership level="2" key="quickshielddefense" >
+            <requires>
+                <masterreq ref="shield1"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="sturdyhead">
+            <requires>
+                <masterreq ref="alertness"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="resistpain2">
+            <requires>
+                <masterreq ref="resistpain1"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+    </skill>
+
+    <skill id="antimagic" attr1="MYSTIC" attr2="WILLPOWER" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="wardinghand"/>
+        <mastership level="1" key="hurriedidentify"/>
+        <mastership level="1" key="wardingexpert"/>
+        <mastership level="2" key="countermagic">
+            <requires>
+                <masterreq ref="wardingexpert"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="knowledgeispower"/>
+        <mastership level="3" key="quickreaction"/>
+    </skill>
+    <skill id="combatmagic" attr1="MYSTIC" attr2="STRENGTH" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="ironconcentration"/>
+        <mastership level="1" key="distancecaster"/>
+        <mastership level="1" key="projectilemagic"/>
+        <mastership level="1" key="aimedspells"/>
+        <mastership level="2" key="destroyerheart"/>
+        <mastership level="2" key="steelconcentration">
+            <requires>
+                <masterreq ref="ironconcentration"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="veteranofmelee">
+            <requires>
+                <masterreq ref="ironconcentration"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="bloodbath"/>
+    </skill>
+
+    <skill id="windmagic" attr1="MYSTIC" attr2="MIND" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="stormvoice"/>
+        <mastership level="1" key="weatherexpert"/>
+        <mastership level="1" key="windresistence1"/>
+        <mastership level="2" key="windghostmaster"/>
+        <mastership level="2" key="windmastery"/>
+        <mastership level="2" key="windresistence2">
+            <requires>
+                <masterreq ref="windresistence1"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="weathermaster"/>
+        <mastership level="3" key="windresistence3">
+            <requires>
+                <masterreq ref="windresistence2"/>
+            </requires>
+        </mastership>
+
+    </skill>
+    <skill id="stonemagic" attr1="MYSTIC" attr2="CONSTITUTION" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="earthaffinity"/>
+        <mastership level="1" key="stoneresistence1"/>
+        <mastership level="1" key="mastersmith"/>
+        <mastership level="2" key="stonemastership"/>
+        <mastership level="2" key="stoneresistence2">
+            <requires>
+                <masterreq ref="stoneresistence1"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="masterofstoneghosts"/>
+        <mastership level="3" key="stoneresistence3">
+            <requires>
+                <masterreq ref="stoneresistence2"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="masterofstone"/>
+    </skill>
+    <skill id="enhancemagic" attr1="MYSTIC" attr2="STRENGTH" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="magicsymbols"/>
+        <mastership level="1" key="overload"/>
+        <mastership level="1" key="forcetransmission"/>
+        <mastership level="2" key="ownadvantage">
+            <requires>
+                <masterreq ref="forcetransmission"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="concentratedfocus">
+            <requires>
+                <masterreq ref="forcetransmission"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="banishingprotection"/>
+        <mastership level="3" key="greatforcetransmission">
+            <requires>
+                <masterreq ref="forcetransmission"/>
+            </requires>
+        </mastership>
+
+
+    </skill>
+    <skill id="firemagic" attr1="MYSTIC" attr2="CHARISMA" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="artisan"/>
+        <mastership level="1" key="fireresistence1"/>
+        <mastership level="1" key="flameheart"/>
+        <mastership level="2" key="firemastery"/>
+        <mastership level="2" key="fireresistence2">
+            <requires>
+                <masterreq ref="fireresistence1"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="masteroffireghosts"/>
+        <mastership level="3" key="fireresistence3">
+            <requires>
+                <masterreq ref="fireresistence2"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="inferno"/>
+    </skill>
+    <skill id="watermagic" attr1="MYSTIC" attr2="INTUITION" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="detox"/>
+        <mastership level="1" key="wavechild"/>
+        <mastership level="1" key="resistwater1"/>
+        <mastership level="2" key="masterwaterelem"/>
+        <mastership level="2" key="watermastery"/>
+        <mastership level="2" key="resistwater2">
+            <requires>
+                <masterreq ref="resistwater1"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="masterwaves">
+            <requires>
+                <masterreq ref="wavechild"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="resistwater3">
+            <requires>
+                <masterreq ref="resistwater2"/>
+            </requires>
+        </mastership>
+    </skill>
+    <skill id="shadowmagic" attr1="MYSTIC" attr2="INTUITION" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="darknessview"/>
+        <mastership level="1" key="shadowmaster"/>
+        <mastership level="2" key="shadowchild"/>
+        <mastership level="2" key="protectingshadows"/>
+        <mastership level="3" key="nightvision">
+            <requires>
+                <masterreq ref="darknessview"/>
+            </requires>
+        </mastership>
+
+    </skill>
+
+    <skill id="naturemagic" attr1="MYSTIC" attr2="CHARISMA" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="naturesong"/>
+        <mastership level="1" key="natureexpert"/>
+        <mastership level="1" key="familiarbond">
+            <requires>
+                <powerreq ref="animalfamiliar"/>
+            </requires>
+        </mastership>
+
+        <mastership level="2" key="natureharmony"/>
+        <mastership level="2" key="wildernesschild">
+            <requires>
+                <masterreq ref="natureexpert"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="enhancefamiliar">
+            <requires>
+                <masterreq ref="familiarbond"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="onewithnature">
+            <requires>
+                <masterreq ref="wildernesschild"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="familiarlanguage">
+            <requires>
+                <masterreq ref="familiarbond"/>
+            </requires>
+        </mastership>
+    </skill>
+
+    <skill id="illusionmagic" attr1="MYSTIC" attr2="CHARISMA" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="disturbclairvoyance"/>
+        <mastership level="1" key="secondidentity"/>
+        <mastership level="2" key="secondskin">
+            <requires>
+                <masterreq ref="secondidentity"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="artificalreality">
+            <requires>
+                <masterreq ref="disturbclairvoyance"/>
+            </requires>
+        </mastership>
+    </skill>
+    <skill id="controlmagic" attr1="MYSTIC" attr2="WILLPOWER" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+        
+        <!-- mastership level="1" key="empathy" >
+            <modifications>
+              <skillmod ref="empathy" value="2"/> Ausgelagert nach masterships.xml, wegen der Referenz auf empathy, die sonst noch nicht auslösbar ist
+            </modifications>
+        </mastership -->
+        
+        <mastership level="1" key="willbreaker"/>
+        <mastership level="2" key="materialbond1"/>
+        <mastership level="2" key="sleeper"/>
+        <mastership level="3" key="materialbond2">
+            <requires>
+                <masterreq ref="materialbond1"/>
+            </requires>
+        </mastership>
+    </skill>
+    <skill id="motionmagic" attr1="MYSTIC" attr2="AGILITY" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="arcanespeed">
+            <modifications>
+                <attrmod attr="SPEED" val="1" />
+            </modifications>
+        </mastership>
+        <mastership level="1" key="penetratingprojectile"/>
+        <mastership level="2" key="effectivemotion"/>
+        <mastership level="3" key="puppet"/>
+
+    </skill>
+
+    <skill id="insightmagic" attr1="MYSTIC" attr2="MIND" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="exploringmind"/>
+        <!-- mastership level="1" key="emotionsense">
+        	<modifications>
+        	  <skillmod ref="empathy" value="2"/>   Ausgelagert nach masterships.xml, wegen der Referenz auf empathy, die sonst noch nicht auslösbar ist
+        	</modifications>
+        </mastership-->
+        <mastership level="1" key="telepathicshield"/>
+        <mastership level="2" key="urgentmessage"/>
+        <mastership level="2" key="distancecaster"/>
+        <mastership level="2" key="subtileanalysis"/>
+        <mastership level="3" key="voicesoffriends"/>
+    </skill>
+    <skill id="healmagic" attr1="MYSTIC" attr2="CHARISMA" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="detox"/>
+        <mastership level="1" key="cosmeticthaumaturgy"/>
+        <mastership level="2" key="arcanediagnosis"/>
+        <mastership level="2" key="enforcehealing"/>
+        <mastership level="3" key="corporesana">
+            <requires>
+                <masterreq ref="enforcehealing"/>
+            </requires>
+        </mastership>
+    </skill>
+
+    <skill id="lightmagic" attr1="MYSTIC" attr2="CHARISMA" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="luminance"/>
+        <mastership level="1" key="warrioroflight"/>
+        <mastership level="2" key="protectionlight">
+            <requires>
+                <masterreq ref="warrioroflight"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="againstdarkness">
+            <requires>
+                <masterreq ref="warrioroflight"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="unblinded"/>
+    </skill>
+    <skill id="fatemagic" attr1="MYSTIC" attr2="CHARISMA" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="luckychild"/>
+        <mastership level="1" key="preemption"/>
+        <mastership level="2" key="cursebringer"/>
+        <mastership level="2" key="fortuneteller">
+            <requires>
+                <masterreq ref="preemption"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="breathoffate">
+            <requires>
+                <masterreq ref="preemption"/>
+            </requires>
+        </mastership>
+    </skill>
+
+    <skill id="protectionmagic" attr1="MYSTIC" attr2="CHARISMA" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="hastyprotection"/>
+        <mastership level="1" key="protectionmagicexpert"/>
+        <mastership level="2" key="distancecaster"/>
+        <mastership level="2" key="protectionmagicmaster">
+            <requires>
+                <masterreq ref="protectionmagicexpert"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="magicpull"/>
+    </skill>
+    <skill id="deathmagic" attr1="MYSTIC" attr2="MIND" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="dyingbreath"/>
+        <mastership level="1" key="ghostexpert"/>
+        <mastership level="1" key="undeadhunter"/>
+        <mastership level="2" key="masterofghosts"/>
+        <mastership level="2" key="masterofage"/>
+        <mastership level="2" key="necromancer"/>
+        <mastership level="3" key="masterofundead"/>
+    </skill>
+    <skill id="transformationmagic" attr1="MYSTIC" attr2="CONSTITUTION" type="MAGIC">
+        <mastership level="1" common="true" key="focuscontrol"/>
+        <mastership level="1" common="true" key="castershand"/>
+        <mastership level="1" common="true" key="savingcaster"/>
+        <mastership level="1" common="true" key="magiccrafter"/>
+        <mastership level="1" common="true" key="delayedcaster"/>
+        <mastership level="2" common="true" key="nothinghappend">
+            <requires>
+                <masterreq ref="focuscontrol"/>
+            </requires>
+        </mastership>
+        <mastership level="2" common="true" key="wondercrafter">
+            <requires>
+                <masterreq ref="magiccrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="relicmaster">
+            <requires>
+                <masterreq ref="wondercrafter"/>
+            </requires>
+        </mastership>
+        <mastership level="3" common="true" key="casterseye">
+            <requires>
+                <masterreq ref="castershand"/>
+            </requires>
+        </mastership>
+        <mastership level="4" common="true" key="grandmaster"/>
+
+        <mastership level="1" key="formbanishing"/>
+        <mastership level="1" key="favoredform"/>
+        <mastership level="1" key="freedomofform"/>
+        <mastership level="2" key="animalskin">
+            <requires>
+                <masterreq ref="freedomofform"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="formcontrol"/>
+        <mastership level="2" key="formveil">
+            <requires>
+                <masterreq ref="formbanishing"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="birdofpreyform">
+            <requires>
+                <masterreq ref="freedomofform"/>
+                <spellreq ref="birdshape"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="animalcaster">
+            <requires>
+                <masterreq ref="favoredform"/>
+            </requires>
+        </mastership>
+    </skill>
+
+</skills>

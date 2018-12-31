@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<powers>
+	<power id="asketic"     cost="1" />
+	<power id="aura_chosen" cost="1">
+	    <requires>
+	        <selreq>
+	        	<resourcereq ref="faith" value="2"/>
+	       		<powerreq ref="priest" />
+	        </selreq>
+	    </requires>
+	</power>
+	<power id="succour_in_need"  cost="1" />
+	<power id="friendgodservant" cost="1" selectable="GENERATION" />
+	<power id="holy_mark"   cost="1" selectable="GENERATION" />
+	<power id="holy_mark2"   cost="1" selectable="GENERATION">
+	    <requires>
+	       	<powerreq ref="holy_mark" />
+	    </requires>
+	</power>
+	<power id="childlie"    cost="2" selectable="GENERATION" />
+    <power id="childorder"  cost="2" selectable="GENERATION" />
+    <power id="childprophecy" cost="2" selectable="GENERATION" />
+    <power id="childlore"   cost="2" selectable="GENERATION" />
+    <power id="childlife"   cost="2" selectable="GENERATION" />
+    <power id="childdeath"  cost="2" selectable="GENERATION" />
+    <power id="shield_faith"  cost="1"  />
+</powers>

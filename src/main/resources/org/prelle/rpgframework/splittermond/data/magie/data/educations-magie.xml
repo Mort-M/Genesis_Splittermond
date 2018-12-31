@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<educations>
+	<education id="bancaster">
+		<modifications>
+			<powermod ref="concentrated"/>
+            <powermod ref="stablemagic"/>
+			
+			<selmod num="1">
+				<resourcemod ref="reputation" value="1"/>
+				<resourcemod ref="mentor" value="1"/>
+			</selmod>
+			<selmod num="1">
+				<resourcemod ref="relic" value="1"/>
+				<resourcemod ref="rank" value="1"/>
+			</selmod>			
+						
+			<skillmod ref="arcanelore" value="3"/>
+            <selmod num="1">
+                <skillmod ref="diplomacy" value="2"/>
+                <skillmod ref="eloquence" value="2"/>
+            </selmod>
+			<skillmod ref="empathy" value="3"/>
+			<skillmod ref="determination" value="3"/>
+			<skillmod ref="history" value="2"/>
+			<selmod num="1">
+				<skillmod ref="countrylore" value="2"/>
+	            <skillmod ref="streetlore" value="2" />
+	        </selmod>
+			<skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="1"/>
+            <skillmod ref="antimagic" value="4"/>
+			<skillmod ref="insightmagic" value="3"/>
+            <skillmod ref="protectionmagic" value="4"/>
+						
+			<mastermod ref="antimagic/hurriedidentify"/>
+            <mastermod ref="antimagic/magehunter"/>
+		</modifications>
+	</education>
+	
+	<education id="charmedagainst" variantof="bancaster">
+		<modifications>
+			<reqmod type="culture" ref="tirdurghachan"/>
+			
+            <selmod num="1">
+                <powermod ref="friendearth"/>
+                <powermod ref="friendfire"/>
+                <powermod ref="friendair"/>
+                <powermod ref="friendwater"/>
+                <powermod ref="friendghost"/>
+                <powermod ref="friendgodservant"/>
+                <powermod ref="friendlight"/>
+                <powermod ref="friendshadow"/>
+                <powermod ref="friendundead"/>
+            </selmod>
+            <powermod ref="stablemagic"/>
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="mentor" value="1"/>
+            </selmod>
+                <resourcemod ref="relic" value="1"/>
+                        
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="diplomacy" value="1"/>
+            <selmod num="1">
+                <skillmod ref="diplomacy" value="2"/>
+                <skillmod ref="eloquence" value="2"/>
+            </selmod>
+            <skillmod ref="empathy" value="3"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="survival" value="1"/>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="1"/>
+            <skillmod ref="antimagic" value="4"/>
+            <skillmod ref="insightmagic" value="3"/>
+            <skillmod ref="protectionmagic" value="4"/>
+									
+            <selmod num="1">
+                <mastermod ref="antimagic/opponent_blood"/>
+                <mastermod ref="antimagic/opponent_stone"/>
+                <mastermod ref="antimagic/opponent_fire"/>
+                <mastermod ref="antimagic/opponent_ghost"/>
+                <mastermod ref="antimagic/opponent_god"/>
+                <mastermod ref="antimagic/opponent_light"/>
+                <mastermod ref="antimagic/opponent_nature"/>
+                <mastermod ref="antimagic/opponent_shadow"/>
+                <mastermod ref="antimagic/opponent_water"/>
+                <mastermod ref="antimagic/opponent_darkness"/>
+                <mastermod ref="antimagic/opponent_wind"/>
+            </selmod>
+            <mastermod ref="antimagic/magehunter"/>
+		</modifications>
+	</education>
+	
+	<education id="shieldwatcher" variantof="bancaster">
+		<modifications>
+			<reqmod type="culture" ref="waechter"/>
+			
+            <powermod ref="concentrated"/>
+            <powermod ref="stablemagic"/>
+            
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="mentor" value="1"/>
+            </selmod>
+            <resourcemod ref="rank" value="1"/>
+                        
+            <selmod num="1">
+                <skillmod ref="melee" value="2"/>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="chains" value="2"/>
+                <skillmod ref="blades" value="2"/>
+                <skillmod ref="longrange" value="2"/>
+                <skillmod ref="staffs" value="2"/>
+                <skillmod ref="throwing" value="2"/>
+            </selmod>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="empathy" value="3"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="survival" value="2" />
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="1"/>
+            <skillmod ref="antimagic" value="4"/>
+            <selmod num="1">
+                <skillmod ref="insightmagic" value="3"/>
+                <skillmod ref="lightmagic" value="3"/>
+            </selmod>
+            <skillmod ref="protectionmagic" value="4"/>
+                        
+            <mastermod ref="antimagic/hurriedidentify"/>
+            <selmod num="1">
+                <mastermod ref="antimagic/opponent_blood"/>
+                <mastermod ref="antimagic/opponent_stone"/>
+                <mastermod ref="antimagic/opponent_fire"/>
+                <mastermod ref="antimagic/opponent_ghost"/>
+                <mastermod ref="antimagic/opponent_god"/>
+                <mastermod ref="antimagic/opponent_light"/>
+                <mastermod ref="antimagic/opponent_nature"/>
+                <mastermod ref="antimagic/opponent_shadow"/>
+                <mastermod ref="antimagic/opponent_water"/>
+                <mastermod ref="antimagic/opponent_darkness"/>
+                <mastermod ref="antimagic/opponent_wind"/>
+            </selmod>
+		</modifications>
+	</education>
+	
+	<education id="rehabilitator" variantof="bancaster">
+		<modifications>
+			<reqmod type="culture" ref="aitushar,ashurmazaan,farukhur,pashtar"/>
+						
+            <powermod ref="concentrated"/>
+            <powermod ref="stablemagic"/>
+            
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="mentor" value="1"/>
+            </selmod>
+            <selmod num="1">
+                <resourcemod ref="relic" value="1"/>
+                <resourcemod ref="wealth" value="1"/>
+            </selmod>           
+                        
+            <skillmod ref="arcanelore" value="2"/>
+            <selmod dist="3">
+                <skillmod ref="diplomacy" />
+                <skillmod ref="eloquence" />
+            </selmod>
+            <skillmod ref="empathy" value="3"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="2"/>
+            <selmod num="1">
+                <skillmod ref="countrylore" value="2"/>
+                <skillmod ref="streetlore" value="2" />
+            </selmod>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="stealth" value="1"/>
+            <skillmod ref="antimagic" value="4"/>
+            <skillmod ref="insightmagic" value="3"/>
+            <skillmod ref="protectionmagic" value="4"/>
+                        
+            <mastermod ref="protectionmagic/castershand"/>
+            <mastermod ref="antimagic/magehunter"/>
+		</modifications>
+	</education>
+
+    <education id="summoner">
+        <modifications>
+            <selmod num="1">
+                <powermod ref="friendearth"/>
+                <powermod ref="friendfire"/>
+                <powermod ref="friendair"/>
+                <powermod ref="friendwater"/>
+                <powermod ref="friendghost"/>
+                <powermod ref="friendgodservant"/>
+                <powermod ref="friendlight"/>
+                <powermod ref="friendshadow"/>
+                <powermod ref="friendundead"/>
+            </selmod>
+            <powermod ref="animalfamiliar"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="leadership" value="2"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="3"/>
+            <selmod num="1">
+                <skillmod ref="streetlore" value="1" />
+                <skillmod ref="survival" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="2"/>
+            <selmod values="4 3 3 2 2">
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="lightmagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="shadowmagic"/>
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="watermagic"/>
+                <skillmod ref="windmagic"/>
+            </selmod>
+                        
+            <mastermod skill="arcanelore"/>
+            <mastermod skill="arcanelore"/>
+        </modifications>
+    </education>
+ 
+    <education id="cryptmaster" variantof="summoner">
+        <modifications>
+            <reqmod type="culture" ref="patalis"/>
+            <powermod ref="friendghost"/>
+            <powermod ref="animalfamiliar"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="empathy" value="3"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="3"/>
+            <skillmod ref="countrylore" value="2"/>
+            <selmod num="1">
+                <skillmod ref="countrylore" value="1" />
+                <skillmod ref="survival" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="deathmagic" value="4"/>
+            <selmod values="3 3 2 1">
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="lightmagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="shadowmagic"/>
+                <skillmod ref="watermagic"/>
+                <skillmod ref="windmagic"/>
+            </selmod>
+                        
+            <mastermod ref="arcanelore/helpful_beings"/>
+            <mastermod ref="deathmagic/ghostexpert"/>
+        </modifications>
+    </education>
+ 
+    <education id="snakecharmer" variantof="summoner">
+        <modifications>
+            <reqmod type="culture" ref="gulong keshubim"/>
+            <selmod num="1">
+                <powermod ref="friendearth"/>
+                <powermod ref="friendfire"/>
+                <powermod ref="friendair"/>
+                <powermod ref="friendwater"/>
+                <powermod ref="friendghost"/>
+                <powermod ref="friendgodservant"/>
+                <powermod ref="friendlight"/>
+                <powermod ref="friendshadow"/>
+                <powermod ref="friendundead"/>
+            </selmod>
+            <powermod ref="animalfamiliar"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="leadership" value="1"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="empathy" value="1"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="3"/>
+            <skillmod ref="nature" value="1"/>
+            <selmod num="1">
+                <skillmod ref="countrylore" value="1" />
+                <skillmod ref="survival" value="1"/>
+            </selmod>
+            <skillmod ref="survival" value="1"/>
+            <skillmod ref="nature" value="2"/>
+            <selmod values="4 3 3 2 2">
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="shadowmagic"/>
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="watermagic"/>
+                <skillmod ref="windmagic"/>
+            </selmod>
+                        
+            <mastermod skill="arcanelore"/>
+            <mastermod skill="arcanelore"/>
+        </modifications>
+    </education>
+ 
+    <education id="titanchild" variantof="summoner">
+        <modifications>
+            <reqmod type="culture" ref="strominseln"/>
+            <selmod num="1">
+                <powermod ref="friendearth"/>
+                <powermod ref="friendfire"/>
+                <powermod ref="friendair"/>
+                <powermod ref="friendwater"/>
+                <powermod ref="friendghost"/>
+                <powermod ref="friendgodservant"/>
+                <powermod ref="friendlight"/>
+                <powermod ref="friendshadow"/>
+                <powermod ref="friendundead"/>
+            </selmod>
+            <powermod ref="animalfamiliar"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <selmod num="1">
+                <skillmod ref="athletics" value="2" />
+                <skillmod ref="endurance" value="2"/>
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="swim" value="2" />
+                <skillmod ref="survival" value="2"/>
+            </selmod>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="empathy" value="1"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="3"/>
+            <selmod num="1">
+                <skillmod ref="countrylore" value="1" />
+                <skillmod ref="survival" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="3"/>
+            <selmod values="4 3 3 2 2">
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="windmagic"/>
+                <skillmod ref="watermagic"/>
+            </selmod>
+                        
+            <mastermod skill="arcanelore"/>
+            <mastermod skill="arcanelore"/>
+        </modifications>
+    </education>
+    
+    <education id="combatmage">
+        <modifications>
+            <powermod ref="focuspool"/>
+            
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="relic" value="1"/>
+            </selmod>
+            <selmod num="1">
+                <resourcemod ref="mentor" value="1"/>
+                <resourcemod ref="rank" value="1"/>
+            </selmod>           
+                        
+            <selmod num="1">
+                <skillmod ref="melee" value="2"/>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="chains" value="2"/>
+                <skillmod ref="blades" value="2"/>
+                <skillmod ref="longrange" value="2"/>
+                <skillmod ref="staffs" value="2"/>
+                <skillmod ref="throwing" value="2"/>
+            </selmod>
+            <skillmod ref="leadership" value="1"/>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="combatmagic" value="4"/>
+            <skillmod ref="protectionmagic" value="3"/>
+            <selmod values="3 3">
+                <skillmod ref="antimagic"/>
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="motionmagic"/>
+                <skillmod ref="insightmagic"/>
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="healmagic"/>
+                <skillmod ref="illusionmagic"/>
+                <skillmod ref="lightmagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="shadowmagic"/>
+                <skillmod ref="fatemagic"/>
+                <skillmod ref="enhancemagic"/>
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+                <skillmod ref="watermagic"/>
+                <skillmod ref="windmagic"/>
+            </selmod>
+                        
+            <mastermod ref="combatmagic/ironconcentration"/>
+            <mastermod ref="combatmagic/aimedspells"/>
+        </modifications>
+    </education>
+ 
+    <education id="castigar" variantof="combatmage">
+        <modifications>
+            <reqmod type="culture" ref="mertstaedt"/>
+            <powermod ref="focuspool"/>
+            
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="relic" value="1"/>
+            </selmod>
+            <resourcemod ref="rank" value="1"/>
+                        
+            <selmod num="1">
+                <skillmod ref="melee" value="2"/>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="chains" value="2"/>
+                <skillmod ref="blades" value="2"/>
+                <skillmod ref="longrange" value="2"/>
+                <skillmod ref="staffs" value="2"/>
+                <skillmod ref="throwing" value="2"/>
+            </selmod>
+            <skillmod ref="leadership" value="3"/>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="diplomacy" value="2"/>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="combatmagic" value="4"/>
+            <skillmod ref="protectionmagic" value="3"/>
+            <selmod values="3 3">
+                <skillmod ref="antimagic"/>
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="motionmagic"/>
+                <skillmod ref="insightmagic"/>
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="healmagic"/>
+                <skillmod ref="illusionmagic"/>
+                <skillmod ref="lightmagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="shadowmagic"/>
+                <skillmod ref="fatemagic"/>
+                <skillmod ref="enhancemagic"/>
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+                <skillmod ref="watermagic"/>
+                <skillmod ref="windmagic"/>
+            </selmod>
+                        
+            <mastermod ref="leadership/troopup"/>
+            <mastermod ref="combatmagic/aimedspells"/>
+        </modifications>
+    </education>
+ 
+    <education id="leiyu" variantof="combatmage">
+        <modifications>
+            <reqmod type="culture" ref="zhoujiang"/>
+            <powermod ref="focuspool"/>
+            
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="relic" value="1"/>
+            </selmod>
+            <resourcemod ref="mentor" value="1"/>
+            <selmod num="1">
+                <skillmod ref="melee" value="2"/>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="chains" value="2"/>
+                <skillmod ref="blades" value="2"/>
+                <skillmod ref="longrange" value="2"/>
+                <skillmod ref="staffs" value="2"/>
+                <skillmod ref="throwing" value="2"/>
+            </selmod>
+            <skillmod ref="acrobatics" value="3"/>
+            <skillmod ref="windmagic" value="4"/>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="combatmagic" value="4"/>
+            <selmod num="1">
+                <skillmod ref="antimagic" value="3"/>
+                <skillmod ref="controlmagic" value="3"/>
+                <skillmod ref="motionmagic" value="3"/>
+                <skillmod ref="insightmagic" value="3"/>
+                <skillmod ref="stonemagic" value="3"/>
+                <skillmod ref="firemagic" value="3"/>
+                <skillmod ref="healmagic" value="3"/>
+                <skillmod ref="illusionmagic" value="3"/>
+                <skillmod ref="lightmagic" value="3"/>
+                <skillmod ref="naturemagic" value="3"/>
+                <skillmod ref="shadowmagic" value="3"/>
+                <skillmod ref="fatemagic" value="3"/>
+                <skillmod ref="enhancemagic" value="3"/>
+                <skillmod ref="deathmagic" value="3"/>
+                <skillmod ref="protectionmagic" value="3"/>
+                <skillmod ref="transformationmagic" value="3"/>
+                <skillmod ref="watermagic" value="3"/>
+            </selmod>
+                        
+            <mastermod ref="windmagic/stormvoice"/>
+            <mastermod ref="combatmagic/aimedspells"/>
+        </modifications>
+    </education>
+ 
+    <education id="steelshield" variantof="combatmage">
+        <modifications>
+            <reqmod type="culture" ref="dalmreich"/>
+            <powermod ref="focuspool"/>
+            
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="relic" value="1"/>
+            </selmod>
+            <selmod num="1">
+                <resourcemod ref="mentor" value="1"/>
+                <resourcemod ref="rank" value="1"/>
+            </selmod>           
+                        
+            <selmod num="1">
+                <skillmod ref="melee" value="2"/>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="chains" value="2"/>
+                <skillmod ref="blades" value="2"/>
+                <skillmod ref="longrange" value="2"/>
+                <skillmod ref="staffs" value="2"/>
+                <skillmod ref="throwing" value="2"/>
+            </selmod>
+            <skillmod ref="leadership" value="1"/>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="3"/>
+            <skillmod ref="combatmagic" value="4"/>
+            <skillmod ref="protectionmagic" value="4"/>
+            <selmod values="3 3">
+                <skillmod ref="antimagic"/>
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="motionmagic"/>
+                <skillmod ref="insightmagic"/>
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="healmagic"/>
+                <skillmod ref="illusionmagic"/>
+                <skillmod ref="lightmagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="shadowmagic"/>
+                <skillmod ref="fatemagic"/>
+                <skillmod ref="enhancemagic"/>
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+                <skillmod ref="watermagic"/>
+                <skillmod ref="windmagic"/>
+            </selmod>
+                        
+            <mastermod ref="combatmagic/defensive_caster"/>
+            <mastermod ref="combatmagic/aimedspells"/>
+        </modifications>
+    </education>
+    
+    <education id="beingcreator">
+        <modifications>
+            <powermod ref="focuspool"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="alchemy" value="2"/>
+            <skillmod ref="leadership" value="1"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="diplomacy" value="2"/>
+            <selmod values="3 2 1">
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+                <skillmod ref="nature"/>
+            </selmod>
+            <skillmod ref="history" value="3"/>
+            <skillmod ref="endurance" value="2"/>
+            <selmod values="4 2">
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="antimagic" value="3"/>
+                <skillmod ref="motionmagic" value="3"/>
+                <skillmod ref="insightmagic" value="3"/>
+                <skillmod ref="stonemagic" value="3"/>
+                <skillmod ref="firemagic" value="3"/>
+                <skillmod ref="healmagic" value="3"/>
+                <skillmod ref="illusionmagic" value="3"/>
+                <skillmod ref="combatmagic" value="3"/>
+                <skillmod ref="lightmagic" value="3"/>
+                <skillmod ref="naturemagic" value="3"/>
+                <skillmod ref="shadowmagic" value="3"/>
+                <skillmod ref="fatemagic" value="3"/>
+                <skillmod ref="protectionmagic" value="3"/>
+                <skillmod ref="enhancemagic" value="3"/>
+                <skillmod ref="watermagic" value="3"/>
+                <skillmod ref="windmagic" value="3"/>
+            </selmod>
+                        
+            <selmod num="1">
+                <mastermod ref="clscraft/designer"/>
+                <mastermod ref="craftmanship/designer"/>
+                <mastermod ref="deathmagic/dancing_dead"/>
+            </selmod>
+            <selmod num="1">
+                <mastermod ref="arcanelore/spontaneous_instruction"/>
+                <mastermod ref="deathmagic/undead_classicist"/>
+            </selmod>
+        </modifications>
+    </education>
+    
+    <education id="brother_of_the_skull" variantof="beingcreator">
+        <modifications>
+            <reqmod type="culture" ref="midstad patalis"/>
+            <powermod ref="focuspool"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="alchemy" value="2"/>
+            <skillmod ref="leadership" value="2"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="diplomacy" value="1"/>
+            <selmod values="3 2 1">
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+                <skillmod ref="nature"/>
+            </selmod>
+            <skillmod ref="history" value="3"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="deathmagic" value="4"/>
+            <selmod num="1">
+                <skillmod ref="controlmagic" value="2"/>
+                <skillmod ref="transformationmagic" value="2"/>
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="antimagic" value="3"/>
+                <skillmod ref="motionmagic" value="3"/>
+                <skillmod ref="insightmagic" value="3"/>
+                <skillmod ref="stonemagic" value="3"/>
+                <skillmod ref="firemagic" value="3"/>
+                <skillmod ref="healmagic" value="3"/>
+                <skillmod ref="illusionmagic" value="3"/>
+                <skillmod ref="combatmagic" value="3"/>
+                <skillmod ref="lightmagic" value="3"/>
+                <skillmod ref="naturemagic" value="3"/>
+                <skillmod ref="shadowmagic" value="3"/>
+                <skillmod ref="fatemagic" value="3"/>
+                <skillmod ref="protectionmagic" value="3"/>
+                <skillmod ref="enhancemagic" value="3"/>
+                <skillmod ref="watermagic" value="3"/>
+                <skillmod ref="windmagic" value="3"/>
+            </selmod>
+                        
+            <mastermod ref="deathmagic/dancing_dead"/>
+            <mastermod ref="deathmagic/undead_classicist"/>
+        </modifications>
+    </education>
+    
+    <education id="formgiver" variantof="beingcreator">
+        <modifications>
+            <reqmod type="culture" ref="kungaitan"/>
+            <powermod ref="tinker"/>
+            <powermod ref="concentrated"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="alchemy" value="3"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="diplomacy" value="3"/>
+            <selmod values="3 2 1">
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+                <skillmod ref="nature"/>
+            </selmod>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="transformationmagic" value="4"/>
+            <selmod num="1">
+                <skillmod ref="controlmagic" value="2"/>
+                <skillmod ref="deathmagic" value="2"/>
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="antimagic" value="3"/>
+                <skillmod ref="motionmagic" value="3"/>
+                <skillmod ref="insightmagic" value="3"/>
+                <skillmod ref="stonemagic" value="3"/>
+                <skillmod ref="firemagic" value="3"/>
+                <skillmod ref="healmagic" value="3"/>
+                <skillmod ref="illusionmagic" value="3"/>
+                <skillmod ref="combatmagic" value="3"/>
+                <skillmod ref="lightmagic" value="3"/>
+                <skillmod ref="naturemagic" value="3"/>
+                <skillmod ref="shadowmagic" value="3"/>
+                <skillmod ref="fatemagic" value="3"/>
+                <skillmod ref="protectionmagic" value="3"/>
+                <skillmod ref="enhancemagic" value="3"/>
+                <skillmod ref="watermagic" value="3"/>
+                <skillmod ref="windmagic" value="3"/>
+            </selmod>
+                        
+            <selmod num="1">
+                <mastermod ref="clscraft/designer"/>
+                <mastermod ref="craftmanship/designer"/>
+            </selmod>
+            <mastermod ref="arcanelore/spontaneous_instruction"/>
+        </modifications>
+    </education>
+    
+    <education id="nuumian_golembuilder" variantof="beingcreator">
+        <modifications>
+            <reqmod type="culture" ref="mertstaedt"/>
+            <powermod ref="tinker"/>
+            <powermod ref="stablemagic"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="alchemy" value="3"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="diplomacy" value="2"/>
+            <selmod values="3 2 1">
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+                <skillmod ref="nature"/>
+            </selmod>
+            <skillmod ref="history" value="3"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="transformationmagic" value="4"/>
+            <selmod num="1">
+                <skillmod ref="controlmagic" value="2"/>
+                <skillmod ref="deathmagic" value="2"/>
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="antimagic" value="3"/>
+                <skillmod ref="motionmagic" value="3"/>
+                <skillmod ref="insightmagic" value="3"/>
+                <skillmod ref="stonemagic" value="3"/>
+                <skillmod ref="firemagic" value="3"/>
+                <skillmod ref="healmagic" value="3"/>
+                <skillmod ref="illusionmagic" value="3"/>
+                <skillmod ref="combatmagic" value="3"/>
+                <skillmod ref="lightmagic" value="3"/>
+                <skillmod ref="naturemagic" value="3"/>
+                <skillmod ref="shadowmagic" value="3"/>
+                <skillmod ref="fatemagic" value="3"/>
+                <skillmod ref="protectionmagic" value="3"/>
+                <skillmod ref="enhancemagic" value="3"/>
+                <skillmod ref="watermagic" value="3"/>
+                <skillmod ref="windmagic" value="3"/>
+            </selmod>
+                        
+            <selmod num="1">
+                <mastermod ref="clscraft/designer"/>
+                <mastermod ref="craftmanship/designer"/>
+            </selmod>
+            <mastermod ref="arcanelore/spontaneous_instruction"/>
+        </modifications>
+    </education>
+    
+    <education id="artifactcrafter">
+        <modifications>
+            <powermod ref="tinker"/>
+            <selmod num="1">
+                <powermod ref="concentrated"/>
+                <powermod ref="literate"/>
+            </selmod>
+            
+            <selmod dist="2">
+                <resourcemod ref="relic"/>
+                <resourcemod ref="wealth"/>
+            </selmod>
+                        
+            <selmod values="3 2 1">
+                <skillmod ref="alchemy"/>
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+            </selmod>
+            <skillmod ref="arcanelore" value="3"/>
+            <selmod num="1">
+                <skillmod ref="diplomacy" value="2"/>
+                <skillmod ref="eloquence" value="2"/>
+            </selmod>
+            <skillmod ref="determination" value="2"/>
+            <selmod num="1">
+                <skillmod ref="heal" value="2"/>
+                <skillmod ref="locksntraps" value="2"/>
+            </selmod>
+            <skillmod ref="perception" value="3"/>
+            <selmod values="4 3 2">
+                <skillmod ref="antimagic" />
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="motionmagic" />
+                <skillmod ref="insightmagic" />
+                <skillmod ref="stonemagic" />
+                <skillmod ref="firemagic" />
+                <skillmod ref="healmagic" />
+                <skillmod ref="illusionmagic" />
+                <skillmod ref="combatmagic" />
+                <skillmod ref="lightmagic" />
+                <skillmod ref="naturemagic" />
+                <skillmod ref="shadowmagic" />
+                <skillmod ref="fatemagic" />
+                <skillmod ref="protectionmagic" />
+                <skillmod ref="enhancemagic" />
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+                <skillmod ref="watermagic" />
+                <skillmod ref="windmagic" />
+            </selmod>
+                        
+            <selmod num="1">
+                <mastermod ref="alchemy/journeyman"/>
+                <mastermod ref="clscraft/journeyman_architecture"/>
+                <mastermod ref="clscraft/journeyman_glassblowing"/>
+                <mastermod ref="clscraft/journeyman_engraving"/>
+                <mastermod ref="clscraft/journeyman_jeweler"/>
+                <mastermod ref="clscraft/journeyman_calligraphy"/>
+                <mastermod ref="clscraft/journeyman_cartography"/>
+                <mastermod ref="clscraft/journeyman_cooking"/>
+                <mastermod ref="clscraft/journeyman_painting"/>
+                <mastermod ref="clscraft/journeyman_tatooing"/>
+                <mastermod ref="craftmanship/journeyman_woodworking"/>
+                <mastermod ref="craftmanship/journeyman_cooking"/>
+                <mastermod ref="craftmanship/journeyman_forging"/>
+                <mastermod ref="craftmanship/journeyman_tailoring"/>
+                <mastermod ref="craftmanship/journeyman_stoneworking"/>
+            </selmod>
+            <selmod num="1">
+                <mastermod ref="arcanelore/artifactlore"/>
+                <mastermod ref="antimagic/magiccrafter"/>
+                <mastermod ref="controlmagic/magiccrafter"/>
+                <mastermod ref="motionmagic/magiccrafter"/>
+                <mastermod ref="insightmagic/magiccrafter"/>
+                <mastermod ref="stonemagic/magiccrafter"/>
+                <mastermod ref="firemagic/magiccrafter"/>
+                <mastermod ref="healmagic/magiccrafter"/>
+                <mastermod ref="illusionmagic/magiccrafter"/>
+                <mastermod ref="combatmagic/magiccrafter"/>
+                <mastermod ref="lightmagic/magiccrafter"/>
+                <mastermod ref="shadowmagic/magiccrafter"/>
+                <mastermod ref="fatemagic/magiccrafter"/>
+                <mastermod ref="protectionmagic/magiccrafter"/>
+                <mastermod ref="enhancemagic/magiccrafter"/>
+                <mastermod ref="deathmagic/magiccrafter"/>
+                <mastermod ref="transformationmagic/magiccrafter"/>
+                <mastermod ref="watermagic/magiccrafter"/>
+                <mastermod ref="windmagic/magiccrafter"/>
+            </selmod>
+        </modifications>
+    </education>
+    
+    <education id="crystalformer" variantof="artifactcrafter">
+        <modifications>
+            <reqmod type="culture" ref="albseebund"/>
+            <powermod ref="tinker"/>
+            <selmod num="1">
+                <powermod ref="concentrated"/>
+                <powermod ref="literate"/>
+            </selmod>
+            
+            <selmod dist="2">
+                <resourcemod ref="relic"/>
+                <resourcemod ref="wealth"/>
+            </selmod>
+                        
+            <skillmod ref="clscraft" value="3"/>
+            <selmod values="2 1">
+                <skillmod ref="alchemy"/>
+                <skillmod ref="craftmanship"/>
+            </selmod>
+            <skillmod ref="arcanelore" value="3"/>
+            <selmod num="1">
+                <skillmod ref="diplomacy" value="2"/>
+                <skillmod ref="eloquence" value="2"/>
+            </selmod>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="swim" value="1"/>
+            <skillmod ref="seafaring" value="1"/>
+            <skillmod ref="perception" value="3"/>
+            <selmod values="4 3">
+                <skillmod ref="watermagic" />
+                <skillmod ref="windmagic" />
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="antimagic" value="2"/>
+                <skillmod ref="controlmagic" value="2"/>
+                <skillmod ref="motionmagic" value="2"/>
+                <skillmod ref="insightmagic" value="2"/>
+                <skillmod ref="stonemagic" value="2"/>
+                <skillmod ref="firemagic" value="2"/>
+                <skillmod ref="healmagic" value="2"/>
+                <skillmod ref="illusionmagic" value="2"/>
+                <skillmod ref="combatmagic" value="2"/>
+                <skillmod ref="lightmagic" value="2"/>
+                <skillmod ref="naturemagic" value="2"/>
+                <skillmod ref="shadowmagic" value="2"/>
+                <skillmod ref="fatemagic" value="2"/>
+                <skillmod ref="protectionmagic" value="2"/>
+                <skillmod ref="enhancemagic" value="2"/>
+                <skillmod ref="deathmagic" value="2"/>
+                <skillmod ref="transformationmagic" value="2"/>
+            </selmod>
+                        
+            <selmod num="1">
+                <mastermod ref="clscraft/journeyman_glassblowing"/>
+                 <mastermod ref="clscraft/journeyman_jeweler"/>
+            </selmod>
+            <selmod num="1">
+                <mastermod ref="watermagic/magiccrafter"/>
+                <mastermod ref="windmagic/magiccrafter"/>
+            </selmod>
+        </modifications>
+    </education>
+    
+    <education id="runesmith" variantof="artifactcrafter">
+        <modifications>
+            <reqmod type="culture" ref="borombri"/>
+            <powermod ref="tinker"/>
+            <selmod num="1">
+                <powermod ref="concentrated"/>
+                <powermod ref="literate"/>
+            </selmod>
+            
+            <selmod dist="2">
+                <resourcemod ref="relic"/>
+                <resourcemod ref="wealth"/>
+            </selmod>
+                        
+            <skillmod ref="slashing" value="1"/>
+            <skillmod ref="endurance" value="1"/>
+            <selmod values="3 2">
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+            </selmod>
+            <skillmod ref="alchemy" value="1"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="determination" value="2"/>
+            <selmod num="1">
+                <skillmod ref="heal" value="2"/>
+                <skillmod ref="locksntraps" value="2"/>
+            </selmod>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="stonemagic" value="4"/>
+            <selmod values="3 2">
+                <skillmod ref="antimagic" />
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="motionmagic" />
+                <skillmod ref="insightmagic" />
+                <skillmod ref="firemagic" />
+                <skillmod ref="healmagic" />
+                <skillmod ref="illusionmagic" />
+                <skillmod ref="combatmagic" />
+                <skillmod ref="lightmagic" />
+                <skillmod ref="naturemagic" />
+                <skillmod ref="shadowmagic" />
+                <skillmod ref="fatemagic" />
+                <skillmod ref="protectionmagic" />
+                <skillmod ref="enhancemagic" />
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+                <skillmod ref="watermagic" />
+                <skillmod ref="windmagic" />
+            </selmod>
+                        
+            <mastermod ref="craftmanship/journeyman_forging"/>
+            <mastermod ref="stonemagic/magiccrafter"/>
+        </modifications>
+    </education>
+    
+    <education id="sciptor" variantof="artifactcrafter">
+        <modifications>
+            <reqmod type="culture" ref="ioria"/>
+            <powermod ref="tinker"/>
+            <powermod ref="literate"/>
+            
+            <selmod dist="2">
+                <resourcemod ref="relic"/>
+                <resourcemod ref="wealth"/>
+            </selmod>
+                        
+            <selmod values="3 2 1">
+                <skillmod ref="alchemy"/>
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+            </selmod>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="alchemy" value="-1"/>
+            <skillmod ref="streetlore" value="1"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <selmod num="1">
+                <skillmod ref="diplomacy" value="2"/>
+                <skillmod ref="eloquence" value="2"/>
+            </selmod>
+            <skillmod ref="determination" value="2"/>
+            <selmod num="1">
+                <skillmod ref="heal" value="2"/>
+                <skillmod ref="locksntraps" value="2"/>
+            </selmod>
+            <skillmod ref="perception" value="2"/>
+            <skillmod ref="fatemagic" value="4"/>
+            <selmod values="3 2">
+                <skillmod ref="antimagic" />
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="motionmagic" />
+                <skillmod ref="insightmagic" />
+                <skillmod ref="stonemagic" />
+                <skillmod ref="firemagic" />
+                <skillmod ref="healmagic" />
+                <skillmod ref="illusionmagic" />
+                <skillmod ref="combatmagic" />
+                <skillmod ref="lightmagic" />
+                <skillmod ref="naturemagic" />
+                <skillmod ref="shadowmagic" />
+                <skillmod ref="protectionmagic" />
+                <skillmod ref="enhancemagic" />
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+                <skillmod ref="watermagic" />
+                <skillmod ref="windmagic" />
+            </selmod>
+                        
+            <mastermod ref="arcanelore/createscroll1"/>
+            <selmod num="1">
+                <mastermod ref="arcanelore/artifactlore"/>
+                <mastermod ref="antimagic/magiccrafter"/>
+                <mastermod ref="controlmagic/magiccrafter"/>
+                <mastermod ref="motionmagic/magiccrafter"/>
+                <mastermod ref="insightmagic/magiccrafter"/>
+                <mastermod ref="stonemagic/magiccrafter"/>
+                <mastermod ref="firemagic/magiccrafter"/>
+                <mastermod ref="healmagic/magiccrafter"/>
+                <mastermod ref="illusionmagic/magiccrafter"/>
+                <mastermod ref="combatmagic/magiccrafter"/>
+                <mastermod ref="lightmagic/magiccrafter"/>
+                <mastermod ref="shadowmagic/magiccrafter"/>
+                <mastermod ref="fatemagic/magiccrafter"/>
+                <mastermod ref="protectionmagic/magiccrafter"/>
+                <mastermod ref="enhancemagic/magiccrafter"/>
+                <mastermod ref="deathmagic/magiccrafter"/>
+                <mastermod ref="transformationmagic/magiccrafter"/>
+                <mastermod ref="watermagic/magiccrafter"/>
+                <mastermod ref="windmagic/magiccrafter"/>
+            </selmod>
+        </modifications>
+    </education>
+	
+</educations>

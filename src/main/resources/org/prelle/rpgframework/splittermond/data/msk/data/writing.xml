@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="VILLAGE" cplx="U" id="schreibtafel" load="2" material="OTHER" price="50" robust="3" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="U" id="pergamentbogen" load="0" material="OTHER" price="10" robust="0" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="schriftrolle" load="1" material="OTHER" price="200" robust="1" type="OTHER"/>
+   <item avail="LARGE_TOWN" cplx="G" id="foliant" load="2" material="OTHER" price="1500" robust="1" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="U" id="tagebuch" load="1" material="OTHER" price="500" robust="1" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="beutelbuchLeer" load="1" material="OTHER" price="600" robust="2" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="U" id="papyrus10Bögen" load="0" material="OTHER" price="20" robust="1" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="papier10Bögen" load="0" material="OTHER" price="30" robust="1" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="leinwand" load="2" material="OTHER" price="30" robust="0" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="schreibutensilien" load="0" material="OTHER" price="100" robust="0" skill="clscraft" spec="clscraft/calligraphy" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="malerbedarfSatz" load="1" material="OTHER" price="1000" robust="2" skill="clscraft" spec="clscraft/painting" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="kreide" load="0" material="OTHER" price="2" robust="1" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="griffel" load="0" material="OTHER" price="2" robust="3" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="pinsel" load="0" material="OTHER" price="5" robust="2" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="tusche" load="0" material="OTHER" price="5" robust="0" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="kohlestifte" load="0" material="OTHER" price="2" robust="1" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="rohrfeder" load="0" material="OTHER" price="5" robust="1" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="rohrfederMetall" load="0" material="METAL" price="50" robust="4" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="federkiel" load="0" material="OTHER" price="5" robust="1" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="federmesser" load="0" material="METAL" price="60" robust="6" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="eisengallustinte" load="0" material="OTHER" price="15" robust="0" type="OTHER"/>
+   <item avail="LARGE_TOWN" cplx="F" id="sepiatinte" load="0" material="OTHER" price="50" robust="0" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="malfarben" load="1" material="OTHER" price="50" robust="0" type="OTHER"/>
+</items>

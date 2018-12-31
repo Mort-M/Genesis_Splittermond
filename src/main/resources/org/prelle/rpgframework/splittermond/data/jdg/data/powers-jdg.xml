@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<powers>
+	<power id="floatingform" cost="1" selectable="GENERATION" />
+    <power id="childblood"  cost="2" selectable="GENERATION" />
+    <power id="childstone"  cost="2" selectable="GENERATION" />
+    <power id="childfire"   cost="2" selectable="GENERATION" />
+    <power id="childlight"  cost="2" selectable="GENERATION" />
+    <power id="childnature" cost="2" selectable="GENERATION" />
+    <power id="childshadow" cost="2" selectable="GENERATION">
+      <modifications>
+        <skillmod ref="stealth" type="rel" value="1"/>
+      </modifications>
+    </power>
+    <power id="childwater"  cost="2" selectable="GENERATION" />
+    <power id="childwind"   cost="2" selectable="GENERATION" />
+</powers>

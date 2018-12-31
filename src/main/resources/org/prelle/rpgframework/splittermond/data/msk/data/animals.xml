@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="SMALL_TOWN" cplx="G" id="reiterzubehörSatz" load="5" material="OTHER" price="1000" robust="3" skill="animals" spec="animals/riding" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="U" id="futterbeutel" load="1" material="FABRIC" price="10" robust="2" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="kardätsche" load="1" material="OTHER" price="30" robust="3" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="packsattel" load="5" material="OTHER" price="300" robust="3" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="U" id="pferdedecke" load="3" material="OTHER" price="50" robust="1" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="reitgerte" load="1" material="OTHER" price="200" robust="2" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="reitsattel" load="4" material="OTHER" price="300" robust="3" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="satteltaschen" load="3" material="OTHER" price="100" robust="2" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="U" id="scheuklappen" load="0" material="OTHER" price="100" robust="1" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="sporen" load="1" material="OTHER" price="200" robust="6" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="steigbügel" load="0" material="OTHER" price="100" robust="4" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="striegel" load="1" material="OTHER" price="30" robust="3" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="zaumzeug/zuggeschirr" load="1" material="OTHER" price="100" robust="2" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="dressurutensilienSatz" load="3" material="OTHER" price="500" robust="3" skill="animals" spec="animals/trainanimal" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="dompteurgerte" load="1" material="OTHER" price="200" robust="2" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="glöckchenbänder" load="0" material="OTHER" price="20" robust="2" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="U" id="halsbandUndLeine" load="1" material="OTHER" price="50" robust="3" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="maulkorb" load="0" material="OTHER" price="100" robust="3" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="U" id="nasenring" load="0" material="OTHER" price="10" robust="5" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="raubtierpeitsche" load="2" material="OTHER" price="100" robust="2" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="stockschlinge" load="2" material="OTHER" price="200" robust="4" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="tierkäfigGroß" load="4" material="OTHER" price="200" robust="5" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="tierkäfigKlein" load="2" material="OTHER" price="100" robust="5" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="falknerutensilienSatz" load="1" material="OTHER" price="500" robust="2" skill="animals" spec="animals/trainanimal" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="falkenmaske" load="0" material="OTHER" price="100" robust="2" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="falknerhandschuh" load="1" material="OTHER" price="200" robust="2" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="U" id="federspiel" load="0" material="OTHER" price="50" robust="2" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="U" id="beizbalg" load="0" material="OTHER" price="50" robust="2" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="bogenfalle" load="1" material="OTHER" price="20" robust="2" skill="hunting" spec="hunting/traps" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="fangkäfigGroß" load="6" material="OTHER" price="400" robust="6" skill="hunting" spec="hunting/traps" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="fangkäfigKlein" load="4" material="OTHER" price="200" robust="6" skill="hunting" spec="hunting/traps" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="fangnetz" load="2" material="OTHER" price="60" robust="1" skill="hunting" spec="hunting/traps" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="F" id="kastenfalleGroß" load="6" material="OTHER" price="200" robust="3" skill="hunting" spec="hunting/traps" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="F" id="kastenfalleKlein" load="4" material="OTHER" price="90" robust="3" skill="hunting" spec="hunting/traps" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="U" id="leimrute" load="1" material="OTHER" price="10" robust="2" skill="hunting" spec="hunting/traps" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="rosshaarschlinge" load="1" material="OTHER" price="20" robust="1" skill="hunting" spec="hunting/traps" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="schlageisen" load="2" material="OTHER" price="80" robust="5" skill="hunting" spec="hunting/traps" type="ANIMALS"/>
+   <item avail="VILLAGE" cplx="G" id="schlingfalle" load="1" material="OTHER" price="100" robust="2" skill="hunting" spec="hunting/traps" type="ANIMALS"/>
+   <item avail="SMALL_TOWN" cplx="F" id="tellereisen" load="3" material="METAL" price="200" robust="6" skill="hunting" spec="hunting/traps" type="ANIMALS"/>
+</items>

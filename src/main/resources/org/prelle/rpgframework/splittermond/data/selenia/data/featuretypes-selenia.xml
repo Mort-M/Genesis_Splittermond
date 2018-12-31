@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<featuretypes>
+  <featuretype id="RIDERSHIELD" types="SHIELD"/>
+  <featuretype id="RIDERARMOR"  types="ARMOR"/>
+  <featuretype id="FRAGILE"     remark="true"/>
+</featuretypes>
