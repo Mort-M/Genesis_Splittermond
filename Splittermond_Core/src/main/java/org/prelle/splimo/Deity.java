@@ -29,6 +29,8 @@ public class Deity extends BasePluginData implements Comparable<Deity> {
 	private List<Aspect> aspects;
 	@Element
 	private ModificationList modifications;
+	@Element
+	private CultureList cultures;
 
 	//-------------------------------------------------------------------
 	/**
@@ -36,6 +38,7 @@ public class Deity extends BasePluginData implements Comparable<Deity> {
 	public Deity() {
 		aspects = new ArrayList<>();
 		modifications = new ModificationList();
+		cultures = new CultureList();
 	}
 
 	//-------------------------------------------------------------------
@@ -121,6 +124,14 @@ public class Deity extends BasePluginData implements Comparable<Deity> {
 			}
 		}
 		return ret;
+	}
+	//-------------------------------------------------------------------
+	public CultureList getFavoredCultures() {
+		CultureList list = new CultureList();
+		for (Culture culture: cultures) {
+			list.add(SplitterMondCore.getCulture(culture.getKey()));
+		}
+		return list;
 	}
 
 }

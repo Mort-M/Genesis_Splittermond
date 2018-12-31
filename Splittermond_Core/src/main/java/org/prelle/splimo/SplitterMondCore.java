@@ -2328,6 +2328,24 @@ public class SplitterMondCore {
 		}
 		return ret;
 	}
+	public static List<Deity> getDeitiesForCulture(Culture culture) {
+		List<Deity> result = new ArrayList<>();
+		for (Deity deity: deities) {
+			if (deity.getFavoredCultures().contains(culture)) {
+				result.add(deity);
+			}
+		}
+		return result;
+	}
 
+	public static List<Deity> getDeitiesForEducation(Education education) {
+		List<Deity> result = new ArrayList<>();
+		for (Deity deity: deities) {
+			if (deity.getFavoredEducations().contains(education)) {
+				result.add(deity);
+			}
+		}
+		return result;
+	}
 }
 
