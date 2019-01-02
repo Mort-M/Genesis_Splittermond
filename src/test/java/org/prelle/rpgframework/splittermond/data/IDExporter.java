@@ -30,12 +30,6 @@ import org.prelle.splimo.creature.CreatureFeatureType;
 import org.prelle.splimo.creature.CreatureType;
 import org.prelle.splimo.items.FeatureType;
 
-import de.rpgframework.ConfigOption;
-import de.rpgframework.RPGFramework;
-import de.rpgframework.RPGFrameworkInitCallback;
-import de.rpgframework.RPGFrameworkLoader;
-import de.rpgframework.boot.StandardBootSteps;
-
 /**
  * @author prelle
  *
