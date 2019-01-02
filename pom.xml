@@ -17,27 +17,27 @@
 	<modules>
       <module>common.xml</module>
       <module>Splittermond_BBCode</module>
-      <module>Splittermond_Beastmaster</module>
-      <module>Splittermond_BuU</module>
+<!--       <module>Splittermond_Beastmaster</module> -->
+<!--       <module>Splittermond_BuU</module> -->
       <module>Splittermond_CharGen</module>
       <module>Splittermond_CharGen_JFX</module>
       <module>Splittermond_Core</module>
-      <module>Splittermond_Esmoda</module>
-      <module>Splittermond_FahrendeVoelker</module>
-      <module>Splittermond_Farukan</module>
-      <module>Splittermond_Flammensenke</module>
-      <module>Splittermond_Goetter</module>
-      <module>Splittermond_Goetterdiener</module>
-      <module>Splittermond_JenseitsDG</module>
-      <module>Splittermond_Magie</module>
-      <module>Splittermond_Mondstahlklingen</module>
-      <module>Splittermond_Sadu</module>
-      <module>Splittermond_Selenia</module>
-      <module>Splittermond_Surmakar</module>
-      <module>Splittermond_Ungebrochen</module>
-      <module>Splittermond_Unreich</module>
-      <module>Splittermond_World</module>
-      <module>Splittermond_Zhoujiang</module>
-      <module>data-pom.xml</module>
+<!--       <module>Splittermond_Esmoda</module> -->
+<!--       <module>Splittermond_FahrendeVoelker</module> -->
+<!--       <module>Splittermond_Farukan</module> -->
+<!--       <module>Splittermond_Flammensenke</module> -->
+<!--       <module>Splittermond_Goetter</module> -->
+<!--       <module>Splittermond_Goetterdiener</module> -->
+<!--       <module>Splittermond_JenseitsDG</module> -->
+<!--       <module>Splittermond_Magie</module> -->
+<!--       <module>Splittermond_Mondstahlklingen</module> -->
+<!--       <module>Splittermond_Sadu</module> -->
+<!--       <module>Splittermond_Selenia</module> -->
+<!--       <module>Splittermond_Surmakar</module> -->
+<!--       <module>Splittermond_Ungebrochen</module> -->
+<!--       <module>Splittermond_Unreich</module> -->
+<!--       <module>Splittermond_World</module> -->
+<!--       <module>Splittermond_Zhoujiang</module> -->
+<!--       <module>data-pom.xml</module> -->
 	</modules>
 </project>
