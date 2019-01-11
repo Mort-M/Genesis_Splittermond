@@ -37,6 +37,20 @@
 					<id>ossrh</id>
 					<url>https://oss.sonatype.org/content/groups/public/</url>
 				</repository>
+                <repository>
+                    <id>snapshots</id>
+                    <url>http://repository.rpgframework.de:8081/artifactory/libs-snapshot</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                </repository>
+                <repository>
+                    <id>releases</id>
+                    <url>http://repository.rpgframework.de:8081/artifactory/libs-release</url>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
 			</repositories>
 		</profile>
 	</profiles>
