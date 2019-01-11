@@ -4,13 +4,6 @@
 package org.prelle.splimo.chargen.gen.jfx;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
-
-import javafx.geometry.Pos;
-import javafx.scene.Parent;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.layout.VBox;
 
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.charctrl.SpellController;
@@ -19,6 +12,13 @@ import org.prelle.splimo.chargen.common.jfx.SpellPane;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.layout.VBox;
 
 /**
  * @author prelle
@@ -26,7 +26,7 @@ import org.prelle.splimo.chargen.event.GenerationEventListener;
  */
 public class SelectSpellsPage extends WizardPage implements GenerationEventListener {
 
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static PropertyResourceBundle uiResources = SpliMoCharGenConstants.RES;
 	
 	private SpliMoCharacterGenerator charGen;
 //	private SpliMoCharacter model;

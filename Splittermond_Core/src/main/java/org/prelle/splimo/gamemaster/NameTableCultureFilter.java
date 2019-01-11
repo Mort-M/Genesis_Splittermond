@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Culture;
 import org.prelle.splimo.SpliMoNameTable;
 import org.prelle.splimo.SplitterMondCore;
@@ -21,7 +22,7 @@ import de.rpgframework.worldinfo.InformationLevel;
  */
 public class NameTableCultureFilter implements Filter {
 
-	private static Logger logger = Logger.getLogger("splittermond");
+	private static Logger logger = LogManager.getLogger("splittermond");
 
 	private static PropertyResourceBundle RES = SplitterMondCore.getI18nResources();
 

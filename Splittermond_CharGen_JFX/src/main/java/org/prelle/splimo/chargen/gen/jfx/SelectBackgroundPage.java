@@ -7,7 +7,19 @@ import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.Background;
+import org.prelle.splimo.charctrl.BackgroundController;
+import org.prelle.splimo.chargen.LetUserChooseListener;
+import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.free.jfx.FreeSelectionDialog;
+import org.prelle.splimo.free.FreeSelectionGenerator;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -26,26 +38,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Background;
-import org.prelle.splimo.charctrl.BackgroundController;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.LetUserChooseListener;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.free.jfx.FreeSelectionDialog;
-import org.prelle.splimo.free.FreeSelectionGenerator;
-
 /**
  * @author prelle
  *
  */
 public class SelectBackgroundPage extends WizardPage implements ChangeListener<Background>, GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("fxui");
-
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenConstants.RES;
 
 	private SpliMoCharacterGenerator charGen;
 	private BackgroundController bgGen;

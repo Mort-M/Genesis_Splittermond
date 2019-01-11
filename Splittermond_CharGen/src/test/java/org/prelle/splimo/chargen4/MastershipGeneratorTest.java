@@ -9,13 +9,11 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.prelle.splimo.DummyRulePlugin;
 import org.prelle.splimo.Mastership;
-import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
@@ -39,7 +37,6 @@ public class MastershipGeneratorTest {
 	//-------------------------------------------------------------------
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		PropertyConfigurator.configure(ClassLoader.getSystemResource("log4j.properties"));
 		SplitterMondCore.initialize(new DummyRulePlugin<SpliMoCharacter>());
 	}
 

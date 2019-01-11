@@ -3,7 +3,8 @@ package de.rpgframework.splittermond.print.bbcode;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Background;
 import org.prelle.splimo.Culture;
 import org.prelle.splimo.LanguageReference;
@@ -13,9 +14,7 @@ import org.prelle.splimo.Race;
 import org.prelle.splimo.SpliMoCharacter;
 
 import de.rpgframework.character.RuleSpecificCharacterObject;
-import de.rpgframework.splittermond.SpliMoLabels;
-import de.rpgframework.splittermond.print.bbcode.BBCodes;
-import de.rpgframework.splittermond.print.bbcode.SingleBBCodeGenerator;
+import de.rpgframework.splittermond.print.SpliMoLabels;
 import de.rpgframework.splittermond.print.bbcode.adder.AbstractAdder;
 import de.rpgframework.splittermond.print.bbcode.adder.AttributeAdder;
 import de.rpgframework.splittermond.print.bbcode.adder.ResourcesAdder;
@@ -32,7 +31,7 @@ public class SpliMoBBCodeGenerator {
 
 	private StringBuilder bbcodeBuilder;
 
-	private static Logger logger = Logger
+	private static Logger logger = LogManager
 			.getLogger(SpliMoBBCodeGenerator.class);
 	private SpliMoCharacter spliMoCharacter;
 

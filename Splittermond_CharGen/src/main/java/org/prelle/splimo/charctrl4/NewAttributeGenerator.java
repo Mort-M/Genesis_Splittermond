@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.SpliMoCharacter;
@@ -25,8 +26,8 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class NewAttributeGenerator implements AttributeController, Generator, SpliMoCharacterProcessor {
-
-	private static Logger logger = Logger.getLogger("splittermond.chargen.attr");
+	
+	private static Logger logger = LogManager.getLogger("splittermond.chargen.attr");
 
 	private final static ResourceBundle RES = CharGenConstants.RES;
 

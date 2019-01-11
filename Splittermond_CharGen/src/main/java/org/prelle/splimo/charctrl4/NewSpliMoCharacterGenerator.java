@@ -7,8 +7,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.Moonsign;
@@ -24,9 +26,6 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.processor.CalculateDerivedAttributesProcessor;
-import org.prelle.splimo.processor.CalculateLevelProcessor;
-import org.prelle.splimo.processor.ClearAllModificationsProcessor;
-import org.prelle.splimo.processor.ModifyDerivedValuesByLevelProcessor;
 import org.prelle.splimo.processor.SpliMoCharacterProcessor;
 
 import de.rpgframework.RPGFrameworkLoader;
@@ -53,8 +52,10 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class NewSpliMoCharacterGenerator extends SplitterEngineCharacterGenerator {
+
+	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
 	
-	private static Logger logger = Logger.getLogger("splittermond.chargen");
+	private static Logger logger = LogManager.getLogger("splittermond.chargen");
 	
 	//-------------------------------------------------------------------
 	/**

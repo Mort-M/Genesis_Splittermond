@@ -5,7 +5,8 @@ package org.prelle.splimo.processor;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillValue;
@@ -20,7 +21,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class ClearAllModificationsProcessor implements SpliMoCharacterProcessor {
 
-	private static Logger logger = Logger.getLogger("splittermond.chargen.level");
+	private static Logger logger = LogManager.getLogger("splittermond.chargen.level");
 
 	//-------------------------------------------------------------------
 	public ClearAllModificationsProcessor() {

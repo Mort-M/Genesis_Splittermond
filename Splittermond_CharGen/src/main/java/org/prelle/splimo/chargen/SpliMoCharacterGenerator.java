@@ -14,7 +14,8 @@ import java.util.Map;
 import java.util.Random;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.Culture;
@@ -88,7 +89,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 	
 	private final static ResourceBundle CORE = SplitterMondCore.getI18nResources();
 	
-	private static Logger logger = Logger.getLogger("splittermond.chargen");
+	private static Logger logger = LogManager.getLogger("splittermond.chargen");
 	private static Random RANDOM = new Random();
 	
 	private Race       selectedRace;

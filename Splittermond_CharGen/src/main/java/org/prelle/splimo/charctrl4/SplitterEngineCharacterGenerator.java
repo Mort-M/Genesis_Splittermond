@@ -8,7 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.modifications.ModificationChoice;
 import org.prelle.splimo.processor.SpliMoCharacterProcessor;
@@ -27,7 +28,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public abstract class SplitterEngineCharacterGenerator implements CharacterController {
 	
-	private static Logger logger = Logger.getLogger("splitter.chargen");
+	private static Logger logger = LogManager.getLogger("splittermond.chargen");
 	
 	protected SpliMoCharacter model;
 	

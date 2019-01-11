@@ -3,16 +3,18 @@
  */
 package org.prelle.splittermond.jfx.equip.input;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.Attribute;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.items.Armor;
+import org.prelle.splimo.items.ItemAttribute;
+import org.prelle.splimo.requirements.AttributeRequirement;
+
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.util.StringConverter;
-
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Attribute;
-import org.prelle.splimo.items.Armor;
-import org.prelle.splimo.items.ItemAttribute;
-import org.prelle.splimo.requirements.AttributeRequirement;
 
 /**
  * @author prelle
@@ -20,7 +22,7 @@ import org.prelle.splimo.requirements.AttributeRequirement;
  */
 public class ArmorTemplateDataPane extends ShieldTemplateDataPane {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
 	private Armor model;
 	

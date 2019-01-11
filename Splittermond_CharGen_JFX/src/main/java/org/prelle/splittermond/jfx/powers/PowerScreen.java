@@ -5,9 +5,9 @@ package org.prelle.splittermond.jfx.powers;
 
 import java.util.Arrays;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.fluent.CommandBar;
@@ -39,9 +39,9 @@ import javafx.scene.text.TextAlignment;
  */
 public class PowerScreen extends ManagedScreen implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private CharacterController control;
 	

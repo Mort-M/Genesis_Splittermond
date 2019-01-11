@@ -6,7 +6,8 @@ package org.prelle.splimo;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SkillSpecialization.SkillSpecializationType;
 import org.prelle.splimo.items.Armor;
@@ -35,8 +36,8 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class EquipmentTools {
-	
-	private final static Logger logger = Logger.getLogger("splittermond.items");
+
+	private final static Logger logger = LogManager.getLogger("splittermond.items");
 	
 	public final static String TOTAL_HANDICAP = "TOTAL_HANDICAP";
 

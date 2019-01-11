@@ -6,10 +6,10 @@ package org.prelle.splimo.chargen.lvl.jfx;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SpliMoCharacter;
@@ -17,6 +17,7 @@ import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.Feature;
 import org.prelle.splimo.items.ItemAttribute;
@@ -45,10 +46,10 @@ import javafx.util.StringConverter;
  *
  */
 public class WeaponBlock extends TableView<CarriedItem> implements GenerationEventListener {
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
-	
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private SpliMoCharacter model;
 

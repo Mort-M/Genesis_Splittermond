@@ -1,7 +1,12 @@
 package org.prelle.splimo.chargen.free.jfx;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.Power;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.free.FreeSelectionGenerator;
 
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -26,15 +31,11 @@ import javafx.scene.text.Text;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Power;
-import org.prelle.splimo.free.FreeSelectionGenerator;
-
 public class FreePowerPane extends HBox implements EventHandler<ActionEvent> {
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static Logger logger = Logger.getLogger("chargen.ui.power");
-	
-	private static PropertyResourceBundle uiPowers = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static PropertyResourceBundle uiPowers = SpliMoCharGenJFXConstants.UI;
 
 	private FreeSelectionGenerator control;
 	private FreeSelectionDialog parent;

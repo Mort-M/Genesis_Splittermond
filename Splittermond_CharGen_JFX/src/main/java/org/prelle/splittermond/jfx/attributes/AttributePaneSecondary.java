@@ -6,21 +6,21 @@ package org.prelle.splittermond.jfx.attributes;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ResponsiveControl;
 import org.prelle.javafx.WindowMode;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
-import org.prelle.splimo.SpliMoCharGenJFXUtil;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.ViewMode;
 import org.prelle.splimo.charctrl.AttributeController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXUtil;
+import org.prelle.splimo.chargen.jfx.ViewMode;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
@@ -37,9 +37,9 @@ import javafx.scene.layout.Priority;
  */
 public class AttributePaneSecondary extends GridPane implements GenerationEventListener, ResponsiveControl {
 
-	private static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
-
-	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private AttributeController control;
 	private SpliMoCharacter     model;

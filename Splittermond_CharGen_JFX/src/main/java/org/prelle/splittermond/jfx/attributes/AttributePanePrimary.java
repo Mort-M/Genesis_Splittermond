@@ -7,20 +7,21 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ResponsiveControl;
 import org.prelle.javafx.WindowMode;
 import org.prelle.splimo.Attribute;
-import org.prelle.splimo.AttributeField;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.ViewMode;
 import org.prelle.splimo.charctrl.AttributeController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.AttributeField;
+import org.prelle.splimo.chargen.jfx.ViewMode;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -39,7 +40,7 @@ import javafx.scene.layout.Priority;
  */
 public class AttributePanePrimary extends GridPane implements GenerationEventListener, ResponsiveControl {
 
-	private final static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	private final static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
 	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 

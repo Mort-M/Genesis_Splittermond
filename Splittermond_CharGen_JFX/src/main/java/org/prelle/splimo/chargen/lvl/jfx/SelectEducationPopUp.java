@@ -7,6 +7,12 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.Education;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ChangeListener;
@@ -19,10 +25,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.util.Callback;
-
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Education;
-import org.prelle.splimo.SplitterMondCore;
 
 /**
  * @author prelle
@@ -45,7 +47,8 @@ public class SelectEducationPopUp extends HBox implements MyPopUpContent<Educati
 			}
 		}
 	}
-	private final static Logger logger = Logger.getLogger("chargen.ui");
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 
 	private static Map<Education,Image> imageByEducation;
 

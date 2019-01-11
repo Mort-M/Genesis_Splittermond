@@ -4,7 +4,22 @@
 package org.prelle.splimo.chargen.gen.jfx;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.javafx.ScreenManagerProvider;
+import org.prelle.splimo.Skill;
+import org.prelle.splimo.Skill.SkillType;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.charctrl.GeneratingSkillController;
+import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.jfx.skills.SkillPane;
+import org.prelle.splittermond.jfx.skills.SkillPaneCallback;
 
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -16,31 +31,15 @@ import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 
-import org.apache.log4j.Logger;
-import org.prelle.javafx.CloseType;
-import org.prelle.javafx.ScreenManagerProvider;
-import org.prelle.splimo.Skill;
-import org.prelle.splimo.Skill.SkillType;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.charctrl.GeneratingSkillController;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.event.GenerationEventType;
-import org.prelle.splittermond.jfx.master.MastershipScreen;
-import org.prelle.splittermond.jfx.skills.SkillPane;
-import org.prelle.splittermond.jfx.skills.SkillPaneCallback;
-
 /**
  * @author prelle
  *
  */
 public class DistributeSkillsPage extends WizardPage implements GenerationEventListener, SkillPaneCallback {
 
-	private final static Logger logger = Logger.getLogger("fxui.skills");
-
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenConstants.RES;
 
 	private SpliMoCharacterGenerator charGen;
 	private GeneratingSkillController control;

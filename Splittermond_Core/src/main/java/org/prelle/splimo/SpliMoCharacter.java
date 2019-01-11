@@ -11,7 +11,8 @@ import java.util.NoSuchElementException;
 import java.util.PropertyResourceBundle;
 import java.util.UUID;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.AfterLoadHook;
 import org.prelle.simplepersist.Element;
 import org.prelle.simplepersist.ElementList;
@@ -52,7 +53,7 @@ import de.rpgframework.genericrpg.modification.Modification;
 @Root(name = "splimochar")
 public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 
-	private final static Logger logger = Logger.getLogger("splittermond");
+	private static Logger logger = LogManager.getLogger("splittermond");
 	private static PropertyResourceBundle res = SplitterMondCore.getI18nResources();
 
 	public enum Gender {

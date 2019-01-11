@@ -5,7 +5,24 @@ package org.prelle.splittermond.jfx.cultures;
 
 import java.util.Arrays;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.javafx.ManagedScreen;
+import org.prelle.javafx.fluent.CommandBar;
+import org.prelle.rpgframework.jfx.FreePointsNode;
+import org.prelle.rpgframework.jfx.SettingsAndCommandBar;
+import org.prelle.splimo.CultureLore;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.charctrl.CharacterController;
+import org.prelle.splimo.charctrl.CultureLoreController;
+import org.prelle.splimo.charctrl.LanguageController;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.jfx.languages.LanguagePane;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.CheckBox;
@@ -15,37 +32,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
-import org.apache.log4j.Logger;
-import org.prelle.javafx.CloseType;
-import org.prelle.javafx.ManagedScreen;
-import org.prelle.javafx.fluent.CommandBar;
-import org.prelle.javafx.fluent.NodeWithTitleSkeleton;
-import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
-import org.prelle.rpgframework.jfx.FreePointsNode;
-import org.prelle.rpgframework.jfx.SettingsAndCommandBar;
-import org.prelle.splimo.CultureLore;
-import org.prelle.splimo.PointsPane;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.ViewMode;
-import org.prelle.splimo.charctrl.CharacterController;
-import org.prelle.splimo.charctrl.CultureLoreController;
-import org.prelle.splimo.charctrl.Generator;
-import org.prelle.splimo.charctrl.LanguageController;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
-import org.prelle.splittermond.jfx.languages.LanguagePane;
-
 /**
  * @author Stefan
  *
  */
 public class CultureLoreScreen extends ManagedScreen implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("splimo.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private CharacterController charGen;
 	private CultureLoreController controlCult;

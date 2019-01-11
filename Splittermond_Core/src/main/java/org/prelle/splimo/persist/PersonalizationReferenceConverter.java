@@ -4,7 +4,8 @@ import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.events.StartElement;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.StringValueConverter;
 import org.prelle.simplepersist.XMLElementConverter;
 import org.prelle.simplepersist.marshaller.XmlNode;
@@ -14,8 +15,8 @@ import org.prelle.splimo.items.Personalization;
 import org.prelle.splimo.persist.ReferenceException.ReferenceType;
 
 public class PersonalizationReferenceConverter implements StringValueConverter<Personalization>, XMLElementConverter<Personalization> {
-	
-	private final static Logger logger = Logger.getLogger("splittermond.persist");
+
+	private final static Logger logger = LogManager.getLogger("splittermond.persist");
 
 	//-------------------------------------------------------------------
 	/**

@@ -12,10 +12,11 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.FontIcon;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Armor;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.EnhancementReference;
@@ -58,9 +59,9 @@ import javafx.util.Callback;
  */
 public class EquipmentListBox extends VBox {
 
-	private final static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 	
 	private ItemLocationType location;
 	private SpliMoCharacter model;

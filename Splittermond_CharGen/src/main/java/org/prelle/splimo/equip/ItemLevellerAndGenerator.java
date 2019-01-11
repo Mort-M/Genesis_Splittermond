@@ -6,12 +6,12 @@ package org.prelle.splimo.equip;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.DeityType;
 import org.prelle.splimo.HolyPower;
@@ -21,13 +21,14 @@ import org.prelle.splimo.SkillSpecialization.SkillSpecializationType;
 import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.NewItemController;
+import org.prelle.splimo.charctrl4.SpliMoCharGenConstants;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.Enhancement;
 import org.prelle.splimo.items.Enhancement.EnhancementType;
-import org.prelle.splimo.items.EnhancementReference; 
+import org.prelle.splimo.items.EnhancementReference;
 import org.prelle.splimo.items.ItemType;
 import org.prelle.splimo.items.LongRangeWeapon;
 import org.prelle.splimo.items.Material;
@@ -48,9 +49,9 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class ItemLevellerAndGenerator implements NewItemController {
 	
-	private final static Logger logger = Logger.getLogger("splittermond.chargen");
+	private static Logger logger = LogManager.getLogger("splittermond.chargen");
 
-	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
+	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
 	
 	private CarriedItem model;
 	private int maximumQuality;

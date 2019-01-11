@@ -5,21 +5,17 @@ package org.prelle.splimo.chargen.fluent;
 
 import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Deity;
-import org.prelle.splimo.Moonsign;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CharacterController;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
-import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 
 /**
@@ -28,9 +24,9 @@ import javafx.scene.layout.Region;
  */
 public class MoonsignDeityExpGrid extends GridPane {
 
-	private static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
-
-	private static PropertyResourceBundle RES = SpliMoCharGenConstants.RES;
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle RES = SpliMoCharGenJFXConstants.UI;
 	
 	private CharacterController  control;
 	

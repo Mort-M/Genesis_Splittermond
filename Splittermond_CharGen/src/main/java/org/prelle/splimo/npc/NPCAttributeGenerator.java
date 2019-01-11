@@ -6,7 +6,8 @@ package org.prelle.splimo.npc;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.charctrl.AttributeController;
@@ -21,7 +22,7 @@ import org.prelle.splimo.creature.Creature;
  */
 public class NPCAttributeGenerator implements AttributeController {
 	
-	private static Logger logger = Logger.getLogger("splittermond.npcgen");
+	private static Logger logger = LogManager.getLogger("splittermond.npcgen");
 
 	private Creature model;
 	

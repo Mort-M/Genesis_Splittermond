@@ -4,23 +4,22 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>de.rpgframework</groupId>
-		<artifactId>splittermond-common</artifactId>
-      <version>1.1</version>
-      <relativePath>../common.xml</relativePath>
+		<groupId>org.prelle</groupId>
+		<artifactId>rpgframework-common</artifactId>
+		<version>2.0.0-SNAPSHOT</version>
 	</parent>
 
 	<groupId>org.prelle.rpgframework</groupId>
 	<artifactId>splittermond-core</artifactId>
-	<version>2.8.1-SNAPSHOT</version>
+	<version>3.0.0-SNAPSHOT</version>
 
 	<name>Splittermond Core</name>
 	<description>Data structures for Splittermond</description>
 
 	<dependencies>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>de.rpgframework</groupId>
@@ -43,8 +42,14 @@
 		<dependency>
 			<groupId>de.rpgframework</groupId>
 			<artifactId>babylon-charrules</artifactId>
-			<version>[2.0-SNAPSHOT,)</version>
+			<version>[3.0.0-SNAPSHOT,3.99.99)</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<build>
+	  <plugins>
+	  
+	  </plugins>
+	</build>
 </project>

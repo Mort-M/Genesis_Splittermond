@@ -3,30 +3,25 @@
  */
 package org.prelle.splittermond.jfx.creatures;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
-import org.prelle.javafx.AlertType;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
 import org.prelle.javafx.skin.NavigButtonControl;
 import org.prelle.rpgframework.jfx.ThreeColumnPane;
-import org.prelle.splimo.LetUserChooseAdapter;
-import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CommonCreatureController;
 import org.prelle.splimo.charctrl.CreatureTrainerController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.LetUserChooseAdapter;
 import org.prelle.splimo.creature.CreatureModule;
 import org.prelle.splimo.creature.CreatureModuleReference;
-import org.prelle.splimo.creature.CreatureType;
-import org.prelle.splimo.creature.CreatureTypeValue;
 
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -34,7 +29,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
@@ -48,9 +42,9 @@ import javafx.scene.layout.VBox;
  */
 public class CreatureTrainingScreen extends ManagedScreen implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private CreatureTrainerController control;
 

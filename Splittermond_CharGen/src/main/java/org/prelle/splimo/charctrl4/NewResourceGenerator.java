@@ -8,12 +8,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Resource;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.charctrl.CharGenConstants;
 import org.prelle.splimo.modifications.ResourceModification;
 import org.prelle.splimo.processor.SpliMoCharacterProcessor;
 
@@ -27,10 +27,10 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class NewResourceGenerator implements ResourceController, Generator, SpliMoCharacterProcessor {
-	
-	protected static Logger logger = Logger.getLogger("splittermond.chargen.resrc");
 
-	private final static ResourceBundle RES = CharGenConstants.RES;
+	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
+	
+	protected static Logger logger = LogManager.getLogger("splittermond.chargen.resrc");
 	
 	 static List<Resource> BASE_RESOURCES;
 

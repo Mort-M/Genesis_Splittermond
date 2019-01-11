@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ResponsiveControl;
 import org.prelle.javafx.WindowMode;
 import org.prelle.rpgframework.jfx.AttentionPane;
@@ -20,16 +20,17 @@ import org.prelle.splimo.Attribute;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
-import org.prelle.splimo.SkillField;
 import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SkillValue;
-import org.prelle.splimo.SpliMoCharGenJFXUtil;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.charctrl.MastershipController;
 import org.prelle.splimo.charctrl.SkillController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.jfx.SkillField;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXUtil;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -50,9 +51,9 @@ import javafx.scene.layout.Priority;
  */
 public class SkillPane extends GridPane implements GenerationEventListener, EventHandler<ActionEvent>, ResponsiveControl {
 
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
-
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private SkillController control; 
 	private MastershipController masterControl;

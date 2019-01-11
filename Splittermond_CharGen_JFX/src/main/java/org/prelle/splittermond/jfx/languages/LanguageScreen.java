@@ -5,20 +5,21 @@ package org.prelle.splittermond.jfx.languages;
 
 import java.util.Arrays;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
-import org.prelle.splimo.PointsPane;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.ViewMode;
 import org.prelle.splimo.charctrl.Generator;
 import org.prelle.splimo.charctrl.LanguageController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.jfx.PointsPane;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.chargen.jfx.ViewMode;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
@@ -32,9 +33,9 @@ import javafx.scene.layout.VBox;
  */
 public class LanguageScreen extends ManagedScreen implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private LanguageController control;
 	private ViewMode mode;

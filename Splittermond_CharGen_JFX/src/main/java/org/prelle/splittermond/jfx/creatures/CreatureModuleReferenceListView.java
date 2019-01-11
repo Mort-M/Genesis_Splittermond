@@ -4,7 +4,17 @@
 package org.prelle.splittermond.jfx.creatures;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.javafx.ScreenManager;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.charctrl.CommonCreatureController;
+import org.prelle.splimo.chargen.LetUserChooseListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.creature.CreatureModule;
+import org.prelle.splimo.creature.CreatureModuleReference;
 
 import javafx.application.Platform;
 import javafx.scene.Node;
@@ -24,23 +34,15 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
-import org.apache.log4j.Logger;
-import org.prelle.javafx.ScreenManager;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.charctrl.CommonCreatureController;
-import org.prelle.splimo.chargen.LetUserChooseListener;
-import org.prelle.splimo.creature.CreatureModule;
-import org.prelle.splimo.creature.CreatureModuleReference;
-
 /**
  * @author prelle
  *
  */
 public class CreatureModuleReferenceListView extends ListView<CreatureModuleReference> {
 
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
-
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private CommonCreatureController control;
 	private ScreenManager manager;
@@ -157,7 +159,7 @@ public class CreatureModuleReferenceListView extends ListView<CreatureModuleRefe
 
 class CreatureModuleReferenceListCell extends ListCell<CreatureModuleReference> {
 
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 
 	private Label lbName;
 	private Label lbReference;

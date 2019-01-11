@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Skill;
@@ -22,6 +22,7 @@ import org.prelle.splimo.charctrl.MastershipController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -40,10 +41,11 @@ import javafx.scene.layout.VBox;
  */
 public class SelectMastershipDialog2 extends HBox implements ChangeListener<Boolean>, GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private static PropertyResourceBundle RULES = SplitterMondCore.getI18nResources();
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
 
 	private MastershipController control;
 	private SpliMoCharacter model;

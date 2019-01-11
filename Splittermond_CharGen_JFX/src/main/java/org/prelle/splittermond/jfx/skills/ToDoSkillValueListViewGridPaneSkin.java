@@ -14,12 +14,12 @@ import java.util.ResourceBundle;
 import org.prelle.rpgframework.jfx.AttentionPane;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Skill;
-import org.prelle.splimo.SkillField;
 import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SkillValue;
-import org.prelle.splimo.SpliMoCharGenJFXUtil;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.charctrl.SkillController;
+import org.prelle.splimo.chargen.jfx.SkillField;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXUtil;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

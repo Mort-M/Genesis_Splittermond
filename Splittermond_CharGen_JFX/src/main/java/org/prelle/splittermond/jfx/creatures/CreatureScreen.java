@@ -4,9 +4,9 @@
 package org.prelle.splittermond.jfx.creatures;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.FontIcon;
@@ -18,19 +18,19 @@ import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CharacterController;
+import org.prelle.splimo.chargen.creature.CreatureGenerator;
+import org.prelle.splimo.chargen.creature.CreatureTrainer;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.creature.Creature;
-import org.prelle.splimo.creature.CreatureGenerator;
 import org.prelle.splimo.creature.CreatureReference;
-import org.prelle.splimo.creature.CreatureTrainer;
 import org.prelle.splimo.creature.ModuleBasedCreature;
 import org.prelle.splimo.npc.NPCGenerator;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -42,13 +42,10 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
-import javafx.stage.PopupWindow.AnchorLocation;
 
 /**
  * @author Stefan
@@ -56,9 +53,9 @@ import javafx.stage.PopupWindow.AnchorLocation;
  */
 public class CreatureScreen extends ManagedScreen implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private CharacterController control;
 	private SpliMoCharacter model;

@@ -4,7 +4,12 @@
 package org.prelle.splimo.chargen.gen.jfx;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.prelle.splimo.Race;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.chargen.LetUserChooseListener;
+import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -14,19 +19,14 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 
-import org.prelle.splimo.Race;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.LetUserChooseListener;
-
 /**
  * @author prelle
  *
  */
 public class SelectRandomPage extends WizardPage {
-
+	
 	private static PropertyResourceBundle ruleResources = SplitterMondCore.getI18nResources();
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static PropertyResourceBundle uiResources = SpliMoCharGenConstants.RES;
 	
 	
 	private SpliMoCharacterGenerator charGen;

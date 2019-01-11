@@ -5,7 +5,9 @@ package org.prelle.splittermond.jfx.equip;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splimo.items.ItemType;
 
@@ -29,8 +31,8 @@ import javafx.util.StringConverter;
  *
  */
 public class ItemTemplateListView extends VBox {
-	
-	private final static Logger logger = Logger.getLogger("splittermond.jfx"); 
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
 	public interface DataProvider {
 		

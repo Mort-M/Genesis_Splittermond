@@ -7,15 +7,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
-import org.prelle.splimo.charctrl.CharGenConstants;
 import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SkillSpecializationValue;
 import org.prelle.splimo.SkillValue;
@@ -53,9 +52,9 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class NewMastershipGenerator implements MastershipController, SpliMoCharacterProcessor, Generator {
 
-	private static Logger logger = Logger.getLogger("splittermond.chargen.master");
-
-	private final static ResourceBundle RES = CharGenConstants.RES;
+	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
+	
+	private static Logger logger = LogManager.getLogger("splittermond.chargen.master");
 
 	private int unlimitedFree;
 	private int pointsLeft;

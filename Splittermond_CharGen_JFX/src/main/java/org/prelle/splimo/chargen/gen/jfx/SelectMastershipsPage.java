@@ -6,7 +6,18 @@ package org.prelle.splimo.chargen.gen.jfx;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.Skill;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.charctrl.MastershipController;
+import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,25 +33,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Skill;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.charctrl.MastershipController;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.event.GenerationEventType;
-
 /**
  * @author prelle
  *
  */
 public class SelectMastershipsPage extends WizardPage implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("fxui.master");
-
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenConstants.RES;
 
 	class Line extends HBox implements EventHandler<ActionEvent> {
 		Skill skill;

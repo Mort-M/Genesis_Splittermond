@@ -7,7 +7,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -39,7 +38,6 @@ public class SkillGeneratorTest {
 	//-------------------------------------------------------------------
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		PropertyConfigurator.configure(ClassLoader.getSystemResource("log4j.properties"));
 		SplitterMondCore.initialize(new DummyRulePlugin<SpliMoCharacter>());
 		FIREMAGIC = SplitterMondCore.getSkill("firemagic");
 		ATHLETICS = SplitterMondCore.getSkill("athletics");

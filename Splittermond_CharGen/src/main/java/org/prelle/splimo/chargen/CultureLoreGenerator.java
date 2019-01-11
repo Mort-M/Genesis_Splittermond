@@ -8,11 +8,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.CultureLore;
 import org.prelle.splimo.CultureLoreReference;
 import org.prelle.splimo.Language;
@@ -20,6 +20,7 @@ import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CharGenMode;
 import org.prelle.splimo.charctrl.CultureLoreController;
+import org.prelle.splimo.charctrl4.SpliMoCharGenConstants;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
@@ -33,10 +34,10 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class CultureLoreGenerator implements CultureLoreController, GenerationEventListener {
-	
-	private static Logger logger = Logger.getLogger("splittermond.level.cultlore");
 
-	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
+	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
+	
+	private static Logger logger = LogManager.getLogger("splittermond.chargen");
 
 	private CharGenMode mode;
 	private CultureLoreReference freeSelected;

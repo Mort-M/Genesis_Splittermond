@@ -9,8 +9,8 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -28,7 +28,6 @@ import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.modifications.MastershipModification;
 import org.prelle.splittermond.genlvl.MastershipLevellerAndGenerator;
 
-import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.genericrpg.modification.Modification;
 
 /**
@@ -38,7 +37,7 @@ import de.rpgframework.genericrpg.modification.Modification;
 @FixMethodOrder
 public class MastershipControllerTest {
 
-	private final static Logger logger = Logger.getLogger("junit.power");
+	private final static Logger logger = LogManager.getLogger("junit.power");
 
 	private static Skill skill;
 	private static Mastership EVADE1;
@@ -52,7 +51,6 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		SplitterMondCore.initialize(new SplittermondRules());
 
 		skill = SplitterMondCore.getSkill("acrobatics");

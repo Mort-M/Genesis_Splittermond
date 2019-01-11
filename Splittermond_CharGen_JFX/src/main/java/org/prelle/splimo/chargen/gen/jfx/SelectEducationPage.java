@@ -7,7 +7,16 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.Education;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.chargen.LetUserChooseListener;
+import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.free.jfx.FreeSelectionDialog;
+import org.prelle.splimo.free.FreeSelectionGenerator;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -29,26 +38,17 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Education;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.LetUserChooseListener;
-import org.prelle.splimo.chargen.free.jfx.FreeSelectionDialog;
-import org.prelle.splimo.free.FreeSelectionGenerator;
-
 /**
  * @author prelle
  *
  */
 public class SelectEducationPage extends WizardPage implements ChangeListener<TreeItem<Education>> {
 
-	private final static Logger logger = Logger.getLogger("fxui");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenConstants.RES;
 
 	private static Map<Education,Image> imageByEducation;
-
-//	private static PropertyResourceBundle ruleResources = SplitterMondCore.getI18nResources();
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
 
 	private SpliMoCharacterGenerator charGen;
 	private LetUserChooseListener choiceCallback;

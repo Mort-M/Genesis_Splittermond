@@ -4,9 +4,9 @@
 package org.prelle.splimo.chargen.fluent;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ResponsiveControl;
 import org.prelle.javafx.WindowMode;
 import org.prelle.splimo.Attribute;
@@ -15,17 +15,11 @@ import org.prelle.splimo.charctrl.AttributeController;
 import org.prelle.splimo.charctrl.CharacterController;
 
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.scene.Node;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
-import javafx.util.Callback;
 
 /**
  * @author prelle
@@ -33,7 +27,7 @@ import javafx.util.Callback;
  */
 public class AttributesView extends HBox implements ResponsiveControl {
 
-	private static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 
 	private static PropertyResourceBundle RES = SpliMoCharGenConstants.RES;
 	

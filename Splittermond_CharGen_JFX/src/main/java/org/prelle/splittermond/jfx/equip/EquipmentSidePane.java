@@ -4,7 +4,11 @@
 package org.prelle.splittermond.jfx.equip;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -13,18 +17,15 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.SpliMoCharacter;
-
 /**
  * @author prelle
  *
  */
 public class EquipmentSidePane extends VBox {
-	
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
 
-	private static PropertyResourceBundle SPLIMO_CHARGEN = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle SPLIMO_CHARGEN = SpliMoCharGenJFXConstants.UI;
 
 	private TextField lblSol;
 	private TextField lblLun;

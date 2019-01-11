@@ -3,7 +3,19 @@ package org.prelle.splittermond.jfx.cultures;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.CultureLore;
+import org.prelle.splimo.CultureLoreReference;
+import org.prelle.splimo.Language;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.charctrl.CultureLoreController;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.event.ActionEvent;
@@ -27,17 +39,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.CultureLore;
-import org.prelle.splimo.CultureLoreReference;
-import org.prelle.splimo.Language;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.charctrl.CultureLoreController;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-
 public class AvailableCultureLorePane extends VBox implements GenerationEventListener {
 
 	enum DisplayMode {
@@ -49,10 +50,10 @@ public class AvailableCultureLorePane extends VBox implements GenerationEventLis
 		// Show all unselected entries - available or not
 		UNSELECTED,
 	}
-	
-	private static Logger logger = Logger.getLogger("chargen.ui");
 
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private CultureLoreController control;
 	private SpliMoCharacter model;
@@ -206,8 +207,8 @@ public class AvailableCultureLorePane extends VBox implements GenerationEventLis
 
 
 class AvailableCultureLoreCell extends ListCell<CultureLore> {
-	
-	private static Logger logger = Logger.getLogger("chargen.ui");
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 
 	private CultureLore data;
 	private CultureLoreController charGen;

@@ -11,7 +11,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.Culture;
+import org.prelle.splimo.Culture.Continent;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -29,27 +39,19 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Culture;
-import org.prelle.splimo.Culture.Continent;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-
 /**
  * @author prelle
  *
  */
 public class SelectCulturePopUp extends VBox implements MyPopUpContent<Culture>, ChangeListener<TreeItem<Culture>>, GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("chargen.ui");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private static Map<Culture,Image> imageBySelection;
 
 	private static PropertyResourceBundle ruleResources = SplitterMondCore.getI18nResources();
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
 	
 	
 	private SpliMoCharacterGenerator charGen;

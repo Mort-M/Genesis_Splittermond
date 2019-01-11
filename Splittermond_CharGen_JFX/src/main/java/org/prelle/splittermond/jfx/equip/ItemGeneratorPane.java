@@ -6,7 +6,21 @@ package org.prelle.splittermond.jfx.equip;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.PropertyResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.javafx.ScreenManager;
+import org.prelle.javafx.ScreenManagerProvider;
+import org.prelle.splimo.SplitterTools;
+import org.prelle.splimo.charctrl.NewItemController;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.items.CarriedItem;
+import org.prelle.splimo.items.ItemType;
+import org.prelle.splimo.items.Material;
+import org.prelle.splimo.items.PersonalizationReference;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.ChoiceBox;
@@ -19,27 +33,15 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.util.StringConverter;
 
-import org.apache.log4j.Logger;
-import org.prelle.javafx.ScreenManager;
-import org.prelle.javafx.ScreenManagerProvider;
-import org.prelle.splimo.SplitterTools;
-import org.prelle.splimo.charctrl.NewItemController;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.items.CarriedItem;
-import org.prelle.splimo.items.ItemType;
-import org.prelle.splimo.items.Material;
-import org.prelle.splimo.items.PersonalizationReference;
-
 /**
  * @author Stefan
  *
  */
 public class ItemGeneratorPane extends Region implements GenerationEventListener, ScreenManagerProvider, CommonItemGeneratorMethods {
 
-	private final static ResourceBundle RES = ResourceBundle.getBundle("i18n/splimo-chargen");
-
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle RES = SpliMoCharGenConstants.RES;
 
 	private NewItemController control;
 	private ScreenManager manager;

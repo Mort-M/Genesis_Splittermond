@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Power;
 import org.prelle.splimo.Power.SelectionType;
 import org.prelle.splimo.PowerReference;
@@ -35,7 +36,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class PowerLeveller implements PowerController, GenerationEventListener {
 	
-	private static Logger logger = Logger.getLogger("splittermond.level.resource");
+	private static Logger logger = LogManager.getLogger("splittermond.level");
 
 	private List<Modification> undoList;
 	private Map<PowerReference, Stack<PowerModification>> powerUndoStack;

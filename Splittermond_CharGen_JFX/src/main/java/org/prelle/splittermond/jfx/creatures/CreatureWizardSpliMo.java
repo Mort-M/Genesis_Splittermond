@@ -3,16 +3,11 @@
  */
 package org.prelle.splittermond.jfx.creatures;
 
-import org.apache.log4j.Logger;
-import org.prelle.javafx.CloseType;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.Wizard;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.LetUserChooseListener;
-import org.prelle.splimo.modifications.ModificationChoice;
-import org.prelle.splimo.npc.CreatureTypeController;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.npc.NPCGenerator;
-
-import de.rpgframework.genericrpg.modification.Modification;
 
 /**
  * @author prelle
@@ -20,7 +15,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class CreatureWizardSpliMo extends Wizard {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 
 	private NPCGenerator charGen;
 

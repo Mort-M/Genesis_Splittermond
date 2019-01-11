@@ -12,8 +12,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -32,7 +32,6 @@ import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splittermond.genlvl.SpellLevellerAndGenerator;
 
-import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.genericrpg.modification.Modification;
 
 /**
@@ -41,7 +40,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class SpellControllerTest implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("junit");
+	private final static Logger logger = LogManager.getLogger("junit");
 	
 	private static Skill HEALMAGIC;
 	private static Skill ENHANCEMAGIC;
@@ -69,7 +68,6 @@ public class SpellControllerTest implements GenerationEventListener {
 //		Logger.getLogger("splimo.level.spell").setLevel(Level.DEBUG);
 //		Logger.getLogger("junit").setLevel(Level.DEBUG);
 
-		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		SplitterMondCore.initialize(new SplittermondRules());
 		HEALMAGIC = SplitterMondCore.getSkill("healmagic");
 		ENHANCEMAGIC = SplitterMondCore.getSkill("enhancemagic");

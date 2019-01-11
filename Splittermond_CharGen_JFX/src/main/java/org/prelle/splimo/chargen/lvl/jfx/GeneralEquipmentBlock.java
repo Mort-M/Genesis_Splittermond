@@ -3,6 +3,23 @@
  */
 package org.prelle.splimo.chargen.lvl.jfx;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PropertyResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.items.CarriedItem;
+import org.prelle.splimo.items.ItemAttribute;
+import org.prelle.splimo.items.ItemLocationType;
+import org.prelle.splimo.items.ItemType;
+
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
@@ -17,32 +34,17 @@ import javafx.scene.text.Text;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.items.CarriedItem;
-import org.prelle.splimo.items.ItemAttribute;
-import org.prelle.splimo.items.ItemLocationType;
-import org.prelle.splimo.items.ItemType;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
-
 /**
  * @author rupp
  *
  */
 public class GeneralEquipmentBlock extends TableView<CarriedItem> implements GenerationEventListener {
 
-	private static Logger logger = Logger.getLogger("chargen.ui");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private static PropertyResourceBundle res = SplitterMondCore.getI18nResources();
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
 
 	private SpliMoCharacter model;
 

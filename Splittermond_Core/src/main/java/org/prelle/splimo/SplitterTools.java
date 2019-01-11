@@ -12,7 +12,8 @@ import java.util.ResourceBundle;
 import java.util.UUID;
 import java.util.prefs.Preferences;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SkillSpecialization.SkillSpecializationType;
 import org.prelle.splimo.creature.Creature;
@@ -78,7 +79,7 @@ public class SplitterTools {
 
 	private final static ResourceBundle CORE = SplitterMondCore.getI18nResources();
 
-	private final static Logger logger = Logger.getLogger("splittermond");
+	private final static Logger logger = LogManager.getLogger("splittermond");
 
 	public final static String LEVEL4 = "Level 4";
 	public final static String LEVEL3 = "Level 3";

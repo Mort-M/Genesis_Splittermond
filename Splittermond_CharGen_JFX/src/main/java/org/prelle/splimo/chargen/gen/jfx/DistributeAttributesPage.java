@@ -13,7 +13,6 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.ViewMode;
 import org.prelle.splimo.charctrl.AttributeController;
 import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
 import org.prelle.splimo.chargen.common.jfx.CharGenMode;
@@ -21,6 +20,7 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.jfx.ViewMode;
 import org.prelle.splittermond.jfx.attributes.AttributePane;
 
 /**

@@ -14,7 +14,8 @@ import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
 
 import de.rpgframework.ConfigContainer;
@@ -38,7 +39,7 @@ import de.rpgframework.print.PrintType;
  */
 public class BBCodePlugin implements RulePlugin<SpliMoCharacter>, CommandBusListener {
 	
-	private static Logger logger = Logger.getLogger(BBCodePlugin.class);
+	private static Logger logger = LogManager.getLogger(BBCodePlugin.class);
 	
 	private static Preferences usr = Preferences.userRoot().node("/org/prelle/splittermond/print");
 	ConfigOption<String> OPTION_PATH; 

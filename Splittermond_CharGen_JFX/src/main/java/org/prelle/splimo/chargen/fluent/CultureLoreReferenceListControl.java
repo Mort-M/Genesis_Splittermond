@@ -3,12 +3,16 @@
  */
 package org.prelle.splimo.chargen.fluent;
 
-import org.apache.log4j.Logger;
+import java.util.PropertyResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.CultureLoreReference;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -22,7 +26,9 @@ import javafx.scene.control.Control;
  */
 public class CultureLoreReferenceListControl extends Control implements GenerationEventListener {
 
-	private static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 	
 	private final static String DEFAULT_STYLE_CLASS = "cultlore-list-control";
 	

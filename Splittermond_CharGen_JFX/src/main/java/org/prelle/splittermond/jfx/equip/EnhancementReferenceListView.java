@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ScreenManager;
@@ -23,7 +24,13 @@ import org.prelle.splimo.SpellSchoolEntry;
 import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.NewItemController;
-import org.prelle.splimo.items.*;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.items.Enhancement;
+import org.prelle.splimo.items.EnhancementReference;
+import org.prelle.splimo.items.ItemTemplate;
+import org.prelle.splimo.items.ItemType;
+import org.prelle.splimo.items.ItemTypeData;
+import org.prelle.splimo.items.Weapon;
 
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
@@ -55,10 +62,10 @@ import javafx.util.StringConverter;
  *
  */
 public class EnhancementReferenceListView extends ListView<EnhancementReference> {
-	
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
 
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private NewItemController control;
 	private ScreenManagerProvider managerProvider;

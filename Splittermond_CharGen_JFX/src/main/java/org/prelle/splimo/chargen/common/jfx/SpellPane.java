@@ -1,23 +1,9 @@
 package org.prelle.splimo.chargen.common.jfx;
 
-import javafx.beans.property.ReadOnlyObjectProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Pos;
-import javafx.scene.control.*;
-import javafx.scene.control.TableColumn.CellDataFeatures;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.util.Callback;
-import javafx.util.StringConverter;
+import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SpellValue;
@@ -28,15 +14,35 @@ import org.prelle.splimo.charctrl.SpellController.FreeSelection;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
-import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+import javafx.beans.property.ReadOnlyObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.util.Callback;
+import javafx.util.StringConverter;
 
 public class SpellPane extends VBox implements GenerationEventListener {
-	
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
-	
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+
+	private static Logger logger = LogManager.getLogger("splittermond.jfx");
+
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private SpellController control;
 	private SpliMoCharacter model;
@@ -375,8 +381,8 @@ public class SpellPane extends VBox implements GenerationEventListener {
 }
 
 class UndoSelectionCell extends TableCell<SpellValue, Boolean> implements EventHandler<ActionEvent> {
-	
-	private static Logger logger = Logger.getLogger("chargen.ui");
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
 	private Button button;
 	private SpellController control;

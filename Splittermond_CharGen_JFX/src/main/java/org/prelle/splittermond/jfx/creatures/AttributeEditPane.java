@@ -6,9 +6,11 @@ package org.prelle.splittermond.jfx.creatures;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.creature.Creature;
 
 import javafx.geometry.Insets;
@@ -22,7 +24,7 @@ import javafx.scene.layout.GridPane;
  */
 public class AttributeEditPane extends GridPane {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 
 	private Creature model;
 	private AttributeViewPane viewPane;

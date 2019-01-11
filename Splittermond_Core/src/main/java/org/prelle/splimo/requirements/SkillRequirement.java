@@ -3,7 +3,8 @@
  */
 package org.prelle.splimo.requirements;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.Attribute;
 import org.prelle.simplepersist.Root;
 import org.prelle.splimo.Skill;
@@ -18,7 +19,7 @@ import org.prelle.splimo.persist.SkillConverter;
 @Root(name = "skillreq")
 public class SkillRequirement extends Requirement {
 
-	private final static Logger logger = Logger.getLogger("splittermond.req");
+	private static Logger logger = LogManager.getLogger("splittermond.req");
 
 	@Attribute(name="ref")
 	private String ref;

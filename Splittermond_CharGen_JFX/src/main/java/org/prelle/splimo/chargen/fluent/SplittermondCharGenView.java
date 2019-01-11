@@ -4,44 +4,33 @@
 package org.prelle.splimo.chargen.fluent;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
-import org.prelle.javafx.ManagedScreenSkeleton;
 import org.prelle.javafx.ResponsiveControl;
 import org.prelle.javafx.ScreenManager;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.javafx.WindowMode;
-import org.prelle.javafx.fluent.CloseableContent;
-import org.prelle.javafx.fluent.CommandBar;
-import org.prelle.javafx.fluent.NavigationPane;
-import org.prelle.rpgframework.jfx.CharacterDocumentView;
-import org.prelle.rpgframework.jfx.CharacterDocumentView.Section;
-import org.prelle.rpgframework.jfx.SettingsAndCommandBar;
-import org.prelle.splimo.Attribute;
-import org.prelle.splimo.CharGenWizardSpliMo;
-import org.prelle.splimo.DevelopmentScreenSpliMo;
 import org.prelle.splimo.EquipmentTools;
-import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.ViewMode;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.jfx.CharGenWizardSpliMo;
+import org.prelle.splimo.chargen.jfx.DevelopmentScreenSpliMo;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.chargen.jfx.ViewMode;
 import org.prelle.splimo.levelling.CharacterLeveller;
-import org.prelle.splittermond.jfx.attributes.AttributePanePrimary;
-import org.prelle.splittermond.jfx.attributes.AttributePaneSecondary;
 import org.prelle.splittermond.jfx.attributes.AttributeScreen;
 import org.prelle.splittermond.jfx.creatures.CreatureScreen;
 import org.prelle.splittermond.jfx.cultures.CultureLoreScreen;
@@ -49,35 +38,24 @@ import org.prelle.splittermond.jfx.equip.EquipmentScreen;
 import org.prelle.splittermond.jfx.notes.NotesScreen;
 import org.prelle.splittermond.jfx.powers.PowerScreen;
 import org.prelle.splittermond.jfx.resources.ResourceScreen;
-import org.prelle.splittermond.jfx.skills.SkillPane;
-import org.prelle.splittermond.jfx.skills.SkillPaneCallback;
-import org.prelle.splittermond.jfx.skills.SkillScreen;
 import org.prelle.splittermond.jfx.skills.SkillScreen2;
 import org.prelle.splittermond.jfx.spells.SpellScreen;
 
 import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.character.Attachment;
 import de.rpgframework.character.CharacterHandle;
-import de.rpgframework.character.CharacterProvider;
 import de.rpgframework.character.CharacterHandle.Format;
 import de.rpgframework.character.CharacterHandle.Type;
+import de.rpgframework.character.CharacterProvider;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.CommandBus;
 import de.rpgframework.core.CommandResult;
 import de.rpgframework.core.CommandType;
 import de.rpgframework.core.RoleplayingSystem;
-import javafx.event.EventHandler;
-import javafx.event.EventTarget;
-import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
-import javafx.scene.layout.VBox;
-import javafx.scene.shape.FillRule;
 import javafx.scene.shape.SVGPath;
 
 /**
@@ -86,11 +64,11 @@ import javafx.scene.shape.SVGPath;
  */
 public class SplittermondCharGenView extends ManagedScreen implements GenerationEventListener, ScreenManagerProvider, ResponsiveControl {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 	
 	private static Preferences CONFIG = Preferences.userRoot().node("/org/rpgframework/genesis/splittermond");
-	
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
 	
 	private SpliMoCharacter model;
 	private CharacterHandle handle;

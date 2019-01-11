@@ -3,17 +3,19 @@
  */
 package org.prelle.splittermond.jfx.creatures;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.npc.NPCAttributeGenerator;
 import org.prelle.splimo.npc.NPCGenerator;
@@ -29,7 +31,9 @@ import javafx.scene.layout.GridPane;
  */
 public class CreatureAttributeEditPane extends GridPane implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private Creature model;
 	private NPCAttributeGenerator control;

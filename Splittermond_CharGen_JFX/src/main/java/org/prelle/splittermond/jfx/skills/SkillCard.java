@@ -7,7 +7,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.prelle.splimo.Skill;
+import org.prelle.splimo.Skill.SkillType;
+import org.prelle.splimo.SkillValue;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
@@ -17,22 +26,13 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 
-import org.prelle.splimo.Skill;
-import org.prelle.splimo.SkillValue;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.Skill.SkillType;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-
 /**
  * @author prelle
  *
  */
 public class SkillCard extends GridPane implements GenerationEventListener {
 	
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle uiResources = SpliMoCharGenConstants.RES;
 
 	private SpliMoCharacter     model;
 

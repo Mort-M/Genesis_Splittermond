@@ -9,7 +9,8 @@ import java.util.PropertyResourceBundle;
 import java.util.Random;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Race;
 import org.prelle.splimo.Size;
 import org.prelle.splimo.SpliMoCharacter;
@@ -29,7 +30,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class RaceGenerator implements RaceController, SpliMoCharacterProcessor {
 
-	private static Logger logger = Logger.getLogger("splittermond.chargen.race");
+	private static Logger logger = LogManager.getLogger("splittermond.chargen.race");
 
 	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
 	private static Random RANDOM = new Random();

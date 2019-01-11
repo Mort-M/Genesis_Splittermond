@@ -12,7 +12,8 @@ import java.util.List;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import de.rpgframework.HardcopyPluginData;
 import de.rpgframework.RulePlugin;
@@ -24,7 +25,7 @@ import de.rpgframework.character.RuleSpecificCharacterObject;
  */
 public abstract class BasePluginData implements HardcopyPluginData {
 
-	protected static Logger logger = Logger.getLogger("splittermond");
+	protected final static Logger logger = LogManager.getLogger("splittermond");
 
 	protected static PrintWriter MISSING;
 	protected static PrintWriter MISSING_HELP;

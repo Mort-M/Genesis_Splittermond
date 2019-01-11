@@ -6,7 +6,8 @@ package org.prelle.splimo.creature;
 import java.util.List;
 import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.AttribConvert;
 import org.prelle.simplepersist.Attribute;
 import org.prelle.simplepersist.Element;
@@ -30,7 +31,7 @@ import org.prelle.splimo.persist.WeaponDamageConverter;
 @Root(name = "cweapon")
 public class CreatureWeapon {
 
-	private final static Logger logger = Logger.getLogger("splittermond.core");
+	private static Logger logger = LogManager.getLogger("splittermond");
 	
 	private static PropertyResourceBundle CORE = SplitterMondCore.getI18nResources();
 	

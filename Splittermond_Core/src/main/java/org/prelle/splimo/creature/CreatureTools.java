@@ -9,7 +9,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.DamageType;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.MastershipReference;
@@ -47,7 +48,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class CreatureTools {
 
-	private final static Logger logger = Logger.getLogger("splittermond");
+	private final static Logger logger = LogManager.getLogger("splittermond");
 
 	private static Skill melee = SplitterMondCore.getSkill("melee");
 

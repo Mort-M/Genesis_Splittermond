@@ -4,14 +4,15 @@
 package org.prelle.splittermond.jfx.resources;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 import java.util.StringTokenizer;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Resource;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.ResourceController;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.scene.Node;
 import javafx.scene.SnapshotParameters;
@@ -34,10 +35,10 @@ import javafx.util.Callback;
  *
  */
 public class ResourceListView extends ListView<Resource> {
-	
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
 
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private ResourceController control;
 	
@@ -139,8 +140,8 @@ public class ResourceListView extends ListView<Resource> {
 }
 
 class ResourceListCell extends ListCell<Resource> {
-	
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 
 	private Resource data;
 	private ResourceController charGen;

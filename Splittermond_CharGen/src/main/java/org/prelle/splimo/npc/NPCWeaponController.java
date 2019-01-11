@@ -3,9 +3,8 @@
  */
 package org.prelle.splimo.npc;
 
-import java.util.List;
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.creature.CreatureWeapon;
 
@@ -14,8 +13,8 @@ import org.prelle.splimo.creature.CreatureWeapon;
  *
  */
 public class NPCWeaponController {
-
-	private static Logger logger = Logger.getLogger("splittermond.npcgen");
+	
+	private static Logger logger = LogManager.getLogger("splittermond.npcgen");
 
 	private Creature model;
 

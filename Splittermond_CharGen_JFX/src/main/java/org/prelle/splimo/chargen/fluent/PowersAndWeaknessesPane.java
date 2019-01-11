@@ -5,7 +5,8 @@ package org.prelle.splimo.chargen.fluent;
 
 import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Power;
 import org.prelle.splimo.PowerReference;
 import org.prelle.splimo.charctrl.CharacterController;
@@ -13,6 +14,7 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -31,9 +33,9 @@ import javafx.util.StringConverter;
  */
 public class PowersAndWeaknessesPane extends HBox implements GenerationEventListener {
 
-	private static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
-
-	private static PropertyResourceBundle RES = SpliMoCharGenConstants.RES;
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle RES = SpliMoCharGenJFXConstants.UI;
 
 	private ObjectProperty<PowerReference> selectedItemProperty;
 	private ObjectProperty<Power> selectedAvailProperty;

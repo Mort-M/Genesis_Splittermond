@@ -1,6 +1,7 @@
 package org.prelle.splimo.requirements;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.Attribute;
 import org.prelle.simplepersist.Root;
 import org.prelle.splimo.Mastership;
@@ -18,7 +19,7 @@ import org.prelle.splimo.persist.SkillSpecializationConverter;
 @Root(name = "masterreq")
 public class MastershipRequirement extends Requirement {
 
-	private final static Logger logger = Logger.getLogger("splittermond.req");
+	private static Logger logger = LogManager.getLogger("splittermond.req");
 
 	@Attribute(name="ref")
 	private String id;

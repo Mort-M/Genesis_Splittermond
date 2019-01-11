@@ -8,7 +8,33 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.javafx.CloseType;
+import org.prelle.javafx.ManagedScreen;
+import org.prelle.javafx.ScreenManagerProvider;
+import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
+import org.prelle.rpgframework.jfx.AttentionPane;
+import org.prelle.splimo.Mastership;
+import org.prelle.splimo.MastershipReference;
+import org.prelle.splimo.Skill;
+import org.prelle.splimo.Skill.SkillType;
+import org.prelle.splimo.SkillSpecialization;
+import org.prelle.splimo.SkillValue;
+import org.prelle.splimo.SpellType;
+import org.prelle.splimo.SpellValue;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.charctrl.CharacterController;
+import org.prelle.splimo.charctrl.Generator;
+import org.prelle.splimo.charctrl.MastershipController;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.PointsPane;
+import org.prelle.splimo.chargen.jfx.ViewMode;
+import org.prelle.splittermond.jfx.skills.SkillScreen.ListElemMastership;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -24,40 +50,15 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
-import org.apache.log4j.Logger;
-import org.prelle.javafx.CloseType;
-import org.prelle.javafx.ManagedScreen;
-import org.prelle.javafx.ScreenManagerProvider;
-import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
-import org.prelle.rpgframework.jfx.AttentionPane;
-import org.prelle.splimo.Mastership;
-import org.prelle.splimo.MastershipReference;
-import org.prelle.splimo.PointsPane;
-import org.prelle.splimo.Skill;
-import org.prelle.splimo.Skill.SkillType;
-import org.prelle.splimo.SkillSpecialization;
-import org.prelle.splimo.SkillValue;
-import org.prelle.splimo.SpellType;
-import org.prelle.splimo.SpellValue;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.ViewMode;
-import org.prelle.splimo.charctrl.CharacterController;
-import org.prelle.splimo.charctrl.Generator;
-import org.prelle.splimo.charctrl.MastershipController;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splittermond.jfx.skills.SkillScreen.ListElemMastership;
-
 /**
  * @author prelle
  *
  */
 public class SkillScreen extends ManagedScreen implements GenerationEventListener, ScreenManagerProvider, SkillPaneCallback {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 	
 	class ListElemMastership {
 		Skill skill;

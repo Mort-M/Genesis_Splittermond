@@ -3,13 +3,10 @@
  */
 package org.prelle.splittermond.jfx.equip;
 
-import java.util.ResourceBundle;
+import java.util.PropertyResourceBundle;
 
-import javafx.geometry.Insets;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Region;
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.ScreenManager;
@@ -21,11 +18,15 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import de.rpgframework.ConfigOption;
 import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.RulePlugin;
 import de.rpgframework.core.RoleplayingSystem;
+import javafx.geometry.Insets;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
 
 /**
  * @author prelle
@@ -33,9 +34,9 @@ import de.rpgframework.core.RoleplayingSystem;
  */
 public class EditItemScreen extends ManagedScreen implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-
-	private final static ResourceBundle UI = ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private RelicPointsPane   points;
 	private Region pane;

@@ -15,7 +15,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.ResponsiveVBox;
 import org.prelle.javafx.TriStateCheckBox;
@@ -44,8 +45,10 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splittermond.jfx.skills.ListElemSpecialization;
 import org.prelle.splittermond.jfx.skills.SkillSpecListCell;
+import org.prelle.splittermond.jfx.spells.SpellScreen.SelectionOption;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
@@ -74,9 +77,9 @@ import javafx.util.StringConverter;
  */
 public class SpellScreen extends ManagedScreen implements GenerationEventListener, NodeWithTitle {
 
-	private final static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 	
 	// Used as user data for slider
 	class SelectionOption {
@@ -816,7 +819,7 @@ public class SpellScreen extends ManagedScreen implements GenerationEventListene
 
 class SpellsSpecListCell extends  ListCell<ListElemSpecialization> {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
 	private CheckBox check1;
 	private CheckBox check2;

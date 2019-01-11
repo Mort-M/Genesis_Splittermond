@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Culture;
 import org.prelle.splimo.SpliMoNameTable;
 import org.prelle.splimo.SplitterMondCore;
@@ -24,7 +25,7 @@ import de.rpgframework.worldinfo.WorldInformationType;
  */
 public class SplittermondCommandBus implements CommandBusListener {
 
-	private static Logger logger = Logger.getLogger("splittermond");
+	private static Logger logger = LogManager.getLogger("splittermond");
 
 	//--------------------------------------------------------------------
 	/**

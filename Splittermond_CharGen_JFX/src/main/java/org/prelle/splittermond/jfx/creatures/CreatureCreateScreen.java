@@ -7,21 +7,22 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
 import org.prelle.javafx.skin.NavigButtonControl;
-import org.prelle.splimo.LetUserChooseAdapter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CreatureController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.jfx.LetUserChooseAdapter;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.CreatureModule;
 import org.prelle.splimo.creature.CreatureModuleReference;
 import org.prelle.splimo.creature.CreatureType;
@@ -54,9 +55,9 @@ import javafx.util.StringConverter;
  */
 public class CreatureCreateScreen extends ManagedScreen implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private CreatureController control;
 

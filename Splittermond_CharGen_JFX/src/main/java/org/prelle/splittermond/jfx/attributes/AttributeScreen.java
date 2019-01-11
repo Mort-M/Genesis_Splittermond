@@ -4,7 +4,22 @@
 package org.prelle.splittermond.jfx.attributes;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.javafx.CloseType;
+import org.prelle.javafx.ManagedScreen;
+import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
+import org.prelle.splimo.Attribute;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.charctrl.CharacterController;
+import org.prelle.splimo.charctrl.Generator;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.jfx.PointsPane;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.chargen.jfx.ViewMode;
 
 import javafx.event.EventTarget;
 import javafx.geometry.Insets;
@@ -19,29 +34,15 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 
-import org.apache.log4j.Logger;
-import org.prelle.javafx.CloseType;
-import org.prelle.javafx.ManagedScreen;
-import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
-import org.prelle.splimo.Attribute;
-import org.prelle.splimo.PointsPane;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.ViewMode;
-import org.prelle.splimo.charctrl.CharacterController;
-import org.prelle.splimo.charctrl.Generator;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-
 /**
  * @author prelle
  *
  */
 public class AttributeScreen extends ManagedScreen implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger("splittermond.jfx");
+
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private CharacterController control;
 	private ViewMode mode;

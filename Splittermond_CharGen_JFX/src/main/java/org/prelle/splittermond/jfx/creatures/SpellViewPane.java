@@ -10,18 +10,19 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import javafx.scene.control.Label;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.text.Text;
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpellValue;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.Lifeform;
+
+import javafx.scene.control.Label;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Text;
 
 /**
  * @author prelle
@@ -29,9 +30,9 @@ import org.prelle.splimo.creature.Lifeform;
  */
 public class SpellViewPane extends FlowPane {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private Lifeform model;
 	

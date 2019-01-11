@@ -8,7 +8,8 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.Skill;
@@ -44,7 +45,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class CharacterLeveller implements CharacterController, GenerationEventListener {
 	
-	private static Logger logger = Logger.getLogger("splittermond.level");
+	private static Logger logger = LogManager.getLogger("splittermond.charlvl");
 
 	private SpliMoCharacter data;
 	private int maxAttribute;

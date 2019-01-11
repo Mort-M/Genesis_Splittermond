@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<materials>
+  <material id="common_fabric"  quality="0" price="0" type="FABRIC" />
+  <material id="common_wood"    quality="0" price="0" type="WOOD" />
+  <material id="common_leather" quality="0" price="0" type="LEATHER" />
+  <material id="common_metal"   quality="0" price="0" type="METAL" />
+  <material id="common_other"   quality="0" price="0" type="OTHER" />
+</materials>

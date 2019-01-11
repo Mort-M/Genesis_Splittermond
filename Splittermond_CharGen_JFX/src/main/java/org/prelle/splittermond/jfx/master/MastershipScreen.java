@@ -9,9 +9,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.fluent.CommandBar;
@@ -23,7 +23,6 @@ import org.prelle.rpgframework.jfx.ThreeColumnPane;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.MastershipOrSpecialization;
 import org.prelle.splimo.MastershipReference;
-import org.prelle.splimo.PointsPane;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SkillSpecialization.SkillSpecializationType;
@@ -32,14 +31,13 @@ import org.prelle.splimo.Spell;
 import org.prelle.splimo.SpellType;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.ViewMode;
 import org.prelle.splimo.charctrl.CharacterController;
-import org.prelle.splimo.charctrl.Generator;
 import org.prelle.splimo.charctrl.MastershipController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.persist.MastershipConverter;
 import org.prelle.splimo.persist.SpecializationConverter;
 
@@ -66,9 +64,9 @@ import javafx.scene.layout.VBox;
  */
 public class MastershipScreen extends ManagedScreen implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private final static MastershipConverter CONVERT_MASTER = new MastershipConverter();
 	private final static SpecializationConverter CONVERT_SPECIAL = new SpecializationConverter();

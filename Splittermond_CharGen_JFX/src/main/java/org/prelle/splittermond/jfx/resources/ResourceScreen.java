@@ -6,9 +6,9 @@ package org.prelle.splittermond.jfx.resources;
 import java.util.Arrays;
 import java.util.MissingResourceException;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.ResponsiveVBox;
 import org.prelle.javafx.ScreenManagerProvider;
@@ -16,7 +16,6 @@ import org.prelle.javafx.WindowMode;
 import org.prelle.javafx.fluent.CommandBar;
 import org.prelle.rpgframework.jfx.FreePointsNode;
 import org.prelle.rpgframework.jfx.SettingsAndCommandBar;
-import org.prelle.splimo.LetUserChooseAdapter;
 import org.prelle.splimo.Resource;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.ResourceGenerator;
@@ -24,6 +23,7 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.LetUserChooseAdapter;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -57,9 +57,9 @@ public class ResourceScreen extends ManagedScreen implements GenerationEventList
 		public String getText() { return text; }
 	}
 
-	private final static Logger logger = Logger.getLogger("splimo.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private ScreenManagerProvider provider;
 	

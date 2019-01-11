@@ -6,9 +6,11 @@ package org.prelle.splittermond.jfx.creatures;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.charctrl.CommonCreatureController;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.creature.CreatureModule;
 import org.prelle.splimo.requirements.Requirement;
 
@@ -27,7 +29,7 @@ import javafx.scene.layout.VBox;
 
 public class CreatureModuleListCell extends ListCell<CreatureModule> {
 
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 
 	private Label lbName;
 	private Label lbReference;

@@ -4,18 +4,15 @@
 package org.prelle.splimo.charctrl4;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.PowerReference;
-import org.prelle.splimo.Resource;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.processor.SpliMoCharacterProcessor;
 
 import de.rpgframework.genericrpg.modification.Modification;
@@ -26,7 +23,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class ResetModificationsOnGeneration implements SpliMoCharacterProcessor {
 
-	private final static Logger logger = Logger.getLogger("splittermond.chargen");
+	private static Logger logger = LogManager.getLogger("splittermond.chargen.race");
 
 	//-------------------------------------------------------------------
 	private void clearCharacter(SpliMoCharacter model) {

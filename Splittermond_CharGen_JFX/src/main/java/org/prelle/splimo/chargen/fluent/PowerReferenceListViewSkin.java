@@ -5,8 +5,8 @@ package org.prelle.splimo.chargen.fluent;
 
 import org.prelle.splimo.Power.SelectionType;
 import org.prelle.splimo.PowerReference;
-import org.prelle.splimo.SkillField;
 import org.prelle.splimo.charctrl.PowerController;
+import org.prelle.splimo.chargen.jfx.SkillField;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

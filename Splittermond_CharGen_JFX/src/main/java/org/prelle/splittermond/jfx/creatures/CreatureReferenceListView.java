@@ -4,7 +4,14 @@
 package org.prelle.splittermond.jfx.creatures;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.creature.Creature;
+import org.prelle.splimo.creature.CreatureReference;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -26,22 +33,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.charctrl.NewItemController;
-import org.prelle.splimo.creature.Creature;
-import org.prelle.splimo.creature.CreatureReference;
-
 /**
  * @author prelle
  *
  */
 public class CreatureReferenceListView extends ListView<CreatureReference> {
-	
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
 
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 	
 	private SpliMoCharacter model;
 	

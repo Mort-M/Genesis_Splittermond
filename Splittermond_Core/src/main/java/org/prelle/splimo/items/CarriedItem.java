@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.AttribConvert;
 import org.prelle.simplepersist.Element;
 import org.prelle.simplepersist.ElementList;
@@ -28,7 +29,7 @@ import de.rpgframework.genericrpg.modification.Modification;
 @Root(name = "itemref")
 public class CarriedItem extends UniqueObject implements Comparable<CarriedItem> {
 
-	private final static Logger logger = Logger.getLogger("splittermond.items");
+	private final static Logger logger = LogManager.getLogger("splittermond.items");
 
 	@org.prelle.simplepersist.Attribute(name="ref",required=true)
 	@AttribConvert(ItemConverter.class)

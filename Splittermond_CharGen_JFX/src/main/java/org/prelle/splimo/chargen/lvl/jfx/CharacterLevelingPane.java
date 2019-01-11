@@ -1,13 +1,17 @@
 package org.prelle.splimo.chargen.lvl.jfx;
 
-import org.apache.log4j.Logger;
+import java.util.PropertyResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ScreenManagerProvider;
-import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.Skill;
+import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.ViewMode;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.common.jfx.SpellPane;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.chargen.jfx.ViewMode;
 import org.prelle.splittermond.jfx.attributes.AttributePane;
 import org.prelle.splittermond.jfx.skills.SkillPane;
 import org.prelle.splittermond.jfx.skills.SkillPaneCallback;
@@ -22,7 +26,9 @@ import javafx.scene.layout.VBox;
 
 public class CharacterLevelingPane extends HBox implements EventHandler<ActionEvent>, SkillPaneCallback {
 
-	private final static Logger logger = Logger.getLogger("jfxui.level");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 	
 	private CharacterController charCtrl;
 	

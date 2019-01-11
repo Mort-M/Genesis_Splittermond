@@ -7,13 +7,15 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Race;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.chargen.LetUserChooseListener;
 import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -31,12 +33,13 @@ import javafx.util.StringConverter;
  */
 public class SelectRacePage extends WizardPage implements ChangeListener<Race> {
 
-	private final static Logger logger = Logger.getLogger("fxui");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private static Map<Race,Image> imageByRace;
 
 	private static PropertyResourceBundle ruleResources = SplitterMondCore.getI18nResources();
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
 
 	private SpliMoCharacterGenerator charGen;
 	private LetUserChooseListener choiceCallback;

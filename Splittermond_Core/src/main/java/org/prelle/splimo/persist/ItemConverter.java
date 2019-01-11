@@ -1,6 +1,7 @@
 package org.prelle.splimo.persist;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.StringValueConverter;
 import org.prelle.splimo.SplitterDataMigration;
 import org.prelle.splimo.SplitterMondCore;
@@ -9,8 +10,8 @@ import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splimo.persist.ReferenceException.ReferenceType;
 
 public class ItemConverter implements StringValueConverter<ItemTemplate> {
-	
-	private final static Logger logger = Logger.getLogger("splittermond.persist");
+
+	private final static Logger logger = LogManager.getLogger("splittermond.persist");
 
 	//-------------------------------------------------------------------
 	/**

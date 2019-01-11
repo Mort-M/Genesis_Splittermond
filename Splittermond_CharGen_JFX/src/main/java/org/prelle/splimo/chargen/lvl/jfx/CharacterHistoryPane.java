@@ -5,10 +5,11 @@ package org.prelle.splimo.chargen.lvl.jfx;
 
 import java.text.DateFormat;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.modifications.AttributeModification;
 import org.prelle.splimo.modifications.MastershipModification;
 import org.prelle.splimo.modifications.PowerModification;
@@ -39,9 +40,9 @@ import javafx.util.Callback;
  */
 public class CharacterHistoryPane extends HBox {
 
-	private final static Logger logger = Logger.getLogger("jfxui.level");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle res = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static PropertyResourceBundle res = SpliMoCharGenJFXConstants.UI;
 
 	private final static DateFormat FORMAT = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM);
 	

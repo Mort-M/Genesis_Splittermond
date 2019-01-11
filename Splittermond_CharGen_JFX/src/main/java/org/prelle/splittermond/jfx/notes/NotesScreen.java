@@ -5,9 +5,9 @@ package org.prelle.splittermond.jfx.notes;
 
 import java.util.Arrays;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
@@ -30,7 +30,7 @@ import javafx.scene.layout.Priority;
 public class NotesScreen extends ManagedScreen implements
 		GenerationEventListener {
 
-	private static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
 	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 

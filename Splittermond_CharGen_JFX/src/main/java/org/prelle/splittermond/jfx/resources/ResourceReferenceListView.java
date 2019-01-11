@@ -8,6 +8,35 @@ import java.util.List;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.javafx.AlertType;
+import org.prelle.javafx.CloseType;
+import org.prelle.javafx.ManagedScreen;
+import org.prelle.javafx.ScreenManager;
+import org.prelle.javafx.skin.NavigButtonControl;
+import org.prelle.splimo.Resource;
+import org.prelle.splimo.ResourceReference;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.charctrl.ResourceController;
+import org.prelle.splimo.chargen.LetUserChooseListener;
+import org.prelle.splimo.chargen.creature.CreatureGenerator;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.creature.Creature;
+import org.prelle.splimo.creature.CreatureFeature;
+import org.prelle.splimo.creature.CreatureReference;
+import org.prelle.splimo.creature.ModuleBasedCreature;
+import org.prelle.splimo.equip.ItemLevellerAndGenerator;
+import org.prelle.splimo.items.CarriedItem;
+import org.prelle.splimo.levelling.ResourceLeveller;
+import org.prelle.splittermond.jfx.creatures.CreatureCreateScreen;
+import org.prelle.splittermond.jfx.equip.EditItemScreen;
+import org.prelle.splittermond.jfx.equip.SelectItemDialogScreen;
+
 import javafx.event.ActionEvent;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -36,42 +65,15 @@ import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
 
-import org.apache.log4j.Logger;
-import org.prelle.javafx.AlertType;
-import org.prelle.javafx.CloseType;
-import org.prelle.javafx.ManagedScreen;
-import org.prelle.javafx.ScreenManager;
-import org.prelle.javafx.skin.NavigButtonControl;
-import org.prelle.splimo.Resource;
-import org.prelle.splimo.ResourceReference;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.charctrl.ResourceController;
-import org.prelle.splimo.chargen.LetUserChooseListener;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventType;
-import org.prelle.splimo.creature.Creature;
-import org.prelle.splimo.creature.CreatureFeature;
-import org.prelle.splimo.creature.CreatureGenerator;
-import org.prelle.splimo.creature.CreatureReference;
-import org.prelle.splimo.creature.ModuleBasedCreature;
-import org.prelle.splimo.equip.ItemLevellerAndGenerator;
-import org.prelle.splimo.items.CarriedItem;
-import org.prelle.splimo.levelling.ResourceLeveller;
-import org.prelle.splittermond.jfx.creatures.CreatureCreateScreen;
-import org.prelle.splittermond.jfx.equip.EditItemScreen;
-import org.prelle.splittermond.jfx.equip.SelectItemDialogScreen;
-
 /**
  * @author prelle
  *
  */
 public class ResourceReferenceListView extends ListView<ResourceReference> {
 
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger("splittermond.jfx");
 
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private ResourceController control;
 	private SpliMoCharacter model;
@@ -187,9 +189,9 @@ public class ResourceReferenceListView extends ListView<ResourceReference> {
 
 class ResourceReferenceListCell extends ListCell<ResourceReference> {
 
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger("splittermond.jfx");
 
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private transient ResourceReference data;
 

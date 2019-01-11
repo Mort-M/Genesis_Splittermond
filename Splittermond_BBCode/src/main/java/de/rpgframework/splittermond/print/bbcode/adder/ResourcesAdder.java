@@ -5,7 +5,7 @@ import java.util.List;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SpliMoCharacter;
 
-import de.rpgframework.splittermond.SpliMoLabels;
+import de.rpgframework.splittermond.print.SpliMoLabels;
 import de.rpgframework.splittermond.print.bbcode.SingleBBCodeGenerator;
 
 /**

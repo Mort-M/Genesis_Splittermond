@@ -4,11 +4,13 @@
 package org.prelle.splittermond.jfx.master;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.SkillSpecializationValue;
 import org.prelle.splimo.charctrl.MastershipController;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -28,8 +30,10 @@ import javafx.scene.layout.VBox;
  *
  */
 public class MastershipReferenceListCell extends ListCell<MastershipReference> {
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private MastershipController control;
 	private Label lblName;

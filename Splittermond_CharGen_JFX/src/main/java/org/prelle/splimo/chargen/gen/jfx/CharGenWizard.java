@@ -4,14 +4,15 @@
 package org.prelle.splimo.chargen.gen.jfx;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.chargen.LetUserChooseListener;
+import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.stage.Stage;
-
-import org.apache.log4j.Logger;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.LetUserChooseListener;
 
 /**
  * @author prelle
@@ -19,9 +20,9 @@ import org.prelle.splimo.chargen.LetUserChooseListener;
  */
 public class CharGenWizard extends Wizard {
 
-	private final static Logger logger = Logger.getLogger("fxui");
-
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	Stage owner;
 	private SpliMoCharacterGenerator charGen;

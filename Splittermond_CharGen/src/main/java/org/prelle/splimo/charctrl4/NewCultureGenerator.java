@@ -5,10 +5,10 @@ package org.prelle.splimo.charctrl4;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Culture;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
@@ -27,9 +27,9 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class NewCultureGenerator implements CultureController, SpliMoCharacterProcessor {
 
-	private static Logger logger = Logger.getLogger("splittermond.chargen.cult");
-
-	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
+	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
+	
+	private static Logger logger = LogManager.getLogger("splittermond.chargen");
 
 	private SplitterEngineCharacterGenerator parent;
 	private SpliMoCharacter model;

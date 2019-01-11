@@ -6,7 +6,8 @@ package org.prelle.splimo.items;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.AttribConvert;
 import org.prelle.simplepersist.Element;
 import org.prelle.simplepersist.Root;
@@ -24,7 +25,7 @@ import org.prelle.splimo.requirements.RequirementList;
 @Root(name = "weapon")
 public class Weapon extends ItemTypeData {
 
-	private final static Logger logger = Logger.getLogger("splittermond.items");
+	private final static Logger logger = LogManager.getLogger("splittermond.items");
 	
 	@org.prelle.simplepersist.Attribute
 	@AttribConvert(SkillConverter.class)

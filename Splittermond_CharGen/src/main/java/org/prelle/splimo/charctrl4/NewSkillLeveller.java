@@ -6,10 +6,10 @@ package org.prelle.splimo.charctrl4;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
@@ -32,9 +32,9 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class NewSkillLeveller implements SpliMoCharacterProcessor, SkillController {
 
-	private static Logger logger = Logger.getLogger("splittermond.chargen.skill");
-
-	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
+	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
+	
+	private static Logger logger = LogManager.getLogger("splittermond.chargen.skill");
 
 	private SplitterEngineCharacterGenerator parent;
 	private int maxValue;

@@ -5,8 +5,18 @@ package org.prelle.splittermond.jfx.creatures;
 
 import java.util.Arrays;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.javafx.ScreenManagerProvider;
+import org.prelle.splimo.SplitterTools;
+import org.prelle.splimo.charctrl.CommonCreatureController;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.LetUserChooseAdapter;
+import org.prelle.splimo.creature.CreatureModuleReference;
+import org.prelle.splimo.modifications.ModificationChoice;
+
+import de.rpgframework.genericrpg.modification.Modification;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -14,26 +24,15 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-import org.apache.log4j.Logger;
-import org.prelle.javafx.ScreenManagerProvider;
-import org.prelle.splimo.LetUserChooseAdapter;
-import org.prelle.splimo.SplitterTools;
-import org.prelle.splimo.charctrl.CommonCreatureController;
-import org.prelle.splimo.creature.CreatureModuleReference;
-import org.prelle.splimo.creature.CreatureModuleReference.NecessaryChoice;
-import org.prelle.splimo.modifications.ModificationChoice;
-
-import de.rpgframework.genericrpg.modification.Modification;
-
 /**
  * @author prelle
  *
  */
 public class NecessaryChoicesPane extends VBox {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private CommonCreatureController control;
 	private LetUserChooseAdapter adapter;

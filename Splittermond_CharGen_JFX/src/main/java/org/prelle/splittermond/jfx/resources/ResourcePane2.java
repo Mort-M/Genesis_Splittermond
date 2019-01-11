@@ -2,10 +2,10 @@ package org.prelle.splittermond.jfx.resources;
 
 import java.util.List;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 import java.util.StringTokenizer;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.ScreenManager;
 import org.prelle.splimo.Resource;
@@ -16,6 +16,7 @@ import org.prelle.splimo.charctrl.ResourceController;
 import org.prelle.splimo.chargen.LetUserChooseListener;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.levelling.ResourceLeveller;
 
 import javafx.beans.property.ObjectProperty;
@@ -40,9 +41,9 @@ import javafx.scene.text.TextAlignment;
 
 public class ResourcePane2 extends HBox implements GenerationEventListener {
 
-	private static Logger logger = Logger.getLogger("chargen.ui");
-
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenConstants.RES;
 
 	private ResourceController control;
 	private SpliMoCharacter model;

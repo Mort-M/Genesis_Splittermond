@@ -4,7 +4,18 @@
 package org.prelle.splittermond.jfx.creatures;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.creature.Creature;
+import org.prelle.splimo.creature.CreatureType;
+import org.prelle.splimo.creature.CreatureTypeValue;
+import org.prelle.splimo.npc.CreatureTypeController;
 
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -26,26 +37,15 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Resource;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.creature.Creature;
-import org.prelle.splimo.creature.CreatureType;
-import org.prelle.splimo.creature.CreatureTypeValue;
-import org.prelle.splimo.npc.CreatureTypeController;
-
 /**
  * @author Stefan
  *
  */
 public class CreatureTypePane extends HBox implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private Creature model;
 	private CreatureTypeController control;
@@ -192,7 +192,7 @@ public class CreatureTypePane extends HBox implements GenerationEventListener {
 //--------------------------------------------------------------------
 class CreatureTypeCell extends ListCell<CreatureType> {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
 	private CreatureTypePane parent;
 	private CreatureType data;
@@ -285,8 +285,8 @@ class CreatureTypeCell extends ListCell<CreatureType> {
 //--------------------------------------------------------------------
 //--------------------------------------------------------------------
 class CreatureTypeValueCell extends ListCell<CreatureTypeValue> {
-	
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 
 	private CreatureTypeController charGen;
 	private CreatureTypePane parent;

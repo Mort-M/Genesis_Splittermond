@@ -9,7 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.Element;
 import org.prelle.simplepersist.ElementList;
 import org.prelle.splimo.Attribute;
@@ -29,7 +30,7 @@ import org.prelle.splimo.SpellValue;
  */
 public class Entourage implements Lifeform {
 
-	private final static Logger logger = Logger.getLogger("splittermond");
+	private static Logger logger = LogManager.getLogger("splittermond");
 	
 	@org.prelle.simplepersist.Attribute(name="race")
 	private String race;

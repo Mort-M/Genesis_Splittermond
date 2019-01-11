@@ -5,7 +5,8 @@ package org.prelle.splimo.persist;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.AfterLoadHookInterface;
 import org.prelle.splimo.SplittermondCustomDataCore;
 import org.prelle.splimo.items.ItemTemplate;
@@ -16,7 +17,7 @@ import org.prelle.splimo.items.ItemTemplate;
  */
 public class CustomItemHook implements AfterLoadHookInterface {
 
-	private final static Logger logger = Logger.getLogger("splittermond.persist");
+	private final static Logger logger = LogManager.getLogger("splittermond.persist");
 
 	//--------------------------------------------------------------------
 	/**

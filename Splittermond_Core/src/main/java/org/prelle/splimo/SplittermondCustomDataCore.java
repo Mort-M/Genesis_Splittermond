@@ -37,7 +37,8 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.util.ByteArrayDataSource;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.Persister;
 import org.prelle.simplepersist.Serializer;
 import org.prelle.splimo.SkillSpecialization.SkillSpecializationType;
@@ -59,7 +60,7 @@ import de.rpgframework.core.RoleplayingSystem;
  */
 public class SplittermondCustomDataCore {
 
-	private static Logger logger = Logger.getLogger("splittermond");
+	private final static Logger logger = LogManager.getLogger("splittermond");
 
 	static class PerTypeData {
 		Path datafile;

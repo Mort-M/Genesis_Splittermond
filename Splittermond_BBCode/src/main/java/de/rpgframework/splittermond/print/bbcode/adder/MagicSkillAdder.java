@@ -4,13 +4,12 @@ import java.util.List;
 
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Skill.SkillType;
-
-import de.rpgframework.splittermond.SpliMoLabels;
-import de.rpgframework.splittermond.print.bbcode.BBCodes;
-import de.rpgframework.splittermond.print.bbcode.SingleBBCodeGenerator;
-
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpliMoCharacter;
+
+import de.rpgframework.splittermond.print.SpliMoLabels;
+import de.rpgframework.splittermond.print.bbcode.BBCodes;
+import de.rpgframework.splittermond.print.bbcode.SingleBBCodeGenerator;
 
 /**
  * Adds all magic skills with a <code>value > 0</code> in the following way:<br>

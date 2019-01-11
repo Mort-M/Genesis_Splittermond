@@ -4,14 +4,15 @@
 package org.prelle.splimo.chargen.lvl.jfx;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.levelling.CharacterLeveller;
 
 import de.rpgframework.genericrpg.modification.Modification;
@@ -36,9 +37,10 @@ import javafx.stage.Stage;
  *
  */
 public class PointsBlock extends VBox implements GenerationEventListener {
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
-	private final static Logger logger = Logger.getLogger("chargen.ui");
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 	
 	private Label epFree_l, epInv_l;
 	private Label maxAtt_l, maxSkill_l;

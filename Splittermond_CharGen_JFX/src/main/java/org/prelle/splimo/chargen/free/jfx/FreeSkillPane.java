@@ -1,10 +1,11 @@
 package org.prelle.splimo.chargen.free.jfx;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Skill;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.free.FreeSelectionGenerator;
 import org.prelle.splimo.modifications.SkillModification;
 
@@ -30,10 +31,10 @@ import javafx.util.Callback;
 import javafx.util.StringConverter;
 
 public class FreeSkillPane extends HBox implements EventHandler<ActionEvent> {
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static Logger logger = Logger.getLogger("chargen.ui.skill");
-	
-	private static PropertyResourceBundle res = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static PropertyResourceBundle res = SpliMoCharGenJFXConstants.UI;
 
 	private FreeSelectionGenerator control;
 	FreeSelectionDialog parent;
@@ -163,8 +164,8 @@ public class FreeSkillPane extends HBox implements EventHandler<ActionEvent> {
 }
 
 class SkillModCell extends TableCell<SkillModification, Number> implements ChangeListener<Integer>{
-	
-	private static Logger logger = Logger.getLogger("chargen.ui.skill");
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
 	private Spinner<Integer> box;
 	private FreeSelectionGenerator charGen;

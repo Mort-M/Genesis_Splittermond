@@ -6,7 +6,8 @@ package org.prelle.splimo.chargen.event;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * @author prelle
@@ -14,7 +15,7 @@ import org.apache.log4j.Logger;
  */
 public class GenerationEventDispatcher {
 	
-	private static Logger logger = Logger.getLogger("splittermond.chargen.event");
+	private static Logger logger = LogManager.getLogger("splittermond.chargen.event");
 	
 	private static Collection<GenerationEventListener> listener;
 

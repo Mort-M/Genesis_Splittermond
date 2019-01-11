@@ -11,22 +11,21 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.FontIcon;
-import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.ScreenManager;
 import org.prelle.javafx.fluent.NodeWithTitleSkeleton;
-import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.SplittermondCustomDataCore;
 import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.equip.ItemLevellerAndGenerator;
 import org.prelle.splimo.items.Availability;
 import org.prelle.splimo.items.CarriedItem;
@@ -51,9 +50,9 @@ import javafx.scene.layout.Region;
  */
 public class SelectItemDialogScreen extends NodeWithTitleSkeleton {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private ScreenManager manager;
 	

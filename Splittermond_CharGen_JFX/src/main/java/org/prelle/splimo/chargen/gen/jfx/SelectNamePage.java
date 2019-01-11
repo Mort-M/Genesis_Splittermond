@@ -8,7 +8,18 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.Race;
+import org.prelle.splimo.Size;
+import org.prelle.splimo.SpliMoCharacter.Gender;
+import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -32,25 +43,15 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Race;
-import org.prelle.splimo.Size;
-import org.prelle.splimo.SpliMoCharacter.Gender;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.event.GenerationEventType;
-
 /**
  * @author prelle
  *
  */
 public class SelectNamePage extends WizardPage implements ChangeListener<String>, GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("fxui");
-
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenConstants.RES;
 
 	private SpliMoCharacterGenerator charGen;
 	

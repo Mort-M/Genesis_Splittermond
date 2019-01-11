@@ -10,8 +10,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Background;
 import org.prelle.splimo.Culture;
 import org.prelle.splimo.CultureLore;
@@ -23,10 +25,10 @@ import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.charctrl4.SpliMoCharGenConstants;
 import org.prelle.splimo.modifications.CultureLoreModification;
 import org.prelle.splimo.modifications.LanguageModification;
 import org.prelle.splimo.modifications.MastershipModification;
-import org.prelle.splimo.modifications.ModificationImpl;
 import org.prelle.splimo.modifications.NotBackgroundModification;
 import org.prelle.splimo.modifications.PowerModification;
 import org.prelle.splimo.modifications.ResourceModification;
@@ -39,8 +41,10 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class FreeSelectionGenerator {
+	
+	private static Logger logger = LogManager.getLogger("splittermond.chargen.free");
 
-	private final static Logger logger = Logger.getLogger("chargen.free");
+	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
 	
 	private static List<Resource> BASE_RESOURCES = new ArrayList<Resource>(Arrays.asList(new Resource[]{
 			SplitterMondCore.getResource("reputation"),

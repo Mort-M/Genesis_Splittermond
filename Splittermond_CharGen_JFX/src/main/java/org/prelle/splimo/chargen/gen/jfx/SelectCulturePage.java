@@ -11,7 +11,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.Culture;
+import org.prelle.splimo.Culture.Continent;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.chargen.LetUserChooseListener;
+import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.free.jfx.FreeSelectionDialog;
+import org.prelle.splimo.free.FreeSelectionGenerator;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -33,30 +46,19 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Culture;
-import org.prelle.splimo.Culture.Continent;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.LetUserChooseListener;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.free.jfx.FreeSelectionDialog;
-import org.prelle.splimo.free.FreeSelectionGenerator;
-
 /**
  * @author prelle
  *
  */
 public class SelectCulturePage extends WizardPage implements ChangeListener<TreeItem<Culture>>, GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("fxui");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private static Map<Culture,Image> imageBySelection;
 
 	private static PropertyResourceBundle CORE = SplitterMondCore.getI18nResources();
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
 	
 	
 	private SpliMoCharacterGenerator charGen;

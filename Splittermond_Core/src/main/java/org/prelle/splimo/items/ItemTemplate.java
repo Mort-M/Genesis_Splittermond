@@ -6,7 +6,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.MissingResourceException;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.AttribConvert;
 import org.prelle.simplepersist.Attribute;
 import org.prelle.simplepersist.ElementList;
@@ -26,8 +27,8 @@ import org.prelle.splimo.persist.SpecializationConverter;
  */
 @Root(name = "item")
 public class ItemTemplate extends BasePluginData implements Comparable<ItemTemplate> {
-	
-	private final static Logger logger = Logger.getLogger("splittermond.items");
+
+	private static Logger logger = LogManager.getLogger("splittermond.items");
 
 	@Attribute(required=true)
 	private String id;

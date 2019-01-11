@@ -9,23 +9,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.SplitterTools;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.creature.CreatureWeapon;
 import org.prelle.splimo.items.ItemAttribute;
 import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splimo.items.ItemType;
-import org.prelle.splimo.items.ItemTypeData;
 import org.prelle.splimo.items.LongRangeWeapon;
 import org.prelle.splimo.items.Weapon;
-import org.prelle.splimo.persist.SkillConverter;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ObservableValue;
@@ -36,7 +35,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
@@ -49,7 +47,6 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
-import javafx.util.converter.DefaultStringConverter;
 
 /**
  * @author Stefan
@@ -57,9 +54,9 @@ import javafx.util.converter.DefaultStringConverter;
  */
 public class WeaponEditPane extends VBox {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private static StringConverter<Skill> SKILLCONV = new StringConverter<Skill>() {
 		public String toString(Skill object) {return object.getName();}

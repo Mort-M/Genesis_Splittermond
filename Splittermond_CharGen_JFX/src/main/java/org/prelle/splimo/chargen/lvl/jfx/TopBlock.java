@@ -10,7 +10,8 @@ import java.nio.file.Files;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.FontIcon;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.SpliMoCharacter;
@@ -21,6 +22,7 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splittermond.jfx.cultures.OldCultureLorePane;
 import org.prelle.splittermond.jfx.languages.LanguagePane;
 
@@ -106,10 +108,10 @@ public class TopBlock extends HBox implements GenerationEventListener {
 }
 
 class BaseDataBlock extends GridPane implements GenerationEventListener {
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
-	
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private Label name_l, education_l, culture_l, race_l, background_l, gender_l;
 	private Label hair_l, eyes_l, skin_l, size_l, weight_l, birthplace_l;
@@ -434,10 +436,10 @@ class DetailsBlock extends VBox implements GenerationEventListener {
 
 
 class MoonsignBlock extends GridPane implements GenerationEventListener {
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static Logger logger = Logger.getLogger("chargen.ui");
-	
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private SpliMoCharacter model;
 

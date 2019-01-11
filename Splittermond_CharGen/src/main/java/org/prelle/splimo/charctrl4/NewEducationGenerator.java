@@ -6,16 +6,16 @@ package org.prelle.splimo.charctrl4;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Culture;
 import org.prelle.splimo.Education;
 import org.prelle.splimo.Race;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.SpliMoCharacter.Gender;
+import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.modifications.MastershipModification;
 import org.prelle.splimo.modifications.ModificationChoice;
 import org.prelle.splimo.modifications.RequirementModification;
@@ -31,10 +31,10 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class NewEducationGenerator implements EducationController, SpliMoCharacterProcessor {
-	
-	private static Logger logger = Logger.getLogger("splittermond.chargen.edu");
 
-	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
+	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
+	
+	private static Logger logger = LogManager.getLogger("splittermond.chargen.edu");
 
 	private SplitterEngineCharacterGenerator parent;
 	private SpliMoCharacter model;

@@ -8,13 +8,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.ResourceBundle;
+import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.rpgframework.jfx.DataInputPane;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Armor;
 import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splimo.items.ItemType;
@@ -37,9 +39,9 @@ import javafx.util.StringConverter;
  */
 public class EnterItemTemplatePane extends VBox implements DataInputPane<ItemTemplate> {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-
-	private final static ResourceBundle RES = ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle RES = SpliMoCharGenJFXConstants.UI;
 
 	private ItemTemplate model;
 	private TextField tfName;

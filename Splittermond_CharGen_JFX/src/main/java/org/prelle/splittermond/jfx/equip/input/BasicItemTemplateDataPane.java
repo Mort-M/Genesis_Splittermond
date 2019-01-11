@@ -3,10 +3,12 @@
  */
 package org.prelle.splittermond.jfx.equip.input;
 
-import java.util.ResourceBundle;
+import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.rpgframework.jfx.DataInputPane;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Availability;
 import org.prelle.splimo.items.Complexity;
 import org.prelle.splimo.items.ItemAttribute;
@@ -27,9 +29,9 @@ import javafx.util.StringConverter;
  */
 public class BasicItemTemplateDataPane extends GridPane implements DataInputPane<ItemTemplate> {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-
-	private final static ResourceBundle RES = ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle RES = SpliMoCharGenJFXConstants.UI;
 	
 	private ItemTemplate model;
 

@@ -6,10 +6,12 @@ package org.prelle.splittermond.jfx.equip;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.charctrl.NewItemController;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Enhancement;
 import org.prelle.splimo.items.Enhancement.EnhancementType;
 import org.prelle.splimo.items.EnhancementReference;
@@ -41,10 +43,10 @@ import javafx.util.Callback;
  *
  */
 public class EnhancementListView extends ListView<Enhancement> {
-	
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
 
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private NewItemController control;
 	
@@ -125,8 +127,8 @@ public class EnhancementListView extends ListView<Enhancement> {
 }
 
 class EnhancementListCell extends ListCell<Enhancement> {
-	
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
 	private static Map<Enhancement.EnhancementType, Image> IMAGES = new HashMap<>();
 

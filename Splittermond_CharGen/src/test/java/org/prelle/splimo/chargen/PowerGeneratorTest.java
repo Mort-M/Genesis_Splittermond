@@ -9,8 +9,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -29,8 +29,8 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class PowerGeneratorTest {
-
-	private final static Logger logger = Logger.getLogger("junit.power");
+	
+	private static Logger logger = LogManager.getLogger("junit.power");
 	
 	private final static int MAX = 10;
 	
@@ -48,7 +48,6 @@ public class PowerGeneratorTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		SplitterMondCore.initialize(new SplittermondRules());
 		ONCE_GENONLY = SplitterMondCore.getPower("attractive");
 		ONCE_ALWAYS = SplitterMondCore.getPower("socialable");

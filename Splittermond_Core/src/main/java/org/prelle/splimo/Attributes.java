@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.ElementList;
 import org.prelle.simplepersist.Root;
 
@@ -22,7 +23,7 @@ import org.prelle.simplepersist.Root;
 @ElementList(entry="attr", type=AttributeValue.class)
 public class Attributes extends ArrayList<AttributeValue> {
 
-	private final static Logger logger = Logger.getLogger("splittermond");
+	private final static Logger logger = LogManager.getLogger("splittermond");
 
 	private transient Map<Attribute, AttributeValue> secondary;
 

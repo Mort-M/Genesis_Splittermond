@@ -11,7 +11,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.Moonsign;
+import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -27,19 +32,15 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Moonsign;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-
 /**
  * @author prelle
  *
  */
 public class SelectSplinterPage extends WizardPage implements ChangeListener<Moonsign> {
 
-	private final static Logger logger = Logger.getLogger("fxui");
-
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenConstants.RES;
 
 	private SpliMoCharacterGenerator charGen;
 	

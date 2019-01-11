@@ -7,11 +7,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.javafx.fluent.CommandBar;
-import org.prelle.javafx.fluent.NodeWithTitleSkeleton;
 import org.prelle.rpgframework.jfx.AttentionPane;
 import org.prelle.rpgframework.jfx.FreePointsNode;
 import org.prelle.rpgframework.jfx.SettingsAndCommandBar;
@@ -44,7 +44,7 @@ import javafx.util.Callback;
  */
 public class SkillScreen2 extends ManagedScreen implements GenerationEventListener, SkillPaneCallback {
 
-	private final static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
 	
 	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 

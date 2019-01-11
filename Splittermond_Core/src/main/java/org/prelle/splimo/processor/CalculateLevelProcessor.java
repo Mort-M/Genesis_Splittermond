@@ -3,15 +3,12 @@
  */
 package org.prelle.splimo.processor;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.prefs.Preferences;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Attribute;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.SplitterTools;
-import org.prelle.splimo.modifications.AttributeModification;
 
 import de.rpgframework.genericrpg.modification.Modification;
 
@@ -21,7 +18,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class CalculateLevelProcessor implements SpliMoCharacterProcessor {
 
-	private static Logger logger = Logger.getLogger("splittermond.chargen.level");
+	private static Logger logger = LogManager.getLogger("splittermond.chargen.level");
 
 	//-------------------------------------------------------------------
 	public CalculateLevelProcessor() {

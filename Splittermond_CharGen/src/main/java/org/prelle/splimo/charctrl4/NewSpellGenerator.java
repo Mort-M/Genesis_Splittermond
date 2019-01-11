@@ -6,24 +6,18 @@ package org.prelle.splimo.charctrl4;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
-import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Skill;
+import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.Spell;
 import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.Skill.SkillType;
-import org.prelle.splimo.charctrl.SpellController.FreeSelection;
-import org.prelle.splimo.charctrl4.MastershipController.FreeMastershipSelection;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.modifications.SpellModification;
 import org.prelle.splimo.processor.SpliMoCharacterProcessor;
 import org.prelle.splimo.requirements.Requirement;
@@ -39,9 +33,9 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class NewSpellGenerator implements SpellController, SpliMoCharacterProcessor {
 
-	private static Logger logger = Logger.getLogger("splittermond.chargen.spells");
-
-	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
+	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
+	
+	private static Logger logger = LogManager.getLogger("splittermond.chargen.spells");
 
 	private SpliMoCharacter model;
 

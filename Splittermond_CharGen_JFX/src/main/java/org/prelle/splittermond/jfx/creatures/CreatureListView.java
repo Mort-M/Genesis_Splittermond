@@ -6,7 +6,15 @@ package org.prelle.splittermond.jfx.creatures;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.creature.Creature;
+import org.prelle.splimo.creature.CreatureReference;
+import org.prelle.splimo.items.Enhancement;
+import org.prelle.splimo.items.Enhancement.EnhancementType;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
@@ -30,21 +38,15 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.creature.Creature;
-import org.prelle.splimo.creature.CreatureReference;
-import org.prelle.splimo.items.Enhancement;
-import org.prelle.splimo.items.Enhancement.EnhancementType;
-
 /**
  * @author prelle
  *
  */
 public class CreatureListView extends ListView<Creature> {
-	
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
 
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 	
 	//--------------------------------------------------------------------
 	public CreatureListView() {
@@ -117,8 +119,8 @@ public class CreatureListView extends ListView<Creature> {
 }
 
 class CreatureCell extends ListCell<Creature> {
-	
-	private static Logger logger = Logger.getLogger("splittermond.jfx");
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
 	private static Map<Enhancement.EnhancementType, Image> IMAGES = new HashMap<>();
 

@@ -3,8 +3,8 @@ package de.rpgframework.splittermond.print.bbcode;
 import java.io.File;
 import java.io.IOException;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
@@ -15,10 +15,9 @@ import de.rpgframework.print.PrintType;
 
 public class Main {
 
-	private static Logger logger = Logger.getLogger(Main.class);
+	private static Logger logger = LogManager.getLogger(Main.class);
 
 	public static void main(String[] args) {
-		PropertyConfigurator.configure("log4j.properties");
 		SplitterMondCore.initialize(new SplittermondRules());
 		
 //		MondstahlklingenPlugin msk = new MondstahlklingenPlugin();

@@ -8,7 +8,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Background;
 import org.prelle.splimo.Culture;
 import org.prelle.splimo.Deity;
@@ -23,6 +24,7 @@ import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.character.CharacterHandle;
@@ -48,9 +50,9 @@ import javafx.util.StringConverter;
  */
 public class BaseDataGrid extends GridPane {
 
-	private static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
-
-	private static PropertyResourceBundle RES = SpliMoCharGenConstants.RES;
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle RES = SpliMoCharGenJFXConstants.UI;
 	
 	private CharacterController  control;
 	private CharacterHandle      handle;

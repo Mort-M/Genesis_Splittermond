@@ -9,10 +9,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SkillValue;
@@ -21,6 +21,7 @@ import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.SpellController;
+import org.prelle.splimo.charctrl4.SpliMoCharGenConstants;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
@@ -36,9 +37,9 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class SpellLevellerAndGenerator implements SpellController, GenerationEventListener {
 	
-	private static Logger logger = Logger.getLogger("splittermond.genlvl.spell");
+	private static Logger logger = LogManager.getLogger("splittermond.genlvl.spell");
 
-	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
+	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
 
 	private List<Modification> undoList;
 	private Map<SpellValue, SpellModification> spellUndoList;

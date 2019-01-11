@@ -16,15 +16,16 @@ import java.util.TreeSet;
 import java.util.Vector;
 import java.util.function.Consumer;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * @author prelle
  *
  */
 public class WriteablePropertyResourceBundle extends ResourceBundle {
-	
-	private final static Logger logger = Logger.getLogger("splittermond"); 
+
+	private static Logger logger = LogManager.getLogger("splittermond");
 	
 	private Properties pro;
 	private String name;

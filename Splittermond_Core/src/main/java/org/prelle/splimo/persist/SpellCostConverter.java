@@ -2,13 +2,14 @@ package org.prelle.splimo.persist;
 
 import java.util.StringTokenizer;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.StringValueConverter;
 import org.prelle.splimo.SpellCost;
 
 public class SpellCostConverter implements StringValueConverter<SpellCost> {
-	
-	private final static Logger logger = Logger.getLogger("splimo.persist");
+
+	private final static Logger logger = LogManager.getLogger("splittermond.persist");
 
 	//-------------------------------------------------------------------
 	/**

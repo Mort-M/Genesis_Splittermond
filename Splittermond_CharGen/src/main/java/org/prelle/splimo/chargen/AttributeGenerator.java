@@ -9,15 +9,16 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.charctrl.AttributeController;
 import org.prelle.splimo.charctrl.Generator;
+import org.prelle.splimo.charctrl4.SpliMoCharGenConstants;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventType;
@@ -28,10 +29,10 @@ import org.prelle.splimo.modifications.AttributeModification;
  *
  */
 public class AttributeGenerator implements AttributeController, Generator {
-	
-	private static Logger logger = Logger.getLogger("splittermond.chargen");
 
-	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
+	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
+	
+	private static Logger logger = LogManager.getLogger("splittermond.chargen");
 	
 	private SpliMoCharacter model;
 	private int pointsForAttributes;

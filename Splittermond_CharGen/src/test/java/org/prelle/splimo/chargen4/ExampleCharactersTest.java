@@ -7,22 +7,17 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.UUID;
 
-import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.prelle.rpgframework.splittermond.jdg.JenseitsDerGrenzenPlugin;
 import org.prelle.splimo.Attribute;
-import org.prelle.splimo.Culture;
 import org.prelle.splimo.DummyRulePlugin;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Moonsign;
 import org.prelle.splimo.ResourceReference;
-import org.prelle.splimo.RewardImpl;
 import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SpliMoCharacter.Gender;
@@ -46,8 +41,6 @@ import org.prelle.splimo.modifications.ModificationChoice;
 import org.prelle.splimo.modifications.ResourceModification;
 import org.prelle.splimo.modifications.SkillModification;
 
-import de.rpgframework.genericrpg.Reward;
-
 /**
  * @author prelle
  *
@@ -60,10 +53,9 @@ public class ExampleCharactersTest {
 	//-------------------------------------------------------------------
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		PropertyConfigurator.configure(ClassLoader.getSystemResource("log4j.properties"));
 		SplitterMondCore.initialize(new DummyRulePlugin<SpliMoCharacter>());
-		(new JenseitsDerGrenzenPlugin()).init();
-//		System.exit(0);
+
+		//		System.exit(0);
 	}
 
 	//-------------------------------------------------------------------

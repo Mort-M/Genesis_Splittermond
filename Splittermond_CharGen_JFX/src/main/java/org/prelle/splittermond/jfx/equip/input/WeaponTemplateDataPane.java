@@ -3,13 +3,15 @@
  */
 package org.prelle.splittermond.jfx.equip.input;
 
-import java.util.ResourceBundle;
+import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Feature;
 import org.prelle.splimo.items.FeatureType;
 import org.prelle.splimo.items.ItemAttribute;
@@ -41,9 +43,9 @@ import javafx.util.StringConverter;
  */
 public class WeaponTemplateDataPane extends GridPane {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-
-	private final static ResourceBundle RES = ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle RES = SpliMoCharGenJFXConstants.UI;
 	
 	private Weapon model;
 	

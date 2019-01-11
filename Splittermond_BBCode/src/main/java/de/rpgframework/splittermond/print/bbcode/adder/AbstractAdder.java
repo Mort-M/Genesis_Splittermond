@@ -2,7 +2,8 @@ package de.rpgframework.splittermond.print.bbcode.adder;
 
 import java.security.InvalidParameterException;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
 
 /**
@@ -15,7 +16,7 @@ import org.prelle.splimo.SpliMoCharacter;
 public abstract class AbstractAdder {
 	protected final StringBuilder bbcodeBuilder;
 	protected final SpliMoCharacter spliMoCharacter;
-	protected static Logger logger = Logger.getLogger(AbstractAdder.class);
+	protected static Logger logger = LogManager.getLogger(AbstractAdder.class);
 	private static final String DELIMITER_STRING = " - ";
 
 	/**

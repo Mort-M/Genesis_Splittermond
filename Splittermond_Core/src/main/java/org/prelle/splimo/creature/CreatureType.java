@@ -6,7 +6,7 @@ package org.prelle.splimo.creature;
 import java.text.Collator;
 import java.util.MissingResourceException;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.prelle.simplepersist.Attribute;
 import org.prelle.splimo.BasePluginData;
 
@@ -28,7 +28,7 @@ public class CreatureType extends BasePluginData implements Comparable<CreatureT
 		try {
 			return i18n.getString("creature.type."+id.toLowerCase());
 		} catch (MissingResourceException e) {
-			Logger.getLogger("splittermond").error("Missing key "+e.getKey()+" in "+i18n.getBaseBundleName());
+			LogManager.getLogger("splittermond").error("Missing key "+e.getKey()+" in "+i18n.getBaseBundleName());
 			return "creature.type."+id.toLowerCase();
 		}
 	}

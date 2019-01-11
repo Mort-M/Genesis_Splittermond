@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import org.apache.log4j.Logger;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
@@ -24,8 +23,6 @@ import org.prelle.splimo.creature.CreatureTypeValue;
  *
  */
 public class CreatureTypeController {
-	
-	private static Logger logger = Logger.getLogger("splittermond.npcgen");
 	
 	private Collator collator = Collator.getInstance();
 

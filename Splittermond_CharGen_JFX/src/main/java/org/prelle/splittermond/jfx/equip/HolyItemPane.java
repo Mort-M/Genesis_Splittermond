@@ -3,19 +3,18 @@
  */
 package org.prelle.splittermond.jfx.equip;
 
-import java.util.ResourceBundle;
+import java.util.PropertyResourceBundle;
 
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.VBox;
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ScreenManager;
 import org.prelle.splimo.Deity;
 import org.prelle.splimo.charctrl.NewItemController;
-import org.prelle.splimo.items.Enhancement;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 
 /**
  * @author Stefan
@@ -23,9 +22,9 @@ import org.prelle.splimo.items.Enhancement;
  */
 public class HolyItemPane extends VBox {
 
-	private final static ResourceBundle RES = ResourceBundle.getBundle("i18n/splimo-chargen");
-
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle RES = SpliMoCharGenConstants.RES;
 
 	private NewItemController control;
 	private ScreenManager manager;

@@ -1,8 +1,12 @@
 package org.prelle.splittermond.jfx.skills;
 
-import org.apache.log4j.Logger;
+import java.util.PropertyResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.charctrl.MastershipController;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -12,7 +16,9 @@ import javafx.scene.layout.Priority;
 
 public class SkillSpecListCell extends  ListCell<ListElemSpecialization> {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 	
 	private CheckBox check1;
 	private CheckBox check2;

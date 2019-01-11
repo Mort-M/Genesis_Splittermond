@@ -10,14 +10,12 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
-import org.prelle.splimo.DummyRulePlugin;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.chargen.event.GenerationEvent;
@@ -25,8 +23,6 @@ import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.modifications.AttributeModification;
-
-import de.rpgframework.RPGFrameworkLoader;
 
 /**
  * @author prelle
@@ -40,7 +36,7 @@ public class AttributeGeneratorTest implements GenerationEventListener {
 
 	//-------------------------------------------------------------------
 	static {
-		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
+
 	}
 
 	//-------------------------------------------------------------------

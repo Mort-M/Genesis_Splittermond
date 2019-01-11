@@ -3,7 +3,12 @@
  */
 package org.prelle.splittermond.jfx.equip.input;
 
-import java.util.ResourceBundle;
+import java.util.PropertyResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.Education;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -11,18 +16,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Education;
-
 /**
  * @author prelle
  *
  */
 public class EnterEducationPane extends VBox {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-
-	private final static ResourceBundle RES = ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle RES = SpliMoCharGenJFXConstants.UI;
 
 	private Education model;
 

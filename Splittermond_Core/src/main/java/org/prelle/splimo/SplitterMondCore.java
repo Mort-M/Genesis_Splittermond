@@ -17,7 +17,6 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -34,7 +33,8 @@ import java.util.UUID;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.Persister;
 import org.prelle.simplepersist.SerializationException;
 import org.prelle.splimo.Skill.SkillType;
@@ -97,7 +97,7 @@ import de.rpgframework.worldinfo.GeneratorRegistry;
  */
 public class SplitterMondCore {
 
-	private static Logger logger = Logger.getLogger("splittermond");
+	private static Logger logger = LogManager.getLogger("splittermond.chargen.level");
 
 	private final static String PROMOSERVER_CHECK_URL    = "http://license.rpgframework.de:4001/checkPromo?code=%s&secret=%s";
 	private final static String PROMOSERVER_REGISTER_URL = "http://license.rpgframework.de:4001/registerPromo?code=%s&secret=%s";
@@ -184,40 +184,34 @@ public class SplitterMondCore {
 	public static void initialize(RulePlugin<SpliMoCharacter> plugin) {
 		if (alreadyInitialized)
 			return;
-//		try {
-//			throw new RuntimeException("Trace");
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		missingLicense = !RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(RoleplayingSystem.SPLITTERMOND, "ALL");
 
-		loadPowers(plugin, ClassLoader.getSystemResourceAsStream("data/powers.xml"), i18NResources, i18NHelpResources);
-		loadSkills(plugin, ClassLoader.getSystemResourceAsStream("data/skills.xml"), i18NResources, i18NHelpResources);
-		loadMasterships(plugin, ClassLoader.getSystemResourceAsStream("data/masterships.xml"), i18NResources, i18NHelpResources);
-		loadSpells(plugin, ClassLoader.getSystemResourceAsStream("data/spells.xml"), i18NResources, i18NHelpResources);
-		loadResources(plugin, ClassLoader.getSystemResourceAsStream("data/resources.xml"), i18NResources, i18NHelpResources);
-		loadLanguages(plugin, ClassLoader.getSystemResourceAsStream("data/languages.xml"), i18NResources, i18NHelpResources);
-		loadCultureLores(plugin, ClassLoader.getSystemResourceAsStream("data/culturelores.xml"), i18NResources, i18NHelpResources);
-		loadBackgrounds(plugin, ClassLoader.getSystemResourceAsStream("data/backgrounds.xml"), i18NResources, i18NHelpResources);
-		loadRaces(plugin, ClassLoader.getSystemResourceAsStream("data/races.xml"), i18NResources, i18NHelpResources);
-		loadCultures(plugin, ClassLoader.getSystemResourceAsStream("data/cultures.xml"), i18NResources, i18NHelpResources);
-		loadEducations(plugin, ClassLoader.getSystemResourceAsStream("data/educations.xml"), i18NResources, i18NHelpResources);
-		loadFeatureTypes(plugin, ClassLoader.getSystemResourceAsStream("data/featuretypes.xml"), i18NResources, i18NHelpResources);
-		loadMaterials(plugin, ClassLoader.getSystemResourceAsStream("data/materials.xml"), i18NResources, i18NHelpResources);
-		loadEquipment(plugin, ClassLoader.getSystemResourceAsStream("data/equipment.xml"), i18NResources, i18NHelpResources);
-		loadEnhancements(plugin, ClassLoader.getSystemResourceAsStream("data/enhancements.xml"), i18NResources, i18NHelpResources);
-		loadCreatureTypes(plugin, ClassLoader.getSystemResourceAsStream("data/creaturetypes.xml"), i18NResources, i18NHelpResources);
-		loadCreatureFeatureTypes(plugin, ClassLoader.getSystemResourceAsStream("data/creaturefeaturetypes.xml"), i18NResources, i18NHelpResources);
-		loadCreatures(plugin, ClassLoader.getSystemResourceAsStream("data/creatures.xml"), i18NResources, i18NHelpResources);
-
-		BasePluginData.flushMissingKeys();
-		BASE_RESOURCES = new ArrayList<Resource>(Arrays.asList(new Resource[]{
-				SplitterMondCore.getResource("reputation"),
-				SplitterMondCore.getResource("status"),
-				SplitterMondCore.getResource("contacts"),
-				SplitterMondCore.getResource("wealth")
-		}));
+//		loadPowers(plugin, ClassLoader.getSystemResourceAsStream("data/powers.xml"), i18NResources, i18NHelpResources);
+//		loadSkills(plugin, ClassLoader.getSystemResourceAsStream("data/skills.xml"), i18NResources, i18NHelpResources);
+//		loadMasterships(plugin, ClassLoader.getSystemResourceAsStream("data/masterships.xml"), i18NResources, i18NHelpResources);
+//		loadSpells(plugin, ClassLoader.getSystemResourceAsStream("data/spells.xml"), i18NResources, i18NHelpResources);
+//		loadResources(plugin, ClassLoader.getSystemResourceAsStream("data/resources.xml"), i18NResources, i18NHelpResources);
+//		loadLanguages(plugin, ClassLoader.getSystemResourceAsStream("data/languages.xml"), i18NResources, i18NHelpResources);
+//		loadCultureLores(plugin, ClassLoader.getSystemResourceAsStream("data/culturelores.xml"), i18NResources, i18NHelpResources);
+//		loadBackgrounds(plugin, ClassLoader.getSystemResourceAsStream("data/backgrounds.xml"), i18NResources, i18NHelpResources);
+//		loadRaces(plugin, ClassLoader.getSystemResourceAsStream("data/races.xml"), i18NResources, i18NHelpResources);
+//		loadCultures(plugin, ClassLoader.getSystemResourceAsStream("data/cultures.xml"), i18NResources, i18NHelpResources);
+//		loadEducations(plugin, ClassLoader.getSystemResourceAsStream("data/educations.xml"), i18NResources, i18NHelpResources);
+//		loadFeatureTypes(plugin, ClassLoader.getSystemResourceAsStream("data/featuretypes.xml"), i18NResources, i18NHelpResources);
+//		loadMaterials(plugin, ClassLoader.getSystemResourceAsStream("data/materials.xml"), i18NResources, i18NHelpResources);
+//		loadEquipment(plugin, ClassLoader.getSystemResourceAsStream("data/equipment.xml"), i18NResources, i18NHelpResources);
+//		loadEnhancements(plugin, ClassLoader.getSystemResourceAsStream("data/enhancements.xml"), i18NResources, i18NHelpResources);
+//		loadCreatureTypes(plugin, ClassLoader.getSystemResourceAsStream("data/creaturetypes.xml"), i18NResources, i18NHelpResources);
+//		loadCreatureFeatureTypes(plugin, ClassLoader.getSystemResourceAsStream("data/creaturefeaturetypes.xml"), i18NResources, i18NHelpResources);
+//		loadCreatures(plugin, ClassLoader.getSystemResourceAsStream("data/creatures.xml"), i18NResources, i18NHelpResources);
+//
+//		BasePluginData.flushMissingKeys();
+//		BASE_RESOURCES = new ArrayList<Resource>(Arrays.asList(new Resource[]{
+//				SplitterMondCore.getResource("reputation"),
+//				SplitterMondCore.getResource("status"),
+//				SplitterMondCore.getResource("contacts"),
+//				SplitterMondCore.getResource("wealth")
+//		}));
 
 
 		/*
@@ -359,7 +353,7 @@ public class SplitterMondCore {
 					master.setPlugin(plugin);
 					Mastership toReplace = realSkill.getMastership(master.getKey());
 					if (toReplace!=null) {
-						logger.trace("  Replace "+toReplace.getName()+" ("+toReplace.getProductNameShort()+" "+toReplace.getPage()+") with that from "+master.getProductNameShort()+" "+master.getPage());
+						logger.debug("  Replace "+toReplace.getName()+" ("+toReplace.getProductNameShort()+" "+toReplace.getPage()+") with that from "+master.getProductNameShort()+" "+master.getPage());
 						realSkill.removeMastership(toReplace);
 					}
 					realSkill.addMastership(master);
@@ -2066,7 +2060,7 @@ public class SplitterMondCore {
 		logger.debug("Load deities (Plugin="+plugin.getID()+")");
 		try {
 			DeityList toAdd = serializer.read(DeityList.class, in);
-			logger.info("Successfully loaded "+toAdd.size()+" deity");
+			logger.info("Successfully loaded "+toAdd.size()+" deities");
 
 			// Set translation
 			for (Deity tmp : toAdd) {

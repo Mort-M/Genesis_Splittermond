@@ -7,7 +7,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
@@ -19,8 +18,6 @@ import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.modifications.SkillModification;
-
-import de.rpgframework.RPGFrameworkLoader;
 
 /**
  * @author prelle
@@ -39,7 +36,6 @@ public class SkillGeneratorTest {
 
 	//-------------------------------------------------------------------
 	static {
-		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		power1 = SplitterMondCore.getSkill("blades");
 		power2 = SplitterMondCore.getSkill("empathy");
 	}

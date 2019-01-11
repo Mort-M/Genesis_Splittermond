@@ -8,11 +8,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
-import org.apache.log4j.Logger;
-import org.prelle.javafx.ScreenManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.javafx.fluent.CommandBar;
 import org.prelle.javafx.fluent.NodeWithTitle;
@@ -26,13 +25,14 @@ import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.Spell;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.ViewMode;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.common.jfx.SpellPane;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.chargen.jfx.ViewMode;
 import org.prelle.splittermond.jfx.attributes.AttributePanePrimary;
 import org.prelle.splittermond.jfx.attributes.AttributePaneSecondary;
 import org.prelle.splittermond.jfx.master.MastershipScreen;
@@ -65,11 +65,11 @@ import javafx.scene.layout.VBox;
  */
 public class SplittermondCharDocument implements GenerationEventListener, NodeWithTitle {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 	
 	private static Preferences CONFIG = Preferences.userRoot().node("/org/rpgframework/genesis/splittermond");
-	
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
 	
 	private StringProperty titleProperty = new SimpleStringProperty();
 	private ObjectProperty<Node> contentProperty = new SimpleObjectProperty<>();

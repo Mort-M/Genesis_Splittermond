@@ -7,8 +7,22 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.javafx.AlertType;
+import org.prelle.javafx.CloseType;
+import org.prelle.javafx.FontIcon;
+import org.prelle.javafx.ManagedScreen;
+import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
+import org.prelle.javafx.skin.NavigButtonControl;
+import org.prelle.splimo.Education;
+import org.prelle.splimo.SplittermondCustomDataCore;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.items.ItemTemplate;
+import org.prelle.splimo.items.ItemType;
+import org.prelle.splittermond.jfx.equip.ItemTemplateListView;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Side;
@@ -26,32 +40,19 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
-import org.apache.log4j.Logger;
-import org.prelle.javafx.AlertType;
-import org.prelle.javafx.CloseType;
-import org.prelle.javafx.FontIcon;
-import org.prelle.javafx.ManagedScreen;
-import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
-import org.prelle.javafx.skin.NavigButtonControl;
-import org.prelle.splimo.Education;
-import org.prelle.splimo.SplittermondCustomDataCore;
-import org.prelle.splimo.items.ItemTemplate;
-import org.prelle.splimo.items.ItemType;
-import org.prelle.splittermond.jfx.equip.ItemTemplateListView;
-
 /**
  * @author prelle
  *
  */
 public class DataInputScreen extends ManagedScreen {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 	
 	public final static String KEY_MAIL = "my.mailaddress";
 	public final static String KEY_NAME = "my.name";
 	static Preferences CONFIG = Preferences.userRoot().node("/org/rpgframework/"+System.getProperty("application.id")+"/splittermond");
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
 
 	
 	private VBox sidebar;

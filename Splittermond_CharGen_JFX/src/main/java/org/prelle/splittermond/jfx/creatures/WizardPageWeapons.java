@@ -5,16 +5,17 @@ package org.prelle.splittermond.jfx.creatures;
 
 import java.io.InputStream;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import javafx.geometry.Insets;
-import javafx.scene.image.Image;
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.Wizard;
 import org.prelle.javafx.WizardPage;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.npc.NPCGenerator;
+
+import javafx.geometry.Insets;
+import javafx.scene.image.Image;
 
 /**
  * @author prelle
@@ -22,9 +23,9 @@ import org.prelle.splimo.npc.NPCGenerator;
  */
 public class WizardPageWeapons extends WizardPage {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private NPCGenerator control;
 	private CreatureWeaponEditPane pane;

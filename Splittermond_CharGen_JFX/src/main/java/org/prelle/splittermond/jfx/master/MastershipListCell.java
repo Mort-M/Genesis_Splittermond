@@ -6,7 +6,17 @@ package org.prelle.splittermond.jfx.master;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.prelle.splimo.Mastership;
+import org.prelle.splimo.MastershipOrSpecialization;
+import org.prelle.splimo.Skill;
+import org.prelle.splimo.SkillSpecialization;
+import org.prelle.splimo.SkillSpecialization.SkillSpecializationType;
+import org.prelle.splimo.Spell;
+import org.prelle.splimo.SpellType;
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.charctrl.MastershipController;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -21,23 +31,13 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
-import org.prelle.splimo.Mastership;
-import org.prelle.splimo.MastershipOrSpecialization;
-import org.prelle.splimo.Skill;
-import org.prelle.splimo.SkillSpecialization;
-import org.prelle.splimo.SkillSpecialization.SkillSpecializationType;
-import org.prelle.splimo.Spell;
-import org.prelle.splimo.SpellType;
-import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.charctrl.MastershipController;
-
 /**
  * @author prelle
  *
  */
 public class MastershipListCell extends ListCell<MastershipOrSpecialization> {
 	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private MastershipController control;
 	private Label lblName;

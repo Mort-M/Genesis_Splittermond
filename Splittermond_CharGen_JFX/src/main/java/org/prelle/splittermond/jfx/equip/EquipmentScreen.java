@@ -5,7 +5,8 @@ package org.prelle.splittermond.jfx.equip;
  
 import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
@@ -14,7 +15,6 @@ import org.prelle.javafx.fluent.CommandBar;
 import org.prelle.rpgframework.jfx.SettingsAndCommandBar;
 import org.prelle.splimo.EquipmentTools;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.ViewMode;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
@@ -22,6 +22,8 @@ import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.chargen.jfx.ViewMode;
 import org.prelle.splimo.equip.ItemLevellerAndGenerator;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.ItemLocationType;
@@ -44,9 +46,9 @@ import javafx.scene.layout.VBox;
  */
 public class EquipmentScreen extends ManagedScreen implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 //	private CharacterController control;
 //	private ViewMode mode;

@@ -10,7 +10,6 @@ import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
@@ -22,8 +21,6 @@ import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.modifications.ResourceModification;
-
-import de.rpgframework.RPGFrameworkLoader;
 
 /**
  * @author prelle
@@ -44,7 +41,6 @@ public class ResourceGeneratorTest {
 
 	//-------------------------------------------------------------------
 	static {
-		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		SplitterMondCore.initialize(new SplittermondRules());
 		nonBaseResource1 = SplitterMondCore.getResource("relic");
 		nonBaseResource2 = SplitterMondCore.getResource("mentor");

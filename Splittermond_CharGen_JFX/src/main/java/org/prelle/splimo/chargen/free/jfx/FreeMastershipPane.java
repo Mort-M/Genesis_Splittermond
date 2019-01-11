@@ -2,6 +2,15 @@ package org.prelle.splimo.chargen.free.jfx;
 
 import java.util.Collections;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.Mastership;
+import org.prelle.splimo.Skill;
+import org.prelle.splimo.SkillSpecialization;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.free.FreeSelectionGenerator;
+import org.prelle.splimo.modifications.MastershipModification;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -15,16 +24,9 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.util.StringConverter;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Mastership;
-import org.prelle.splimo.Skill;
-import org.prelle.splimo.SkillSpecialization;
-import org.prelle.splimo.free.FreeSelectionGenerator;
-import org.prelle.splimo.modifications.MastershipModification;
-
 public class FreeMastershipPane extends HBox {
-	
-	private static Logger logger = Logger.getLogger("chargen.ui.master");
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 
 	private FreeSelectionGenerator control;
 	private FreeSelectionDialog parent;

@@ -11,8 +11,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -29,7 +29,6 @@ import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.modifications.PowerModification;
 
-import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.genericrpg.modification.Modification;
 
 /**
@@ -38,7 +37,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class PowerControllerTest implements GenerationEventListener {
 
-	private final static Logger logger = Logger.getLogger("junit");
+	private final static Logger logger = LogManager.getLogger("junit");
 	
 	private static Power ONCE_GENONLY;
 	private static Power ONCE_ALWAYS;
@@ -65,7 +64,6 @@ public class PowerControllerTest implements GenerationEventListener {
 //		Logger.getLogger("splimo.level.resource").setLevel(Level.DEBUG);
 //		Logger.getLogger("junit").setLevel(Level.DEBUG);
 
-		PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
 		SplitterMondCore.initialize(new SplittermondRules());
 		ONCE_GENONLY = SplitterMondCore.getPower("attractive");
 		ONCE_ALWAYS = SplitterMondCore.getPower("socialable");

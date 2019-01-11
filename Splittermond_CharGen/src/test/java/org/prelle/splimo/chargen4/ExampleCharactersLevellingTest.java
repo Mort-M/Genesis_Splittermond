@@ -6,11 +6,9 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.UUID;
 
-import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -19,7 +17,6 @@ import org.prelle.splimo.DummyRulePlugin;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Moonsign;
 import org.prelle.splimo.ResourceReference;
-import org.prelle.splimo.RewardImpl;
 import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SpliMoCharacter.Gender;
@@ -30,7 +27,6 @@ import org.prelle.splimo.charctrl4.CultureController;
 import org.prelle.splimo.charctrl4.EducationController;
 import org.prelle.splimo.charctrl4.Generator;
 import org.prelle.splimo.charctrl4.MastershipController;
-import org.prelle.splimo.charctrl4.NewSpliMoCharacterGenerator;
 import org.prelle.splimo.charctrl4.NewSpliMoCharacterLeveller;
 import org.prelle.splimo.charctrl4.PowerController;
 import org.prelle.splimo.charctrl4.RaceController;
@@ -44,8 +40,6 @@ import org.prelle.splimo.modifications.ModificationChoice;
 import org.prelle.splimo.modifications.ResourceModification;
 import org.prelle.splimo.modifications.SkillModification;
 
-import de.rpgframework.genericrpg.Reward;
-
 /**
  * @author prelle
  *
@@ -58,7 +52,6 @@ public class ExampleCharactersLevellingTest {
 	//-------------------------------------------------------------------
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		PropertyConfigurator.configure(ClassLoader.getSystemResource("log4j.properties"));
 		SplitterMondCore.initialize(new DummyRulePlugin<SpliMoCharacter>());
 //		System.exit(0);
 	}

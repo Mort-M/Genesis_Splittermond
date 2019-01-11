@@ -3,9 +3,9 @@ package org.prelle.splittermond.jfx.powers;
 import java.util.Collections;
 import java.util.List;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Power;
 import org.prelle.splimo.PowerReference;
 import org.prelle.splimo.SpliMoCharacter;
@@ -13,6 +13,7 @@ import org.prelle.splimo.charctrl.PowerController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -38,10 +39,10 @@ import javafx.util.Callback;
 import javafx.util.StringConverter;
 
 public class PowerPane extends VBox implements GenerationEventListener, EventHandler<ActionEvent> {
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private static Logger logger = Logger.getLogger("splittermond.power");
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private PowerController control;
 	private SpliMoCharacter model;

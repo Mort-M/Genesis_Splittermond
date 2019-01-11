@@ -3,21 +3,14 @@
  */
 package org.prelle.splimo.charctrl4;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-import org.prelle.splimo.Attribute;
-import org.prelle.splimo.AttributeValue;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Moonsign;
-import org.prelle.splimo.PowerReference;
-import org.prelle.splimo.ResourceReference;
-import org.prelle.splimo.Skill;
-import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SpliMoCharacter.Gender;
-import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventType;
@@ -27,15 +20,6 @@ import org.prelle.splimo.processor.ClearAllModificationsProcessor;
 import org.prelle.splimo.processor.ModifyDerivedValuesByLevelProcessor;
 import org.prelle.splimo.processor.SpliMoCharacterProcessor;
 
-import de.rpgframework.RPGFrameworkLoader;
-import de.rpgframework.character.Attachment;
-import de.rpgframework.character.CharacterHandle;
-import de.rpgframework.character.CharacterHandle.Format;
-import de.rpgframework.character.CharacterHandle.Type;
-import de.rpgframework.character.CharacterProvider;
-import de.rpgframework.core.BabylonEventBus;
-import de.rpgframework.core.BabylonEventType;
-import de.rpgframework.core.RoleplayingSystem;
 import de.rpgframework.genericrpg.ToDoElement;
 import de.rpgframework.genericrpg.ToDoElement.Severity;
 import de.rpgframework.genericrpg.modification.DecisionToMake;
@@ -51,7 +35,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class NewSpliMoCharacterLeveller extends SplitterEngineCharacterGenerator {
 	
-	private static Logger logger = Logger.getLogger("splittermond.chargen");
+	private static Logger logger = LogManager.getLogger("splittermond.chargen");
 	
 	private SpliMoCharacter model;
 	

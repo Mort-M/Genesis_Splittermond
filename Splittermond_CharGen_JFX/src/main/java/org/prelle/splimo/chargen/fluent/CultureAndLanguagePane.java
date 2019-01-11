@@ -5,7 +5,8 @@ package org.prelle.splimo.chargen.fluent;
 
 import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.CultureLore;
 import org.prelle.splimo.CultureLoreReference;
 import org.prelle.splimo.Language;
@@ -14,6 +15,7 @@ import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -31,9 +33,9 @@ import javafx.util.StringConverter;
  */
 public class CultureAndLanguagePane extends HBox implements GenerationEventListener {
 
-	private static Logger logger = Logger.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
-
-	private static PropertyResourceBundle RES = SpliMoCharGenConstants.RES;
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle RES = SpliMoCharGenJFXConstants.UI;
 
 	private ObjectProperty<CultureLoreReference> selectedCultItemProperty;
 	private ObjectProperty<CultureLore> selectedAvailCultProperty;

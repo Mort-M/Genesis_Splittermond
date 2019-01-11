@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<creaturefeaturetypes>
+  <creaturefeaturetype id="IMMUNE_TORPIDITY"/>
+  <creaturefeaturetype id="LOWLIGHT"/>
+  <creaturefeaturetype id="nightvision"/>
+  <creaturefeaturetype id="RESIST_EXHAUSTION"/>
+  <creaturefeaturetype id="FAIRYORIGIN"/>
+  <creaturefeaturetype id="COWARD" negative="true"/>
+  <creaturefeaturetype id="FLYING"/>
+  <creaturefeaturetype id="SCARY" levels="true"/>
+  <creaturefeaturetype id="GHOST"/>
+  <creaturefeaturetype id="POISON"/>
+  <creaturefeaturetype id="IMMUNE_POISON"/>
+  <creaturefeaturetype id="RESIST_HEAT" levels="true"/>
+  <creaturefeaturetype id="RESIST_COLD" levels="true"/>
+  <creaturefeaturetype id="colossal" levels="true"/>
+  <creaturefeaturetype id="concentrated"/>
+  <creaturefeaturetype id="DISEMBODIED"/>
+  <creaturefeaturetype id="CREATURE" levels="true"/>
+  <creaturefeaturetype id="resist_damage" levels="true" select="DAMAGE_TYPE"/>
+  <creaturefeaturetype id="IMMUNE_PAIN"/>
+  <creaturefeaturetype id="RESIST_PAIN"/>
+  <creaturefeaturetype id="WEAK" negative="true"/>
+  <creaturefeaturetype id="TACTICIAN"/>
+  <creaturefeaturetype id="WATERCREATURE"/>
+  <creaturefeaturetype id="UNDEAD"/>
+  <creaturefeaturetype id="vulnurable_damage" select="DAMAGE_TYPE" negative="true"/>
+  <creaturefeaturetype id="FRAGILE" negative="true"/>
+</creaturefeaturetypes>

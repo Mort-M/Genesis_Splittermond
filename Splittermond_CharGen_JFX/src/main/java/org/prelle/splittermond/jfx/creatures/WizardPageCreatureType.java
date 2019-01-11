@@ -4,37 +4,18 @@
 package org.prelle.splittermond.jfx.creatures;
 
 import java.io.InputStream;
-import java.util.Collections;
-import java.util.List;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.geometry.Insets;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.image.Image;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.util.Callback;
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.Wizard;
 import org.prelle.javafx.WizardPage;
-import org.prelle.splimo.charctrl.BackgroundController;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.LetUserChooseListener;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.npc.CreatureTypeController;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.npc.NPCGenerator;
+
+import javafx.geometry.Insets;
+import javafx.scene.image.Image;
 
 /**
  * @author prelle
@@ -42,9 +23,9 @@ import org.prelle.splimo.npc.NPCGenerator;
  */
 public class WizardPageCreatureType extends WizardPage {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private NPCGenerator control;
 	private CreatureTypePane pane;

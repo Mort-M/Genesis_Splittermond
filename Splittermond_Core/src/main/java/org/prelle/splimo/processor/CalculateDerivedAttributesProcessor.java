@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.prefs.Preferences;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterTools;
@@ -21,7 +22,7 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 public class CalculateDerivedAttributesProcessor implements SpliMoCharacterProcessor {
 
-	private static Logger logger = Logger.getLogger("splittermond.chargen.level");
+	private final static Logger logger = LogManager.getLogger("splittermond.chargen.level");
 
 	//-------------------------------------------------------------------
 	public CalculateDerivedAttributesProcessor() {

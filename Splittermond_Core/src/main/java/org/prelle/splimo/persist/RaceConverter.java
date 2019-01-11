@@ -1,13 +1,14 @@
 package org.prelle.splimo.persist;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.StringValueConverter;
 import org.prelle.splimo.Race;
 import org.prelle.splimo.SplitterMondCore;
 
 public class RaceConverter implements StringValueConverter<Race> {
-	
-	private final static Logger logger = Logger.getLogger("splimo.persist");
+
+	private final static Logger logger = LogManager.getLogger("splittermond.persist");
 
 	//-------------------------------------------------------------------
 	/**

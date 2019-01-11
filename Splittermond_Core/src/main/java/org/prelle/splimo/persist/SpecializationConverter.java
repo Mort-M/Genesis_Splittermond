@@ -3,19 +3,19 @@ package org.prelle.splimo.persist;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.StringValueConverter;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SpellType;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.persist.ReferenceException;
 import org.prelle.splimo.persist.ReferenceException.ReferenceType;
 
 public class SpecializationConverter implements StringValueConverter<SkillSpecialization> {
 
-	private final static Logger logger = Logger.getLogger("splittermond.persist");
+	private final static Logger logger = LogManager.getLogger("splittermond.persist");
 
 	//-------------------------------------------------------------------
 	/**

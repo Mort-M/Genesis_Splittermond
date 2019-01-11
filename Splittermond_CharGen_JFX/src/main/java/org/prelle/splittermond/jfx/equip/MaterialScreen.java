@@ -3,15 +3,17 @@
  */
 package org.prelle.splittermond.jfx.equip;
 
-import java.util.ResourceBundle;
+import java.util.PropertyResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
 import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.items.Material;
 
 import javafx.geometry.Insets;
@@ -31,9 +33,9 @@ import javafx.util.Callback;
  */
 public class MaterialScreen extends ManagedScreen implements GenerationEventListener {
 
-	private final static ResourceBundle UI = ResourceBundle.getBundle("i18n/splimo-chargen");
-
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
+	
+	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private NewItemController control;
 

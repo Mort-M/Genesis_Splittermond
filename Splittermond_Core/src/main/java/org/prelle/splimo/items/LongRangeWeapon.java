@@ -3,7 +3,8 @@
  */
 package org.prelle.splimo.items;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.Root;
 
 /**
@@ -13,7 +14,7 @@ import org.prelle.simplepersist.Root;
 @Root(name = "rangeweapon")
 public class LongRangeWeapon extends Weapon {
 
-	private final static Logger logger = Logger.getLogger("splittermond.items");
+	private static Logger logger = LogManager.getLogger("splittermond.items");
 	
 	@org.prelle.simplepersist.Attribute
 	private int range;

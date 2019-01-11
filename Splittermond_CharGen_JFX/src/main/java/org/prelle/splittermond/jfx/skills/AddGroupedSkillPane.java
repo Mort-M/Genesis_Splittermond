@@ -4,12 +4,13 @@
 package org.prelle.splittermond.jfx.skills;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,9 +26,7 @@ import javafx.util.StringConverter;
  */
 public class AddGroupedSkillPane extends VBox {
 
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 	
 	private ChoiceBox<Skill> cbSkills;
 	private ChoiceBox<SkillSpecialization> cbFocus;

@@ -4,27 +4,28 @@
 package org.prelle.splittermond.jfx.languages;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.LanguageReference;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 
 /**
  * @author prelle
  *
  */
 public class LanguageCard extends VBox implements GenerationEventListener {
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
-	private final static Logger logger = Logger.getLogger("splittermond.jfx");
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private SpliMoCharacter     model;
 

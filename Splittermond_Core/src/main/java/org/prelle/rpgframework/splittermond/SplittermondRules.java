@@ -10,7 +10,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.SplittermondCustomDataCore;
@@ -36,7 +37,7 @@ import de.rpgframework.core.RoleplayingSystem;
  */
 public class SplittermondRules implements RulePlugin<SpliMoCharacter>, CommandBusListener {
 
-	private final static Logger logger = Logger.getLogger("splittermond");
+	private final static Logger logger = LogManager.getLogger("splittermond");
 
 	public final static String PROP_DEVELOPER_MODE = "developer_mode";
 	public final static String PROP_EXPERIENCE_FACTOR = "exp_factor";
@@ -192,7 +193,7 @@ public class SplittermondRules implements RulePlugin<SpliMoCharacter>, CommandBu
 
 		try {
 //			SplitterMondCore.loadCustomItems();
-			SplittermondCustomDataCore.getItems();
+//			SplittermondCustomDataCore.getItems();
 		} catch (Exception e) {
 			logger.error("Failed loading custom items",e);
 			BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Error loading database of your custom items");
