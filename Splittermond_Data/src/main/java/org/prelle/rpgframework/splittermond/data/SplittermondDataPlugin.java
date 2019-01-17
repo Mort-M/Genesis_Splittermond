@@ -110,7 +110,6 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		
 		logger.info("START -------------------------------Core-----------------------------------------------");
 		PluginSkeleton CORE = new PluginSkeleton("CORE", "Splittermond Core Rules");
-		System.out.println(pack+"/core/data/powers.xml");
 		SplitterMondCore.loadPowers(CORE, ClassLoader.getSystemResourceAsStream(pack+"/core/data/powers.xml"), CORE.getResources(), CORE.getHelpResources());
 		SplitterMondCore.loadSkills(CORE, ClassLoader.getSystemResourceAsStream(pack+"/core/data/skills.xml"), CORE.getResources(), CORE.getHelpResources());
 		SplitterMondCore.loadMasterships(CORE, ClassLoader.getSystemResourceAsStream(pack+"/core/data/masterships.xml"), CORE.getResources(), CORE.getHelpResources());
