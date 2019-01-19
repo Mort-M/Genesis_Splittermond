@@ -93,6 +93,8 @@ public class Culture extends BasePluginData implements Comparable<Culture> {
 	public String getName() {
 		if (name!=null)
 			return name;
+		if (i18n==null)
+			i18n = SplitterMondCore.getI18nResources();
 		String searchKey = "culture."+key;
 		try {
 			return i18n.getString(searchKey);
