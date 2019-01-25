@@ -97,7 +97,7 @@ import de.rpgframework.worldinfo.GeneratorRegistry;
  */
 public class SplitterMondCore {
 
-	private static Logger logger = LogManager.getLogger("splittermond.chargen.level");
+	private static Logger logger = LogManager.getLogger("splittermond");
 
 	private final static String PROMOSERVER_CHECK_URL    = "http://license.rpgframework.de:4001/checkPromo?code=%s&secret=%s";
 	private final static String PROMOSERVER_REGISTER_URL = "http://license.rpgframework.de:4001/registerPromo?code=%s&secret=%s";
