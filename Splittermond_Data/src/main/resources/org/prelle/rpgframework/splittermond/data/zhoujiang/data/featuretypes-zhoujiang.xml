@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<featuretypes>
-	<featuretype id="TRIGGER" types="LONG_RANGE_WEAPON" level="true"/>
-	<featuretype id="DETONATION" types="LONG_RANGE_WEAPON" /><!-- damage="true" -->
-	<featuretype id="RECOIL" types="LONG_RANGE_WEAPON" level="true"/>
-	<featuretype id="DAMAGE_LOSS" types="LONG_RANGE_WEAPON"/> <!-- damageloss="true" -->
-	<featuretype id="SHATTERING" types="LONG_RANGE_WEAPON"/>
-	<featuretype id="PROJECTILE" types="LONG_RANGE_WEAPON"/>
-</featuretypes>

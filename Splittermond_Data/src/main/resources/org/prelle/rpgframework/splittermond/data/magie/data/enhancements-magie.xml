@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<enhancements>
-  <enhancement id="defense" cost="2" max="3" type="MAGIC">
-  	<modifications>
-  	  <attrmod attr="DEFENSE" val="1"/>
-  	</modifications>
-  </enhancement>
-</enhancements>

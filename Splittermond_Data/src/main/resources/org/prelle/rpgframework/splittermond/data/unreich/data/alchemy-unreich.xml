@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<items>
-	<item id="speichel_irlisch" avail="NONE" price="20000" load="0" robust="0" type="POTION" />
-	<item id="furbroms_tränen" avail="CAPITAL" price="5000" load="1" robust="4" type="POTION" />
-	<item id="blutahorn" avail="NONE" load="0" price="200" robust="0" type="POTION"/>
-	<item id="fetzenfarn" avail="NONE" load="0" price="1500" robust="0" type="POTION"/>
-	<item id="mondblatt" avail="NONE" load="0" price="800" robust="0" type="POTION"/>
-</items>
-<!-- Die alchimistischen Wirkungen fehlen noch -->
