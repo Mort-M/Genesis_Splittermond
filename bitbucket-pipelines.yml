@@ -6,4 +6,4 @@ pipelines:
         caches:
           - maven
         script:
-          - mvn -s settings.xml -B verify
+          - mvn -s settings.xml -B deploy
