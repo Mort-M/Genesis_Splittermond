@@ -9,7 +9,7 @@ pipelines:
           - openssl aes-256-cbc -pass pass:$OPENSSL_PWD -in private-key.gpg.enc -out private-key.gpg -d
           - gpg --import --no-tty --batch --yes private-key.gpg
           - mvn -f Splittermond_Core        -s settings.xml -B deploy -DskipTests=true
-          - mvn -f Splittermond_CharGen     -s settings.xml -B clean deploy -DskipTests=true
-          - mvn -f Splittermond_CharGen_JFX -s settings.xml -B clean deploy 
-          - mvn -f Splittermond_BBCode      -s settings_bbcode.xml -B clean deploy -DaltDeploymentRepository=ossrh::default::https://oss.sonatype.org/content/repositories/snapshots
+          - mvn -f Splittermond_CharGen     -s settings.xml -B deploy -DskipTests=true
+          - mvn -f Splittermond_CharGen_JFX -s settings.xml -B deploy 
+          - mvn -f Splittermond_BBCode      -s settings_bbcode.xml -B deploy -DaltDeploymentRepository=ossrh::default::https://oss.sonatype.org/content/repositories/snapshots
 #          - mvn -f Splittermond_BBCode      -s settings_bbcode.xml -B deploy -DaltDeploymentRepository=ossrh::default::https://oss.sonatype.org/service/local/staging/deploy/maven2
