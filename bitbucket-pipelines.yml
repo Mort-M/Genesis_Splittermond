@@ -11,4 +11,5 @@ pipelines:
           - mvn -f Splittermond_Core        -s settings.xml -B deploy -DskipTests=true
           - mvn -f Splittermond_CharGen     -s settings.xml -B deploy -DskipTests=true
           - mvn -f Splittermond_CharGen_JFX -s settings.xml -B deploy 
-          - mvn -f Splittermond_BBCode      -s settings-open.xml -B deploy
+          - mvn -f Splittermond_BBCode      -s settings.xml -B deploy -DaltDeploymentRepository=ossrh::default::https://oss.sonatype.org/content/repositories/snapshots
+#          - mvn -f Splittermond_BBCode      -s settings.xml -B deploy -DaltDeploymentRepository=ossrh::default::https://oss.sonatype.org/service/local/staging/deploy/maven2
