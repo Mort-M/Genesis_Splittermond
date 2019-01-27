@@ -13,7 +13,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import org.apache.log4j.PropertyConfigurator;
 import org.prelle.splimo.Background;
 import org.prelle.splimo.Culture;
 import org.prelle.splimo.Education;
@@ -49,19 +48,6 @@ public class IDExporter {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
-		PropertyConfigurator.configure(IDExporter.class.getResource("log4j.properties"));
-//		RPGFramework framework = RPGFrameworkLoader.getInstance();
-//		framework.addBootStep(StandardBootSteps.FRAMEWORK_PLUGINS);
-//		framework.addBootStep(StandardBootSteps.ROLEPLAYING_SYSTEMS);
-//		framework.initialize(new RPGFrameworkInitCallback() {
-//			public void showConfigOptions(String arg0, List<ConfigOption<?>> arg1) {
-//			}
-//			public void progressChanged(double arg0) {
-//			}
-//			public void message(String mess) {System.out.println(mess);}
-//			public void errorOccurred(String arg0, String arg1, Throwable arg2) {
-//			}
-//		});
 		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
 		plugin.init();
 		

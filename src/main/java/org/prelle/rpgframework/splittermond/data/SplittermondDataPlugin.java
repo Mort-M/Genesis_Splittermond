@@ -9,7 +9,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.BasePluginData;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
@@ -28,7 +29,7 @@ import de.rpgframework.core.RoleplayingSystem;
  */
 public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 
-	private static Logger logger = Logger.getLogger("splittermond.data");
+	private static Logger logger = LogManager.getLogger("splittermond.data");
 
 	//--------------------------------------------------------------------
 	public SplittermondDataPlugin() {
