@@ -1,4 +1,7 @@
-![alt text](https://bitbucket.org/rpgframework/splittermond/src/master/Splittermond_Core/images/Logo.jpg "Splittermond Logo")
+[logo]: https://bitbucket.org/rpgframework/splittermond/src/master/Splittermond_Core/images/Logo.jpg "Splittermond Logo"
+
+![Das hier sollte nicht zu sehen sein][logo]
+
 This module provides means to access all data for the roleplaying game **Splittermond** and load and save characters. It is used within the application *Genesis* and other applications of the *RPGFramework* project.
 
 **splittermond-core** is accompanied by **splittermond-data**, which contains the licensed data itself.
