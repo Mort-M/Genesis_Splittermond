@@ -4,10 +4,12 @@ This module provides means to access all data for the roleplaying game **Splitte
 
 ## Declare dependencies in your project
 To use these libraries in your project, you need to add our repository in your project configuration:
-```    <repository>
+```
+    <repository>
       <id>rpgframework</id>
       <url>http://repository.rpgframework.de:8081/artifactory/libs-release</url>
-    </repository>```
+    </repository>
+```
 Now you need to declare dependencies to the following artifacts:
 ```
 <dependency>
@@ -22,6 +24,20 @@ Now you need to declare dependencies to the following artifacts:
 </dependency>
 ```
 
+
+## Usage in your code
+
+To load all Splittermond data (skills, spells, etc.) in your application, use the following line:
+```
+(new SplittermondDataPlugin()).init();
+```
+To parse an existing character you can use one of the load()-methods in SplittermondCore:
+```
+try {
+  SpliMoCharacter myChar = SplittermondCore.load(new FileInputStream("mychar.xml"));
+} catch (IOException e) {
+}
+```
 
 # Licensing
 This code is dual licensed. It can be freely used under the AGPL 3.0 license, but individual licenses for proprietary use are possible.
