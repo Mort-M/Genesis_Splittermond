@@ -1,4 +1,4 @@
-[logo]: https://bitbucket.org/rpgframework/splittermond/src/master/Splittermond_Core/images/Logo.jpg "Splittermond Logo"
+[logo]: http://www.uhrwerk-verlag.de/wp-content/uploads/2012/12/Splittermond-Logo-final.png "Splittermond Logo"
 
 ![Das hier sollte nicht zu sehen sein][logo]
 
