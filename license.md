@@ -1,1 +1,1 @@
-LGPL-2.1-only OR Unlicensed
+AGPL-3.0-only OR Unlicensed
