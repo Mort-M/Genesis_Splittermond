@@ -41,5 +41,6 @@ try {
 
 # Licensing
 This code is dual licensed. It can be freely used under the AGPL 3.0 license, but individual licenses for proprietary use are possible.
+The artifact containing the data MAY NOT BE used in commercial applications, but may be included as a library in non-commercial applications. This is due to restrictions by the license owner *Uhrwerk Verlag*. You also need to make sure that you follow their guidelines for fan-based work.
 
 SPDX-License-Identifier: AGPL-3.0-only OR Unlicensed

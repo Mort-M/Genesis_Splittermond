@@ -25,10 +25,10 @@
 			<groupId>de.rpgframework</groupId>
 			<artifactId>rpgframework-api</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>de.rpgframework</groupId>
-			<artifactId>rpgframework-api-jfx</artifactId>
-		</dependency>
+    <dependency>
+      <groupId>org.prelle</groupId>
+      <artifactId>simple-persist</artifactId>
+    </dependency>
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
 			<artifactId>splittermond-core</artifactId>
