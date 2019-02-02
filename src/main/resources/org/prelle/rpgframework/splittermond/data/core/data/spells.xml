@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <spells>
-  <spell id="alarm" diff="18" cost="4V1" castdur="2T" range="CASTER" spelldur="6h" enh="1/+1V1"> 
+  <spell id="alarm" diff="18" cost="4V1" castdur="2T" range="CASTER" spelldur="6h" enh="1/+1V1" effectRange="5">
     <school skill="insightmagic" level="1"/>
     <school skill="protectionmagic" level="1"/>
     <type>PERCEPTION</type>
@@ -14,39 +14,39 @@
     <school skill="insightmagic" level="5"/>
     <type>COMMUNICATION</type>
   </spell>
-  <spell id="auradetermin" diff="18" cost="K4V1" castdur="7T" range="CASTER" spelldur="K" enh="2/+K1V1">
+  <spell id="auradetermin" diff="18" cost="K4V1" castdur="7T" range="CASTER" spelldur="K" enh="2/+K1V1" effectRange="5">
     <school skill="enhancemagic" level="1"/>
     <type>AURA</type>
     <type>MORALE</type>
   </spell>
-  <spell id="auracounter" diff="27" cost="K16V4" castdur="14T" range="CASTER" spelldur="K" enh="1/+K4V4">
+  <spell id="auracounter" diff="27" cost="K16V4" castdur="14T" range="CASTER" spelldur="K" enh="1/+K4V4" effectRange="5">
     <school skill="antimagic" level="4"/>
     <type>AURA</type>
     <type>COUNTER</type>
     <type>DAMAGE</type>
   </spell>
-  <spell id="auralifeforce" diff="27" cost="K16V4" castdur="18T" range="CASTER" spelldur="K" enh="2/+K4V4">
+  <spell id="auralifeforce" diff="27" cost="K16V4" castdur="18T" range="CASTER" spelldur="K" enh="2/+K4V4" effectRange="5">
     <school skill="healmagic" level="4"/>
     <school skill="enhancemagic" level="4"/>
     <type>AURA</type>
     <type>ENHANCE_BODY</type>
     <type>LIFE</type>
   </spell>
-  <spell id="aurashadow" diff="30" cost="K20V5" castdur="15T" range="CASTER" spelldur="K" enh="1/+K5V5">
+  <spell id="aurashadow" diff="30" cost="K20V5" castdur="15T" range="CASTER" spelldur="K" enh="1/+K5V5" effectRange="5">
     <school skill="shadowmagic" level="5"/>
     <type>AURA</type>
     <type>VEIL</type>
   </spell>
-  <spell id="aurapainless" diff="30" cost="K20V5" castdur="13T" range="CASTER" spelldur="K" enh="2/+K4V4" >
+  <spell id="aurapainless" diff="30" cost="K20V5" castdur="13T" range="CASTER" spelldur="K" enh="2/+K4V4" effectRange="5">
     <school skill="healmagic" level="5"/>
     <type>AURA</type>
     <type>ENHANCE_BODY</type>
   </spell>
-  <spell id="aurawarmth" diff="24" cost="K12V3" castdur="13T" range="CASTER" spelldur="K" enh="2/+K3V3">
+  <spell id="aurawarmth" diff="24" cost="K12V3" castdur="13T" range="CASTER" spelldur="K" enh="2/+K3V3" effectRange="5">
     <school skill="firemagic" level="3"/>
     <type>AURA</type>
   </spell>
-  <spell id="auraleader" diff="30" cost="K20V5" castdur="21T" range="CASTER" spelldur="K" enh="2/+K5V5">
+  <spell id="auraleader" diff="30" cost="K20V5" castdur="21T" range="CASTER" spelldur="K" enh="2/+K5V5" effectRange="5">
     <school skill="enhancemagic" level="5"/>
     <type>AURA</type>
     <type>MORALE</type>
@@ -91,7 +91,7 @@
     <school skill="lightmagic" level="1"/>
     <type>ILLUMINATION</type>
   </spell>
-  <spell id="calllightning" diff="27" cost="K16V4" castdur="7T" range="25m" spelldur="K" enh="1/+K4V4">
+  <spell id="calllightning" diff="27" cost="K16V4" castdur="7T" range="25m" spelldur="K" enh="1/+K4V4" effectRange="5">
     <school skill="naturemagic" level="5"/>
     <school skill="windmagic" level="4"/>
     <type>ELECTRICITY</type>
@@ -101,7 +101,7 @@
   <spell id="lightningbolt" diff="VTD" cost="6V2" castdur="7T" range="10m" enh="1/+2V2">
     <school skill="combatmagic" level="3"/>
     <school skill="windmagic" level="2"/>
-    <type>ELECTRICITY</type>    
+    <type>ELECTRICITY</type>
     <type>DAMAGE</type>
   </spell>
   <spell id="chamaeleon" diff="24" cost="K12V3" castdur="9T" range="CASTER" spelldur="K" enh="1/+K3V3" >
@@ -109,7 +109,7 @@
     <school skill="naturemagic" level="3"/>
     <type>CAMOUFLAGE</type>
   </spell>
-  <spell id="darkness" diff="18" cost="K4V1" castdur="1T" range="CASTER" spelldur="K" enh="1/+K1V1" >
+  <spell id="darkness" diff="18" cost="K4V1" castdur="1T" range="CASTER" spelldur="K" enh="1/+K1V1" effectRange="5">
     <school skill="shadowmagic" level="1"/>
     <type>VEIL</type>
   </spell>
@@ -146,13 +146,13 @@
     <school skill="controlmagic" level="0"/>
     <type>ATTITUDE</type>
   </spell>
-  <spell id="ironaura" diff="21" cost="K8V2" castdur="9T" range="CASTER" spelldur="K" enh="1/+K2V2" >
+  <spell id="ironaura" diff="21" cost="K8V2" castdur="9T" range="CASTER" spelldur="K" enh="1/+K2V2" effectRange="5">
     <school skill="enhancemagic" level="2"/>
     <school skill="protectionmagic" level="2"/>
     <type>ENHANCE_BODY</type>
     <type>AURA</type>
   </spell>
-  <spell id="blackice" diff="21" cost="K8V2" castdur="7T" range="10m" spelldur="K" enh="1/+K2V2" >
+  <spell id="blackice" diff="21" cost="K8V2" castdur="7T" range="10m" spelldur="K" enh="1/+K2V2" effectRange="5">
     <school skill="watermagic" level="2"/>
     <type>ICE</type>
   </spell>
@@ -176,17 +176,17 @@
     <school skill="firemagic" level="1"/>
     <type>OBJECT</type>
   </spell>
-  <spell id="earthquake" diff="30" cost="20V5" castdur="12m" range="50m" enh="2/+5V5" >
+  <spell id="earthquake" diff="30" cost="20V5" castdur="12m" range="50m" enh="2/+5V5" effectRange="25">
     <school skill="stonemagic" level="5"/>
     <type>ELEMENTALCONTROL</type>
   </spell>
-  <spell id="earthtomud" diff="21" cost="8V2" castdur="10T" range="25m" enh="1/+2V2" >
+  <spell id="earthtomud" diff="21" cost="8V2" castdur="10T" range="25m" enh="1/+2V2" effectRange="25">
     <school skill="stonemagic" level="2"/>
     <school skill="transformationmagic" level="3"/>
     <school skill="watermagic" level="3"/>
     <type>WILDERNESS</type>
   </spell>
-  <spell id="seismicshock" diff="21" cost="8V2" castdur="7T" range="5m" enh="2/+2V2" >
+  <spell id="seismicshock" diff="21" cost="8V2" castdur="7T" range="5m" enh="2/+2V2" effectRange="5">
     <school skill="stonemagic" level="2"/>
     <type>ELEMENTALCONTROL</type>
   </spell>
@@ -247,7 +247,7 @@
     <type>STONE_CREATURE</type>
     <type>MAGIC_CREATURE</type>
   </spell>
-  <spell id="stonedestruction" diff="30" cost="20V5" castdur="20T" range="25m" enh="2/+5V5" >
+  <spell id="stonedestruction" diff="30" cost="20V5" castdur="20T" range="25m" enh="2/+5V5" effectRange="10">
     <school skill="stonemagic" level="5"/>
     <type>DAMAGE</type>
   </spell>
@@ -383,12 +383,12 @@
     <type>SUMMON</type>
     <type>WEAPON</type>
   </spell>
-    <spell id="summonghost" diff="18" cost="K4V1" castdur="1T" range="CASTER" spelldur="K" enh="2/+K1V1" >
-        <school skill="deathmagic" level="1"/>
-        <type>CONJURATION</type>
-        <type>GHOST_CREATURE</type>
-        <type>MAGIC_CREATURE</type>
-    </spell>
+  <spell id="summonghost" diff="18" cost="K4V1" castdur="1T" range="CASTER" spelldur="K" enh="2/+K1V1" >
+    <school skill="deathmagic" level="1"/>
+    <type>CONJURATION</type>
+    <type>GHOST_CREATURE</type>
+    <type>MAGIC_CREATURE</type>
+  </spell>
   <spell id="speakwithghost" diff="18" cost="K4V1" castdur="1T" range="CASTER" spelldur="K" enh="1/+K1V1" >
     <school skill="deathmagic" level="1"/>
     <school skill="insightmagic" level="2"/>
@@ -404,7 +404,7 @@
     <school skill="illusionmagic" level="0"/>
     <type>SOUND</type>
   </spell>
-  <spell id="smell" diff="18" cost="K4V1" castdur="5T" range="10m" spelldur="K" enh="2/+K1V1" >
+  <spell id="smell" diff="18" cost="K4V1" castdur="5T" range="10m" spelldur="K" enh="2/+K1V1" effectRange="5">
     <school skill="illusionmagic" level="1"/>
     <school skill="windmagic" level="1"/>
     <type>SMELL</type>
@@ -467,7 +467,7 @@
     <school skill="enhancemagic" level="0"/>
     <type>OBJECT</type>
   </spell>
-  <spell id="senseghost" diff="15" cost="K1" castdur="1T" range="CASTER" spelldur="K" enh="1/+K1V1" >
+  <spell id="senseghost" diff="15" cost="K1" castdur="1T" range="CASTER" spelldur="K" enh="1/+K1V1" effectRange="5">
     <school skill="deathmagic" level="0"/>
     <school skill="insightmagic" level="1"/>
     <type>GHOST_CREATURE</type>
@@ -616,7 +616,7 @@
     <type>ELEMENTALCONTROL</type>
     <type>TELEKINESIS</type>
   </spell>
-  <spell id="light" diff="15" cost="K1" castdur="1T" range="CASTER" spelldur="K" enh="1/+K1V1" >
+  <spell id="light" diff="15" cost="K1" castdur="1T" range="CASTER" spelldur="K" enh="1/+K1V1" effectRange="5">
     <school skill="lightmagic" level="0"/>
     <type>ILLUMINATION</type>
   </spell>
@@ -702,7 +702,7 @@
     <school skill="insightmagic" level="3"/>
     <type>MESSAGE</type>
   </spell>
-  <spell id="magnetism" diff="24" cost="K12V3" castdur="13T" range="10m" spelldur="K" enh="1/+K3V3" >
+  <spell id="magnetism" diff="24" cost="K12V3" castdur="13T" range="10m" spelldur="K" enh="1/+K3V3" effectRange="5">
     <school skill="stonemagic" level="3"/>
     <type>ELEMENTALCONTROL</type>
   </spell>
@@ -727,7 +727,7 @@
     <school skill="shadowmagic" level="3"/>
     <type>SENSES</type>
   </spell>
-  <spell id="daylight" diff="30" cost="K20V5" castdur="17T" range="CASTER" spelldur="K" enh="1/+K5V5" >
+  <spell id="daylight" diff="30" cost="K20V5" castdur="17T" range="CASTER" spelldur="K" enh="1/+K5V5" effectRange="25">
     <school skill="lightmagic" level="5"/>
     <type>ILLUMINATION</type>
     <type>BREAKSPELL</type>
@@ -738,7 +738,7 @@
     <school skill="watermagic" level="5"/>
     <type>SHAPE</type>
   </spell>
-  <spell id="summonfog" diff="24" cost="K12V3" castdur="11T" range="CASTER" spelldur="K" enh="1/+K3V3" >
+  <spell id="summonfog" diff="24" cost="K12V3" castdur="11T" range="CASTER" spelldur="K" enh="1/+K3V3" effectRange="25">
     <school skill="windmagic" level="3"/>
     <school skill="watermagic" level="3"/>
     <type>SUMMON</type>
@@ -767,7 +767,7 @@
     <school skill="insightmagic" level="4"/>
     <type>PROPHECY</type>
   </spell>
-  <spell id="tendrils" diff="21" cost="K8V2" castdur="8T" range="10m" spelldur="K" enh="1/+K2V2" >
+  <spell id="tendrils" diff="21" cost="K8V2" castdur="8T" range="10m" spelldur="K" enh="1/+K2V2" effectRange="5">
     <school skill="naturemagic" level="2"/>
     <type>PLANTS</type>
   </spell>
@@ -822,7 +822,7 @@
     <school skill="combatmagic" level="5"/>
     <type>DAMAGE</type>
   </spell>
-   <spell id="shadowban" diff="24" cost="12V3" castdur="11T" range="10m" enh="2/+3V3" >
+  <spell id="shadowban" diff="24" cost="12V3" castdur="11T" range="10m" enh="2/+3V3" >
     <school skill="antimagic" level="3"/>
     <school skill="lightmagic" level="3"/>
     <type>BREAKSPELL</type>
@@ -919,7 +919,7 @@
     <school skill="fatemagic" level="0"/>
     <type>BLESSING</type>
   </spell>
-  <spell id="protectedbylight" diff="30" cost="K20V5" castdur="15T" range="CASTER" spelldur="K" enh="1/+K5V5" >
+  <spell id="protectedbylight" diff="30" cost="K20V5" castdur="15T" range="CASTER" spelldur="K" enh="1/+K5V5" effectRange="5">
     <school skill="lightmagic" level="5"/>
     <type>AURA</type>
     <type>BLESSING</type>
@@ -958,7 +958,7 @@
     <type>PROTECTIONFIELD</type>
     <type>ICE</type>
   </spell>
-  <spell id="undeadprotection" diff="21" cost="K8V2" castdur="5T" range="CASTER" spelldur="K" enh="1/+K2V2" >
+  <spell id="undeadprotection" diff="21" cost="K8V2" castdur="5T" range="CASTER" spelldur="K" enh="1/+K2V2" effectRange="5">
     <school skill="lightmagic" level="1"/>
     <school skill="deathmagic" level="2"/>
     <school skill="protectionmagic" level="3"/>
@@ -970,7 +970,7 @@
     <school skill="deathmagic" level="1"/>
     <type>WEAKEN</type>
   </spell>
-  <spell id="blackness" diff="30" cost="K20V5" castdur="17T" range="CASTER" spelldur="K" enh="1/+K5V5" >
+  <spell id="blackness" diff="30" cost="K20V5" castdur="17T" range="CASTER" spelldur="K" enh="1/+K5V5" effectRange="25">
     <school skill="shadowmagic" level="5"/>
     <type>VEIL</type>
   </spell>
@@ -1023,7 +1023,7 @@
     <school skill="insightmagic" level="5"/>
     <type>CLAIRVOYANCE</type>
   </spell>
-  <spell id="leavenotrace" diff="21" cost="K8V2" castdur="8T" range="CASTER" spelldur="K" enh="2/+K2V2" >
+  <spell id="leavenotrace" diff="21" cost="K8V2" castdur="8T" range="CASTER" spelldur="K" enh="2/+K2V2" effectRange="5">
     <school skill="motionmagic" level="3"/>
     <school skill="naturemagic" level="2"/>
     <type>AURA</type>
@@ -1061,7 +1061,7 @@
     <school skill="stonemagic" level="2"/>
     <type>WALL</type>
   </spell>
-  <spell id="silence" diff="18" cost="K4V1" castdur="1T" range="CASTER" spelldur="K" enh="2/+K1V1">
+  <spell id="silence" diff="18" cost="K4V1" castdur="1T" range="CASTER" spelldur="K" enh="2/+K1V1" effectRange="5">
     <school skill="illusionmagic" level="1"/>
     <type>SOUND</type>
   </spell>
@@ -1075,7 +1075,7 @@
     <school skill="windmagic" level="0"/>
     <type>TELEKINESIS</type>
   </spell>
-  <spell id="twister" diff="27" cost="K16V4" castdur="18T" range="10m" spelldur="K" enh="1/+K4V4" >
+  <spell id="twister" diff="27" cost="K16V4" castdur="18T" range="10m" spelldur="K" enh="1/+K4V4" effectRange="5">
     <school skill="windmagic" level="4"/>
     <type>ELEMENTALCONTROL</type>
   </spell>
@@ -1151,7 +1151,7 @@
     <type>ENHANCE_MOTION</type>
     <type>ELEMENTALCONTROL</type>
   </spell>
-  <spell id="heatsurrounding" diff="27" cost="K16V4" castdur="17T" range="10m" spelldur="K" enh="2/+K4V4" >
+  <spell id="heatsurrounding" diff="27" cost="K16V4" castdur="17T" range="10m" spelldur="K" enh="2/+K4V4" effectRange="5">
     <school skill="firemagic" level="4"/>
     <type>ELEMENTALCONTROL</type>
   </spell>
@@ -1293,7 +1293,7 @@
     <school skill="watermagic" level="4"/>
     <type>DAMAGE</type>
   </spell>
-  <spell id="walkwilderness" diff="24" cost="K12V3" castdur="9T" range="CASTER" spelldur="K" enh="2/+K3V3" >
+  <spell id="walkwilderness" diff="24" cost="K12V3" castdur="9T" range="CASTER" spelldur="K" enh="2/+K3V3" effectRange="5">
     <school skill="naturemagic" level="3"/>
     <school skill="motionmagic" level="3"/>
     <type>AURA</type>
@@ -1305,7 +1305,7 @@
     <type>BLESSING</type>
     <type>WEAPON</type>
   </spell>
-  <spell id="controlweather" diff="30" cost="20V5" castdur="10m" range="CASTER" spelldur="1h" enh="1/+5V5" >
+  <spell id="controlweather" diff="30" cost="20V5" castdur="10m" range="CASTER" spelldur="1h" enh="1/+5V5" effectRange="500">
     <school skill="naturemagic" level="5"/>
     <school skill="windmagic" level="5"/>
     <type>ELEMENTALCONTROL</type>
@@ -1358,7 +1358,7 @@
     <school skill="antimagic" level="0"/>
     <type>COUNTER</type>
   </spell>
-  <spell id="antimagicarea" diff="24" cost="K12V3" castdur="10T" range="CASTER" spelldur="K" enh="2/+K3V3" >
+  <spell id="antimagicarea" diff="24" cost="K12V3" castdur="10T" range="CASTER" spelldur="K" enh="2/+K3V3" effectRange="5">
     <school skill="antimagic" level="3"/>
     <school skill="protectionmagic" level="4"/>
     <type>COUNTER</type>
@@ -1371,7 +1371,7 @@
     <school skill="enhancemagic" level="1"/>
     <type>COMMUNICATION</type>
   </spell>
- 
-  
-  
+
+
+
 </spells>
