@@ -17,6 +17,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -599,6 +600,12 @@ public class SplitterMondCore {
 
 			resources.addAll(addResources);
 			Collections.sort(resources);
+			BASE_RESOURCES = new ArrayList<Resource>(Arrays.asList(new Resource[]{
+					SplitterMondCore.getResource("reputation"),
+					SplitterMondCore.getResource("status"),
+					SplitterMondCore.getResource("contacts"),
+					SplitterMondCore.getResource("wealth")
+			}));
 		} catch (Exception e) {
 			logger.fatal("Failed loading resources: "+e,e);
 			return;
