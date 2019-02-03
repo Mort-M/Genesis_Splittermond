@@ -2040,7 +2040,7 @@
     </spell>
     <spell id="spring" diff="18" cost="4V1" castdur="1T" range="CASTER" spelldur="120T" enh="2/+1V1">
         <school skill="motionmagic" level="1" />
-        <school skill="windmagic" level="1" />
+        <school skill="windmagic" level="2" />
         <type>ELEMENTALCONTROL</type>
         <type>TELEKINESIS</type>
         <enhancementtype>RELEASETIME</enhancementtype>
