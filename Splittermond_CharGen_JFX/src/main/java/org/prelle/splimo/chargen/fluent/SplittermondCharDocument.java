@@ -36,6 +36,7 @@ import org.prelle.splimo.chargen.jfx.ViewMode;
 import org.prelle.splittermond.jfx.attributes.AttributePanePrimary;
 import org.prelle.splittermond.jfx.attributes.AttributePaneSecondary;
 import org.prelle.splittermond.jfx.master.MastershipScreen;
+import org.prelle.splittermond.jfx.resources.ResourcePane;
 import org.prelle.splittermond.jfx.skills.SkillPane;
 import org.prelle.splittermond.jfx.skills.SkillPaneCallback;
 
@@ -99,6 +100,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 	private SkillPane skillsCombat;
 	private SkillPane skillsMagic;
 	private SpellPane spellsPane;
+	private ResourcePane resrcPane;
 	
 	private Map<Node, Section> sections = new HashMap<>();
 
@@ -270,6 +272,32 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 
 	//-------------------------------------------------------------------
 	private void initResources() {
+		resrcPane = new ResourcePane(control.getResourceController(), true, false);
+		resrcPane.setStyle("-fx-spacing: 2em; -fx-background-color: white; -fx-effect: dropshadow(three-pass-box, black, 5, 0.5, 2, 2); -fx-padding: 1em; -fx-border-width: 2px; -fx-pref-height: 20em;");
+		Section section = new Section();
+		section.setTitle(uiResources.getString("label.resources"));
+		section.setContent(resrcPane);
+		section.getToDoList().addAll(convert(control.getResourceController().getToDos()));
+		content.getSectionList().add(section);
+		sections.put(resrcPane, section);
+
+		// Selections
+//		resrcPane.selectedSpellProperty().addListener( (ov,o,n) -> {
+//			VBox desc = new VBox(5);
+//			if (n!=null) {
+//				Spell spell = n.getSpell();
+//				Label lbName = new Label(spell.getName());
+//				lbName.getStyleClass().add("subtitle");
+//				Label lbPage = new Label(spell.getProductNameShort()+" "+n.getSkill().getPage());
+//				lbPage.setStyle("-fx-font-weight: bold");
+//				Label lbText = new Label(spell.getHelpText());
+//				lbText.setWrapText(true);
+//				desc.getChildren().addAll(lbName, lbPage, lbText);
+//			}
+//			content.setDescriptionNode(desc);
+//		});
+		
+		section.getToDoList().addAll(convert(control.getResourceController().getToDos()));
 	}
 
 	//-------------------------------------------------------------------
@@ -473,6 +501,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 		skillsCombat.setContent(model);
 		skillsMagic.setContent(model);
 		spellsPane.setData(model);
+		resrcPane.setData(model);
 	}
 
 	//-------------------------------------------------------------------

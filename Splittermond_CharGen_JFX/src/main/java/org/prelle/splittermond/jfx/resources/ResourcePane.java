@@ -79,6 +79,9 @@ public class ResourcePane extends VBox implements GenerationEventListener, Event
 		doValueFactories();
 		if (withContext)
 			initContextMenu();
+		if (!withNotes)
+			table.getColumns().remove(notesCol);
+
 		initInteractivity();
 	}
 

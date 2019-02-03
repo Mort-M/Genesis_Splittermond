@@ -275,7 +275,8 @@ public class BaseDataGrid extends GridPane {
 			logger.info("rename character from "+control.getModel().getName()+" to "+n);
 			control.getModel().setName(n);
 			try {
-				RPGFrameworkLoader.getInstance().getCharacterService().renameCharacter(handle, n);
+				if (handle!=null)
+					RPGFrameworkLoader.getInstance().getCharacterService().renameCharacter(handle, n);
 			} catch (IOException e) {
 				logger.error("Renaming failed",e);
 				BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Renaming failed: "+e);
