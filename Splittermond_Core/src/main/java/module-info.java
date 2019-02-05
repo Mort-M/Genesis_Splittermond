@@ -1,10 +1,3 @@
-/**
- * 
- */
-/**
- * @author prelle
- *
- */
 module splittermond.core {
 	exports org.prelle.splimo;
 	exports org.prelle.splimo.items;
@@ -24,7 +17,7 @@ module splittermond.core {
 	requires java.datatransfer;
 	requires java.prefs;
 	requires java.xml;
-	requires javax.mail;
+	requires java.mail;
 	requires org.apache.logging.log4j;
 	requires simple.persist;
 }
