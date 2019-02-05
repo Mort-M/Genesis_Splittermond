@@ -22,4 +22,5 @@ module splittermond.chargen {
 	requires java.xml;
 	requires org.apache.logging.log4j;
 	requires simple.persist;
+	requires splittermond.data;
 }

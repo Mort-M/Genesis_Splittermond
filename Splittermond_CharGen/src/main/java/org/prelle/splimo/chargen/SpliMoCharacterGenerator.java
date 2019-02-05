@@ -43,6 +43,7 @@ import org.prelle.splimo.charctrl.PowerController;
 import org.prelle.splimo.charctrl.ResourceController;
 import org.prelle.splimo.charctrl.SkillController;
 import org.prelle.splimo.charctrl.SpellController;
+import org.prelle.splimo.charctrl4.SpliMoCharGenConstants;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventType;
@@ -360,7 +361,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 		 * Now selected
 		 */
 		apply(
-				ResourceBundle.getBundle("i18n/splimo-chargen").getString("label.race")+" "+selected.getName(),
+				SpliMoCharGenConstants.RES.getString("label.race")+" "+selected.getName(),
 				selected.getModifications(), callback);
 		
 		selectedRace = selected;
@@ -462,7 +463,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 		 */
 		if (selected!=null)
 		apply(
-				ResourceBundle.getBundle("i18n/splimo-chargen").getString("label.culture")+" "+selected.getName(),
+				SpliMoCharGenConstants.RES.getString("label.culture")+" "+selected.getName(),
 				selected.getModifications(), callback);
 		
 		
@@ -507,7 +508,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 		 */
 		logger.debug("Edu mods = "+selected.getModifications());
 		apply(
-				ResourceBundle.getBundle("i18n/splimo-chargen").getString("label.education")+" "+selected.getName(),
+				SpliMoCharGenConstants.RES.getString("label.education")+" "+selected.getName(),
 				selected.getModifications(), callback);
 		
 		selectedEducation = selected;
@@ -558,7 +559,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 //		 * Now selected
 //		 */
 //		apply(
-//				ResourceBundle.getBundle("i18n/ui").getString("label.background")+" "+selected.getName(),
+//				SpliMoCharGenConstants.RES.getString("label.background")+" "+selected.getName(),
 //				selected.getModifications(), callback);
 //		
 //		selectedBackground = selected;

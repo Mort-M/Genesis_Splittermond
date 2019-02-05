@@ -40,5 +40,10 @@
 			<version>[3.0.0-SNAPSHOT,3.99.99)</version>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>org.prelle.rpgframework</groupId>
+            <artifactId>splittermond-data</artifactId>
+            <version>[3.19.0-SNAPSHOT, 3.99.99)</version>
+        </dependency>
 	</dependencies>
 </project>

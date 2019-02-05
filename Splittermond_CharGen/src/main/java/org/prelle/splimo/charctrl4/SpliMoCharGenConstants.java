@@ -12,6 +12,6 @@ import java.util.ResourceBundle;
  */
 public interface SpliMoCharGenConstants {
 
-	public final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
+	public final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("org/prelle/splimo/chargen/i18n/splittermond/chargen");
 
 }

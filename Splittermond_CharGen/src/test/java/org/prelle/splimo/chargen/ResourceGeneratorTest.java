@@ -16,6 +16,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
+import org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 import org.prelle.splimo.Resource;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SpliMoCharacter;
@@ -41,7 +42,8 @@ public class ResourceGeneratorTest {
 
 	//-------------------------------------------------------------------
 	static {
-		SplitterMondCore.initialize(new SplittermondRules());
+		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
+		plugin.init();
 		nonBaseResource1 = SplitterMondCore.getResource("relic");
 		nonBaseResource2 = SplitterMondCore.getResource("mentor");
 		resource2 = SplitterMondCore.getResource("reputation");

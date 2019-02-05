@@ -13,6 +13,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
+import org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpliMoCharacter;
@@ -46,7 +47,8 @@ public class SkillGeneratorTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		SplitterMondCore.initialize(new SplittermondRules());
+		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
+		plugin.init();
 	}
 
 	//-------------------------------------------------------------------

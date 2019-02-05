@@ -32,7 +32,7 @@ public class RaceGenerator implements RaceController, SpliMoCharacterProcessor {
 
 	private static Logger logger = LogManager.getLogger("splittermond.chargen.race");
 
-	private final static ResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond/chargen");
+	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
 	private static Random RANDOM = new Random();
 
 	private SplitterEngineCharacterGenerator parent;

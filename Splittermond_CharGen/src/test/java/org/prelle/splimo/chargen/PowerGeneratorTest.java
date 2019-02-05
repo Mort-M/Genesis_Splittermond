@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.prelle.rpgframework.splittermond.SplittermondRules;
+import org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 import org.prelle.splimo.Power;
 import org.prelle.splimo.PowerReference;
 import org.prelle.splimo.Race;
@@ -48,7 +48,8 @@ public class PowerGeneratorTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		SplitterMondCore.initialize(new SplittermondRules());
+		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
+		plugin.init();
 		ONCE_GENONLY = SplitterMondCore.getPower("attractive");
 		ONCE_ALWAYS = SplitterMondCore.getPower("socialable");
 		MULTI_ALWAYS = SplitterMondCore.getPower("focuspool");
