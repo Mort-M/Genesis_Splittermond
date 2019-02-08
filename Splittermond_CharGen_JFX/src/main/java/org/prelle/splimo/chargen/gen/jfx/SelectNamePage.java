@@ -20,6 +20,7 @@ import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -121,7 +122,7 @@ public class SelectNamePage extends WizardPage implements ChangeListener<String>
 		portrait = new ImageView();
 		portrait.setFitHeight(200);
 		portrait.setFitWidth(200);
-		portrait.setImage(new Image(ClassLoader.getSystemResourceAsStream("images/guest-256.png")));
+		portrait.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/guest-256.png")));
 		
 		/*
 		 * Button hair color

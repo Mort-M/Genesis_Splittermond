@@ -187,34 +187,6 @@ public class SplitterMondCore {
 			return;
 		missingLicense = !RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(RoleplayingSystem.SPLITTERMOND, "ALL");
 
-//		loadPowers(plugin, ClassLoader.getSystemResourceAsStream("data/powers.xml"), i18NResources, i18NHelpResources);
-//		loadSkills(plugin, ClassLoader.getSystemResourceAsStream("data/skills.xml"), i18NResources, i18NHelpResources);
-//		loadMasterships(plugin, ClassLoader.getSystemResourceAsStream("data/masterships.xml"), i18NResources, i18NHelpResources);
-//		loadSpells(plugin, ClassLoader.getSystemResourceAsStream("data/spells.xml"), i18NResources, i18NHelpResources);
-//		loadResources(plugin, ClassLoader.getSystemResourceAsStream("data/resources.xml"), i18NResources, i18NHelpResources);
-//		loadLanguages(plugin, ClassLoader.getSystemResourceAsStream("data/languages.xml"), i18NResources, i18NHelpResources);
-//		loadCultureLores(plugin, ClassLoader.getSystemResourceAsStream("data/culturelores.xml"), i18NResources, i18NHelpResources);
-//		loadBackgrounds(plugin, ClassLoader.getSystemResourceAsStream("data/backgrounds.xml"), i18NResources, i18NHelpResources);
-//		loadRaces(plugin, ClassLoader.getSystemResourceAsStream("data/races.xml"), i18NResources, i18NHelpResources);
-//		loadCultures(plugin, ClassLoader.getSystemResourceAsStream("data/cultures.xml"), i18NResources, i18NHelpResources);
-//		loadEducations(plugin, ClassLoader.getSystemResourceAsStream("data/educations.xml"), i18NResources, i18NHelpResources);
-//		loadFeatureTypes(plugin, ClassLoader.getSystemResourceAsStream("data/featuretypes.xml"), i18NResources, i18NHelpResources);
-//		loadMaterials(plugin, ClassLoader.getSystemResourceAsStream("data/materials.xml"), i18NResources, i18NHelpResources);
-//		loadEquipment(plugin, ClassLoader.getSystemResourceAsStream("data/equipment.xml"), i18NResources, i18NHelpResources);
-//		loadEnhancements(plugin, ClassLoader.getSystemResourceAsStream("data/enhancements.xml"), i18NResources, i18NHelpResources);
-//		loadCreatureTypes(plugin, ClassLoader.getSystemResourceAsStream("data/creaturetypes.xml"), i18NResources, i18NHelpResources);
-//		loadCreatureFeatureTypes(plugin, ClassLoader.getSystemResourceAsStream("data/creaturefeaturetypes.xml"), i18NResources, i18NHelpResources);
-//		loadCreatures(plugin, ClassLoader.getSystemResourceAsStream("data/creatures.xml"), i18NResources, i18NHelpResources);
-//
-//		BasePluginData.flushMissingKeys();
-//		BASE_RESOURCES = new ArrayList<Resource>(Arrays.asList(new Resource[]{
-//				SplitterMondCore.getResource("reputation"),
-//				SplitterMondCore.getResource("status"),
-//				SplitterMondCore.getResource("contacts"),
-//				SplitterMondCore.getResource("wealth")
-//		}));
-
-
 		/*
 		 * Register to receive commands
 		 */

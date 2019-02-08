@@ -212,7 +212,7 @@ public class BBCodePlugin implements RulePlugin<SpliMoCharacter>, CommandBusList
 	 */
 	@Override
 	public InputStream getAboutHTML() {
-		return ClassLoader.getSystemResourceAsStream("i18n/splittermond/print_bbcode.html");
+		return ClassLoader.getSystemResourceAsStream("de/rpgframework/splittermond/print/bbcode/i18n/splittermond/print_bbcode.html");
 	}
 
 	//-------------------------------------------------------------------

@@ -113,7 +113,7 @@ public class BaseDataBlockSpliMo extends VBox implements GenerationEventListener
 		ivPortrait = new ImageView();
 		ivPortrait.setFitWidth(256);
 		ivPortrait.setFitHeight(256);
-		ivPortrait.setImage(new Image(ClassLoader.getSystemResourceAsStream("images/guest-256.png")));
+		ivPortrait.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/guest-256.png")));
 		
 		lblLevel   = new Label("1");
 		lblExpFree = new Label("0");
@@ -425,7 +425,7 @@ public class BaseDataBlockSpliMo extends VBox implements GenerationEventListener
 			logger.debug("Found image with "+model.getImage().length+" bytes");
 			ivPortrait.setImage(new Image(new ByteArrayInputStream(model.getImage())));
 		} else {
-			ivPortrait.setImage(new Image(ClassLoader.getSystemResourceAsStream("images/guest-256.png")));
+			ivPortrait.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/guest-256.png")));
 		}
 		lblExpFree.setText(String.valueOf(model.getExperienceFree()));
 		lblExpInv.setText(String.valueOf(model.getExperienceInvested()));
@@ -468,7 +468,7 @@ public class BaseDataBlockSpliMo extends VBox implements GenerationEventListener
 			if (model.getImage()!=null) {
 				ivPortrait.setImage(new Image(new ByteArrayInputStream(model.getImage())));
 			} else {
-				ivPortrait.setImage(new Image(ClassLoader.getSystemResourceAsStream("images/guest-256.png")));
+				ivPortrait.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/guest-256.png")));
 			}
 			lblLevel.setText(String.valueOf(model.getLevel()));
 			lblSize.setText(model.getSize()+" "+uiResources.getString("label.size.unit"));
