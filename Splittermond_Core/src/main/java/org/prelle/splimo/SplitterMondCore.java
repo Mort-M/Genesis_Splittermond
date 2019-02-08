@@ -141,8 +141,8 @@ public class SplitterMondCore {
 
 	//-------------------------------------------------------------------
 	static {
-		i18NResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond-core");
-		i18NHelpResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splittermond-core-help");
+		i18NResources = (PropertyResourceBundle) ResourceBundle.getBundle("org/prelle/splimo/i18n/splittermond-core");
+		i18NHelpResources = (PropertyResourceBundle) ResourceBundle.getBundle("org/prelle/splimo/i18n/splittermond-core-help");
 		serializer  = new Persister();
 		skills      = new ArrayList<>();
 		spells      = new SpellList();
