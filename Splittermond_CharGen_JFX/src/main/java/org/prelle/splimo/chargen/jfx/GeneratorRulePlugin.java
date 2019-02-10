@@ -232,7 +232,7 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	 */
 	@Override
 	public InputStream getAboutHTML() {
-		return ClassLoader.getSystemResourceAsStream("i18n/splittermond-chargen.html");
+		return ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/i18n/splittermond-chargen.html");
 	}
 
 	//-------------------------------------------------------------------

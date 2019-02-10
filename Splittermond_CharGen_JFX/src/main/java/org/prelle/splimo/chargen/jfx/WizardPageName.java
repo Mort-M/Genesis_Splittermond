@@ -117,7 +117,7 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 		portrait.setFitHeight(200);
 		portrait.setFitWidth(200);
 		portrait.setPreserveRatio(true);
-		portrait.setImage(new Image(ClassLoader.getSystemResourceAsStream("images/guest-256.png")));
+		portrait.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/guest-256.png")));
 		
 		/*
 		 * Buttons

@@ -216,7 +216,7 @@ public class SplittermondRules implements RulePlugin<SpliMoCharacter>, CommandBu
 	 */
 	@Override
 	public InputStream getAboutHTML() {
-		return ClassLoader.getSystemResourceAsStream("i18n/splittermond-core.html");
+		return ClassLoader.getSystemResourceAsStream("org/prelle/splimo/i18n/splittermond-core.html");
 	}
 
 	//-------------------------------------------------------------------

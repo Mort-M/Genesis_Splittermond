@@ -293,7 +293,7 @@ public class AppearanceScreen extends ManagedScreen {
 			logger.debug("Found image with "+model.getImage().length+" bytes");
 			ivPortrait.setImage(new Image(new ByteArrayInputStream(model.getImage())));
 		} else {
-			ivPortrait.setImage(new Image(ClassLoader.getSystemResourceAsStream("images/guest-256.png")));
+			ivPortrait.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/guest-256.png")));
 		}
 	}
 
