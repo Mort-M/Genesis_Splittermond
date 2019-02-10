@@ -165,6 +165,21 @@ public class EquipmentScreen extends ManagedScreen implements GenerationEventLis
 		bxBeast.setOnAdd ( loc -> selectAndAddTo(loc));
 		bxBeast.setOnRemove( item -> remove(item));
 		bxBeast.setOnMove( (item, loc) -> move(item, loc));
+		lblSol.textProperty().addListener( (ov,o,n) -> {
+			int sol = Integer.parseInt(n);
+			model.setTelare(sol*10000 + model.getTelare()%10000);
+		});
+		lblLun.textProperty().addListener( (ov,o,n) -> {
+			int lun = Integer.parseInt(n);
+			int sol = model.getTelare()/10000;
+			int tel = model.getTelare()%100;
+			logger.debug("sol="+sol+" lun="+lun+" tel="+tel);
+			model.setTelare(sol*10000 + lun*100 + tel);
+		});
+		lblTel.textProperty().addListener( (ov,o,n) -> {
+			int tel = Integer.parseInt(n);
+			model.setTelare(tel + (model.getTelare()/100)*100);
+		});
 	}
 
 	//-------------------------------------------------------------------
