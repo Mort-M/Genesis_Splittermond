@@ -1,6 +1,3 @@
-/**
- *
- */
 package org.prelle.splimo;
 
 import java.io.FileInputStream;
@@ -109,7 +106,7 @@ public class SplittermondCustomDataCore {
 
 		loadEquipment();
 		loadEducations();
-		
+
 //		logger.fatal("Stop here");
 //		System.exit(0);
 	}
