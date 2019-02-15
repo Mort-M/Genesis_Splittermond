@@ -1,11 +1,12 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.equip;
 
 import java.util.List;
 
 import org.prelle.splimo.Attribute;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Armor;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.Feature;
@@ -28,20 +29,20 @@ import javafx.scene.image.ImageView;
  *
  */
 public class ItemUtils {
-	
+
 	//--------------------------------------------------------------------
 	public static ImageView getItemTypeIcon(ItemType type) {
 		ImageView iView = new ImageView();
 		iView.setFitHeight(48);
 		iView.setFitWidth(48);
 		switch (type) {
-		case ARMOR  : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream("images/icon_armor.png"))); break;
-		case LONG_RANGE_WEAPON: iView.setImage(new Image(ClassLoader.getSystemResourceAsStream("images/icon_bow.png"))); break;
-		case WEAPON : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream("images/icon_sword.png"))); break;
-		case SHIELD : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream("images/icon_shield.png"))); break;
-		case POTION : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream("images/icon_potion.png"))); break;
-		case CONTAINER: iView.setImage(new Image(ClassLoader.getSystemResourceAsStream("images/icon_container.png"))); break;
-		case TRAVEL : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream("images/icon_travel.png"))); break;
+		case ARMOR  : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_armor.png"))); break;
+		case LONG_RANGE_WEAPON: iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_bow.png"))); break;
+		case WEAPON : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_sword.png"))); break;
+		case SHIELD : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_shield.png"))); break;
+		case POTION : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_potion.png"))); break;
+		case CONTAINER: iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_container.png"))); break;
+		case TRAVEL : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_travel.png"))); break;
 		default:
 			break;
 		}
@@ -74,7 +75,7 @@ public class ItemUtils {
 		default:
 			break;
 		}
-		
+
 		if (featureList != null && featureList.size() > 0) {
 			lv.getItems().addAll(featureList);
 		}

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.jfx;
 
@@ -39,16 +39,16 @@ import de.rpgframework.core.RoleplayingSystem;
 public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, CommandBusListener {
 
 	private static Logger logger = LogManager.getLogger("splittermond.jfx");
-	
-	private final static String CSS = "css/splittermond.css";
+
+	private final static String CSS = SpliMoCharGenJFXConstants.PREFIX+"/css/splittermond.css";
 
 	private static List<RulePluginFeatures> FEATURES = new ArrayList<RulePluginFeatures>();
 	private static ConfigOption<Double>     hgFactor;
-	
+
 	//-------------------------------------------------------------------
 	static {
 		FEATURES.add(RulePluginFeatures.CHARACTER_CREATION);
-		FEATURES.add(RulePluginFeatures.DATA_INPUT);		
+		FEATURES.add(RulePluginFeatures.DATA_INPUT);
 	}
 
 	//-------------------------------------------------------------------
@@ -154,7 +154,7 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 		default:
 			return false;
 		}
-		
+
 	}
 
 	//-------------------------------------------------------------------
@@ -165,7 +165,7 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	public CommandResult handleCommand(Object src, CommandType type, Object... values) {
 		if (!willProcessCommand(src, type, values))
 			return new CommandResult(type, false, null, false);
-		
+
 		ScreenManager manager;
 		CharacterController control;
 		SpliMoCharacter model;
@@ -176,7 +176,7 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 			logger.debug("start character modification");
 			model = (SpliMoCharacter)values[1];
 			control = new CharacterLeveller(model, hgFactor);
-			CharacterHandle handle = (CharacterHandle)values[2];			
+			CharacterHandle handle = (CharacterHandle)values[2];
 			manager = (ScreenManager)values[4];
 			screen = new SplittermondCharGenView(control, manager, handle);
 //			screen = new CharacterViewScreenSpliMo(control, ViewMode.MODIFICATION);
@@ -186,27 +186,27 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 //			SplittermondCharGenView altScreen = new SplittermondCharGenView(control);
 //			altScreen.setData(model, handle);
 //			manager.show(altScreen, CSS);
-			
+
 			return new CommandResult(type, true);
 		case SHOW_CHARACTER_CREATION_GUI:
 			logger.debug("start character creation");
 			model = new SpliMoCharacter();
 			control = new SpliMoCharacterGenerator(model);
 			manager = (ScreenManager)values[2];
-			
+
 			screen = new SplittermondCharGenView(control, manager, null);
 //			screen = new CharacterViewScreenSpliMo(control, ViewMode.GENERATION);
 //			screen = new OldCharacterViewScreen((CharacterLeveller) control, ViewMode.MODIFICATION);
 			manager.show(screen, CSS);
 			screen.startGeneration(model);
-			
+
 			CommandResult result = new CommandResult(type, true);
 			result.setReturnValue(model);
 			return result;
 		case SHOW_DATA_INPUT_GUI:
 			logger.debug("start data input");
 			manager = (ScreenManager)values[2];
-			
+
 			DataInputScreen screen2 = new DataInputScreen();
 			manager.show(screen2, CSS);
 			result = new CommandResult(type, true);

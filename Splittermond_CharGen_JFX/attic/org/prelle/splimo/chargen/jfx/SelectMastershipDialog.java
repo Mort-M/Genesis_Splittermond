@@ -102,7 +102,7 @@ public class SelectMastershipDialog extends Pane implements ChangeListener<Multi
 			special= new Tab(resources.getString("masterships.special"));
 			tabbed.getTabs().addAll(common, special);
 			logger.debug("---Load common------");
-			in = ClassLoader.getSystemResourceAsStream("fxml/mastership.combat.common.fxml");
+			in = ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/fxml/mastership.combat.common.fxml");
 			if (in!=null) {
 				GridPane grid = (GridPane) loader.load(in);
 				MastershipRequirementGrid reqGrid = new MastershipRequirementGrid(grid, charGen.getAvailable(), this);
@@ -127,7 +127,7 @@ public class SelectMastershipDialog extends Pane implements ChangeListener<Multi
 			special= new Tab(resources.getString("masterships.special"));
 			tabbed.getTabs().addAll(common, special);
 			logger.debug("---Load common------");
-			in = ClassLoader.getSystemResourceAsStream("fxml/mastership.magic.common.fxml");
+			in = ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/fxml/mastership.magic.common.fxml");
 			if (in!=null) {
 				GridPane grid = (GridPane) loader.load(in);
 				MastershipRequirementGrid reqGrid = new MastershipRequirementGrid(grid, charGen.getAvailable(), this);

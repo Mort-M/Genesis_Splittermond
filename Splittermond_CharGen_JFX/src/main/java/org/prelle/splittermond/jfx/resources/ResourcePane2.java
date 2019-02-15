@@ -17,6 +17,7 @@ import org.prelle.splimo.chargen.LetUserChooseListener;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.levelling.ResourceLeveller;
 
 import javafx.beans.property.ObjectProperty;
@@ -42,7 +43,7 @@ import javafx.scene.text.TextAlignment;
 public class ResourcePane2 extends HBox implements GenerationEventListener {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
-	
+
 	private static PropertyResourceBundle uiResources = SpliMoCharGenConstants.RES;
 
 	private ResourceController control;
@@ -55,7 +56,7 @@ public class ResourcePane2 extends HBox implements GenerationEventListener {
 	private ContextMenu contextMenu;
 	private MenuItem join;
 	private MenuItem split;
-	
+
 	private ObjectProperty<Resource> selectedItem;
 
 	//--------------------------------------------------------------------
@@ -84,7 +85,7 @@ public class ResourcePane2 extends HBox implements GenerationEventListener {
 	private void initComponents(LetUserChooseListener callback) {
 		lvAvailable = new ResourceListView(control);
 		lvSelected  = new ResourceReferenceListView(control, callback);
-		Image img = new Image(ClassLoader.getSystemResourceAsStream("images/icon_trashcan.png"));
+		Image img = new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_trashcan.png"));
 		ImageView iView = new ImageView(img);
 		iView.setFitHeight(128);
 		iView.setFitWidth(128);
@@ -92,7 +93,7 @@ public class ResourcePane2 extends HBox implements GenerationEventListener {
 		lblTrash.setWrapText(true);
 		lblTrash.setContentDisplay(ContentDisplay.BOTTOM);
 		lblTrash.setTextAlignment(TextAlignment.CENTER);
-		
+
 		selectedItem = new SimpleObjectProperty<Resource>();
 	}
 
@@ -101,7 +102,7 @@ public class ResourcePane2 extends HBox implements GenerationEventListener {
 		join  = new MenuItem(uiResources.getString("wizard.distrResource.join"));
 		split = new MenuItem(uiResources.getString("wizard.distrResource.split"));
 		contextMenu = new ContextMenu();
-		contextMenu.getItems().addAll(join,split);		
+		contextMenu.getItems().addAll(join,split);
 	}
 
 	//--------------------------------------------------------------------
@@ -153,11 +154,11 @@ public class ResourcePane2 extends HBox implements GenerationEventListener {
 				control.split(lvSelected.getSelectionModel().getSelectedItem());
 			}
 		});
-		
+
 		// Listen to selections
 		lvAvailable.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> selectedItem.set(n));
 		lvSelected.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> selectedItem.set( (n!=null)?n.getResource():null));
-		
+
 		/*
 		 * Drag & Drop over trash can
 		 */
@@ -165,7 +166,7 @@ public class ResourcePane2 extends HBox implements GenerationEventListener {
 		setOnDragOver(event -> dragOver(event));
 
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void dragDropped(DragEvent event) {
        /* if there is a string data on dragboard, read it and use it */
@@ -183,7 +184,7 @@ public class ResourcePane2 extends HBox implements GenerationEventListener {
         		if (idref!=null) idref=idref.substring(6);
         		if ("null".equals(descr)) descr=null;
         		if ("null".equals(idref)) idref=null;
-        		
+
         		Resource res = SplitterMondCore.getResource(resID);
         		ResourceReference ref = control.findResourceReference(res, descr, idref);
         		if (ref!=null) {
@@ -192,10 +193,10 @@ public class ResourcePane2 extends HBox implements GenerationEventListener {
         				control.trash(ref);
         			} else {
         		        event.setDropCompleted(success);
-        		        
+
         		        event.consume();
-        				lvSelected.getManager().showAlertAndCall(AlertType.NOTIFICATION, 
-        						uiResources.getString("resourcescreen.trash.fail.title"), 
+        				lvSelected.getManager().showAlertAndCall(AlertType.NOTIFICATION,
+        						uiResources.getString("resourcescreen.trash.fail.title"),
         						uiResources.getString("resourcescreen.trash.fail.desc"));
         				return;
         			}
@@ -204,10 +205,10 @@ public class ResourcePane2 extends HBox implements GenerationEventListener {
         		}
         	}
         }
-        /* let the source know whether the string was successfully 
+        /* let the source know whether the string was successfully
          * transferred and used */
         event.setDropCompleted(success);
-        
+
         event.consume();
 	}
 

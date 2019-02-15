@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.fluent;
 
@@ -65,11 +65,11 @@ import javafx.scene.shape.SVGPath;
 public class SplittermondCharGenView extends ManagedScreen implements GenerationEventListener, ScreenManagerProvider, ResponsiveControl {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
-	
+
 	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
-	
+
 	private static Preferences CONFIG = Preferences.userRoot().node("/org/rpgframework/genesis/splittermond");
-	
+
 	private SpliMoCharacter model;
 	private CharacterHandle handle;
 	private CharacterController control;
@@ -88,7 +88,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 	private CreatureScreen scrCompanions;
 	private DevelopmentScreenSpliMo scrDevelopment;
 	private NotesScreen scrNotes;
-	
+
 	private MenuItem menuOverview;
 	private MenuItem menuAttrib;
 	private MenuItem menuStrengthWeakness;
@@ -117,13 +117,13 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 		this.handle  = handle;
 		initComponents();
 		initNavigation();
-		
+
 		setTitle(control.getModel().getName());
 		GenerationEventDispatcher.addListener(this);
 	}
 
 	//-------------------------------------------------------------------
-	private void initComponents() {		
+	private void initComponents() {
 		scrOverview = new SplittermondCharDocument(control, handle, this);
 		scrAttributes = new AttributeScreen(control, ViewMode.MODIFICATION);
 		scrPower      = new PowerScreen(control);
@@ -137,7 +137,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 		scrCompanions = new CreatureScreen(control);
 		scrDevelopment= new DevelopmentScreenSpliMo(control);
 		scrNotes      = new NotesScreen(control);
-		
+
 		setContent(scrOverview.getContent());
 		setTitle(scrOverview.getTitle());
 	}
@@ -197,7 +197,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 		icoChest.setPrefSize(25,25);
 		icoChest.setStyle("-fx-background-color: black");
 		icoChest.setScaleX(0.6);
-		
+
 		menuOverview = new MenuItem(uiResources.getString("section.overview"), new Label("\uE80F"));
 		menuAttrib   = new MenuItem("Attribute", new Label("\uE779"));
 		menuStrengthWeakness = new MenuItem(uiResources.getString("section.powerweak"), new Label("\uD83C\uDFAD"));
@@ -230,12 +230,12 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 //		getStaticButtons().add(menuCommonCharInfo);
 //		getStaticButtons().add(menuBackgroundInfo);
 //		getStaticButtons().add(menuSessionReports);
-		
-		
+
+
 		menuOverview.setOnAction(ev -> {
 			getScreenManager().replaceContent(scrOverview);
 		});
-		
+
 		menuAttrib.setOnAction(ev -> {
 			scrAttributes.setData(control.getModel());
 			getScreenManager().show(scrAttributes);
@@ -264,7 +264,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 			scrSpells.setData(model);
 			getScreenManager().show(scrSpells);
 		});
-		menuResources.setOnAction(ev -> { 
+		menuResources.setOnAction(ev -> {
 			getScreenManager().show(scrResources);
 		});
 		menuEquipment.setOnAction(ev -> {
@@ -289,7 +289,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 		logger.debug(model.dump());
 		this.model = model;
 		this.handle= handle;
-		
+
 		setTitle(control.getModel().getName());
 		scrOverview.setData(model, handle);
 		scrAttributes.setData(model);
@@ -337,7 +337,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 			break;
 		default:
 		}
-		
+
 	}
 
 	//-------------------------------------------------------------------
@@ -352,7 +352,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 	@Override
 	public void setResponsiveMode(WindowMode value) {
 //		super.setResponsiveMode(value);
-		
+
 	}
 
 	//-------------------------------------------------------------------
@@ -361,7 +361,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 	 */
 	@Override
 	public String[] getStyleSheets() {
-		return new String[] {"css/splittermond.css"};
+		return new String[] {SpliMoCharGenJFXConstants.PREFIX+"/css/splittermond.css"};
 	}
 
 	//-------------------------------------------------------------------
@@ -369,15 +369,15 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 		logger.info("startGeneration "+model);
 		this.model = model;
 		this.mode = ViewMode.GENERATION;
-		
+
 		setData(model, null);
 		getStaticButtons().remove(menuDevelopment);
 		menuDevelopment.setDisable(true);
-		
+
 		wizard = new CharGenWizardSpliMo(model, (SpliMoCharacterGenerator)control);
 		CloseType close = (CloseType)manager.showAndWait(wizard);
 		logger.info("Closed with "+close);
-		
+
 		if (close==CloseType.FINISH) {
 			logger.info("Wizard finished");
 			try {
@@ -398,7 +398,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 			logger.warn("Wizard "+close);
 			getScreenManager().closeCurrent(close);
 			getScreenManager().cancel();
-			
+
 		}
 	}
 
@@ -413,22 +413,22 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 			logger.debug("Add modifications to character log");
 			((CharacterLeveller)control).updateHistory();
 		}
-		
+
 		try {
 			/*
 			 * 1. Call plugin to encode character
 			 * 2. Use character service to save character
 			 */
-			logger.debug("encode character "+model.getName());				
-			CommandResult result = CommandBus.fireCommand(this, CommandType.ENCODE, 
+			logger.debug("encode character "+model.getName());
+			CommandResult result = CommandBus.fireCommand(this, CommandType.ENCODE,
 					handle.getRuleIdentifier(),
 					model
 					);
 			if (!result.wasProcessed()) {
 				logger.error("Cannot save character, since encoding failed");
 				manager.showAlertAndCall(
-						AlertType.ERROR, 
-						"Das hätte nicht passieren dürfen", 
+						AlertType.ERROR,
+						"Das hätte nicht passieren dürfen",
 						"Es hat sich kein Plugin gefunden, welches das Kodieren von Charakteren dieses Systems erlaubt."
 						);
 			} else {
@@ -472,7 +472,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 			logger.debug("STOP : saveCharacter");
 		}
 	}
-	
+
 	//-------------------------------------------------------------------
 	/**
 	 * @see org.prelle.javafx.ManagedScreen#backSelected()
@@ -480,14 +480,14 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 	@Override
 	public CloseType backSelected() {
 		logger.debug("backSelected()");
-		
+
 		logger.debug("View mode is "+mode);
 		if (mode==ViewMode.GENERATION) {
 			SpliMoCharacterGenerator generator = (SpliMoCharacterGenerator)control;
 			if (!generator.hasEnoughData()) {
 				logger.warn("Generator has not enough data");
-				CloseType dialog = manager.showAlertAndCall(AlertType.ERROR, 
-						uiResources.getString("error.chargen.missingdata.title"), 
+				CloseType dialog = manager.showAlertAndCall(AlertType.ERROR,
+						uiResources.getString("error.chargen.missingdata.title"),
 						uiResources.getString("error.chargen.missingdata.text"));
 				return null;
 			}
@@ -500,8 +500,8 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 			logger.debug("generate() finished");
 		}
 
-		CloseType choice = manager.showAlertAndCall(AlertType.CONFIRMATION, 
-						uiResources.getString("check.chargen.editing.abort.title"), 
+		CloseType choice = manager.showAlertAndCall(AlertType.CONFIRMATION,
+						uiResources.getString("check.chargen.editing.abort.title"),
 						uiResources.getString("check.chargen.editing.abort.text")
 				);
 		logger.debug("Choice was "+choice);
@@ -513,17 +513,17 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 			logger.info("User rejected changes to character");
 			return CloseType.CANCEL;
 		}
-		
+
 		logger.error("Unexpected type of response: "+choice);
 		return null;
 	}
-	
+
 	//-------------------------------------------------------------------
 	public void childClosed(ManagedScreen child, CloseType type) {
 		logger.debug("************childClosed("+child+", "+type+") not overwritten***************");
 		child.setCloseType(type);
 	}
-	
+
 	//-------------------------------------------------------------------
 	@Override
 	public boolean close(CloseType type) {

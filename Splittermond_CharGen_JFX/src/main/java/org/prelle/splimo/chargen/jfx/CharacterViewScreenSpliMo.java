@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.jfx;
 
@@ -94,9 +94,9 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 	private static Logger logger = LogManager.getLogger("splittermond.jfx");
 
 	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
-	
+
 	private static Preferences CONFIG = Preferences.userRoot().node("/org/rpgframework/genesis/splittermond");
-	
+
 	private SpliMoCharacter model;
 	private CharacterHandle handle;
 	private CharacterController control;
@@ -107,7 +107,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 	private ScrollPane scroll;
 
 	private BaseDataBlockSpliMo baseBlock;
-	
+
 	private StackPane exFlipCtrl;
 	private FlowPane flow;
 	/*
@@ -130,7 +130,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 	/* Spells */
 	private SpellCard spells;
 	private NotesCard notes;
-	
+
 //	private AttentionPane stackBtnAttributes;
 //	private AttentionPane stackCrdAttributes;
 	/** Nodes to show in flow */
@@ -148,7 +148,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 	private FlipControl flipCompanions;
 	private FlipControl flipDevelopment;
 	private FlipControl flipNotes;
-	
+
 	private AttentionPane paneAttr;
 	private AttentionPane panePowers;
 	private AttentionPane paneResources;
@@ -156,8 +156,8 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 	private AttentionPane paneCombat;
 	private AttentionPane paneMagic;
 	private AttentionPane paneSpells;
-	
-	
+
+
 	private transient CharGenWizardSpliMo    wizard;
 
 	//-------------------------------------------------------------------
@@ -167,11 +167,11 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 //		this.invisible = FXCollections.observableArrayList(new ArrayList<Node>());
 		setSkin(new ManagedScreenStructuredSkin(this));
 		setTitle("Undefined");
-		
+
 		initComponents();
 		initLayout();
 		initInteractivity();
-	
+
 		GenerationEventDispatcher.addListener(this);
 	}
 
@@ -181,7 +181,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 	 */
 	@Override
 	public String[] getStyleSheets() {
-		return new String[] {"css/splittermond.css"};
+		return new String[] {SpliMoCharGenJFXConstants.PREFIX+"/css/splittermond.css"};
 	}
 
 	//-------------------------------------------------------------------
@@ -189,9 +189,9 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		getNavigButtons().addAll(CloseType.APPLY, CloseType.CANCEL);
 //		heading = new Label();
 		content = new HBox();
-		
+
 		baseBlock = new BaseDataBlockSpliMo(mode, control);
-		
+
 		attrPrimary = new AttributeCard(Attribute.primaryValues());
 		attrSecondary = new AttributeCard(Attribute.secondaryValues());
 		powers      = new PowerCard();
@@ -203,13 +203,13 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		skillMagic  = new SkillCard(SkillType.MAGIC);
 		spells      = new SpellCard();
 		notes       = new NotesCard();
-		
+
 		CharacterEditCallback callback = new CharacterEditCallback() {
-			
+
 			@Override
 			public void dialogClosed(boolean wasCancelled) {
 				// TODO Auto-generated method stub
-				
+
 			}
 		};
 		charDocPane = new CharacterLevelingPane(this, control, callback);
@@ -218,13 +218,13 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 	//-------------------------------------------------------------------
 	private void initLayout() {
 		content.setSpacing(40);
-		
+
 		flow = new FlowPane(Orientation.VERTICAL);
 		flow.setVgap(20);
 		flow.setHgap(20);
-		
+
 		exFlipCtrl = new StackPane();
-		
+
 		availableElements = new ArrayList<>();
 		initBaseBlockLayout();
 		initAttributeBlocks();
@@ -243,20 +243,20 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		initNotes();
 
 		restoreState();
-		
+
 		scroll = new ScrollPane(flow);
 		scroll.setFitToHeight(true);
-		
+
 		exFlipCtrl.getChildren().addAll(scroll);
 		content.getChildren().add(exFlipCtrl);
-		
+
 		setContent(content);
 	}
 
 	//-------------------------------------------------------------------
 	private void initBaseBlockLayout() {
 		HBox.setMargin(baseBlock, new Insets(40,0,20,0));
-		
+
 		content.getChildren().add(baseBlock);
 	}
 
@@ -276,20 +276,20 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		 */
 		Label title = new Label(uiResources.getString("label.attributecards"));
 		title.getStyleClass().add("section-head");
-		
+
 		Region spacing = new Region();
 		spacing.setPrefHeight(20);
 		VBox crdAttributes = new VBox();
 //		crdAttributes.setPrefWidth(300);
 		crdAttributes.getChildren().addAll(title, attrPrimary, spacing,attrSecondary);
-		
+
 		/*
 		 * FlipPanel
 		 */
 		flipAttr = new FlipControl(Orientation.VERTICAL, true);
 		flipAttr.getItems().addAll( btnAttributes, crdAttributes);
 		flipAttr.setId("Attributes");
-		
+
 		paneAttr = new AttentionPane(flipAttr);
 		paneAttr.setId("Attributes");
 		availableElements.add(paneAttr);
@@ -312,10 +312,10 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		 */
 		Label title = new Label(uiResources.getString("label.powers"));
 		title.getStyleClass().add("section-head");
-		
+
 		VBox crdPowers = new VBox();
 		crdPowers.getChildren().addAll(title, powers);
-		
+
 		/*
 		 * FlipPanel
 		 */
@@ -345,11 +345,11 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		 */
 		Label title = new Label(uiResources.getString("label.resources"));
 		title.getStyleClass().add("section-head");
-		
+
 		VBox crdResources = new VBox();
 //		crdPowersNResources.setPrefWidth(300);
 		crdResources.getChildren().addAll(title, resources);
-		
+
 		/*
 		 * FlipPanel
 		 */
@@ -379,11 +379,11 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		 */
 		Label title = new Label(uiResources.getString("label.culturelores"));
 		title.getStyleClass().add("section-head");
-		
+
 		VBox card = new VBox();
 //		crdPowersNResources.setPrefWidth(300);
 		card.getChildren().addAll(title, cultures);
-		
+
 		/*
 		 * FlipPanel
 		 */
@@ -413,11 +413,11 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		 */
 		Label title = new Label(uiResources.getString("label.languages"));
 		title.getStyleClass().add("section-head");
-		
+
 		VBox card = new VBox();
 //		crdPowersNResources.setPrefWidth(300);
 		card.getChildren().addAll(title, languages);
-		
+
 		/*
 		 * FlipPanel
 		 */
@@ -451,7 +451,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 //		crdNormalSkills.setPrefWidth(300);
 //		crdNormalSkills.setPrefHeight(400);
 		crdNormalSkills.getChildren().addAll(tNormal, skillNormal);
-		
+
 		/*
 		 * FlipPanel
 		 */
@@ -484,7 +484,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		VBox crdCombat = new VBox();
 //		crdCombat.setPrefWidth(300);
 		crdCombat.getChildren().addAll(tCombat, skillCombat);
-		
+
 		/*
 		 * FlipPanel
 		 */
@@ -516,7 +516,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		tMagic.getStyleClass().add("section-head");
 		VBox crdMagic = new VBox();
 		crdMagic.getChildren().addAll(tMagic, skillMagic);
-		
+
 		/*
 		 * FlipPanel
 		 */
@@ -547,7 +547,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		tSpells.getStyleClass().add("section-head");
 		VBox crdSpell = new VBox();
 		crdSpell.getChildren().addAll(tSpells, spells);
-		
+
 		/*
 		 * FlipPanel
 		 */
@@ -579,7 +579,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		label.getStyleClass().add("section-head");
 		VBox card = new VBox();
 		card.getChildren().addAll(label);
-		
+
 		/*
 		 * FlipPanel
 		 */
@@ -611,7 +611,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		label.getStyleClass().add("section-head");
 		VBox card = new VBox();
 		card.getChildren().addAll(label);
-		
+
 		/*
 		 * FlipPanel
 		 */
@@ -643,7 +643,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		label.getStyleClass().add("section-head");
 		VBox card = new VBox();
 		card.getChildren().addAll(label);
-		
+
 		/*
 		 * FlipPanel
 		 */
@@ -675,7 +675,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		label.getStyleClass().add("section-head");
 		VBox card = new VBox();
 		card.getChildren().addAll(label, notes);
-		
+
 		/*
 		 * FlipPanel
 		 */
@@ -770,19 +770,19 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		/* drag was detected, start a drag-and-drop gesture*/
         /* allow any transfer mode */
         Dragboard db = source.startDragAndDrop(TransferMode.ANY);
-        
+
         /* Put a string on a dragboard */
         ClipboardContent content = new ClipboardContent();
         content.putString(source.getId());
         logger.debug("Drag "+source.getId());
         db.setContent(content);
-        
+
         /* Drag image */
         WritableImage snapshot = source.snapshot(new SnapshotParameters(), null);
         logger.debug("Snapshot is "+snapshot);
         db.setDragView(snapshot);
-        
-        event.consume();	
+
+        event.consume();
     }
 
 	//-------------------------------------------------------------------
@@ -839,17 +839,17 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
         			break;
         		}
         	}
-        	
+
         	// Re-insert
         	int index = flow.getChildren().indexOf(target.getParent());
         	flow.getChildren().add(index, toMove);
         	saveState();
            success = true;
         }
-        /* let the source know whether the string was successfully 
+        /* let the source know whether the string was successfully
          * transferred and used */
         event.setDropCompleted(success);
-        
+
         event.consume();
 	}
 
@@ -869,11 +869,11 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 
 	//-------------------------------------------------------------------
 	private void restoreState() {
-		String value = CONFIG.get("charview.order", null);		
+		String value = CONFIG.get("charview.order", null);
 		logger.warn("TODO: restore "+value);
-		
+
 		List<Node> toShow = new ArrayList<Node>(availableElements);
-		
+
 		if (value!=null) {
 		StringTokenizer tok = new StringTokenizer(value);
 		while (tok.hasMoreTokens()) {
@@ -893,7 +893,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 //        				((FlipControl)node).flip();
         				if (node instanceof AttentionPane)
         					((FlipControl)((AttentionPane)node).getChild()).flip();
-        				else if (node instanceof FlipControl) 
+        				else if (node instanceof FlipControl)
         					((FlipControl)node).flip();
 //        				((FlipControl)node).flip();
         			}
@@ -903,12 +903,12 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
         	}
 		}
 		}
-		
+
 		// Append all elements not previously added
 		for (Node node : toShow) {
 			flow.getChildren().add(node);
 		}
-		
+
 	}
 
 	//-------------------------------------------------------------------
@@ -927,7 +927,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		flipEquipment.setOnMouseClicked(event -> openEquipment());
 		flipCompanions.setOnMouseClicked(event -> openCompanions());
 		flipNotes.setOnMouseClicked(event -> openNotes());
-		
+
 		/*
 		 * Drag and drop
 		 */
@@ -1014,7 +1014,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		flipNotes.setOnDragOver    (event -> dragOver(event));
 		flipNotes.setOnDragExited  (event -> dragExited(event));
 		flipNotes.setOnDragDropped (event -> dragDropped(event));
-		
+
 		baseBlock.viewProperty().addListener( (ov,o,n) -> {
 			if (n==View.DOCUMENT) {
 				exFlipCtrl.getChildren().clear(); exFlipCtrl.getChildren().add(charDocPane);
@@ -1036,7 +1036,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		paneCombat.setAttentionFlag(control.getSkillController().getToDos(SkillType.COMBAT).size()>0);
 		paneMagic.setAttentionFlag(control.getSkillController().getToDos(SkillType.MAGIC).size()>0);
 		paneSpells.setAttentionFlag(!control.getSpellController().getToDos().isEmpty());
-		
+
 		paneAttr.setAttentionToolTip(control.getAttributeController().getToDos());
 		panePowers.setAttentionToolTip(control.getPowerController().getToDos());
 		paneResources.setAttentionToolTip(control.getResourceController().getToDos());
@@ -1051,7 +1051,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		logger.debug("Show character "+model);
 		this.model = model;
 		this.handle= handle;
-		
+
 		setTitle(model.getName());
 
 		baseBlock.setData(model);
@@ -1060,7 +1060,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		 */
 		attrPrimary.setData(model);
 		attrSecondary.setData(model);
-		
+
 		powers.setData(model);
 		resources.setData(model);
 		cultures.setData(model);
@@ -1070,9 +1070,9 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		skillMagic.setData(model);
 		spells.setData(model);
 		notes.setData(model);
-		
+
 		updateAttentionFlags();
-		
+
 		charDocPane.setData(model);
 	}
 
@@ -1085,13 +1085,13 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 	public void startGeneration(SpliMoCharacter model) {
 		logger.debug("startGeneration "+model);
 		this.model = model;
-		
+
 		/*
 		 * Attributes
 		 */
 		attrPrimary.setData(model);
 		attrSecondary.setData(model);
-		
+
 		baseBlock.setData(model);
 		powers.setData(model);
 		resources.setData(model);
@@ -1101,9 +1101,9 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		skillCombat.setData(model);
 		skillMagic.setData(model);
 		spells.setData(model);
-		
+
 		charDocPane.setData(model);
-		
+
 		wizard = new CharGenWizardSpliMo(model, (SpliMoCharacterGenerator)control);
 		manager.show(wizard);
 		updateAttentionFlags();
@@ -1118,24 +1118,24 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 		// TODO Auto-generated method stub
 		logger.warn("CLOSE()");
 	}
-	
+
 	//-------------------------------------------------------------------
 	@Override
 	public boolean close(CloseType type) {
 		logger.info("close("+type+")");
-		saveState();	
+		saveState();
 		if (type==CloseType.CANCEL) {
 			if (mode==ViewMode.GENERATION) {
-				if (CloseType.NO == manager.showAlertAndCall(AlertType.CONFIRMATION, 
-								uiResources.getString("check.chargen.creation.abort.title"), 
-								uiResources.getString("check.chargen.creation.abort.text"))) 
+				if (CloseType.NO == manager.showAlertAndCall(AlertType.CONFIRMATION,
+								uiResources.getString("check.chargen.creation.abort.title"),
+								uiResources.getString("check.chargen.creation.abort.text")))
 				{
 					return false;
 				}
 			} else if (((CharacterLeveller)control).isAltered()) {
-				if (CloseType.NO == manager.showAlertAndCall(AlertType.CONFIRMATION, 
-								uiResources.getString("check.chargen.editing.abort.title"), 
-								uiResources.getString("check.chargen.editing.abort.text"))) 
+				if (CloseType.NO == manager.showAlertAndCall(AlertType.CONFIRMATION,
+								uiResources.getString("check.chargen.editing.abort.title"),
+								uiResources.getString("check.chargen.editing.abort.text")))
 				{
 					return false;
 				}
@@ -1144,8 +1144,8 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 			if (mode==ViewMode.GENERATION) {
 				SpliMoCharacterGenerator generator = (SpliMoCharacterGenerator)control;
 				if (!generator.hasEnoughData()) {
-					manager.showAlertAndCall(AlertType.ERROR, 
-							uiResources.getString("error.chargen.missingdata.title"), 
+					manager.showAlertAndCall(AlertType.ERROR,
+							uiResources.getString("error.chargen.missingdata.title"),
 							uiResources.getString("error.chargen.missingdata.text"));
 					return false;
 				}
@@ -1160,21 +1160,21 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 				 */
 				logger.debug("Add modifications to character log");
 				((CharacterLeveller)control).updateHistory();
-				
+
 				/*
 				 * 1. Call plugin to encode character
 				 * 2. Use character service to save character
 				 */
-				logger.debug("encode character "+model.getName());				
-				CommandResult result = CommandBus.fireCommand(this, CommandType.ENCODE, 
+				logger.debug("encode character "+model.getName());
+				CommandResult result = CommandBus.fireCommand(this, CommandType.ENCODE,
 						handle.getRuleIdentifier(),
 						model
 						);
 				if (!result.wasProcessed()) {
 					logger.error("Cannot save character, since encoding failed");
 					manager.showAlertAndCall(
-							AlertType.ERROR, 
-							"Das hätte nicht passieren dürfen", 
+							AlertType.ERROR,
+							"Das hätte nicht passieren dürfen",
 							"Es hat sich kein Plugin gefunden, welches das Kodieren von Charakteren dieses Systems erlaubt."
 					);
 				} else {
@@ -1188,9 +1188,9 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 						BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Failed saving character.\n"+e);
 					}
 				}
-				
+
 			}
-			
+
 			/*
 			 * Update portrait
 			 */
@@ -1217,23 +1217,23 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 				logger.error("Failed modifying portrait attachment",e);
 			}
 		}
-		
+
 		// Remove all listeners
 		logger.debug("Remove generation listener");
 		GenerationEventDispatcher.clear();
 		logger.info("-------------Closing "+getClass().getSimpleName()+"---------------------------------");
-		
+
 		return true;
 	}
-	
+
 	//-------------------------------------------------------------------
 	public void childClosed(ManagedScreen child, CloseType type) {
 		logger.debug("childClosed("+child+", "+type+") not overwritten");
-		
+
 		if (child instanceof GenerationEventListener) {
 			GenerationEventDispatcher.removeListener((GenerationEventListener) child);
 		}
-		
+
 		if (child==wizard) {
 			if (type==CloseType.FINISH) {
 				// Update dialog content
@@ -1287,7 +1287,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 			break;
 		default:
 		}
-		
+
 	}
 
 	//-------------------------------------------------------------------
