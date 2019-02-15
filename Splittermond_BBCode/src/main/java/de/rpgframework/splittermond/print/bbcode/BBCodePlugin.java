@@ -33,16 +33,16 @@ import de.rpgframework.print.PrintType;
  * This is the print plugin for the creation of bbcodes for a
  * {@link SpliMoCharacter}. This class registers itself to the
  * {@link CommandBus}.
- * 
+ *
  * @author frank.buettner
- * 
+ *
  */
 public class BBCodePlugin implements RulePlugin<SpliMoCharacter>, CommandBusListener {
-	
+
 	private static Logger logger = LogManager.getLogger(BBCodePlugin.class);
-	
+
 	private static Preferences usr = Preferences.userRoot().node("/org/prelle/splittermond/print");
-	ConfigOption<String> OPTION_PATH; 
+	ConfigOption<String> OPTION_PATH;
 
 	//-------------------------------------------------------------------
 	public BBCodePlugin() {
@@ -84,7 +84,7 @@ public class BBCodePlugin implements RulePlugin<SpliMoCharacter>, CommandBusList
 		}
 		ConfigContainer cfgBBCode = cfgSpliMo.createContainer("bbcode");
 		cfgBBCode.changePreferences(usr);
-		cfgBBCode.setResourceBundle( (PropertyResourceBundle)ResourceBundle.getBundle("i18n/splittermond/print_bbcode"));
+		cfgBBCode.setResourceBundle( (PropertyResourceBundle)ResourceBundle.getBundle("de/rpgframework/splittermond/print/bbcode/i18n/splittermond/print_bbcode"));
 		OPTION_PATH = cfgBBCode.createOption("path", ConfigOption.Type.DIRECTORY, System.getProperty("user.home"));
 	}
 
