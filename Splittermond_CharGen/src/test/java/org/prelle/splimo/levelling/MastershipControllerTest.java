@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.levelling;
 
@@ -17,6 +17,7 @@ import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
+import org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillSpecialization;
@@ -51,7 +52,8 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		SplitterMondCore.initialize(new SplittermondRules());
+		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
+		plugin.init();
 
 		skill = SplitterMondCore.getSkill("acrobatics");
 		EVADE1 = skill.getMastership("evade1");
@@ -102,7 +104,7 @@ public class MastershipControllerTest {
 	public void testIdleStateSkillChanged() {
 		logger.debug("------testIdleStateSkillChanged----------");
 		generator = new MastershipLevellerAndGenerator(0, model, new ArrayList<Modification>(), null, null);
-		
+
 		// Raise skill to 5 - should have no influence
 		model.getSkillValue(skill).setValue(5);
 		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.SKILL_CHANGED, skill, new int[]{4,5}));
@@ -116,7 +118,7 @@ public class MastershipControllerTest {
 		assertFalse(model.hasMastership(EVADE2));
 		assertFalse(model.hasMastership(LVL1_B));
 		assertFalse(model.hasMastership(LVL2_B));
-		
+
 		// Raise skill to 6 - should give one free selection
 		model.getSkillValue(skill).setValue(6);
 		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.SKILL_CHANGED, skill, new int[]{5,6}));
@@ -130,7 +132,7 @@ public class MastershipControllerTest {
 		assertFalse(model.hasMastership(EVADE2));
 		assertFalse(model.hasMastership(LVL1_B));
 		assertFalse(model.hasMastership(LVL2_B));
-		
+
 		// Raise skill to 9 - should give two free selections
 		model.getSkillValue(skill).setValue(9);
 		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.SKILL_CHANGED, skill, new int[]{8,9}));
@@ -144,7 +146,7 @@ public class MastershipControllerTest {
 		assertFalse(model.hasMastership(EVADE2));
 		assertFalse(model.hasMastership(LVL1_B));
 		assertFalse(model.hasMastership(LVL2_B));
-		
+
 		// Lower skill to 8 - should loose one free selection
 		model.getSkillValue(skill).setValue(6);
 		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.SKILL_CHANGED, skill, new int[]{9,8}));
@@ -174,10 +176,10 @@ public class MastershipControllerTest {
 		assertTrue(generator.isEditable(EVADE1));
 		assertTrue(generator.isEditable(LVL1_B));
 		assertFalse(generator.isEditable(EVADE2));
-		assertFalse(generator.isEditable(LVL2_B));		
+		assertFalse(generator.isEditable(LVL2_B));
 		assertTrue(generator.isEditable(special1, 1));
 	}
-	
+
 	//-------------------------------------------------------------------
 	@Test
 	public void testLevel1Free() {
@@ -194,14 +196,14 @@ public class MastershipControllerTest {
 		assertFalse(model.hasMastership(LVL1_B));
 		assertFalse(model.hasMastership(LVL2_B));
 		assertFalse(model.getSkillSpecializationLevel(special1)>0);
-		
+
 		assertTrue("Not undoable",generator.isEditable(EVADE1));
 		assertFalse(generator.isEditable(EVADE2));
 		assertFalse(generator.isEditable(LVL1_B));
 		assertFalse(generator.isEditable(LVL2_B));
 		assertFalse(generator.isEditable(special1, 1));
 
-		
+
 		// Revert selection
 		assertTrue(generator.deselect(EVADE1));
 		assertEquals(1, generator.getFreeMasterships());
@@ -212,10 +214,10 @@ public class MastershipControllerTest {
 		assertTrue(generator.isEditable(EVADE1));
 		assertTrue(generator.isEditable(LVL1_B));
 		assertFalse(generator.isEditable(EVADE2));
-		assertFalse(generator.isEditable(LVL2_B));		
+		assertFalse(generator.isEditable(LVL2_B));
 		assertTrue(generator.isEditable(special1, 1));
 	}
-	
+
 	//-------------------------------------------------------------------
 	@Test
 	public void testLevel1() {
@@ -225,17 +227,17 @@ public class MastershipControllerTest {
 		assertTrue(generator.isEditable(EVADE1));
 
 		MastershipModification mod = new MastershipModification(EVADE1);
-		
+
 		generator.addModification(mod);
 
 		assertTrue(model.hasMastership(EVADE1));
 		assertTrue(generator.isEditable(EVADE1));
-		
+
 		generator.removeModification(mod);
 		assertFalse(model.hasMastership(EVADE1));
 		assertTrue(generator.isEditable(EVADE1));
 	}
-	
+
 	//-------------------------------------------------------------------
 	@Test
 	public void testLevel1SpecialFree() {
@@ -252,14 +254,14 @@ public class MastershipControllerTest {
 		assertFalse(model.hasMastership(LVL1_B));
 		assertFalse(model.hasMastership(LVL2_B));
 		assertTrue(model.getSkillSpecializationLevel(special1)>0);
-		
+
 		assertTrue("Not undoable",generator.isEditable(special1, 1));
 		assertFalse(generator.isEditable(EVADE2));
 		assertFalse(generator.isEditable(LVL1_B));
 		assertFalse(generator.isEditable(LVL2_B));
 		assertFalse(generator.isEditable(EVADE1));
 
-		
+
 		// Revert selection
 		assertEquals(0, generator.getFreeMasterships(skill));
 		assertTrue(generator.deselect(special1, 1));
@@ -272,10 +274,10 @@ public class MastershipControllerTest {
 		assertTrue(generator.isEditable(EVADE1));
 		assertTrue(generator.isEditable(LVL1_B));
 		assertFalse(generator.isEditable(EVADE2));
-		assertFalse(generator.isEditable(LVL2_B));		
+		assertFalse(generator.isEditable(LVL2_B));
 		assertTrue(generator.isEditable(special1, 1));
 	}
-	
+
 	//-------------------------------------------------------------------
 	@Test
 	public void testLevel1Special() {
@@ -289,12 +291,12 @@ public class MastershipControllerTest {
 
 		assertEquals(1,model.getSkillSpecializationLevel(special1));
 		assertTrue(generator.isEditable(special1,1));
-		
+
 		generator.removeModification(mod);
 		assertEquals(0,model.getSkillSpecializationLevel(special1));
 		assertTrue(generator.isEditable(special1,1));
 	}
-	
+
 	//-------------------------------------------------------------------
 	@Test
 	public void testRaiseAndLowerSkill() {
@@ -311,14 +313,14 @@ public class MastershipControllerTest {
 		assertFalse(model.hasMastership(LVL1_B));
 		assertFalse(model.hasMastership(LVL2_B));
 		assertFalse(model.getSkillSpecializationLevel(special1)>0);
-		
+
 		assertTrue("Not undoable",generator.isEditable(EVADE1));
 		assertFalse(generator.isEditable(EVADE2));
 		assertFalse(generator.isEditable(LVL1_B));
 		assertFalse(generator.isEditable(LVL2_B));
 		assertFalse(generator.isEditable(special1, 1));
 
-		
+
 		// Revert selection
 		generator.deselect(EVADE1);
 		assertEquals(1, generator.getFreeMasterships(skill));
@@ -329,10 +331,10 @@ public class MastershipControllerTest {
 		assertTrue(generator.isEditable(EVADE1));
 		assertTrue(generator.isEditable(LVL1_B));
 		assertFalse(generator.isEditable(EVADE2));
-		assertFalse(generator.isEditable(LVL2_B));		
+		assertFalse(generator.isEditable(LVL2_B));
 		assertTrue(generator.isEditable(special1, 1));
 	}
-	
+
 	//-------------------------------------------------------------------
 	@Test
 	public void testLevel2Special() {
@@ -360,7 +362,7 @@ public class MastershipControllerTest {
 		assertTrue(generator.isEditable(special1, 2));
 		assertTrue(generator.isEditable(special1, 3));
 	}
-	
+
 	//-------------------------------------------------------------------
 	@Test
 	public void testLevel2Req() {
