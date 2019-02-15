@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.jfx;
 
@@ -46,17 +46,16 @@ import org.prelle.splimo.chargen.event.GenerationEventListener;
  * @author prelle
  *
  */
-public class SelectMastershipPage extends WizardPage implements ChangeListener<MultipleSelectionModel<Background>>, 
+public class SelectMastershipPage extends WizardPage implements ChangeListener<MultipleSelectionModel<Background>>,
 	GenerationEventListener,
 	EventHandler<ActionEvent> {
 
 	private final static Logger logger = Logger.getLogger("fxui");
 
-	private static PropertyResourceBundle resources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/rules");
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private MastershipGenerator charGen;
-	
+
 	private VBox content;
 	private TilePane focusareas;
 	private TabPane tabbed;
@@ -64,11 +63,11 @@ public class SelectMastershipPage extends WizardPage implements ChangeListener<M
 
 	//-------------------------------------------------------------------
 	public SelectMastershipPage(SkillGenerator chGen, Skill skill) {
-		super(String.format(uiResources.getString("wizard.selectMastership.title"), skill.getName()), 
+		super(String.format(uiResources.getString("wizard.selectMastership.title"), skill.getName()),
 				new Image(SelectMastershipPage.class.getClassLoader().getResourceAsStream("data/Splittermond_hochkant.png")));
 		this.charGen = chGen.getMastershipGenerator(skill);
 //		charGen.addListener(this);
-		
+
 		try {
 			setData();
 		} catch (IOException e) {
@@ -82,7 +81,7 @@ public class SelectMastershipPage extends WizardPage implements ChangeListener<M
 		for (SkillSpecialization focus : charGen.getSkill().getSpecializations()) {
 			SkillSpecializationSelector select = new SkillSpecializationSelector(focus);
 			focusareas.getChildren().add(select);
-//			
+//
 //			List<String> data = new ArrayList<String>();
 //			for (int i=1; i<=4; i++)
 //				data.add(focus.toString()+" "+i);
@@ -93,7 +92,7 @@ public class SelectMastershipPage extends WizardPage implements ChangeListener<M
 //			spinner.setPrefHeight(60);
 //			focusareas.getChildren().add(spinner);
 		}
-		
+
 		String file = "fxml/mastership."+charGen.getSkill().getId()+".fxml";
 		FXMLLoader loader = new FXMLLoader();
 		loader.setResources(SplitterMondCore.getI18nResources());
@@ -112,7 +111,7 @@ public class SelectMastershipPage extends WizardPage implements ChangeListener<M
 				common.setContent(reqGrid);
 			} else
 				logger.warn("No FXML for common combat masterships");
-			
+
 			logger.debug("---Load special------");
 			in = ClassLoader.getSystemResourceAsStream(file);
 			if (in!=null) {
@@ -137,7 +136,7 @@ public class SelectMastershipPage extends WizardPage implements ChangeListener<M
 				common.setContent(reqGrid);
 			} else
 				logger.warn("No FXML for common magic masterships");
-			
+
 			logger.debug("---Load special------");
 			in = ClassLoader.getSystemResourceAsStream(file);
 			if (in!=null) {
@@ -161,7 +160,7 @@ public class SelectMastershipPage extends WizardPage implements ChangeListener<M
 			} else
 				logger.warn("Missing FXML: "+file);
 		}
-		
+
 		/*
 		 * Select button listener
 		 */
@@ -197,7 +196,7 @@ public class SelectMastershipPage extends WizardPage implements ChangeListener<M
 			MultipleSelectionModel<Background> newModel) {
 		// TODO Auto-generated method stub
 //		Background newBackground = newModel.getSelectedItem();
-//		
+//
 //		logger.info("Background now "+newBackground);
 //		this.nextButton.setDisable(newBackground==null);
 //
@@ -226,7 +225,7 @@ public class SelectMastershipPage extends WizardPage implements ChangeListener<M
 
 		focusareas = new TilePane(Orientation.HORIZONTAL, 5, 10);
 		focusareas.setAlignment(Pos.CENTER_LEFT);
-		
+
 		Text label = TextBuilder.create().textOrigin(VPos.BOTTOM).rotate(-90).text(resources.getString("mastership.focus")).build();
 		label.setStyle("-fx-font-size:small");
 		GridPane row0 = new GridPane();
@@ -235,12 +234,12 @@ public class SelectMastershipPage extends WizardPage implements ChangeListener<M
 		row0.setGridLinesVisible(true);
 		row0.add(label, 0, 0);
 		row0.add(focusareas, 1, 0);
-		
+
 //		ScrollPane scroll = new ScrollPane();
 //		scroll.setFitToHeight(true);
 //		scroll.setPrefHeight(40);
 //		scroll.setContent(focusareas);
-		
+
 		content = new VBox(10);
 		content.setAlignment(Pos.TOP_LEFT);
 		VBox.setVgrow(tabbed, Priority.ALWAYS);
@@ -249,7 +248,7 @@ public class SelectMastershipPage extends WizardPage implements ChangeListener<M
 		content.setFillWidth(true);
 		return content;
 	}
-	
+
 	//-------------------------------------------------------------------
 	/**
 	 * @see org.prelle.splimo.chargen.jfx.WizardPage#nextPage()

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.jfx;
 
@@ -49,11 +49,10 @@ public class SelectMastershipDialog extends Pane implements ChangeListener<Multi
 
 	private final static Logger logger = Logger.getLogger("fxui");
 
-	private static PropertyResourceBundle resources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/rules");
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private MastershipGenerator charGen;
-	
+
 	private VBox content;
 	private TilePane focusareas;
 	private TabPane tabbed;
@@ -66,7 +65,7 @@ public class SelectMastershipDialog extends Pane implements ChangeListener<Multi
 		getChildren().add(content);
 		this.charGen = chGen;
 		charGen.addListener(this);
-		
+
 		try {
 			setData();
 		} catch (IOException e) {
@@ -80,7 +79,7 @@ public class SelectMastershipDialog extends Pane implements ChangeListener<Multi
 		for (SkillSpecialization focus : charGen.getSkill().getSpecializations()) {
 			SkillSpecializationSelector select = new SkillSpecializationSelector(focus);
 			focusareas.getChildren().add(select);
-//			
+//
 //			List<String> data = new ArrayList<String>();
 //			for (int i=1; i<=4; i++)
 //				data.add(focus.toString()+" "+i);
@@ -91,7 +90,7 @@ public class SelectMastershipDialog extends Pane implements ChangeListener<Multi
 //			spinner.setPrefHeight(60);
 //			focusareas.getChildren().add(spinner);
 		}
-		
+
 		String file = "fxml/mastership."+charGen.getSkill().getId()+".fxml";
 		FXMLLoader loader = new FXMLLoader();
 		loader.setResources(SplitterMondCore.getI18nResources());
@@ -110,7 +109,7 @@ public class SelectMastershipDialog extends Pane implements ChangeListener<Multi
 				common.setContent(reqGrid);
 			} else
 				logger.warn("No FXML for common combat masterships");
-			
+
 			logger.debug("---Load special------");
 			in = ClassLoader.getSystemResourceAsStream(file);
 			if (in!=null) {
@@ -135,7 +134,7 @@ public class SelectMastershipDialog extends Pane implements ChangeListener<Multi
 				common.setContent(reqGrid);
 			} else
 				logger.warn("No FXML for common magic masterships");
-			
+
 			logger.debug("---Load special------");
 			in = ClassLoader.getSystemResourceAsStream(file);
 			if (in!=null) {
@@ -159,7 +158,7 @@ public class SelectMastershipDialog extends Pane implements ChangeListener<Multi
 			} else
 				logger.warn("Missing FXML: "+file);
 		}
-		
+
 	}
 
 	//-------------------------------------------------------------------
@@ -189,7 +188,7 @@ public class SelectMastershipDialog extends Pane implements ChangeListener<Multi
 			MultipleSelectionModel<Background> newModel) {
 		// TODO Auto-generated method stub
 //		Background newBackground = newModel.getSelectedItem();
-//		
+//
 //		logger.info("Background now "+newBackground);
 //		this.nextButton.setDisable(newBackground==null);
 //
@@ -214,7 +213,7 @@ public class SelectMastershipDialog extends Pane implements ChangeListener<Multi
 
 		focusareas = new TilePane(Orientation.HORIZONTAL, 5, 10);
 		focusareas.setAlignment(Pos.CENTER_LEFT);
-		
+
 		Text label = TextBuilder.create().textOrigin(VPos.BOTTOM).rotate(-90).text(resources.getString("mastership.focus")).build();
 		label.setStyle("-fx-font-size:small");
 		GridPane row0 = new GridPane();
@@ -223,18 +222,18 @@ public class SelectMastershipDialog extends Pane implements ChangeListener<Multi
 		row0.setGridLinesVisible(true);
 		row0.add(label, 0, 0);
 		row0.add(focusareas, 1, 0);
-		
+
 //		ScrollPane scroll = new ScrollPane();
 //		scroll.setFitToHeight(true);
 //		scroll.setPrefHeight(40);
 //		scroll.setContent(focusareas);
-		
+
 		ok    = new Button(uiResources.getString("button.ok"));
 		ok.setOnAction(this);
 		HBox buttonBox = new HBox(10);
 		buttonBox.setAlignment(Pos.CENTER);
 		buttonBox.getChildren().add(ok);
-		
+
 		content = new VBox(10);
 		content.setAlignment(Pos.TOP_LEFT);
 		VBox.setVgrow(tabbed, Priority.ALWAYS);
@@ -255,7 +254,7 @@ public class SelectMastershipDialog extends Pane implements ChangeListener<Multi
 			this.getScene().getWindow().hide();
 			return;
 		}
-		
+
 		ToggleButton mButton = (ToggleButton)event.getSource();
 		logger.debug("Clicked on "+mButton.getId());
 		MastershipSelection select = charGen.getSelection(mButton.getId());

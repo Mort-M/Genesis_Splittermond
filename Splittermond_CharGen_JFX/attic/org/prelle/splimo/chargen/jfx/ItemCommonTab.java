@@ -20,11 +20,11 @@ import javafx.scene.layout.GridPane;
 //-------------------------------------------------------------------
 class ItemCommonTab extends GridPane {
 
-	private final static ResourceBundle res = ResourceBundle.getBundle("i18n/splimo-chargen");
+	private final static ResourceBundle res = SpliMoCharGenJFXConstants.UI;
 
 	private CarriedItem model;
 	private ItemController control;
-	
+
 	private TextField customName;
 	private Node load;
 	private Node robust;
@@ -32,14 +32,14 @@ class ItemCommonTab extends GridPane {
 	private Label price;
 	private Label avail;
 	private QualityEffectPane quality;
-	
+
 	//-------------------------------------------------------------------
 	public ItemCommonTab() {
 		initComponents();
 		initLayout();
 		initInteractivity();
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void initComponents() {
 		if (Utils.supports(org.prelle.splimo.Feature.MODIFY_EQUIPMENT)) {
@@ -50,19 +50,19 @@ class ItemCommonTab extends GridPane {
 			load = new Label();
 			robust = new Label();
 		}
-		
+
 		complex = new Label();
 		price   = new Label();
 		avail   = new Label();
 		quality = new QualityEffectPane();
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void initLayout() {
 		this.setVgap(5);
 		this.setHgap(15);
 		this.setPadding(new Insets(3));
-		
+
 		Label lblName   = new Label(res.getString("label.name"));
 		Label lblLoad   = new Label(ItemAttribute.LOAD.getName());
 		Label lblRobust = new Label(ItemAttribute.RIGIDITY.getName());
@@ -75,7 +75,7 @@ class ItemCommonTab extends GridPane {
 		lblComplex.getStyleClass().add("text-small-subheader");
 		lblPrice.getStyleClass().add("text-small-subheader");
 		lblAvail.getStyleClass().add("text-small-subheader");
-		
+
 		if (Utils.supports(org.prelle.splimo.Feature.MODIFY_EQUIPMENT)) {
 			add(lblName   , 0, 0);
 			add(customName, 1, 0);
@@ -92,9 +92,9 @@ class ItemCommonTab extends GridPane {
 		add(avail     , 1, 5);
 		if (Utils.supports(org.prelle.splimo.Feature.MODIFY_EQUIPMENT))
 			add(quality   , 0, 6, 2,1);
-		
+
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
 		if (Utils.supports(org.prelle.splimo.Feature.MODIFY_EQUIPMENT)) {
@@ -104,12 +104,12 @@ class ItemCommonTab extends GridPane {
 			((SkillField)robust).dec.setOnAction(new EventHandler<ActionEvent>() {public void handle(ActionEvent ev) {control.decrease(ItemAttribute.RIGIDITY);}});
 		}
 	}
-	
+
 	//-------------------------------------------------------------------
 	public void setData(CarriedItem data, ItemController control) {
 		this.model = data;
 		this.control = control;
-		
+
 		if (Utils.supports(org.prelle.splimo.Feature.MODIFY_EQUIPMENT)) {
 			customName.setText(data.getName());
 			((SkillField)load).setText(String.valueOf(model.getLoad()));
@@ -118,7 +118,7 @@ class ItemCommonTab extends GridPane {
 			((Label)load).setText(String.valueOf(model.getLoad()));
 			((Label)robust).setText(String.valueOf(model.getRigidity()));
 		}
-		
+
 		complex.setText(data.getItem().getComplexity() != null ? data.getItem().getComplexity().getName() : "keine");
 		avail.setText(data.getAvailability().getName());
 		price.setText(String.valueOf(data.getPrice()) + " T");
@@ -147,7 +147,7 @@ class ItemCommonTab extends GridPane {
 			((Label)load).setText(String.valueOf(model.getLoad()));
 			((Label)robust).setText(String.valueOf(model.getRigidity()));
 		}
-		
+
 		complex.setText(model.getItem().getComplexity() != null ? model.getItem().getComplexity().getName() : "keine");
 		avail.setText(model.getAvailability().getName());
 		price.setText(String.valueOf(model.getPrice()) + " T");
@@ -162,5 +162,5 @@ class ItemCommonTab extends GridPane {
 		}
 		quality.updateContent();
 	}
-	
+
 }

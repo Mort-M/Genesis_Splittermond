@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.jfx;
 
@@ -62,7 +62,7 @@ import jfxtras.scene.control.ListSpinner;
  */
 public class MagicEffectPane extends VBox implements EventHandler<ActionEvent> {
 
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private ItemController control;
 	private CarriedItem model;
@@ -111,7 +111,7 @@ public class MagicEffectPane extends VBox implements EventHandler<ActionEvent> {
 				return null;
 			}
 		});
-		
+
 		add = new Button(uiResources.getString("button.add"));
 		HBox addLine = new HBox(5);
 		addLine.getChildren().addAll(addChoice,add);
@@ -148,7 +148,7 @@ public class MagicEffectPane extends VBox implements EventHandler<ActionEvent> {
 		contextMenu = new ContextMenu();
 		contextMenu.setSkin(new ContextMenuSkin(contextMenu));
 		contextMenu.getSkin().getNode().setEffect(new DropShadow());
-		contextMenu.getItems().addAll(remove);		
+		contextMenu.getItems().addAll(remove);
 	}
 
 	//-------------------------------------------------------------------
@@ -179,7 +179,7 @@ public class MagicEffectPane extends VBox implements EventHandler<ActionEvent> {
 	private void initInteractivity() {
 		add.setOnAction(this);
 		add.setDisable(true);
-		
+
 		addChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Modification>() {
 			public void changed(ObservableValue<? extends Modification> item,
 					Modification arg1, Modification newVal) {
@@ -244,9 +244,9 @@ public class MagicEffectPane extends VBox implements EventHandler<ActionEvent> {
 				SpellValue spellVal = dia.getSelection();
 				if (spellVal==null)
 					return;
-				
+
 				((SpellModification)mod).setSpell(spellVal);
-				
+
 			}
 
 			control.addModification(mod);
@@ -276,7 +276,7 @@ class MagicEffectEditingCell extends TableCell<Modification, Object> {
 					Boolean arg1, Boolean arg2) {
 				MagicEffectEditingCell.this.changed(arg0, arg1, arg2);
 			}});
-		
+
 		box = new ListSpinner<>(-2, 6, 1);
 		box.valueProperty().addListener(new ChangeListener<Integer>() {
 			public void changed(ObservableValue<? extends Integer> arg0,
@@ -297,19 +297,19 @@ class MagicEffectEditingCell extends TableCell<Modification, Object> {
 	protected void updateItem(Object item, boolean empty) {
 		super.updateItem(item, empty);
 
-		
+
 		if (item==null || empty || getTableRow()==null) {
 			this.setGraphic(null);
 			return;
 		}
-		
+
 		mod = (Modification) getTableRow().getItem();
 		if (mod==null)
 			return;
-		
+
 		if (mod instanceof AttributeModification)
 			box.valueProperty().set(  ((AttributeModification)mod).getValue() );
-		
+
 		if (item instanceof Number)
 			this.setGraphic(box);
 		else {
@@ -343,32 +343,32 @@ class MagicEffectEditingCell extends TableCell<Modification, Object> {
 
 class SpellValueDialog extends VBox {
 
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
-	
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
+
 	private SpellValue selected;
 	private ItemController control;
 
 	private ChoiceBox<Skill> school;
 	private ChoiceBox<Spell> spell;
 	private Button ok, cancel;
-	
+
 	//-------------------------------------------------------------------
 	public SpellValueDialog(ItemController ctrl) {
 		super(10);
 		this.setAlignment(Pos.CENTER);
 		this.control = ctrl;
-		
+
 		Label title = new Label(uiResources.getString("dialog.embedspell.title"));
 		title.setAlignment(Pos.CENTER);
 		title.setMaxWidth(Double.MAX_VALUE);
 		title.getStyleClass().add("wizard-heading");
 		title.getStyleClass().add("title");
-		
-		
+
+
 		school = new ChoiceBox<Skill>();
 		school.getItems().addAll(SplitterMondCore.getSkills(SkillType.MAGIC));
 		school.setMaxWidth(Double.MAX_VALUE);
-		
+
 		spell = new ChoiceBox<Spell>();
 		spell.setMaxWidth(Double.MAX_VALUE);
 		spell.setConverter(new StringConverter<Spell>() {
@@ -379,24 +379,24 @@ class SpellValueDialog extends VBox {
 				return spell.getName();
 			}
 		});
-		
+
 		TilePane buttonBox = new TilePane();
 		buttonBox.setHgap(10);
 		buttonBox.setAlignment(Pos.CENTER);
 		buttonBox.getStyleClass().add("wizard-buttonbar");
 //		buttonBox.setMaxWidth(Double.MAX_VALUE);
-		
+
 		ok = new Button(uiResources.getString("button.ok"));
 		ok.setMaxWidth(Double.MAX_VALUE);
 		cancel = new Button(uiResources.getString("button.cancel"));
 		cancel.setMaxWidth(Double.MAX_VALUE);
 		buttonBox.getChildren().addAll(ok, cancel);
-		
+
 		getChildren().addAll(title, school, spell, buttonBox);
-		
+
 		VBox.setMargin(school, new Insets(3));
 		VBox.setMargin(spell , new Insets(5));
-		
+
 		/*
 		 * Interactivity
 		 */
@@ -427,11 +427,11 @@ class SpellValueDialog extends VBox {
 				getScene().getWindow().hide();
 			}
 		});
-		
+
 
 		school.getSelectionModel().select(0);
 	}
-	
+
 	//-------------------------------------------------------------------
 	void setOnClose() {
 		getScene().getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
@@ -441,7 +441,7 @@ class SpellValueDialog extends VBox {
 			}
 		});
 	}
-	
+
 	//-------------------------------------------------------------------
 	public SpellValue getSelection() {
 		return selected;

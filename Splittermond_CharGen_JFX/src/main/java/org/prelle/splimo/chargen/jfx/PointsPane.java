@@ -1,10 +1,6 @@
-/**
- * 
- */
 package org.prelle.splimo.chargen.jfx;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.charctrl.Generator;
@@ -25,7 +21,7 @@ import javafx.scene.layout.VBox;
  */
 public class PointsPane extends VBox {
 
-	private static PropertyResourceBundle SPLIMO_CHARGEN = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle SPLIMO_CHARGEN = SpliMoCharGenJFXConstants.UI;
 
 	private ViewMode mode;
 	private Label lblGPLeft;
@@ -33,10 +29,10 @@ public class PointsPane extends VBox {
 	private Label lblExpInvested;
 	private Label lblLevel;
 	private VBox  extra;
-	
+
 	private SpliMoCharacter model;
 	private Generator generator;
-	
+
 	//-------------------------------------------------------------------
 	/**
 	 */
@@ -52,15 +48,15 @@ public class PointsPane extends VBox {
 		lblExpLeft     = new Label("?");
 		lblExpInvested = new Label("?");
 		lblLevel       = new Label("?");
-		
+
 		lblGPLeft     .getStyleClass().add("text-header");
 		lblExpLeft    .getStyleClass().add("text-header");
 		lblExpInvested.getStyleClass().add("text-subheader");
 		lblLevel     .getStyleClass().add("text-subheader");
-		
+
 		extra = new VBox();
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void initLayout() {
 		setAlignment(Pos.TOP_CENTER);
@@ -73,7 +69,7 @@ public class PointsPane extends VBox {
 		Label heaExPLeft    = new Label(SPLIMO_CHARGEN.getString("label.ep.free"));
 		Label heaEPInvested = new Label(SPLIMO_CHARGEN.getString("label.ep.used"));
 		Label heaLevel      = new Label(SPLIMO_CHARGEN.getString("label.level"));
-		
+
 		GridPane grid = new GridPane();
 		grid.setMaxWidth(Double.MAX_VALUE);
 		grid.setHgap(10);
@@ -95,17 +91,17 @@ public class PointsPane extends VBox {
 		GridPane.setHalignment(lblGPLeft, HPos.CENTER);
 		GridPane.setHalignment(heaGPLeft, HPos.CENTER);
 		GridPane.setMargin(heaExPLeft, new Insets(-10,0,0,0));
-		
+
 		getChildren().add(grid);
 
-		
+
 		if (mode!=ViewMode.GENERATION) {
 			lblGPLeft.setVisible(false);
 			heaGPLeft.setVisible(false);
 			grid.getChildren().remove(lblGPLeft);
 			grid.getChildren().remove(heaGPLeft);
 		}
-		
+
 		Region spacing = new Region();
 		spacing.setMaxHeight(Double.MAX_VALUE);
 		VBox.setVgrow(spacing, Priority.ALWAYS);
