@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.skills;
 
@@ -9,7 +9,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
 import org.prelle.rpgframework.jfx.AttentionPane;
 import org.prelle.splimo.MastershipReference;
@@ -19,6 +18,7 @@ import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.charctrl.SkillController;
 import org.prelle.splimo.chargen.jfx.SkillField;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXUtil;
 
 import javafx.event.ActionEvent;
@@ -39,7 +39,7 @@ import javafx.scene.layout.Priority;
  */
 public class ToDoSkillValueListViewGridPaneSkin extends SkinBase<ToDoSkillValueListView> {
 
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private Label headName, headAtt1, headAtt2, headPoints, headMod, headValue, headMastery;
 	private Map<SkillValue, Label> names;
@@ -51,7 +51,7 @@ public class ToDoSkillValueListViewGridPaneSkin extends SkinBase<ToDoSkillValueL
 	private Map<SkillValue, Label> finalValue;
 	private Map<SkillValue, Label> mastery;
 	private Map<SkillValue, AttentionPane> attentions;
-	
+
 	private GridPane layout;
 
 	//-------------------------------------------------------------------
@@ -76,7 +76,7 @@ public class ToDoSkillValueListViewGridPaneSkin extends SkinBase<ToDoSkillValueL
 		mastery      = new HashMap<SkillValue, Label>();
 		masteryButtons = new HashMap<SkillValue,Button>();
 		attentions   = new HashMap<SkillValue, AttentionPane>();
-		
+
 		headName   = new Label(uiResources.getString("label.skills"));
 		headAtt1   = new Label(uiResources.getString("label.attribute1.short"));
 		headAtt2   = new Label(uiResources.getString("label.attribute2.short"));
@@ -129,21 +129,21 @@ public class ToDoSkillValueListViewGridPaneSkin extends SkinBase<ToDoSkillValueL
 		headMod.setStyle("-fx-min-width: 3em");
 		headValue.setStyle("-fx-min-width: 3em");
 		headMastery.setStyle("-fx-min-width: 20em");
-		
+
 		getChildren().add(layout);
 	}
 
 	//-------------------------------------------------------------------
 	private void initData() {
 		layout.getChildren().retainAll(headName, headAtt1, headAtt2, headPoints, headMod, headValue, headMastery);
-		
+
 		SpliMoCharacter   model = getSkinnable().getModel();
 		SkillController control = getSkinnable().getSkillController();
 		int y=0;
 		for (SkillValue sVal : model.getSkills(getSkinnable().getSkillType())) {
 			Skill skill = sVal.getSkill();
 			y++;
-			
+
 			// Field name
 			Label lblName    = new Label(sVal.getName());
 			lblName.setContentDisplay(ContentDisplay.RIGHT);
@@ -158,7 +158,7 @@ public class ToDoSkillValueListViewGridPaneSkin extends SkinBase<ToDoSkillValueL
 				if (skill.getAttribute2()!=null)
 					att2Val.setText(skill.getAttribute2().getShortName());
 //			}
-			
+
 			// Invested points
 			int points = sVal.getValue();
 			SkillField value = new SkillField(String.valueOf(points));
@@ -185,12 +185,12 @@ public class ToDoSkillValueListViewGridPaneSkin extends SkinBase<ToDoSkillValueL
 				modVal.setText(null);
 				modVal.setTooltip(null);
 			}
-			
+
 			// Final value
 			if (skill.getAttribute1()!=null) modValue += model.getAttribute(skill.getAttribute1()).getValue();
 			if (skill.getAttribute2()!=null) modValue += model.getAttribute(skill.getAttribute2()).getValue();
 			Label finVal= new Label(String.valueOf(modValue));
-			
+
 			// Masteries
 			StringBuffer buf = new StringBuffer();
 			for (SkillSpecialization spec : skill.getSpecializations()) {
@@ -235,7 +235,7 @@ public class ToDoSkillValueListViewGridPaneSkin extends SkinBase<ToDoSkillValueL
 //			if (withMaster) {
 				master.getStyleClass().addAll(lineStyle, "border-rightleft");
 //			}
-			
+
 			/*
 			 * Interactivity
 			 */
@@ -247,7 +247,7 @@ public class ToDoSkillValueListViewGridPaneSkin extends SkinBase<ToDoSkillValueL
 //			att2Val.setOnMouseEntered(event -> highlightedSkill.set(sVal));
 //			button.setOnAction(this);
 
-			
+
 			value.setUserData(skill);
 			modVal.setUserData(skill);
 			finVal.setUserData(skill);
@@ -295,7 +295,7 @@ public class ToDoSkillValueListViewGridPaneSkin extends SkinBase<ToDoSkillValueL
 //			if (withMaster) {
 				layout.add(mastBox   , 6, y);
 //			}
-			
+
 			// Memorize
 			names.put(sVal, lblName);
 			attrib1.put(sVal, att1Val);
@@ -305,7 +305,7 @@ public class ToDoSkillValueListViewGridPaneSkin extends SkinBase<ToDoSkillValueL
 			finalValue.put(sVal, finVal);
 			distributed.put(sVal, value);
 			modification.put(sVal, modVal);
-			
+
 		}
 	}
 

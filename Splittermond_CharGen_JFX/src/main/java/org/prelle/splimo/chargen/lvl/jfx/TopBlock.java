@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.lvl.jfx;
 
@@ -8,7 +8,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -55,7 +54,7 @@ public class TopBlock extends HBox implements GenerationEventListener {
 	 */
 	public TopBlock(CultureLoreController cultCtrl, LanguageController langCtrl) {
 		super(10);
-		
+
 		doInit(cultCtrl, langCtrl);
 		doLayout();
 	}
@@ -68,7 +67,7 @@ public class TopBlock extends HBox implements GenerationEventListener {
 
 		VBox box = new VBox(10);
 		box.getChildren().addAll(base, detail);
-		
+
 		HBox.setHgrow(moon, Priority.ALWAYS);
 		getChildren().addAll(box, moon);
 	}
@@ -80,7 +79,7 @@ public class TopBlock extends HBox implements GenerationEventListener {
 	//-------------------------------------------------------------------
 	public void setContent(SpliMoCharacter model, MastershipController control) {
 		GenerationEventDispatcher.addListener(this);
-		
+
 		base.setContent(model);
 		moon.setContent(model);
 		detail.setContent(model);
@@ -104,13 +103,13 @@ public class TopBlock extends HBox implements GenerationEventListener {
 			break;
 		}
 	}
-	
+
 }
 
 class BaseDataBlock extends GridPane implements GenerationEventListener {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
-	
+
 	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private Label name_l, education_l, culture_l, race_l, background_l, gender_l;
@@ -166,7 +165,7 @@ class BaseDataBlock extends GridPane implements GenerationEventListener {
 		weight_l.getStyleClass().add("table-head");
 		skin_l.getStyleClass().add("table-head");
 		birthplace_l.getStyleClass().add("table-head");
-		
+
 		name_l.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		education_l.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		culture_l.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
@@ -179,8 +178,8 @@ class BaseDataBlock extends GridPane implements GenerationEventListener {
 		weight_l.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		skin_l.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		birthplace_l.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
-		
-		
+
+
 		name_tf      = new Label();
 		education_cb = new Label();
 		culture_cb   = new  Label();
@@ -194,7 +193,7 @@ class BaseDataBlock extends GridPane implements GenerationEventListener {
 		size_tf = new Label();
 		weight_tf = new Label();
 		birthplace_tf = new Label();
-		
+
 		name_tf.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		education_cb.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		culture_cb.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
@@ -213,43 +212,43 @@ class BaseDataBlock extends GridPane implements GenerationEventListener {
 	//-------------------------------------------------------------------
 	private void doLayout() {
 		this.setHgap(2);
-		
+
 		this.add(name_l      , 0,0);
 		this.add(name_tf     , 1,0, 4,1);
-		
+
 		this.add(education_l , 0,2);
 		this.add(education_cb, 1,2, 4,1);
-		
+
 		this.add(culture_l   , 0,3);
 		this.add(culture_cb  , 1,3, 2,1);
 		this.add(background_l, 3,3);
 		this.add(background_cb, 4,3, 2,1);
-		
+
 		this.add(race_l      , 0,4);
 		this.add(race_cb     , 1,4, 2,1);
 		this.add(gender_l    , 3,4);
 //		this.add(gender_cb   , 4,4, 2,1);
 		this.add(gender      , 4,4, 2,1);
-		
+
 		this.add(hair_l      , 0,5);
 		this.add(hair_tf     , 1,5);
 //		this.add(rollHair    , 2,5);
 		this.add(size_l      , 3,5);
 		this.add(size_tf     , 4,5);
 //		this.add(rollSize    , 5,5);
-		
+
 		this.add(eyes_l      , 0,6);
 		this.add(eyes_tf     , 1,6);
 //		this.add(rollEyes    , 2,6);
 		this.add(weight_l    , 3,6);
 		this.add(weight_tf   , 4,6);
 //		this.add(rollWeight  , 5,6);
-		
+
 		this.add(skin_l      , 0,7);
 		this.add(skin_tf     , 1,7, 2,1);
 		this.add(birthplace_l, 3,7);
 		this.add(birthplace_tf, 4,7, 2,1);
-		
+
 		// Lines
 //		name_tf.getStyleClass().add("even");
 //		education_cb.getStyleClass().add("border-all");
@@ -268,7 +267,7 @@ class BaseDataBlock extends GridPane implements GenerationEventListener {
 	//-------------------------------------------------------------------
 	public void setContent(SpliMoCharacter charac) {
 		this.model = charac;
-		
+
 		name_tf.setText(charac.getName());
 //		education_cb.getSelectionModel().select(charac.getEducation());
 		if (model.getRace()!=null)
@@ -327,16 +326,16 @@ class BaseDataBlock extends GridPane implements GenerationEventListener {
 			break;
 		}
 	}
-	
+
 }
 
 
 class DetailsBlock extends VBox implements GenerationEventListener {
-		
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private SpliMoCharacter model;
-	
+
 	private Label weaknesses_l, languages_l, cultlore_l;
 	private TextField weakLine1, weakLine2, weakLine3;
 	private LanguagePane langPane;
@@ -367,7 +366,7 @@ class DetailsBlock extends VBox implements GenerationEventListener {
 		weakLine1.getStyleClass().add("even");
 		weakLine2.getStyleClass().add("odd");
 		weakLine3.getStyleClass().add("even");
-		
+
 		weaknesses_l.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		languages_l.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		cultlore_l.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
@@ -377,7 +376,7 @@ class DetailsBlock extends VBox implements GenerationEventListener {
 //		cultPane.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		langPane.setStyle("-fx-max-height: 12em");
 		cultPane.setStyle("-fx-max-height: 12em");
-		
+
 		weakLine1.setDisable(true);
 		weakLine2.setDisable(true);
 		weakLine3.setDisable(true);
@@ -393,18 +392,18 @@ class DetailsBlock extends VBox implements GenerationEventListener {
 		left.getStyleClass().add("bordered");
 		HBox ltr = new HBox(20);
 		ltr.getChildren().addAll(left, right);
-		
+
 		GridPane weak = new GridPane();
 		GridPane.setHgrow(weakLine1, Priority.ALWAYS);
 		GridPane.setHgrow(weakLine2, Priority.ALWAYS);
 		GridPane.setHgrow(weakLine3, Priority.ALWAYS);
-		
+
 		weak.add(weaknesses_l, 0,0);
 		weak.add(weakLine1   , 1,0);
 		weak.add(weakLine2   , 0,1, 2,1);
 //		weak.add(weakLine3   , 0,2, 2,1);
 		weak.getStyleClass().add("bordered");
-		
+
 		/* Highest layout */
 		setSpacing(10);
 		getChildren().addAll(ltr);
@@ -415,7 +414,7 @@ class DetailsBlock extends VBox implements GenerationEventListener {
 	//-------------------------------------------------------------------
 	public void setContent(SpliMoCharacter charac) {
 		this.model = charac;
-		
+
 		cultPane.setData(model);
 		langPane.setData(model);
 	}
@@ -426,19 +425,19 @@ class DetailsBlock extends VBox implements GenerationEventListener {
 	 */
 	@Override
 	public void handleGenerationEvent(GenerationEvent event) {
-		if (event.getType()!=GenerationEventType.BASE_DATA_CHANGED) 
+		if (event.getType()!=GenerationEventType.BASE_DATA_CHANGED)
 			return;
-		
+
 //		level.setText(Integer.toString(model.getLevel()));
 	}
-	
+
 }
 
 
 class MoonsignBlock extends GridPane implements GenerationEventListener {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
-	
+
 	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private SpliMoCharacter model;
@@ -473,14 +472,14 @@ class MoonsignBlock extends GridPane implements GenerationEventListener {
 		}
 		portrait     = new ImageView();
 		portrait.setFitHeight(200);
-		
+
 		// Edit portrait
 //		Image img = new Image(ClassLoader.getSystemClassLoader().getResourceAsStream("images/appbar.page.edit.png"));
 //		ImageView iView = new ImageView(img);
 //		iView.setFitWidth(24);
 //		iView.setFitHeight(24);
 		editPortrait = new Button(null, new FontIcon("\uE104"));
-		
+
 		// Delete portrait
 //		img = new Image(ClassLoader.getSystemClassLoader().getResourceAsStream("images/appbar.delete.png"));
 //		iView = new ImageView(img);
@@ -495,7 +494,7 @@ class MoonsignBlock extends GridPane implements GenerationEventListener {
 		moonsign.setPrefWidth(250);
 		portrait.getStyleClass().add("border-all");
 //		editPortrait.setStyle("-fx-background-color: dark");
-		
+
 		moonsign_l.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		splinter_l.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		portrait_l.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
@@ -506,30 +505,30 @@ class MoonsignBlock extends GridPane implements GenerationEventListener {
 	//-------------------------------------------------------------------
 	private void doLayout() {
 		setVgap(10);
-		
+
 		HBox portraitTitleLine = new HBox();
 		HBox.setHgrow(portrait_l, Priority.ALWAYS);
 		portraitTitleLine.setMaxWidth(Double.MAX_VALUE);
 		portraitTitleLine.getChildren().addAll(portrait_l, deletePortrait,editPortrait);
-		
+
 		VBox portraitBox = new VBox();
 		portraitBox.getChildren().addAll(portraitTitleLine, portrait);
 		portraitBox.getStyleClass().add("bordered");
-		
+
 		GridPane.setVgrow(portrait, Priority.ALWAYS);
 		GridPane.setHgrow(portrait_l, Priority.NEVER);
 		GridPane.setVgrow(portrait_l, Priority.NEVER);
 		GridPane.setHgrow(moonsign, Priority.ALWAYS);
-		
+
 		this.add(moonsign_l  , 0,0);
 		this.add(moonsign    , 1,0, splinter.length,1);
 		this.add(splinter_l  , 0,1);
 		for (int i=0; i<splinter.length; i++)
 			this.add(splinter[i], i+1,1);
-		
+
 		this.add(portraitBox , 0,2, splinter.length+1,1);
-		
-		
+
+
 	}
 
 	//-------------------------------------------------------------------
@@ -566,13 +565,13 @@ class MoonsignBlock extends GridPane implements GenerationEventListener {
 		});
 
 	}
-	
+
 	//-------------------------------------------------------------------
 	public void setContent(SpliMoCharacter charac) {
 		this.model = charac;
 		if (charac.getSplinter()!=null)
 			moonsign.setText(charac.getSplinter().getName());
-		
+
 		splinter[0].setText(Integer.toString(charac.getAttribute(Attribute.SPLINTER).getValue()));
 		if (charac.getImage()!=null) {
 			Image image = new Image(new ByteArrayInputStream(charac.getImage()));
@@ -596,5 +595,5 @@ class MoonsignBlock extends GridPane implements GenerationEventListener {
 			}
 		}
 	}
-	
+
 }

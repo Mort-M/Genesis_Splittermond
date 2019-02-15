@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.creatures;
 
@@ -24,6 +24,7 @@ import javafx.scene.text.Text;
 
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.SplitterTools;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.CreatureWeapon;
 import org.prelle.splimo.creature.Lifeform;
 import org.prelle.splimo.items.Feature;
@@ -34,11 +35,11 @@ import org.prelle.splimo.items.ItemAttribute;
  *
  */
 public class WeaponViewPane extends GridPane {
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private Lifeform model;
-	
+
 	private Map<CreatureWeapon, List<Node>> labelsByWeapon;
 
 	//-------------------------------------------------------------------
@@ -50,7 +51,7 @@ public class WeaponViewPane extends GridPane {
 	//--------------------------------------------------------------------
 	private void initComponents() {
 		labelsByWeapon = new HashMap<>();
-		
+
 //		tfInput = new HashMap<>();
 //		for (Attribute attr : Attribute.values()) {
 //			Label tf = new Label();
@@ -89,7 +90,7 @@ public class WeaponViewPane extends GridPane {
 		headSpeed.setAlignment(Pos.CENTER);
 		headINI.setAlignment(Pos.CENTER);
 		headFeature.setAlignment(Pos.CENTER_LEFT);
-		
+
 		this.add(headWeapon, 0, 0);
 		this.add(headValue , 1, 0);
 		this.add(headDamage, 2, 0);
@@ -102,7 +103,7 @@ public class WeaponViewPane extends GridPane {
 	private void removeWeapon(CreatureWeapon weapon) {
 		if (!labelsByWeapon.containsKey(weapon))
 			return;
-		
+
 		for (Node lbl : labelsByWeapon.get(weapon)) {
 			getChildren().remove(lbl);
 		}
@@ -116,7 +117,7 @@ public class WeaponViewPane extends GridPane {
 		Label lblDamage = new Label(SplitterTools.getWeaponDamageString(weapon.getDamage()));
 		Label lblSpeed  = new Label(weapon.getSpeed()+" "+UI.getString("label.ticks"));
 		Label lblINI    = new Label(weapon.getInitiative()+"-"+UI.getString("label.1d6"));
-		
+
 		FlowPane features = new FlowPane();
 		for (Iterator<Feature> it = weapon.getFeatures().iterator(); it.hasNext(); ) {
 			Feature feat = it.next();
@@ -129,8 +130,8 @@ public class WeaponViewPane extends GridPane {
 		// Memorize labels
 		List<Node> memorize = Arrays.asList(lblWeapon, lblValue, lblDamage, lblSpeed, lblINI, features);
 		labelsByWeapon.put(weapon, memorize);
-		
-		
+
+
 		lblWeapon.setStyle("-fx-min-width: 6em");
 		lblValue .setStyle("-fx-min-width: 3em");
 		lblDamage.setStyle("-fx-min-width: 4em");
@@ -144,23 +145,23 @@ public class WeaponViewPane extends GridPane {
 		lblSpeed.setAlignment(Pos.CENTER);
 		lblINI.setAlignment(Pos.CENTER);
 		features.setAlignment(Pos.CENTER_LEFT);
-		
+
 		this.add(lblWeapon, 0, line);
 		this.add(lblValue , 1, line);
 		this.add(lblDamage, 2, line);
 		this.add(lblSpeed , 3, line);
 		this.add(lblINI   , 4, line);
 		this.add(features , 5, line);
-		
+
 		GridPane.setHalignment(lblWeapon, HPos.LEFT);
 		GridPane.setHalignment(lblValue , HPos.CENTER);
 		GridPane.setHalignment(lblDamage, HPos.CENTER);
 		GridPane.setHalignment(lblSpeed , HPos.CENTER);
-		
+
 		GridPane.setHgrow(lblWeapon, Priority.SOMETIMES);
 		GridPane.setHgrow(features, Priority.ALWAYS);
-		
-		
+
+
 		GridPane.setMargin(lblWeapon, new Insets(0,5,0,0));
 		GridPane.setMargin(lblValue , new Insets(0,3,0,3));
 		GridPane.setMargin(lblDamage , new Insets(0,3,0,3));
@@ -173,7 +174,7 @@ public class WeaponViewPane extends GridPane {
 		// Clear all
 		for (CreatureWeapon tmp : new ArrayList<>(labelsByWeapon.keySet()))
 			removeWeapon(tmp);
-		
+
 		// Add anew
 		int line = 0;
 		for (CreatureWeapon weapon : model.getCreatureWeapons()) {
@@ -187,5 +188,5 @@ public class WeaponViewPane extends GridPane {
 		this.model = model;
 		refresh();
 	}
-	
+
 }

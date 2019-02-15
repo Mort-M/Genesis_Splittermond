@@ -9,6 +9,7 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
@@ -22,15 +23,15 @@ import javafx.scene.text.Text;
 import javafx.util.Callback;
 
 public class WeaknessPane extends VBox implements GenerationEventListener {
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private SpliMoCharacter model;
 
 	private TextField tfAdd;
 	private Button btnAdd;
 	private ListView<String> table;
-	
+
 	//--------------------------------------------------------------------
 	/**
 	 * @param withNotes Display a 'Notes' column
@@ -40,11 +41,11 @@ public class WeaknessPane extends VBox implements GenerationEventListener {
 		doInit();
 		initInteractivity();
 	}
-	
+
 	//--------------------------------------------------------------------
 	public void setData(SpliMoCharacter model) {
 		this.model = model;
-		
+
 		updateContent();
 	}
 
@@ -56,7 +57,7 @@ public class WeaknessPane extends VBox implements GenerationEventListener {
 		HBox addLine = new HBox(5);
 		addLine.getChildren().addAll(tfAdd,btnAdd);
 		HBox.setHgrow(tfAdd, Priority.ALWAYS);
-		
+
 		table = new ListView<String>();
         table.setPlaceholder(new Text(UI.getString("placeholder.weakness")));
         table.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
@@ -69,12 +70,12 @@ public class WeaknessPane extends VBox implements GenerationEventListener {
 		ScrollPane scroll = new ScrollPane(table);
 		scroll.setFitToWidth(true);
 		scroll.setFitToHeight(true);
-		
+
 		// Add to layout
 		super.getChildren().addAll(addLine, scroll);
 		super.setSpacing(5);
 		VBox.setVgrow(table, Priority.SOMETIMES);
-		
+
 	}
 
 	//-------------------------------------------------------------------
@@ -88,7 +89,7 @@ public class WeaknessPane extends VBox implements GenerationEventListener {
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.WEAKNESS_ADDED, toAdd));
 			});
 		btnAdd.setDisable(true);
-		
+
 		// Enable/Disable button depending on textfield content
 		tfAdd.textProperty().addListener( (ov,o,n) -> {
 			btnAdd.setDisable( n==null || n.length()==0);
@@ -105,7 +106,7 @@ public class WeaknessPane extends VBox implements GenerationEventListener {
 	//-------------------------------------------------------------------
 	private void updateContent() {
 		table.getItems().clear();
-		table.getItems().addAll(this.model.getWeaknesses());		
+		table.getItems().addAll(this.model.getWeaknesses());
 	}
 
 	//-------------------------------------------------------------------
@@ -137,18 +138,18 @@ public class WeaknessPane extends VBox implements GenerationEventListener {
 }
 
 class WeaknessCell extends ListCell<String> {
-	
+
 	private WeaknessPane pane;
-	
+
 	//-------------------------------------------------------------------
 	public WeaknessCell(WeaknessPane model) {
 		this.pane = model;
 	}
-	
+
 	//-------------------------------------------------------------------
 	public void updateItem(String item, boolean empty) {
 		super.updateItem(item, empty);
-		
+
 		if (empty) {
 			setGraphic(null);
 			setText(null);

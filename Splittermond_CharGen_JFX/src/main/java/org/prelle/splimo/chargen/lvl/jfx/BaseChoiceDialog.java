@@ -2,6 +2,7 @@ package org.prelle.splimo.chargen.lvl.jfx;
 
 import java.util.ResourceBundle;
 
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.modifications.ModificationChoice;
 
 import de.rpgframework.genericrpg.modification.Modification;
@@ -12,8 +13,8 @@ import javafx.scene.layout.VBox;
 
 public abstract class BaseChoiceDialog extends VBox {
 
-	protected static final ResourceBundle res = ResourceBundle.getBundle("i18n/ui");
-	
+	protected static final ResourceBundle res = SpliMoCharGenJFXConstants.UI;
+
 	protected ModificationChoice choice;
 	protected Button ok;
 

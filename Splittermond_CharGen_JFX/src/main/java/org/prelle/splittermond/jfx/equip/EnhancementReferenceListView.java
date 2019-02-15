@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.equip;
 
@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,6 +24,7 @@ import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Enhancement;
 import org.prelle.splimo.items.EnhancementReference;
 import org.prelle.splimo.items.ItemTemplate;
@@ -64,22 +64,22 @@ import javafx.util.StringConverter;
 public class EnhancementReferenceListView extends ListView<EnhancementReference> {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenConstants.BASE_LOGGER_NAME);
-	
+
 	private static PropertyResourceBundle UI = SpliMoCharGenConstants.RES;
 
 	private NewItemController control;
 	private ScreenManagerProvider managerProvider;
-	
+
 	//--------------------------------------------------------------------
 	public EnhancementReferenceListView(NewItemController control, ScreenManagerProvider provider) {
 		this.control = control;
 		this.managerProvider = provider;
-		
+
 		initComponents();
 		initValueFactories();
 		initInteractivity();
 	}
-	
+
 	//--------------------------------------------------------------------
 	public void updateItemController(NewItemController control) {
 		this.control = control;
@@ -106,7 +106,7 @@ public class EnhancementReferenceListView extends ListView<EnhancementReference>
 		setOnDragDropped(event -> dragDropped(event));
 		setOnDragOver(event -> dragOver(event));
 	}
-	
+
 	//-------------------------------------------------------------------
 	private SkillSpecialization selectSkillAndSpecialization() {
 		logger.debug("request skill and specialization");
@@ -132,7 +132,7 @@ public class EnhancementReferenceListView extends ListView<EnhancementReference>
 		});
 		// If there already is a skill assigned, use it
 		if (template.getSkill()!=null) {
-			cbSkills.getSelectionModel().select(template.getSkill());				
+			cbSkills.getSelectionModel().select(template.getSkill());
 		} else {
 			cbSkills.getSelectionModel().select(0);
 		}
@@ -153,14 +153,14 @@ public class EnhancementReferenceListView extends ListView<EnhancementReference>
 		CloseType close = manager.showAlertAndCall(AlertType.QUESTION, UI.getString("dialog.selectSpecializationEnhancement"), pane);
 		if (close!=CloseType.OK)
 			return null;
-		
+
 		if (cbSpecs.getValue().getType()==SkillSpecializationType.SPELLTYPE) {
 			logger.debug("Special treatment for spell types");
 		  return new SkillSpecialization(cbSkills.getValue(), cbSpecs.getValue().getType(), cbSkills.getValue().getId()+"/"+cbSpecs.getValue().getId());
 		}
 		return cbSpecs.getValue();
 	}
-	
+
 	//-------------------------------------------------------------------
 	private SkillSpecialization selectSpecialization() {
 		logger.debug("selectSpecialization");
@@ -180,14 +180,14 @@ public class EnhancementReferenceListView extends ListView<EnhancementReference>
 			}
 			return spec;
 		}
-		
+
 		/*
 		 * Check if the item itself has a specialization
 		 */
 		if (template.getSpecialization()!=null) {
 			return template.getSpecialization();
 		}
-		
+
 		/*
 		 * If there is a skill given, let user choose
 		 */
@@ -199,9 +199,9 @@ public class EnhancementReferenceListView extends ListView<EnhancementReference>
 				public SkillSpecialization fromString(String string) { return null; }
 			});
 			cbSpecs.getSelectionModel().select(0);
-			
+
 			Label lbSpecial = new Label(String.format(UI.getString("dialog.selectSpecializationEnhancement.desc"), template.getSkill().getName()));
-			
+
 			VBox pane = new VBox(10);
 			pane.getChildren().addAll(lbSpecial, cbSpecs);
 			ScreenManager manager = managerProvider.getScreenManager();
@@ -209,20 +209,20 @@ public class EnhancementReferenceListView extends ListView<EnhancementReference>
 			if (close!=CloseType.OK)
 				return null;
 			return cbSpecs.getValue();
-		}		
-		
+		}
+
 		logger.warn("Don't know how to select specialization for "+template);
 		ScreenManager manager = managerProvider.getScreenManager();
 		manager.showAlertAndCall(AlertType.NOTIFICATION, UI.getString("error.not-possible"), UI.getString("error.no-skill-assigned"));
 
 		return null;
 	}
-	
+
 	//-------------------------------------------------------------------
 	private SpellValue selectSpell(int level) {
 		logger.debug("select spell");
 		ItemTemplate template = control.getItem().getItem();
-		
+
 		/*
 		 * Build a list of all spells that are of the requested level in at least one school
 		 */
@@ -239,8 +239,8 @@ public class EnhancementReferenceListView extends ListView<EnhancementReference>
 		}
 		// Sort that list
 		Collections.sort(options);
-		
-		
+
+
 		/*
 		 * If there is a skill given, let user choose
 		 */
@@ -262,7 +262,7 @@ public class EnhancementReferenceListView extends ListView<EnhancementReference>
 			return null;
 		return cbSpecs.getValue();
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void dragDropped(DragEvent event) {
        /* if there is a string data on dragboard, read it and use it */
@@ -323,10 +323,10 @@ public class EnhancementReferenceListView extends ListView<EnhancementReference>
         	} else
         		logger.debug("Cannot add "+res);
         }
-        /* let the source know whether the string was successfully 
+        /* let the source know whether the string was successfully
          * transferred and used */
         event.setDropCompleted(success);
-        
+
         event.consume();
 	}
 
@@ -343,28 +343,28 @@ public class EnhancementReferenceListView extends ListView<EnhancementReference>
 
 class EnhancementReferenceListCell extends ListCell<EnhancementReference> {
 
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
-	
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
+
 	private transient EnhancementReference data;
-	
+
 	private NewItemController charGen;
 	private CheckBox checkBox;
 	private HBox layout;
 	private Label name;
-	
+
 	//-------------------------------------------------------------------
 	public EnhancementReferenceListCell(NewItemController charGen) {
 		this.charGen = charGen;
-		
+
 		layout  = new HBox();
 		checkBox= new CheckBox();
 		name    = new Label();
 		layout.getChildren().addAll(checkBox, name);
 		layout.getStyleClass().add("content");
-		
+
 		name.getStyleClass().add("base");
 		checkBox.getStyleClass().add("text-subheader");
-		
+
 
 		setPrefWidth(250);
 		checkBox.selectedProperty().addListener(new ChangeListener<Boolean>(){
@@ -372,7 +372,7 @@ class EnhancementReferenceListCell extends ListCell<EnhancementReference> {
 					Boolean arg1, Boolean arg2) {
 				EnhancementReferenceListCell.this.changed(arg0, arg1, arg2);
 			}});
-		
+
 
 		setAlignment(Pos.CENTER);
 		this.setOnDragDetected(event -> dragStarted(event));
@@ -384,23 +384,23 @@ class EnhancementReferenceListCell extends ListCell<EnhancementReference> {
 //			return;
 		if (data==null)
 			return;
-		
+
 		Node source = (Node) event.getSource();
 
 		/* drag was detected, start a drag-and-drop gesture*/
         /* allow any transfer mode */
         Dragboard db = source.startDragAndDrop(TransferMode.ANY);
-        
+
         /* Put a string on a dragboard */
         ClipboardContent content = new ClipboardContent();
         content.putString(data.getID());
         db.setContent(content);
-        
+
         /* Drag image */
         WritableImage snapshot = source.snapshot(new SnapshotParameters(), null);
         db.setDragView(snapshot);
-        
-        event.consume();	
+
+        event.consume();
     }
 
 	//-------------------------------------------------------------------
@@ -410,7 +410,7 @@ class EnhancementReferenceListCell extends ListCell<EnhancementReference> {
 	@Override
 	protected void updateItem(EnhancementReference item, boolean empty) {
 		super.updateItem(item, empty);
-		
+
 		if (empty) {
 			setGraphic(null);
 			name.setText(null);
@@ -420,12 +420,12 @@ class EnhancementReferenceListCell extends ListCell<EnhancementReference> {
 			data = item;
 			checkBox.setSelected(true);
 			checkBox.setDisable(!charGen.canBeRemoved(data));
-			
+
 			setGraphic(layout);
 			name.setText(item.getName());
-			if (item.getSkillSpecialization()!=null) 
+			if (item.getSkillSpecialization()!=null)
 				name.setText(item.getSkillSpecialization().getSkill().getName()+"/"+item.getSkillSpecialization().getName()+" +1");
-			if (item.getSpellValue()!=null) 
+			if (item.getSpellValue()!=null)
 				name.setText(String.format(UI.getString("screen.enhancements.embedspell.cell"), item.getSpellValue().getSpell().getName()));
 //			if (charGen.canBeDeselected(item)) {
 //				layout.getStyleClass().clear();

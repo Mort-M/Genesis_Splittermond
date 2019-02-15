@@ -1,7 +1,8 @@
 package org.prelle.splimo.chargen.gen.jfx;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -21,7 +22,7 @@ import javafx.scene.layout.VBox;
 /** basic wizard page class */
 abstract class WizardPage extends HBox {
 
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private Label     heading;
 	private ImageView sidebar;
@@ -64,11 +65,11 @@ abstract class WizardPage extends HBox {
 		getStyleClass().add("wizardpage");
 		setSpacing(0);
 		setId(title_s);
-		
+
 		/*
 		 * Heading
 		 */
-		heading = new Label(title_s);		
+		heading = new Label(title_s);
 		heading.getStyleClass().add("wizard-heading");
 		heading.setMaxWidth(Double.MAX_VALUE);
 
@@ -77,19 +78,19 @@ abstract class WizardPage extends HBox {
 		 */
 		content = getContent();
 		content.getStyleClass().add("wizard-content");
-		
+
 		/*
 		 * Context
 		 */
 		context = getContextMenu();
 		if (context!=null)
 			context.getStyleClass().add("wizard-context");
-		
+
 		/*
 		 * Button Bar
 		 */
 		buttonBar = getButtons();
-		
+
 		/*
 		 * Side Bar
 		 */
@@ -99,15 +100,15 @@ abstract class WizardPage extends HBox {
 		if (image!=null)
 			sidebar.setImage(image);
 		leftColumn.getChildren().add(sidebar);
-		
-		/* 
+
+		/*
 		 * Now layout the right column
 		 */
 		VBox rightColumn = new VBox();
 		rightColumn.setAlignment(Pos.TOP_LEFT);
 		HBox.setHgrow(rightColumn, Priority.ALWAYS);
 		HBox.setHgrow(heading, Priority.SOMETIMES);
-		
+
 		Region spring = new Region();
 		VBox.setVgrow(heading  , Priority.NEVER);
 		VBox.setVgrow(spring   , Priority.ALWAYS);

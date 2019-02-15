@@ -1,12 +1,20 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.attributes;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.prelle.splimo.Attribute;
+import org.prelle.splimo.AttributeValue;
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
@@ -16,21 +24,13 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 
-import org.prelle.splimo.Attribute;
-import org.prelle.splimo.AttributeValue;
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.event.GenerationEventType;
-
 /**
  * @author prelle
  *
  */
 public class AttributeCard extends GridPane implements GenerationEventListener {
-	
-	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+
+	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private SpliMoCharacter     model;
 
@@ -44,9 +44,9 @@ public class AttributeCard extends GridPane implements GenerationEventListener {
 	public AttributeCard(Attribute[] attribs) {
 		attributes = attribs;
 		finalValue = new HashMap<Attribute, Label>();
-		
+
 		getStyleClass().addAll("table","chardata-tile");
-		
+
 		initComponents();
 		initLayout();
 		GenerationEventDispatcher.addListener(this);
@@ -58,12 +58,12 @@ public class AttributeCard extends GridPane implements GenerationEventListener {
 		headValue  = new Label(uiResources.getString("label.value"));
 		headAttr.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		headValue.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
-		
+
 		headAttr.getStyleClass().add("table-head");
 		headValue.getStyleClass().add("table-head");
-		
+
 		headValue.setAlignment(Pos.CENTER);
-		
+
 		for (final Attribute attr : attributes) {
 			Label finVal= new Label();
 			finalValue  .put(attr, finVal);
@@ -73,17 +73,17 @@ public class AttributeCard extends GridPane implements GenerationEventListener {
 	//-------------------------------------------------------------------
 	private void initLayout() {
 		this.getStyleClass().add("text-body");
-		
+
 		this.add(headAttr  , 0,0, 2,1);
 		this.add(headValue , 2,0);
-		
+
 		int y=0;
 		for (final Attribute attr : attributes) {
 			y++;
 			Label longName  = new Label(attr.getName());
 			Label shortName = new Label(attr.getShortName());
 			Label finVal    = finalValue.get(attr);
-			
+
 			String lineStyle = ((y%2)==0)?"even":"odd";
 			longName.getStyleClass().addAll(lineStyle);
 			shortName.getStyleClass().add(lineStyle);
@@ -92,12 +92,12 @@ public class AttributeCard extends GridPane implements GenerationEventListener {
 			longName.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 			shortName.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 			finVal.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
-			
+
 			this.add(longName , 0, y);
 			this.add(shortName, 1, y);
 			this.add(  finalValue.get(attr), 2, y);
 		}
-		
+
 		// Column alignment
 		ObservableList<ColumnConstraints> constraints = getColumnConstraints();
 		ColumnConstraints maxGrow = new ColumnConstraints();
@@ -119,7 +119,7 @@ public class AttributeCard extends GridPane implements GenerationEventListener {
 		// TODO Auto-generated method stub
 		if (event.getType()!=GenerationEventType.ATTRIBUTE_CHANGED)
 			return;
-		
+
 		updateContent();
 	}
 

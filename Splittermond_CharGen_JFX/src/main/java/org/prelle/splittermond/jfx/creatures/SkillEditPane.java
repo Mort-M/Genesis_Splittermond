@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.creatures;
 
@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.creature.Creature;
@@ -33,18 +34,18 @@ import javafx.util.StringConverter;
  *
  */
 public class SkillEditPane extends VBox {
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private Creature model;
 	private SkillViewPane viewPane;
-	
+
 	private ChoiceBox<Skill> cbSkills;
 	private Button btnAdd;
 	private GridPane grid;
 	private List<Label> headings;
 	private Map<SkillValue, Label> pointsMap;
-	
+
 	//--------------------------------------------------------------------
 	public SkillEditPane(SkillViewPane view) {
 		this.viewPane = view;
@@ -62,11 +63,11 @@ public class SkillEditPane extends VBox {
 			public Skill fromString(String string) { return null;}
 		});
 		btnAdd = new Button("+");
-		
+
 		grid   = new GridPane();
 		headings   = new ArrayList<>();
-		
-		
+
+
 	}
 
 	//--------------------------------------------------------------------
@@ -79,19 +80,19 @@ public class SkillEditPane extends VBox {
 		Label headPoints= new Label(UI.getString("label.points"));
 		Label headValue = new Label(UI.getString("label.value"));
 		Label headAction= new Label(" ");
-		
+
 		headSkill .getStyleClass().add("table-head");
 		headAttr  .getStyleClass().add("table-head");
 		headPoints.getStyleClass().add("table-head");
 		headValue .getStyleClass().add("table-head");
 		headAction.getStyleClass().add("table-head");
-		
+
 		headSkill .setMaxWidth(Double.MAX_VALUE);
 		headAttr  .setMaxWidth(Double.MAX_VALUE);
 		headPoints.setMaxWidth(Double.MAX_VALUE);
 		headValue .setMaxWidth(Double.MAX_VALUE);
 		headAction.setMaxWidth(Double.MAX_VALUE);
-		
+
 		grid.add(headSkill , 0, 0);
 		grid.add(headAttr  , 1, 0);
 		grid.add(headPoints, 2, 0);
@@ -99,15 +100,15 @@ public class SkillEditPane extends VBox {
 		grid.add(headAction, 4, 0);
 		headings.addAll(Arrays.asList(headSkill, headAttr, headPoints, headValue, headAction));
 		grid.setVgap(2);
-		
+
 		ScrollPane scroll = new ScrollPane(grid);
 		VBox content = new VBox();
 		content.getChildren().addAll(scroll, addLine);
 		content.getStyleClass().add("content");
-		
+
 		Label heading = new Label(UI.getString("label.skills"));
 		heading.getStyleClass().add("text-subheader");
-		
+
 		getChildren().addAll(heading, content);
 		setSpacing(10);
 	}
@@ -142,7 +143,7 @@ public class SkillEditPane extends VBox {
 		if (skill.getType()!=SkillType.COMBAT) {
 			attrVal = model.getAttribute(skill.getAttribute1()).getValue() + model.getAttribute(skill.getAttribute2()).getValue();
 		}
-		
+
 		Label lblName = new Label(skill.getName());
 		Label lblAttr = new Label(String.valueOf(attrVal));
 		lblAttr.setMaxWidth(Double.MAX_VALUE);
@@ -161,15 +162,15 @@ public class SkillEditPane extends VBox {
 		tfValue.textProperty().addListener( (ov,o,n) -> textChanged(tfValue,o,n));
 		tfValue.setOnAction(event -> textFinalized(tfValue, tfValue.getText()));
 		tfValue.focusedProperty().addListener( (ov,o,n) -> {
-			if (!n) 
+			if (!n)
 				textFinalized(tfValue, tfValue.getText());
 			});
-		
+
 		grid.add(lblName , 0, y);
 		grid.add(lblAttr , 1, y);
 		grid.add(tfPoints, 2, y);
 		grid.add(tfValue , 3, y);
-		
+
 		if (!Creature.DEFAULT_SKILL_NAMES.contains(skill.getId())) {
 			Button btnRem = new Button(UI.getString("button.delete"));
 			btnRem.setUserData(sVal);
@@ -182,7 +183,7 @@ public class SkillEditPane extends VBox {
 	public void textChanged(TextField input, String oldValue, String newValue) {
 		SkillValue sVal = (SkillValue)input.getUserData();
 		Skill skill = sVal.getSkill();
-		
+
 		try {
 			int finVal = Integer.parseInt(newValue);
 			int attrVal = model.getAttribute(skill.getAttribute1()).getValue() + model.getAttribute(skill.getAttribute2()).getValue();
@@ -202,7 +203,7 @@ public class SkillEditPane extends VBox {
 		SkillValue sVal = (SkillValue)input.getUserData();
 		Skill skill = sVal.getSkill();
 		int attrVal = model.getAttribute(skill.getAttribute1()).getValue() + model.getAttribute(skill.getAttribute2()).getValue();
-		
+
 		try {
 			int finVal = Integer.parseInt(newValue);
 			int points  = finVal - attrVal;
@@ -222,13 +223,13 @@ public class SkillEditPane extends VBox {
 	//--------------------------------------------------------------------
 	void refresh() {
 		grid.getChildren().retainAll(headings);
-		
+
 		int y=0;
 		for (SkillValue value : model.getSkills()) {
 			y++;
 			addSkill(value, y);
 		}
-		
+
 		/*
 		 * All non-combat skills to choose from
 		 */

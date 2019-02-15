@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.lvl.jfx;
 
@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
 import org.prelle.splimo.Resource;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.RewardImpl;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.ResourceController;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.modifications.ResourceModification;
 import org.prelle.splittermond.jfx.resources.ResourcePane;
 
@@ -36,29 +36,29 @@ import javafx.scene.layout.VBox;
  *
  */
 public class RewardDialog extends VBox {
-	
-	private static PropertyResourceBundle res = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
-	
+
+	private static PropertyResourceBundle res = SpliMoCharGenJFXConstants.UI;
+
 	private TextField title;
 	private GridPane form;
 	private TextField exp;
 	private ResourcePane resources;
-	
+
 	private TilePane buttonBar;
 	private Button ok;
 	private Button cancel;
-	
+
 	private RewardImpl result;
-	
+
 	//--------------------------------------------------------------------
 	public RewardDialog() {
 		initComponents();
 		initLayout();
 		initInteractivity();
-		
+
 		validateInput();
 	}
-	
+
 	//--------------------------------------------------------------------
 	private void initComponents() {
 		/*
@@ -69,15 +69,15 @@ public class RewardDialog extends VBox {
 		Label res_l = new Label(res.getString("label.resource"));
 		res_l.setMaxHeight(Double.MAX_VALUE);
 		res_l.setAlignment(Pos.TOP_LEFT);
-		title = new TextField(); 
-		exp = new TextField(); 
+		title = new TextField();
+		exp = new TextField();
 		exp.setMaxWidth(100);
 		resources = new ResourcePane(new RewardResourceController(), true, false);
 		resources.setPrefHeight(150);
-		
+
 //		exp_l.getStyleClass().add("wizard-heading");
 //		res_l.getStyleClass().add("wizard-heading");
-		
+
 		form = new GridPane();
 		form.add(title_l  , 0, 0);
 		form.add(title    , 1, 0);
@@ -87,7 +87,7 @@ public class RewardDialog extends VBox {
 		form.add(resources, 1, 2);
 		form.setVgap(5);
 		form.setHgap(5);
-		
+
 		/*
 		 * Buttons
 		 */
@@ -98,13 +98,13 @@ public class RewardDialog extends VBox {
 		buttonBar.getStyleClass().add("wizard-buttonbar");
 		buttonBar.setAlignment(Pos.CENTER);
 	}
-	
+
 	//--------------------------------------------------------------------
 	private void initLayout() {
 		form.setPadding(new Insets(3));
 		getChildren().addAll(form, buttonBar);
 	}
-	
+
 	//--------------------------------------------------------------------
 	private void initInteractivity() {
 		title.textProperty().addListener(new ChangeListener<String>(){
@@ -117,7 +117,7 @@ public class RewardDialog extends VBox {
 			public void changed(ObservableValue<? extends String> arg0, String arg1, String newVal) {
 				validateInput();
 			}});
-		
+
 		/*
 		 * Apply
 		 */
@@ -141,7 +141,7 @@ public class RewardDialog extends VBox {
 					// Add to reward
 					result.addModification(mod);
 				}
-				
+
 				getScene().getWindow().hide();
 			}
 		});
@@ -155,21 +155,21 @@ public class RewardDialog extends VBox {
 			}
 		});
 	}
-	
+
 	//--------------------------------------------------------------------
 	private void validateInput() {
 		boolean enabled = true;
-		if (title.getLength()<=3) { 
+		if (title.getLength()<=3) {
 			enabled = false;
 		}
-		if (exp.getLength()>0) { 
+		if (exp.getLength()>0) {
 			try {
 				Integer.parseInt(exp.getText());
 			} catch (NumberFormatException e) {
 				enabled = false;
 			}
 		}
-		
+
 		ok.setDisable(!enabled);
 	}
 
@@ -274,5 +274,5 @@ class RewardResourceController implements ResourceController {
 	public List<String> getToDos() {
 		return new ArrayList<>();
 	}
-	
+
 }

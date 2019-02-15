@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.equip;
 
@@ -60,12 +60,12 @@ import javafx.util.Callback;
 public class EquipmentListBox extends VBox {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
-	
+
 	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
-	
+
 	private ItemLocationType location;
 	private SpliMoCharacter model;
-	
+
 	private Label heading;
 	private Button btnAdd;
 	private Button btnDel;
@@ -90,7 +90,7 @@ public class EquipmentListBox extends VBox {
 		heading = new Label();
 		heading.getStyleClass().add("text-subheader");
 
-		
+
 		list = new ListView<CarriedItem>();
 		btnAdd = new Button(null, new FontIcon("\uE17E\uE109"));
 		btnDel = new Button(null, new FontIcon("\uE17E\uE107"));
@@ -115,7 +115,7 @@ public class EquipmentListBox extends VBox {
 	            MenuItem deleteItem = new MenuItem(UI.getString("label.remove"));
 	            deleteItem.setOnAction(event -> remove(cell.getItem()));
 	            contextMenu.getItems().addAll(deleteItem);
-	            
+
 	            cell.emptyProperty().addListener((obs, wasEmpty, isNowEmpty) -> {
 	                if (isNowEmpty) {
 	                    cell.setContextMenu(null);
@@ -123,22 +123,22 @@ public class EquipmentListBox extends VBox {
 	                    cell.setContextMenu(contextMenu);
 	                }
 	            });
-	            
+
 	            return cell;
 			}
 		});
-		
+
 		switch (location) {
-		case BODY: 
-			heading.setText(UI.getString("screen.equipment.column.body")); 
+		case BODY:
+			heading.setText(UI.getString("screen.equipment.column.body"));
 			list.setStyle("-fx-background-image: url('images/icon_body_large.png'); -fx-background-position: bottom center; -fx-background-repeat: no-repeat;");
 			break;
-		case BEASTOFBURDEN: 
-			heading.setText(UI.getString("screen.equipment.column.beast")); 
+		case BEASTOFBURDEN:
+			heading.setText(UI.getString("screen.equipment.column.beast"));
 			list.setStyle("-fx-background-image: url('images/icon_beast_large.png'); -fx-background-position: bottom center; -fx-background-repeat: no-repeat;");
 			break;
-		case CONTAINER: 
-			heading.setText(UI.getString("screen.equipment.column.inventory")); 
+		case CONTAINER:
+			heading.setText(UI.getString("screen.equipment.column.inventory"));
 			list.setStyle("-fx-background-image: url('images/icon_inventory_large.png'); -fx-background-position: bottom center; -fx-background-repeat: no-repeat;");
 			break;
 		case SOMEWHEREELSE: heading.setText("?"); break;
@@ -154,7 +154,7 @@ public class EquipmentListBox extends VBox {
 		HBox lineInvent = new HBox(heading,btnDel, btnAdd);
 		lineInvent.setSpacing(10);
 		HBox.setHgrow(heading, Priority.ALWAYS);
-		
+
 		this.getChildren().addAll(lineInvent, list);
 		VBox.setVgrow(list, Priority.ALWAYS);
 		VBox.setMargin(list, new Insets(0, 0, 20, 0));
@@ -227,7 +227,7 @@ public class EquipmentListBox extends VBox {
 	protected void dragDetected(MouseEvent event, ListView<CarriedItem> list, CarriedItemCell cell) {
 		logger.debug("Drag started "+event.getSource());
 		Node source = (Node) event.getSource();
-		
+
 		CarriedItem item = cell.getItem();
 		String dragID = "";
 		if (location==ItemLocationType.BODY)
@@ -237,22 +237,22 @@ public class EquipmentListBox extends VBox {
 		else if (location==ItemLocationType.CONTAINER)
 			dragID="inventory";
 		dragID += ":"+model.getItems().indexOf(item);
-		
+
 		/* drag was detected, start a drag-and-drop gesture*/
         /* allow any transfer mode */
         Dragboard db = source.startDragAndDrop(TransferMode.ANY);
-        
+
         /* Put a string on a dragboard */
         ClipboardContent content = new ClipboardContent();
         content.putString(dragID);
          logger.debug("Drag "+dragID);
         db.setContent(content);
-        
+
         /* Drag image */
         WritableImage snapshot = source.snapshot(new SnapshotParameters(), null);
          db.setDragView(snapshot);
-        
-        event.consume();	
+
+        event.consume();
     }
 
 	//-------------------------------------------------------------------
@@ -272,19 +272,19 @@ public class EquipmentListBox extends VBox {
             String idToMove = db.getString();
             logger.debug("drop "+idToMove+" at "+location);
         	StringTokenizer tok = new StringTokenizer(idToMove,":");
-        	
+
         	tok.nextToken();
         	int index  = Integer.parseInt(tok.nextToken());
         	CarriedItem toMove = model.getItems().get(index);
-            	
+
            	move(toMove, location);
-        		
+
             success = true;
         }
-        /* let the source know whether the string was successfully 
+        /* let the source know whether the string was successfully
          * transferred and used */
         event.setDropCompleted(success);
-        
+
         event.consume();
 	}
 
@@ -296,9 +296,9 @@ public class EquipmentListBox extends VBox {
 }
 
 class CarriedItemCell extends ListCell<CarriedItem> {
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
-	
+
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
+
 	private GridPane grid;
 	private ImageView image;
 	private Label name;
@@ -309,9 +309,9 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 	private Label statsShield;
 	private Label statsCommon;
 	private Spinner<Integer> spCount;
-	
+
 	private transient CarriedItem data;
-	
+
 	//-------------------------------------------------------------------
 	public CarriedItemCell() {
 		image = new ImageView();
@@ -336,7 +336,7 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 //		statsShield.getStyleClass().add("caption");
 		statsCommon = new Label();
 //		statsCommon.getStyleClass().add("caption");
-		
+
 		grid = new GridPane();
 		grid.setHgap(2);
 		grid.add(image, 0, 0, 1, 7);
@@ -349,11 +349,11 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 		grid.add(statsCommon, 1, 6);
 		grid.add(spCount    , 2, 0, 1, 7);
 		grid.getStyleClass().add("content");
-		
+
 		GridPane.setHgrow(name, Priority.ALWAYS);
 		GridPane.setHgrow(extra, Priority.ALWAYS);
-		
-		
+
+
 		spCount.valueProperty().addListener( (ov,o,n) -> data.setCount(n));
 	}
 
@@ -365,7 +365,7 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 			return "";
 		}
 	}
-	
+
 	//-------------------------------------------------------------------
 	/**
 	 * @see javafx.scene.control.Cell#updateItem(java.lang.Object, boolean)
@@ -374,7 +374,7 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 	public void updateItem(CarriedItem item, boolean empty) {
 		super.updateItem(item, empty);
 		this.data = item;
-		
+
 		setGraphicTextGap(0);
 		if (empty || item==null) {
 			setText(null);
@@ -385,15 +385,15 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 			fillGrid(item);
 		}
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void fillGrid(CarriedItem item) {
 		name.setText(item.getName());
 		image.setImage(null);
 		spCount.getValueFactory().setValue(item.getCount());
-		
+
 		// Weapon
-		grid.getChildren().remove(statsWeapon);			
+		grid.getChildren().remove(statsWeapon);
 		if (item.getItem().isType(ItemType.WEAPON)) {
 			image.setImage(ItemUtils.getItemTypeIcon(ItemType.WEAPON).getImage());
 			Weapon weapon = item.getItem().getType(Weapon.class);
@@ -401,17 +401,17 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 			String minAttr = weapon.getRequirements().stream().filter(AttributeRequirement.class::isInstance)
 					                                          .map(AttributeRequirement.class::cast)
 					                                          .map(aReq -> aReq.getAttribute().getShortName()+" "+aReq.getValue())
-					                                          .collect(Collectors.joining(","));			
+					                                          .collect(Collectors.joining(","));
 			statsWeapon.setText(String.format("%s:%s  %s:%d\n%s:%s  %s:%s",
-					ItemAttribute.DAMAGE.getShortName(), getWeaponDamageString(item.getDamage(ItemType.WEAPON)), 
-					ItemAttribute.SPEED.getShortName(), item.getSpeed(ItemType.WEAPON), 
-					ItemAttribute.ATTRIBUTES.getShortName(), item.getAttribute1(ItemType.WEAPON).getShortName()+"+"+item.getAttribute2(ItemType.WEAPON).getShortName(), 
+					ItemAttribute.DAMAGE.getShortName(), getWeaponDamageString(item.getDamage(ItemType.WEAPON)),
+					ItemAttribute.SPEED.getShortName(), item.getSpeed(ItemType.WEAPON),
+					ItemAttribute.ATTRIBUTES.getShortName(), item.getAttribute1(ItemType.WEAPON).getShortName()+"+"+item.getAttribute2(ItemType.WEAPON).getShortName(),
 					(minAttr.length()>0)?ItemAttribute.MIN_ATTRIBUTES.getShortName():"", minAttr));
 			grid.add(statsWeapon, 1, 2);
-		} 
-		
+		}
+
 		// Long Range Weapon
-		grid.getChildren().remove(statsLongRg);			
+		grid.getChildren().remove(statsLongRg);
 		if (item.getItem().isType(ItemType.LONG_RANGE_WEAPON)) {
 			image.setImage(ItemUtils.getItemTypeIcon(ItemType.LONG_RANGE_WEAPON).getImage());
 			LongRangeWeapon weapon = item.getItem().getType(LongRangeWeapon.class);
@@ -419,18 +419,18 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 			String minAttr = weapon.getRequirements().stream().filter(AttributeRequirement.class::isInstance)
 								                     .map(AttributeRequirement.class::cast)
 								                     .map(aReq -> aReq.getAttribute().getShortName()+" "+aReq.getValue())
-								                     .collect(Collectors.joining(",")); 			
+								                     .collect(Collectors.joining(","));
 			statsLongRg.setText(String.format("%s:%s %s:%d\n%s:%s %s:%s %s:%s",
-					ItemAttribute.DAMAGE.getShortName(), getWeaponDamageString(item.getDamage(ItemType.LONG_RANGE_WEAPON)), 
-					ItemAttribute.SPEED.getShortName(), item.getSpeed(ItemType.LONG_RANGE_WEAPON), 
-					ItemAttribute.RANGE.getShortName(), weapon.getRange(), 
-					ItemAttribute.ATTRIBUTES.getShortName(), item.getAttribute1(ItemType.LONG_RANGE_WEAPON).getShortName()+"+"+item.getAttribute2(ItemType.LONG_RANGE_WEAPON).getShortName(), 
+					ItemAttribute.DAMAGE.getShortName(), getWeaponDamageString(item.getDamage(ItemType.LONG_RANGE_WEAPON)),
+					ItemAttribute.SPEED.getShortName(), item.getSpeed(ItemType.LONG_RANGE_WEAPON),
+					ItemAttribute.RANGE.getShortName(), weapon.getRange(),
+					ItemAttribute.ATTRIBUTES.getShortName(), item.getAttribute1(ItemType.LONG_RANGE_WEAPON).getShortName()+"+"+item.getAttribute2(ItemType.LONG_RANGE_WEAPON).getShortName(),
 					ItemAttribute.MIN_ATTRIBUTES.getShortName(), minAttr));
 			grid.add(statsLongRg, 1, 3);
-		} 
+		}
 
 		// Armor
-		grid.getChildren().remove(statsArmor);			
+		grid.getChildren().remove(statsArmor);
 		if (item.getItem().isType(ItemType.ARMOR)) {
 			image.setImage(ItemUtils.getItemTypeIcon(ItemType.ARMOR).getImage());
 			Armor armor = item.getItem().getType(Armor.class);
@@ -438,18 +438,18 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 			String minAttr = armor.getRequirements().stream().filter(AttributeRequirement.class::isInstance)
 								                    .map(AttributeRequirement.class::cast)
 								                    .map(aReq -> aReq.getAttribute().getShortName()+" "+aReq.getValue())
-								                    .collect(Collectors.joining(",")); 			
+								                    .collect(Collectors.joining(","));
 			statsArmor.setText(String.format("%s:%d %s:%d %s:%d %s:%d %s:%s",
-					ItemAttribute.DEFENSE.getShortName(), item.getDefense(ItemType.ARMOR), 
-					ItemAttribute.DAMAGE_REDUCTION.getShortName(), item.getDamageReduction(ItemType.ARMOR), 
-					ItemAttribute.HANDICAP.getShortName(), item.getHandicap(ItemType.ARMOR), 
-					ItemAttribute.TICK_MALUS.getShortName(), item.getTickMalus(ItemType.ARMOR), 
+					ItemAttribute.DEFENSE.getShortName(), item.getDefense(ItemType.ARMOR),
+					ItemAttribute.DAMAGE_REDUCTION.getShortName(), item.getDamageReduction(ItemType.ARMOR),
+					ItemAttribute.HANDICAP.getShortName(), item.getHandicap(ItemType.ARMOR),
+					ItemAttribute.TICK_MALUS.getShortName(), item.getTickMalus(ItemType.ARMOR),
 					(minAttr.length()>0)?ItemAttribute.MIN_ATTRIBUTES.getShortName():"", minAttr));
 			grid.add(statsArmor , 1, 4);
-		} 
-		
+		}
+
 		// Shield
-		grid.getChildren().remove(statsShield);			
+		grid.getChildren().remove(statsShield);
 		if (item.getItem().isType(ItemType.SHIELD)) {
 			image.setImage(ItemUtils.getItemTypeIcon(ItemType.SHIELD).getImage());
 			Shield shield = item.getItem().getType(Shield.class);
@@ -457,15 +457,15 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 			String minAttr = shield.getRequirements().stream().filter(AttributeRequirement.class::isInstance)
 								                     .map(AttributeRequirement.class::cast)
 								                     .map(aReq -> aReq.getAttribute().getShortName()+" "+aReq.getValue())
-								                     .collect(Collectors.joining(",")); 			
+								                     .collect(Collectors.joining(","));
 			statsShield.setText(String.format("%s:%d %s:%d %s:%d %s:%d %s:%s",
-					ItemAttribute.DEFENSE.getShortName(), item.getDefense(ItemType.SHIELD), 
-					ItemAttribute.DAMAGE_REDUCTION.getShortName(), item.getDamageReduction(ItemType.SHIELD), 
-					ItemAttribute.HANDICAP.getShortName(), item.getHandicap(ItemType.SHIELD), 
-					ItemAttribute.TICK_MALUS.getShortName(), item.getTickMalus(ItemType.SHIELD), 
+					ItemAttribute.DEFENSE.getShortName(), item.getDefense(ItemType.SHIELD),
+					ItemAttribute.DAMAGE_REDUCTION.getShortName(), item.getDamageReduction(ItemType.SHIELD),
+					ItemAttribute.HANDICAP.getShortName(), item.getHandicap(ItemType.SHIELD),
+					ItemAttribute.TICK_MALUS.getShortName(), item.getTickMalus(ItemType.SHIELD),
 					(minAttr.length()>0)?ItemAttribute.MIN_ATTRIBUTES.getShortName():"", minAttr));
 			grid.add(statsShield, 1, 5);
-		} 
+		}
 
 		if (item.getItem().isType(ItemType.POTION)) {
 			image.setImage(ItemUtils.getItemTypeIcon(ItemType.POTION).getImage());
@@ -473,29 +473,29 @@ class CarriedItemCell extends ListCell<CarriedItem> {
 		if (item.getItem().isType(ItemType.CONTAINER)) {
 			image.setImage(ItemUtils.getItemTypeIcon(ItemType.CONTAINER).getImage());
 		}
-		
+
 		statsCommon.setText(String.format("%s: %d  %s: %d",
-				ItemAttribute.LOAD.getShortName(), item.getItem().getLoad(), 
+				ItemAttribute.LOAD.getShortName(), item.getItem().getLoad(),
 				ItemAttribute.RIGIDITY.getShortName(), item.getItem().getRigidity()));
-		
-		grid.getChildren().remove(extra);		 		
-		Stream.Builder<String> buf = Stream.builder();  
-		for (EnhancementReference enRef : item.getEnhancements()) { 
+
+		grid.getChildren().remove(extra);
+		Stream.Builder<String> buf = Stream.builder();
+		for (EnhancementReference enRef : item.getEnhancements()) {
 			if (enRef.getSpellValue()!=null) {
 				buf.add(String.format(UI.getString("screen.enhancements.embedspell.cell"), enRef.getSpellValue().getSpell().getName()));
 			} else if (enRef.getSkillSpecialization()!=null) {
 				buf.add(enRef.getSkillSpecialization().getName()+"+1");
 			} else {
-				buf.add(enRef.getEnhancement().getName()); 
-			} 
-		}  
-		for (PersonalizationReference enRef :item.getPersonalizations()) { 
-			buf.add(enRef.getName()); 
-		} 
+				buf.add(enRef.getEnhancement().getName());
+			}
+		}
+		for (PersonalizationReference enRef :item.getPersonalizations()) {
+			buf.add(enRef.getName());
+		}
 		String textExtra = buf.build().collect(Collectors.joining(","));
-		if (!textExtra.isEmpty()) {	
+		if (!textExtra.isEmpty()) {
 			grid.add(extra, 1, 1);
-			extra.setText(textExtra);				
-		}		 
+			extra.setText(textExtra);
+		}
 	}
 }

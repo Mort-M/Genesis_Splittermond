@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.creatures;
 
@@ -12,6 +12,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 
 import org.prelle.splimo.Skill.SkillType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.creature.Lifeform;
 
@@ -20,11 +21,11 @@ import org.prelle.splimo.creature.Lifeform;
  *
  */
 public class SkillViewPane extends FlowPane {
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private Lifeform model;
-	
+
 	private Label lblHeading;
 	private boolean ignoreAttributes;
 
@@ -57,7 +58,7 @@ public class SkillViewPane extends FlowPane {
 	//--------------------------------------------------------------------
 	void refresh() {
 		getChildren().retainAll(lblHeading);
-		
+
 		for (Iterator<SkillValue> it=model.getSkills().iterator(); it.hasNext(); ) {
 			SkillValue val = it.next();
 			int attrVal = 0;

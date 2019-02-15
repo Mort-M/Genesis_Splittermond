@@ -1,9 +1,11 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.gen.jfx;
 
 import java.util.ResourceBundle;
+
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -23,7 +25,7 @@ import javafx.stage.Stage;
  */
 public class MessageDialog  {
 
-	private final static ResourceBundle genRes = ResourceBundle.getBundle("i18n/ui");
+	private final static ResourceBundle genRes = SpliMoCharGenJFXConstants.UI;
 
 	//--------------------------------------------------------------------
 	/**
@@ -44,9 +46,9 @@ public class MessageDialog  {
 		buttonBar.setAlignment(Pos.CENTER);
 		buttonBar.getChildren().addAll(ok, cancel);
 		buttonBar.getStyleClass().add("wizard-buttonbar");
-		
+
 		layout.getChildren().addAll(mess, buttonBar);
-		
+
 		ok.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				layout.setUserData(true);
@@ -59,7 +61,7 @@ public class MessageDialog  {
 				layout.getScene().getWindow().hide();
 			}
 		});
-		
+
 		Scene scene = new Scene(layout);
 		scene.getStylesheets().add("css/default.css");
 		Stage stage = new Stage();
@@ -68,7 +70,7 @@ public class MessageDialog  {
 //		stage.setTitle(res.getString("dialog.title.question"));
 		stage.setScene(scene);
 		stage.showAndWait();
-		
+
 		return (Boolean)layout.getUserData();
 	}
 

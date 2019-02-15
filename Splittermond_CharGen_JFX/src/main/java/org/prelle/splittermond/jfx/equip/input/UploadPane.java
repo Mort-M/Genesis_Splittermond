@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.equip.input;
 
@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.skin.NavigButtonControl;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 /**
  * @author prelle
@@ -21,8 +22,8 @@ import org.prelle.javafx.skin.NavigButtonControl;
  */
 public class UploadPane extends VBox {
 
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
-	
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
+
 	private NavigButtonControl buttonControl;
 	private TextField tfEMail;
 	private TextField tfName;
@@ -34,7 +35,7 @@ public class UploadPane extends VBox {
 		initComponents();
 		initLayout();
 		initInteractivity();
-		
+
 		checkInput();
 	}
 
@@ -49,7 +50,7 @@ public class UploadPane extends VBox {
 		tfName.setPromptText(UI.getString("pane.upload.mail.name.prompt"));
 		if (DataInputScreen.CONFIG.get(DataInputScreen.KEY_NAME, null)!=null)
 			tfName.setText(DataInputScreen.CONFIG.get(DataInputScreen.KEY_NAME, null));
-		
+
 		taMessage = new TextArea();
 		taMessage.setPromptText(UI.getString("pane.upload.message.prompt"));
 	}
@@ -59,11 +60,11 @@ public class UploadPane extends VBox {
 		Label lblEMail = new Label(UI.getString("pane.upload.mail.from"));
 		Label lblName  = new Label(UI.getString("pane.upload.mail.name"));
 		Label lblMess  = new Label(UI.getString("pane.upload.message"));
-		
+
 		lblEMail.getStyleClass().add("text-small-subheader");
 		lblName .getStyleClass().add("text-small-subheader");
 		lblMess .getStyleClass().add("text-small-subheader");
-		
+
 		getChildren().addAll(lblEMail, tfEMail, lblName, tfName, lblMess, taMessage);
 		VBox.setMargin(lblName, new Insets(20,0,0,0));
 		VBox.setMargin(lblMess, new Insets(20,0,0,0));

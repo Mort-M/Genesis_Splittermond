@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.creatures;
 
@@ -14,6 +14,7 @@ import java.util.ResourceBundle;
 
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.Spell;
 import org.prelle.splimo.SpellValue;
@@ -36,12 +37,12 @@ import javafx.util.StringConverter;
  *
  */
 public class SpellEditPane extends VBox {
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
-	
+
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
+
 	class SpellValueTreeItem extends TreeItem<Object> {
 		private SpellValue spellValue;
-		
+
 		public SpellValueTreeItem(SpellValue value) {
 			super(value.getSpellLevel()+" "+value.getSpell().getName());
 			this.spellValue = value;
@@ -49,16 +50,16 @@ public class SpellEditPane extends VBox {
 		//-------------------------------------------------------------------
 		public SpellValue getSpellValue() {return spellValue;}
 	}
-	
-	private Creature model;	
+
+	private Creature model;
 	private SpellViewPane viewPane;
-	
+
 	private ChoiceBox<Skill> cbSchools;
 	private ChoiceBox<SpellValue> cbSpells;
 	private Button btnAdd;
 	private TreeItem<Object> root;
 	private TreeView<Object> table;
-	
+
 	//--------------------------------------------------------------------
 	public SpellEditPane(SpellViewPane view) {
 		this.viewPane = view;
@@ -83,7 +84,7 @@ public class SpellEditPane extends VBox {
 		btnAdd.setStyle("-fx-pref-width: 4em");
 		cbSchools.setStyle("-fx-pref-width: 12em");
 		cbSpells.setStyle("-fx-pref-width: 12em");
-		
+
 		root   = new TreeItem<Object>(null);
 		table  = new TreeView<Object>(root);
 		table.setShowRoot(false);
@@ -101,14 +102,14 @@ public class SpellEditPane extends VBox {
 		addLine.getChildren().addAll(tile, btnAdd);
 //		HBox.setHgrow(tile, Priority.ALWAYS);
 //		HBox.setHgrow(btnAdd, Priority.SOMETIMES);
-		
+
 		VBox content = new VBox(5);
 		content.getChildren().addAll(table, addLine);
 		content.getStyleClass().add("content");
-		
+
 		Label heading = new Label(UI.getString("label.spells"));
 		heading.getStyleClass().add("text-subheader");
-		
+
 		getChildren().addAll(heading, content);
 		setSpacing(0);
 	}
@@ -117,7 +118,7 @@ public class SpellEditPane extends VBox {
 	private void initInteractivity() {
 		cbSchools.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> updateSpells(n));
 		cbSpells.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> btnAdd.setDisable(n==null));
-		
+
 		btnAdd.setOnAction(event -> addSpell());
 	}
 
@@ -126,7 +127,7 @@ public class SpellEditPane extends VBox {
 		cbSpells.getItems().clear();
 		if (school==null)
 			return;
-		
+
 		for (Spell spell : SplitterMondCore.getSpells(school)) {
 			SpellValue val = new SpellValue(spell, school);
 			if (!model.getSpells().contains(val)) {
@@ -147,8 +148,8 @@ public class SpellEditPane extends VBox {
 	private void refresh() {
 		root.getChildren().clear();
 		cbSchools.getItems().clear();
-		
-		
+
+
 		Map<Skill, List<SpellValue>> data = new HashMap<>();
 		/*
 		 * Collect data
@@ -166,7 +167,7 @@ public class SpellEditPane extends VBox {
 				spells.add(spVal);
 			}
 		}
-		
+
 		/*
 		 * Format data
 		 */
@@ -174,10 +175,10 @@ public class SpellEditPane extends VBox {
 		Collections.sort(skills);
 		for (Iterator<Skill> it=skills.iterator(); it.hasNext(); ) {
 			Skill skill = it.next();
-			
+
 			TreeItem<Object> item = new TreeItem<>(skill.getName());
 			root.getChildren().add(item);
-			
+
 			List<SpellValue> spells = data.get(skill);
 			for (Iterator<SpellValue> it2=spells.iterator(); it2.hasNext(); ) {
 				SpellValue spell = it2.next();

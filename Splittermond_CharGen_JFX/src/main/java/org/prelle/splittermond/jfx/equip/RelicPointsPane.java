@@ -1,14 +1,14 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.equip;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.charctrl.NewItemController;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -26,7 +26,7 @@ import javafx.scene.layout.VBox;
  */
 public class RelicPointsPane extends VBox {
 
-	private static PropertyResourceBundle SPLIMO_CHARGEN = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+	private static PropertyResourceBundle SPLIMO_CHARGEN = SpliMoCharGenJFXConstants.UI;
 
 	private Label lblRelicWorth;
 	private Label lblMoneyWorth;
@@ -34,10 +34,10 @@ public class RelicPointsPane extends VBox {
 	private Label lblMoneyAvail;
 	private Label lblLevel;
 	private VBox  extra;
-	
+
 	private SpliMoCharacter model;
 	private NewItemController generator;
-	
+
 	//-------------------------------------------------------------------
 	/**
 	 */
@@ -53,16 +53,16 @@ public class RelicPointsPane extends VBox {
 //		lblRelicAvail = new Label("?");
 		lblMoneyAvail  = new Label("?");
 		lblLevel       = new Label("?");
-		
+
 		lblRelicWorth     .getStyleClass().add("text-header");
 		lblMoneyWorth    .getStyleClass().add("text-header");
 //		lblRelicAvail.getStyleClass().add("text-subheader");
 		lblMoneyAvail.getStyleClass().add("text-subheader");
 		lblLevel     .getStyleClass().add("text-subheader");
-		
+
 		extra = new VBox();
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void initLayout() {
 		setAlignment(Pos.TOP_CENTER);
@@ -76,7 +76,7 @@ public class RelicPointsPane extends VBox {
 		Label heaMoneyAvail = new Label(SPLIMO_CHARGEN.getString("label.money.free"));
 		Label heaMoneyWorth = new Label(SPLIMO_CHARGEN.getString("label.money.worth"));
 		Label heaLevel      = new Label(SPLIMO_CHARGEN.getString("label.level"));
-		
+
 		GridPane grid = new GridPane();
 		grid.setMaxWidth(Double.MAX_VALUE);
 		grid.setHgap(10);
@@ -85,7 +85,7 @@ public class RelicPointsPane extends VBox {
 		grid.add(heaRelicWorth , 0, 1, 2,1);
 //		grid.add(lblRelicAvail , 0, 2, 2,1);
 //		grid.add(heaRelicAvail , 0, 3, 2,1);
-		
+
 		grid.add(lblMoneyWorth , 0, 4, 2,1);
 		grid.add(heaMoneyWorth , 0, 5, 2,1);
 		grid.add(lblMoneyAvail , 0, 6, 2,1);
@@ -101,9 +101,9 @@ public class RelicPointsPane extends VBox {
 		GridPane.setHalignment(lblRelicWorth, HPos.CENTER);
 		GridPane.setHalignment(heaRelicWorth, HPos.CENTER);
 		GridPane.setMargin(heaMoneyAvail, new Insets(-10,0,0,0));
-		
+
 		getChildren().add(grid);
-		
+
 		Region spacing = new Region();
 		spacing.setMaxHeight(Double.MAX_VALUE);
 		VBox.setVgrow(spacing, Priority.ALWAYS);
@@ -119,7 +119,7 @@ public class RelicPointsPane extends VBox {
 
 	//-------------------------------------------------------------------
 	public void refresh() {
-		if (generator.getItem().getResource()!=null) 
+		if (generator.getItem().getResource()!=null)
 			lblRelicWorth.setText( generator.getItem().getRelicQuality() +"/"+ generator.getItem().getResource().getValue() );
 		else
 			lblRelicWorth.setText( String.valueOf( generator.getItem().getRelicQuality()) );

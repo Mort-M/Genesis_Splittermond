@@ -1,10 +1,20 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.gen.jfx;
 
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+
+import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.charctrl.AttributeController;
+import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splimo.chargen.jfx.ViewMode;
+import org.prelle.splittermond.jfx.attributes.AttributePane;
 
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -12,24 +22,13 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 
-import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.charctrl.AttributeController;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.common.jfx.CharGenMode;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.event.GenerationEventType;
-import org.prelle.splimo.chargen.jfx.ViewMode;
-import org.prelle.splittermond.jfx.attributes.AttributePane;
-
 /**
  * @author prelle
  *
  */
 public class DistributeAttributesPage extends WizardPage implements GenerationEventListener {
 
- 	private static PropertyResourceBundle uiResources = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/ui");
+ 	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
  	private SpliMoCharacterGenerator charGen;
 	private AttributeController control;
@@ -44,14 +43,14 @@ public class DistributeAttributesPage extends WizardPage implements GenerationEv
 		control = charGen.getAttributeController();
 		content = new AttributePane(control, ViewMode.GENERATION);
 		super.pageInit(
-				uiResources.getString("wizard.distrAttrib.title"), 
+				uiResources.getString("wizard.distrAttrib.title"),
 				new Image(DistributeAttributesPage.class.getClassLoader().getResourceAsStream("data/Splittermond_hochkant.png")));
 		content.setData(model);
-		
+
 		// Only enable NEXT button when all points are distributed
 		nextButton.setDisable(control.getPointsLeft()!=0);
 		finishButton.setDisable(!charGen.hasEnoughData());
-		
+
 		GenerationEventDispatcher.addListener(this);
 	}
 
@@ -108,7 +107,7 @@ public class DistributeAttributesPage extends WizardPage implements GenerationEv
 			nextButton.setDisable(control.getPointsLeft()!=0);
 			finishButton.setDisable(!charGen.hasEnoughData());
 		}
-		
+
 	}
 
 }

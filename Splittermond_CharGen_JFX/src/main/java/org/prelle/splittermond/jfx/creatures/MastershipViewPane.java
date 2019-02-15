@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.creatures;
 
@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.SkillValue;
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.Lifeform;
 
 import javafx.scene.control.Label;
@@ -21,11 +22,11 @@ import javafx.scene.text.Text;
  *
  */
 public class MastershipViewPane extends FlowPane {
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private Lifeform model;
-	
+
 	private Label lblHeading;
 
 	//-------------------------------------------------------------------
@@ -56,13 +57,13 @@ public class MastershipViewPane extends FlowPane {
 	//--------------------------------------------------------------------
 	void refresh() {
 		getChildren().retainAll(lblHeading);
-		
+
 		for (Iterator<SkillValue> it=model.getSkills().iterator(); it.hasNext(); ) {
 			SkillValue val = it.next();
 			List<MastershipReference> list = val.getMasterships();
 			if (list.isEmpty())
 				continue;
-			
+
 			// Print masterships for this skill
 			getChildren().add(new Text(val.getSkill().getName()+" ("));
 			int lastLevel = 0;

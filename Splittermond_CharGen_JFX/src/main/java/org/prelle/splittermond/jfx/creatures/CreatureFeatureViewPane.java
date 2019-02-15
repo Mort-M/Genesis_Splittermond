@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.creatures;
 
@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
+import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.CreatureFeature;
 import org.prelle.splimo.creature.Lifeform;
 
@@ -19,11 +20,11 @@ import javafx.scene.text.Text;
  *
  */
 public class CreatureFeatureViewPane extends FlowPane {
-	
-	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("i18n/splimo-chargen");
+
+	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private Lifeform model;
-	
+
 	private Label lblHeading;
 
 	//-------------------------------------------------------------------
@@ -54,7 +55,7 @@ public class CreatureFeatureViewPane extends FlowPane {
 	//--------------------------------------------------------------------
 	void refresh() {
 		getChildren().retainAll(lblHeading);
-		
+
 		for (Iterator<CreatureFeature> it=model.getFeatures().iterator(); it.hasNext(); ) {
 			CreatureFeature val = it.next();
 			String text = val.getName();
