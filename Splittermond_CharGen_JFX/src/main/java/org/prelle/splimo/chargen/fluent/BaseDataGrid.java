@@ -289,7 +289,7 @@ public class BaseDataGrid extends GridPane {
 		tfBirth.textProperty().addListener( (ov,o,n) -> control.getModel().setBirthPlace(n));
 		tfEyes.textProperty().addListener( (ov,o,n) -> control.getModel().setEyeColor(n));
 		tfHair.textProperty().addListener( (ov,o,n) -> control.getModel().setHairColor(n));
-		tfSkin.textProperty().addListener( (ov,o,n) -> control.getModel().setSkinColor(n));
+		tfSkin.textProperty().addListener( (ov,o,n) -> control.getModel().setFurColor(n));
 		tfSize.textProperty().addListener( (ov,o,n) -> control.getModel().setSize(Integer.parseInt(n)));
 		tfWeight.textProperty().addListener( (ov,o,n) -> control.getModel().setWeight(Integer.parseInt(n)));
 		cbDeity.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
