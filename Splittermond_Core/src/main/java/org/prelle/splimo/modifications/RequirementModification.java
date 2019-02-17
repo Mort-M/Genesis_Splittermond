@@ -16,26 +16,26 @@ public class RequirementModification extends ModificationImpl {
 	private RequirementType type;
 	@Attribute
     private String ref;
-    
+
     //-----------------------------------------------------------------------
     public RequirementModification() {
     }
-    
+
     //-----------------------------------------------------------------------
     public String toString() {
         return type+"="+ref;
     }
-    
+
     //-----------------------------------------------------------------------
     public RequirementType getType() {
         return type;
     }
-    
+
     //-----------------------------------------------------------------------
     public void setType(RequirementType type) {
         this.type = type;
     }
-    
+
     //-----------------------------------------------------------------------
     /**
      */
@@ -47,7 +47,7 @@ public class RequirementModification extends ModificationImpl {
         } else
             return false;
     }
-    
+
     //-------------------------------------------------------
     /* (non-Javadoc)
      * @see java.lang.Comparable#compareTo(java.lang.Object)
@@ -56,7 +56,7 @@ public class RequirementModification extends ModificationImpl {
         if (!(obj instanceof RequirementModification))
             return toString().compareTo(obj.toString());
         RequirementModification other = (RequirementModification)obj;
-        int cmp = (new Integer(type.ordinal()).compareTo(new Integer(other.getType().ordinal())));
+        int cmp = (Integer.valueOf(type.ordinal()).compareTo(Integer.valueOf(other.getType().ordinal())));
         if (cmp!=0) return cmp;
         return ref.compareTo(other.getReference());
     }
@@ -76,5 +76,5 @@ public class RequirementModification extends ModificationImpl {
 	public void setReference(String ref) {
 		this.ref = ref;
 	}
-    
+
 }// AttributeModification

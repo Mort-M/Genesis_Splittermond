@@ -104,7 +104,7 @@ public class SplitterMondCore {
 	private final static String PROMOSERVER_REGISTER_URL = "http://license.rpgframework.de:4001/registerPromo?code=%s&secret=%s";
 
 	private static boolean alreadyInitialized = false;
-	
+
 	private static PropertyResourceBundle i18NResources;
 	private static PropertyResourceBundle i18NHelpResources;
 	private static Persister serializer;
@@ -136,7 +136,7 @@ public class SplitterMondCore {
 	private static Map<Culture, SpliMoNameTable> nameTables;
 
 	private static ArrayList<Resource> BASE_RESOURCES;
-	
+
 	private static boolean missingLicense;
 
 	//-------------------------------------------------------------------
@@ -191,7 +191,7 @@ public class SplitterMondCore {
 		 * Register to receive commands
 		 */
 		CommandBus.registerBusCommandListener(new SplittermondCommandBus());
-		
+
 		alreadyInitialized = true;
 	}
 
@@ -285,7 +285,7 @@ public class SplitterMondCore {
 										add.replaceRequirement(mReq, new MastershipRequirement(newMaster));
 									}
 								}
-								
+
 							}
 						}
 					}
@@ -467,8 +467,8 @@ public class SplitterMondCore {
 							if (type==null)
 								throw new NullPointerException("Unknown spell type for spell '"+spell.getId()+"'");
 							if (!count.containsKey(type))
-								count.put(type, new Integer(0));
-							count.put(type, new Integer(1+count.get(type)));
+								count.put(type, Integer.valueOf(0));
+							count.put(type, Integer.valueOf(1+count.get(type)));
 						}
 					}
 					logger.trace("Zauberschule "+skill+":");
@@ -822,9 +822,9 @@ public class SplitterMondCore {
 				// Count
 				Integer old = count.get(type);
 				if (old==null)
-					count.put(type, new Integer(1));
+					count.put(type, Integer.valueOf(1));
 				else
-					count.put(type, new Integer(old+1));
+					count.put(type, Integer.valueOf(old+1));
 
 				// Add
 				if (!ret.contains(type))
@@ -1782,10 +1782,10 @@ public class SplitterMondCore {
 				if (logger.isDebugEnabled())
 					logger.debug("* "+tmp.getName());
 
-//				if (tmp.getId().equals("fightingdog"))					
+//				if (tmp.getId().equals("fightingdog"))
 //					System.err.println(tmp.dump());
 //				SplitterTools.fixCreatureSkillPoints(tmp);
-//				if (tmp.getId().equals("fightingdog"))	 {			
+//				if (tmp.getId().equals("fightingdog"))	 {
 //					System.err.println(tmp.dump());
 //					System.exit(0);
 //				}

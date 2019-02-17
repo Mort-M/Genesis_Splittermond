@@ -16,22 +16,22 @@ public class AttributeChangeModification extends ModificationImpl {
     private Attribute from;
 	@org.prelle.simplepersist.Attribute
     private Attribute to;
-    
+
     //-----------------------------------------------------------------------
     public AttributeChangeModification() {
     }
-    
+
     //-----------------------------------------------------------------------
     public AttributeChangeModification(Attribute from, Attribute to) {
     	this.from = from;
     	this.to   = to;
     }
-   
+
     //-----------------------------------------------------------------------
     public String toString() {
     	return "From "+from+" to "+to;
     }
-    
+
     //-----------------------------------------------------------------------
     @Override
     public boolean equals(Object o) {
@@ -43,7 +43,7 @@ public class AttributeChangeModification extends ModificationImpl {
         } else
             return false;
     }
-    
+
     //-------------------------------------------------------
     /* (non-Javadoc)
      * @see java.lang.Comparable#compareTo(java.lang.Object)
@@ -53,8 +53,8 @@ public class AttributeChangeModification extends ModificationImpl {
             return toString().compareTo(obj.toString());
         AttributeChangeModification other = (AttributeChangeModification)obj;
         if (from!=other.getFrom())
-            return (new Integer(from.ordinal())).compareTo(new Integer(other.getFrom().ordinal()));
-        return (new Integer(to.ordinal()).compareTo(new Integer(other.getTo().ordinal())));
+            return (Integer.valueOf(from.ordinal())).compareTo(Integer.valueOf(other.getFrom().ordinal()));
+        return (Integer.valueOf(to.ordinal()).compareTo(Integer.valueOf(other.getTo().ordinal())));
     }
 
 	//--------------------------------------------------------------------
@@ -72,5 +72,5 @@ public class AttributeChangeModification extends ModificationImpl {
 	public Attribute getTo() {
 		return to;
 	}
-    
+
 }// AttributeModification

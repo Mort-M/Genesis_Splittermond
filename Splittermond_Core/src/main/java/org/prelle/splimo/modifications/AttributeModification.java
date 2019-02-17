@@ -20,24 +20,24 @@ public class AttributeModification extends ModificationImpl {
     private int val;
 	@org.prelle.simplepersist.Attribute(name="modsrc")
     private ModificationSource modSource;
-	
+
 	/*
 	 * Can be used to distinguish otherwise identical modifications
 	 */
 	private transient String uniqueID;
-    
+
     //-----------------------------------------------------------------------
     public AttributeModification() {
         type = ModificationValueType.RELATIVE;
     }
-    
+
     //-----------------------------------------------------------------------
     public AttributeModification(Attribute attr, int val) {
     	this();
         this.attr = attr;
         this.val  = val;
      }
-    
+
     //-----------------------------------------------------------------------
     public AttributeModification(Attribute attr, int val, ModificationSource modSrc) {
     	this();
@@ -45,7 +45,7 @@ public class AttributeModification extends ModificationImpl {
         this.val  = val;
         this.modSource = modSrc;
     }
-    
+
     //-----------------------------------------------------------------------
     public AttributeModification(Attribute attr, int val, Object source) {
     	this();
@@ -53,21 +53,21 @@ public class AttributeModification extends ModificationImpl {
         this.val  = val;
         this.source = source;
     }
-    
+
     //-----------------------------------------------------------------------
     public AttributeModification(ModificationValueType type, Attribute attr, int val) {
         this.type = type;
         this.attr = attr;
         this.val  = val;
     }
-    
+
     //-----------------------------------------------------------------------
     public AttributeModification clone() {
     	AttributeModification ret = new AttributeModification(type, attr, val);
     	ret.cloneAdd(this);
     	return ret;
     }
-   
+
     //-----------------------------------------------------------------------
     public String toString() {
         if (type==ModificationValueType.RELATIVE) {
@@ -79,37 +79,37 @@ public class AttributeModification extends ModificationImpl {
   			return attr.getShortName()+" "+val;
         return attr+" "+val;
     }
-    
+
     //-----------------------------------------------------------------------
     public ModificationValueType getType() {
         return type;
     }
-    
+
     //-----------------------------------------------------------------------
     public void setType(ModificationValueType type) {
         this.type = type;
     }
-    
+
     //-----------------------------------------------------------------------
     public Attribute getAttribute() {
         return attr;
     }
-    
+
     //-----------------------------------------------------------------------
     public void setAttribute(Attribute attr) {
         this.attr = attr;
     }
-    
+
     //-----------------------------------------------------------------------
     public int getValue() {
         return val;
     }
-    
+
     //-----------------------------------------------------------------------
     public void setValue(int val) {
         this.val = val;
     }
-    
+
 //    //-----------------------------------------------------------------------
 //    @Override
 //    public boolean equals(Object o) {
@@ -122,14 +122,14 @@ public class AttributeModification extends ModificationImpl {
 //            	if (uniqueID==null) return false;
 //            	if (!uniqueID.equals(amod.getUniqueID()))
 //            		return false;
-//            } else if (uniqueID!=null) 
+//            } else if (uniqueID!=null)
 //            	return false;
 //            System.out.println("AttrMod.equals: "+uniqueID+" == "+amod.getUniqueID());
 //            return (amod.getValue()==val);
 //        } else
 //            return false;
 //    }
-    
+
     //-----------------------------------------------------------------------
     /**
      */
@@ -142,7 +142,7 @@ public class AttributeModification extends ModificationImpl {
         } else
             return false;
     }
-    
+
     //-------------------------------------------------------
     /* (non-Javadoc)
      * @see java.lang.Comparable#compareTo(java.lang.Object)
@@ -152,8 +152,8 @@ public class AttributeModification extends ModificationImpl {
             return toString().compareTo(obj.toString());
         AttributeModification other = (AttributeModification)obj;
         if (attr!=other.getAttribute())
-            return (new Integer(attr.ordinal())).compareTo(new Integer(other.getAttribute().ordinal()));
-        return (new Integer(type.ordinal()).compareTo(new Integer(other.getType().ordinal())));
+            return (Integer.valueOf(attr.ordinal())).compareTo(Integer.valueOf(other.getAttribute().ordinal()));
+        return (Integer.valueOf(type.ordinal()).compareTo(Integer.valueOf(other.getType().ordinal())));
     }
 
 	//-------------------------------------------------------------------
@@ -187,5 +187,5 @@ public class AttributeModification extends ModificationImpl {
 	public void setModificationSource(ModificationSource modSource) {
 		this.modSource = modSource;
 	}
-    
+
 }// AttributeModification

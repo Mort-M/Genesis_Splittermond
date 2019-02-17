@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.charctrl4;
 
@@ -38,7 +38,7 @@ import de.rpgframework.genericrpg.modification.Modification;
 public class NewPowerGenerator implements PowerController, Generator, SpliMoCharacterProcessor {
 
 	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
-	
+
 	private static Logger logger = LogManager.getLogger("splittermond.chargen.power");
 
 	private SpliMoCharacter model;
@@ -77,7 +77,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 	 */
 	private void updateAvailable() {
 		logger.debug("Update list of available powers");
-		
+
 		List<Power> added = new ArrayList<Power>();
 		List<Power> removed = new ArrayList<Power>();
 		/*
@@ -93,8 +93,8 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 				removed.add(power);
 			}
 		}
-		
-		/* 
+
+		/*
 		 * Now walk through all powers and test if one is now
 		 * selectable
 		 */
@@ -143,7 +143,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 			default:
 			}
 		}
-		
+
 		/*
 		 * Check requirements
 		 */
@@ -158,7 +158,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 		if (getPointsLeft() < power.getCost() && model.getExperienceFree()<(power.getCost()*7))
 			return false;
 
-		
+
 		return true;
 	}
 
@@ -170,7 +170,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 	public boolean canBeDeselected(PowerReference ref) {
 		if (!model.getPowers().contains(ref))
 			return false;
-		
+
 		// Cannot deselect powers from race selection
 		return !ref.isFixed();
 	}
@@ -187,7 +187,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 	//--------------------------------------------------------------------
 	private void correctReferenceModifications(PowerReference ref) {
 		ref.getModifications().clear();
-		
+
 		Power power = ref.getPower();
 		// Copy modifications from power to power reference. This allows to stack them
 		for (Modification mod : power.getModifications()) {
@@ -202,7 +202,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 				ref.getModifications().add(sMod );
 				sMod.setSource(ref);
 			} else {
-				ref.getModifications().add(mod); 
+				ref.getModifications().add(mod);
 			}
 		}
 	}
@@ -218,7 +218,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 			return null;
 		}
 		int expNeeded = power.getCost();
-		if (getPointsLeft()<expNeeded) 
+		if (getPointsLeft()<expNeeded)
 			return null;
 
 		if (model.hasPower(power)) {
@@ -249,7 +249,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 //		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_POWERS, null, getPointsLeft()));
 //
 //		applyModification(ref);
-		
+
 		return ref;
 	}
 
@@ -286,7 +286,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 		// Only can increase those that already exist
 		if (!model.hasPower(ref.getPower()))
 			return false;
-		
+
 		SelectionType type = ref.getPower().getSelectable();
 		if (type==null)
 			return false;
@@ -316,7 +316,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 	@Override
 	public boolean canBeDecreased(PowerReference ref) {
 		logger.info("canBeDecreased("+ref+")");
-		
+
 		if (!model.getPowers().contains(ref))
 			return false;
 
@@ -377,7 +377,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 			// Inform listener
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POWER_CHANGED, ref));
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_POWERS, null, getPointsLeft()));
-			
+
 			return true;
 		}
 		return false;
@@ -454,7 +454,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 					}
 				}
 			}
-			
+
 			/*
 			 * Process incoming modifications
 			 */
@@ -489,7 +489,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 					unprocessed.add(mod);
 				}
 			}
-			
+
 			/*
 			 * Check points spent in powers
 			 */
@@ -500,7 +500,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 			// them to be payed with GP
 			Collections.sort(powers, new Comparator<PowerReference>() {
 				public int compare(PowerReference o1, PowerReference o2) {
-					int cmp = (new Integer(o1.getPower().getCost()*o1.getModifiedCount())).compareTo(o2.getPower().getCost()*o2.getModifiedCount());
+					int cmp = (Integer.valueOf(o1.getPower().getCost()*o1.getModifiedCount())).compareTo(o2.getPower().getCost()*o2.getModifiedCount());
 					if (cmp!=0) return cmp;
 					return o1.getPower().getName().compareTo(o2.getPower().getName());
 				}
@@ -530,9 +530,9 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 				}
 			}
 			// Calculate needed exp
-			
+
 			logger.debug("  Invested "+(pointsMax-pointsLeft)+" GP and "+expInvested+" EP for powers");
-			
+
 			/*
 			 * Check all points are spent
 			 */
@@ -540,7 +540,7 @@ public class NewPowerGenerator implements PowerController, Generator, SpliMoChar
 				todos.add(new ToDoElement(Severity.STOPPER, String.format(RES.getString("powergen.todo"), getPointsLeft())));
 			if (expInvested>0)
 				todos.add(new ToDoElement(Severity.INFO, String.format(RES.getString("powergen.todo.experience"), expInvested)));
-			
+
 			/*
 			 * Insert modifications attached to power
 			 */

@@ -13,9 +13,9 @@ import org.prelle.splimo.SpliMoCharacter;
 
 /**
  * Adds all {@link Spell}s of a specific magic {@link Skill}.
- * 
+ *
  * @author frank.buettner
- * 
+ *
  */
 public class SpellAdder extends AbstractAdder {
 
@@ -89,9 +89,9 @@ public class SpellAdder extends AbstractAdder {
 
 	/**
 	 * Sorts the spells in ascending order on the basis of their level.
-	 * 
+	 *
 	 * @author frank.buettner
-	 * 
+	 *
 	 */
 	private class SpellSorter implements Comparator<SpellValue> {
 
@@ -107,8 +107,8 @@ public class SpellAdder extends AbstractAdder {
 				return 1;
 			}
 
-			Integer o1Level = new Integer(o1.getSpellLevel());
-			Integer o2Level = new Integer(o2.getSpellLevel());
+			Integer o1Level = Integer.valueOf(o1.getSpellLevel());
+			Integer o2Level = Integer.valueOf(o2.getSpellLevel());
 
 			return o1Level.compareTo(o2Level);
 		}

@@ -19,19 +19,19 @@ public class ItemModification extends ModificationImpl {
     private ItemAttribute attr;
 	@Attribute
     private int val;
-    
+
     //-----------------------------------------------------------------------
     public ItemModification() {
         type = ModificationValueType.RELATIVE;
     }
-    
+
     //-----------------------------------------------------------------------
     public ItemModification(ItemAttribute attr, int val) {
         type = ModificationValueType.RELATIVE;
         this.attr = attr;
         this.val  = val;
     }
-    
+
     //-----------------------------------------------------------------------
     public ItemModification(ModificationValueType type, ItemAttribute attr, int val) {
         this.type = type;
@@ -54,37 +54,37 @@ public class ItemModification extends ModificationImpl {
             return attr.getName()+((val<0)?(" "+val):(" +"+val));
         return attr.getName()+" = "+val;
     }
-    
+
     //-----------------------------------------------------------------------
     public ModificationValueType getType() {
         return type;
     }
-    
+
     //-----------------------------------------------------------------------
     public void setType(ModificationValueType type) {
         this.type = type;
     }
-    
+
     //-----------------------------------------------------------------------
     public ItemAttribute getAttribute() {
         return attr;
     }
-    
+
     //-----------------------------------------------------------------------
     public void setAttribute(ItemAttribute attr) {
         this.attr = attr;
     }
-    
+
     //-----------------------------------------------------------------------
     public int getValue() {
         return val;
     }
-    
+
     //-----------------------------------------------------------------------
     public void setValue(int val) {
         this.val = val;
     }
-    
+
     //-----------------------------------------------------------------------
     /**
      */
@@ -97,7 +97,7 @@ public class ItemModification extends ModificationImpl {
         } else
             return false;
     }
-    
+
     //-----------------------------------------------------------------------
     /**
      */
@@ -110,7 +110,7 @@ public class ItemModification extends ModificationImpl {
         } else
             return false;
     }
-    
+
     //-------------------------------------------------------
     /* (non-Javadoc)
      * @see java.lang.Comparable#compareTo(java.lang.Object)
@@ -120,8 +120,8 @@ public class ItemModification extends ModificationImpl {
             return toString().compareTo(obj.toString());
         ItemModification other = (ItemModification)obj;
         if (attr!=other.getAttribute())
-            return (new Integer(attr.ordinal())).compareTo(new Integer(other.getAttribute().ordinal()));
-        return (new Integer(type.ordinal()).compareTo(new Integer(other.getType().ordinal())));
+            return (Integer.valueOf(attr.ordinal())).compareTo(Integer.valueOf(other.getAttribute().ordinal()));
+        return (Integer.valueOf(type.ordinal()).compareTo(Integer.valueOf(other.getType().ordinal())));
     }
-    
+
 }// AttributeModification

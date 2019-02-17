@@ -16,24 +16,24 @@ public class PointsModification extends ModificationImpl {
 	private PointsModType type;
 	@Attribute
 	private int val;
-    
+
     //-----------------------------------------------------------------------
     public PointsModification() {
     }
-    
+
     //-----------------------------------------------------------------------
     public PointsModification(PointsModType type, int val) {
         this.type = type;
         this.val  = val;
     }
-    
+
     //-----------------------------------------------------------------------
     public PointsModification clone() {
     	PointsModification ret = new PointsModification(type, val);
     	ret.cloneAdd(this);
     	return ret;
     }
-    
+
     //-----------------------------------------------------------------------
     public String toString() {
     	if (type==null)
@@ -45,27 +45,27 @@ public class PointsModification extends ModificationImpl {
     		return "Unknown type["+type+"]";
     	}
     }
-    
+
     //-----------------------------------------------------------------------
     public PointsModType getType() {
         return type;
     }
-    
+
     //-----------------------------------------------------------------------
     public void setType(PointsModType type) {
         this.type = type;
     }
-    
+
     //-----------------------------------------------------------------------
     public int getValue() {
         return val;
     }
-    
+
     //-----------------------------------------------------------------------
     public void setValue(int val) {
         this.val = val;
     }
-    
+
     //-----------------------------------------------------------------------
     /**
      */
@@ -77,7 +77,7 @@ public class PointsModification extends ModificationImpl {
         } else
             return false;
     }
-    
+
     //-----------------------------------------------------------------------
     /**
      */
@@ -89,7 +89,7 @@ public class PointsModification extends ModificationImpl {
         } else
             return false;
     }
-    
+
     //-------------------------------------------------------
     /* (non-Javadoc)
      * @see java.lang.Comparable#compareTo(java.lang.Object)
@@ -98,7 +98,7 @@ public class PointsModification extends ModificationImpl {
         if (!(obj instanceof PointsModification))
             return toString().compareTo(obj.toString());
         PointsModification other = (PointsModification)obj;
-         return (new Integer(type.ordinal()).compareTo(new Integer(other.getType().ordinal())));
+         return (Integer.valueOf(type.ordinal()).compareTo(Integer.valueOf(other.getType().ordinal())));
     }
-    
+
 }// AttributeModification

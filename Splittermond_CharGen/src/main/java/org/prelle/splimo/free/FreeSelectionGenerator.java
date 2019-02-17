@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.free;
 
@@ -41,11 +41,11 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class FreeSelectionGenerator {
-	
+
 	private static Logger logger = LogManager.getLogger("splittermond.chargen.free");
 
 	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
-	
+
 	private static List<Resource> BASE_RESOURCES = new ArrayList<Resource>(Arrays.asList(new Resource[]{
 			SplitterMondCore.getResource("reputation"),
 			SplitterMondCore.getResource("status"),
@@ -54,22 +54,22 @@ public class FreeSelectionGenerator {
 	}));
 
 	private SpliMoCharacter model;
-	
+
 	private String name;
-	
+
 	private boolean selectCultureLore;
 	private CultureLore cultLore;
-	
+
 	private boolean selectLanguage;
 	private Language language;
-	
+
 	// Points available for powers
 	private int maxPointsPower;
 	// Unspent points for powers
 	private int availPowers;
 	// Selected powers
 	private List<Power> selectPower;
-	
+
 	// Points available for skills
 	private int maxPointsSkills;
 	// Unspent points for skills
@@ -82,27 +82,27 @@ public class FreeSelectionGenerator {
 	private int maxMagicSkills;
 	// Selected skills
 	private Map<Skill, Integer> selectedSkills;
-	
+
 	// Points for masteries
 	private int maxMasteries;
 	// Unspent points for masteries
 	private int availMasteries;
 	// Selected masterships
 	private List<MastershipModification> masterships;
-	
+
 	// Points available for resources
 	private int maxPointsResources;
 	// Unspent points for skills
 	private int availResources;
 	// Selected resources
 	private Map<Resource, Integer> selectedResources;
-	
+
 
 	//-------------------------------------------------------------------
-	public FreeSelectionGenerator(SpliMoCharacter model, boolean selCultLore, boolean selLang, int powers, int skills, int magSchools, int maxSkill, int maxMagic, 
+	public FreeSelectionGenerator(SpliMoCharacter model, boolean selCultLore, boolean selLang, int powers, int skills, int magSchools, int maxSkill, int maxMagic,
 			int masteries, int resources) {
 		this.model = model;
-		
+
 		selectCultureLore = selCultLore;
 		selectLanguage  = selLang;
 		maxPointsPower  = powers;
@@ -112,18 +112,18 @@ public class FreeSelectionGenerator {
 		availSkills     = skills;
 		maxMagicSkills  = magSchools;
 		maxSkillValue   = maxSkill;
-		maxMagicSkillValue = maxMagic;		
+		maxMagicSkillValue = maxMagic;
 		selectedSkills  = new HashMap<Skill, Integer>();
-		
+
 		maxMasteries    = masteries;
 		availMasteries  = masteries;
 		masterships     = new ArrayList<MastershipModification>();
-		
+
 		maxPointsResources = resources;
 		availResources  = resources;
 		this.selectedResources  = new HashMap<Resource, Integer>();
 	}
-	
+
 	//-------------------------------------------------------------------
 	public boolean isDone() {
 		if (canSelectCultureLore() && cultLore==null) return false;
@@ -132,7 +132,7 @@ public class FreeSelectionGenerator {
 		if (canSelectSkills()      && getPointsSkills()>0) return false;
 		if (canSelectMasterships() && getPointsMasterships()>0) return false;
 		if (canSelectResources()   && getPointsResources()!=0) return false;
-		
+
 		return true;
 	}
 
@@ -212,7 +212,7 @@ public class FreeSelectionGenerator {
 			// De-select
 			selectPower.remove(selection);
 		}
-		
+
 		// Recalculate points
 		availPowers = maxPointsPower;
 		for (Power power : selectPower)
@@ -239,8 +239,8 @@ public class FreeSelectionGenerator {
 		int magicCount = 0;
 		for (Skill tmp : selectedSkills.keySet())
 			if (tmp.getType()==SkillType.MAGIC) magicCount++;
-		
-		
+
+
 		List<Skill> ret = new ArrayList<Skill>();
 		for (Skill tmp : SplitterMondCore.getSkills()) {
 			// Don't show those that are already selected
@@ -255,7 +255,7 @@ public class FreeSelectionGenerator {
 			// Only show non-magic skill when allowed
 			if (maxSkillValue==0 && tmp.getType()!=SkillType.MAGIC)
 				continue;
-			
+
 			ret.add(tmp);
 		}
 		return ret;
@@ -282,22 +282,22 @@ public class FreeSelectionGenerator {
 					// Not enough points left
 					return false;
 
-				selectedSkills.put(selection, new Integer(value));
+				selectedSkills.put(selection, Integer.valueOf(value));
 				availSkills -= diff;
 			} else if (oldVal>value) {
 				// CASE: Trying to decrease skill
-				int diff = oldVal - value;					
+				int diff = oldVal - value;
 				availSkills += diff;
 				if (value==0)
 					selectedSkills.remove(selection);
 				else
-					selectedSkills.put(selection, new Integer(value));
+					selectedSkills.put(selection, Integer.valueOf(value));
 			}
 		} else {
 			// Not selected yet
 			if (value>availSkills)
 				return false;
-			selectedSkills.put(selection, new Integer(value));
+			selectedSkills.put(selection, Integer.valueOf(value));
 			availSkills -= value;
 		}
 		return true;
@@ -349,7 +349,7 @@ public class FreeSelectionGenerator {
 		// TODO: only return those skills that are selected - assuming
 		// that to have to receive at least one points in a skill before
 		// you can select a mastership
-		
+
 		List<Skill> ret = new ArrayList<Skill>();
 		for (Skill tmp : SplitterMondCore.getSkills()) {
 			// Don't show those skills where not at least point is distributed
@@ -375,12 +375,12 @@ public class FreeSelectionGenerator {
 	public void setMastership(MastershipModification master, boolean add) {
 		// Remove existing mastership
 		masterships.remove(master);
-		
+
 		availMasteries = maxMasteries - masterships.size();
-		
-		
+
+
 		if (availMasteries>0 && add) {
-			masterships.add(master);		
+			masterships.add(master);
 			availMasteries--;
 		}
 	}
@@ -391,27 +391,27 @@ public class FreeSelectionGenerator {
 		ret.setName(name);
 		ret.setKey("custom");
 		ret.addModification(new NotBackgroundModification());
-		
+
 		// Culture Lore
 		if (cultLore!=null)
 			ret.addModification(new CultureLoreModification(cultLore));
-		
+
 		// Language
 		if (language!=null)
 			ret.addModification(new LanguageModification(language));
-		
+
 		// Powers
 		for (Power power : selectPower)
 			ret.addModification(new PowerModification(power));
-		
+
 		// Skills
-		for (Entry<Skill, Integer> entry : selectedSkills.entrySet()) 
+		for (Entry<Skill, Integer> entry : selectedSkills.entrySet())
 			ret.addModification(new SkillModification(entry.getKey(), entry.getValue()));
-		
+
 		// Masterships
 		for (MastershipModification mod : masterships)
 			ret.addModification(mod);
-		
+
 		return ret;
 	}
 
@@ -452,15 +452,15 @@ public class FreeSelectionGenerator {
 		Background ret = new Background();
 		ret.setName(name);
 		ret.setKey("custom");
-		
+
 		// Resources
 		for (Entry<Resource, Integer> res : selectedResources.entrySet())
 			ret.addModifications(new ResourceModification(res.getKey(), res.getValue()));
-		
+
 		// Skills
-		for (Entry<Skill, Integer> entry : selectedSkills.entrySet()) 
+		for (Entry<Skill, Integer> entry : selectedSkills.entrySet())
 			ret.addModifications(new SkillModification(entry.getKey(), entry.getValue()));
-		
+
 		logger.debug("Return as background: "+ret.getModifications());
 		return ret;
 	}
@@ -493,23 +493,23 @@ public class FreeSelectionGenerator {
 		Education ret = new Education();
 		ret.setName(name);
 		ret.setKey("custom");
-		
+
 		// Resources
 		for (Entry<Resource, Integer> res : selectedResources.entrySet())
 			ret.addModifications(new ResourceModification(res.getKey(), res.getValue()));
-		
+
 		// Powers
 		for (Power power : selectPower)
 			ret.addModifications(new PowerModification(power));
-		
+
 		// Skills
-		for (Entry<Skill, Integer> entry : selectedSkills.entrySet()) 
+		for (Entry<Skill, Integer> entry : selectedSkills.entrySet())
 			ret.addModifications(new SkillModification(entry.getKey(), entry.getValue()));
-		
+
 		// Masterships
 		for (MastershipModification mod : masterships)
 			ret.addModifications(mod);
-		
+
 		logger.debug("Modifications of selected = "+ret.getModifications());
 		return ret;
 	}
@@ -566,7 +566,7 @@ public class FreeSelectionGenerator {
 			// Don't show those that are already selected
 			if (selectedResources.containsKey(tmp))
 				continue;
-			
+
 			ret.add(tmp);
 		}
 		return ret;
@@ -578,7 +578,7 @@ public class FreeSelectionGenerator {
 	 */
 	public boolean set(Resource selection, int value) {
 		logger.debug("set resource "+selection+" to "+value);
-		
+
 		/*
 		 * Check if there are enough available points to increase
 		 * the resource
@@ -589,8 +589,8 @@ public class FreeSelectionGenerator {
 			if (availResources<1)
 				return false;
 		}
-		
-		
+
+
 		/*
 		 * While in theory there is no limit on how high a resource
 		 * can be raised, we bind the upper limit to the maximum
@@ -599,16 +599,16 @@ public class FreeSelectionGenerator {
 		 */
 		if (value>maxPointsResources)
 			return false;
-		
+
 		/*
 		 * A value of 0 indicates the request to remove the resource,
 		 * unless it was a basic resource, which also may have negative
 		 * values
 		 */
 		if (value==0 && !BASE_RESOURCES.contains(selection)) {
-			selectedResources.remove(selection);	
+			selectedResources.remove(selection);
 		} else {
-			selectedResources.put(selection, new Integer(value));
+			selectedResources.put(selection, Integer.valueOf(value));
 		}
 
 		/*
@@ -619,7 +619,7 @@ public class FreeSelectionGenerator {
 			cost += entry.getValue();
 		}
 		availResources = maxPointsResources - cost;
-		
+
 		return true;
 	}
 
@@ -629,7 +629,7 @@ public class FreeSelectionGenerator {
 		for (Entry<Resource, Integer> entry : selectedResources.entrySet()) {
 			if (entry.getValue()==0 && !BASE_RESOURCES.contains(entry.getKey()))
 				continue;
-			
+
 			ret.add( new ResourceModification(entry.getKey(), entry.getValue()));
 		}
 		Collections.sort(ret);
