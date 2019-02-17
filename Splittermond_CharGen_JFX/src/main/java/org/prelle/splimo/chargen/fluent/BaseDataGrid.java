@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.fluent;
 
@@ -51,12 +51,12 @@ import javafx.util.StringConverter;
 public class BaseDataGrid extends GridPane {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
-	
+
 	private static PropertyResourceBundle RES = SpliMoCharGenJFXConstants.UI;
-	
+
 	private CharacterController  control;
 	private CharacterHandle      handle;
-	
+
 	private TextField            tfName;
 	private ComboBox<Education>  cbEducation;
 	private ComboBox<Culture>    cbCulture;
@@ -71,7 +71,7 @@ public class BaseDataGrid extends GridPane {
 	private TextField            tfWeight;
 	private TextField            tfSkin;
 	private TextField            tfBirth;
-	
+
 	private ImageView            ivPortrait;
 	private Button               btnPortrait;
 
@@ -81,7 +81,7 @@ public class BaseDataGrid extends GridPane {
 		this.handle  = handle;
 		initComponents();
 		initLayout();
-		
+
 		refresh();
 		initInteractivity();
 	}
@@ -102,12 +102,12 @@ public class BaseDataGrid extends GridPane {
 		tfWeight    = new TextField();
 		tfSkin      = new TextField();
 		tfBirth     = new TextField();
-		
+
 		cbEducation.setEditable(true);
 		cbCulture.setEditable(true);
 		cbBackground.setEditable(true);
 		cbDeity.setDisable(true);
-		
+
 		cbEducation.setConverter(new StringConverter<Education>() {
 			public String toString(Education value) { return (value!=null)?value.getName():"?";}
 			public Education fromString(String string) {
@@ -127,10 +127,10 @@ public class BaseDataGrid extends GridPane {
 				control.getModel().setEducation(n.getId());
 			}
 		});
-		
+
 		cbCulture.setConverter(new StringConverter<Culture>() {
 			public String toString(Culture value) { return (value!=null)?value.getName():"?";}
-			public Culture fromString(String string) { 
+			public Culture fromString(String string) {
 				for (Culture edu : SplitterMondCore.getCultures()) {
 					if (edu.getName().equalsIgnoreCase(string))
 						return edu;
@@ -147,10 +147,10 @@ public class BaseDataGrid extends GridPane {
 				control.getModel().setCulture(n.getId());
 			}
 		});
-		
+
 		cbBackground.setConverter(new StringConverter<Background>() {
 			public String toString(Background value) { return (value!=null)?value.getName():"?";}
-			public Background fromString(String string) { 
+			public Background fromString(String string) {
 				for (Background edu : SplitterMondCore.getBackgrounds()) {
 					if (edu.getName().equalsIgnoreCase(string))
 						return edu;
@@ -179,7 +179,7 @@ public class BaseDataGrid extends GridPane {
 			public String toString(Deity value) { return (value!=null)?value.getName():"?";}
 			public Deity fromString(String string) { return null; }
 		});
-		
+
 		ivPortrait  = new ImageView();
 		ivPortrait.setPreserveRatio(true);
 		ivPortrait.setFitHeight(200);
@@ -209,8 +209,8 @@ public class BaseDataGrid extends GridPane {
 		Label hdWeight    = new Label(RES.getString("label.weight"));
 		Label hdSkin      = new Label(RES.getString("label.skin"));
 		Label hdBirth     = new Label(RES.getString("label.birthplace"));
-		
-		
+
+
 		add(hdName      , 0,0);
 		add(tfName      , 1,0, 3,1);
 		add(hdEducation , 0,1);
@@ -240,31 +240,31 @@ public class BaseDataGrid extends GridPane {
 		add(tfSkin      , 1,7);
 		add(hdBirth     , 2,7);
 		add(tfBirth     , 3,7);
-		
+
 		add(btnPortrait , 4,0, 1,7);
-		
+
 		for (Node child : this.getChildren()) {
 			int x = GridPane.getColumnIndex(child);
 			// Set style
 			if (x==0 || x==2)
 				child.getStyleClass().addAll("base","table-head");
-			
+
 			// Let node fill every available space
 			if (child instanceof Region && !(child instanceof Button)) {
 				((Region)child).setMaxWidth(Double.MAX_VALUE);
 				if (x==0 || x==2)
 					((Region)child).setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 			}
-			
+
 			if (x==1 || x==3) {
 				GridPane.setMargin(child, new Insets(4));
-				
+
 			}
 		}
-		
+
 		setMaxWidth(Double.MAX_VALUE);
 	}
-	
+
 	//-------------------------------------------------------------------
 	public void initInteractivity() {
 		tfName.textProperty().addListener( (ov,o,n) -> {
@@ -284,12 +284,20 @@ public class BaseDataGrid extends GridPane {
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.BASE_DATA_CHANGED, control.getModel()));
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, control.getModel()));
 		});
+		cbMoonsign.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> control.getModel().setSplinter(n));
+		cbGender.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> control.getModel().setGender(n));
+		tfBirth.textProperty().addListener( (ov,o,n) -> control.getModel().setBirthPlace(n));
+		tfEyes.textProperty().addListener( (ov,o,n) -> control.getModel().setEyeColor(n));
+		tfHair.textProperty().addListener( (ov,o,n) -> control.getModel().setHairColor(n));
+		tfSkin.textProperty().addListener( (ov,o,n) -> control.getModel().setSkinColor(n));
+		tfSize.textProperty().addListener( (ov,o,n) -> control.getModel().setSize(Integer.parseInt(n)));
+		tfWeight.textProperty().addListener( (ov,o,n) -> control.getModel().setWeight(Integer.parseInt(n)));
 		cbDeity.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
 			logger.warn("TODO: implement setting deity");
 //			control.getModel().setDeity(n);
 		});
 	}
-	
+
 	//-------------------------------------------------------------------
 	public void refresh() {
 		SpliMoCharacter model = control.getModel();
@@ -306,7 +314,7 @@ public class BaseDataGrid extends GridPane {
 		tfWeight.setText(String.valueOf(model.getWeight()));
 		tfSkin.setText(model.getFurColor());
 		tfBirth.setText(model.getBirthplace());
-		
+
 		if (model.getImage()!=null) {
 			ivPortrait.setImage(new Image(new ByteArrayInputStream(model.getImage())));
 		}
