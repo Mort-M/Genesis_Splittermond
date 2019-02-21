@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.jfx;
 
@@ -71,13 +71,13 @@ public class MoonSignPane extends HBox {
 				return o1.getName().compareTo(o2.getName());
 			}
 		});
-		
+
 		int i=0;
 		for (Moonsign tmp : data) {
 			int x= i%3;
 			int y= i/3;
 			Image img = null;
-			String fname = "data/moon_"+tmp.name().toLowerCase()+".png";
+			String fname = SpliMoCharGenJFXConstants.PREFIX+"/data/moon_"+tmp.name().toLowerCase()+".png";
 			logger.debug("Load "+fname);
 			InputStream in = getClass().getClassLoader().getResourceAsStream(fname);
 			if (in!=null) {
@@ -97,16 +97,16 @@ public class MoonSignPane extends HBox {
 					// Mark selected
 					logger.info("Moonsplinter now "+selected);
 			});
-			
+
 			Label label = new Label(tmp.getName());
 //			label.setPrefWidth(110);
-			
+
 			VBox foo = new VBox();
 			foo.setAlignment(Pos.CENTER);
 			foo.getChildren().addAll(iView, label);
 			mapping.put(iView, tmp);
 			content.add(foo, x, y);
-			
+
 			i++;
 		}
 

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.jfx;
 
@@ -43,12 +43,12 @@ public class WizardPageRace extends WizardPage implements ChangeListener<Race> {
 
 	private SpliMoCharacterGenerator charGen;
 	private LetUserChooseListener choiceCallback;
-	
+
 	private HorizontalSpinner<Race> raceSpinner;
 	private Label description;
 	private Label statsAttributes;
 	private Label statsPowers;
-	
+
 	private VBox content;
 
 	//-------------------------------------------------------------------
@@ -64,7 +64,7 @@ public class WizardPageRace extends WizardPage implements ChangeListener<Race> {
 		initInteractivity();
 		this.charGen = charGen;
 		this.choiceCallback = choiceCallback;
-		
+
 		// Select human race
 		updateRaceView(SplitterMondCore.getRaces().get(0));
 	}
@@ -82,18 +82,18 @@ public class WizardPageRace extends WizardPage implements ChangeListener<Race> {
 		});
 
 		raceSpinner.getItems().addAll(SplitterMondCore.getRaces());
-		
+
 		content = new VBox();
 		content.setSpacing(5);
-		
+
 		description = new Label();
 		description.setWrapText(true);
 		description.getStyleClass().add("text-body");
-		
+
 		statsAttributes = new Label();
 		statsAttributes.setWrapText(true);
 		statsAttributes.getStyleClass().addAll("text-body","stats-block");
-		
+
 		statsPowers = new Label();
 		statsPowers.setWrapText(true);
 		statsPowers.getStyleClass().addAll("text-body","stats-block");
@@ -105,7 +105,7 @@ public class WizardPageRace extends WizardPage implements ChangeListener<Race> {
 //		description.setStyle("-fx-max-width: 20em");
 //		description.setStyle("-fx-pref-height: 12em");
 		description.setAlignment(Pos.TOP_LEFT);
-		
+
 //		statsAttributes.setPrefWidth(140);
 //		statsAttributes.setStyle("-fx-min-width: 12em");
 		statsAttributes.setAlignment(Pos.TOP_LEFT);
@@ -114,11 +114,11 @@ public class WizardPageRace extends WizardPage implements ChangeListener<Race> {
 		statsPowers.setStyle("-fx-pref-width: 24em");
 //		statsPowers.setStyle("-fx-min-height: 10em");
 		statsPowers.setAlignment(Pos.TOP_LEFT);
-		
+
 		HBox sideBySide = new HBox(20);
 		sideBySide.getChildren().add(statsAttributes);
 		sideBySide.getChildren().add(statsPowers);
-		
+
 		content.getChildren().addAll(raceSpinner, description, sideBySide);
 		content.setStyle("-fx-pref-height: 20em");
 		setImageInsets(new Insets(-40,0,0,0));
@@ -128,7 +128,7 @@ public class WizardPageRace extends WizardPage implements ChangeListener<Race> {
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
 		raceSpinner.valueProperty().addListener(this);
-		
+
 		statsAttributes.prefHeightProperty().bind(statsPowers.heightProperty());
 		statsPowers.prefHeightProperty().bind(statsAttributes.heightProperty());
 	}
@@ -137,7 +137,7 @@ public class WizardPageRace extends WizardPage implements ChangeListener<Race> {
 	private void updateRaceView(Race newRace) {
 		Image img = imageByRace.get(newRace);
 		if (img==null) {
-			String fname = "data/race_"+newRace.getKey()+".png";
+			String fname = SpliMoCharGenJFXConstants.PREFIX+"/data/race_"+newRace.getKey()+".png";
 			logger.trace("Load "+fname);
 			InputStream in = getClass().getClassLoader().getResourceAsStream(fname);
 			if (in!=null) {
@@ -147,7 +147,7 @@ public class WizardPageRace extends WizardPage implements ChangeListener<Race> {
 				logger.warn("Missing image at "+fname);
 		}
 		setImage(img);
-		
+
 		description.setText( uiResources.getString("descr.race."+newRace.getKey()) );
 		statsAttributes.setText( uiResources.getString("descr.race."+newRace.getKey()+".attr") );
 		statsPowers.setText( uiResources.getString("descr.race."+newRace.getKey()+".powers") );
@@ -160,7 +160,7 @@ public class WizardPageRace extends WizardPage implements ChangeListener<Race> {
 		logger.debug("Currently display race "+newRace);
 
 		updateRaceView(newRace);
-		
+
 		if (charGen!=null)
 			finishButton.set(charGen.hasEnoughData());
 	}
@@ -186,7 +186,7 @@ public class WizardPageRace extends WizardPage implements ChangeListener<Race> {
 			 */
 			charGen.selectRace(raceSpinner.getValue(), choiceCallback);
 //			Runnable run = new Runnable() {
-//				public void run() {	charGen.selectRace(raceSpinner.getValue(), choiceCallback); }				
+//				public void run() {	charGen.selectRace(raceSpinner.getValue(), choiceCallback); }
 //			};
 //			Thread thread = new Thread(run,"BlocksInLetUserChoose");
 //			thread.start();

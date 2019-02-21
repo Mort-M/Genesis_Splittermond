@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen.jfx;
 
@@ -82,12 +82,12 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 
 	private SpliMoCharacterGenerator charGen;
 	private LetUserChooseListener choiceCallback;
-	
+
 	private Map<Culture.Continent, TreeItem<Culture>> continents;
 	private CheckBox includeUnusual;
 	private TreeView<Culture> options;
 	private Label description;
-	
+
 	private VBox content;
 
 	/**
@@ -114,7 +114,7 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 		this.choiceCallback = choiceCallback;
 
 		GenerationEventDispatcher.addListener(this);
-		
+
 		// Prepare continents
 		continents = new HashMap<Culture.Continent, TreeItem<Culture>>();
 
@@ -125,7 +125,7 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 		initLayout();
 		initInteractivity();
 		fillData();
-		
+
 		nextButton.set(false);
 		finishButton.set(false);
 	}
@@ -133,14 +133,14 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 	//-------------------------------------------------------------------
 	private void initComponents() {
 		setTitle(UI.getString("wizard.selectCulture.title"));
-		
+
 		includeUnusual = new CheckBox(UI.getString("wizard.selectCulture.showUnusual"));
 
 		TreeItem<Culture> root = new TreeItem<Culture>(null);
 		root.setExpanded(true);
-		
+
 		initializeContinents(root);
-		
+
 		options = new TreeView<Culture>(root);
 		options.setMinHeight(200);
 		options.setShowRoot(false);
@@ -151,10 +151,10 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
                 return new CultureTreeCell();
             }
         });
-		
+
 		content = new VBox();
 		content.setSpacing(5);
-		
+
 		description = new Label();
 		description.setWrapText(true);
 		description.getStyleClass().add("text-body");
@@ -165,10 +165,10 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 //		HBox.setMargin(ivSideImage, new Insets(20,0,0,0));
 		description.setStyle("-fx-pref-width: 30em");
 //		description.setPrefWidth(300);
-		
+
 		HBox sideBySide = new HBox(20);
 		sideBySide.getChildren().addAll(options, description);
-		
+
 		content.getChildren().addAll(includeUnusual, sideBySide);
 		super.setContent(content);
 	}
@@ -189,7 +189,7 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 	private void update(Culture value) {
 		logger.debug("updateCulture("+value+" / "+value.getKey()+")");
 		memorizedSelection = value;
-		
+
 		if (value instanceof MyContinent) {
 			nextButton.set(false); // Allow
 			finishButton.set(false);
@@ -198,7 +198,7 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 			nextButton.set(true); // Allow
 			finishButton.set(true);
 		}
-		
+
 		/*
 		 * Description
 		 */
@@ -207,23 +207,23 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 		try {
 			if (value.getKey()!=null) {
 				// Line 1
-				if (!(value instanceof MyContinent)) 
+				if (!(value instanceof MyContinent))
 					pageLine = String.valueOf(value.getProductNameShort()+" "+value.getPage());
 				// Line 2
-				if (!(value instanceof MyContinent)) 
+				if (!(value instanceof MyContinent))
 					helpLine = value.getHelpResourceBundle().getString("culture."+value.getKey()+".desc");
 			}
 			description.setText(pageLine+"\n\n"+helpLine);
 		} catch (MissingResourceException e) {
 			description.setText("Missing property '"+e.getKey()+"' in "+value.getHelpResourceBundle().getBaseBundleName());
 		}
-		
+
 		/*
 		 * Image
 		 */
 		Image image = imageByRace.get(value);
 		if (image==null) {
-			String fname = "data/culture_"+value.getKey()+".png";
+			String fname = SpliMoCharGenJFXConstants.PREFIX+"/data/culture_"+value.getKey()+".png";
 			InputStream in = getClass().getClassLoader().getResourceAsStream(fname);
 			if (in==null) {
 				in = getClass().getClassLoader().getResourceAsStream("data/Culture.png");
@@ -252,7 +252,7 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 		default:
 		}
 	}
-	
+
 	//--------------------------------------------------------------------
 	/**
 	 * @see org.prelle.javafx.WizardPage#pageLeft(org.prelle.javafx.CloseType)
@@ -306,12 +306,12 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 	//-------------------------------------------------------------------
 	private void removeAvailableCulture(Culture cult) {
 		available.remove(cult);
-		
+
 		TreeItem<Culture> parent = continents.get(cult.getContinent());
 		if (parent!=null) {
 			TreeItem<Culture> item = allItems.get(cult);
-			if (item!=null) 
-				parent.getChildren().remove(item);			
+			if (item!=null)
+				parent.getChildren().remove(item);
 		} else
 			logger.error("No tree item for continent "+cult.getContinent());
 	}
@@ -325,7 +325,7 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 		for (Culture cult : available) {
 			addAvailableCulture(cult);
 		}
-		
+
 		String fname = "data/Culture.png";
 		InputStream in = getClass().getClassLoader().getResourceAsStream(fname);
 		if (in!=null) {
@@ -340,7 +340,7 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 	private void updateCultures(List<Culture> newAvailable) {
 		logger.debug("updateCultures");
 		Culture keepMemorized = memorizedSelection;
-		
+
 		List<Culture> notAvailableAnymore = new ArrayList<Culture>(available);
 		for (Culture newAvail : newAvailable) {
 			if (available.contains(newAvail)) {
@@ -352,16 +352,16 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 				addAvailableCulture(newAvail);
 			}
 		}
-		
+
 		// All cultures still in "notAvailableAnymore" are exactly that
 		// If the currently selected culture is among them - deselect it
 //		if (notAvailableAnymore.contains(charGen.g))
-		
+
 		for (Culture toRemove : notAvailableAnymore) {
 //			logger.warn("TODO: remove culture "+toRemove);
 			removeAvailableCulture(toRemove);
 		}
-		
+
 		memorizedSelection = keepMemorized;
 		if (newAvailable.contains(memorizedSelection))
 			options.getSelectionModel().select(allItems.get(memorizedSelection));
