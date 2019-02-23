@@ -63,7 +63,7 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	 */
 	@Override
 	public String getID() {
-		return "CORE";
+		return "CHARGEN";
 	}
 
 	//-------------------------------------------------------------------

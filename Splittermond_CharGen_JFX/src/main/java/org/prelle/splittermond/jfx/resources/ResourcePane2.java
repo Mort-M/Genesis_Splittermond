@@ -85,7 +85,7 @@ public class ResourcePane2 extends HBox implements GenerationEventListener {
 	private void initComponents(LetUserChooseListener callback) {
 		lvAvailable = new ResourceListView(control);
 		lvSelected  = new ResourceReferenceListView(control, callback);
-		Image img = new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_trashcan.png"));
+		Image img = new Image(getClass().getResourceAsStream("icon_trashcan.png"));
 		ImageView iView = new ImageView(img);
 		iView.setFitHeight(128);
 		iView.setFitWidth(128);
