@@ -18,6 +18,7 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.levelling.ResourceLeveller;
 import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.chargen.jfx.GeneratorRulePlugin;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.ObjectProperty;
@@ -85,7 +86,7 @@ public class ResourcePane2 extends HBox implements GenerationEventListener {
 	private void initComponents(LetUserChooseListener callback) {
 		lvAvailable = new ResourceListView(control);
 		lvSelected  = new ResourceReferenceListView(control, callback);
-		Image img = new Image(getClass().getResourceAsStream("icon_trashcan.png"));
+		Image img = new Image(GeneratorRulePlugin.class.getResourceAsStream("images/icon_trashcan.png"));
 		ImageView iView = new ImageView(img);
 		iView.setFitHeight(128);
 		iView.setFitWidth(128);

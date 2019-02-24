@@ -14,8 +14,8 @@ public interface SpliMoCharGenJFXConstants {
 
 	public final static String BASE_LOGGER_NAME = "splittermond.jfx";
 
-	public final static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("org/prelle/splimo/chargen/jfx/i18n/splimo-chargen");
+	public final static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle("org/prelle/splittermond/chargen/jfx/i18n/splimo-chargen");
 
-	public static final String PREFIX = "org/prelle/splimo/chargen/jfx";
+	public static final String PREFIX = "org/prelle/splittermond/chargen/jfx";
 
 }

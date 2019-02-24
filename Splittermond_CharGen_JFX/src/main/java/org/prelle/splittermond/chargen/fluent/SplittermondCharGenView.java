@@ -29,6 +29,7 @@ import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.levelling.CharacterLeveller;
 import org.prelle.splittermond.chargen.jfx.CharGenWizardSpliMo;
 import org.prelle.splittermond.chargen.jfx.DevelopmentScreenSpliMo;
+import org.prelle.splittermond.chargen.jfx.GeneratorRulePlugin;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splittermond.chargen.jfx.ViewMode;
 import org.prelle.splittermond.jfx.attributes.AttributeScreen;
@@ -361,7 +362,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 	 */
 	@Override
 	public String[] getStyleSheets() {
-		return new String[] {getClass().getResource("css/splittermond.css").toExternalForm()};
+		return new String[] {GeneratorRulePlugin.class.getResource("css/splittermond.css").toExternalForm()};
 	}
 
 	//-------------------------------------------------------------------
