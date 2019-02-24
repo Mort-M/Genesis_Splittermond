@@ -361,7 +361,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 	 */
 	@Override
 	public String[] getStyleSheets() {
-		return new String[] {SpliMoCharGenJFXConstants.PREFIX+"/css/splittermond.css"};
+		return new String[] {getClass().getResource("css/splittermond.css").toExternalForm()};
 	}
 
 	//-------------------------------------------------------------------

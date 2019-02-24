@@ -181,7 +181,7 @@ public class CharacterViewScreenSpliMo extends ManagedScreen implements Generati
 	 */
 	@Override
 	public String[] getStyleSheets() {
-		return new String[] {SpliMoCharGenJFXConstants.PREFIX+"/css/splittermond.css"};
+		return new String[] {getClass().getResource("css/splittermond.css").toExternalForm()};
 	}
 
 	//-------------------------------------------------------------------
