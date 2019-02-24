@@ -10,10 +10,10 @@ import java.util.PropertyResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.charctrl.NewItemController;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Enhancement;
 import org.prelle.splimo.items.Enhancement.EnhancementType;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.EnhancementReference;
 
 import javafx.geometry.Insets;

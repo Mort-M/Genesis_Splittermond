@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

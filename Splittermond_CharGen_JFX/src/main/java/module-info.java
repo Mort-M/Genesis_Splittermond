@@ -3,9 +3,9 @@
  *
  */
 module splittermond.chargen.jfx {
-	exports org.prelle.splimo.chargen.jfx;
+	exports org.prelle.splittermond.chargen.jfx;
 	exports org.prelle.splittermond.jfx.cultures;
-	exports org.prelle.splimo.chargen.lvl.jfx;
+	exports org.prelle.splittermond.chargen.lvl.jfx;
 	exports org.prelle.splittermond.jfx.spells;
 	exports org.prelle.splittermond.jfx.master;
 	exports org.prelle.splittermond.jfx.notes;
@@ -17,12 +17,12 @@ module splittermond.chargen.jfx {
 	exports org.prelle.splittermond.jfx.creatures;
 	exports org.prelle.splittermond.jfx.equip;
 	exports org.prelle.splittermond.jfx.equip.input;
-	exports org.prelle.splimo.chargen.gen.jfx;
-	exports org.prelle.splimo.chargen.common.jfx;
-	exports org.prelle.splimo.chargen.fluent;
-	exports org.prelle.splimo.chargen.free.jfx;
+	exports org.prelle.splittermond.chargen.gen.jfx;
+	exports org.prelle.splittermond.chargen.common.jfx;
+	exports org.prelle.splittermond.chargen.fluent;
+	exports org.prelle.splittermond.chargen.free.jfx;
 
-	provides de.rpgframework.RulePlugin with org.prelle.splimo.chargen.jfx.GeneratorRulePlugin;
+	provides de.rpgframework.RulePlugin with org.prelle.splittermond.chargen.jfx.GeneratorRulePlugin;
 
 	requires java.prefs;
 	requires javafx.base;

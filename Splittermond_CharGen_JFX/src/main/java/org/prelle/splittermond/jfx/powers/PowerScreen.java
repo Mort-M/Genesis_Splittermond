@@ -20,7 +20,7 @@ import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

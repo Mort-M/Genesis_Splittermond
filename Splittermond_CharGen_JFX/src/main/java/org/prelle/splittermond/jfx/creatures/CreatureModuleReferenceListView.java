@@ -11,10 +11,10 @@ import org.prelle.javafx.ScreenManager;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CommonCreatureController;
 import org.prelle.splimo.chargen.LetUserChooseListener;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.CreatureModule;
 import org.prelle.splimo.creature.CreatureModuleReference;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.application.Platform;
 import javafx.scene.Node;

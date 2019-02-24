@@ -11,11 +11,11 @@ import org.prelle.splimo.Attribute;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Feature;
 import org.prelle.splimo.items.FeatureType;
 import org.prelle.splimo.items.ItemAttribute;
 import org.prelle.splimo.items.LongRangeWeapon;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;

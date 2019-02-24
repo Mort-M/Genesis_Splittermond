@@ -14,7 +14,7 @@ import javafx.scene.layout.VBox;
 
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.skin.NavigButtonControl;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 /**
  * @author prelle

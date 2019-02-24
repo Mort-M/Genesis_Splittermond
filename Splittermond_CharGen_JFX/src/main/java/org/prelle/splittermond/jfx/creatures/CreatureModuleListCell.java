@@ -10,9 +10,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.charctrl.CommonCreatureController;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.creature.CreatureModule;
 import org.prelle.splimo.requirements.Requirement;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.scene.Node;
 import javafx.scene.SnapshotParameters;

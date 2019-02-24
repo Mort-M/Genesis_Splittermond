@@ -16,7 +16,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.FontIcon;
 import org.prelle.splimo.SpliMoCharacter;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Armor;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.EnhancementReference;
@@ -29,6 +28,7 @@ import org.prelle.splimo.items.Shield;
 import org.prelle.splimo.items.Weapon;
 import org.prelle.splimo.persist.WeaponDamageConverter;
 import org.prelle.splimo.requirements.AttributeRequirement;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.geometry.Insets;
 import javafx.scene.Node;

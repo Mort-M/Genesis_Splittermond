@@ -23,14 +23,14 @@ import org.prelle.splimo.SpellSchoolEntry;
 import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.NewItemController;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Enhancement;
 import org.prelle.splimo.items.EnhancementReference;
 import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splimo.items.ItemType;
 import org.prelle.splimo.items.ItemTypeData;
 import org.prelle.splimo.items.Weapon;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;

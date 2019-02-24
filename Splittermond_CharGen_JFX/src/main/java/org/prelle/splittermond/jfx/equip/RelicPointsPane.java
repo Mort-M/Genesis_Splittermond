@@ -8,7 +8,7 @@ import java.util.PropertyResourceBundle;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.charctrl.NewItemController;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;

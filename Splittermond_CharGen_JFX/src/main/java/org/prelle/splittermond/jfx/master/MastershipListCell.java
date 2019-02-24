@@ -16,7 +16,7 @@ import org.prelle.splimo.Spell;
 import org.prelle.splimo.SpellType;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.MastershipController;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.geometry.Pos;
 import javafx.scene.Node;

@@ -14,12 +14,12 @@ import java.util.ResourceBundle;
 
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.Spell;
 import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.creature.Creature;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.geometry.Orientation;
 import javafx.scene.control.Button;

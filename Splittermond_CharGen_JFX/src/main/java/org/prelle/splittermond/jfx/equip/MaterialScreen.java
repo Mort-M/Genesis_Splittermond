@@ -13,8 +13,8 @@ import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
 import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.items.Material;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

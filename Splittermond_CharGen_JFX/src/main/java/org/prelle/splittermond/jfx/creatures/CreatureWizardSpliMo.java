@@ -6,8 +6,8 @@ package org.prelle.splittermond.jfx.creatures;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.Wizard;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.npc.NPCGenerator;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 /**
  * @author prelle

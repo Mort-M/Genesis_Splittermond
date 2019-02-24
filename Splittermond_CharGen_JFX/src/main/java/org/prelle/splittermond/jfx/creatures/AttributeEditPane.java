@@ -10,8 +10,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.creature.Creature;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;

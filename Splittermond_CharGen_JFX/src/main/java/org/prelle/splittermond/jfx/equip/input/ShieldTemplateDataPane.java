@@ -9,13 +9,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Feature;
 import org.prelle.splimo.items.FeatureType;
 import org.prelle.splimo.items.ItemAttribute;
 import org.prelle.splimo.items.Shield;
 import org.prelle.splimo.requirements.AttributeRequirement;
 import org.prelle.splimo.requirements.Requirement;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;

@@ -11,8 +11,8 @@ import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.Wizard;
 import org.prelle.javafx.WizardPage;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.npc.NPCGenerator;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.geometry.Insets;
 import javafx.scene.image.Image;
@@ -105,7 +105,7 @@ public class WizardPageCreatureType extends WizardPage {
 
 	//-------------------------------------------------------------------
 	/**
-	 * @see org.prelle.splimo.chargen.gen.jfx.WizardPage#nextPage()
+	 * @see org.prelle.splittermond.chargen.gen.jfx.WizardPage#nextPage()
 	 */
 	@Override
 	public void pageLeft(CloseType type) {

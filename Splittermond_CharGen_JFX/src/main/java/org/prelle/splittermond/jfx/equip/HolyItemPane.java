@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ScreenManager;
 import org.prelle.splimo.Deity;
 import org.prelle.splimo.charctrl.NewItemController;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;

@@ -8,12 +8,12 @@ import java.util.PropertyResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.rpgframework.jfx.DataInputPane;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Availability;
 import org.prelle.splimo.items.Complexity;
 import org.prelle.splimo.items.ItemAttribute;
 import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splimo.items.MaterialType;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.ChoiceBox;

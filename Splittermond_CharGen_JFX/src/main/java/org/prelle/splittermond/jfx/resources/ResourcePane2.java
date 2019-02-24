@@ -16,9 +16,9 @@ import org.prelle.splimo.charctrl.ResourceController;
 import org.prelle.splimo.chargen.LetUserChooseListener;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.levelling.ResourceLeveller;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;

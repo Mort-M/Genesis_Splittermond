@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.SkillSpecializationValue;
 import org.prelle.splimo.charctrl.MastershipController;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.geometry.Pos;
 import javafx.scene.Node;

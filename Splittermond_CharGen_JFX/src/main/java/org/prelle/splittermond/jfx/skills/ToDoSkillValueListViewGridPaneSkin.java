@@ -17,9 +17,9 @@ import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.charctrl.SkillController;
-import org.prelle.splimo.chargen.jfx.SkillField;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXUtil;
+import org.prelle.splittermond.chargen.jfx.SkillField;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXUtil;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

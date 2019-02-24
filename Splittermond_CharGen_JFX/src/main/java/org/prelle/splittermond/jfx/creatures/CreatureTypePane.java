@@ -11,11 +11,11 @@ import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.creature.CreatureType;
 import org.prelle.splimo.creature.CreatureTypeValue;
 import org.prelle.splimo.npc.CreatureTypeController;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;

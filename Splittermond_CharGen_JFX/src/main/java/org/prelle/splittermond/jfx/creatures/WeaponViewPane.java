@@ -24,11 +24,11 @@ import javafx.scene.text.Text;
 
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.SplitterTools;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.CreatureWeapon;
 import org.prelle.splimo.creature.Lifeform;
 import org.prelle.splimo.items.Feature;
 import org.prelle.splimo.items.ItemAttribute;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 /**
  * @author prelle

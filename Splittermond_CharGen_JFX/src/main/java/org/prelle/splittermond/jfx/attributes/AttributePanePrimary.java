@@ -19,9 +19,9 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.chargen.event.GenerationEventType;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
-import org.prelle.splimo.chargen.jfx.AttributeField;
-import org.prelle.splimo.chargen.jfx.ViewMode;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.chargen.jfx.AttributeField;
+import org.prelle.splittermond.chargen.jfx.ViewMode;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

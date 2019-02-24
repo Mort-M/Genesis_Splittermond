@@ -22,8 +22,8 @@ import org.prelle.splimo.chargen.ResourceGenerator;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
-import org.prelle.splimo.chargen.jfx.LetUserChooseAdapter;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.chargen.jfx.LetUserChooseAdapter;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

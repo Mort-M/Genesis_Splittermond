@@ -36,10 +36,10 @@ import org.prelle.splimo.charctrl.MastershipController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.persist.MastershipConverter;
 import org.prelle.splimo.persist.SpecializationConverter;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.core.RoleplayingSystem;

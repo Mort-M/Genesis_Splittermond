@@ -5,7 +5,7 @@ package org.prelle.splittermond.jfx.attributes;
 
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.charctrl.AttributeController;
-import org.prelle.splimo.chargen.jfx.ViewMode;
+import org.prelle.splittermond.chargen.jfx.ViewMode;
 
 import javafx.scene.layout.HBox;
 

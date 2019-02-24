@@ -10,8 +10,8 @@ import java.util.ResourceBundle;
 
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.SkillValue;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.Lifeform;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;

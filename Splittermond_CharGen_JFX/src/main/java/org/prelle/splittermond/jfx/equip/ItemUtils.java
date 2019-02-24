@@ -6,7 +6,6 @@ package org.prelle.splittermond.jfx.equip;
 import java.util.List;
 
 import org.prelle.splimo.Attribute;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Armor;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.Feature;
@@ -19,6 +18,7 @@ import org.prelle.splimo.persist.WeaponDamageConverter;
 import org.prelle.splimo.requirements.AttributeRequirement;
 import org.prelle.splimo.requirements.Requirement;
 import org.prelle.splimo.requirements.RequirementList;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;

@@ -23,11 +23,11 @@ import org.prelle.splimo.chargen.creature.CreatureTrainer;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.creature.CreatureReference;
 import org.prelle.splimo.creature.ModuleBasedCreature;
 import org.prelle.splimo.npc.NPCGenerator;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;

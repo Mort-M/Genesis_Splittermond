@@ -6,10 +6,10 @@ package org.prelle.splittermond.jfx.equip.input;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.Attribute;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.items.Armor;
 import org.prelle.splimo.items.ItemAttribute;
 import org.prelle.splimo.requirements.AttributeRequirement;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;

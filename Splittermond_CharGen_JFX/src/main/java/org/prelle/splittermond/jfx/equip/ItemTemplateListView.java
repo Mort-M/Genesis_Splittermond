@@ -7,9 +7,9 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splimo.items.ItemType;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.collections.ObservableList;

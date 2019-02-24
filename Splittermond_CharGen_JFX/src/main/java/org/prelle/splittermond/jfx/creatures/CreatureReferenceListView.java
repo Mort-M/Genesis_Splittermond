@@ -9,9 +9,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.creature.CreatureReference;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

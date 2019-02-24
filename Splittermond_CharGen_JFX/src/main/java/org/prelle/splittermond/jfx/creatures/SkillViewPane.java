@@ -12,9 +12,9 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 
 import org.prelle.splimo.Skill.SkillType;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.creature.Lifeform;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 /**
  * @author prelle

@@ -25,13 +25,13 @@ import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.SplittermondCustomDataCore;
 import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.equip.ItemLevellerAndGenerator;
 import org.prelle.splimo.items.Availability;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.Complexity;
 import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splimo.items.ItemType;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splittermond.jfx.equip.input.EnterItemTemplatePane;
 
 import javafx.scene.control.Button;

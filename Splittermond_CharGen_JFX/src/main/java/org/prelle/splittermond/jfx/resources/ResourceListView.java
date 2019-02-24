@@ -12,7 +12,7 @@ import org.prelle.splimo.Resource;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.ResourceController;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.scene.Node;
 import javafx.scene.SnapshotParameters;

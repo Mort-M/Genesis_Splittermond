@@ -19,9 +19,9 @@ import org.prelle.javafx.skin.ManagedScreenStructuredSkin;
 import org.prelle.javafx.skin.NavigButtonControl;
 import org.prelle.splimo.Education;
 import org.prelle.splimo.SplittermondCustomDataCore;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splimo.items.ItemType;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splittermond.jfx.equip.ItemTemplateListView;
 
 import javafx.geometry.Insets;

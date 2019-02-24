@@ -17,7 +17,6 @@ import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.SplitterTools;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.creature.CreatureWeapon;
 import org.prelle.splimo.items.ItemAttribute;
@@ -26,6 +25,7 @@ import org.prelle.splimo.items.ItemType;
 import org.prelle.splimo.items.LongRangeWeapon;
 import org.prelle.splimo.items.Weapon;
 import org.prelle.splimo.npc.NPCWeaponController;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ObservableValue;

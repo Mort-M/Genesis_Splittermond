@@ -21,12 +21,12 @@ import org.prelle.splimo.charctrl.CreatureController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.jfx.LetUserChooseAdapter;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.CreatureModule;
 import org.prelle.splimo.creature.CreatureModuleReference;
 import org.prelle.splimo.creature.CreatureType;
 import org.prelle.splimo.creature.CreatureTypeValue;
+import org.prelle.splittermond.chargen.jfx.LetUserChooseAdapter;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.application.Platform;
 import javafx.geometry.HPos;

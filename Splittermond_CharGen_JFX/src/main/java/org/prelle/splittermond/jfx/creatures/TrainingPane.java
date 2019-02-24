@@ -12,8 +12,8 @@ import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.charctrl.CreatureTrainerController;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.CreatureModuleReference;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;

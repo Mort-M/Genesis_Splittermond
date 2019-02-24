@@ -4,8 +4,8 @@
 package org.prelle.splittermond.jfx.creatures;
 
 import org.prelle.javafx.FlipControl;
-import org.prelle.splimo.chargen.jfx.ViewMode;
 import org.prelle.splimo.creature.Creature;
+import org.prelle.splittermond.chargen.jfx.ViewMode;
 
 import javafx.geometry.Orientation;
 import javafx.scene.layout.VBox;

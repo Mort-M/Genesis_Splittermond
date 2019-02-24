@@ -16,11 +16,11 @@ import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.ItemType;
 import org.prelle.splimo.items.Material;
 import org.prelle.splimo.items.PersonalizationReference;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.ChoiceBox;

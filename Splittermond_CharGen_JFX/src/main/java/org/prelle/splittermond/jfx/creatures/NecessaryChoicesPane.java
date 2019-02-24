@@ -11,10 +11,10 @@ import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.charctrl.CommonCreatureController;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
-import org.prelle.splimo.chargen.jfx.LetUserChooseAdapter;
 import org.prelle.splimo.creature.CreatureModuleReference;
 import org.prelle.splimo.modifications.ModificationChoice;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.chargen.jfx.LetUserChooseAdapter;
 
 import de.rpgframework.genericrpg.modification.Modification;
 import javafx.geometry.Insets;

@@ -16,13 +16,13 @@ import org.prelle.rpgframework.jfx.DataInputPane;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.items.Armor;
 import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splimo.items.ItemType;
 import org.prelle.splimo.items.LongRangeWeapon;
 import org.prelle.splimo.items.Shield;
 import org.prelle.splimo.items.Weapon;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;

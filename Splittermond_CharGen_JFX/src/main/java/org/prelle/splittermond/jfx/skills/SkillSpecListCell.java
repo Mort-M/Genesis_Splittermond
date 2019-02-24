@@ -6,7 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.charctrl.MastershipController;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;

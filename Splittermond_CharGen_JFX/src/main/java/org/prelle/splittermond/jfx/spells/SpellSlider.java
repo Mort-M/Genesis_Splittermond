@@ -3,7 +3,7 @@ package org.prelle.splittermond.jfx.spells;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;

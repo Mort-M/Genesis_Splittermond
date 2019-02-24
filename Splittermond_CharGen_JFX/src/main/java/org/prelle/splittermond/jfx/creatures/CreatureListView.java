@@ -9,12 +9,12 @@ import java.util.PropertyResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
-import org.prelle.splimo.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.creature.CreatureReference;
 import org.prelle.splimo.items.Enhancement;
 import org.prelle.splimo.items.Enhancement.EnhancementType;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;

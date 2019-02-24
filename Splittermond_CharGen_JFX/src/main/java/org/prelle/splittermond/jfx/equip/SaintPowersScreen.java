@@ -17,9 +17,9 @@ import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splimo.items.Enhancement;
 import org.prelle.splimo.items.Enhancement.EnhancementType;
+import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
