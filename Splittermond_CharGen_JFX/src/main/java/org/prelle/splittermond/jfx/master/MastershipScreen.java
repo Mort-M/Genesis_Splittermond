@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.master;
 
@@ -65,12 +65,12 @@ import javafx.scene.layout.VBox;
 public class MastershipScreen extends ManagedScreen implements GenerationEventListener {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
-	
+
 	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private final static MastershipConverter CONVERT_MASTER = new MastershipConverter();
 	private final static SpecializationConverter CONVERT_SPECIAL = new SpecializationConverter();
-	
+
 	private MastershipController control;
 	private CharacterController charGen;
 	private SkillValue sVal;
@@ -85,14 +85,14 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	private Label lblName;
 	private Label lblProduct;
 	private Label lblDescr;
-	
+
 	private Label lbExpTotal;
 	private Label lbExpInvested;
 	private FreePointsNode freePoints;
 	private Label lbLevel;
 	private CommandBar commands;
 	private SettingsAndCommandBar firstLine;
-	
+
 	private String searchFilter;
 
 	//-------------------------------------------------------------------
@@ -101,13 +101,13 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	public MastershipScreen(CharacterController ctrl) {
 		this.charGen = ctrl;
 		this.control = ctrl.getMastershipController();
-		
+
 		initComponents();
 		initLayout();
 		initInteractivity();
 		setSkin(new ManagedScreenStructuredSkin(this));
 		setTitle(UI.getString("screen.masterships.title"));
-		
+
 		GenerationEventDispatcher.addListener(this);
 	}
 
@@ -115,28 +115,28 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	private void initComponents() {
 		getNavigButtons().add(CloseType.BACK);
 //		setTitle(type.getName());
-		
+
 		lvAvailable = new ListView<MastershipOrSpecialization>();
 		lvAvailable.setCellFactory( listView -> new MastershipListCell(control));
 		lvSelected = new ListView<MastershipReference>();
 		lvSelected.setCellFactory( listView -> new MastershipReferenceListCell(control));
-		
+
 		lblName = new Label();
 		lblName.getStyleClass().add("text-subheader");
 		lblProduct = new Label();
 		lblDescr = new Label();
 		lblDescr.setWrapText(true);
-		
+
 		toggle = new ToggleGroup();
 		rbMaster = new RadioButton(UI.getString("label.masterships"));
 		rbMaster.setToggleGroup(toggle);
 		rbSpecial = new RadioButton(UI.getString("label.specializations"));
 		rbSpecial.setToggleGroup(toggle);
 		toggle.selectToggle(rbMaster);
-		
+
 		tfSearch = new TextField();
 		tfSearch.setStyle("-fx-pref-width: 20em");
-		
+
 		/*
 		 * Exp & Co.
 		 */
@@ -156,15 +156,15 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 		lbExpTotal.setText(String.valueOf(charGen.getModel().getExperienceInvested()+charGen.getModel().getExperienceFree()));
 		lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
 		lbLevel.setText(charGen.getModel().getLevel()+"");
-		
+
 		commands = new CommandBar();
 //		commands.getItems().add(new MenuItem("Drucken", new Label("\uD83D\uDDB6")));
-		
+
 		HBox expLine = new HBox(5);
 		expLine.getChildren().addAll(hdExpTotal, lbExpTotal, hdExpInvested, lbExpInvested, hdLevel, lbLevel);
 		HBox.setMargin(hdLevel, new Insets(0,0,0,20));
 		expLine.getStyleClass().add("character-document-view-firstline");
-		
+
 		firstLine = new SettingsAndCommandBar();
 		firstLine.setSettings(expLine);
 //		firstLine.setCommandBar(commands);
@@ -175,37 +175,37 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 		Label lblIntro = new Label(UI.getString("screen.masterships.master_or_special"));
 		HBox lineQuestion = new HBox(10);
 		lineQuestion.getChildren().addAll(lblIntro, rbMaster, rbSpecial);
-		
+
 		Label lblSearch = new Label(UI.getString("screen.masterships.search"));
 		HBox lineSearch = new HBox(10);
 		lineSearch.getChildren().addAll(lblSearch, tfSearch);
-		
-		
-		VBox bxDescr = new VBox(lblName, lblProduct, lblDescr);	
+
+
+		VBox bxDescr = new VBox(lblName, lblProduct, lblDescr);
 		VBox.setMargin(lblDescr, new Insets(20, 20, 0, 0));
 		attention  = new AttentionPane(lvAvailable, Pos.TOP_RIGHT);
-		
+
 		lvAvailable.setStyle("-fx-pref-width: 25em");
 		bxDescr.setStyle("-fx-pref-width: 25em");
 		lblDescr.setStyle("-fx-pref-width: 25em");
-		
+
 		ThreeColumnPane threeCol = new ThreeColumnPane();
-		
+
 		threeCol.setHeadersVisible(true);
 		threeCol.setColumn1Header(UI.getString("label.available"));
 		threeCol.setColumn2Header(UI.getString("label.selected"));
 		threeCol.setColumn3Header(UI.getString("label.description"));
-		
+
 		threeCol.setColumn1Node(attention);
 		threeCol.setColumn2Node(lvSelected);
 		threeCol.setColumn3Node(bxDescr);
 		threeCol.setMaxHeight(Double.MAX_VALUE);
-		
+
 		VBox box = new VBox();
 		box.setStyle("-fx-spacing: 1em");
 		box.getChildren().addAll(lineQuestion, lineSearch, threeCol);
 		VBox.setVgrow(threeCol, Priority.ALWAYS);
-		
+
 		HBox flow = new HBox();
 		flow.setSpacing(20);
 		flow.getChildren().addAll(freePoints, box);
@@ -221,7 +221,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 		VBox.setMargin(flow  , new Insets(0,0,20,0));
 		setContent(content);
 		content.getStyleClass().add("mastership-screen");
-		
+
 		setContent(content);
 	}
 
@@ -240,7 +240,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 		lvAvailable.setOnDragOver   (event -> dragOverSelected(event));
 		lvSelected.setOnDragDropped (event -> dragDroppedAvailable(event));
 		lvSelected.setOnDragOver    (event -> dragOverAvailable(event));
-		
+
 		tfSearch.setOnAction(event -> {
 			logger.debug("Filter "+tfSearch.getText());
 			searchFilter = tfSearch.getText();
@@ -259,7 +259,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 			lblDescr.setText(null);
 			return;
 		}
-		
+
 		if (selected instanceof Mastership) {
 			Mastership master = (Mastership)selected;
 			boolean hasLicense = RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(RoleplayingSystem.SPLITTERMOND, master.getPlugin().getID());
@@ -278,7 +278,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 				Skill skill = special.getSkill();
 				// Build list of spelly with that type in that school
 				SpellType sType = SpellType.valueOf(special.getId());
-				List<Spell> spells = new ArrayList<Spell>(); 
+				List<Spell> spells = new ArrayList<Spell>();
 				for (Spell spell : SplitterMondCore.getSpells(skill)) {
 					if (spell.getTypes().contains(sType))
 						spells.add(spell);
@@ -326,10 +326,10 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	//-------------------------------------------------------------------
 	private void refresh() {
 		rbSpecial.setDisable(sVal.getSkill().isGrouped());
-		
+
 		lvAvailable.getItems().clear();
 		lvSelected.getItems().clear();
-		
+
 		// Available
 		List<MastershipOrSpecialization> toAdd = new ArrayList<MastershipOrSpecialization>() ;
 		if (rbMaster.isSelected()) {
@@ -353,10 +353,10 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 		}
 		Collections.sort(toAdd);
 		lvAvailable.getItems().addAll(toAdd);
-		
+
 		// Selected
 		lvSelected.getItems().addAll(sVal.getMasterships());
-		
+
 		List<String> toDos = control.getToDos(sVal.getSkill());
 		logger.debug("TODOs for "+sVal+" = "+toDos);
 		attention.setAttentionFlag(toDos.size()>0);
@@ -367,7 +367,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	public void setData(SpliMoCharacter model, SkillValue sVal) {
 //		this.model = model;
 		this.sVal  = sVal;
-		
+
 		refresh();
 		lbExpTotal.setText(String.valueOf(charGen.getModel().getExperienceInvested()+charGen.getModel().getExperienceFree()));
 		lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
@@ -381,7 +381,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 		GenerationEventDispatcher.removeListener(this);
 		return true;
 	}
-	
+
 	//-------------------------------------------------------------------
 	/*
 	 * Select
@@ -389,6 +389,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	private void dragDroppedAvailable(DragEvent event) {
        /* if there is a string data on dragboard, read it and use it */
         Dragboard db = event.getDragboard();
+        logger.warn("dragDroppedAvailable "+event);
         boolean success = false;
         if (db.hasString()) {
             String enhanceID = db.getString();
@@ -415,10 +416,10 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
         		}
         	}
         }
-        /* let the source know whether the string was successfully 
+        /* let the source know whether the string was successfully
          * transferred and used */
         event.setDropCompleted(success);
-        
+
         event.consume();
 	}
 
@@ -427,6 +428,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	 * Select
 	 */
 	private void dragOverAvailable(DragEvent event) {
+        logger.warn("dragOverAvailable "+event);
 		Node target = (Node) event.getSource();
 		if (event.getGestureSource() != target && event.getDragboard().hasString()) {
             String enhanceID = event.getDragboard().getString();
@@ -440,7 +442,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
         			else
             			logger.warn("Dragged unselectable mastership "+master);
         		}
-        		
+
         	} else
         	if (enhanceID.startsWith("special:select:")) {
         		String id = enhanceID.substring("special:select:".length());
@@ -454,7 +456,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
         	}
         }
 	}
-	
+
 	//-------------------------------------------------------------------
 	/*
 	 * Deselect
@@ -462,6 +464,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	private void dragDroppedSelected(DragEvent event) {
        /* if there is a string data on dragboard, read it and use it */
         Dragboard db = event.getDragboard();
+        logger.warn("dragDroppedAvailable "+event);
         boolean success = false;
         if (db.hasString()) {
             String enhanceID = db.getString();
@@ -489,10 +492,10 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
         		}
         	}
         }
-        /* let the source know whether the string was successfully 
+        /* let the source know whether the string was successfully
          * transferred and used */
         event.setDropCompleted(success);
-        
+
         event.consume();
 	}
 
@@ -501,6 +504,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	 * Deselect
 	 */
 	private void dragOverSelected(DragEvent event) {
+        logger.warn("dragOverSelected "+event);
 		Node target = (Node) event.getSource();
 		if (event.getGestureSource() != target && event.getDragboard().hasString()) {
             String enhanceID = event.getDragboard().getString();
@@ -512,18 +516,18 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
         			if (control.canBeDeselected(master))
         	            event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
         		}
-        		
+
         	} else
         	if (enhanceID.startsWith("special:deselect:")) {
         		String id = enhanceID.substring("special:deselect:".length());
         		SkillSpecialization master = CONVERT_SPECIAL.read(id);
         		int level = Integer.parseInt(id.substring(id.lastIndexOf("/")+1));
-        		
+
          		if (master!=null) {
         			if (control.isEditable(master, level))
         	            event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
         		}
-        		
+
         	}
         }
 	}

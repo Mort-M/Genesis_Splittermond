@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.master;
 
@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PropertyResourceBundle;
 
+import org.apache.logging.log4j.LogManager;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.MastershipOrSpecialization;
 import org.prelle.splimo.Skill;
@@ -36,7 +37,7 @@ import javafx.scene.layout.VBox;
  *
  */
 public class MastershipListCell extends ListCell<MastershipOrSpecialization> {
-	
+
 	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private MastershipController control;
@@ -44,34 +45,35 @@ public class MastershipListCell extends ListCell<MastershipOrSpecialization> {
 	private Label lblRequire;
 	private Label lblLevel;
 	private StackPane stack;
-	
+
 	private MastershipOrSpecialization data;
-	
+
 	//-------------------------------------------------------------------
 	public MastershipListCell(MastershipController ctrl) {
 		this.control = ctrl;
-		
+
 		initComponents();
 		initLayout();
 		this.setOnDragDetected(event -> dragStarted(event));
+		this.setOnMouseClicked(event -> clicked(event));
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void initComponents() {
 		lblName    = new Label();
 		lblRequire = new Label();
 		lblLevel   = new Label();
-		
+
 		lblName.getStyleClass().add("baser");
 		lblLevel.getStyleClass().add("text-subheader");
 		lblRequire.setStyle("-fx-text-fill: red");
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void initLayout() {
 		VBox box = new VBox();
 		box.getChildren().addAll(lblName, lblRequire);
-		
+
 		stack = new StackPane();
 		stack.getChildren().addAll(lblLevel, box);
 		StackPane.setAlignment(box, Pos.TOP_LEFT);
@@ -79,7 +81,7 @@ public class MastershipListCell extends ListCell<MastershipOrSpecialization> {
 		stack.getStyleClass().add("content");
 		stack.setStyle("-fx-max-width:22em");
 	}
-	
+
 	//-------------------------------------------------------------------
 	/**
 	 * @see javafx.scene.control.Cell#updateItem(java.lang.Object, boolean)
@@ -88,7 +90,7 @@ public class MastershipListCell extends ListCell<MastershipOrSpecialization> {
 	public void updateItem(MastershipOrSpecialization item, boolean empty) {
 		super.updateItem(item, empty);
 		this.data = item;
-		
+
 		if (empty) {
 			setGraphic(null);
 		} else {
@@ -109,7 +111,7 @@ public class MastershipListCell extends ListCell<MastershipOrSpecialization> {
 					Skill skill = special.getSkill();
 					// Build list of spelly with that type in that school
 					SpellType sType = SpellType.valueOf(special.getId());
-					List<Spell> spells = new ArrayList<Spell>(); 
+					List<Spell> spells = new ArrayList<Spell>();
 					for (Spell spell : SplitterMondCore.getSpells(skill)) {
 						if (spell.getTypes().contains(sType))
 							spells.add(spell);
@@ -125,32 +127,52 @@ public class MastershipListCell extends ListCell<MastershipOrSpecialization> {
 
 	//-------------------------------------------------------------------
 	private void dragStarted(MouseEvent event) {
-		
+		LogManager.getLogger("splittermond.jfx").warn("dragStarted "+event+"   with data "+data);
 		Node source = (Node) event.getSource();
 
 		/* drag was detected, start a drag-and-drop gesture*/
         /* allow any transfer mode */
         Dragboard db = source.startDragAndDrop(TransferMode.ANY);
-        
+
         /* Put a string on a dragboard */
         ClipboardContent content = new ClipboardContent();
         if (data==null)
         	return;
-        if (data instanceof Mastership) { 
+        if (data instanceof Mastership) {
         	if (!control.canBeSelected((Mastership) data))
         		return;
-            content.putString("master:select:"+((Mastership)data).getSkill().getId()+"/"+((Mastership)data).getKey());        	
+            content.putString("master:select:"+((Mastership)data).getSkill().getId()+"/"+((Mastership)data).getKey());
         } else {
         	if (!control.canBeSelected((SkillSpecialization) data,1))
         		return;
-            content.putString("special:select:"+((SkillSpecialization)data).getSkill().getId()+"/"+((SkillSpecialization)data).getId());        	
+            content.putString("special:select:"+((SkillSpecialization)data).getSkill().getId()+"/"+((SkillSpecialization)data).getId());
         }
         db.setContent(content);
-       
+		LogManager.getLogger("splittermond.jfx").warn("dragStarted content = "+content);
+
         /* Drag image */
         WritableImage snapshot = source.snapshot(new SnapshotParameters(), null);
         db.setDragView(snapshot);
-        
-        event.consume();	
+
+        event.consume();
+	}
+
+	//-------------------------------------------------------------------
+	private void clicked(MouseEvent event) {
+		if (event.getClickCount()!=2)
+			return;
+		if (data==null)
+			return;
+        if (data instanceof Mastership) {
+        	if (!control.canBeSelected((Mastership) data))
+        		return;
+        	LogManager.getLogger("splittermond.jfx").debug("Select "+data);
+            control.select( (Mastership)data);
+        } else {
+        	if (!control.canBeSelected((SkillSpecialization) data,1))
+        		return;
+        	LogManager.getLogger("splittermond.jfx").debug("Select "+data);
+            control.select( (SkillSpecialization)data, 1);
+        }
     }
 }

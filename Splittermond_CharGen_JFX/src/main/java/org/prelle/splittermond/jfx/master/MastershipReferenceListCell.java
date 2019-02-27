@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.jfx.master;
 
@@ -32,7 +32,7 @@ import javafx.scene.layout.VBox;
 public class MastershipReferenceListCell extends ListCell<MastershipReference> {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
-	
+
 	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private MastershipController control;
@@ -41,52 +41,52 @@ public class MastershipReferenceListCell extends ListCell<MastershipReference> {
 	private Label lblLevel;
 	private ValueField field;
 	private StackPane stack;
-	
+
 	private MastershipReference data;
-	
+
 	//-------------------------------------------------------------------
 	public MastershipReferenceListCell(MastershipController ctrl) {
 		this.control = ctrl;
-		
+
 		initComponents();
 		initLayout();
 		initInteractivity();
 		this.setOnDragDetected(event -> dragStarted(event));
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void initComponents() {
 		lblName    = new Label();
 		lblRequire = new Label();
 		lblLevel   = new Label();
 		field      = new ValueField();
-		
+
 		lblName.getStyleClass().add("base");
 		lblLevel.getStyleClass().add("text-subheader");
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void initLayout() {
 		VBox box = new VBox();
 		box.getChildren().addAll(lblName, lblRequire);
-		
+
 		stack = new StackPane();
 		stack.getChildren().addAll(lblLevel, box, field);
 		StackPane.setAlignment(box, Pos.TOP_LEFT);
 		StackPane.setAlignment(lblLevel, Pos.TOP_RIGHT);
 		StackPane.setAlignment(field, Pos.TOP_RIGHT);
 		stack.getStyleClass().add("content");
-		
+
 		field.setMaxWidth(Double.MAX_VALUE);
 		field.setAlignment(Pos.CENTER_RIGHT);
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
 		field.dec.setOnAction(event -> control.deselect(data.getSpecialization().getSpecial(), data.getSpecialization().getLevel()));
 		field.inc.setOnAction(event -> control.select(data.getSpecialization().getSpecial(), data.getSpecialization().getLevel()+1));
 	}
-	
+
 	//-------------------------------------------------------------------
 	/**
 	 * @see javafx.scene.control.Cell#updateItem(java.lang.Object, boolean)
@@ -95,7 +95,7 @@ public class MastershipReferenceListCell extends ListCell<MastershipReference> {
 	public void updateItem(MastershipReference item, boolean empty) {
 		super.updateItem(item, empty);
 		this.data = item;
-		
+
 		if (empty) {
 			setGraphic(null);
 		} else {
@@ -128,7 +128,7 @@ public class MastershipReferenceListCell extends ListCell<MastershipReference> {
 		/* drag was detected, start a drag-and-drop gesture*/
         /* allow any transfer mode */
         Dragboard db = source.startDragAndDrop(TransferMode.ANY);
-        
+
         /* Put a string on a dragboard */
         ClipboardContent content = new ClipboardContent();
         if (data==null)
@@ -139,11 +139,28 @@ public class MastershipReferenceListCell extends ListCell<MastershipReference> {
         	content.putString("special:deselect:"+data.getSpecialization().getSpecial().getSkill()+"/"+data.getSpecialization().getSpecial().getId()+"/"+data.getSpecialization().getSpecial().getLevel());
         db.setContent(content);
         System.out.println("Drag started: "+content.getString());
-        
+
         /* Drag image */
         WritableImage snapshot = source.snapshot(new SnapshotParameters(), null);
         db.setDragView(snapshot);
-        
-        event.consume();	
+
+        event.consume();
+    }
+
+	//-------------------------------------------------------------------
+	private void clicked(MouseEvent event) {
+		if (event.getClickCount()!=2)
+			return;
+		if (data==null)
+			return;
+        if (data.getMastership()!=null) {
+        	LogManager.getLogger("splittermond.jfx").debug("Deselect "+data);
+            control.deselect( data.getMastership() );
+        } else {
+        	LogManager.getLogger("splittermond.jfx").debug("Deselect "+data.getSpecialization().getSpecial().getSkill()+"/"+data.getSpecialization().getSpecial().getId()+"/"+data.getSpecialization().getSpecial().getLevel());
+        	if (!control.canBeDeselected(data.getSpecialization().getSpecial(), 1))
+        		return;
+            control.deselect( data.getSpecialization().getSpecial(), 1);
+        }
     }
 }
