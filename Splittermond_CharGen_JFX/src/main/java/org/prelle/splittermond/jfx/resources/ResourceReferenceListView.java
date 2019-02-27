@@ -274,6 +274,7 @@ class ResourceReferenceListCell extends ListCell<ResourceReference> {
 		btnEdit.setOnAction(event -> editClicked(data));
 
 		this.setOnDragDetected(event -> dragStarted(event));
+		this.setOnMouseClicked(event -> clicked(event));
 	}
 
 	//-------------------------------------------------------------------
@@ -305,6 +306,16 @@ class ResourceReferenceListCell extends ListCell<ResourceReference> {
 
         event.consume();
     }
+
+	//-------------------------------------------------------------------
+	private void clicked(MouseEvent event) {
+		if (event.getClickCount()!=2)
+			return;
+		if (data==null)
+			return;
+		LogManager.getLogger("splittermond.jfx").debug("Deselect "+data);
+		charGen.deselect(data);
+	}
 
 	//-------------------------------------------------------------------
 	private void editClickedRelic(ResourceReference ref) {
@@ -460,7 +471,7 @@ class ResourceReferenceListCell extends ListCell<ResourceReference> {
 	//-------------------------------------------------------------------
 	private void editClickedCreature(ResourceReference ref) {
 		logger.debug("editClickedCreature");
-		
+
 		/*
 		 * Build list of creatures already added to character that have
 		 * a matching creature feature level
@@ -586,7 +597,7 @@ class ResourceReferenceListCell extends ListCell<ResourceReference> {
 				item = n;
 			}
 		});
-		
+
 		btnBuild.setOnAction(event -> {
 			logger.debug("Build new creature");
 			CreatureGenerator ctrl = new CreatureGenerator(ref);
@@ -606,7 +617,7 @@ class ResourceReferenceListCell extends ListCell<ResourceReference> {
 				data.setDescription(item.getName());
 			}
 		});
-		
+
 //		cbPossible.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> btnAdd.setDisable(n==null));
 //		btnAdd.setOnAction(event -> {
 //			CreatureReference ref2 = cbPossible.getSelectionModel().getSelectedItem();
@@ -660,7 +671,7 @@ class ResourceReferenceListCell extends ListCell<ResourceReference> {
 		Label lbInput = new Label(UI.getString("screen.creatures.namedialog.mess"));
 		TextField tfInput = new TextField();
 		tfInput.setStyle("-fx-pref-width: 30em");
-		
+
 		VBox layout = new VBox(5, lbInput, tfInput);
 		CloseType close = parent.getManager().showAlertAndCall(AlertType.QUESTION, UI.getString("screen.creatures.namedialog.title"), layout);
 		if (close==CloseType.OK) {
