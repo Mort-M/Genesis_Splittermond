@@ -223,10 +223,10 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 		 */
 		Image image = imageByRace.get(value);
 		if (image==null) {
-			String fname = SpliMoCharGenJFXConstants.PREFIX+"/data/culture_"+value.getKey()+".png";
-			InputStream in = getClass().getClassLoader().getResourceAsStream(fname);
+			String fname = "data/culture_"+value.getKey()+".png";
+			InputStream in = getClass().getResourceAsStream(fname);
 			if (in==null) {
-				in = getClass().getClassLoader().getResourceAsStream("data/Culture.png");
+				in = getClass().getResourceAsStream("data/Culture.png");
 			}
 			if (in==null) {
 				logger.warn("Missing image at "+fname);
