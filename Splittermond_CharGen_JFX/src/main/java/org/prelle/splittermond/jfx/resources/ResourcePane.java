@@ -12,6 +12,7 @@ import org.prelle.splimo.charctrl.ResourceController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
+import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.SimpleIntegerProperty;
@@ -49,7 +50,7 @@ import javafx.util.StringConverter;
 public class ResourcePane extends VBox implements GenerationEventListener, EventHandler<ActionEvent> {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
-	
+
 	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
 
 	private ResourceController control;
@@ -147,7 +148,7 @@ public class ResourcePane extends VBox implements GenerationEventListener, Event
 		contextMenu = new ContextMenu();
 //		contextMenu.setSkin(new ContextMenuSkin(contextMenu));
 		contextMenu.getSkin().getNode().setEffect(new DropShadow());
-		contextMenu.getItems().addAll(join,split);		
+		contextMenu.getItems().addAll(join,split);
 	}
 
 	//-------------------------------------------------------------------
@@ -181,6 +182,7 @@ public class ResourcePane extends VBox implements GenerationEventListener, Event
 			            ((ResourceReference) t.getTableView().getItems().get(
 			                t.getTablePosition().getRow())
 			                ).setDescription(t.getNewValue());
+			            GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, null));
 			        }
 			    }
 			);
@@ -190,7 +192,7 @@ public class ResourcePane extends VBox implements GenerationEventListener, Event
 	private void initInteractivity() {
 		add.setOnAction(this);
 		add.setDisable(true);
-		
+
 		addChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Resource>() {
 			public void changed(ObservableValue<? extends Resource> item,
 					Resource arg1, Resource newVal) {

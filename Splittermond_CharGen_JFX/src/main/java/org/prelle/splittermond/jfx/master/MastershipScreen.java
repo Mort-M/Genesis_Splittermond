@@ -389,7 +389,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	private void dragDroppedAvailable(DragEvent event) {
        /* if there is a string data on dragboard, read it and use it */
         Dragboard db = event.getDragboard();
-        logger.warn("dragDroppedAvailable "+event);
+//        logger.warn("dragDroppedAvailable "+event);
         boolean success = false;
         if (db.hasString()) {
             String enhanceID = db.getString();
@@ -428,7 +428,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	 * Select
 	 */
 	private void dragOverAvailable(DragEvent event) {
-        logger.warn("dragOverAvailable "+event);
+//        logger.warn("dragOverAvailable "+event);
 		Node target = (Node) event.getSource();
 		if (event.getGestureSource() != target && event.getDragboard().hasString()) {
             String enhanceID = event.getDragboard().getString();
@@ -464,7 +464,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	private void dragDroppedSelected(DragEvent event) {
        /* if there is a string data on dragboard, read it and use it */
         Dragboard db = event.getDragboard();
-        logger.warn("dragDroppedAvailable "+event);
+//        logger.warn("dragDroppedAvailable "+event);
         boolean success = false;
         if (db.hasString()) {
             String enhanceID = db.getString();
@@ -504,7 +504,7 @@ public class MastershipScreen extends ManagedScreen implements GenerationEventLi
 	 * Deselect
 	 */
 	private void dragOverSelected(DragEvent event) {
-        logger.warn("dragOverSelected "+event);
+//        logger.warn("dragOverSelected "+event);
 		Node target = (Node) event.getSource();
 		if (event.getGestureSource() != target && event.getDragboard().hasString()) {
             String enhanceID = event.getDragboard().getString();

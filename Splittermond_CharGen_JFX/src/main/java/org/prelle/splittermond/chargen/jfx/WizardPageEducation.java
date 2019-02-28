@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.chargen.jfx;
 
@@ -14,6 +14,7 @@ import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.Wizard;
 import org.prelle.javafx.WizardPage;
+import org.prelle.rpgframework.splittermond.data.ImageAnchor;
 import org.prelle.splimo.Education;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.chargen.LetUserChooseListener;
@@ -48,15 +49,15 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 
 	private SpliMoCharacterGenerator charGen;
 	private LetUserChooseListener choiceCallback;
-	
+
 	private TreeView<Education> tree;
 	private TreeItem<Education> root;
-	
+
 	private HBox content;
 	private Label description;
 	private Label heading;
 	private Label reference;
-	
+
 	private Education selected;
 
 	//-------------------------------------------------------------------
@@ -69,10 +70,10 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 		super(wizard);
 		this.charGen = charGen;
 		this.choiceCallback = choiceCallback;
-		
+
 		nextButton.set(false);
 		finishButton.set(false);
-		
+
 		initComponents();
 		initLayout();
 		initInteractivity();
@@ -84,7 +85,7 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 		setTitle(uiResources.getString("wizard.selectEducation.title"));
 		// Page Image
 		//setImageSize(300,400);
-		
+
 
 		description = new Label();
 		description.setWrapText(true);
@@ -96,7 +97,7 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 
 		reference = new Label();
 		reference.getStyleClass().add("base");
-		
+
 		root = new TreeItem<Education>();
 		tree = new TreeView<Education>(root);
 		tree.setShowRoot(false);
@@ -123,17 +124,17 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 	private void initLayout() {
 		tree.setMinWidth(200);
 		tree.setMinHeight(400);
-		
+
 		VBox box = new VBox(heading, reference, description);
 		VBox.setMargin(description, new Insets(20,0,0,0));
 		VBox.setVgrow(description, Priority.ALWAYS);
-		
+
 		// Description scroll
 		ScrollPane scroll = new ScrollPane(box);
 		scroll.setMinWidth(300);
 		scroll.setMaxWidth(500);
 		scroll.setFitToWidth(true);
-		
+
 		/*
 		 * Page content
 		 */
@@ -157,7 +158,7 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 			TreeItem<Education> newItem) {
 		if (newItem==null)
 			return;
-		
+
 		selected = newItem.getValue();
 		logger.info("Education now "+selected);
 		nextButton.set(selected!=null);
@@ -170,10 +171,11 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 
 		// Update image
 		Image img = imageByEducation.get(selected);
+		String plugin = selected.getPlugin().getID().toLowerCase();
 		if (img==null) {
-			String fname = "data/education_"+selected.getKey()+".png";
+			String fname = plugin+"/data/education_"+selected.getKey()+".png";
 			logger.debug("Load "+fname);
-			InputStream in = getClass().getClassLoader().getResourceAsStream(fname);
+			InputStream in = ImageAnchor.class.getResourceAsStream(fname);
 			if (in!=null) {
 				img = new Image(in);
 				imageByEducation.put(selected, img);
@@ -181,9 +183,9 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 				Education edu2 = SplitterMondCore.getEducation(selected.getVariantOf());
 				img = imageByEducation.get(selected);
 				if (img==null) {
-					fname = "data/education_"+edu2.getKey()+".png";
+					fname = plugin+"/data/education_"+edu2.getKey()+".png";
 					logger.debug("Load "+fname);
-					in = getClass().getClassLoader().getResourceAsStream(fname);
+					in = getClass().getResourceAsStream(fname);
 					if (in!=null) {
 						img = new Image(in);
 						imageByEducation.put(edu2, img);
@@ -193,9 +195,9 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 				}
 			} else
 				logger.warn("Missing image at "+fname);
-				
+
 		}
-		
+
 		if (img!=null) {
 			double scaleX = 300.0/img.getWidth();
 			double scaleY = 400.0/img.getHeight();
@@ -213,7 +215,7 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 			setImage(img);
 		}
 	}
-	
+
 	//-------------------------------------------------------------------
 	/**
 	 * @see org.prelle.javafx.WizardPage#pageLeft(org.prelle.javafx.CloseType)
@@ -221,10 +223,10 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 	public void pageLeft(CloseType type) {
 		if (type==CloseType.CANCEL || type==CloseType.PREVIOUS)
 			return;
-		
+
 		if (selected==null)
 			throw new IllegalStateException("Nothing selected");
-		
+
 		charGen.selectEducation(selected, choiceCallback);
 	}
 

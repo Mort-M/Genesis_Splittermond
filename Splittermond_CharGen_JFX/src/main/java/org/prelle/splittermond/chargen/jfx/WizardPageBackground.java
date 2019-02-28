@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.chargen.jfx;
 
@@ -56,14 +56,14 @@ public class WizardPageBackground extends WizardPage implements ChangeListener<B
 			}
 		}
 	}
-	
+
 	private BackgroundController bgGen;
 	private LetUserChooseListener choiceCallback;
-	
+
 	private ListView<Background> backgList;
 	private Label description;
 	private CheckBox includeUnusual;
-	
+
 	private VBox content;
 	private Background selected;
 
@@ -79,7 +79,7 @@ public class WizardPageBackground extends WizardPage implements ChangeListener<B
 		this.bgGen = charGen.getBackgroundGenerator();
 		GenerationEventDispatcher.addListener(this);
 		this.choiceCallback = choiceCallback;
-		
+
 		nextButton.set(false);
 		finishButton.set(false);
 
@@ -94,19 +94,19 @@ public class WizardPageBackground extends WizardPage implements ChangeListener<B
 		Image img = null;
 		String fname = "data/Background.png";
 		logger.debug("Load "+fname);
-		InputStream in = getClass().getClassLoader().getResourceAsStream(fname);
+		InputStream in = getClass().getResourceAsStream(fname);
 		if (in!=null) {
 			img = new Image(in);
 		} else
 			logger.warn("Missing image at "+fname);
 		setImage(img);
-		
+
 		/*
 		 * Page content
 		 */
 		includeUnusual = new CheckBox(uiResources.getString("wizard.selectBackground.showUnsual"));
 		includeUnusual.setWrapText(false);
-		
+
 		backgList = new ListView<Background>();
 		backgList.getItems().addAll(bgGen.getAvailableBackgrounds());
 		backgList.setCellFactory(new Callback<ListView<Background>, ListCell<Background>>() {
@@ -117,7 +117,7 @@ public class WizardPageBackground extends WizardPage implements ChangeListener<B
 		Label placeholder = new Label(uiResources.getString("wizard.selectBackground.placeholder"));
 		placeholder.setWrapText(true);
 		backgList.setPlaceholder(placeholder);
-		
+
 		description = new Label();
 		description.setWrapText(true);
 	}
@@ -127,11 +127,11 @@ public class WizardPageBackground extends WizardPage implements ChangeListener<B
 		backgList.setMinWidth(100);
 		backgList.setMinHeight(100);
 		description.setPrefWidth(400);
-		
+
 		HBox contentLTR = new HBox();
 		contentLTR.setSpacing(20);
 		contentLTR.getChildren().addAll(backgList, description);
-		
+
 		content = new VBox();
 		content.setSpacing(10);
 		content.getChildren().addAll(includeUnusual, contentLTR);
@@ -139,7 +139,7 @@ public class WizardPageBackground extends WizardPage implements ChangeListener<B
 //		setImageSize(388,255);
 		super.setContent(content);
 	}
-	
+
 
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
@@ -201,12 +201,12 @@ public class WizardPageBackground extends WizardPage implements ChangeListener<B
 				description.setText("Missing property '"+newModel.getHelpI18NKey()+"' in "+newModel.getHelpResourceBundle().getBaseBundleName());
 			}
 		}
-		
+
 //		logger.debug("Background now "+selected);
 		nextButton.set(selected!=null);
 		finishButton.set(selected!=null);
 	}
-	
+
 	//-------------------------------------------------------------------
 	/**
 	 * @see org.prelle.splittermond.chargen.gen.jfx.WizardPage#nextPage()

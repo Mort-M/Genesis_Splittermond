@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.chargen.fluent;
 
@@ -67,22 +67,22 @@ import javafx.scene.layout.VBox;
 public class SplittermondCharDocument implements GenerationEventListener, NodeWithTitle {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
-	
+
 	private static PropertyResourceBundle uiResources = SpliMoCharGenJFXConstants.UI;
-	
+
 	private static Preferences CONFIG = Preferences.userRoot().node("/org/rpgframework/genesis/splittermond");
-	
+
 	private StringProperty titleProperty = new SimpleStringProperty();
 	private ObjectProperty<Node> contentProperty = new SimpleObjectProperty<>();
-	
-	
+
+
 	private SpliMoCharacter model;
 	private CharacterHandle handle;
 	private ScreenManagerProvider provider;
 	private CharacterController control;
-	
+
 	private CharacterDocumentView content;
-	
+
 	private Label lbExpTotal;
 	private Label lbExpInvested;
 	private Label lbLevel;
@@ -101,7 +101,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 	private SkillPane skillsMagic;
 	private SpellPane spellsPane;
 	private ResourcePane resrcPane;
-	
+
 	private Map<Node, Section> sections = new HashMap<>();
 
 	//-------------------------------------------------------------------
@@ -111,9 +111,9 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 		this.provider= manager;
 		initComponents();
 		initInteractivity();
-		
+
 		content.setPointsNameProperty(uiResources.getString("label.ep.free"));
-		
+
 		GenerationEventDispatcher.addListener(this);
 	}
 
@@ -144,7 +144,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 			logger.info("Selected "+n);
 			VBox desc = new VBox(5);
 			desc.getStyleClass().add("description-text");
-			
+
 			if (n!=null) {
 				Label lbName = new Label(n.getPower().getName());
 				lbName.getStyleClass().add("subtitle");
@@ -161,7 +161,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 			logger.info("Selected "+n);
 			VBox desc = new VBox(5);
 			desc.getStyleClass().add("description-text");
-			
+
 			if (n!=null) {
 				Label lbName = new Label(n.getName());
 				lbName.getStyleClass().add("subtitle");
@@ -193,7 +193,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 			logger.info("Selected "+n);
 			VBox desc = new VBox(5);
 			desc.getStyleClass().add("description-text");
-			
+
 			if (n!=null) {
 				Label lbName = new Label(n.getCultureLore().getName());
 				lbName.getStyleClass().add("subtitle");
@@ -210,7 +210,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 			logger.info("Selected "+n);
 			VBox desc = new VBox(5);
 			desc.getStyleClass().add("description-text");
-			
+
 			if (n!=null) {
 				Label lbName = new Label(n.getName());
 				lbName.getStyleClass().add("subtitle");
@@ -296,7 +296,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 //			}
 //			content.setDescriptionNode(desc);
 //		});
-		
+
 		section.getToDoList().addAll(convert(control.getResourceController().getToDos()));
 	}
 
@@ -308,7 +308,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 		skillsCommon = new SkillPane(new SkillPaneCallback() {
 			public void showAndWaitMasterships(Skill skill) {
 				logger.info("showMasterships for "+skill);
-				
+
 				MastershipScreen screen = new MastershipScreen(control);
 				screen.setData(model, model.getSkillValue(skill));
 				provider.getScreenManager().show(screen);
@@ -338,9 +338,9 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 			}
 			content.setDescriptionNode(desc);
 		});
-		
+
 		secSkills.getToDoList().addAll(convert(control.getSkillController().getToDos(SkillType.NORMAL)));
-		
+
 	}
 
 	//-------------------------------------------------------------------
@@ -349,7 +349,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 			@Override
 			public void showAndWaitMasterships(Skill skill) {
 				logger.info("showMasterships for "+skill);
-				
+
 				MastershipScreen screen = new MastershipScreen(control);
 				screen.setData(model, model.getSkillValue(skill));
 				provider.getScreenManager().show(screen);
@@ -361,7 +361,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 		secCSkills.setContent(skillsCombat);
 		content.getSectionList().add(secCSkills);
 		sections.put(skillsCombat, secCSkills);
-		
+
 		secCSkills.getToDoList().addAll(convert(control.getSkillController().getToDos(SkillType.COMBAT)));
 	}
 
@@ -371,7 +371,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 			@Override
 			public void showAndWaitMasterships(Skill skill) {
 				logger.info("showMasterships for "+skill);
-				
+
 				MastershipScreen screen = new MastershipScreen(control);
 				screen.setData(model, model.getSkillValue(skill));
 				provider.getScreenManager().show(screen);
@@ -389,7 +389,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 		logger.fatal("         initMagicSkills2: "+secMSkills.getToDoList());
 		content.getSectionList().add(secMSkills);
 		sections.put(skillsMagic, secMSkills);
-		
+
 	}
 
 	//-------------------------------------------------------------------
@@ -418,7 +418,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 			}
 			content.setDescriptionNode(desc);
 		});
-		
+
 		section.getToDoList().addAll(convert(control.getSpellController().getToDos()));
 	}
 
@@ -433,7 +433,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 		lbExpTotal.getStyleClass().add("base");
 		lbExpInvested.getStyleClass().add("base");
 		lbLevel.getStyleClass().add("base");
-		
+
 		/*
 		 * Command bar
 		 */
@@ -443,20 +443,20 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 		if (handle!=null) {
 			commands.getItems().add(cmdPrint);
 		}
-		
+
 		HBox expLine = new HBox(5);
 		expLine.getChildren().addAll(hdExpTotal, lbExpTotal, hdExpInvested, lbExpInvested, hdLevel, lbLevel);
 		HBox.setMargin(hdLevel, new Insets(0,0,0,20));
 		expLine.getStyleClass().add("character-document-view-firstline");
-		
+
 		SettingsAndCommandBar firstLine = new SettingsAndCommandBar();
 		firstLine.setSettings(expLine);
 		firstLine.setCommandBar(commands);
-		
+
 		content = new CharacterDocumentView();
 		content.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 //		content.setStyle("-fx-spacing: 2em;");
-		
+
 		initBaseData();
 		initAttributes();
 		initPowers();
@@ -466,7 +466,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 		initCombatSkills();
 		initMagicSkills();
 		initSpells();
-		
+
 		layout = new VBox(firstLine, content);
 		setContent(layout);
 	}
@@ -482,11 +482,11 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 		logger.debug("Show character "+model);
 		this.model = model;
 		this.handle= handle;
-		
+
 		lbExpTotal.setText((model.getExperienceInvested()+model.getExperienceFree())+"");
 		lbExpInvested.setText(model.getExperienceInvested()+"");
 		lbLevel.setText(model.getLevel()+"");
-		
+
 //		Label header = new Label(model.getName());
 //		header.setStyle("-fx-font-size: 300%; -fx-background-image: url(images/background.jpg); -fx-background-repeat: no-repeat; -fx-background-size: cover;");
 //		header.setMaxWidth(Double.MAX_VALUE);
@@ -529,6 +529,9 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 		case POINTS_LEFT_POWERS:
 		case POINTS_LEFT_RESOURCES:
 		case SKILL_CHANGED:
+		case SPELL_FREESELECTION_CHANGED:
+		case CHARACTER_CHANGED:
+			logger.debug("RCV "+event.getType());
 			updateAttentionFlags();
 			break;
 		case EXPERIENCE_CHANGED:
@@ -549,7 +552,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 			break;
 		default:
 		}
-		
+
 	}
 
 	//-------------------------------------------------------------------
@@ -566,6 +569,11 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 		sections.get(skillsCombat).getToDoList().addAll(convert(control.getSkillController().getToDos(SkillType.COMBAT)));
 		sections.get(skillsMagic).getToDoList().clear();
 		sections.get(skillsMagic).getToDoList().addAll(convert(control.getSkillController().getToDos(SkillType.MAGIC)));
+		sections.get(resrcPane).getToDoList().clear();
+		sections.get(resrcPane).getToDoList().addAll(convert(control.getResourceController().getToDos()));
+		sections.get(spellsPane).getToDoList().clear();
+		System.err.println("SplittermondCharDocument.updateAttentionFlags: "+control.getSpellController().getToDos());
+		sections.get(spellsPane).getToDoList().addAll(convert(control.getSpellController().getToDos()));
 	}
 
 	//-------------------------------------------------------------------
