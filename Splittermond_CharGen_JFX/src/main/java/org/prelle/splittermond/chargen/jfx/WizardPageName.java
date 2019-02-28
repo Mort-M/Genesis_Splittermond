@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.chargen.jfx;
 
@@ -56,7 +56,7 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
 	private SpliMoCharacterGenerator charGen;
-	
+
 	private GridPane content;
 	private TextField name;
 	private ChoiceBox<Gender> gender;
@@ -69,7 +69,7 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 	private Slider size;
 	private ImageView portrait;
 	private byte[] imgData;
-	
+
 	private Button randomHair;
 	private Button randomEyes;
 	private Button randomSize;
@@ -85,7 +85,7 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 		initComponents();
 		initLayout();
 		initInteractivity();
-		
+
 		nextButton.set(false);
 		finishButton.set(false);
 	}
@@ -93,7 +93,7 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 	//-------------------------------------------------------------------
 	private void initComponents() {
 		setTitle(UI.getString("wizard.selectName.title"));
-		
+
 		name      = new TextField();
 		hairColor = new TextField();
 		skinColor  = new TextField();
@@ -103,7 +103,7 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 		size_tf   = new TextField();
 		weight.setPromptText(UI.getString("prompt.weight"));
 		size_tf.setPromptText(UI.getString("prompt.size"));
-		
+
 		int min = 50;
 		int max = 250;
 		int avg = (max-min)/2 + min;
@@ -117,15 +117,15 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 		portrait.setFitHeight(200);
 		portrait.setFitWidth(200);
 		portrait.setPreserveRatio(true);
-		portrait.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/guest-256.png")));
-		
+		portrait.setImage(new Image(getClass().getResourceAsStream("images/guest-256.png")));
+
 		/*
 		 * Buttons
 		 */
 		randomHair = new Button(UI.getString("button.roll"));
 		randomEyes = new Button(UI.getString("button.roll"));
 		randomSize = new Button(UI.getString("button.roll"));
-		
+
 		/*
 		 * Button portrait selection
 		 */
@@ -137,7 +137,7 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 		VBox portBox = new VBox(10);
 		portBox.setAlignment(Pos.TOP_CENTER);
 		portBox.getChildren().addAll(portrait, openFileChooser);
-		
+
 		content = new GridPane();
 		content.setVgap(5);
 		content.setHgap(5);
@@ -160,14 +160,14 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 		content.add(randomSize, 2, 2);
 		content.add(randomHair, 2, 4);
 		content.add(randomEyes, 2, 5);
-		
+
 		Region padding = new Region();
 		content.add(padding, 2, 8);
 		GridPane.setVgrow(padding, Priority.ALWAYS);
 
 		content.add(portBox  , 3, 0, 1,9);
 		GridPane.setValignment(portBox, VPos.TOP);
-		
+
 //		content.getRowConstraints().add(RowConstraintsBuilder.create().vgrow(Priority.NEVER).valignment(VPos.TOP).build());
 //		content.getRowConstraints().add(RowConstraintsBuilder.create().vgrow(Priority.NEVER).build());
 //		content.getRowConstraints().add(RowConstraintsBuilder.create().vgrow(Priority.NEVER).build());
@@ -184,7 +184,7 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 		eyeColor.textProperty().addListener(this);
 		skinColor.textProperty().addListener(this);
 		birthPlace.textProperty().addListener(this);
-		
+
 		randomHair.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				hairColor.setText(charGen.rollHair());
@@ -239,15 +239,15 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 
 		copyToCharacter();
 		if (
-				name.getText().length()>0 && 
+				name.getText().length()>0 &&
 				hairColor.getText().length()>0 &&
-				eyeColor.getText().length()>0 
+				eyeColor.getText().length()>0
 				)
 			finishButton.set(true);
 		else
 			finishButton.set(false);
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void copyToCharacter() {
 		charGen.setName(name.getText());
@@ -283,7 +283,7 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 					logger.debug("Set "+race);
 					Size dat = race.getSize();
 					size.setMin(dat.getSizeBase()-10);
-					size.setMax(dat.getSizeBase()+10*dat.getSizeD10()+6*dat.getSizeD6()+10);			
+					size.setMax(dat.getSizeBase()+10*dat.getSizeD10()+6*dat.getSizeD6()+10);
 				}
 			});
 			break;
@@ -292,7 +292,7 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 			finishButton.set(wizard.canBeFinished());
 		}
 	}
-	
+
 	//--------------------------------------------------------------------
 	/**
 	 * @see org.prelle.javafx.WizardPage#pageLeft(org.prelle.javafx.CloseType)
@@ -301,7 +301,7 @@ public class WizardPageName extends WizardPage implements GenerationEventListene
 	public void pageLeft(CloseType type) {
 		if (type==CloseType.CANCEL || type==CloseType.PREVIOUS)
 			return;
-		
+
 		copyToCharacter();
 	}
 
