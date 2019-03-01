@@ -137,9 +137,9 @@ public class WizardPageRace extends WizardPage implements ChangeListener<Race> {
 	private void updateRaceView(Race newRace) {
 		Image img = imageByRace.get(newRace);
 		if (img==null) {
-			String fname = SpliMoCharGenJFXConstants.PREFIX+"/data/race_"+newRace.getKey()+".png";
+			String fname = "data/race_"+newRace.getKey()+".png";
 			logger.trace("Load "+fname);
-			InputStream in = getClass().getClassLoader().getResourceAsStream(fname);
+			InputStream in = SpliMoCharGenJFXConstants.class.getResourceAsStream(fname);
 			if (in!=null) {
 				img = new Image(in);
 				imageByRace.put(newRace, img);

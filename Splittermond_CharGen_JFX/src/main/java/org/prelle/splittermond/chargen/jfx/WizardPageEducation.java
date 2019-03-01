@@ -14,7 +14,6 @@ import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.Wizard;
 import org.prelle.javafx.WizardPage;
-import org.prelle.rpgframework.splittermond.data.ImageAnchor;
 import org.prelle.splimo.Education;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.chargen.LetUserChooseListener;
@@ -175,7 +174,8 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 		if (img==null) {
 			String fname = plugin+"/data/education_"+selected.getKey()+".png";
 			logger.debug("Load "+fname);
-			InputStream in = ImageAnchor.class.getResourceAsStream(fname);
+//			InputStream in = ImageAnchor.class.getResourceAsStream(fname);
+			InputStream in = selected.getPlugin().getClass().getResourceAsStream(fname);
 			if (in!=null) {
 				img = new Image(in);
 				imageByEducation.put(selected, img);
@@ -185,16 +185,16 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 				if (img==null) {
 					fname = plugin+"/data/education_"+edu2.getKey()+".png";
 					logger.debug("Load "+fname);
-					in = getClass().getResourceAsStream(fname);
+					in = edu2.getPlugin().getClass().getResourceAsStream(fname);
 					if (in!=null) {
 						img = new Image(in);
 						imageByEducation.put(edu2, img);
 					} else {
-						logger.warn("Missing image at "+fname);
+						logger.warn("Missing image at "+fname+" from class "+selected.getPlugin().getClass()+" = "+selected.getPlugin().getClass().getPackageName().replace(".", "/")+"/"+fname);
 					}
 				}
 			} else
-				logger.warn("Missing image at "+fname);
+				logger.warn("Missing image at "+fname+" from class "+selected.getPlugin().getClass()+" = "+selected.getPlugin().getClass().getPackageName().replace(".", "/")+"/"+fname);
 
 		}
 
