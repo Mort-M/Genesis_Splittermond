@@ -1166,7 +1166,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    
+
     <spell id="support_healing" diff="18" cost="4V1" castdur="3m" range="TOUCH" enh="1/+1V1">
         <school skill="healmagic" level="1" />
         <school skill="enhancemagic" level="2" />
@@ -1247,7 +1247,7 @@
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    
+
     <spell id="poisoncloud" diff="27" cost="16V4" castdur="13T" range="10m" effectRange="3" spelldur="5T" enh="1/+4V4">
         <school skill="naturemagic" level="5" />
         <school skill="deathmagic" level="5" />
@@ -1401,7 +1401,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="control_heat" diff="18" cost="4V1" castdur="2m" spelldur="6h" enh="3/+1V1">
+    <spell id="control_heat" diff="18" cost="4V1" castdur="2m" range="CASTER" spelldur="6h" enh="3/+1V1">
         <school skill="firemagic" level="1" />
         <type>ELEMENTALCONTROL</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -1409,7 +1409,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="major_fairy_ban" diff="KW" cost="20V5" castdur="15T" range="15" enh="2/+5V5">
+    <spell id="major_fairy_ban" diff="KW" cost="20V5" castdur="15T" range="15m" enh="2/+5V5">
         <school skill="antimagic" level="5" />
         <type>FAIRY_CREATURE</type>
         <type>EXORCISE</type>
@@ -2632,7 +2632,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    
+
     <spell id="summon_fire_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="firemagic" level="0" />
         <type>SUMMON</type>
@@ -2685,7 +2685,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    
+
     <spell id="summon_light_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="lightmagic" level="0" />
         <type>SUMMON</type>
@@ -2738,7 +2738,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    
+
     <spell id="summon_nature_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="naturemagic" level="0" />
         <type>SUMMON</type>
@@ -2797,7 +2797,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    
+
     <spell id="summon_shadow_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="shadowmagic" level="0" />
         <type>SUMMON</type>
@@ -2850,7 +2850,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    
+
     <spell id="summon_fate_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="fatemagic" level="0" />
         <type>SUMMON</type>
@@ -2897,7 +2897,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    
+
     <spell id="summon_ghost_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="deathmagic" level="0" />
         <type>SUMMON</type>
@@ -2944,7 +2944,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    
+
     <spell id="summon_water_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="watermagic" level="0" />
         <type>SUMMON</type>
@@ -2997,7 +2997,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    
+
     <spell id="summon_wind_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="windmagic" level="0" />
         <type>SUMMON</type>
