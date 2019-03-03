@@ -77,9 +77,9 @@ public class MoonSignPane extends HBox {
 			int x= i%3;
 			int y= i/3;
 			Image img = null;
-			String fname = SpliMoCharGenJFXConstants.PREFIX+"/data/moon_"+tmp.name().toLowerCase()+".png";
+			String fname = "data/moon_"+tmp.name().toLowerCase()+".png";
 			logger.debug("Load "+fname);
-			InputStream in = getClass().getClassLoader().getResourceAsStream(fname);
+			InputStream in = SpliMoCharGenJFXConstants.class.getResourceAsStream(fname);
 			if (in!=null) {
 				img = new Image(in);
 			} else
