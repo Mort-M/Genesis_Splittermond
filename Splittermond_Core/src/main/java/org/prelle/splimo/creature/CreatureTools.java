@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.creature;
 
@@ -72,10 +72,10 @@ public class CreatureTools {
 	        logger.debug("START: -----recalculate---------------------------");
 	        modulBased.clear();
 	        apply(modulBased, new CreatureFeatureModification(SplitterMondCore.getCreatureFeatureType("CREATURE"), getInvestedCreaturePoints(modulBased)));
-	        
+
 	        // Reset all disabled choices
 	        getChoicesToMake(modulBased).forEach(choice -> choice.disabled=false);
-	 
+
 	        CreatureWeapon weapon = new CreatureWeapon();
 	        weapon.addFeature(new Feature(SplitterMondCore.getFeatureType("BLUNT"), 1));
 	        weapon.setDamage(10600);
@@ -87,7 +87,7 @@ public class CreatureTools {
 	        // Creature types
 	        for (CreatureTypeValue tmp : modulBased.getCreatureTypes())
 	        	modulBased.addCreatureType(tmp);
-	        
+
 	        if (modulBased.getBase()!=null) {
 	            logger.debug("1. Base");
 	            modulBased.getBase().getModifications().stream().filter(mod -> !needsToBeAppliedLater(mod)).forEach(mod -> apply(modulBased, mod));
@@ -119,11 +119,11 @@ public class CreatureTools {
 	        logger.debug("6. Choices");
 	        for (CreatureModuleReference.NecessaryChoice ref : getChoicesToMake(modulBased)) {
 	        	if (ref.disabled) {
-	        		logger.debug("   * Choice disabled for: "+ref.originModule+"/"+ref.getOriginChoice());            
+	        		logger.debug("   * Choice disabled for: "+ref.originModule+"/"+ref.getOriginChoice());
 	        	} else if (ref.getMadeChoice()==null) {
-	        		logger.debug("   * No choice made for: "+ref.originModule+"/"+ref.getOriginChoice());            
+	        		logger.debug("   * No choice made for: "+ref.originModule+"/"+ref.getOriginChoice());
 	        	} else {
-	        		logger.debug("   * Choice made for: "+ref.originModule+"/"+ref.getOriginChoice()+" = "+ref.getMadeChoice());            
+	        		logger.debug("   * Choice made for: "+ref.originModule+"/"+ref.getOriginChoice()+" = "+ref.getMadeChoice());
 	        		apply(modulBased, ref.getMadeChoice());
 	        	}
 	        }
@@ -133,9 +133,9 @@ public class CreatureTools {
     //-------------------------------------------------------------------
     public static void calculateTrainings(CreatureReference creature) {
         logger.debug("START: -----calculateTrainings---------------------------");
-        
+
         creature.clearTrainingModifications();
-        
+
         for (CreatureModuleReference ref : creature.getTrainings()) {
 	            logger.debug("1. Training: "+ref);
 //	            ref.getModifications().forEach(mod -> CreatureTools.instantiateModification(null, ref, mod));
@@ -145,7 +145,7 @@ public class CreatureTools {
 //	            	.filter(mod -> !needsToBeAppliedLater(mod))
 	            	.forEach(mod -> creature.addTrainingModifications(mod));
         }
-    	
+
 //        for (CreatureModuleReference ref : creature.getTrainings()) {
 //            logger.debug("2. Late modifications trainings: "+ref);
 //            ref.getModifications().stream().filter(mod -> needsToBeAppliedLater(mod)).forEach(mod -> apply(creature, mod));
@@ -155,16 +155,16 @@ public class CreatureTools {
         for (CreatureModuleReference ref2 : creature.getTrainings()) {
         	for (CreatureModuleReference.NecessaryChoice ref : ref2.getChoices()) {
         		if (ref.disabled) {
-        			logger.debug("   * Choice disabled for: "+ref.originModule.getModule().getId()+"/"+ref.getOriginChoice());            
+        			logger.debug("   * Choice disabled for: "+ref.originModule.getModule().getId()+"/"+ref.getOriginChoice());
         		} else if (ref.getMadeChoice()==null) {
-        			logger.debug("   * No choice made for: "+ref.originModule.getModule().getId()+"/"+ref.getOriginChoice());            
+        			logger.debug("   * No choice made for: "+ref.originModule.getModule().getId()+"/"+ref.getOriginChoice());
         		} else {
-        			logger.debug("   * Choice made for: "+ref.originModule.getModule().getId()+"/"+ref.getOriginChoice()+" = "+ref.getMadeChoice());            
+        			logger.debug("   * Choice made for: "+ref.originModule.getModule().getId()+"/"+ref.getOriginChoice()+" = "+ref.getMadeChoice());
         			creature.addTrainingModifications(ref.getMadeChoice());
         		}
         	}
         }
-        
+
         logger.debug("STOP : -----calculateTrainings---------------------------");
     }
 
@@ -273,8 +273,8 @@ public class CreatureTools {
                 }
             } else {
             	if (foo.isRemoved()) {
-            		if (old!=null) 
-           				modulBased.removeCreatureType(old);            		
+            		if (old!=null)
+           				modulBased.removeCreatureType(old);
                 } else {
                 	if (old==null) {
                        	modulBased.addCreatureType(new CreatureTypeValue(type));
@@ -451,7 +451,7 @@ public class CreatureTools {
         			apply(modulBased, tmp);
         		}
         	}
-        	
+
         } else if (mod instanceof SpellModification) {
         	SpellModification sMod = (SpellModification)mod;
         	logger.debug("    Apply "+sMod);
@@ -498,7 +498,7 @@ public class CreatureTools {
     		if (type.hasLevels()) {
     			CreatureFeature old = modulBased.getCreatureFeature(type);
     			if (old==null) {
-    				if (cfMod.isRemoved()) 
+    				if (cfMod.isRemoved())
     					modulBased.addCreatureFeature(type);
     			} else {
     				if (cfMod.isRemoved()) {
@@ -608,7 +608,7 @@ public class CreatureTools {
             		int old = weapon.getDamage()%100 - val;
             		if (old<0) old = 100 + old;
             		weapon.setDamage(tmp*100 + old);
-            	} else {	
+            	} else {
             		weapon.setDamage(weapon.getDamage() - val);
             	}
             } else {
@@ -618,7 +618,7 @@ public class CreatureTools {
             		int old = weapon.getDamage()%100 + val;
             		if (old<0) old = 100 + old;
             		weapon.setDamage(tmp*100 + old);
-            	} else {	
+            	} else {
             		weapon.setDamage(weapon.getDamage() + val);
             	}
             }
@@ -640,7 +640,7 @@ public class CreatureTools {
             		int old = weapon.getDamage()%100 + iMod.getValue();
             		if (old<0) old = 100 + old;
             		weapon.setDamage(tmp*100 + old);
-            	} else {	
+            	} else {
             		weapon.setDamage(weapon.getDamage() + iMod.getValue());
             	}
                 break;
@@ -652,7 +652,7 @@ public class CreatureTools {
             ItemFeatureModification ifMod = (ItemFeatureModification)mod;
             FeatureType type = ifMod.getFeature();
             logger.debug("apply "+ifMod+"   hasLevel="+type.hasLevel());
-            if (type.hasLevel() || type.getId().equals("BLUNT")) {            	
+            if (type.hasLevel() || type.getId().equals("BLUNT")) {
                 Feature old = weapon.getFeature(type);
                 int lvl =ifMod.getLevel();
                 if (lvl<1)
@@ -721,7 +721,7 @@ public class CreatureTools {
             		int old = weapon.getDamage()%100 - val;
             		if (old<0) old = 100 + old;
             		weapon.setDamage(tmp*100 + old);
-            	} else {	
+            	} else {
             		weapon.setDamage(weapon.getDamage() - val);
             	}
             } else {
@@ -731,7 +731,7 @@ public class CreatureTools {
             		int old = weapon.getDamage()%100 + val;
             		if (old<0) old = 100 + old;
             		weapon.setDamage(tmp*100 + old);
-            	} else {	
+            	} else {
             		weapon.setDamage(weapon.getDamage() + val);
             	}
             }
@@ -753,7 +753,7 @@ public class CreatureTools {
             		int old = weapon.getDamage()%100 + iMod.getValue();
             		if (old<0) old = 100 + old;
             		weapon.setDamage(tmp*100 + old);
-            	} else {	
+            	} else {
             		weapon.setDamage(weapon.getDamage() + iMod.getValue());
             	}
                 break;
@@ -765,7 +765,7 @@ public class CreatureTools {
             ItemFeatureModification ifMod = (ItemFeatureModification)mod;
             FeatureType type = ifMod.getFeature();
             logger.debug("apply "+ifMod+"   hasLevel="+type.hasLevel());
-            if (type.hasLevel() || type.getId().equals("BLUNT")) {            	
+            if (type.hasLevel() || type.getId().equals("BLUNT")) {
                 Feature old = weapon.getFeature(type);
                 int lvl =ifMod.getLevel();
                 if (lvl<1)
@@ -914,7 +914,7 @@ public class CreatureTools {
     		ret.addAll(modulBased.getRole().getChoices());
     	for (CreatureModuleReference tmp : modulBased.getOptions())
     		ret.addAll(tmp.getChoices());
-    	
+
     	return ret;
 	}
 
@@ -928,12 +928,12 @@ public class CreatureTools {
         	SkillModification sMod = (SkillModification)mod;
 //            logger.info("needsToBeAppliedLater("+mod+") = "+(sMod.getSkill()==null));
         	return (sMod.getSkill()==null);
-        } 
+        }
         if (mod instanceof SpellModification) {
         	SpellModification sMod = (SpellModification)mod;
         	return (sMod.getSpell()==null);
-        } 
-   	
+        }
+
 //        logger.info("needsToBeAppliedLater("+mod+") = false");
         return false;
     }
@@ -953,7 +953,7 @@ public class CreatureTools {
         if (mod instanceof SkillModification) {
 //        	logger.debug("Needs to be chosen("+mod+") will return "+(((SkillModification)mod).getSkill()==null));
         	return ((SkillModification)mod).getSkill()==null && ((SkillModification)mod).getRestrictionType()!=RestrictionType.ANY_EXIST;
-        } 
+        }
         if (mod instanceof MastershipModification) {
             MastershipModification mmod = (MastershipModification)mod;
             if (mmod.getMastership()==null) {
@@ -1016,7 +1016,7 @@ public class CreatureTools {
 	/**
 	 * Check if the given modification can be applied. E.g. a modification
 	 * to remove a mastership the creature doesn't have, isn't valid.
-	 * 
+	 *
 	 * @see java.util.function.Predicate#test(java.lang.Object)
 	 */
 //	@Override
@@ -1037,12 +1037,12 @@ public class CreatureTools {
         		}
         	}
         }
-        
+
         if (mod instanceof SkillModification) {
         	SkillModification foo = (SkillModification)mod;
         	if (foo.getSkill()!=null)
         		return true;
-        	
+
         }
 //		logger.debug("   "+mod+" can be applied");
 		return true;
@@ -1055,9 +1055,13 @@ public class CreatureTools {
         	Mastership master = mod.getMastership();
         	Skill skill = mod.getSkill();
         	SkillValue sVal = modulBased.getSkillValue(skill);
-            logger.debug("  add mastership "+master+" to "+skill.getId());
-        	sVal.addMastership(new MastershipReference(master));
-        	
+            logger.debug("  add mastership "+master+" to "+skill.getId()+" = SkillValue is "+sVal);
+            if (sVal==null) {
+            	logger.warn("Creature has mastership in skill "+skill+" which isn't present in creature");
+            	sVal = new SkillValue(skill,0);
+            	modulBased.addSkill(sVal);
+            }
+            sVal.addMastership(new MastershipReference(master));
         }
     }
 
