@@ -499,6 +499,13 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 				return null;
 			}
 			logger.debug("generate() finished");
+		} else {
+			/*
+			 * Write all made modifications to character
+			 */
+			logger.debug("Add modifications to character log");
+			((CharacterLeveller)control).updateHistory();
+
 		}
 
 		CloseType choice = manager.showAlertAndCall(AlertType.CONFIRMATION,
