@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.MissingResourceException;
 
+import org.apache.logging.log4j.LogManager;
 import org.prelle.simplepersist.AttribConvert;
 import org.prelle.simplepersist.Attribute;
 import org.prelle.simplepersist.Element;
@@ -157,7 +158,7 @@ public class Spell extends BasePluginData implements Comparable<Spell> {
 			return null;
 		if (!SplitterMondCore.hasLicense())
 			return null;
-		
+
 		try {
 			return i18nHelp.getString("spell."+id+".enhancedescr");
 		} catch (MissingResourceException e) {
@@ -306,13 +307,18 @@ public class Spell extends BasePluginData implements Comparable<Spell> {
 
 	//-------------------------------------------------------------------
 	public String getCastRangeString() {
-		switch (range) {
-		case RANGE_TOUCH:
-			return SplitterMondCore.getI18nResources().getString("spell.range.touch.short");
-		case RANGE_CASTER:
-			return SplitterMondCore.getI18nResources().getString("spell.range.caster.short");
-		default:
-			return range+"m";
+		try {
+			switch (range) {
+			case RANGE_TOUCH:
+				return SplitterMondCore.getI18nResources().getString("spell.range.touch.short");
+			case RANGE_CASTER:
+				return SplitterMondCore.getI18nResources().getString("spell.range.caster.short");
+			default:
+				return range+"m";
+			}
+		} catch (Exception e) {
+			LogManager.getLogger("splittermond").error("Spell '"+id+"' is missing a range information");
+			return "ERROR";
 		}
 	}
 
