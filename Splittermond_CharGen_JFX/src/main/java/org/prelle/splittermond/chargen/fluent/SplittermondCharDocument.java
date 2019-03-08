@@ -381,12 +381,7 @@ public class SplittermondCharDocument implements GenerationEventListener, NodeWi
 		Section secMSkills = new Section();
 		secMSkills.setTitle(uiResources.getString("label.magicskills"));
 		secMSkills.setContent(skillsMagic);
-		logger.fatal("         initMagicSkills1: "+control.getSkillController().getToDos(SkillType.MAGIC));
-		if (!control.getSkillController().getToDos(SkillType.MAGIC).isEmpty()) {
-			logger.fatal("Trace");
-		}
 		secMSkills.getToDoList().addAll(convert(control.getSkillController().getToDos(SkillType.MAGIC)));
-		logger.fatal("         initMagicSkills2: "+secMSkills.getToDoList());
 		content.getSectionList().add(secMSkills);
 		sections.put(skillsMagic, secMSkills);
 

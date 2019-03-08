@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splittermond.chargen.fluent;
 
@@ -34,16 +34,16 @@ import javafx.util.StringConverter;
 public class PowersAndWeaknessesPane extends HBox implements GenerationEventListener {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
-	
+
 	private static PropertyResourceBundle RES = SpliMoCharGenJFXConstants.UI;
 
 	private ObjectProperty<PowerReference> selectedItemProperty;
 	private ObjectProperty<Power> selectedAvailProperty;
 	private CharacterController charGen;
-	
+
 	private PowerReferenceListControl powerPane;
 	private WeaknessListControl    weaknessPane;
-	
+
 	private ChoiceBox<Power> cbAvailablePowers;
 	private TextField tfWeakness;
 	private Button btnAddPower;
@@ -55,18 +55,18 @@ public class PowersAndWeaknessesPane extends HBox implements GenerationEventList
 		initComponents();
 		initLayout();
 		initInteractivity();
-		
+
 		GenerationEventDispatcher.addListener(this);
 	}
 
 	//-------------------------------------------------------------------
 	private void initComponents() {
 		selectedAvailProperty = new SimpleObjectProperty<>();
-		
+
 		powerPane = new PowerReferenceListControl(charGen);
 		selectedItemProperty = powerPane.selectedItemProperty();
 		weaknessPane = new WeaknessListControl(charGen);
-		
+
 		cbAvailablePowers = new ChoiceBox<>(FXCollections.observableArrayList(charGen.getPowerController().getAvailablePowers()));
 		cbAvailablePowers.setConverter(new StringConverter<Power>() {
 			public String toString(Power value) { return value.getName(); }
@@ -87,7 +87,7 @@ public class PowersAndWeaknessesPane extends HBox implements GenerationEventList
 		lineWeakn.setStyle("-fx-spacing: 0.5em");
 		HBox.setHgrow(cbAvailablePowers, Priority.ALWAYS);
 		HBox.setHgrow(tfWeakness, Priority.ALWAYS);
-		
+
 		VBox bxPower = new VBox(linePower, powerPane);
 		VBox bxWeakn = new VBox(lineWeakn, weaknessPane);
 		bxPower.setMaxWidth(Double.MAX_VALUE);
@@ -95,7 +95,7 @@ public class PowersAndWeaknessesPane extends HBox implements GenerationEventList
 		bxWeakn.setStyle("-fx-spacing: 0.5em");
 		HBox.setHgrow(bxPower, Priority.ALWAYS);
 		HBox.setHgrow(bxWeakn, Priority.SOMETIMES);
-		
+
 		getChildren().addAll(bxPower, bxWeakn);
 		setStyle("-fx-spacing: 0.5em");
 	}
@@ -103,7 +103,8 @@ public class PowersAndWeaknessesPane extends HBox implements GenerationEventList
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
 		cbAvailablePowers.valueProperty().addListener( (ov,o,n) -> {
-			btnAddPower.setDisable(!charGen.getPowerController().canBeSelected(n));
+			if (n!=null)
+				btnAddPower.setDisable(!charGen.getPowerController().canBeSelected(n));
 			selectedAvailProperty.set(n);
 		});
 		btnAddPower.setOnAction( ev -> {

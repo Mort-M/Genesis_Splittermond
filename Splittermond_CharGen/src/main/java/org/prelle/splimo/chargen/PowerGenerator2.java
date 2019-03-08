@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen;
 
@@ -39,7 +39,7 @@ import de.rpgframework.genericrpg.modification.Modification;
 public class PowerGenerator2 implements PowerController {
 
 	private final static ResourceBundle RES = SpliMoCharGenConstants.RES;
-	
+
 	private static Logger logger = LogManager.getLogger("splittermond.chargen");
 
 	private Map<PowerReference, Stack<PowerModification>> powerUndoStack;
@@ -83,7 +83,7 @@ public class PowerGenerator2 implements PowerController {
 	 */
 	private void updateAvailable() {
 		logger.debug("Update list of available powers");
-		
+
 		List<Power> added = new ArrayList<Power>();
 		List<Power> removed = new ArrayList<Power>();
 		/*
@@ -98,8 +98,8 @@ public class PowerGenerator2 implements PowerController {
 				removed.add(power);
 			}
 		}
-		
-		/* 
+
+		/*
 		 * Now walk through all powers and test if one is now
 		 * selectable
 		 */
@@ -115,7 +115,7 @@ public class PowerGenerator2 implements PowerController {
 				added.add(power);
 			}
 		}
-		
+
 		if (!removed.isEmpty())
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POWER_AVAILABLE_REMOVED, removed));
 		if (!added.isEmpty())
@@ -128,6 +128,8 @@ public class PowerGenerator2 implements PowerController {
 	 */
 	@Override
 	public boolean canBeSelected(Power power) {
+		if (power==null)
+			return false;
 		// Can character afford power?
 		if (getPointsLeft() < power.getCost())
 			return false;
@@ -152,7 +154,7 @@ public class PowerGenerator2 implements PowerController {
 			default:
 			}
 		}
-		
+
 		/*
 		 * Check requirements
 		 */
@@ -162,7 +164,7 @@ public class PowerGenerator2 implements PowerController {
 				return false;
 			}
 		}
-		
+
 		return true;
 	}
 
@@ -173,7 +175,7 @@ public class PowerGenerator2 implements PowerController {
 	@Override
 	public boolean canBeDeselected(PowerReference ref) {
 		Stack<PowerModification> stack = powerUndoStack.get(ref);
-		
+
 		switch (ref.getPower().getSelectable()) {
 		case ALWAYS:
 		case GENERATION:
@@ -201,9 +203,9 @@ public class PowerGenerator2 implements PowerController {
 
 	//--------------------------------------------------------------------
 	private void correctReferenceModifications(PowerReference ref) {
-		undoModification(ref);		
+		undoModification(ref);
 		ref.getModifications().clear();
-		
+
 		Power power = ref.getPower();
 		// Copy modifications from power to power reference. This allows to stack them
 		for (Modification mod : power.getModifications()) {
@@ -218,7 +220,7 @@ public class PowerGenerator2 implements PowerController {
 				ref.getModifications().add(sMod );
 				sMod.setSource(ref);
 			} else {
-				ref.getModifications().add(mod); 
+				ref.getModifications().add(mod);
 			}
 		}
 	}
@@ -230,7 +232,7 @@ public class PowerGenerator2 implements PowerController {
 	@Override
 	public PowerReference select(Power power) {
 		int expNeeded = power.getCost();
-		if (getPointsLeft()<expNeeded) 
+		if (getPointsLeft()<expNeeded)
 			return null;
 
 		if (model.hasPower(power)) {
@@ -266,7 +268,7 @@ public class PowerGenerator2 implements PowerController {
 		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_POWERS, null, getPointsLeft()));
 
 		applyModification(ref);
-		
+
 		return ref;
 	}
 
@@ -304,7 +306,7 @@ public class PowerGenerator2 implements PowerController {
 		// Only can increase those that already exist
 		if (!model.hasPower(ref.getPower()))
 			return false;
-		
+
 		SelectionType type = ref.getPower().getSelectable();
 		if (type==null)
 			return false;
@@ -414,7 +416,7 @@ public class PowerGenerator2 implements PowerController {
 			// Inform listener
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POWER_CHANGED, ref));
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_POWERS, null, getPointsLeft()));
-			
+
 			return true;
 		}
 		return false;
@@ -453,7 +455,7 @@ public class PowerGenerator2 implements PowerController {
 	private void applyModification(PowerReference power) {
 		logger.debug("Distribute modifications attached to the power "+power);
 		if (!power.getModifications().isEmpty()) {
-			for (Modification mod : power.getModifications()) 
+			for (Modification mod : power.getModifications())
 				logger.debug("  call apply for "+mod);
 			charGen.apply(power.getPower().getName(), power.getModifications(), null);
 		}
@@ -466,7 +468,7 @@ public class PowerGenerator2 implements PowerController {
 		if (!power.getModifications().isEmpty())
 			charGen.undo(power.getModifications());
 	}
-	
+
 	//-------------------------------------------------------------------
 	void addModification(PowerModification pMod) {
 		logger.debug("Add modification "+pMod+" // src="+pMod.getSource());
@@ -476,14 +478,14 @@ public class PowerGenerator2 implements PowerController {
 		// Check if there already is a PowerReference
 		PowerReference ref = model.getPower(pMod.getPower());
 		if (ref==null) {
-			ref = new PowerReference(pMod.getPower());				
+			ref = new PowerReference(pMod.getPower());
 			// Copy modifications from power to power reference. This allows to stack them
 			for (Modification mod : power.getModifications()) {
 				if (mod instanceof AttributeModification) {
 					Modification clone = ((AttributeModification)mod).clone();
 					ref.getModifications().add(clone);
 					clone.setSource(ref);
-				} else if (mod instanceof SkillModification) { 
+				} else if (mod instanceof SkillModification) {
 					Modification clone = ((SkillModification)mod).clone();
 					ref.getModifications().add(clone);
 					clone.setSource(ref);
@@ -491,7 +493,7 @@ public class PowerGenerator2 implements PowerController {
 					ref.getModifications().add(mod);
 				}
 			}
-			
+
 			model.addPower(ref);
 			logger.info("Added by modification: "+ref);
 			Stack<PowerModification> stack = powerUndoStack.get(ref);
@@ -500,7 +502,7 @@ public class PowerGenerator2 implements PowerController {
 				powerUndoStack.put(ref, stack);
 			}
 			stack.push(pMod);
-			
+
 			GenerationEvent event = new GenerationEvent(GenerationEventType.POWER_ADDED, ref);
 			GenerationEventDispatcher.fireEvent(event);
 			// Now distribute modifications attached to the power
@@ -530,7 +532,7 @@ public class PowerGenerator2 implements PowerController {
 			case GENERATION:
 			case ALWAYS:
 			case LEVEL:
-//				/* 
+//				/*
 //				 * May be only selected once, so reimburse the points spent here.
 //				 * For powers that have been user selected, remove them from
 //				 * being undoable.
@@ -544,7 +546,7 @@ public class PowerGenerator2 implements PowerController {
 //				GenerationEventDispatcher.fireEvent(event);
 //				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.POINTS_LEFT_POWERS, pointsFree));
 				break;
-			case MULTIPLE:			
+			case MULTIPLE:
 				ref.setCount(ref.getCount()+1);
 				GenerationEventDispatcher.fireEvent(event);
 //				// Now distribute modifications attached to the power

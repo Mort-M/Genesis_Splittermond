@@ -30,10 +30,10 @@ module splittermond.chargen.jfx {
 	requires javafx.extensions;
 	requires javafx.graphics;
 	requires org.apache.logging.log4j;
-	requires rpgframework.api;
-	requires rpgframework.api.jfx;
-	requires rpgframework.jfx;
+	requires transitive rpgframework.api;
+	requires transitive rpgframework.api.jfx;
+	requires transitive rpgframework.jfx;
 	requires simple.persist;
-	requires splittermond.chargen;
-	requires splittermond.core;
+	requires transitive splittermond.chargen;
+	requires transitive splittermond.core;
 }

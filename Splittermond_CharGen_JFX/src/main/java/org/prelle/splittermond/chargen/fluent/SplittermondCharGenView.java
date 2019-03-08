@@ -394,7 +394,6 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 				manager.showAlertAndCall(AlertType.ERROR, uiResources.getString("error.saving_character.title"),
 						String.format(uiResources.getString("error.saving_character.message"), e.toString()));
 			}
-			this.control = new CharacterLeveller(model, ((SpliMoCharacterGenerator)control).getHGFactor());
 			setData(model, handle);
 //			refresh();
 		} else {
@@ -476,12 +475,12 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 		}
 	}
 
-//	//-------------------------------------------------------------------
-//	/**
-//	 * @see org.prelle.javafx.ManagedScreen#backSelected()
-//	 */
-//	@Override
-	private CloseType backerSelected() {
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.ManagedScreen#backSelected()
+	 */
+	@Override
+	public CloseType backSelected() {
 		logger.debug("backSelected()");
 
 		logger.debug("View mode is "+mode);
@@ -510,22 +509,23 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 
 		}
 
-		CloseType choice = manager.showAlertAndCall(AlertType.CONFIRMATION,
-						uiResources.getString("check.chargen.editing.abort.title"),
-						uiResources.getString("check.chargen.editing.abort.text")
-				);
-		logger.debug("Choice was "+choice);
-		if (choice==CloseType.YES) {
-			logger.info("User confirmed changes to character");
-			saveCharacter();
-			return CloseType.APPLY;
-		} else if (choice==CloseType.NO) {
-			logger.info("User rejected changes to character");
-			return CloseType.CANCEL;
-		}
-
-		logger.error("Unexpected type of response: "+choice);
-		return null;
+		return CloseType.APPLY;
+//		CloseType choice = manager.showAlertAndCall(AlertType.CONFIRMATION,
+//						uiResources.getString("check.chargen.editing.abort.title"),
+//						uiResources.getString("check.chargen.editing.abort.text")
+//				);
+//		logger.debug("Choice was "+choice);
+//		if (choice==CloseType.YES) {
+//			logger.info("User confirmed changes to character");
+//			saveCharacter();
+//			return CloseType.APPLY;
+//		} else if (choice==CloseType.NO) {
+//			logger.info("User rejected changes to character");
+//			return CloseType.CANCEL;
+//		}
+//
+//		logger.error("Unexpected type of response: "+choice);
+//		return null;
 	}
 
 	//-------------------------------------------------------------------
@@ -541,6 +541,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 	@Override
 	public void close() {
 		logger.debug("closing");
+		GenerationEventDispatcher.clear();
 
 		/*
 		 * If the character has been saved before, ask if changes should be saved again
@@ -550,9 +551,40 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 			CloseType save = manager.showAlertAndCall(AlertType.CONFIRMATION, uiResources.getString("check.chargen.editing.abort.title"), uiResources.getString("check.chargen.editing.abort.text"));
 			logger.debug("ask player for saving character returns "+save);
 
-			if (save==CloseType.YES)
+			if (save==CloseType.YES) {
+				/*
+				 * 1. Call plugin to encode character
+				 * 2. Use character service to save character
+				 */
+				logger.debug("encode character "+model.getName()+" in handle "+handle);
+				CommandResult result = CommandBus.fireCommand(this, CommandType.ENCODE,
+						handle.getRuleIdentifier(),
+						model
+						);
+				if (!result.wasProcessed()) {
+					logger.error("Cannot save character, since encoding failed");
+					manager.showAlertAndCall(
+							AlertType.ERROR,
+							"Das hätte nicht passieren dürfen",
+							"Es hat sich kein Plugin gefunden, welches das Kodieren von Charakteren dieses Systems erlaubt."
+					);
+				} else {
+					byte[] encoded = (byte[]) result.getReturnValue();
+					try {
+						logger.info("Save character "+model.getName());
+						RPGFrameworkLoader.getInstance().getCharacterAndRules().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, null, encoded);
+						logger.info("Saved character "+model.getName()+" successfully");
+						// Check for renaming
+						if (!model.getName().equals(handle.getName())) {
+							logger.warn("TODO: character has been renamed from "+handle.getName()+" to "+model.getName());
+						}
+					} catch (IOException e) {
+						logger.error("Failed saving character",e);
+						BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Failed saving character.\n"+e);
+					}
+				}
 				close(CloseType.APPLY);
-			else
+			} else
 				close(CloseType.CANCEL);
 		} else {
 			logger.info("Currently no safety question here");
