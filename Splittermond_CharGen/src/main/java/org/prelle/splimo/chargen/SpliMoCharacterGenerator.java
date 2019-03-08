@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen;
 
@@ -66,6 +66,7 @@ import org.prelle.splimo.modifications.SkillModification;
 import org.prelle.splittermond.genlvl.MastershipLevellerAndGenerator;
 import org.prelle.splittermond.genlvl.SpellLevellerAndGenerator;
 
+import de.rpgframework.ConfigOption;
 import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.character.Attachment;
 import de.rpgframework.character.CharacterHandle;
@@ -87,16 +88,16 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class SpliMoCharacterGenerator implements CharacterController {
-	
+
 	private final static ResourceBundle CORE = SplitterMondCore.getI18nResources();
-	
+
 	private static Logger logger = LogManager.getLogger("splittermond.chargen");
 	private static Random RANDOM = new Random();
-	
+
 	private Race       selectedRace;
 	private Culture    selectedCulture;
 	private Education  selectedEducation;
-	
+
 	/**
 	 * If TRUE uncommon cultures for the selected race shall also be included
 	 */
@@ -115,18 +116,20 @@ public class SpliMoCharacterGenerator implements CharacterController {
 	private MastershipLevellerAndGenerator master;
 	private LanguageGenerator languages;
 	private CultureLoreGenerator cultlores;
-	
+
 	/**
-	 * Memorizes all choices made by the user. 
+	 * Memorizes all choices made by the user.
 	 */
 	private Map<ModificationChoice, Modification[]> choices;
 	private SpliMoCharacter model;
-	
+	private ConfigOption<Double> hgFactor;
+
 	//-------------------------------------------------------------------
 	/**
 	 */
-	public SpliMoCharacterGenerator(SpliMoCharacter model) {
+	public SpliMoCharacterGenerator(SpliMoCharacter model, ConfigOption<Double> hgFactor) {
 		this.model = model;
+		this.hgFactor = hgFactor;
 		Reward reward = new RewardImpl(15, CORE.getString("label.reward.creation"));
 		reward.setDate(new Date(System.currentTimeMillis()));
 		model.setExperienceFree(15);
@@ -137,7 +140,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 		model.addItem(new CarriedItem(SplitterMondCore.getItem("feuersteinstahlundzunder")));
 		model.addItem(new CarriedItem(SplitterMondCore.getItem("fackel"), 5));
 		model.addItem(new CarriedItem(SplitterMondCore.getItem("marschrationprotag"), 3));
-		
+
 		choices    = new HashMap<ModificationChoice, Modification[]>();
 		attributes = new AttributeGenerator(model);
 		powers     = new PowerGenerator2(model, 10, this);  // 4 (Race) + 1 (Culture) + 2 (Education) + 3 (free)
@@ -211,17 +214,17 @@ public class SpliMoCharacterGenerator implements CharacterController {
 						// Don't let user choose requirements
 						continue;
 					}
-					
+
 					Modification[] madeChoices = callback.letUserChoose(origin, (ModificationChoice) mod);
-					if (madeChoices==null) 
+					if (madeChoices==null)
 						throw new IllegalArgumentException("No choice has been made on "+mod);
-					
-					/* 
+
+					/*
 					 * Eventually a MastershipModification with a skill type
 					 * is selected. In this case build another choice
 					 */
 					for (Modification mod2 : madeChoices) {
-						if (mod2 instanceof MastershipModification) { 
+						if (mod2 instanceof MastershipModification) {
 							MastershipModification mMod = (MastershipModification)mod2;
 							logger.debug("A mastership modication choice has been made: "+mod2);
 							if (mMod.getSkillType()==null) continue;
@@ -233,12 +236,12 @@ public class SpliMoCharacterGenerator implements CharacterController {
 							}
 							ModificationChoice modC = new ModificationChoice(mods, 1);
 							madeChoices = callback.letUserChoose(origin, modC);
-							if (madeChoices==null) 
+							if (madeChoices==null)
 								throw new IllegalArgumentException("No choice has been made on "+mod);
 							logger.debug("made choices : "+Arrays.toString(madeChoices));
 						}
 					}
-					
+
 					choices.put((ModificationChoice) mod, madeChoices);
 					for (Modification choice : madeChoices) {
 						apply(choice);
@@ -254,10 +257,10 @@ public class SpliMoCharacterGenerator implements CharacterController {
 					}
 					ModificationChoice modC = new ModificationChoice(mods, 1);
 					Modification[] madeChoices = callback.letUserChoose(origin, modC);
-					if (madeChoices==null) 
+					if (madeChoices==null)
 						throw new IllegalArgumentException("No choice has been made on "+mod);
 					logger.debug("made choices : "+Arrays.toString(madeChoices));
-					
+
 					choices.put(modC, madeChoices);
 					for (Modification choice : madeChoices) {
 						apply(choice);
@@ -320,19 +323,19 @@ public class SpliMoCharacterGenerator implements CharacterController {
 			if (mod instanceof ModificationChoice) {
 				Modification[] madeChoices = choices.get((ModificationChoice) mod);
 				choices.remove((ModificationChoice) mod);
-				
+
 				if (madeChoices==null) {
 					logger.warn("Trying to undo choices that are not registed: "+mod);
 					continue;
 				}
-					
+
 				for (Modification choice : madeChoices) {
 					undo(choice);
 				}
 			} else {
 				undo(mod);
 			}
-			
+
 		}
 	}
 
@@ -347,11 +350,11 @@ public class SpliMoCharacterGenerator implements CharacterController {
 			// Nothing changed
 			return;
 		}
-		
+
 		/*
 		 * Undo all modifications from previously made selected
 		 */
-		if (selectedRace!=null && selected!=null) 
+		if (selectedRace!=null && selected!=null)
 			undo(selectedRace.getModifications());
 //		if (selectedRace!=null && selectedRace.getKey().equals("human")) {
 //			powers.modifyPoints(-2);
@@ -363,11 +366,11 @@ public class SpliMoCharacterGenerator implements CharacterController {
 		apply(
 				SpliMoCharGenConstants.RES.getString("label.race")+" "+selected.getName(),
 				selected.getModifications(), callback);
-		
+
 		selectedRace = selected;
 		model.setRace(selected.getKey());
 		logger.info("Selected race is now "+selected);
-		
+
 //		if (selected.getKey().equals("human")) {
 //			powers.modifyPoints(2);
 //		}
@@ -380,7 +383,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 		event = new GenerationEvent(GenerationEventType.CULTURE_OFFER_CHANGED, getAvailableCultures());
 		GenerationEventDispatcher.fireEvent(event);
 	}
-	
+
 	//-------------------------------------------------------------------
 	public FreeSelectionGenerator getFreeCreatorCulture() {
 		return new FreeSelectionGenerator(model,
@@ -392,7 +395,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 				0   // Resources
 				);
 	}
-	
+
 	//-------------------------------------------------------------------
 	public FreeSelectionGenerator getFreeCreatorBackground() {
 		return new FreeSelectionGenerator(model,
@@ -404,7 +407,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 				4   // Resources
 				);
 	}
-	
+
 	//-------------------------------------------------------------------
 	public FreeSelectionGenerator getFreeCreatorEducation() {
 		return new FreeSelectionGenerator(model,
@@ -416,15 +419,15 @@ public class SpliMoCharacterGenerator implements CharacterController {
 				2   // Resources
 				);
 	}
-	
+
 	//-------------------------------------------------------------------
 	public void setIncludeUncommonCultures(boolean uncommon) {
 		includeUncommonCultures = uncommon;
-		
+
 		GenerationEvent event = new GenerationEvent(GenerationEventType.CULTURE_OFFER_CHANGED, getAvailableCultures());
 		GenerationEventDispatcher.fireEvent(event);
 	}
-	
+
 	//-------------------------------------------------------------------
 	/**
 	 * Return the list of cultures to offer to the user.
@@ -440,7 +443,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 					logger.trace("Culture '"+cult+"' usually has no race "+selectedRace);
 			}
 		}
-		
+
 		return toOffer;
 	}
 
@@ -451,11 +454,11 @@ public class SpliMoCharacterGenerator implements CharacterController {
 			// Nothing changed
 			return;
 		}
-		
+
 		/*
 		 * Undo all modifications from previously made selected
 		 */
-		if (selectedCulture!=null && selected!=null) 
+		if (selectedCulture!=null && selected!=null)
 			undo(selectedCulture.getModifications());
 
 		/*
@@ -465,8 +468,8 @@ public class SpliMoCharacterGenerator implements CharacterController {
 		apply(
 				SpliMoCharGenConstants.RES.getString("label.culture")+" "+selected.getName(),
 				selected.getModifications(), callback);
-		
-		
+
+
 		selectedCulture = selected;
 		model.setCulture(selected.getKey());
 		if (SplitterMondCore.getCultures().contains(selected)) {
@@ -476,7 +479,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 			model.setOwnCulture(selected);
 			logger.info("Selected own culture is now "+selected);
 		}
-		
+
 		/*
 		 * Inform listener
 		 */
@@ -490,10 +493,10 @@ public class SpliMoCharacterGenerator implements CharacterController {
 			// Nothing changed
 			return;
 		}
-		
+
 		if (selected==null)
 			throw new NullPointerException("Selected education is NULL");
-		
+
 		logger.debug("-------------selectEducation---------------------------------\n\n");
 		/*
 		 * Undo all modifications from previously made selected
@@ -502,7 +505,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 			logger.debug("remove previous selected "+selectedEducation);
 			undo(selectedEducation.getModifications());
 		}
-		
+
 		/*
 		 * Now selected
 		 */
@@ -510,7 +513,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 		apply(
 				SpliMoCharGenConstants.RES.getString("label.education")+" "+selected.getName(),
 				selected.getModifications(), callback);
-		
+
 		selectedEducation = selected;
 		model.setEducation(selected.getKey());
 		// Search through educations and variants
@@ -521,7 +524,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 				break;
 			}
 		}
-		
+
 		if (isStock) {
 			model.setOwnEducation(null);
 			logger.info("Selected stock education is now "+selected);
@@ -548,11 +551,11 @@ public class SpliMoCharacterGenerator implements CharacterController {
 //			// Nothing changed
 //			return;
 //		}
-//		
+//
 //		/*
 //		 * Undo all modifications from previously made selected
 //		 */
-//		if (selectedBackground!=null && selected!=null) 
+//		if (selectedBackground!=null && selected!=null)
 //			undo(selectedBackground.getModifications());
 //
 //		/*
@@ -561,7 +564,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 //		apply(
 //				SpliMoCharGenConstants.RES.getString("label.background")+" "+selected.getName(),
 //				selected.getModifications(), callback);
-//		
+//
 //		selectedBackground = selected;
 //		logger.info("Selected background is now "+selected);
 //
@@ -617,8 +620,8 @@ public class SpliMoCharacterGenerator implements CharacterController {
 			logger.trace("  power  "+powers.getPointsLeft());
 			logger.trace("  resrc  "+resources.getPointsLeft());
 			logger.trace("  skill  "+skills.getPointsLeft());
-		} 
-		
+		}
+
 		if (model.getName()==null) logger.debug("model.getName() = null");
 		else if (model.getName().length()==0) logger.debug("model.getName().length = 0");
 		if (selectedRace==null) logger.debug("selectedRace = null");
@@ -630,9 +633,9 @@ public class SpliMoCharacterGenerator implements CharacterController {
 		if (powers.getPointsLeft()>0) logger.debug("powers.getPointsLeft() > 0");
 		if (resources.getPointsLeft()>0) logger.debug("resources.getPointsLeft() > 0");
 		if (skills.getPointsLeft()>0) logger.debug("skills.getPointsLeft() > 0");
-		
-		boolean result = (model.getName()!=null && model.getName().length()>0) 
-				&& selectedRace!=null 
+
+		boolean result = (model.getName()!=null && model.getName().length()>0)
+				&& selectedRace!=null
 				&& selectedCulture!=null
 				&& backgrounds.getSelected()!=null
 				&& model.getSplinter()!=null
@@ -640,10 +643,10 @@ public class SpliMoCharacterGenerator implements CharacterController {
 				&& powers.getPointsLeft()==0
 				&& resources.getPointsLeft()==0
 				&& skills.getPointsLeft()==0
-				; 
+				;
 		logger.warn("has enough data returns "+result);
 		return result;
-				
+
 	}
 
 	//-------------------------------------------------------------------
@@ -651,12 +654,12 @@ public class SpliMoCharacterGenerator implements CharacterController {
 	 * Checks if the necessary data for character generation is entered.
 	 */
 	public boolean hasEnoughDialogData() {
-		return 
-				selectedRace!=null 
+		return
+				selectedRace!=null
 				&& selectedCulture!=null
 				&& backgrounds.getSelected()!=null
 				&& model.getSplinter()!=null
-				&& (model.getName()!=null && model.getName().length()>0) 
+				&& (model.getName()!=null && model.getName().length()>0)
 				;
 	}
 
@@ -673,16 +676,16 @@ public class SpliMoCharacterGenerator implements CharacterController {
 			val.clearModifications();
 //			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.ATTRIBUTE_CHANGED, attr, val));
 		}
-		
+
 		// Set character level to 1
 		model.setLevel(1);
 //		model.setExperienceFree(15);
 		model.setExperienceInvested(15-model.getExperienceFree());
 //		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.BASE_DATA_CHANGED, null));
-		
-		
+
+
 		logger.debug("Generate");
-		
+
 		CharacterProvider charProv     = RPGFrameworkLoader.getInstance().getCharacterService();
 		try {
 			CharacterHandle handle = charProv.createCharacter(model.getName(), RoleplayingSystem.SPLITTERMOND);
@@ -703,7 +706,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 			BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Failed saving created character.\n"+e.getMessage());
 			return null;
 		}
-		
+
 		return model;
 	}
 
@@ -736,7 +739,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 //	public SpellGenerator getSpellGenerator() {
 //		return spells;
 //	}
-	
+
 	//--------------------------------------------------------------------
 	/**
 	 * @param selectedSplinter the selectedSplinter to set
@@ -863,7 +866,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 		logger.info("Size "+result+" is "+relSize+" %");
 		int weightSpan = size.getWeightMax() - size.getWeightMin();
 		logger.info("Weight span = "+weightSpan);
-		
+
 		return new int[]{result,  size.getWeightMin() + (int)(relSize*weightSpan)};
 	}
 
@@ -884,7 +887,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 	public AttributeController getAttributeController() {
 		return attributes;
 	}
-	
+
 //	//--------------------------------------------------------------------
 //	/**
 //	 * @see org.prelle.splimo.charctrl.CharacterController#getFreeMasterships(org.prelle.splimo.Skill)
@@ -1021,6 +1024,14 @@ public class SpliMoCharacterGenerator implements CharacterController {
 	@Override
 	public SpliMoCharacter getModel() {
 		return model;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @return the hgFactor
+	 */
+	public ConfigOption<Double> getHGFactor() {
+		return hgFactor;
 	}
 
 }

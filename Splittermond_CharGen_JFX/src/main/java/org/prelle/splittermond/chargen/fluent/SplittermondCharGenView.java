@@ -16,6 +16,7 @@ import org.prelle.javafx.ResponsiveControl;
 import org.prelle.javafx.ScreenManager;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.javafx.WindowMode;
+import org.prelle.javafx.fluent.CloseableContent;
 import org.prelle.splimo.EquipmentTools;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SpliMoCharacter;
@@ -63,7 +64,7 @@ import javafx.scene.shape.SVGPath;
  * @author prelle
  *
  */
-public class SplittermondCharGenView extends ManagedScreen implements GenerationEventListener, ScreenManagerProvider, ResponsiveControl {
+public class SplittermondCharGenView extends ManagedScreen implements GenerationEventListener, ScreenManagerProvider, ResponsiveControl, CloseableContent {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 
@@ -387,17 +388,18 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 				RPGFrameworkLoader.getInstance().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, model.getName()+".xml", data);
 				manager.showAlertAndCall(AlertType.NOTIFICATION, uiResources.getString("alert.start_tuning.title"),
 						String.format(uiResources.getString("alert.start_tuning.message"), handle.getPath().toString()));
+//				commandBar.getItems().addAll(cmdPrint);
 			} catch (IOException e) {
 				logger.error("Failed writing newly created character to disk",e);
 				manager.showAlertAndCall(AlertType.ERROR, uiResources.getString("error.saving_character.title"),
 						String.format(uiResources.getString("error.saving_character.message"), e.toString()));
 			}
-//			this.control = new CoriolisCharacterLeveller(model);
+			this.control = new CharacterLeveller(model, ((SpliMoCharacterGenerator)control).getHGFactor());
 			setData(model, handle);
 //			refresh();
 		} else {
 			logger.warn("Wizard "+close);
-			getScreenManager().closeCurrent(close);
+//			getScreenManager().closeCurrent(close);
 			getScreenManager().cancel();
 
 		}
@@ -474,12 +476,12 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 		}
 	}
 
-	//-------------------------------------------------------------------
-	/**
-	 * @see org.prelle.javafx.ManagedScreen#backSelected()
-	 */
-	@Override
-	public CloseType backSelected() {
+//	//-------------------------------------------------------------------
+//	/**
+//	 * @see org.prelle.javafx.ManagedScreen#backSelected()
+//	 */
+//	@Override
+	private CloseType backerSelected() {
 		logger.debug("backSelected()");
 
 		logger.debug("View mode is "+mode);
@@ -533,9 +535,45 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 	}
 
 	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.fluent.CloseableContent#close()
+	 */
+	@Override
+	public void close() {
+		logger.debug("closing");
+
+		/*
+		 * If the character has been saved before, ask if changes should be saved again
+		 * when screen is closed
+		 */
+		if (handle!=null) {
+			CloseType save = manager.showAlertAndCall(AlertType.CONFIRMATION, uiResources.getString("check.chargen.editing.abort.title"), uiResources.getString("check.chargen.editing.abort.text"));
+			logger.debug("ask player for saving character returns "+save);
+
+			if (save==CloseType.YES)
+				close(CloseType.APPLY);
+			else
+				close(CloseType.CANCEL);
+		} else {
+			logger.info("Currently no safety question here");
+//			CloseType save = manager.showAlertAndCall(AlertType.CONFIRMATION,
+//					uiResources.getString("check.chargen.creation.abort.title"),
+//					uiResources.getString("check.chargen.creation.abort.text")
+//			);
+//			logger.debug("ask player for saving character returns "+save);
+
+		}
+	}
+
+	//-------------------------------------------------------------------
 	@Override
 	public boolean close(CloseType type) {
 		logger.info("close("+type+")");
+		if (type==CloseType.APPLY) {
+			logger.warn("APPLY");
+		}else {
+			logger.warn("NOT APPLY");
+		}
 		return true;
 	}
 }

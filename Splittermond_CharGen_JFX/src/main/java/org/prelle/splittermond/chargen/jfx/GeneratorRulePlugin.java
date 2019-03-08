@@ -191,7 +191,7 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 		case SHOW_CHARACTER_CREATION_GUI:
 			logger.debug("start character creation");
 			model = new SpliMoCharacter();
-			control = new SpliMoCharacterGenerator(model);
+			control = new SpliMoCharacterGenerator(model, hgFactor);
 			manager = (ScreenManager)values[2];
 
 			screen = new SplittermondCharGenView(control, manager, null);

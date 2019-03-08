@@ -74,7 +74,7 @@ public class MyStarter extends Application {
 			dia = new SelectMastershipDialog2(charGen.getMastershipController(), model, skill2);
 			break;
 		case 1:
-			charGen = new SpliMoCharacterGenerator(model);
+			charGen = new SpliMoCharacterGenerator(model, null);
 			((SpliMoCharacterGenerator)charGen).apply(new AttributeModification(Attribute.AGILITY, 1));
 			model.getAttribute(Attribute.WILLPOWER).setStart(3);
 			model.getAttribute(Attribute.WILLPOWER).setDistributed(3);
@@ -90,7 +90,7 @@ public class MyStarter extends Application {
 			((SkillPane)dia).setContent(model);
 			break;
 		case 6:
-			charGen = new SpliMoCharacterGenerator(model);
+			charGen = new SpliMoCharacterGenerator(model, null);
 			dia = new DistributeSkillsPage(null, model, (SpliMoCharacterGenerator) charGen);
 			break;
 		case 7:
@@ -104,7 +104,7 @@ public class MyStarter extends Application {
 			((CultureLorePane)dia).setData(model);
 			break;
 		case 10:
-			charGen = new SpliMoCharacterGenerator(model);
+			charGen = new SpliMoCharacterGenerator(model, null);
 			model.setRace("gnome");
 			model.setEducation("elementalist");
 			model.setCulture("patalis");
@@ -223,7 +223,7 @@ public class MyStarter extends Application {
 			manager.show(creaWiz);
 			break;
 		case 21:
-			
+
 		}
 
 		dia.getStyleClass().add("page");

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.prelle.splimo.chargen;
 
@@ -29,11 +29,11 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class PowerGeneratorTest {
-	
+
 	private static Logger logger = LogManager.getLogger("junit.power");
-	
+
 	private final static int MAX = 10;
-	
+
 	private static Power ONCE_GENONLY;
 	private static Power ONCE_ALWAYS;
 	private static Power MULTI_ALWAYS;
@@ -64,10 +64,10 @@ public class PowerGeneratorTest {
 	@Before
 	public void setUp() throws Exception {
 		model = new SpliMoCharacter();
-		SpliMoCharacterGenerator charGen = new SpliMoCharacterGenerator(model);
+		SpliMoCharacterGenerator charGen = new SpliMoCharacterGenerator(model, null);
 		generator = (PowerGenerator2) charGen.getPowerController();
 	}
-	
+
 	//-------------------------------------------------------------------
 	@Test
 	public void testIdleState() {
@@ -87,7 +87,7 @@ public class PowerGeneratorTest {
 		assertEquals(2, model.getPowers().size());
 		assertNotNull(model.getPower(ONCE_GENONLY));
 		assertNotNull(model.getPower(ONCE_ALWAYS));
-		
+
 		generator.removeModification(mod1);
 		assertEquals(MAX-ONCE_ALWAYS.getCost(), generator.getPointsLeft());
 		assertEquals(1, model.getPowers().size());
@@ -217,13 +217,13 @@ public class PowerGeneratorTest {
 	@Test
 	public void testSelectManualAndThanAutomatic() {
 		PowerModification mod1 = new PowerModification(ONCE_GENONLY);
-		
+
 		generator.select(ONCE_GENONLY);
 		assertEquals(MAX-ONCE_GENONLY.getCost(), generator.getPointsLeft());
 		generator.addModification(mod1);
 		assertEquals(MAX-ONCE_GENONLY.getCost(), generator.getPointsLeft());
 		assertEquals(1, model.getPowers().size());
-		
+
 		// Now remove automatic mod
 		generator.removeModification(mod1);
 		assertEquals(MAX, generator.getPointsLeft());
@@ -261,7 +261,7 @@ public class PowerGeneratorTest {
 	public void testDeselectRaceModificationsOnce() {
 		Race race = SplitterMondCore.getRace("alben");
 		for (Modification mod : race.getModifications()) {
-			if (mod instanceof PowerModification) 
+			if (mod instanceof PowerModification)
 				generator.addModification((PowerModification) mod);
 		}
 		assertFalse(generator.canBeDeselected(model.getPower(ONCE_GENONLY)));
@@ -272,7 +272,7 @@ public class PowerGeneratorTest {
 	public void testDeselectRaceModificationsMulti() {
 		Race race = SplitterMondCore.getRace("gnome");
 		for (Modification mod : race.getModifications()) {
-			if (mod instanceof PowerModification) 
+			if (mod instanceof PowerModification)
 				generator.addModification((PowerModification) mod);
 		}
 		assertNotNull(model.getPower(MULTI_MAX3));

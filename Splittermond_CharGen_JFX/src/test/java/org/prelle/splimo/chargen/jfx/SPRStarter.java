@@ -180,14 +180,14 @@ public class SPRStarter extends Application {
 			SplitterMondCore.initialize(new DummyRulePlugin<>());
 			ResourceReference resource = new ResourceReference(SplitterMondCore.getResource("creature"),2);
 			LetUserChooseListener callback = new LetUserChooseListener() {
-				
+
 				@Override
 				public MastershipModification letUserChoose(String choiceReason,
 						MastershipModification vagueMod) {
 					// TODO Auto-generated method stub
 					return null;
 				}
-				
+
 				@Override
 				public Modification[] letUserChoose(String choiceReason,
 						ModificationChoice choice) {
@@ -198,7 +198,7 @@ public class SPRStarter extends Application {
 				@Override
 				public void addPrefilter(Predicate<Modification> filter) {
 					// TODO Auto-generated method stub
-					
+
 				}
 			};
 			ManagedScreen dia = new CreatureCreateScreen(new CreatureGenerator(resource));
@@ -216,7 +216,7 @@ public class SPRStarter extends Application {
 			scene = new Scene(mgmr, 1570, 1000);
 			ModernUI.initialize(scene);
 			scene.getStylesheets().addAll("css/rpgframework.css");
-			SplittermondCharGenView diaS = new SplittermondCharGenView(control, mgmr, null); 
+			SplittermondCharGenView diaS = new SplittermondCharGenView(control, mgmr, null);
 			diaS.setData(lenkan, null);
 			mgmr.show(diaS);
 			break;
@@ -235,13 +235,13 @@ public class SPRStarter extends Application {
 			sect2.getToDoList().add(new ToDoElement(ToDoElement.Severity.STOPPER, "Einfache Anweisung"));
 			sect2.getToDoList().add(new ToDoElement(ToDoElement.Severity.WARNING, "Warnmeldung"));
 			view.getSectionList().addAll(sect1, sect2);
-			
+
 			mgmr = new ScreenManager();
 			scene = new Scene(view, 1500, 1000);
 			scene.getStylesheets().addAll("css/rpgframework.css");
-			
+
 //			ManagedScreen charViewScreen = new ManagedScreen() {
-//				
+//
 //				@Override
 //				public String[] getStyleSheets() {
 //					// TODO Auto-generated method stub
@@ -253,7 +253,7 @@ public class SPRStarter extends Application {
 			break;
 		case 10:
 			SplitterMondCore.initialize(new DummyRulePlugin<>());
-			control = new SpliMoCharacterGenerator(new SpliMoCharacter());
+			control = new SpliMoCharacterGenerator(new SpliMoCharacter(), null);
 			AttributesView aView = new AttributesView(control);
 			scene = new Scene(aView);
 			ModernUI.initialize(scene);
@@ -262,7 +262,7 @@ public class SPRStarter extends Application {
 		case 11:
 			SplitterMondCore.initialize(new DummyRulePlugin<>());
 			SpliMoCharacter model = new SpliMoCharacter();
-			SpliMoCharacterGenerator charGen = new SpliMoCharacterGenerator(model);
+			SpliMoCharacterGenerator charGen = new SpliMoCharacterGenerator(model, null);
 			CharGenWizardSpliMo charWiz = new CharGenWizardSpliMo(model, charGen);
 			mgmr = new ScreenManager();
 			mgmr.show(charWiz);
