@@ -101,10 +101,6 @@
 			<selmod num="1">
 				<skillmod ref="clscraft" value="2"/>
 				<skillmod ref="craftmanship" value="2"/>
-			</selmod>
-			<selmod num="1">
-				<skillmod ref="clscraft" value="2"/>
-				<skillmod ref="craftmanship" value="2"/>
 			</selmod>			
 			<skillmod ref="arcanelore" value="2"/>
 			<skillmod ref="diplomacy" value="2"/>
