@@ -604,7 +604,11 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 		if (type==CloseType.APPLY) {
 			logger.warn("APPLY");
 		}else {
-			logger.warn("NOT APPLY");
+			logger.info("remove parsed character and force reloading");
+			try {
+				handle.setCharacter(null);
+			} catch (IOException e) {
+			}
 		}
 		return true;
 	}

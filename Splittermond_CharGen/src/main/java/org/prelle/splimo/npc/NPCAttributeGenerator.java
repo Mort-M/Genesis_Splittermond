@@ -138,4 +138,40 @@ public class NPCAttributeGenerator implements AttributeController {
 		return true;
 	}
 
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.NumericalValueController#canBeIncreased(de.rpgframework.genericrpg.SelectedValue)
+	 */
+	@Override
+	public boolean canBeIncreased(AttributeValue value) {
+		return canBeIncreased(value.getModifyable());
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.NumericalValueController#canBeDecreased(de.rpgframework.genericrpg.SelectedValue)
+	 */
+	@Override
+	public boolean canBeDecreased(AttributeValue value) {
+		return canBeDecreased(value.getModifyable());
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.NumericalValueController#increase(de.rpgframework.genericrpg.SelectedValue)
+	 */
+	@Override
+	public boolean increase(AttributeValue value) {
+		return increase(value.getModifyable());
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.NumericalValueController#decrease(de.rpgframework.genericrpg.SelectedValue)
+	 */
+	@Override
+	public boolean decrease(AttributeValue value) {
+		return decrease(value.getModifyable());
+	}
+
 }

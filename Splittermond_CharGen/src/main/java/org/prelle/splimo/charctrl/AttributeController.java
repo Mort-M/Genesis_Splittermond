@@ -1,8 +1,11 @@
 package org.prelle.splimo.charctrl;
 
 import org.prelle.splimo.Attribute;
+import org.prelle.splimo.AttributeValue;
 
-public interface AttributeController extends Generator {
+import de.rpgframework.genericrpg.NumericalValueController;
+
+public interface AttributeController extends Generator, NumericalValueController<Attribute, AttributeValue> {
 
 	//-------------------------------------------------------------------
 	public boolean canBeDecreased(Attribute key);

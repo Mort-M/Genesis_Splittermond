@@ -351,7 +351,7 @@ public class SkillScreen extends ManagedScreen implements GenerationEventListene
 
 	//-------------------------------------------------------------------
 	/**
-	 * @see org.prelle.splittermond.jfx.skills.SkillPaneCallback#showAndWaitMasterships(org.prelle.splimo.Skill)
+	 * @see org.prelle.splittermond.chargen.jfx.skills.SkillPaneCallback#showAndWaitMasterships(org.prelle.splimo.Skill)
 	 */
 	@Override
 	public void showAndWaitMasterships(Skill skill) {

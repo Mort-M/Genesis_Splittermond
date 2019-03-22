@@ -129,7 +129,7 @@ public class CharacterLevelingPane extends HBox implements EventHandler<ActionEv
 
 	//-------------------------------------------------------------------
 	/**
-	 * @see org.prelle.splittermond.jfx.skills.SkillPaneCallback#showAndWaitMasterships(org.prelle.splimo.Skill)
+	 * @see org.prelle.splittermond.chargen.jfx.skills.SkillPaneCallback#showAndWaitMasterships(org.prelle.splimo.Skill)
 	 */
 	@Override
 	public void showAndWaitMasterships(Skill skill) {

@@ -9,9 +9,8 @@ import java.util.PropertyResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ManagedScreen;
-import org.prelle.javafx.fluent.CommandBar;
+import org.prelle.javafx.ManagedScreenPage;
 import org.prelle.rpgframework.jfx.FreePointsNode;
-import org.prelle.rpgframework.jfx.SettingsAndCommandBar;
 import org.prelle.splimo.CultureLore;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.charctrl.CharacterController;
@@ -22,6 +21,7 @@ import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splittermond.chargen.fluent.SpliMoCharGenConstants;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoManagedScreenPage;
 import org.prelle.splittermond.jfx.languages.LanguagePane;
 
 import javafx.geometry.Insets;
@@ -36,23 +36,10 @@ import javafx.scene.layout.VBox;
  * @author Stefan
  *
  */
-public class CultureLoreScreen extends ManagedScreen implements GenerationEventListener {
+public class CultureLoreScreen extends SpliMoManagedScreenPage implements GenerationEventListener {
 
-	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
-	
-	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
-
-	private CharacterController charGen;
 	private CultureLoreController controlCult;
 	private LanguageController control;
-
-	
-	private Label lbExpTotal;
-	private Label lbExpInvested;
-	private FreePointsNode freePoints;
-	private Label lbLevel;
-	private CommandBar commands;
-	private SettingsAndCommandBar firstLine;
 
 	private AvailableCultureLorePane available;
 	private CultureLorePane cultures;
@@ -66,8 +53,8 @@ public class CultureLoreScreen extends ManagedScreen implements GenerationEventL
 	//--------------------------------------------------------------------
 	/**
 	 */
-	public CultureLoreScreen(CharacterController charGen) {
-		this.charGen = charGen;
+	public CultureLoreScreen(CharacterController charGen, ChararcterHandle handle) {
+		super(UI.getString("culturelorescreen.title"), charGen, handle);
 		this.controlCult = charGen.getCultureLoreController();
 		this.control = charGen.getLanguageController();
 		if (controlCult==null)
@@ -81,7 +68,6 @@ public class CultureLoreScreen extends ManagedScreen implements GenerationEventL
 
 	//-------------------------------------------------------------------
 	private void initComponents() {
-		setTitle(UI.getString("culturelorescreen.title"));
 		
 		available = new AvailableCultureLorePane(controlCult, AvailableCultureLorePane.DisplayMode.AVAILABLE);
 		available.getStyleClass().add("content");
@@ -102,37 +88,41 @@ public class CultureLoreScreen extends ManagedScreen implements GenerationEventL
 		lblIncludeUnavailable.getStyleClass().add("body");
 
 		
-		/*
-		 * Exp & Co.
-		 */
-		freePoints = new FreePointsNode();
-		freePoints.setStyle("-fx-max-height: 3em; -fx-max-width: 3em");
-		freePoints.setPoints(charGen.getModel().getExperienceFree());
-		freePoints.setName(UI.getString("label.ep.free"));
-		Label hdExpTotal    = new Label(SpliMoCharGenConstants.RES.getString("label.ep.total")+": ");
-		Label hdExpInvested = new Label(SpliMoCharGenConstants.RES.getString("label.ep.used")+": ");
-		Label hdLevel       = new Label(SpliMoCharGenConstants.RES.getString("label.level")+": ");
-		lbExpTotal    = new Label("?");
-		lbExpInvested = new Label("?");
-		lbLevel       = new Label("?");
-		lbExpTotal.getStyleClass().add("base");
-		lbExpInvested.getStyleClass().add("base");
-		lbLevel.getStyleClass().add("base");
-		lbExpTotal.setText(String.valueOf(charGen.getModel().getExperienceInvested()+charGen.getModel().getExperienceFree()));
-		lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
-		lbLevel.setText(charGen.getModel().getLevel()+"");
-		
-		commands = new CommandBar();
-		commands.getItems().add(new MenuItem("Drucken", new Label("\uD83D\uDDB6")));
-		
-		HBox expLine = new HBox(5);
-		expLine.getChildren().addAll(hdExpTotal, lbExpTotal, hdExpInvested, lbExpInvested, hdLevel, lbLevel);
-		HBox.setMargin(hdLevel, new Insets(0,0,0,20));
-		expLine.getStyleClass().add("character-document-view-firstline");
-		
-		firstLine = new SettingsAndCommandBar();
-		firstLine.setSettings(expLine);
-//		firstLine.setCommandBar(commands);
+//		/*
+//		 * Exp & Co.
+//		 */
+//		freePoints = new FreePointsNode();
+//		freePoints.setStyle("-fx-max-height: 3em; -fx-max-width: 3em");
+//		freePoints.setPoints(charGen.getModel().getExperienceFree());
+//		freePoints.setName(UI.getString("label.ep.free"));
+//		Label hdExpTotal    = new Label(SpliMoCharGenConstants.RES.getString("label.ep.total")+": ");
+//		Label hdExpInvested = new Label(SpliMoCharGenConstants.RES.getString("label.ep.used")+": ");
+//		Label hdLevel       = new Label(SpliMoCharGenConstants.RES.getString("label.level")+": ");
+//		lbExpTotal    = new Label("?");
+//		lbExpInvested = new Label("?");
+//		lbLevel       = new Label("?");
+//		lbExpTotal.getStyleClass().add("base");
+//		lbExpInvested.getStyleClass().add("base");
+//		lbLevel.getStyleClass().add("base");
+//		lbExpTotal.setText(String.valueOf(charGen.getModel().getExperienceInvested()+charGen.getModel().getExperienceFree()));
+//		lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
+//		lbLevel.setText(charGen.getModel().getLevel()+"");
+//		
+//		cmdPrint = new MenuItem(UI.getString("command.primary.print"), new Label("\uE749"));
+//		cmdDelete = new MenuItem(UI.getString("command.primary.delete"), new Label("\uE74D"));
+//		if (handle!=null)
+//			getCommandBar().getPrimaryCommands().addAll(cmdPrint);
+//		commands = new CommandBar();
+//		commands.getItems().add(new MenuItem("Drucken", new Label("\uD83D\uDDB6")));
+//		
+//		HBox expLine = new HBox(5);
+//		expLine.getChildren().addAll(hdExpTotal, lbExpTotal, hdExpInvested, lbExpInvested, hdLevel, lbLevel);
+//		HBox.setMargin(hdLevel, new Insets(0,0,0,20));
+//		expLine.getStyleClass().add("character-document-view-firstline");
+//		
+//		firstLine = new SettingsAndCommandBar();
+//		firstLine.setSettings(expLine);
+////		firstLine.setCommandBar(commands);
 	}
 
 	//-------------------------------------------------------------------
@@ -208,8 +198,10 @@ public class CultureLoreScreen extends ManagedScreen implements GenerationEventL
 
 	//-------------------------------------------------------------------
 	public void setData(SpliMoCharacter model) {
-		lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
-		lbLevel.setText(charGen.getModel().getLevel()+"");
+		setTitle(charGen.getModel().getName()+" "+UI.getString("culturelorescreen.title"));
+		super.refresh();
+//		lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
+//		lbLevel.setText(charGen.getModel().getLevel()+"");
 		available.setData(model);
 		cultures.setData(model);
 		languages.setData(model);
@@ -224,18 +216,21 @@ public class CultureLoreScreen extends ManagedScreen implements GenerationEventL
 		switch (event.getType()) {
 		case EXPERIENCE_CHANGED:
 			logger.debug("rcv "+event.getType()+"   "+Arrays.toString((int[])event.getValue()));
-			lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
-			lbLevel.setText(charGen.getModel().getLevel()+"");
+			super.refresh();
+//			lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
+//			lbLevel.setText(charGen.getModel().getLevel()+"");
 			break;
 		case LANGUAGE_ADDED:
 		case LANGUAGE_REMOVED:
-			lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
-			lbLevel.setText(charGen.getModel().getLevel()+"");
+			super.refresh();
+//			lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
+//			lbLevel.setText(charGen.getModel().getLevel()+"");
 			break;
 		case CULTURELORE_ADDED:
 		case CULTURELORE_REMOVED:
-			lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
-			lbLevel.setText(charGen.getModel().getLevel()+"");
+			super.refresh();
+//			lbExpInvested.setText(charGen.getModel().getExperienceInvested()+"");
+//			lbLevel.setText(charGen.getModel().getLevel()+"");
 			break;
 		default:
 			break;

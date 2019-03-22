@@ -18,8 +18,6 @@ import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
 import org.prelle.splimo.levelling.CharacterLeveller;
-import org.prelle.splittermond.chargen.fluent.SplittermondCharGenView;
-import org.prelle.splittermond.jfx.equip.input.DataInputScreen;
 
 import de.rpgframework.ConfigContainer;
 import de.rpgframework.ConfigOption;
@@ -39,8 +37,6 @@ import de.rpgframework.core.RoleplayingSystem;
 public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, CommandBusListener {
 
 	private static Logger logger = LogManager.getLogger("splittermond.jfx");
-
-	private final static String CSS = SpliMoCharGenJFXConstants.PREFIX+"/css/splittermond.css";
 
 	private static List<RulePluginFeatures> FEATURES = new ArrayList<RulePluginFeatures>();
 	private static ConfigOption<Double>     hgFactor;
@@ -170,7 +166,7 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 		CharacterController control;
 		SpliMoCharacter model;
 //		CharacterViewScreenSpliMo screen;
-		SplittermondCharGenView screen;
+		CharacterViewScreenSpliMo2 screen;
 		switch (type) {
 		case SHOW_CHARACTER_MODIFICATION_GUI:
 			logger.debug("start character modification");
@@ -178,40 +174,38 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 			control = new CharacterLeveller(model, hgFactor);
 			CharacterHandle handle = (CharacterHandle)values[2];
 			manager = (ScreenManager)values[4];
-			screen = new SplittermondCharGenView(control, manager, handle);
-//			screen = new CharacterViewScreenSpliMo(control, ViewMode.MODIFICATION);
-//			OldCharacterViewScreen screen = new OldCharacterViewScreen((CharacterLeveller) control, ViewMode.MODIFICATION);
-			screen.setData(model, handle);
-			manager.show(screen, CSS);
+			screen = new CharacterViewScreenSpliMo2(control, ViewMode.MODIFICATION, handle);
+//			screen.setData(model, handle);
+			manager.navigateTo(screen);
 //			SplittermondCharGenView altScreen = new SplittermondCharGenView(control);
 //			altScreen.setData(model, handle);
 //			manager.show(altScreen, CSS);
 
 			return new CommandResult(type, true);
-		case SHOW_CHARACTER_CREATION_GUI:
-			logger.debug("start character creation");
-			model = new SpliMoCharacter();
-			control = new SpliMoCharacterGenerator(model, hgFactor);
-			manager = (ScreenManager)values[2];
-
-			screen = new SplittermondCharGenView(control, manager, null);
-//			screen = new CharacterViewScreenSpliMo(control, ViewMode.GENERATION);
-//			screen = new OldCharacterViewScreen((CharacterLeveller) control, ViewMode.MODIFICATION);
-			manager.show(screen, CSS);
-			screen.startGeneration(model);
-
-			CommandResult result = new CommandResult(type, true);
-			result.setReturnValue(model);
-			return result;
-		case SHOW_DATA_INPUT_GUI:
-			logger.debug("start data input");
-			manager = (ScreenManager)values[2];
-
-			DataInputScreen screen2 = new DataInputScreen();
-			manager.show(screen2, CSS);
-			result = new CommandResult(type, true);
+//		case SHOW_CHARACTER_CREATION_GUI:
+//			logger.debug("start character creation");
+//			model = new SpliMoCharacter();
+//			control = new SpliMoCharacterGenerator(model, hgFactor);
+//			manager = (ScreenManager)values[2];
+//
+//			screen = new SplittermondCharGenView(control, manager, null);
+////			screen = new CharacterViewScreenSpliMo(control, ViewMode.GENERATION);
+////			screen = new OldCharacterViewScreen((CharacterLeveller) control, ViewMode.MODIFICATION);
+//			manager.show(screen, CSS);
+//			screen.startGeneration(model);
+//
+//			CommandResult result = new CommandResult(type, true);
 //			result.setReturnValue(model);
-			return result;
+//			return result;
+//		case SHOW_DATA_INPUT_GUI:
+//			logger.debug("start data input");
+//			manager = (ScreenManager)values[2];
+//
+//			DataInputScreen screen2 = new DataInputScreen();
+//			manager.show(screen2, CSS);
+//			result = new CommandResult(type, true);
+////			result.setReturnValue(model);
+//			return result;
 		default:
 			return new CommandResult(type, false);
 		}

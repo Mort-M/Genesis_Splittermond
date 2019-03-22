@@ -23,6 +23,11 @@
 }
 
 .list-cell {
+  -fx-background-color: #E0E0E0;
+  -fx-border-width: 2px;
+  -fx-border-color: white;
+}
+.list-cell:empty {
   -fx-background-color: transparent;
 }
 
@@ -37,6 +42,8 @@
 .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
     -fx-padding: 0.1em 0.2em 0.1em 0.2em;
 }
+
+
 .combo-box-base  {
     -fx-font-size: 1em; /* 16 */
 }
@@ -69,13 +76,28 @@
 }
 .character-document-view-layout {
    -fx-background-color: transparent;
-   -fx-background-image: url('../images/Tiai3.png');
-   -fx-background-position: right bottom;
-   -fx-background-repeat: no-repeat;
+}
+
+.character-document-view-buffer-left {
+   -fx-background-color: lime;
+}
+.character-document-view-buffer-right {
+   -fx-background-color: transparent;
+}
+
+.character-document-view-section-content {
+  -fx-background-color: white;
+  -fx-border-width: 1px;
+  -fx-border-style: solid;
+  -fx-border-color: transparent;
+  -fx-padding: 1em;
+  -fx-background-color: white; -fx-effect: dropshadow(three-pass-box, black, 5, 0.5, 2, 2);
 }
 
 .character-document-view-todos {
-  -fx-max-width: 8em;
+  -fx-max-width: 16em;
+  -fx-pref-width: 12em;
+  -fx-min-width: 8em;
 }
 .character-document-view-content {
   -fx-background-color: transparent;
@@ -85,6 +107,7 @@
 .character-document-view-title {
   -fx-font-size: 200%;
   -fx-padding: 0 0.5em 0 0.5em;
+   -fx-background-color: -fx-base;
 }
 .character-document-view-description {
   -fx-background-color: transparent;
@@ -108,6 +131,16 @@
     -fx-font-size: 120%;
 }
 
+/*******************************
+ * TableViews
+ *******************************/
+.table-column:rowhover {
+    -fx-background-color: derive(#e2deda, 20%);
+}
+.table-column:selected {
+    -fx-background-color: darker;
+}
+
 .free-points {
   -fx-background-color: #4e9a06;
 }
@@ -123,7 +156,14 @@
   -fx-padding: 0.1em;
 }
 
-.skill-screen-normal {
+#splittermond-overview {
+   -fx-backgrdound-color: background;
+   -fx-background-image: url('../images/Tiai3.png');
+   -fx-background-position: right bottom;
+   -fx-background-repeat: no-repeat;
+}
+
+#splittermond-powers {
    -fx-background-color: background;
    -fx-background-image: url('../images/BG_SkillsNormal.png');
    -fx-background-position: right bottom;

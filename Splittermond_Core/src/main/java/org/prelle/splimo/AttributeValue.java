@@ -7,6 +7,7 @@ import org.prelle.simplepersist.Root;
 import org.prelle.splimo.modifications.AttributeModification;
 import org.prelle.splimo.modifications.ModificationSource;
 
+import de.rpgframework.genericrpg.NumericalValue;
 import de.rpgframework.genericrpg.modification.Modification;
 import de.rpgframework.genericrpg.modification.ModifyableImpl;
 
@@ -15,7 +16,7 @@ import de.rpgframework.genericrpg.modification.ModifyableImpl;
  *
  */
 @Root(name="attr")
-public class AttributeValue extends ModifyableImpl implements Comparable<AttributeValue> {
+public class AttributeValue extends ModifyableImpl implements Comparable<AttributeValue>, NumericalValue<Attribute> {
 
 	@org.prelle.simplepersist.Attribute(name="id",required=true)
 	private Attribute id;
@@ -181,6 +182,33 @@ public class AttributeValue extends ModifyableImpl implements Comparable<Attribu
 	 */
 	public void setModifierCap(int modifierCap) {
 		this.modifierCap = modifierCap;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.SelectedValue#getModifyable()
+	 */
+	@Override
+	public Attribute getModifyable() {
+		return getAttribute();
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.NumericalValue#getPoints()
+	 */
+	@Override
+	public int getPoints() {
+		return getDistributed();
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.NumericalValue#setPoints(int)
+	 */
+	@Override
+	public void setPoints(int points) {
+		setDistributed(points);
 	}
 
 }
