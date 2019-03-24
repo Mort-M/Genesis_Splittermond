@@ -6,7 +6,9 @@ import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.SkillValue;
 
-public interface SkillController extends Controller {
+import de.rpgframework.genericrpg.NumericalValueController;
+
+public interface SkillController extends Controller, NumericalValueController<Skill, SkillValue> {
 	
 	//-------------------------------------------------------------------
 	/**

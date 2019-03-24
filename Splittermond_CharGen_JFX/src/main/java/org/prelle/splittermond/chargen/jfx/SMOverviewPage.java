@@ -22,7 +22,6 @@ import de.rpgframework.core.BabylonEventType;
 public class SMOverviewPage extends SpliMoManagedScreenPage {
 
 	private ViewMode mode;
-	private CharacterHandle handle;
 	private ScreenManagerProvider provider;
 
 	private BasicDataSection basic;

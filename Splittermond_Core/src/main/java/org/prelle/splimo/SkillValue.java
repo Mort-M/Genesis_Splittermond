@@ -14,6 +14,7 @@ import org.prelle.splimo.modifications.ModificationSource;
 import org.prelle.splimo.modifications.SkillModification;
 import org.prelle.splimo.persist.SkillConverter;
 
+import de.rpgframework.genericrpg.NumericalValue;
 import de.rpgframework.genericrpg.modification.Modification;
 import de.rpgframework.genericrpg.modification.ModifyableImpl;
 
@@ -22,7 +23,7 @@ import de.rpgframework.genericrpg.modification.ModifyableImpl;
  *
  */
 @Root(name = "skillval")
-public class SkillValue extends ModifyableImpl implements Comparable<SkillValue> {
+public class SkillValue extends ModifyableImpl implements Comparable<SkillValue>, NumericalValue<Skill> {
 
 
 	@Attribute(name="skill")
@@ -251,6 +252,33 @@ public class SkillValue extends ModifyableImpl implements Comparable<SkillValue>
 	//-------------------------------------------------------------------
 	public void setModifierCap(int modifierCap) {
 		this.modifierCap = modifierCap;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.SelectedValue#getModifyable()
+	 */
+	@Override
+	public org.prelle.splimo.Skill getModifyable() {
+		return skill;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.NumericalValue#getPoints()
+	 */
+	@Override
+	public int getPoints() {
+		return getValue();
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.NumericalValue#setPoints(int)
+	 */
+	@Override
+	public void setPoints(int points) {
+		setValue(points);
 	}
 
 }

@@ -20,7 +20,6 @@ import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
-import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.levelling.CharacterLeveller;
 
 import de.rpgframework.RPGFrameworkLoader;
@@ -49,10 +48,12 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 	private ViewMode mode;
 
 	private SMOverviewPage  pgOverview;
-	private SMPowerLangResourcePage  pgPowers;
+	private SMPowerLangCultPage  pgPowers;
+	private SMSkillPage  pgSkills;
 
 	private MenuItem navOverview;
 	private MenuItem navPowers;
+	private MenuItem navSkills;
 
 	//-------------------------------------------------------------------
 	public CharacterViewScreenSpliMo2(CharacterController control, ViewMode mode, CharacterHandle handle) {
@@ -86,7 +87,8 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 	//-------------------------------------------------------------------
 	private void initComponents() {
 		pgOverview  = new SMOverviewPage(control, mode, handle, this);
-		pgPowers    = new SMPowerLangResourcePage(control, mode, handle, this);
+		pgPowers    = new SMPowerLangCultPage(control, mode, handle, this);
+		pgSkills    = new SMSkillPage(control, mode, handle, this);
 	}
 
 	//-------------------------------------------------------------------
@@ -98,8 +100,9 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 	private void initNavigation() {
 		navOverview   = new MenuItem(RES.getString("navItem.overview"), new SymbolIcon("home"));
 		navPowers     = new MenuItem(RES.getString("navItem.powers"), new FontIcon("\uD83C\uDFAD"));
+		navSkills     = new MenuItem(RES.getString("navItem.skills"), new FontIcon("\uD83C\uDFAD"));
 
-		this.getNavigationItems().addAll(navOverview, navPowers);
+		this.getNavigationItems().addAll(navOverview, navPowers, navSkills);
 	}
 
 	//-------------------------------------------------------------------
@@ -267,6 +270,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		setHeader(model.getName());
 		pgOverview.refresh();
 		pgPowers.refresh();
+		pgSkills.refresh();
 //		pgEquipment.refresh();
 //		pgVehicles.refresh();
 	}
@@ -283,6 +287,8 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			setContent(pgOverview);
 		} else if (newValue==navPowers) {
 			setContent(pgPowers);
+		} else if (newValue==navSkills) {
+			setContent(pgSkills);
 //		} else if (newValue==navMatrix) {
 //			setContent(pgMatrix);
 //		} else if (newValue==navEquipment) {
@@ -325,6 +331,11 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		case CULTURELORE_AVAILABLE_CHANGED:
 		case POWER_AVAILABLE_ADDED:
 		case POWER_AVAILABLE_REMOVED:
+			break;
+		case SKILL_CHANGED:
+		case MASTERSHIP_ADDED:
+		case MASTERSHIP_REMOVED:
+			pgSkills.refresh();
 			break;
 		case CHARACTER_CHANGED:
 			refresh();

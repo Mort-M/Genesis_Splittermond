@@ -23,10 +23,9 @@ import de.rpgframework.core.BabylonEventType;
  * @author Stefan Prelle
  *
  */
-public class SMPowerLangResourcePage extends SpliMoManagedScreenPage {
+public class SMPowerLangCultPage extends SpliMoManagedScreenPage {
 
 	private ViewMode mode;
-	private CharacterHandle handle;
 	private ScreenManagerProvider provider;
 
 	private PowerSection powers;
@@ -38,12 +37,11 @@ public class SMPowerLangResourcePage extends SpliMoManagedScreenPage {
 	private Section secAttrib;
 
 	//-------------------------------------------------------------------
-	public SMPowerLangResourcePage(CharacterController control, ViewMode mode, CharacterHandle handle, ScreenManagerProvider provider) {
+	public SMPowerLangCultPage(CharacterController control, ViewMode mode, CharacterHandle handle, ScreenManagerProvider provider) {
 		super(control, handle);
 		this.setId("splittermond-powers");
 		this.setTitle(control.getModel().getName());
 		this.provider = provider;
-		this.handle   = handle;
 		this.mode = mode;
 		if (this.mode==null)
 			this.mode = ViewMode.MODIFICATION;
