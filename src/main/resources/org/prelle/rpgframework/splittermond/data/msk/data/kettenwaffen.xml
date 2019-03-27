@@ -43,9 +43,9 @@
             <feature type="DISTRACTING"/>
             <feature type="LONG_WEAPON"/>
             <feature level="3" type="PIERCING"/>
-            <feature type="HEAVY"/>
             <feature type="CLUTCH"/>
             <feature type="ENCUMBRANT"/>
+            <feature type="HEAVY"/>
             <feature type="TWO_HANDED"/>
          </features>
       </weapon>
@@ -59,7 +59,7 @@
             <feature type="DISTRACTING"/>
             <feature type="DOUBLE_WEAPON"/>
             <feature type="LONG_WEAPON"/>
-            <feature level="2" type="PIERCING"/>
+            <feature level="3" type="PIERCING"/>
             <feature type="TWO_HANDED"/>
          </features>
       </weapon>

@@ -46,8 +46,7 @@
    <item avail="SMALL_TOWN" cplx="G" id="butterflysword" load="2" material="METAL" price="600" robust="7" type="WEAPON">
    		<weapon att1="AGILITY" att2="INTUITION" damage="1W6+1" skill="blades" speed="6" type="WEAPON">
    			<requires>
-   				<attrreq attr="AGILITY" val="3"/>
-   				<attrreq attr="INTUITION" val="2"/>
+   				<attrreq attr="AGILITY" val="2"/>
    			</requires>
    			<features>
    				<feature level="1" type="DEFENSIVE"/>
@@ -94,8 +93,8 @@
    				<attrreq attr="STRENGTH" val="2"/>
    			</requires>
    			<features>
+   				<feature type="DOUBLE_WEAPON"/>   			
    				<feature type="HEAVY"/>
-   				<feature type="DOUBLE_WEAPON"/>
    				<feature type="TWO_HANDED"/>
    			</features>
    		</weapon>
@@ -107,8 +106,8 @@
    				<attrreq attr="AGILITY" val="3"/>
    			</requires>
    			<features>
+   				<feature type="DOUBLE_WEAPON"/>   			
    				<feature level="2" type="CRITICAL"/>
-   				<feature type="DOUBLE_WEAPON"/>
    				<feature type="HEAVY"/>
    				<feature type="TWO_HANDED"/>
    			</features>
