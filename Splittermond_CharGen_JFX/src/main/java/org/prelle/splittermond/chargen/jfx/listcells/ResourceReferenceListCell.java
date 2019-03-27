@@ -1,40 +1,25 @@
 package org.prelle.splittermond.chargen.jfx.listcells;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.PropertyResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
-import org.prelle.javafx.ManagedScreen;
-import org.prelle.javafx.NavigButtonControl;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.ResourceReference;
-import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.charctrl.ResourceController;
-import org.prelle.splimo.chargen.creature.CreatureGenerator;
-import org.prelle.splimo.chargen.event.GenerationEvent;
-import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.chargen.event.GenerationEventType;
-import org.prelle.splimo.creature.Creature;
-import org.prelle.splimo.creature.CreatureFeature;
 import org.prelle.splimo.creature.CreatureReference;
-import org.prelle.splimo.creature.ModuleBasedCreature;
-import org.prelle.splimo.equip.ItemLevellerAndGenerator;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.levelling.ResourceLeveller;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
-import javafx.event.ActionEvent;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -46,15 +31,13 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
-import javafx.util.StringConverter;
 
-class ResourceReferenceListCell extends ListCell<ResourceReference> {
+public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 
 	private static Logger logger = LogManager.getLogger("splittermond.jfx");
 
@@ -107,7 +90,7 @@ class ResourceReferenceListCell extends ListCell<ResourceReference> {
 		btnEdit.setStyle("-fx-background-color: transparent");
 
 		setStyle("-fx-pref-width: 15em");
-		layout.getStyleClass().add("content");
+//		layout.getStyleClass().add("content");
 	}
 
 	//-------------------------------------------------------------------

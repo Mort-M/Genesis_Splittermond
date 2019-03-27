@@ -50,10 +50,12 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 	private SMOverviewPage  pgOverview;
 	private SMPowerLangCultPage  pgPowers;
 	private SMSkillPage  pgSkills;
+	private SMResourceCompanionPage  pgResources;
 
 	private MenuItem navOverview;
 	private MenuItem navPowers;
 	private MenuItem navSkills;
+	private MenuItem navResources;
 
 	//-------------------------------------------------------------------
 	public CharacterViewScreenSpliMo2(CharacterController control, ViewMode mode, CharacterHandle handle) {
@@ -89,6 +91,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		pgOverview  = new SMOverviewPage(control, mode, handle, this);
 		pgPowers    = new SMPowerLangCultPage(control, mode, handle, this);
 		pgSkills    = new SMSkillPage(control, mode, handle, this);
+		pgResources = new SMResourceCompanionPage(control, mode, handle, this);
 	}
 
 	//-------------------------------------------------------------------
@@ -101,8 +104,9 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		navOverview   = new MenuItem(RES.getString("navItem.overview"), new SymbolIcon("home"));
 		navPowers     = new MenuItem(RES.getString("navItem.powers"), new FontIcon("\uD83C\uDFAD"));
 		navSkills     = new MenuItem(RES.getString("navItem.skills"), new FontIcon("\uD83C\uDFAD"));
+		navResources  = new MenuItem(RES.getString("navItem.resources"), new FontIcon("\uD83C\uDFAD"));
 
-		this.getNavigationItems().addAll(navOverview, navPowers, navSkills);
+		this.getNavigationItems().addAll(navOverview, navPowers, navSkills, navResources);
 	}
 
 	//-------------------------------------------------------------------
@@ -271,6 +275,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		pgOverview.refresh();
 		pgPowers.refresh();
 		pgSkills.refresh();
+		pgResources.refresh();
 //		pgEquipment.refresh();
 //		pgVehicles.refresh();
 	}
@@ -289,12 +294,8 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			setContent(pgPowers);
 		} else if (newValue==navSkills) {
 			setContent(pgSkills);
-//		} else if (newValue==navMatrix) {
-//			setContent(pgMatrix);
-//		} else if (newValue==navEquipment) {
-//			setContent(pgEquipment);
-//		} else if (newValue==navVehicles) {
-//			setContent(pgVehicles);
+		} else if (newValue==navResources) {
+			setContent(pgResources);
 		}
 	}
 
@@ -328,6 +329,11 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		case POINTS_LEFT_POWERS:
 			pgPowers.refresh();
 			break;
+		case RESOURCE_ADDED:
+		case RESOURCE_CHANGED:
+		case RESOURCE_REMOVED:
+			pgResources.refresh();
+			break;
 		case CULTURELORE_AVAILABLE_CHANGED:
 		case POWER_AVAILABLE_ADDED:
 		case POWER_AVAILABLE_REMOVED:
@@ -338,6 +344,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			pgSkills.refresh();
 			break;
 		case CHARACTER_CHANGED:
+		case EXPERIENCE_CHANGED:
 			refresh();
 			break;
 		default:

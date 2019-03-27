@@ -138,7 +138,6 @@ public class SkillValueTableView extends TableView<SkillValue> {
 					attPane.setAttentionFlag(control.getMastershipController().getToDos(skill).size()>0);
 					attPane.setAttentionToolTip(control.getMastershipController().getToDos(skill));
 					setGraphic(attPane); 
-					System.err.println("TODOs: "+control.getMastershipController().getToDos());
 				}
 			}
 		});

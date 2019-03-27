@@ -23,7 +23,7 @@
 }
 
 .list-cell {
-  -fx-background-color: #E0E0E0;
+  -fx-background-color: light;
   -fx-border-width: 2px;
   -fx-border-color: white;
 }
