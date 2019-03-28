@@ -144,6 +144,12 @@ public class ResourceLeveller implements ResourceController {
 	 */
 	@Override
 	public boolean canBeDeselected(ResourceReference ref) {
+		if (ref==null) return false;
+		if (ref.getResource()==null) {
+			logger.warn("No resource in resource reference "+ref);
+		} else if (ref.getResource().isBaseResource()) {
+			return false;
+		}
 		return ref.getValue()==1 && canBeDecreased(ref);
 	}
 

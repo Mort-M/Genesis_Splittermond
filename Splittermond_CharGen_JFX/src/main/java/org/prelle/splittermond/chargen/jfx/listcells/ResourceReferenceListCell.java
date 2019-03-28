@@ -1,11 +1,13 @@
 package org.prelle.splittermond.chargen.jfx.listcells;
 
 import java.util.PropertyResourceBundle;
+import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
+import org.prelle.javafx.NavigButtonControl;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.charctrl.CharacterController;
@@ -14,6 +16,7 @@ import org.prelle.splimo.creature.CreatureReference;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.levelling.ResourceLeveller;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.sections.ResourceSection;
 
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -41,7 +44,7 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 
 	private static Logger logger = LogManager.getLogger("splittermond.jfx");
 
-	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
+	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle(ResourceSection.class.getName());
 
 	private transient ResourceReference data;
 
@@ -170,17 +173,17 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 	//-------------------------------------------------------------------
 	private void editClickedRelic(ResourceReference ref) {
 		logger.debug("edit clicked for relic");
-		String heading = UI.getString("resourcelistview.relicdialog.title");
-		String explain = UI.getString("resourcelistview.relicdialog.descr");
+		String heading = UI.getString("listcell.resourceref.relicdialog.title");
+		String explain = UI.getString("listcell.resourceref.relicdialog.descr");
 
 		// Description
 		Label lblExplain = new Label(String.format(explain, ref.getValue()));
 		lblExplain.setWrapText(true);
 
 		// Options
-		RadioButton option1 = new RadioButton(String.format(UI.getString("resourcelistview.relicdialog.option1"), ref.getValue(), ref.getValue()));
-		RadioButton option2 = new RadioButton(String.format(UI.getString("resourcelistview.relicdialog.option2"), ref.getValue(), ref.getValue()));
-		RadioButton option3 = new RadioButton(String.format(UI.getString("resourcelistview.relicdialog.option3"), ref.getValue(), ref.getValue()));
+		RadioButton option1 = new RadioButton(String.format(UI.getString("listcell.resourceref.relicdialog.option1"), ref.getValue(), ref.getValue()));
+		RadioButton option2 = new RadioButton(String.format(UI.getString("listcell.resourceref.relicdialog.option2"), ref.getValue(), ref.getValue()));
+		RadioButton option3 = new RadioButton(String.format(UI.getString("listcell.resourceref.relicdialog.option3"), ref.getValue(), ref.getValue()));
 		ToggleGroup group = new ToggleGroup();
 		group.getToggles().addAll(option1, option2, option3);
 
@@ -190,7 +193,7 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 		ListView<CarriedItem> listAvailable = new ListView<CarriedItem>();
 		listAvailable.setStyle("-fx-max-width: 20em");
 		listAvailable.setStyle("-fx-pref-height: 10em");
-		Label placeholder = new Label(UI.getString("resourcelistview.relicdialog.placeholder"));
+		Label placeholder = new Label(UI.getString("listcell.resourceref.relicdialog.placeholder"));
 		placeholder.setWrapText(true);
 		listAvailable.setPlaceholder(placeholder);
 		listAvailable.setCellFactory(new Callback<ListView<CarriedItem>, ListCell<CarriedItem>>() {
@@ -199,7 +202,7 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 					@Override
 					public void updateItem(CarriedItem item, boolean empty) {
 						super.updateItem(item, empty);
-						setText( empty?null:String.format(UI.getString("resourcelistview.relicdialog.cell"), (item.getArtifactQuality() + item.getItemQuality()), item.getName()));
+						setText( empty?null:String.format(UI.getString("listcell.resourceref.relicdialog.cell"), (item.getArtifactQuality() + item.getItemQuality()), item.getName()));
 					}
 				};
 			}
@@ -533,34 +536,35 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 
 	//-------------------------------------------------------------------
 	private void editClicked(ResourceReference ref) {
-//		String res = ref.getResource().getId();
-//		if (res.equals("creature")) {
-//			editClickedCreature(ref);
-//		} else
-//		if (res.equals("relic")) {
-//			editClickedRelic(ref);
-//		} else {
-//			TextField tf = new TextField(ref.getDescription());
-//			tf.textProperty().addListener( (ov,o,n) -> {
-//				if (n.indexOf('<')>0) { n = n.substring(0, n.indexOf('<')); tf.setText(n); }
-//				if (n.indexOf('>')>0) { n = n.substring(0, n.indexOf('>')); tf.setText(n); }
-//				if (n.indexOf('"')>0) { n = n.substring(0, n.indexOf('"')); tf.setText(n); }
-//				if (n.indexOf('&')>0) { n = n.substring(0, n.indexOf('&')); tf.setText(n); }
-//			});
-//			tf.setOnAction(event -> {
-//				ManagedScreen screen = (ManagedScreen) tf.getParent().getParent().getParent().getParent();
-//				logger.debug("Action on "+screen);
-//				screen.impl_navigClicked(CloseType.OK, event);
-//				});
-//			CloseType close = parent.getManager().showAlertAndCall(
-//					AlertType.QUESTION,
-//					UI.getString("resourcelistview.namedialog.title"),
-//					tf);
-//			if (close==CloseType.OK) {
-//				ref.setDescription(tf.getText());
-//				tfDescr.setText(tf.getText());
-//			}
-//		}
+		logger.debug("editClicked("+ref+")");
+		String res = ref.getResource().getId();
+		if (res.equals("creature")) {
+			editClickedCreature(ref);
+		} else
+		if (res.equals("relic")) {
+			editClickedRelic(ref);
+		} else {
+			TextField tf = new TextField(ref.getDescription());
+			tf.textProperty().addListener( (ov,o,n) -> {
+				if (n.indexOf('<')>0) { n = n.substring(0, n.indexOf('<')); tf.setText(n); }
+				if (n.indexOf('>')>0) { n = n.substring(0, n.indexOf('>')); tf.setText(n); }
+				if (n.indexOf('"')>0) { n = n.substring(0, n.indexOf('"')); tf.setText(n); }
+				if (n.indexOf('&')>0) { n = n.substring(0, n.indexOf('&')); tf.setText(n); }
+			});
+			NavigButtonControl btnCtrl = new NavigButtonControl();
+			tf.setOnAction(event -> {
+				logger.debug("Action on "+tf);
+				btnCtrl.fireEvent(CloseType.OK);
+				});
+			CloseType close = provider.getScreenManager().showAlertAndCall(
+					AlertType.QUESTION,
+					UI.getString("listcell.resourceref.namedialog.title"),
+					tf);
+			if (close==CloseType.OK) {
+				ref.setDescription(tf.getText());
+				tfDescr.setText(tf.getText());
+			}
+		}
 	}
 
 	//-------------------------------------------------------------------
