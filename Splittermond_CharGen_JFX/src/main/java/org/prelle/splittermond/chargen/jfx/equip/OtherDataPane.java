@@ -1,0 +1,145 @@
+package org.prelle.splittermond.chargen.jfx.equip;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
+import java.util.PropertyResourceBundle;
+import java.util.ResourceBundle;
+
+import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.charctrl.NewItemController;
+import org.prelle.splimo.items.CarriedItem;
+import org.prelle.splimo.items.Material;
+import org.prelle.splimo.items.PersonalizationReference;
+import org.prelle.splittermond.chargen.jfx.dialogs.EditCarriedItemDialog;
+
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
+import javafx.util.StringConverter;
+
+/**
+ * @author prelle
+ *
+ */
+public class OtherDataPane extends GridPane {
+
+	private static PropertyResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle(EditCarriedItemDialog.class.getName());
+	
+	private final static String STYLE_EMPHASIZED = "emphasized";
+	
+	private CarriedItem model;
+	private NewItemController control;
+	
+	private ChoiceBox<Material> cbMaterial;
+	private ChoiceBox<PersonalizationReference> cbPersonal1;
+	private ChoiceBox<PersonalizationReference> cbPersonal2;
+
+	//-------------------------------------------------------------------
+	public OtherDataPane() {
+		initComponents();
+		initLayout();
+	}
+
+	//-------------------------------------------------------------------
+	private void initComponents() {
+		cbMaterial = new ChoiceBox<>();
+		cbMaterial.getItems().addAll(SplitterMondCore.getMaterials());
+
+		cbPersonal1    = new ChoiceBox<>();
+		cbPersonal1.setConverter(new StringConverter<PersonalizationReference>() {
+			public String toString(PersonalizationReference data) {
+				return data != null ? data.getName() : "";
+			}
+			public PersonalizationReference fromString(String data) {
+				return null;
+			}
+		});
+		cbPersonal2    = new ChoiceBox<>();
+		cbPersonal2.setConverter(new StringConverter<PersonalizationReference>() {
+			public String toString(PersonalizationReference data) {
+				return data != null ? data.getName() : "";
+			}
+			public PersonalizationReference fromString(String data) {
+				return null;
+			}
+		});
+	}
+
+	//-------------------------------------------------------------------
+	private void initLayout() {
+		Label heaMaterial = new Label(RES.getString("label.material"));
+		Label heaPers1 = new Label(RES.getString("label.personalization.first"));
+		Label heaPers2 = new Label(RES.getString("label.personalization.second"));
+
+		setVgap(5);
+		setHgap(5);
+		add(heaMaterial, 0, 0);
+		add(cbMaterial , 1, 0);
+		add(heaPers1   , 0, 1);
+		add(cbPersonal1, 1, 1);
+		add(heaPers2   , 0, 2);
+		add(cbPersonal2, 1, 2);
+		getStyleClass().add("content");
+		
+		/*
+		 * Styles
+		 */
+		this.getStyleClass().addAll("content","text-body","bordered");
+		heaMaterial.getStyleClass().add("base");
+		heaPers1.getStyleClass().add("base");
+		heaPers2.getStyleClass().add("base");
+	}
+
+	//-------------------------------------------------------------------
+	private void filterCombobox(ChoiceBox<PersonalizationReference>  box, List<PersonalizationReference> allItems, Optional<PersonalizationReference> template) {
+		List<PersonalizationReference> actual = box.getItems();
+		for (int i = 0; i < allItems.size(); i++) {
+			PersonalizationReference test = allItems.get(i);
+			if (!actual.contains(test)) {
+				actual.add(i, test);
+			}
+		}
+		List<PersonalizationReference> filteredItems = template.map(t -> control.makeCompartibleList(t, allItems)).orElse(allItems);
+		if (filteredItems.size() != allItems.size()) {
+			for (Iterator<PersonalizationReference> iter = actual.iterator(); iter.hasNext();) {
+				if (!filteredItems.contains(iter.next())) {
+					iter.remove();
+				}
+			}
+		}
+	}
+
+	//-------------------------------------------------------------------
+	public void refresh() {
+		cbMaterial.getItems().clear();
+		cbMaterial.getItems().addAll(control.getAvailableMaterials());
+		cbMaterial.getSelectionModel().select(model.getMaterial());
+
+		filterCombobox(cbPersonal1, control.getAvailableFirstPersonalizations(),  Optional.of(model.getPersonalizations())
+				                                                                          .filter(l -> l.size() >= 2)
+				                                                                          .map(l -> l.get(1)));
+		filterCombobox(cbPersonal2, control.getAvailableSecondPersonalizations(), Optional.of(model.getPersonalizations())
+																				          .filter(l -> !l.isEmpty())
+																				          .map(l -> l.get(0)));
+		if  (model.getPersonalizations().isEmpty()) {
+			cbPersonal1.getSelectionModel().clearSelection();
+		} else {
+			cbPersonal1.getSelectionModel().select(model.getPersonalizations().get(0));
+		}
+		if (model.getPersonalizations().size() < 2) {
+			cbPersonal2.getSelectionModel().clearSelection();
+		} else {
+			cbPersonal2.getSelectionModel().select(model.getPersonalizations().get(1));
+		}
+
+		cbPersonal2.setDisable(!control.isSecondPersonalizationAllowed());
+	}
+
+	//-------------------------------------------------------------------
+	public void setData(CarriedItem model) {
+		this.model = model;
+		refresh();
+	}
+
+}

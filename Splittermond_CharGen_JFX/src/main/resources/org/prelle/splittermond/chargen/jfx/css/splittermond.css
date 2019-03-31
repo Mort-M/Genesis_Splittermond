@@ -169,6 +169,12 @@
    -fx-background-position: right bottom;
    -fx-background-repeat: no-repeat;
 }
+#splittermond-skills {
+   -fx-background-color: background;
+   -fx-background-image: url('../images/BG_SkillsNormal.png');
+   -fx-background-position: right bottom;
+   -fx-background-repeat: no-repeat;
+}
 
 .skill-screen-combat {
    -fx-background-color: background;
@@ -191,14 +197,14 @@
    -fx-background-repeat: no-repeat;
 }
 
-.equipment-screen {
+#splittermond-equipment {
    -fx-background-color: background;
    -fx-background-image: url('../images/BG_Equipment.png');
    -fx-background-position: right bottom;
    -fx-background-repeat: no-repeat;
 }
 
-.resource-screen {
+#splittermond-resources {
    -fx-background-color: background;
    -fx-background-image: url('../images/BG_SkillsCombat.png');
    -fx-background-position: right bottom;

@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.PropertyResourceBundle;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,6 +29,7 @@ import org.prelle.splimo.creature.Lifeform;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.CarriedItemList;
 import org.prelle.splimo.items.EnhancementReference;
+import org.prelle.splimo.items.ItemLocationType;
 import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splimo.modifications.ModificationList;
 import org.prelle.splimo.persist.CustomItemHook;
@@ -929,6 +931,7 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 		return false;
 	}
 
+	//--------------------------------------------------------------------
 	public int getMeleeValue() {
 		int skillValue = getSkillValue(SplitterMondCore.getSkill("melee")).getValue();
 		int bew = getAttribute(Attribute.AGILITY).getValue();
@@ -944,6 +947,11 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 		Collections.sort(items);
 
 		return items;
+	}
+
+	//--------------------------------------------------------------------
+	public List<CarriedItem> getItems(ItemLocationType location) {
+		return getItems().stream().filter(item -> item.getLocation()==location).collect(Collectors.toList());
 	}
 
 	//--------------------------------------------------------------------
