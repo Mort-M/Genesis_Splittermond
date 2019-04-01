@@ -6,7 +6,6 @@ import java.util.StringTokenizer;
 import java.util.function.BiConsumer;
 
 import org.prelle.javafx.CloseType;
-import org.prelle.javafx.ManagedDialog;
 import org.prelle.javafx.NavigButtonControl;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.charctrl.CharacterController;
@@ -20,7 +19,6 @@ import org.prelle.splimo.items.ItemLocationType;
 import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splittermond.chargen.jfx.dialogs.EditCarriedItemDialog;
 import org.prelle.splittermond.chargen.jfx.dialogs.SelectItemDialog;
-import org.prelle.splittermond.chargen.jfx.equip.NewItemGeneratorPane;
 import org.prelle.splittermond.chargen.jfx.listcells.CarriedItemListCell;
 
 import javafx.scene.Node;
@@ -212,9 +210,10 @@ public class EquipmentSection extends GenericListSection<CarriedItem> {
 //		ManagedDialog dialog = new ManagedDialog("Edit", itemPane, CloseType.OK);
 		
 		EditCarriedItemDialog dialog = new EditCarriedItemDialog(control, itemCtrl);
-		dialog.setData(item);
+		GenerationEventDispatcher.addListener(dialog);
 		
 		CloseType closed = provider.getScreenManager().showAlertAndCall(dialog, new NavigButtonControl());
+		GenerationEventDispatcher.removeListener(dialog);
 	}
 
 }

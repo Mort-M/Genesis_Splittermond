@@ -1,10 +1,13 @@
 package org.prelle.splittermond.chargen.jfx.listcells;
 
 import java.util.PropertyResourceBundle;
+import java.util.ResourceBundle;
 
+import org.apache.logging.log4j.LogManager;
 import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.items.EnhancementReference;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.dialogs.EditCarriedItemDialog;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -23,7 +26,7 @@ import javafx.scene.layout.HBox;
 
 public class EnhancementReferenceListCell extends ListCell<EnhancementReference> {
 
-	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
+	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle(EditCarriedItemDialog.class.getName());
 
 	private transient EnhancementReference data;
 
@@ -122,6 +125,7 @@ public class EnhancementReferenceListCell extends ListCell<EnhancementReference>
 	//-------------------------------------------------------------------
 	private void changed(ObservableValue<? extends Boolean> item, Boolean old, Boolean val) {
 		if (old==true && val==false) {
+			LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME).debug("call removeEnhancement("+data+")");
 			charGen.removeEnhancement(data);
 		}
 	}

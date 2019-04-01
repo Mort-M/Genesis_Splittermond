@@ -28,7 +28,7 @@
   -fx-border-color: white;
 }
 .list-cell:empty {
-  -fx-background-color: transparent;
+  -fx-background-color: white;
 }
 
 .list-cell:selected {
@@ -253,53 +253,8 @@
   -fx-background-color: dark;
   -fx-text-fill: light;
 }
-
-
-/****
- * Powers
- ****/
-.power-list-control {
-	-fx-min-width: 30em;
-}
-.power-reference-cell {
-	-fx-border-width: 2px;
-}
-.weakness-list-control {
-	-fx-pref-width: 25em;
-}
-.weakness-cell {
-	-fx-border-width: 2px;
-}
-
-/****
- * Culture Lores
- ****/
-.cultlore-list-control {
-	-fx-fixed-cell-size: 1em;
-}
-.language-list-control {
-	-fx-fixed-cell-size: 1em;
-}
-
-
-/*****************************
- * Historical
- *****************************/
-.section-bar {
-	-fx-background-color: dark;
-	-fx-padding: 0 4 4 4;
-}
-.section-bar .label {
-	-fx-text-fill: lighter;
-}
-.section-bar .radio-button {
-	-fx-text-fill: lighter;
-}
-.section-bar .text {
-	-fx-text-fill: lighter;
-}
-.section-bar .font-icon-text {
-	-fx-fill: lighter;
+.emphasized {
+  -fx-text-fill: textcolor-highlight-primary;
 }
 
 

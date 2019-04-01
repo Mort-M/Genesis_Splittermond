@@ -16,6 +16,7 @@ public class DescriptionBox extends VBox {
 	public DescriptionBox() {
 		lblName = new Label();
 		lblName.getStyleClass().add("text-subheader");
+		lblName.setWrapText(true);
 		lblProduct = new Label();
 		lblDescr = new Label();
 		lblDescr.setWrapText(true);

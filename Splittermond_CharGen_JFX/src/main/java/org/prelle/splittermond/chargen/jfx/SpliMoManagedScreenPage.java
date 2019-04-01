@@ -73,7 +73,6 @@ public class SpliMoManagedScreenPage extends CharacterDocumentView {
 	//-------------------------------------------------------------------
 	public void refresh() {
 		expLine.setData(charGen.getModel());
-		System.err.println(getClass()+": refresh "+charGen.getModel().getExperienceFree());
 		
 		getSectionList().forEach(sect -> sect.refresh());
 		setPointsFree(charGen.getModel().getExperienceFree());

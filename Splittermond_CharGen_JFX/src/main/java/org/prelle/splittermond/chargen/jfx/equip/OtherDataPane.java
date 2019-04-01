@@ -26,8 +26,6 @@ public class OtherDataPane extends GridPane {
 
 	private static PropertyResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle(EditCarriedItemDialog.class.getName());
 	
-	private final static String STYLE_EMPHASIZED = "emphasized";
-	
 	private CarriedItem model;
 	private NewItemController control;
 	
@@ -45,6 +43,14 @@ public class OtherDataPane extends GridPane {
 	private void initComponents() {
 		cbMaterial = new ChoiceBox<>();
 		cbMaterial.getItems().addAll(SplitterMondCore.getMaterials());
+		cbMaterial.setConverter(new StringConverter<Material>() {
+			public String toString(Material data) {
+				return data != null ? data.getName() : "";
+			}
+			public Material fromString(String data) {
+				return null;
+			}
+		});
 
 		cbPersonal1    = new ChoiceBox<>();
 		cbPersonal1.setConverter(new StringConverter<PersonalizationReference>() {
@@ -137,7 +143,8 @@ public class OtherDataPane extends GridPane {
 	}
 
 	//-------------------------------------------------------------------
-	public void setData(CarriedItem model) {
+	public void setData(CarriedItem model, NewItemController ctrl) {
+		this.control = ctrl;
 		this.model = model;
 		refresh();
 	}

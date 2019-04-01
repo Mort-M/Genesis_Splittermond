@@ -809,6 +809,18 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 	}
 
 	//--------------------------------------------------------------------
+	public int getTotalQuality() {
+		int quality = 0;
+		for (EnhancementReference enhance : enhancements) {
+			quality+=enhance.getEnhancement().getSize();
+		}
+		
+		if (material!=null)
+			quality = Math.max(quality, material.getQuality());
+		return quality;
+	}
+
+	//--------------------------------------------------------------------
 	/**
 	 * @return TRUE if the attribute has not the standard value
 	 */

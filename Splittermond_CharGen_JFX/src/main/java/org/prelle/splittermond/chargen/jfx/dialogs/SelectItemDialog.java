@@ -17,8 +17,12 @@ import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.cell.TextFieldListCell;
 import javafx.scene.layout.VBox;
+import javafx.util.Callback;
+import javafx.util.StringConverter;
 
 /**
  * @author Stefan Prelle
@@ -52,14 +56,35 @@ public class SelectItemDialog extends ManagedDialog {
 		initComponents();
 		initLayout();
 		initInteractivity();
+		
+		cbType.setValue(ItemType.WEAPON);
 	}
 
 	//-------------------------------------------------------------------
 	private void initComponents() {
 		cbType = new ChoiceBox<>();
 		cbType.getItems().addAll(ItemType.values());
+		cbType.setConverter(new StringConverter<ItemType>() {
+			public String toString(ItemType object) { return object.getName(); }
+			public ItemType fromString(String string) { return null; }
+		});
 		
 		list = new ListView<ItemTemplate>();
+		StringConverter<ItemTemplate> sv = new StringConverter<ItemTemplate>() {
+			public String toString(ItemTemplate object) {
+				if (object.getSkill()!=null)
+					return object.getName()+" ("+object.getSkill().getName()+")";
+				return object.getName();
+				}
+			public ItemTemplate fromString(String string) {return null;	}
+		};
+		list.setCellFactory(new Callback<ListView<ItemTemplate>, ListCell<ItemTemplate>>() {
+			public ListCell<ItemTemplate> call(ListView<ItemTemplate> param) {
+				TextFieldListCell<ItemTemplate> cell = new TextFieldListCell<>();
+				cell.setConverter(sv);
+				return cell;
+			}
+		});
 		
 		descr = new DescriptionBox();
 	}

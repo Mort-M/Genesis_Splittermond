@@ -1,6 +1,7 @@
 package org.prelle.splittermond.chargen.jfx.equip;
 
 import org.prelle.splimo.SplitterTools;
+import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.ItemAttribute;
 
@@ -16,15 +17,18 @@ public class BasicItemDataPane extends GridPane {
 	private final static String STYLE_EMPHASIZED = "emphasized";
 	
 	private CarriedItem model;
+	private NewItemController control;
 	
 	private Label lblAvailability;
 	private Label lblPrice;
 	private Label lblLoad;
 	private Label lblRigidity;
 	private Label lblComplexity;
+	private Label lblQuality;
 
 	//-------------------------------------------------------------------
-	public BasicItemDataPane() {
+	public BasicItemDataPane(NewItemController control) {
+		this.control = control;
 		initComponents();
 		initLayout();
 	}
@@ -36,6 +40,7 @@ public class BasicItemDataPane extends GridPane {
 		lblLoad         = new Label();
 		lblRigidity     = new Label();
 		lblComplexity   = new Label();
+		lblQuality      = new Label();
 	}
 
 	//-------------------------------------------------------------------
@@ -45,6 +50,7 @@ public class BasicItemDataPane extends GridPane {
 		Label heaLoad         = new Label(ItemAttribute.LOAD.getShortName());
 		Label heaRigidity     = new Label(ItemAttribute.RIGIDITY.getShortName());
 		Label heaComplexity   = new Label(ItemAttribute.COMPLEXITY.getShortName());
+		Label heaQuality      = new Label(ItemAttribute.QUALITY.getShortName());
 		
 		add(heaAvailability, 0,0);
 		add(lblAvailability, 1,0);
@@ -56,6 +62,8 @@ public class BasicItemDataPane extends GridPane {
 		add(lblRigidity    , 1,3);
 		add(heaComplexity  , 0,4);
 		add(lblComplexity  , 1,4);
+		add(heaQuality     , 0,5);
+		add(lblQuality     , 1,5);
 		
 		setVgap(2);
 		setHgap(5);
@@ -66,9 +74,10 @@ public class BasicItemDataPane extends GridPane {
 		this.getStyleClass().addAll("content","text-body","bordered");
 		heaAvailability.getStyleClass().add("base");
 		heaPrice.getStyleClass().add("base");
-		heaLoad.getStyleClass().add("baser");
+		heaLoad.getStyleClass().add("base");
 		heaRigidity.getStyleClass().add("base");
 		heaComplexity.getStyleClass().add("base");
+		heaQuality.getStyleClass().add("base");
 	}
 
 	//-------------------------------------------------------------------
@@ -83,7 +92,10 @@ public class BasicItemDataPane extends GridPane {
 			lblAvailability.getStyleClass().remove(STYLE_EMPHASIZED);
 		
 		// Price
-		lblPrice.setText(SplitterTools.telareAsCurrencyString(model.getPrice()));
+		lblQuality.setText(String.valueOf(model.getTotalQuality()));
+		lblPrice.setText(SplitterTools.telareAsCurrencyString(control.getPrice()));
+
+//		lblPrice.setText(SplitterTools.telareAsCurrencyString(model.getPrice()));
 		if (model.isModified(ItemAttribute.PRICE)) {
 			if (lblPrice.getStyleClass().contains(STYLE_EMPHASIZED))
 				lblPrice.getStyleClass().add(STYLE_EMPHASIZED);

@@ -30,6 +30,7 @@ public enum ItemAttribute {
 	MATERIAL_TYPE,
 	MATERIAL,
 	INITIATIVE, // Only for creatures
+	QUALITY,
 	;
 
 	//-------------------------------------------------------------------
