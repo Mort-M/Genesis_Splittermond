@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<materials>
+  <material id="mistyWood" quality="3" price="3000" type="WOOD">
+    <modifications>
+      <featuremod feature="UNSUSPICIOUS" />
+      <attitudemod val="1" cond="true" />
+    </modifications>
+  </material>
+</materials>

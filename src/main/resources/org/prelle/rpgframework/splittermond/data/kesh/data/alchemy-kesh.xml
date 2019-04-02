@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Alchemistische Wirkungen fehlen -->
+<items>
+  <item id="lianaDeath" avail="LARGE_TOWN" load="0" price="2500" robust="0" type="POTION" />
+  <item id="kissWorldSnake" avail="LARGE_TOWN" load="0" price="5000" robust="0" type="POTION" />
+  <item id="farukanSalute" avail="SMALL_TOWN" load="0" price="500" robust="0" type="POTION" />
+  <item id="muskelBurn" avail="SMALL_TOWN" load="0" price="2500" robust="0" type="POTION" />
+  <item id="sherazinkannenOil" avail="SMALL_TOWN" load="0" price="500" robust="0" type="POTION" />
+  <item id="snakesSleep" avail="SMALL_TOWN" load="0" price="500" robust="0" type="POTION" />
+  <item id="thousandDreams" avail="VILLAGE" load="0" price="50" robust="0" type="POTION" />
+  <item id="snowVeil" avail="VILLAGE" load="0" price="50" robust="0" type="POTION" />
+  <item id="constrictor" avail="SMALL_TOWN" load="0" price="50" robust="0" type="POTION" />
+</items>
+<!-- Alchemistische Wirkungen fehlen -->

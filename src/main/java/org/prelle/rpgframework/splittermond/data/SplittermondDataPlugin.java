@@ -1,4 +1,4 @@
-/**
+﻿/**
  *
  */
 package org.prelle.rpgframework.splittermond.data;
@@ -303,6 +303,18 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadSpells(ZHOU, clazz.getResourceAsStream("zhoujiang/data/spells-zhoujiang.xml"), ZHOU.getResources(), ZHOU.getHelpResources());
 		SplitterMondCore.loadNameTable(ZHOU, clazz.getResourceAsStream("zhoujiang/data/nametable-zhoujiang.xml"), ZHOU.getResources(), ZHOU.getHelpResources());
 
+		logger.info("START -------------------------------Kesh----------------------------------------------");
+		PluginSkeleton KESH = new PluginSkeleton("Kesh", "Das Erbe von Kesh");
+		SplitterMondCore.loadCreatureFeatureTypes(KESH, clazz.getResourceAsStream("kesh/data/creaturefeaturetypes-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
+		SplitterMondCore.loadEquipment(KESH, clazz.getResourceAsStream("kesh/data/equipment-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
+		SplitterMondCore.loadEquipment(KESH, clazz.getResourceAsStream("kesh/data/alchemy-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
+		SplitterMondCore.loadMaterials(KESH, clazz.getResourceAsStream("kesh/data/materials-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
+		SplitterMondCore.loadMasterships(KESH, clazz.getResourceAsStream("kesh/data/masterships-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
+		SplitterMondCore.loadSpells(KESH, clazz.getResourceAsStream("kesh/data/spells-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
+		SplitterMondCore.loadNameTable(KESH, clazz.getResourceAsStream("kesh/data/nametable-keshabid.xml"), KESH.getResources(), KESH.getHelpResources());
+		SplitterMondCore.loadNameTable(KESH, clazz.getResourceAsStream("kesh/data/nametable-keshubim.xml"), KESH.getResources(), KESH.getHelpResources());
+		SplitterMondCore.loadNameTable(KESH, clazz.getResourceAsStream("kesh/data/nametable-turubar.xml"), KESH.getResources(), KESH.getHelpResources());
+		
 		BasePluginData.flushMissingKeys();
 		logger.debug("STOP  Initialize");
 //		logger.fatal("Stop here");

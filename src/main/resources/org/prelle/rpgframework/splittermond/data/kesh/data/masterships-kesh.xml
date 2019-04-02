@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+  <skill id="determination">
+    <mastership level="2" key="meditativeAttunement" />
+  </skill>
+  <skill id="history">
+    <mastership level="1" key="wisdomAncients" />
+  </skill>
+  <skill id="stealth">
+    <mastership level="1" key="dirtyTricks" />
+    <mastership level="1" key="exploitVulnerability" />
+    <mastership level="1" key="sneakAttack" />
+  </skill>
+  <skill id="locksntraps">
+    <mastership level="1" key="arkanoMechanicalTrapRaiser" >
+	   <requires>
+    	 <masterreq ref="locksntraps/trapJourneyman" />
+    	 <masterreq ref="arcanelore/artifactlore" />
+	   </requires>
+    </mastership>
+    <mastership level="1" key="trapJourneyman" />
+    <mastership level="2" key="trapExpert" >
+  	  <requires>
+        <masterreq ref="locksntraps/trapJourneyman" />
+   	  </requires>
+    </mastership>
+    <mastership level="3" key="trapMaster" >
+	  <requires>
+  	    <masterreq ref="locksntraps/trapExpert" />
+	  </requires>
+    </mastership>
+    <mastership level="4" key="masterworkTrap" >
+	  <requires>
+	    <masterreq ref="locksntraps/trapMaster" />
+	  </requires>
+    </mastership>
+  </skill>
+  <skill id="perception">
+    <mastership level="2" key="trapSense" >
+      <requires>
+       	<masterreq ref="locksntraps/caution1" />
+      </requires>
+    </mastership>
+  </skill>
+  <skill id="antimagic">
+    <mastership level="2" key="trapSpell" />
+  </skill>
+</skills>
