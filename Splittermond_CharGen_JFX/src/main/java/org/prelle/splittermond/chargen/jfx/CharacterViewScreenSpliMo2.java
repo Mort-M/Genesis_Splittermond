@@ -52,12 +52,14 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 	private SMOverviewPage  pgOverview;
 	private SMPowerLangCultPage  pgPowers;
 	private SMSkillPage  pgSkills;
+	private SMSpellPage  pgSpells;
 	private SMResourceCompanionPage  pgResources;
 	private SMEquipmentPage  pgEquipment;
 
 	private MenuItem navOverview;
 	private MenuItem navPowers;
 	private MenuItem navSkills;
+	private MenuItem navSpells;
 	private MenuItem navResources;
 	private MenuItem navEquipment;
 
@@ -95,6 +97,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		pgOverview  = new SMOverviewPage(control, mode, handle, this);
 		pgPowers    = new SMPowerLangCultPage(control, mode, handle, this);
 		pgSkills    = new SMSkillPage(control, mode, handle, this);
+		pgSpells    = new SMSpellPage(control, mode, handle, this);
 		pgResources = new SMResourceCompanionPage(control, mode, handle, this);
 		pgEquipment = new SMEquipmentPage(control, mode, handle, this);
 	}
@@ -106,6 +109,14 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 
 	//-------------------------------------------------------------------
 	private void initNavigation() {
+		SVGPath svgMagic = new SVGPath();
+		svgMagic.setContent("M250.53 22.03c-57.055 45.157-80.673 37.81-100.31.22 16.598 61.517 10.408 66.415-44.72 116.594 67.324-35.666 96.206-34.238 130.97 7.187-34.906-53.112-30.954-75.35 14.06-124zm18.407.126l11.688 114.938-99.875 58.094 97.75 21.093c-9.58 8.352-20.214 19.028-31.28 30.095l-.032.03L18.563 472.438v19.438h32.156L273.343 272.5c10.26-10.263 18.902-19.538 25.78-27.75l18.938 87.75 58.094-99.875 114.938 11.688-77.03-86.094 46.655-105.69-105.69 46.657-86.092-77.03zM26.875 55.938c33.765 27.66 35.21 42.767 30.75 87.78 18.975-53.73 27.964-67.297 64.5-82C82.972 71.094 66.21 73 26.875 55.94zm54.75 102.406c24.955 27.012 26.97 43.684 24.25 72.062 14.775-34.45 22.072-45.66 55.625-64.312-34.56 11.183-45.5 10.22-79.875-7.75zm325.594 95c9.27 51.694-4.61 73.708-32.845 106.687 43.3-37.043 57.852-44.284 96.844-38.75-38.597-11.457-47.426-20.624-64-67.936zm-55.658 72.812c-18.705 68.79-45.304 83.944-107.625 70.125 54.126 20.1 56.34 21.07 53.532 85.25 24.757-55.42 46.49-52.217 95.06-37.217-41.775-31.838-45.71-48.97-40.967-118.157zm109.344 55.97c-15.32 17.994-22.932 17.49-43.812 9.343 22.828 18.444 17.596 34.024 10.844 59.405 16.05-19.12 23.516-25.237 50.312-12.688-22.86-21.342-27.13-29.857-17.344-56.062z");
+		Region icoMagic = new Region();
+		icoMagic.setShape(svgMagic);
+		icoMagic.setMinSize(15,15);
+		icoMagic.setPrefSize(20,20);
+		icoMagic.setStyle("-fx-background-color: black");
+		icoMagic.setScaleX(0.5);
 
 		SVGPath svgChest = new SVGPath();
 		svgChest.setContent("M146.857 20.842c-12.535-.036-24.268 2.86-37.285 9.424h.004C61.356 54.6 19.966 120.734 17.982 175.91l41.848 14.236c4.33-61.89 47.057-128.37 101.527-155.86h.002c4.423-2.23 8.822-4.162 13.185-5.8l-22.26-7.45c-1.83-.123-3.637-.19-5.428-.194zm59.34 20.19c-10.478-.09-22.832 3.093-36.424 9.943l.004-.004c-48.23 24.34-89.625 90.513-91.548 145.436l156.485 53.24c3.865-62.22 46.797-129.372 101.613-157.035h.002l.002-.003c4.303-2.168 8.584-4.056 12.832-5.666l-134.54-45.036c-2.652-.542-5.458-.847-8.427-.873zm174.97 58.323c-10.476-.09-22.83 3.092-36.42 9.94l-.005.002c-48.577 24.518-90.225 91.473-91.586 146.623l46.205 15.72c3.914-62.188 46.825-129.274 101.607-156.92 4.522-2.283 9.04-4.258 13.53-5.91l-26.544-8.884c-2.164-.35-4.423-.55-6.785-.57zm63.554 22.014c-10.267.093-22.094 3.353-35.333 10.034-47.158 23.8-87.777 87.587-91.362 141.75l174.55-73.726c-.404-39.01-10.754-61.304-24.415-71.082-2.347-1.68-4.867-3.057-7.55-4.137l-.01.034-4.735-1.584c-3.48-.887-7.195-1.327-11.144-1.29zM17.9 195.622l-.035 187.484L59.46 397.58V209.764L17.9 195.624zM78.15 216.12v187.962l156.282 54.37V269.288l-29.053-9.886v119.43l-101.054-34.082V225.025L78.15 216.12zm414.22 3.683L318.433 293.27v189.236l173.935-73.504v-189.2zm-369.354 11.582v99.947l63.675 21.477v-99.763l-63.674-21.662zm31.306 28.797c9.705 0 17.573 7.867 17.573 17.572 0 6.34-3.37 11.88-8.407 14.97v28.53h-18.69v-28.746c-4.838-3.13-8.048-8.562-8.048-14.754 0-9.705 7.867-17.572 17.572-17.572zm98.797 15.464v189.307l46.626 16.22V291.51l-46.627-15.864z");
@@ -128,10 +139,11 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		navOverview   = new MenuItem(RES.getString("navItem.overview"), new SymbolIcon("home"));
 		navPowers     = new MenuItem(RES.getString("navItem.powers"), new FontIcon("\uD83C\uDFAD"));
 		navSkills     = new MenuItem(RES.getString("navItem.skills"), new FontIcon("\uE7BE"));
+		navSpells     = new MenuItem(RES.getString("navItem.spells"), icoMagic);
 		navResources  = new MenuItem(RES.getString("navItem.resources"), icoChest);
 		navEquipment  = new MenuItem(RES.getString("navItem.gear"), icoGear);
 
-		this.getNavigationItems().addAll(navOverview, navPowers, navSkills, navResources, navEquipment);
+		this.getNavigationItems().addAll(navOverview, navPowers, navSkills, navSpells, navResources, navEquipment);
 	}
 
 	//-------------------------------------------------------------------
@@ -300,6 +312,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		pgOverview.refresh();
 		pgPowers.refresh();
 		pgSkills.refresh();
+		pgSpells.refresh();
 		pgResources.refresh();
 		pgEquipment.refresh();
 //		pgVehicles.refresh();
@@ -319,6 +332,8 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			setContent(pgPowers);
 		} else if (newValue==navSkills) {
 			setContent(pgSkills);
+		} else if (newValue==navSpells) {
+			setContent(pgSpells);
 		} else if (newValue==navResources) {
 			setContent(pgResources);
 		} else if (newValue==navEquipment) {
@@ -332,8 +347,12 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 	 */
 	@Override
 	public void setResponsiveMode(WindowMode value) {
-		logger.info("......"+value);
 		pgOverview.setResponsiveMode(value);
+		pgPowers.setResponsiveMode(value);
+		pgSkills.setResponsiveMode(value);
+		pgSpells.setResponsiveMode(value);
+		pgResources.setResponsiveMode(value);
+		pgEquipment.setResponsiveMode(value);
 	}
 
 	//-------------------------------------------------------------------

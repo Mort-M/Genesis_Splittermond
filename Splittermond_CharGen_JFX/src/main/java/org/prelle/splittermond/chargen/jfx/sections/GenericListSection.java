@@ -60,7 +60,10 @@ public abstract class GenericListSection<T> extends SingleSection {
 	//-------------------------------------------------------------------
 	protected void initInteractivity() {
 		showHelpFor.bind(list.getSelectionModel().selectedItemProperty());
-		list.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> getDeleteButton().setDisable(n!=null));
+		list.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
+			if (getDeleteButton()!=null)
+				getDeleteButton().setDisable(n!=null);
+			});
 		getAddButton().setOnAction(ev -> onAdd());
 		getDeleteButton().setOnAction(ev -> onDelete());
 	}
