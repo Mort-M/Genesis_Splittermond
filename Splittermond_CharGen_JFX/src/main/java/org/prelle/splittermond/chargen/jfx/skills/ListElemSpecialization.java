@@ -11,5 +11,6 @@ public class ListElemSpecialization {
 	public SkillSpecialization data;
 	public int level;
 	public int count;
+	public int countAll;
 	public BooleanProperty editable = new SimpleBooleanProperty();
 }

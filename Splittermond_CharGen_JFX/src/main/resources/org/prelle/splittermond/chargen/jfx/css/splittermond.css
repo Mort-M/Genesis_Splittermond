@@ -183,7 +183,7 @@
    -fx-background-repeat: no-repeat;
 }
 
-.skill-screen-magic {
+#splittermond-spells {
    -fx-background-color: background;
    -fx-background-image: url('../images/BG_SkillsMagic.png');
    -fx-background-position: right bottom;

@@ -74,7 +74,7 @@ public class SkillSpecListCell extends  ListCell<ListElemSpecialization> {
 			setText(null);
 		} else {
 			label.setText(item.data.getName());
-			count.setText(item.count+"x");
+			count.setText(item.count+"/"+item.countAll);
 			setGraphic(box);
 			check1.setSelected(item.level>0);
 			check2.setSelected(item.level>1);

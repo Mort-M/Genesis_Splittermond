@@ -4,13 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Spell;
-import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splittermond.chargen.jfx.listcells.SpellListCell;
@@ -26,8 +23,6 @@ import javafx.scene.layout.VBox;
  */
 public class SpellListSection extends GenericListSection<Spell> {
 
-	private static PropertyResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle(SpellListSection.class.getName());
-
 	private ObjectProperty<Skill> school = new SimpleObjectProperty<Skill>();
 	
 	//-------------------------------------------------------------------
@@ -40,7 +35,7 @@ public class SpellListSection extends GenericListSection<Spell> {
 		setAddButton(null);
 		VBox.setVgrow(list, Priority.ALWAYS);
 		list.setMaxHeight(Double.MAX_VALUE);
-		list.setStyle("-fx-pref-width: 32em");
+		list.setStyle("-fx-pref-width: 32em; -fx-min-height: 40em");
 		
 	}
 
@@ -50,7 +45,6 @@ public class SpellListSection extends GenericListSection<Spell> {
 	 */
 	@Override
 	protected void onAdd() {
-		logger.trace("onAdd");
 	}
 
 	//-------------------------------------------------------------------
@@ -59,7 +53,6 @@ public class SpellListSection extends GenericListSection<Spell> {
 	 */
 	@Override
 	protected void onDelete() {
-		logger.trace("onDelete");
 	}
 
 	//-------------------------------------------------------------------

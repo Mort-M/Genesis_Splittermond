@@ -30,7 +30,7 @@ public class SpliMoManagedScreenPage extends CharacterDocumentView {
 	protected MenuItem cmdPrint;
 	protected MenuItem cmdDelete;
 	
-	private ExpLine expLine;
+	protected ExpLine expLine;
 
 	//-------------------------------------------------------------------
 	public SpliMoManagedScreenPage(CharacterController charGen, CharacterHandle handle) {

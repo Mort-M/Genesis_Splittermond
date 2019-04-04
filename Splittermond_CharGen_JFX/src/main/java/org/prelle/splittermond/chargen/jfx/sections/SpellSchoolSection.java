@@ -61,10 +61,11 @@ public class SpellSchoolSection extends SingleSection {
 	private void initLayout() {
 		// Spell schools
 		VBox.setVgrow(spellSchools, Priority.NEVER);
-		spellSchools.setVgap(20);
+		spellSchools.setVgap(15);
 		spellSchools.setHgap(20);
 		spellSchools.setMaxWidth(Double.MAX_VALUE);
 		spellSchools.setMaxWidth(Double.MAX_VALUE);
+		spellSchools.setStyle("-fx-max-height: 3em");
 		
 		setContent(spellSchools);
 	}
@@ -89,6 +90,10 @@ public class SpellSchoolSection extends SingleSection {
 	 */
 	@Override
 	public void refresh() {
+		Skill oldSkill = null;
+		if (tgSpellSchools.getSelectedToggle()!=null)
+			oldSkill = (Skill)tgSpellSchools.getSelectedToggle().getUserData();
+		
 		spellSchools.getChildren().clear();
 		tgSpellSchools.getToggles().clear();
 		attentionsBySchool.clear();
@@ -102,9 +107,14 @@ public class SpellSchoolSection extends SingleSection {
 			AttentionPane attention = new AttentionPane(but, Pos.BOTTOM_RIGHT);
 			spellSchools.getChildren().add(attention);
 			attentionsBySchool.put(check.getSkill(), attention);
+			
+			if (oldSkill!=null && oldSkill==check.getSkill() && tgSpellSchools.getSelectedToggle()==null) {
+				tgSpellSchools.selectToggle(but);
+			}
+
 		}
 		
-		if (!tgSpellSchools.getToggles().isEmpty())
+		if (!tgSpellSchools.getToggles().isEmpty()  && tgSpellSchools.getSelectedToggle()==null)
 			tgSpellSchools.selectToggle(tgSpellSchools.getToggles().get(0));
 		
 		updateAttentionFlags();

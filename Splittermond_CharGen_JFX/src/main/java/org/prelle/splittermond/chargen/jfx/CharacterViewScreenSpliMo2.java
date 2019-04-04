@@ -389,12 +389,19 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		case MASTERSHIP_REMOVED:
 			pgSkills.refresh();
 			break;
+		case SPELL_ADDED:
+		case SPELL_REMOVED:
+		case SPELL_FREESELECTION_CHANGED:
+			pgSpells.refreshSpells();
+			break;
 		case ITEM_CHANGED:
 			pgEquipment.refresh();
 			break;
 		case CHARACTER_CHANGED:
 		case EXPERIENCE_CHANGED:
 			refresh();
+			break;
+		case UNDO_LIST_CHANGED:
 			break;
 		default:
 			logger.warn("What to do on "+event.getType());
