@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<creatures>
+	<creature id="keshChameleon" lvl1="0" lvl2="0"> <!-- Monstergrad -->
+		<creaturetypes> <!-- Typus: Kreaturentypen/creature_types -->
+			<creaturetype type="ANIMAL"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="3"/>
+			<attr id="AGILITY"      value="1"/>
+			<attr id="INTUITION"    value="3"/>
+			<attr id="CONSTITUTION" value="1"/>
+			<attr id="MYSTIC"       value="3"/>
+			<attr id="STRENGTH"     value="0"/>
+			<attr id="MIND"         value="2"/>
+			<attr id="WILLPOWER"    value="2"/>
+			<attr id="SIZE"         value="2"/>
+			<attr id="SPEED"        value="4"/>
+			<attr id="LIFE"         value="2"/>
+			<attr id="FOCUS"        value="15"/>
+			<attr id="DEFENSE"      value="16"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="14"/>
+			<attr id="MINDRESIST"   value="18"/>
+		</attributes>
+		<skillvals> <!-- Fertigkeiten: Fertigkeiten/skills -->
+			<skillval skill="acrobatics"    val="7"/>
+			<skillval skill="athletics"     val="12">
+				<masterref ref="athletics/freeclimber"/>
+			</skillval>			
+			<skillval skill="determination" val="7"/>
+			<skillval skill="stealth"       val="16"/>
+			<skillval skill="perception"    val="7"/>
+			<skillval skill="endurance"     val="2"/>
+		</skillvals>
+		<features> <!-- Merkmale: type = Kreaturenmerkmale/creature_feature_types -->
+			<creaturefeature type="COWARD"/>
+			<creaturefeature type="CREATURE" level="4"/>
+			<creaturefeature type="WEAK"/>
+	 		<creaturefeature type="vulnurable_damage" damage="WATER"/>
+		</features>
+	</creature>
+
+	<creature id="keshChameleonMagic" lvl1="0" lvl2="0"> <!-- Monstergrad -->
+		<creaturetypes> <!-- Typus: Kreaturentypen/creature_types -->
+			<creaturetype type="ANIMAL"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="3"/>
+			<attr id="AGILITY"      value="1"/>
+			<attr id="INTUITION"    value="3"/>
+			<attr id="CONSTITUTION" value="1"/>
+			<attr id="MYSTIC"       value="3"/>
+			<attr id="STRENGTH"     value="0"/>
+			<attr id="MIND"         value="2"/>
+			<attr id="WILLPOWER"    value="2"/>
+			<attr id="SIZE"         value="2"/>
+			<attr id="SPEED"        value="4"/>
+			<attr id="LIFE"         value="2"/>
+			<attr id="FOCUS"        value="15"/>
+			<attr id="DEFENSE"      value="16"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="14"/>
+			<attr id="MINDRESIST"   value="18"/>
+		</attributes>
+		<skillvals> <!-- Fertigkeiten: Fertigkeiten/skills -->
+			<skillval skill="acrobatics"    val="7"/>
+			<skillval skill="athletics"     val="12">
+				<masterref ref="athletics/freeclimber"/>
+			</skillval>		
+			<skillval skill="determination" val="7"/>
+			<skillval skill="stealth"       val="16"/>
+			<skillval skill="perception"    val="7"/>
+			<skillval skill="endurance"     val="2"/>
+			<skillval skill="illusionmagic" val="14">
+				<masterref ref="illusionmagic/castershand"/>
+			</skillval>
+		</skillvals>
+		<spellvals> <!-- Zauber: school = Fertigkeiten/skills; spell = Zauber/Spells -->
+			<spellval school="illusionmagic" 	  spell="dancinglights"/>
+			<spellval school="illusionmagic"  	  spell="inconspicuousness"/>
+			<spellval school="illusionmagic"  	  spell="chamaeleon"/>
+		</spellvals>
+		<features> <!-- Merkmale: type = Kreaturenmerkmale/creature_feature_types -->
+			<creaturefeature type="COWARD"/>
+			<creaturefeature type="CREATURE" level="4"/>
+			<creaturefeature type="WEAK"/>
+	 		<creaturefeature type="vulnurable_damage" damage="WATER"/>
+		</features>
+	</creature>
+
+	<creature id="whiteSalamander" lvl1="0" lvl2="0"> <!-- Monstergrad -->
+		<creaturetypes> <!-- Typus: Kreaturentypen/creature_types -->
+			<creaturetype type="MOUNT"/>		
+			<creaturetype type="REPTILE"/>		
+			<creaturetype type="ANIMAL"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="1"/>
+			<attr id="AGILITY"      value="4"/>
+			<attr id="INTUITION"    value="2"/>
+			<attr id="CONSTITUTION" value="5"/>
+			<attr id="MYSTIC"       value="0"/>
+			<attr id="STRENGTH"     value="7"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="2"/>
+			<attr id="SIZE"         value="7"/>
+			<attr id="SPEED"        value="11"/>
+			<attr id="LIFE"         value="12"/>
+			<attr id="FOCUS"        value="4"/>
+			<attr id="DEFENSE"      value="20"/>
+			<attr id="DAMAGE_REDUCTION" value="2"/>
+			<attr id="BODYRESIST"   value="19"/>
+			<attr id="MINDRESIST"   value="15"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="7" dmg="1w6+3" spd="8" ini="8">
+				<features>
+					<feature type="BLUNT"/>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals> <!-- Fertigkeiten: Fertigkeiten/skills -->
+			<skillval skill="melee"    val="0">
+				<masterref ref="melee/rush"/>
+			</skillval>				
+			<skillval skill="acrobatics"    val="13"/>
+			<skillval skill="athletics"     val="20">
+				<masterref ref="athletics/muscleman"/>
+			</skillval>			
+			<skillval skill="determination" val="5"/>
+			<skillval skill="stealth"       val="7"/>
+			<skillval skill="perception"    val="9"/>
+			<skillval skill="endurance"     val="10"/>
+		</skillvals>
+		<!-- Meisterschaften: Meisterschaften/masterships -->		
+		<features> <!-- Merkmale: type = Kreaturenmerkmale/creature_feature_types -->
+			<creaturefeature type="nightvision"/>
+			<creaturefeature type="RESIST_EXHAUSTION" level="1"/>
+			<creaturefeature type="COWARD"/>
+			<creaturefeature type="CREATURE" level="4"/>
+		</features>
+	</creature>
+</creatures>
