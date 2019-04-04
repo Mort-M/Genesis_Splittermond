@@ -1,4 +1,4 @@
-﻿/**
+/**
  *
  */
 package org.prelle.rpgframework.splittermond.data;
