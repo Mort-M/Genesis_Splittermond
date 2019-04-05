@@ -3,7 +3,6 @@ package org.prelle.splittermond.chargen.jfx;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.BasePluginData;
 import org.prelle.splimo.Skill.SkillType;
-import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splittermond.chargen.jfx.sections.SkillSection;
 

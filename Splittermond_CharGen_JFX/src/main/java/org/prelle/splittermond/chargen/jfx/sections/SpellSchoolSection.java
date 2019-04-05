@@ -7,8 +7,8 @@ import java.util.Map.Entry;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.prelle.javafx.AttentionPane;
 import org.prelle.javafx.ScreenManagerProvider;
-import org.prelle.rpgframework.jfx.AttentionPane;
 import org.prelle.rpgframework.jfx.SingleSection;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Skill.SkillType;

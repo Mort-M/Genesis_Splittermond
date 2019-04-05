@@ -1,12 +1,8 @@
 package org.prelle.splimo.chargen.jfx;
 
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ScreenManager;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.CultureLoreReference;
-import org.prelle.splimo.DummyRulePlugin;
 import org.prelle.splimo.Resource;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.Skill;

@@ -10,10 +10,10 @@ import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.prelle.javafx.AttentionPane;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.CommandBar;
 import org.prelle.javafx.ManagedDialog;
-import org.prelle.rpgframework.jfx.AttentionPane;
 import org.prelle.rpgframework.jfx.FreePointsNode;
 import org.prelle.rpgframework.jfx.ThreeColumnPane;
 import org.prelle.splimo.Mastership;

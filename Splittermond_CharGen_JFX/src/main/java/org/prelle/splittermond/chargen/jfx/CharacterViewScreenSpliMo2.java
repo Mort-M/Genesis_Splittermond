@@ -3,11 +3,14 @@ package org.prelle.splittermond.chargen.jfx;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.PropertyResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.AlertType;
+import org.prelle.javafx.AttentionMenuItem;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.FontIcon;
 import org.prelle.javafx.ManagedScreen;
@@ -56,11 +59,11 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 	private SMResourceCompanionPage  pgResources;
 	private SMEquipmentPage  pgEquipment;
 
-	private MenuItem navOverview;
-	private MenuItem navPowers;
-	private MenuItem navSkills;
-	private MenuItem navSpells;
-	private MenuItem navResources;
+	private AttentionMenuItem navOverview;
+	private AttentionMenuItem navPowers;
+	private AttentionMenuItem navSkills;
+	private AttentionMenuItem navSpells;
+	private AttentionMenuItem navResources;
 	private MenuItem navEquipment;
 
 	//-------------------------------------------------------------------
@@ -136,11 +139,11 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		icoGear.setStyle("-fx-background-color: black");
 		icoGear.setScaleX(0.5);
 
-		navOverview   = new MenuItem(RES.getString("navItem.overview"), new SymbolIcon("home"));
-		navPowers     = new MenuItem(RES.getString("navItem.powers"), new FontIcon("\uD83C\uDFAD"));
-		navSkills     = new MenuItem(RES.getString("navItem.skills"), new FontIcon("\uE7BE"));
-		navSpells     = new MenuItem(RES.getString("navItem.spells"), icoMagic);
-		navResources  = new MenuItem(RES.getString("navItem.resources"), icoChest);
+		navOverview   = new AttentionMenuItem(RES.getString("navItem.overview"), new SymbolIcon("home"));
+		navPowers     = new AttentionMenuItem(RES.getString("navItem.powers"), new FontIcon("\uD83C\uDFAD"));
+		navSkills     = new AttentionMenuItem(RES.getString("navItem.skills"), new FontIcon("\uE7BE"));
+		navSpells     = new AttentionMenuItem(RES.getString("navItem.spells"), icoMagic);
+		navResources  = new AttentionMenuItem(RES.getString("navItem.resources"), icoChest);
 		navEquipment  = new MenuItem(RES.getString("navItem.gear"), icoGear);
 
 		this.getNavigationItems().addAll(navOverview, navPowers, navSkills, navSpells, navResources, navEquipment);
@@ -316,6 +319,25 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		pgResources.refresh();
 		pgEquipment.refresh();
 //		pgVehicles.refresh();
+		
+		navOverview.setAttentionFlag(!control.getAttributeController().getToDos().isEmpty());
+		navOverview.setAttentionToolTip(control.getAttributeController().getToDos());
+		
+		navSpells.setAttentionFlag(!control.getSpellController().getToDos().isEmpty());
+		navSpells.setAttentionToolTip(control.getSpellController().getToDos());
+
+		navSkills.setAttentionFlag(!control.getSkillController().getToDos().isEmpty());
+		navSkills.setAttentionToolTip(control.getSkillController().getToDos());
+
+		navResources.setAttentionFlag(!control.getResourceController().getToDos().isEmpty());
+		navResources.setAttentionToolTip(control.getResourceController().getToDos());
+
+		List<String> powerCultToDos = new ArrayList<>();
+		powerCultToDos.addAll(control.getPowerController().getToDos());
+		powerCultToDos.addAll(control.getLanguageController().getToDos());
+		powerCultToDos.addAll(control.getCultureLoreController().getToDos());
+		navPowers.setAttentionFlag(!powerCultToDos.isEmpty());
+		navPowers.setAttentionToolTip(powerCultToDos);
 	}
 
 	//-------------------------------------------------------------------

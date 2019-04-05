@@ -301,7 +301,7 @@ public class CultureLoreGenerator implements CultureLoreController, GenerationEv
 	 */
 	@Override
 	public List<String> getToDos() {
-		if (freeSelected==null)
+		if (freeSelected==null && mode==CharGenMode.CREATING)
 			return Arrays.asList(RES.getString("cultloregen.todo"));
 		return new ArrayList<>();
 	}

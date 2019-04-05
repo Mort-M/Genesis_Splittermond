@@ -279,7 +279,7 @@ public class LanguageGenerator implements LanguageController, Generator, Generat
 	 */
 	@Override
 	public List<String> getToDos() {
-		if (freeSelected==null)
+		if (freeSelected==null && mode==CharGenMode.CREATING)
 			return Arrays.asList(RES.getString("languagegen.todo"));
 		return new ArrayList<>();
 	}

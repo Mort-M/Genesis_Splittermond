@@ -1,6 +1,8 @@
 package org.prelle.splittermond.chargen.jfx;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
@@ -19,6 +21,8 @@ import org.prelle.splittermond.chargen.jfx.sections.SpellSchoolSection;
 import de.rpgframework.character.CharacterHandle;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
+import de.rpgframework.genericrpg.ToDoElement;
+import de.rpgframework.genericrpg.ToDoElement.Severity;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.ChoiceBox;
@@ -122,6 +126,7 @@ public class SMSpellPage extends SpliMoManagedScreenPage {
 		schools.selectedSchoolProperty().addListener( (ov,o,n) -> {
 			spells.setSchool(n);
 			specials.setSchool(n);
+			updateToDos();
 		});
 	}
 
@@ -139,10 +144,25 @@ public class SMSpellPage extends SpliMoManagedScreenPage {
 	}
 	
 	//-------------------------------------------------------------------
+	public void refresh() {
+		super.refresh();
+		updateToDos();
+	}
+	
+	//-------------------------------------------------------------------
 	public void refreshSpells() {
 		spells.refresh();
 		specials.refresh();
 		setPointsFree(charGen.getModel().getExperienceFree());
+	}
+	
+	//-------------------------------------------------------------------
+	private void updateToDos() {
+		secLine2.getToDoList().clear();
+		List<String> tmp = charGen.getSpellController().getToDos(schools.selectedSchoolProperty().get());
+		List<ToDoElement> todos = new ArrayList<>();
+		tmp.forEach(ev -> todos.add(new ToDoElement(Severity.STOPPER, ev)));
+		secLine2.getToDoList().addAll(todos);
 	}
 
 }

@@ -9,7 +9,7 @@
    background: -fx-base; 
    textcolor-highlight-primary  : rgba(255,0,0, 1);
    textcolor-stopper: red;
-   textcolor-warning: orange;
+   textcolor-warning: derive(rgb(255,0,0), +50%);
 }
 
 /*******************************

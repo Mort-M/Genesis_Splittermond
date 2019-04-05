@@ -3,21 +3,18 @@ package org.prelle.splittermond.chargen.jfx;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.rpgframework.jfx.DoubleSection;
 import org.prelle.rpgframework.jfx.Section;
-import org.prelle.splimo.Attribute;
 import org.prelle.splimo.BasePluginData;
 import org.prelle.splimo.charctrl.CharacterController;
-import org.prelle.splittermond.chargen.jfx.sections.AttributePrimarySection;
-import org.prelle.splittermond.chargen.jfx.sections.AttributeSecondarySection;
-import org.prelle.splittermond.chargen.jfx.sections.BasicDataSection;
 import org.prelle.splittermond.chargen.jfx.sections.CultureLoreSection;
 import org.prelle.splittermond.chargen.jfx.sections.FlawsSection;
 import org.prelle.splittermond.chargen.jfx.sections.LanguagesSection;
-import org.prelle.splittermond.chargen.jfx.sections.PortraitSection;
 import org.prelle.splittermond.chargen.jfx.sections.PowerSection;
 
 import de.rpgframework.character.CharacterHandle;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
+import de.rpgframework.genericrpg.ToDoElement;
+import de.rpgframework.genericrpg.ToDoElement.Severity;
 
 /**
  * @author Stefan Prelle
@@ -33,8 +30,8 @@ public class SMPowerLangCultPage extends SpliMoManagedScreenPage {
 	private LanguagesSection languages;
 	private CultureLoreSection cultureLores;
 
-	private Section secBasic;
-	private Section secAttrib;
+	private Section secLine1;
+	private Section secLine2;
 
 	//-------------------------------------------------------------------
 	public SMPowerLangCultPage(CharacterController control, ViewMode mode, CharacterHandle handle, ScreenManagerProvider provider) {
@@ -57,8 +54,8 @@ public class SMPowerLangCultPage extends SpliMoManagedScreenPage {
 		powers = new PowerSection(UI.getString("section.powers"), charGen, provider);
 		flaws = new FlawsSection(UI.getString("section.flaws"), charGen, provider);
 
-		secBasic = new DoubleSection(powers, flaws);
-		getSectionList().add(secBasic);
+		secLine1 = new DoubleSection(powers, flaws);
+		getSectionList().add(secLine1);
 
 		// Interactivity
 		powers.showHelpForProperty().addListener( (ov,o,n) -> { if (n!=null) updateHelp(n.getPower()); else updateHelp(null); });
@@ -69,8 +66,8 @@ public class SMPowerLangCultPage extends SpliMoManagedScreenPage {
 		languages = new LanguagesSection(UI.getString("section.languages"), charGen, provider);
 		cultureLores= new CultureLoreSection(UI.getString("section.culturelores"), charGen, provider);
 
-		secAttrib = new DoubleSection(cultureLores, languages);
-		getSectionList().add(secAttrib);
+		secLine2 = new DoubleSection(cultureLores, languages);
+		getSectionList().add(secLine2);
 
 		// Interactivity
 		languages.showHelpForProperty().addListener( (ov,o,n) -> { if (n!=null) updateHelp(n.getLanguage()); else updateHelp(null); });
@@ -101,6 +98,23 @@ public class SMPowerLangCultPage extends SpliMoManagedScreenPage {
 			this.setDescriptionHeading(null);
 			this.setDescriptionPageRef(null);
 			this.setDescriptionText(null);
+		}
+	}
+
+	//-------------------------------------------------------------------
+	public void refresh() {
+		super.refresh();
+		secLine1.getToDoList().clear();
+		for (String tmp : charGen.getPowerController().getToDos()) {
+			secLine1.getToDoList().add(new ToDoElement(Severity.STOPPER, tmp));
+		}
+		
+		secLine2.getToDoList().clear();
+		for (String tmp : charGen.getLanguageController().getToDos()) {
+			secLine2.getToDoList().add(new ToDoElement(Severity.STOPPER, tmp));
+		}
+		for (String tmp : charGen.getCultureLoreController().getToDos()) {
+			secLine2.getToDoList().add(new ToDoElement(Severity.STOPPER, tmp));
 		}
 	}
 

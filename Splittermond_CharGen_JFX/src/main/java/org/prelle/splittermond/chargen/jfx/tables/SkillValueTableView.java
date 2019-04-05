@@ -7,12 +7,12 @@ import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
+import org.prelle.javafx.AttentionPane;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.NavigButtonControl;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.javafx.SymbolIcon;
 import org.prelle.javafx.skin.GridPaneTableViewSkin;
-import org.prelle.rpgframework.jfx.AttentionPane;
 import org.prelle.rpgframework.jfx.NumericalValueTableCell;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.MastershipReference;

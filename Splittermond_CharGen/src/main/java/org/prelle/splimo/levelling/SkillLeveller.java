@@ -267,7 +267,7 @@ public class SkillLeveller implements GeneratingSkillController {
 	public List<String> getToDos() {
 		ArrayList<String> ret = new ArrayList<>();
 		if (getPointsLeft()>0)
-			ret.add(String.format(RES.getString("skillgen.todo.points"), getPointsLeft()));
+			ret.add(String.format(RES.getString("skillgen.todo.masterships"), getPointsLeft()));
 		// Find grouped skills without focus
 		for (SkillValue val : data.getSkills(SkillType.NORMAL)) {
 			if (val.getSkill().isGrouped()) {
