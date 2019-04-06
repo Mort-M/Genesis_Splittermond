@@ -66,6 +66,7 @@ import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.RoleplayingSystem;
 import de.rpgframework.genericrpg.Datable;
+import de.rpgframework.genericrpg.HistoryElement;
 import de.rpgframework.genericrpg.Reward;
 import de.rpgframework.genericrpg.modification.Modification;
 import de.rpgframework.products.Adventure;
@@ -386,7 +387,7 @@ public class SplitterTools {
 	/**
 	 * @param aggregate Aggregate history elements with same adventure
 	 */
-	public static List<HistoryElementImpl> convertToHistoryElementList(SpliMoCharacter charac, boolean aggregate) {
+	public static List<HistoryElement> convertToHistoryElementList(SpliMoCharacter charac, boolean aggregate) {
 		// Initial reward
 		logger.warn("Sort "+charac.getRewards().size()+" rewards  and "+charac.getHistory().size()+" mods");
 
@@ -413,7 +414,7 @@ public class SplitterTools {
 		/*
 		 * Now build a list of HistoryElements. Start a new H
 		 */
-		List<HistoryElementImpl> ret = new ArrayList<HistoryElementImpl>();
+		List<HistoryElement> ret = new ArrayList<HistoryElement>();
 		HistoryElementImpl current = null;
 		ProductService sessServ = null;
 		try {

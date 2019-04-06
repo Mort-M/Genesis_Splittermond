@@ -121,7 +121,7 @@ public class SpellSchoolSection extends SingleSection {
 	}
 
 	//-------------------------------------------------------------------
-	private void updateAttentionFlags() {
+	public void updateAttentionFlags() {
 		logger.debug("updateAttentionFlags");
 		
 		/*

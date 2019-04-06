@@ -176,21 +176,7 @@
    -fx-background-repeat: no-repeat;
 }
 
-.skill-screen-combat {
-   -fx-background-color: background;
-   -fx-background-image: url('../images/BG_SkillsCombat.png');
-   -fx-background-position: right bottom;
-   -fx-background-repeat: no-repeat;
-}
-
 #splittermond-spells {
-   -fx-background-color: background;
-   -fx-background-image: url('../images/BG_SkillsMagic.png');
-   -fx-background-position: right bottom;
-   -fx-background-repeat: no-repeat;
-}
-
-.spell-screen {
    -fx-background-color: background;
    -fx-background-image: url('../images/BG_Spells.png');
    -fx-background-position: right bottom;
@@ -211,6 +197,19 @@
    -fx-background-repeat: no-repeat;
 }
 
+#splittermond-development {
+   -fx-background-color: background;
+   -fx-background-image: url('../images/BG_SkillsCombat.png');
+   -fx-background-position: right bottom;
+   -fx-background-repeat: no-repeat;
+}
+#splittermond-development .character-document-view-description {
+  -fx-max-width: 30em;
+  -fx-min-width: 15em;
+}
+#splittermond-development .description-text {
+  -fx-max-width: 30em;
+}
 
 /*******************************
  * Tables

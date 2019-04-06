@@ -58,6 +58,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 	private SMSpellPage  pgSpells;
 	private SMResourceCompanionPage  pgResources;
 	private SMEquipmentPage  pgEquipment;
+	private SMDevelopmentPage pgDevelop;
 
 	private AttentionMenuItem navOverview;
 	private AttentionMenuItem navPowers;
@@ -65,6 +66,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 	private AttentionMenuItem navSpells;
 	private AttentionMenuItem navResources;
 	private MenuItem navEquipment;
+	private MenuItem navDevelop;
 
 	//-------------------------------------------------------------------
 	public CharacterViewScreenSpliMo2(CharacterController control, ViewMode mode, CharacterHandle handle) {
@@ -103,6 +105,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		pgSpells    = new SMSpellPage(control, mode, handle, this);
 		pgResources = new SMResourceCompanionPage(control, mode, handle, this);
 		pgEquipment = new SMEquipmentPage(control, mode, handle, this);
+		pgDevelop   = new SMDevelopmentPage(control, handle, this);
 	}
 
 	//-------------------------------------------------------------------
@@ -145,8 +148,9 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		navSpells     = new AttentionMenuItem(RES.getString("navItem.spells"), icoMagic);
 		navResources  = new AttentionMenuItem(RES.getString("navItem.resources"), icoChest);
 		navEquipment  = new MenuItem(RES.getString("navItem.gear"), icoGear);
+		navDevelop    = new MenuItem(RES.getString("navItem.develop"), new FontIcon("\uD83D\uDCC8"));
 
-		this.getNavigationItems().addAll(navOverview, navPowers, navSkills, navSpells, navResources, navEquipment);
+		this.getNavigationItems().addAll(navOverview, navPowers, navSkills, navSpells, navResources, navEquipment, navDevelop);
 	}
 
 	//-------------------------------------------------------------------
@@ -308,18 +312,8 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 //	}
 
 	//--------------------------------------------------------------------
-	private void refresh() {
-		logger.debug("refresh");
-
-		setHeader(model.getName());
-		pgOverview.refresh();
-		pgPowers.refresh();
-		pgSkills.refresh();
-		pgSpells.refresh();
-		pgResources.refresh();
-		pgEquipment.refresh();
-//		pgVehicles.refresh();
-		
+	private void updateAttentionFlags() {
+		logger.debug("updateAttentionFlags");
 		navOverview.setAttentionFlag(!control.getAttributeController().getToDos().isEmpty());
 		navOverview.setAttentionToolTip(control.getAttributeController().getToDos());
 		
@@ -338,6 +332,23 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		powerCultToDos.addAll(control.getCultureLoreController().getToDos());
 		navPowers.setAttentionFlag(!powerCultToDos.isEmpty());
 		navPowers.setAttentionToolTip(powerCultToDos);
+	}
+
+	//--------------------------------------------------------------------
+	private void refresh() {
+		logger.debug("refresh");
+
+		setHeader(model.getName());
+		pgOverview.refresh();
+		pgPowers.refresh();
+		pgSkills.refresh();
+		pgSpells.refresh();
+		pgResources.refresh();
+		pgEquipment.refresh();
+//		pgVehicles.refresh();
+		pgDevelop.refresh();
+		
+		updateAttentionFlags();
 	}
 
 	//-------------------------------------------------------------------
@@ -360,6 +371,8 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			setContent(pgResources);
 		} else if (newValue==navEquipment) {
 			setContent(pgEquipment);
+		} else if (newValue==navDevelop) {
+			setContent(pgDevelop);
 		}
 	}
 
@@ -375,6 +388,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		pgSpells.setResponsiveMode(value);
 		pgResources.setResponsiveMode(value);
 		pgEquipment.setResponsiveMode(value);
+//		pgDevelop.setResponsiveMode(value);
 	}
 
 	//-------------------------------------------------------------------
@@ -384,6 +398,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 	@Override
 	public void handleGenerationEvent(GenerationEvent event) {
 		logger.debug("RCV "+event.getType());
+		updateAttentionFlags();
 		switch (event.getType()) {
 		case POWER_ADDED:
 		case POWER_CHANGED:

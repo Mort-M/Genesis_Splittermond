@@ -154,6 +154,7 @@ public class SMSpellPage extends SpliMoManagedScreenPage {
 		spells.refresh();
 		specials.refresh();
 		setPointsFree(charGen.getModel().getExperienceFree());
+		updateToDos();
 	}
 	
 	//-------------------------------------------------------------------
@@ -163,6 +164,7 @@ public class SMSpellPage extends SpliMoManagedScreenPage {
 		List<ToDoElement> todos = new ArrayList<>();
 		tmp.forEach(ev -> todos.add(new ToDoElement(Severity.STOPPER, ev)));
 		secLine2.getToDoList().addAll(todos);
+		schools.updateAttentionFlags();
 	}
 
 }

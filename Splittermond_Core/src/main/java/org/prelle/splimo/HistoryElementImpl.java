@@ -135,4 +135,15 @@ public class HistoryElementImpl implements HistoryElement {
 		return spent;
 	}
 
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.HistoryElement#getTotalExperience()
+	 */
+	@Override
+	public int getTotalExperience() {
+		int sum = 0;
+		for (Reward reward : gained) sum+=reward.getExperiencePoints();
+		return sum;
+	}
+
 }
