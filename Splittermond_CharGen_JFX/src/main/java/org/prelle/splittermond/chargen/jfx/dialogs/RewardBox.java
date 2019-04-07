@@ -25,7 +25,6 @@ import org.prelle.splimo.modifications.MoneyModification;
 import org.prelle.splimo.modifications.ResourceModification;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splittermond.chargen.jfx.ViewMode;
-import org.prelle.splittermond.chargen.jfx.sections.SpellListSection;
 
 import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.core.RoleplayingSystem;

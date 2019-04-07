@@ -9,6 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
+import org.prelle.javafx.ManagedDialog;
 import org.prelle.javafx.ManagedScreen;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.rpgframework.jfx.DevelopmentPage;
@@ -42,6 +43,7 @@ public class SMDevelopmentPage extends DevelopmentPage {
 
 	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
 
+	private ScreenManagerProvider provider;
 	private CharacterController control;
 	private SpliMoCharacter model;
 
@@ -54,6 +56,7 @@ public class SMDevelopmentPage extends DevelopmentPage {
 		super(UI);
 		this.setId("splittermond-development");
 		this.setTitle(control.getModel().getName());
+		this.provider = provider;
 		this.control = control;
 		model = control.getModel();
 		logger.info("<init>()");
@@ -70,6 +73,7 @@ public class SMDevelopmentPage extends DevelopmentPage {
 	//-------------------------------------------------------------------
 	@Override
 	public void refresh() {
+		logger.info("refresh");
 		history.setData(SplitterTools.convertToHistoryElementList(model, super.shallBeAggregated()));
 		expLine.setData(control.getModel());
 		
@@ -93,8 +97,11 @@ public class SMDevelopmentPage extends DevelopmentPage {
 	 */
 	@Override
 	public HistoryElement openAdd() {
-		RewardBox dialog = new RewardBox();
+		RewardBox content = new RewardBox();
 		logger.warn("TODO: openAdd");
+		
+		ManagedDialog dialog = new ManagedDialog(UI.getString("dialog.reward.title"), content, CloseType.OK, CloseType.CANCEL);
+		
 //		ManagedScreen screen = new ManagedScreen() {
 //			@Override
 //			public boolean close(CloseType closeType) {
@@ -116,21 +123,21 @@ public class SMDevelopmentPage extends DevelopmentPage {
 //		dialog.enoughDataProperty().addListener( (ov,o,n) -> {
 //			skin.setDisabled(CloseType.OK, !n);
 //		});
-//		CloseType closed = (CloseType)manager.showAndWait(screen);
-//		
-//		if (closed==CloseType.OK) {
-//			RewardImpl reward = dialog.getDataAsReward();
-//			logger.debug("Add reward "+reward);
-//			SplitterTools.reward(model, reward);
-//			HistoryElementImpl elem = new HistoryElementImpl();
-//			elem.setName(reward.getTitle());
-//			elem.addGained(reward);
-//			if (reward.getId()!=null)
-//				elem.setAdventure(RPGFrameworkLoader.getInstance().getProductService().getAdventure(RoleplayingSystem.SPLITTERMOND, reward.getId()));
-//			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.EXPERIENCE_CHANGED, new int[]{model.getExperienceFree(), model.getExperienceInvested()}));
-//			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.MONEY_CHANGED, null));
-//			return elem;
-//		}
+		CloseType closed = (CloseType)provider.getScreenManager().showAndWait(dialog);
+		
+		if (closed==CloseType.OK) {
+			RewardImpl reward = content.getDataAsReward();
+			logger.debug("Add reward "+reward);
+			SplitterTools.reward(model, reward);
+			HistoryElementImpl elem = new HistoryElementImpl();
+			elem.setName(reward.getTitle());
+			elem.addGained(reward);
+			if (reward.getId()!=null)
+				elem.setAdventure(RPGFrameworkLoader.getInstance().getProductService().getAdventure(RoleplayingSystem.SPLITTERMOND, reward.getId()));
+			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.EXPERIENCE_CHANGED, new int[]{model.getExperienceFree(), model.getExperienceInvested()}));
+			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.MONEY_CHANGED, null));
+			return elem;
+		}
 		return null;
 	}
 
