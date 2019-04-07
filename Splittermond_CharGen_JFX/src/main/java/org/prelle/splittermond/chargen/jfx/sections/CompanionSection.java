@@ -1,27 +1,27 @@
 package org.prelle.splittermond.chargen.jfx.sections;
 
+import java.util.MissingResourceException;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ScreenManagerProvider;
-import org.prelle.rpgframework.jfx.DescriptionPane;
-import org.prelle.rpgframework.jfx.OptionalDescriptionPane;
-import org.prelle.splimo.Power;
-import org.prelle.splimo.PowerReference;
+import org.prelle.splimo.ResourceReference;
+import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CharacterController;
+import org.prelle.splimo.chargen.creature.CreatureGenerator;
 import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.creature.CreatureReference;
-import org.prelle.splittermond.chargen.jfx.listcells.AvailablePowerCell;
+import org.prelle.splittermond.chargen.jfx.creatures.CreatureCreateDialog;
+import org.prelle.splittermond.chargen.jfx.creatures.CreatureListView;
 import org.prelle.splittermond.chargen.jfx.listcells.CreatureReferenceListCell;
-import org.prelle.splittermond.chargen.jfx.listcells.PowerEditingCell;
 
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.geometry.Bounds;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
 
 /**
  * @author Stefan Prelle
@@ -30,6 +30,11 @@ import javafx.scene.layout.VBox;
 public class CompanionSection extends GenericListSection<CreatureReference> {
 
 	private static PropertyResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle(CompanionSection.class.getName());
+
+	private ContextMenu ctxMenuAdd;
+	private MenuItem menuAddCreature;
+	private MenuItem menuCreateCreature;
+	private MenuItem menuCreateEntourage;
 
 	//-------------------------------------------------------------------
 	public CompanionSection(String title, CharacterController ctrl, ScreenManagerProvider provider) {
@@ -42,6 +47,20 @@ public class CompanionSection extends GenericListSection<CreatureReference> {
 		list.setMaxHeight(Double.MAX_VALUE);
 		
 		list.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> getDeleteButton().setDisable(n==null));
+
+		/*
+		 * Add-Button context menu
+		 * List all available ruleplugins
+		 */
+		ctxMenuAdd = new ContextMenu();
+		menuAddCreature    = new MenuItem(RES.getString("section.creature.add.add_creature"));
+		menuCreateCreature = new MenuItem(RES.getString("section.creature.add.create_creature"));
+		menuCreateEntourage= new MenuItem(RES.getString("section.creature.add.create_entourage"));
+//		getStaticButtons().addAll(menuAddCreature, menuCreateCreature);
+		menuAddCreature.setOnAction( event -> addCreatureClicked());
+		menuCreateCreature.setOnAction( event -> createCreatureClicked());
+//		ctxMenuAdd.getItems().addAll(menuAddCreature);
+		ctxMenuAdd.getItems().addAll(menuAddCreature, menuCreateCreature);
 	}
 
 	//-------------------------------------------------------------------
@@ -50,31 +69,11 @@ public class CompanionSection extends GenericListSection<CreatureReference> {
 	 */
 	@Override
 	protected void onAdd() {
-		logger.warn("TODO: onAdd");
-//		Label question = new Label(RES.getString("section.resource.dialog.add.question"));
-//		ListView<Creature> myList = new ListView<>();
-////		myList.setCellFactory(lv -> new CreatureListCell(control.getCreatureController()));
-//		myList.getItems().addAll(control.getCreatureController().getAvailableCreatures());
-//		myList.setPlaceholder(new Label(RES.getString("section.resource.dialog.add.placeholder")));
-//		VBox innerLayout = new VBox(10, question, myList);
-//		
-//		final DescriptionPane descr = new DescriptionPane();
-//		OptionalDescriptionPane layout = new OptionalDescriptionPane(innerLayout, descr);
-//		
-//		myList.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
-//			descr.setText(n.getName(), n.getProductName()+" "+n.getPage(), n.getHelpText());
-//		});
-//		
-//		
-//		CloseType result = provider.getScreenManager().showAlertAndCall(AlertType.QUESTION, RES.getString("section.resource.dialog.add.title"), layout);
-//		if (result==CloseType.OK) {
-//			Creature value = myList.getSelectionModel().getSelectedItem();
-//			if (value!=null) {
-//				logger.debug("Try add resource: "+value);
-//				myList.getItems().add(value);
-//				control.getCreatureController().openCreature(value);
-//			}
-//		}
+		Bounds bounds = getAddButton().getBoundsInLocal();
+        Bounds screenBounds = getAddButton().localToScreen(bounds);
+        int x = (int) screenBounds.getMinX();
+        int y = (int) screenBounds.getMinY();
+		ctxMenuAdd.show(getAddButton(), x,y);
 	}
 
 	//-------------------------------------------------------------------
@@ -100,6 +99,49 @@ public class CompanionSection extends GenericListSection<CreatureReference> {
 	@Override
 	public void refresh() {
 		setData(control.getModel().getCreatures());
+	}
+
+	//-------------------------------------------------------------------
+	private void addCreatureClicked() {
+		logger.debug("addCreatureClicked");
+		String heading = RES.getString("section.creatures.addcreaturedialog.title"); 
+
+		CreatureListView list = new CreatureListView();
+		list.getItems().addAll(SplitterMondCore.getCreatures(SplitterMondCore.getCreatureFeatureType("CREATURE")));
+		
+//		NavigButtonControl control = new NavigButtonControl();
+		
+		CloseType close = getManagerProvider().getScreenManager().showAlertAndCall(AlertType.QUESTION, heading, list);
+		if (close==CloseType.OK) {
+			Creature selected = list.getSelectionModel().getSelectedItem();
+			if (selected==null) {
+				logger.warn("Clicked OK but selected nothing");
+			} else {
+				CreatureReference ref = new CreatureReference(selected);
+				control.getModel().addCreature(ref);
+				refresh();
+			}
+		}
+	}
+
+	//-------------------------------------------------------------------
+	private void createCreatureClicked() {
+		logger.debug("createCreatureClicked");
+		CreatureGenerator creatGen = new CreatureGenerator((ResourceReference)null);
+		try {
+			CreatureCreateDialog screen = new CreatureCreateDialog(creatGen);
+			CloseType result = (CloseType)getManagerProvider().getScreenManager().showAndWait(screen);
+			logger.debug("CreateCreatureDialog returned with "+result);
+			if (result==CloseType.APPLY) {
+				CreatureReference ref = creatGen.getCreature();
+				logger.info("Created creature: "+ref);
+				control.getModel().addCreature(ref);
+			}
+			refresh();
+		} catch (MissingResourceException e) {
+			e.printStackTrace();
+			logger.error("Missing "+e.getKey()+" in "+ResourceBundle.getBundle(CompanionSection.class.getName()));
+		}
 	}
 
 }

@@ -203,7 +203,7 @@ public class SPRStarter extends Application {
 
 				}
 			};
-			ManagedScreen dia = new CreatureCreateScreen(new CreatureGenerator(resource));
+			ManagedScreen dia = new CreatureCreateDialog(new CreatureGenerator(resource));
 			mgmr = new ScreenManager();
 			mgmr.show(dia);
 			scene = new Scene(mgmr, 1500, 1000);

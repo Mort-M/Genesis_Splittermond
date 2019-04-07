@@ -35,6 +35,7 @@ public interface CreatureController extends CommonCreatureController {
 
 	//-------------------------------------------------------------------
 	public void selectRole(CreatureModule role);
+	public CreatureModuleReference getSelectedRole();
 
 
 	//-------------------------------------------------------------------

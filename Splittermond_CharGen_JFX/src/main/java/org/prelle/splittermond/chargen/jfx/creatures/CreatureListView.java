@@ -1,0 +1,233 @@
+package org.prelle.splittermond.chargen.jfx.creatures;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PropertyResourceBundle;
+import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.creature.Creature;
+import org.prelle.splimo.creature.CreatureReference;
+import org.prelle.splimo.items.Enhancement;
+import org.prelle.splimo.items.Enhancement.EnhancementType;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.sections.CompanionSection;
+
+import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
+import javafx.scene.Node;
+import javafx.scene.SnapshotParameters;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.util.Callback;
+
+/**
+ * @author prelle
+ *
+ */
+public class CreatureListView extends ListView<Creature> {
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+
+	private static PropertyResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle(CompanionSection.class.getName());
+	
+	//--------------------------------------------------------------------
+	public CreatureListView() {
+		initComponents();
+		initValueFactories();
+		initInteractivity();
+	}
+
+	//--------------------------------------------------------------------
+	private void initComponents() {
+		getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        setPlaceholder(new Text(RES.getString("placeholder.creature.possible")));
+        setStyle("-fx-pref-width: 22em; -fx-background-color: transparent; -fx-border-width: 1px; -fx-border-color: black;");
+ 	}
+
+	//-------------------------------------------------------------------
+	private void initValueFactories() {
+		setCellFactory(new Callback<ListView<Creature>, ListCell<Creature>>() {
+			public ListCell<Creature> call(ListView<Creature> p) {
+				return new CreatureCell();
+			}
+		});
+	}
+
+	//-------------------------------------------------------------------
+	private void initInteractivity() {
+		setOnDragDropped(event -> dragDropped(event));
+		setOnDragOver(event -> dragOver(event));
+	}
+	
+	//-------------------------------------------------------------------
+	private void dragDropped(DragEvent event) {
+       /* if there is a string data on dragboard, read it and use it */
+        Dragboard db = event.getDragboard();
+        boolean success = false;
+        if (db.hasString()) {
+            String enhanceID = db.getString();
+        	logger.debug("Dropped "+enhanceID);
+        	// Get reference for ID
+        	CreatureReference ref = null;
+//        	for (CreatureReference tmp : control.getItem().getEnhancements()) {
+//        		if (tmp.getID().equals(enhanceID)) {
+//        			ref = tmp;
+//        			break;
+//        		}
+//        	}
+//        	if (ref==null) {
+//        		logger.warn("Unknown reference to remove");
+//        	} else if (control.canBeRemoved(ref)) {
+//        		control.removeEnhancement(ref);
+//        	}
+        	logger.warn("TODO: remove creature");
+        }
+        /* let the source know whether the string was successfully 
+         * transferred and used */
+        event.setDropCompleted(success);
+        
+        event.consume();
+	}
+
+	//-------------------------------------------------------------------
+	private void dragOver(DragEvent event) {
+		Node target = (Node) event.getSource();
+		if (event.getGestureSource() != target && event.getDragboard().hasString()) {
+            /* allow for both copying and moving, whatever user chooses */
+            event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+        }
+	}
+
+}
+
+class CreatureCell extends ListCell<Creature> {
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+
+	private Creature data;
+	private HBox layout;
+	private ImageView iView;
+	private VBox layoutWithoutGraphic;
+	private Label name;
+	private FlowPane flow;
+	private Label cost;
+	
+	//-------------------------------------------------------------------
+	public CreatureCell() {
+		layoutWithoutGraphic = new VBox();
+		name   = new Label();
+		cost   = new Label();
+		iView  = new ImageView();
+		iView.setFitHeight(48);
+		iView.setFitWidth(48);
+		flow   = new FlowPane(Orientation.HORIZONTAL);
+		layoutWithoutGraphic.getChildren().addAll(name, flow);
+		layout = new HBox(2);
+		layout.getChildren().addAll(iView, layoutWithoutGraphic, cost);
+		layout.getStyleClass().add("content");
+		HBox.setMargin(cost, new Insets(0,5,0,5));
+		
+		name.getStyleClass().add("text-small-subheader");
+		flow.getStyleClass().add("text-tertiary-info");
+		cost.getStyleClass().add("text-subheader");
+		
+		setStyle("-fx-pref-width: 20em");
+//		setPrefWidth(280);
+		
+		
+//		this.setOnTouchMoved(event -> logger.debug("onTouchMoved "+event));
+		this.setOnDragDetected(event -> dragStarted(event));
+//		this.setOnMouseClicked(event -> {
+//			if (event.getClickCount()==2)
+//				parent.fireAction(data);
+//		});
+	}
+
+	//-------------------------------------------------------------------
+	private void dragStarted(MouseEvent event) {
+		logger.debug("Drag started "+event.getSource());
+		Node source = (Node) event.getSource();
+
+		/* drag was detected, start a drag-and-drop gesture*/
+        /* allow any transfer mode */
+        Dragboard db = source.startDragAndDrop(TransferMode.ANY);
+        
+        /* Put a string on a dragboard */
+        ClipboardContent content = new ClipboardContent();
+        content.putString(data.getId());
+        db.setContent(content);
+        
+        /* Drag image */
+        WritableImage snapshot = source.snapshot(new SnapshotParameters(), null);
+        db.setDragView(snapshot);
+        
+        event.consume();	
+    }
+	
+	//-------------------------------------------------------------------
+	/**
+	 * @see javafx.scene.control.Cell#updateItem(java.lang.Object, boolean)
+	 */
+	@Override
+	protected void updateItem(Creature item, boolean empty) {
+		super.updateItem(item, empty);
+		data = item;
+		
+		if (empty) {
+			setGraphic(null);
+			name.setText(null);
+			cost.setText(null);
+			return;
+		} else {
+			setGraphic(layout);
+			name.setText(item.getName());
+			cost.setText(String.valueOf(item.getCreatureFeatureLevel()));
+//			iView.setImage(IMAGES.get(item.getType()));
+			flow.getChildren().clear();
+			String product = item.getProductName()+" "+item.getPage();
+			flow.getChildren().add(new Label(product));
+//			boolean fulfilled = item.getLanguages().isEmpty();
+//			Iterator<Language> it = item.getLanguages().iterator();
+//			while (it.hasNext()) {
+//				Language lang = it.next();
+//				Label label = new Label(lang.getName());
+//				// Color language depending on its availability
+//				if (parent.getData()!=null) {
+//					if (parent.getData().hasLanguage(lang)) {
+//						label.setStyle("-fx-text-fill: green");
+//						fulfilled = true;
+//					} else
+//						label.setStyle("-fx-text-fill: red");
+//				}
+//				flow.getChildren().add(label);
+//				if (it.hasNext())
+//					flow.getChildren().add(new Label(", "));
+//			}
+//			if (fulfilled) {
+//				layout.getStyleClass().clear();
+//				layout.getStyleClass().add("selectable-list-item");
+//			} else {
+//				layout.getStyleClass().clear();
+//				layout.getStyleClass().add("unselectable-list-item");
+//			}
+		}
+		
+	}
+
+}

@@ -260,6 +260,13 @@ public class CreatureGenerator implements CreatureController {
 
         update();
     }
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.splimo.charctrl.CreatureController#getSelectedRole()
+	 */
+	public CreatureModuleReference getSelectedRole() {
+		return modulBased.getRole();
+	}
 
     //-------------------------------------------------------------------
     /**

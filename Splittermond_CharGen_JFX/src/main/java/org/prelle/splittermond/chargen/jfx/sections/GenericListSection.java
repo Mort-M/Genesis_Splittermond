@@ -80,6 +80,11 @@ public abstract class GenericListSection<T> extends SingleSection {
 	}
 
 	//-------------------------------------------------------------------
+	public ListView<T> getListView() {
+		return list;
+	}
+
+	//-------------------------------------------------------------------
 	protected abstract void onAdd();
 
 	//-------------------------------------------------------------------

@@ -6,6 +6,7 @@ import org.prelle.rpgframework.jfx.Section;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.BasePluginData;
 import org.prelle.splimo.charctrl.CharacterController;
+import org.prelle.splimo.creature.CreatureReference;
 import org.prelle.splittermond.chargen.jfx.sections.AttributePrimarySection;
 import org.prelle.splittermond.chargen.jfx.sections.AttributeSecondarySection;
 import org.prelle.splittermond.chargen.jfx.sections.BasicDataSection;
@@ -61,7 +62,8 @@ public class SMResourceCompanionPage extends SpliMoManagedScreenPage {
 		getSectionList().add(section1);
 
 		// Interactivity
-		resources.showHelpForProperty().addListener( (ov,o,n) -> { if (n!=null) updateHelp(n.getResource()); else updateHelp(null); });
+		resources.showHelpForProperty().addListener( (ov,o,n) -> { companions.getListView().getSelectionModel().clearSelection();  if (n!=null) updateHelp(n.getResource()); else updateHelp( (BasePluginData)null); });
+		companions.showHelpForProperty().addListener( (ov,o,n) -> { resources.getListView().getSelectionModel().clearSelection(); updateHelp(n); });
 	}
 
 //	//-------------------------------------------------------------------
@@ -96,6 +98,19 @@ public class SMResourceCompanionPage extends SpliMoManagedScreenPage {
 			this.setDescriptionHeading(data.getName());
 			this.setDescriptionPageRef(data.getProductNameShort()+" "+data.getPage());
 			this.setDescriptionText(data.getHelpText());
+		} else {
+			this.setDescriptionHeading(null);
+			this.setDescriptionPageRef(null);
+			this.setDescriptionText(null);
+		}
+	}
+
+	//-------------------------------------------------------------------
+	private void updateHelp(CreatureReference data) {
+		if (data!=null) {
+			this.setDescriptionHeading(data.getName());
+//			this.setDescriptionPageRef(data.getProductNameShort()+" "+data.getPage());
+//			this.setDescriptionText(data.getHelpText());
 		} else {
 			this.setDescriptionHeading(null);
 			this.setDescriptionPageRef(null);
