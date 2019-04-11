@@ -6,14 +6,18 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.AttentionPane;
+import org.prelle.javafx.SymbolIcon;
 import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.charctrl.CommonCreatureController;
 import org.prelle.splimo.creature.CreatureModuleReference;
 import org.prelle.splimo.creature.CreatureModuleReference.NecessaryChoice;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.SnapshotParameters;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.image.WritableImage;
@@ -31,6 +35,7 @@ public class CreatureModuleReferenceListCell extends ListCell<CreatureModuleRefe
 
 	private CommonCreatureController control;
 	
+	private Button btnEdit;
 	private Label lbName;
 	private Label lbReference;
 	private Label lbCost;
@@ -42,20 +47,22 @@ public class CreatureModuleReferenceListCell extends ListCell<CreatureModuleRefe
 	//-------------------------------------------------------------------
 	public CreatureModuleReferenceListCell(CommonCreatureController control) {
 		this.control = control;
+		btnEdit = new Button(null, new SymbolIcon("edit"));
 		lbName = new Label();
 		lbName.setStyle("-fx-font-weight: bold");
 		lbReference = new Label();
 		lbReference.setWrapText(true);
+		attention = new AttentionPane(lbReference);
 		lbCost = new Label();
 		lbCost.setStyle("-fx-font-weight: bold; -fx-font-size: 200%");
 
-		VBox col1 = new VBox(5, lbName, lbReference);
+		VBox col1 = new VBox(5, lbName, attention);
 		col1.setMaxWidth(Double.MAX_VALUE);
-		layout = new HBox(col1, lbCost);
+		layout = new HBox(btnEdit, col1, lbCost);
+		layout.setStyle("-fx-spacing: 0.2em");
 		layout.setMaxWidth(Double.MAX_VALUE);
 		HBox.setHgrow(col1, Priority.ALWAYS);
 		
-		attention = new AttentionPane(layout);
 		
 		initInteractivity();
 //        setStyle("-fx-pref-width: 25em;");
@@ -72,7 +79,7 @@ public class CreatureModuleReferenceListCell extends ListCell<CreatureModuleRefe
 		if (empty) {
 			setGraphic(null);
 		} else {
-			setGraphic(attention);
+			setGraphic(layout);
 			lbName.setText(item.getModule().getName());
 			lbReference.setText(item.getModule().getProductName()+" "+item.getModule().getPage());
 			lbCost.setText(String.valueOf(item.getModule().getCost()));
@@ -93,6 +100,8 @@ public class CreatureModuleReferenceListCell extends ListCell<CreatureModuleRefe
 			lbReference.setText(String.join(",\n", choices));
 			attention.setAttentionFlag(requiresAttention);
 			attention.setAttentionToolTip(origin);
+			btnEdit.setVisible(requiresAttention || !choices.isEmpty()); 
+			btnEdit.setUserData(data);
 		}
 	}
 	
@@ -100,6 +109,12 @@ public class CreatureModuleReferenceListCell extends ListCell<CreatureModuleRefe
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
 		this.setOnDragDetected(event -> dragStarted(event));
+		
+		setOnMouseClicked(ev -> {
+			if (ev.getClickCount()==2) {
+				btnEdit.fireEvent(new ActionEvent(btnEdit, btnEdit));
+			}
+		});
 	}
 
 	//-------------------------------------------------------------------
@@ -132,4 +147,8 @@ public class CreatureModuleReferenceListCell extends ListCell<CreatureModuleRefe
         event.consume();
     }
 
+	//-------------------------------------------------------------------
+	public void setOnAction(EventHandler<ActionEvent> onEdit) {
+		btnEdit.setOnAction(onEdit);
+	}
 }

@@ -194,7 +194,7 @@ public class CreatureReference extends UniqueObject implements Lifeform, Compara
 		else
 			val = ref.getSkillValue(skill);
 		
-		SkillValue ret = new SkillValue(val);
+		SkillValue ret = (val!=null)?(new SkillValue(val)):(new SkillValue(skill, 0));
 		for (Modification mod : trainingMods) {
 			if (mod instanceof SkillModification && ((SkillModification)mod).getSkill()==skill)
 				ret.addModification((SkillModification)mod);

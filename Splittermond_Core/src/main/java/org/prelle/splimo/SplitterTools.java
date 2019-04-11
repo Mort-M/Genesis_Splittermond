@@ -58,6 +58,7 @@ import org.prelle.splimo.requirements.CreatureModuleRequirement;
 import org.prelle.splimo.requirements.CreatureTypeRequirement;
 import org.prelle.splimo.requirements.ItemFeatureRequirement;
 import org.prelle.splimo.requirements.MastershipRequirement;
+import org.prelle.splimo.requirements.PowerRequirement;
 import org.prelle.splimo.requirements.Requirement;
 import org.prelle.splimo.requirements.SkillRequirement;
 
@@ -358,6 +359,10 @@ public class SplitterTools {
 			if (tmp.isNegated())
 				return SplitterMondCore.getI18nResources().getString("label.negation1")+" "+tmp.getFeature().getName();
 			return tmp.getFeature().getName();
+		}
+		if (req instanceof PowerRequirement) {
+			PowerRequirement tmp = (PowerRequirement)req;
+			return tmp.getPower().getName();
 		}
 
 		logger.error("Missing string conversion for "+req.getClass());

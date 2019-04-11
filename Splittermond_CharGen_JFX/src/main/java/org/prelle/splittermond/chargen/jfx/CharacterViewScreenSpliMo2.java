@@ -24,6 +24,7 @@ import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.levelling.CharacterLeveller;
+import org.prelle.splittermond.chargen.jfx.wizard.CharGenWizardSpliMo;
 
 import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.character.Attachment;
@@ -338,6 +339,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 	private void refresh() {
 		logger.debug("refresh");
 
+		logger.debug("ToDos = "+control.getToDos());
 		setHeader(model.getName());
 		pgOverview.refresh();
 		pgPowers.refresh();
@@ -345,7 +347,6 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		pgSpells.refresh();
 		pgResources.refresh();
 		pgEquipment.refresh();
-//		pgVehicles.refresh();
 		pgDevelop.refresh();
 		
 		updateAttentionFlags();
@@ -400,6 +401,10 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		logger.debug("RCV "+event.getType());
 		updateAttentionFlags();
 		switch (event.getType()) {
+		case ATTRIBUTE_CHANGED:
+		case POINTS_LEFT_ATTRIBUTES:
+			pgOverview.refresh();
+			break;
 		case POWER_ADDED:
 		case POWER_CHANGED:
 		case POWER_REMOVED:
@@ -415,6 +420,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		case RESOURCE_ADDED:
 		case RESOURCE_CHANGED:
 		case RESOURCE_REMOVED:
+		case CREATURE_CHANGED:
 			pgResources.refresh();
 			break;
 		case CULTURELORE_AVAILABLE_CHANGED:
@@ -422,6 +428,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		case POWER_AVAILABLE_REMOVED:
 			break;
 		case SKILL_CHANGED:
+			pgSpells.refresh();
 		case MASTERSHIP_ADDED:
 		case MASTERSHIP_REMOVED:
 			pgSkills.refresh();
@@ -442,6 +449,42 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			break;
 		default:
 			logger.warn("What to do on "+event.getType());
+		}
+	}
+
+	//-------------------------------------------------------------------
+	public void startGeneration() {
+		logger.info("startGeneration "+model);
+		this.mode = ViewMode.GENERATION;
+
+		pgDevelop.setDisable(true);
+		navDevelop.setVisible(true);
+
+		CharGenWizardSpliMo wizard = new CharGenWizardSpliMo(model, (SpliMoCharacterGenerator)control);
+		CloseType close = (CloseType)getManager().showAndWait(wizard);
+		logger.info("TODO Closed with "+close);
+		GenerationEventDispatcher.removeListener(wizard);
+
+		if (close==CloseType.FINISH) {
+			logger.info("Wizard finished");
+			try {
+				byte[] data =SplitterMondCore.save(model);
+				handle = RPGFrameworkLoader.getInstance().getCharacterService().createCharacter(model.getName(), RoleplayingSystem.SPLITTERMOND);
+				RPGFrameworkLoader.getInstance().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, model.getName()+".xml", data);
+				getManager().showAlertAndCall(AlertType.NOTIFICATION, RES.getString("alert.start_tuning.title"),
+						String.format(RES.getString("alert.start_tuning.message"), handle.getPath().toString()));
+//				commandBar.getItems().addAll(cmdPrint);
+			} catch (IOException e) {
+				logger.error("Failed writing newly created character to disk",e);
+				getManager().showAlertAndCall(AlertType.ERROR, RES.getString("error.saving_character.title"),
+						String.format(RES.getString("error.saving_character.message"), e.toString()));
+			}
+			refresh();
+		} else {
+			logger.warn("Wizard "+close);
+//			getScreenManager().closeCurrent(close);
+			getScreenManager().close(this, close);
+			
 		}
 	}
 

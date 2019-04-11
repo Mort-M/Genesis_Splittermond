@@ -1,16 +1,19 @@
 package org.prelle.splittermond.chargen.jfx.creatures;
 
 import java.util.PropertyResourceBundle;
+import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.FontIcon;
 import org.prelle.javafx.ScreenManagerProvider;
+import org.prelle.javafx.SymbolIcon;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.charctrl.CreatureTrainerController;
 import org.prelle.splimo.creature.CreatureModuleReference;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.sections.CompanionSection;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -27,8 +30,8 @@ import javafx.scene.layout.VBox;
 public class TrainingPane extends VBox {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
-	
-	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
+
+	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle(CompanionSection.class.getName());
 	
 	private CreatureTrainerController ctrl;
 	private Label lblHeading; 
@@ -49,12 +52,12 @@ public class TrainingPane extends VBox {
 		lblHeading = new Label(UI.getString("trainingpane.heading")); 
 		tiles = new TilePane();
 		tiles.setPrefColumns(3);
-		btnEdit = new Button(null, new FontIcon("\uE0DD\uE0D8"));
+		btnEdit = new Button(null, new SymbolIcon("edit"));
 	}
 
 	//--------------------------------------------------------------------
 	private void initStyle() {
-		lblHeading.getStyleClass().add("text-subheader");
+		lblHeading.getStyleClass().add("base");
 	}
 
 	//--------------------------------------------------------------------
@@ -87,7 +90,7 @@ public class TrainingPane extends VBox {
 		tiles.getChildren().clear();
 		for (CreatureModuleReference mod : control.getCreature().getTrainings()) {
 			Label lblTraining = new Label(mod.getModule().getName());
-			lblTraining.getStyleClass().addAll("text-small-subheader");
+			lblTraining.getStyleClass().addAll("base");
 			lblTraining.setMaxHeight(Double.MAX_VALUE);
 			lblTraining.setMaxWidth(Double.MAX_VALUE);
 			lblTraining.setStyle("-fx-pref-height: 2em");
@@ -101,8 +104,8 @@ public class TrainingPane extends VBox {
 	private void editClicked() {
 		logger.debug("editClicked");
 		
-		CreatureTrainingScreen screen = new CreatureTrainingScreen(ctrl);
-		provider.getScreenManager().show(screen);
+		CreatureTrainingDialog dialog = new CreatureTrainingDialog(ctrl, provider);
+		provider.getScreenManager().showAndWait(dialog);
 	}
 
 }

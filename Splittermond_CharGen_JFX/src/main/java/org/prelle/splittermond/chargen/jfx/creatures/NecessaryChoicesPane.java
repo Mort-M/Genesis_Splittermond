@@ -36,12 +36,21 @@ public class NecessaryChoicesPane extends VBox {
 	private CommonCreatureController control;
 	private LetUserChooseAdapter adapter;
 	
+	private CreatureModuleReference restrictTo;
+	
 	//-------------------------------------------------------------------
-	public NecessaryChoicesPane(CommonCreatureController ctrl, ScreenManagerProvider provider) {
+	public NecessaryChoicesPane(CommonCreatureController ctrl, ScreenManagerProvider provider, CreatureModuleReference restrict) {
 		this.control = ctrl;
+		this.restrictTo = restrict;
 		adapter = new LetUserChooseAdapter(provider);
 		
 		setStyle("-fx-max-width: 40em");
+		refresh();
+	}
+	
+	//-------------------------------------------------------------------
+	public NecessaryChoicesPane(CommonCreatureController ctrl, ScreenManagerProvider provider) {
+		this(ctrl, provider, null);
 	}
 	
 	//-------------------------------------------------------------------
@@ -49,6 +58,9 @@ public class NecessaryChoicesPane extends VBox {
 		getChildren().clear();
 		
 		for (CreatureModuleReference.NecessaryChoice tmp : control.getChoicesToMake()) {
+			if (restrictTo!=null && tmp.originModule!=restrictTo)
+				continue;
+			
 			Label label = new Label(tmp.originModule.getModule().getName());
 			label.setWrapText(true);
 			label.setStyle("-fx-min-width: 6em");

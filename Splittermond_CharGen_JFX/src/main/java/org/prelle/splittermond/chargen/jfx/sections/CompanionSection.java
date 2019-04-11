@@ -39,7 +39,11 @@ public class CompanionSection extends GenericListSection<CreatureReference> {
 	//-------------------------------------------------------------------
 	public CompanionSection(String title, CharacterController ctrl, ScreenManagerProvider provider) {
 		super(title, ctrl, provider);
-		list.setCellFactory( lv -> new CreatureReferenceListCell(ctrl, provider));
+		list.setCellFactory( lv -> {
+			CreatureReferenceListCell cell = new CreatureReferenceListCell(ctrl, provider);
+			cell.setOnAction( ev -> onEdit(cell.getItem()));
+			return cell;
+		});
 		
 		setData(ctrl.getModel().getCreatures());
 		list.setStyle("-fx-pref-width: 32em");
@@ -142,6 +146,11 @@ public class CompanionSection extends GenericListSection<CreatureReference> {
 			e.printStackTrace();
 			logger.error("Missing "+e.getKey()+" in "+ResourceBundle.getBundle(CompanionSection.class.getName()));
 		}
+	}
+
+	//-------------------------------------------------------------------
+	protected void onEdit(CreatureReference value) {
+		logger.trace("onEdit");
 	}
 
 }

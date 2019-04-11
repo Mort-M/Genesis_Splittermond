@@ -40,10 +40,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.util.StringConverter;
@@ -69,7 +71,9 @@ public class CreatureEditPane extends OptionalDescriptionPane implements Generat
 	private ListView<CreatureModule> lvOptions;
 	private CreatureModuleReferenceListView lvSelected;
 
+	private TextField tfName;
 	private LifeformPane resultPane;
+	private VBox optionalColumn;
 
 	//--------------------------------------------------------------------
 	public CreatureEditPane(CreatureController ctrl, ScreenManagerProvider provider) {
@@ -112,10 +116,13 @@ public class CreatureEditPane extends OptionalDescriptionPane implements Generat
 		lvOptions.setCellFactory(param -> new CreatureModuleListCell(control));
 		lvOptions.getItems().addAll(control.getAvailableOptions());
 
-		lvSelected= new CreatureModuleReferenceListView(control, new LetUserChooseAdapter(provider));
+		lvSelected= new CreatureModuleReferenceListView(control, new LetUserChooseAdapter(provider), provider);
 		
 		resultPane = new LifeformPane();
 		resultPane.setData(control.getCreature());
+		
+		tfName = new TextField(control.getCreature().getName());
+		tfName.setPrefColumnCount(30);
 	}
 
 	//--------------------------------------------------------------------
@@ -166,7 +173,12 @@ public class CreatureEditPane extends OptionalDescriptionPane implements Generat
 		lvSelected.setStyle("-fx-pref-width: 25em;");
 		GridPane.setConstraints(lvOptions, 0,	1, 1,1, HPos.LEFT, VPos.TOP, Priority.ALWAYS, Priority.ALWAYS);
 		
-		setChildren(content, resultPane);
+		// Optional
+		Label hdName = new Label(UI.getString("dialog.creature.create.name"));
+		HBox nameLine = new HBox(10, hdName,  tfName);
+		optionalColumn = new VBox(20, nameLine, resultPane);
+		
+		setChildren(content, optionalColumn);
 	}
 
 	//--------------------------------------------------------------------
@@ -183,6 +195,8 @@ public class CreatureEditPane extends OptionalDescriptionPane implements Generat
 		setOnDragDropped(event -> dragDropped(event));
 		setOnDragOver(event -> dragOver(event));
 //		setCanBeLeftCallback( (dialog, closeType) -> (closeType==CloseType.CANCEL) || control.canBeFinished());
+		
+		tfName.textProperty().addListener( (ov,o,n) -> control.getCreature().setName(n));
 	}
 
 	//--------------------------------------------------------------------

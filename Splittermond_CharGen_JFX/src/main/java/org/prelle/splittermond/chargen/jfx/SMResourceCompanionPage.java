@@ -7,6 +7,7 @@ import org.prelle.splimo.Attribute;
 import org.prelle.splimo.BasePluginData;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.creature.CreatureReference;
+import org.prelle.splittermond.chargen.jfx.creatures.CreaturePane;
 import org.prelle.splittermond.chargen.jfx.sections.AttributePrimarySection;
 import org.prelle.splittermond.chargen.jfx.sections.AttributeSecondarySection;
 import org.prelle.splittermond.chargen.jfx.sections.BasicDataSection;
@@ -109,6 +110,9 @@ public class SMResourceCompanionPage extends SpliMoManagedScreenPage {
 	private void updateHelp(CreatureReference data) {
 		if (data!=null) {
 			this.setDescriptionHeading(data.getName());
+			
+			CreaturePane pane = new CreaturePane(charGen.getModel(), data, provider);
+			this.setDescriptionNode(pane);
 //			this.setDescriptionPageRef(data.getProductNameShort()+" "+data.getPage());
 //			this.setDescriptionText(data.getHelpText());
 		} else {

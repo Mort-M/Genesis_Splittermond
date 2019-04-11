@@ -13,6 +13,8 @@ import org.prelle.splimo.charctrl.ResourceController;
 import org.prelle.splimo.creature.CreatureReference;
 import org.prelle.splittermond.chargen.jfx.sections.CompanionSection;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
@@ -97,8 +99,6 @@ public class CreatureReferenceListCell extends ListCell<CreatureReference> {
 
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
-		btnEdit.setOnAction(event -> editClicked(data));
-
 		this.setOnDragDetected(event -> dragStarted(event));
 		this.setOnMouseClicked(event -> clicked(event));
 	}
@@ -159,38 +159,6 @@ public class CreatureReferenceListCell extends ListCell<CreatureReference> {
 //	}
 
 	//-------------------------------------------------------------------
-	private void editClicked(CreatureReference ref) {
-//		String res = ref.getCreature().getId();
-//		if (res.equals("creature")) {
-//			editClickedCreature(ref);
-//		} else
-//		if (res.equals("relic")) {
-//			editClickedRelic(ref);
-//		} else {
-//			TextField tf = new TextField(ref.getDescription());
-//			tf.textProperty().addListener( (ov,o,n) -> {
-//				if (n.indexOf('<')>0) { n = n.substring(0, n.indexOf('<')); tf.setText(n); }
-//				if (n.indexOf('>')>0) { n = n.substring(0, n.indexOf('>')); tf.setText(n); }
-//				if (n.indexOf('"')>0) { n = n.substring(0, n.indexOf('"')); tf.setText(n); }
-//				if (n.indexOf('&')>0) { n = n.substring(0, n.indexOf('&')); tf.setText(n); }
-//			});
-//			tf.setOnAction(event -> {
-//				ManagedScreen screen = (ManagedScreen) tf.getParent().getParent().getParent().getParent();
-//				logger.debug("Action on "+screen);
-//				screen.impl_navigClicked(CloseType.OK, event);
-//				});
-//			CloseType close = parent.getManager().showAlertAndCall(
-//					AlertType.QUESTION,
-//					UI.getString("resourcelistview.namedialog.title"),
-//					tf);
-//			if (close==CloseType.OK) {
-//				ref.setDescription(tf.getText());
-//				tfDescr.setText(tf.getText());
-//			}
-//		}
-	}
-
-	//-------------------------------------------------------------------
 	/**
 	 * @see javafx.scene.control.Cell#updateItem(java.lang.Object, boolean)
 	 */
@@ -218,6 +186,11 @@ public class CreatureReferenceListCell extends ListCell<CreatureReference> {
 			setGraphic(layout);
 		}
 
+	}
+
+	//-------------------------------------------------------------------
+	public void setOnAction(EventHandler<ActionEvent> handler) {
+		btnEdit.setOnAction(handler);
 	}
 
 }

@@ -1,6 +1,7 @@
 package org.prelle.splittermond.chargen.jfx.creatures;
 
 import java.util.PropertyResourceBundle;
+import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,6 +19,8 @@ import org.prelle.splimo.creature.CreatureModule;
 import org.prelle.splimo.creature.CreatureModuleReference;
 import org.prelle.splittermond.chargen.jfx.LetUserChooseAdapter;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.listcells.CreatureModuleListCell;
+import org.prelle.splittermond.chargen.jfx.sections.CompanionSection;
 
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -39,10 +42,11 @@ import javafx.scene.layout.VBox;
 public class CreatureTrainingDialog extends ManagedDialog implements GenerationEventListener {
 
 	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
-	
-	private static PropertyResourceBundle UI = SpliMoCharGenJFXConstants.UI;
+
+	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle(CompanionSection.class.getName());
 
 	private CreatureTrainerController control;
+	private ScreenManagerProvider provider;
 
 	private Label lbPointsLeft;
 	private Label lbDescr;
@@ -55,9 +59,10 @@ public class CreatureTrainingDialog extends ManagedDialog implements GenerationE
 	private NavigButtonControl btnControl;
 
 	//--------------------------------------------------------------------
-	public CreatureTrainingDialog(CreatureTrainerController ctrl) {
-		super(UI.getString("screen.creature.train.title"), null, CloseType.APPLY, CloseType.CANCEL);
+	public CreatureTrainingDialog(CreatureTrainerController ctrl, ScreenManagerProvider provider) {
+		super(UI.getString("dialog.creature.train.title"), null, CloseType.APPLY, CloseType.CANCEL);
 		this.control = ctrl;
+		this.provider = provider;
 		initComponents();
 		initLayout();
 		initInteractivity();
@@ -82,7 +87,7 @@ public class CreatureTrainingDialog extends ManagedDialog implements GenerationE
 		lvOptions = new ListView<CreatureModule>();
 		lvOptions.setCellFactory(param -> new CreatureModuleListCell(control));
 		lvOptions.getItems().addAll(control.getAvailableOptions());
-		lvSelected= new CreatureModuleReferenceListView(control, new LetUserChooseAdapter(this));
+		lvSelected= new CreatureModuleReferenceListView(control, new LetUserChooseAdapter(this), provider);
 		
 		choicePane = new NecessaryChoicesPane(control, (ScreenManagerProvider)this);
 		
@@ -92,8 +97,8 @@ public class CreatureTrainingDialog extends ManagedDialog implements GenerationE
 
 	//--------------------------------------------------------------------
 	private void initLayout() {
-		Label hdPointsLeft = new Label(UI.getString("screen.creature.train.pointspane.left"));
-		Label lbPaneDescr = new Label(UI.getString("screen.creature.train.pointspane.descr"));
+		Label hdPointsLeft = new Label(UI.getString("dialog.creature.train.pointspane.left"));
+		Label lbPaneDescr = new Label(UI.getString("dialog.creature.train.pointspane.descr"));
 		hdPointsLeft.setWrapText(true);
 		lbPaneDescr.setWrapText(true);
 		VBox pointsPane = new VBox();

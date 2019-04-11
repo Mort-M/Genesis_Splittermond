@@ -182,21 +182,19 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 //			manager.show(altScreen, CSS);
 
 			return new CommandResult(type, true);
-//		case SHOW_CHARACTER_CREATION_GUI:
-//			logger.debug("start character creation");
-//			model = new SpliMoCharacter();
-//			control = new SpliMoCharacterGenerator(model, hgFactor);
-//			manager = (ScreenManager)values[2];
-//
-//			screen = new SplittermondCharGenView(control, manager, null);
-////			screen = new CharacterViewScreenSpliMo(control, ViewMode.GENERATION);
-////			screen = new OldCharacterViewScreen((CharacterLeveller) control, ViewMode.MODIFICATION);
-//			manager.show(screen, CSS);
-//			screen.startGeneration(model);
-//
-//			CommandResult result = new CommandResult(type, true);
-//			result.setReturnValue(model);
-//			return result;
+		case SHOW_CHARACTER_CREATION_GUI:
+			logger.debug("start character creation");
+			model = new SpliMoCharacter();
+			control = new SpliMoCharacterGenerator(model, hgFactor);
+			manager = (ScreenManager)values[2];
+
+			screen = new CharacterViewScreenSpliMo2(control, ViewMode.GENERATION, null);
+			manager.navigateTo(screen);
+			screen.startGeneration();
+
+			CommandResult result = new CommandResult(type, true);
+			result.setReturnValue(model);
+			return result;
 //		case SHOW_DATA_INPUT_GUI:
 //			logger.debug("start data input");
 //			manager = (ScreenManager)values[2];

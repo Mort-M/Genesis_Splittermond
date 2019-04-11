@@ -210,6 +210,13 @@
 #splittermond-development .description-text {
   -fx-max-width: 30em;
 }
+#splittermond-resources   .character-document-view-description {
+  -fx-max-width: 40em;
+  -fx-min-width: 15em;
+}
+#splittermond-resources .description-text {
+  -fx-max-width: 40em;
+}
 
 /*******************************
  * Tables

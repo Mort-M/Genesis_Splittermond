@@ -8,7 +8,9 @@ import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.prelle.javafx.ScreenManager;
+import org.prelle.javafx.CloseType;
+import org.prelle.javafx.ManagedDialog;
+import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CommonCreatureController;
 import org.prelle.splimo.chargen.LetUserChooseListener;
@@ -20,20 +22,14 @@ import org.prelle.splittermond.chargen.jfx.sections.CompanionSection;
 
 import javafx.application.Platform;
 import javafx.scene.Node;
-import javafx.scene.SnapshotParameters;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
-import javafx.scene.image.WritableImage;
-import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
 /**
@@ -47,32 +43,18 @@ public class CreatureModuleReferenceListView extends ListView<CreatureModuleRefe
 	private static PropertyResourceBundle UI = (PropertyResourceBundle) ResourceBundle.getBundle(CompanionSection.class.getName());
 
 	private CommonCreatureController control;
-	private ScreenManager manager;
+	private ScreenManagerProvider provider;
 	private LetUserChooseListener callback;
 
 	//--------------------------------------------------------------------
-	public CreatureModuleReferenceListView(CommonCreatureController control, LetUserChooseListener callback) {
+	public CreatureModuleReferenceListView(CommonCreatureController control, LetUserChooseListener callback, ScreenManagerProvider provider) {
 		this.control = control;
 		this.callback = callback;
-
+		this.provider = provider;
+		
 		initComponents();
 		initValueFactories();
 		initInteractivity();
-	}
-
-//	//--------------------------------------------------------------------
-//	public void updateCreatureController(CreatureController control) {
-//		this.control = control;
-//	}
-
-	//--------------------------------------------------------------------
-	public void setManager(ScreenManager mgr) {
-		this.manager = mgr;
-	}
-
-	//--------------------------------------------------------------------
-	public ScreenManager getScreenManager() {
-		return manager;
 	}
 
 	//--------------------------------------------------------------------
@@ -89,7 +71,9 @@ public class CreatureModuleReferenceListView extends ListView<CreatureModuleRefe
 		setCellFactory(new Callback<ListView<CreatureModuleReference>, ListCell<CreatureModuleReference>>() {
 			public ListCell<CreatureModuleReference> call(ListView<CreatureModuleReference> p) {
 //				return new CreatureModuleReferenceListCell(control, CreatureModuleReference.this);
-				return new CreatureModuleReferenceListCell(control);
+				CreatureModuleReferenceListCell cell = new CreatureModuleReferenceListCell(control);
+				cell.setOnAction(ev -> onEdit(  (CreatureModuleReference) ((Button)ev.getTarget()).getUserData() ));
+				return cell;
 			}
 		});
 	}
@@ -135,26 +119,20 @@ public class CreatureModuleReferenceListView extends ListView<CreatureModuleRefe
 	}
 
 	//-------------------------------------------------------------------
-	public ScreenManager getManager() {
-		return manager;
-	}
-
-//	//-------------------------------------------------------------------
-//	public void setData(SpliMoCharacter model) {
-//		this.model = model;
-//	}
-//
-//	//-------------------------------------------------------------------
-//	SpliMoCharacter getData() {
-//		return model;
-//	}
-
-	//-------------------------------------------------------------------
 	/**
 	 * @return the callback
 	 */
 	public LetUserChooseListener getCallback() {
 		return callback;
+	}
+
+	//-------------------------------------------------------------------
+	private void onEdit(CreatureModuleReference data) {
+		logger.info("onEdit: "+data);
+		
+		NecessaryChoicesPane pane = new NecessaryChoicesPane(control, provider, data);
+		ManagedDialog dialog = new ManagedDialog(String.format(UI.getString("dialog.creature.editref.title"), data.getModule().getName()), pane, CloseType.APPLY);
+		provider.getScreenManager().showAndWait(dialog);
 	}
 
 }

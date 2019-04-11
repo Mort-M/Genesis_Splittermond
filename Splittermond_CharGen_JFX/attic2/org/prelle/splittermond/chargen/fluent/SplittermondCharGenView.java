@@ -379,6 +379,7 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 		wizard = new CharGenWizardSpliMo(model, (SpliMoCharacterGenerator)control);
 		CloseType close = (CloseType)manager.showAndWait(wizard);
 		logger.info("Closed with "+close);
+		GenerationEventDispatcher.removeListener(wizard);
 
 		if (close==CloseType.FINISH) {
 			logger.info("Wizard finished");
@@ -595,6 +596,8 @@ public class SplittermondCharGenView extends ManagedScreen implements Generation
 //			logger.debug("ask player for saving character returns "+save);
 
 		}
+		
+		GenerationEventDispatcher.clear();
 	}
 
 	//-------------------------------------------------------------------
