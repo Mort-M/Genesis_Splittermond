@@ -28,14 +28,12 @@ import de.rpgframework.genericrpg.modification.Modification;
  * @author prelle
  *
  */
-public class LevellingAttributeGenerator implements AttributeController, Generator, SpliMoCharacterProcessor {
+public class LevellingAttributeGenerator implements AttributeController, SpliMoCharacterProcessor {
 	
 	private static Logger logger = LogManager.getLogger("splittermond.chargen");
 	
 	private SplitterEngineCharacterGenerator parent;
 	private SpliMoCharacter model;
-	private int pointsForAttributes;
-	private int pointsLeft;
 	private Map<Attribute, Collection<AttributeModification>> modifications;
 	private List<ToDoElement> todos;
 	private List<DecisionToMake> decisions;
@@ -46,19 +44,9 @@ public class LevellingAttributeGenerator implements AttributeController, Generat
 	public LevellingAttributeGenerator(SplitterEngineCharacterGenerator parent, int points) {
 		this.parent = parent;
 		this.model = parent.getModel();
-		pointsForAttributes = points;
 		modifications = new HashMap<>();
 		todos = new ArrayList<>();
 		decisions = new ArrayList<>();
-		
-		for (Attribute attr : Attribute.primaryValues()) {		
-			// Value should have average of 2
-			AttributeValue val = model.getAttribute(attr);
-			val.setDistributed(1);
-		}
-		
-		// Splinter points
-		set(Attribute.SPLINTER, 3);
 		
 		calculateDerived();
 	}
@@ -109,16 +97,19 @@ public class LevellingAttributeGenerator implements AttributeController, Generat
 			return true;
 		}
 		
-		AttributeValue val = model.getAttribute(attrib);
-		if (val.getDistributed()>=3)
-			return true;
-		if (pointsForAttributes==0)
-			return false;
-
 		logger.info("INCREASE "+attrib);
 		
-		// Modify attribute. This also fires an event
-		set(attrib, val.getDistributed()+1);
+		AttributeValue val = model.getAttribute(attrib);
+		val.setDistributed(val.getDistributed()+1);
+		logger.info("val = "+val);
+		logger.info("val = "+val.getDistributed());
+		logger.info("val = "+val.getStart());
+		
+		// Pay experience
+		int expNeeded = 5+(val.getDistributed()-val.getStart())*5;
+		logger.info("Needed "+expNeeded+" exp");
+		model.setExperienceFree(model.getExperienceFree()-expNeeded);
+		model.setExperienceInvested(model.getExperienceInvested()+expNeeded);
 		
 		// Update derived values. This also fires eventually events
 		calculateDerived();
@@ -171,7 +162,7 @@ public class LevellingAttributeGenerator implements AttributeController, Generat
 	 */
 	@Override
 	public boolean canBeDecreased(Attribute key) {
-		return key.isPrimary() && model.getAttribute(key).getDistributed()>1;
+		return key.isPrimary() && model.getAttribute(key).getDistributed()>model.getAttribute(key).getStart();
 	}
 
 	//--------------------------------------------------------------------
@@ -180,16 +171,12 @@ public class LevellingAttributeGenerator implements AttributeController, Generat
 	 */
 	@Override
 	public boolean canBeIncreased(Attribute key) {
-		return key.isPrimary() && pointsForAttributes>0 && model.getAttribute(key).getDistributed()<3;
-	}
-
-	//--------------------------------------------------------------------
-	/**
-	 * @see org.prelle.splimo.charctrl.Generator#getPointsLeft()
-	 */
-	@Override
-	public int getPointsLeft() {
-		return pointsLeft;
+		if (!key.isPrimary())
+			return false;
+		AttributeValue val = model.getAttribute(key);
+		if (val.getDistributed()>=(val.getStart()+model.getLevel()))
+			return false;
+		return model.getExperienceFree()>=(5+model.getLevel()*5);
 	}
 
 	//-------------------------------------------------------------------
@@ -312,6 +299,15 @@ public class LevellingAttributeGenerator implements AttributeController, Generat
 	@Override
 	public List<DecisionToMake> getDecisionsToMake() {
 		return decisions;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.splimo.charctrl4.Generator#getPointsLeft()
+	 */
+	@Override
+	public int getPointsLeft() {
+		return 0;
 	}
 
 }

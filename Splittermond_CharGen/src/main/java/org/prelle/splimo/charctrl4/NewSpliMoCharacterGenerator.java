@@ -516,6 +516,15 @@ public class NewSpliMoCharacterGenerator extends SplitterEngineCharacterGenerato
 			return;
 		logger.info("Stop generation");
 		/*
+		 * Fix attributes
+		 */
+		for (Attribute key : Attribute.primaryValues()) {
+			AttributeValue val = model.getAttribute(key);
+			val.setDistributed(val.getStart());
+			val.getModifications().clear();
+		}
+		
+		/*
 		 * Fix skills
 		 */
 		for (Skill key : SplitterMondCore.getSkills()) {
@@ -548,7 +557,7 @@ public class NewSpliMoCharacterGenerator extends SplitterEngineCharacterGenerato
 		 */
 		Reward reward = new RewardImpl(15, "Start-Exp");
 		reward.setDate(new Date());
-		model.setExperienceFree(15);
+//		model.setExperienceFree(15);
 		model.addReward(reward);
 		for (Modification mod : model.getHistory()) {
 			mod.setDate(new Date(System.currentTimeMillis()+1));

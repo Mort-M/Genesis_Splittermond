@@ -3,7 +3,6 @@ package org.prelle.splimo.chargen4;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
@@ -13,8 +12,8 @@ import java.util.UUID;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 import org.prelle.splimo.Attribute;
-import org.prelle.splimo.DummyRulePlugin;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Moonsign;
 import org.prelle.splimo.ResourceReference;
@@ -53,9 +52,8 @@ public class ExampleCharactersTest {
 	//-------------------------------------------------------------------
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		SplitterMondCore.initialize(new DummyRulePlugin<SpliMoCharacter>());
-
-		//		System.exit(0);
+		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
+		plugin.init();
 	}
 
 	//-------------------------------------------------------------------
@@ -69,6 +67,11 @@ public class ExampleCharactersTest {
 		charGen = new NewSpliMoCharacterGenerator();
 //		charGen.setCallback(this);
 		charGen.start(model);
+	}
+
+	//-------------------------------------------------------------------
+	public SpliMoCharacter getModel() {
+		return charGen.getModel();
 	}
 
 	//-------------------------------------------------------------------
@@ -535,8 +538,13 @@ public class ExampleCharactersTest {
 		assertEquals(2, maCtrl.getFreeMasterships());
 		assertNotNull( maCtrl.select(SplitterMondCore.getSkill("firemagic").getMastership("flameheart")) );
 		assertEquals(1, maCtrl.getFreeMasterships());
-		// This should not work - only a mastership for athletics is still open
-		assertNull( maCtrl.select(SplitterMondCore.getSkill("firemagic").getMastership("fireresistence1")) );
+		// This should not work - only a mastership for athletics is still open. So exp is needed
+		MastershipReference masterRef = maCtrl.select(SplitterMondCore.getSkill("firemagic").getMastership("fireresistence1"));
+		assertNotNull( masterRef );
+		assertEquals(10, charGen.getModel().getExperienceFree());
+		assertEquals(1, maCtrl.getFreeMasterships());
+		maCtrl.deselect(masterRef.getMastership());
+		assertEquals(15, charGen.getModel().getExperienceFree());
 		assertEquals(1, maCtrl.getFreeMasterships());
 		assertNotNull( maCtrl.select(SplitterMondCore.getSkill("athletics").getMastership("longjump")) );
 		assertEquals(0, maCtrl.getFreeMasterships());
@@ -563,11 +571,8 @@ public class ExampleCharactersTest {
 		assertEquals(0, ((Generator)charGen.getResourceController()).getPointsLeft());
 		assertTrue("Could not increase beyond 4", reCtrl.increase(relic1));
 		assertEquals(8, model.getExperienceFree());
-		assertNull(reCtrl.openResource(SplitterMondCore.getResource("wealth")));
-		ResourceReference wealth = reCtrl.findResourceReference(SplitterMondCore.getResource("wealth"), null, null);
+		ResourceReference wealth = reCtrl.openResource(SplitterMondCore.getResource("wealth"));
 		assertNotNull(wealth);
-		assertTrue( reCtrl.canBeIncreased(wealth) );
-		assertTrue( reCtrl.increase(wealth));
 		wealth.setDescription("Deal mit Feen");
 		assertEquals(1, model.getExperienceFree());
 

@@ -29,10 +29,6 @@ import de.rpgframework.genericrpg.modification.Modification;
  * @author prelle
  *
  */
-/**
- * @author prelle
- *
- */
 public class NewSpliMoCharacterLeveller extends SplitterEngineCharacterGenerator {
 	
 	private static Logger logger = LogManager.getLogger("splittermond.chargen");
@@ -59,7 +55,7 @@ public class NewSpliMoCharacterLeveller extends SplitterEngineCharacterGenerator
 		processChain.add( (SpliMoCharacterProcessor) skills );
 		processChain.add( (SpliMoCharacterProcessor) resources );
 		processChain.add( (SpliMoCharacterProcessor) master );
-		processChain.add( (SpliMoCharacterProcessor) spells );
+//		processChain.add( (SpliMoCharacterProcessor) spells );
 		
 		runProcessors();
 	}
@@ -215,46 +211,46 @@ public class NewSpliMoCharacterLeveller extends SplitterEngineCharacterGenerator
 		return model;
 	}
 
-	//--------------------------------------------------------------------
-	public void start(SpliMoCharacter model) {
-		// Stop previous
-		stop();
-
-		this.model = model;
-		
-		races      = new RaceGenerator(this);
-		cultures   = new NewCultureGenerator(this);
-		backgrounds= new NewBackgroundGenerator(this);
-		educations = new NewEducationGenerator(this);
-		attributes = new NewAttributeGenerator(this, 18);
-		powers     = new NewPowerGenerator(this, 10);  // 4 (Race) + 1 (Culture) + 2 (Education) + 3 (free)
-		resources  = new NewResourceGenerator(this, 8, true);
-		master     = new NewMastershipGenerator(this, 3);
-		skills     = new NewSkillGenerator(this, 55);
-//		moonsign   = new MoonsignProcessor();
-////		spells     = new SpellGenerator(skills, model);
-//		educations = new EducationGenerator();
-		spells     = new NewSpellGenerator(this);
-//		languages  = new LanguageGenerator(model, new ArrayList<>(), CharGenMode.CREATING);
-//		cultlores  = new CultureLoreGenerator(model, new ArrayList<>(), CharGenMode.CREATING);
-
-		processChain.clear();
-		processChain.add( new ResetModificationsOnGeneration());
-		processChain.add( (SpliMoCharacterProcessor) cultures );
-		processChain.add( (SpliMoCharacterProcessor) races );
-		processChain.add( (SpliMoCharacterProcessor) backgrounds );
-		processChain.add( (SpliMoCharacterProcessor) educations );
-		processChain.add( (SpliMoCharacterProcessor) powers );
-		processChain.add( (SpliMoCharacterProcessor) attributes );
-		processChain.add( (SpliMoCharacterProcessor) skills );
-		processChain.add( (SpliMoCharacterProcessor) resources );
-		processChain.add( (SpliMoCharacterProcessor) master );
-		processChain.add( (SpliMoCharacterProcessor) spells );
-		processChain.add( moonsign );
-		
-		runProcessors();
-	}
-
+//	//--------------------------------------------------------------------
+//	public void start(SpliMoCharacter model) {
+//		// Stop previous
+//		stop();
+//
+//		this.model = model;
+//		
+//		races      = new RaceGenerator(this);
+//		cultures   = new NewCultureGenerator(this);
+//		backgrounds= new NewBackgroundGenerator(this);
+//		educations = new NewEducationGenerator(this);
+//		attributes = new NewAttributeGenerator(this, 18);
+//		powers     = new NewPowerGenerator(this, 10);  // 4 (Race) + 1 (Culture) + 2 (Education) + 3 (free)
+//		resources  = new NewResourceGenerator(this, 8, true);
+//		master     = new NewMastershipGenerator(this, 3);
+//		skills     = new NewSkillGenerator(this, 55);
+////		moonsign   = new MoonsignProcessor();
+//////		spells     = new SpellGenerator(skills, model);
+////		educations = new EducationGenerator();
+//		spells     = new NewSpellGenerator(this);
+////		languages  = new LanguageGenerator(model, new ArrayList<>(), CharGenMode.CREATING);
+////		cultlores  = new CultureLoreGenerator(model, new ArrayList<>(), CharGenMode.CREATING);
+//
+//		processChain.clear();
+//		processChain.add( new ResetModificationsOnGeneration());
+//		processChain.add( (SpliMoCharacterProcessor) cultures );
+//		processChain.add( (SpliMoCharacterProcessor) races );
+//		processChain.add( (SpliMoCharacterProcessor) backgrounds );
+//		processChain.add( (SpliMoCharacterProcessor) educations );
+//		processChain.add( (SpliMoCharacterProcessor) powers );
+//		processChain.add( (SpliMoCharacterProcessor) attributes );
+//		processChain.add( (SpliMoCharacterProcessor) skills );
+//		processChain.add( (SpliMoCharacterProcessor) resources );
+//		processChain.add( (SpliMoCharacterProcessor) master );
+//		processChain.add( (SpliMoCharacterProcessor) spells );
+//		processChain.add( moonsign );
+//		
+//		runProcessors();
+//	}
+//
 
 	//--------------------------------------------------------------------
 	public void stop() {
