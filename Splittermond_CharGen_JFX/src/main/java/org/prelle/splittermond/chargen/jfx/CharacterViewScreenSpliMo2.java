@@ -275,7 +275,16 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 				logger.debug("User cancelled leaving");
 				return false;
 			} else {
-				logger.debug("User denied saving character");
+				logger.debug("User denied saving character - reload it");
+				try {
+					if (handle!=null) {
+						handle.setCharacter(null);
+						handle.getCharacter();
+					}
+				} catch (IOException e) {
+					logger.error("Failed reloading character",e);
+					getManager().showAlertAndCall(AlertType.ERROR, "", RES.getString("error.reloading.char"));
+				}
 			}
 		}
 		
