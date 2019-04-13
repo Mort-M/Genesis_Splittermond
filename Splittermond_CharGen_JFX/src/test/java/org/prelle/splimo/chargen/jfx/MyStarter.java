@@ -24,24 +24,11 @@ import org.prelle.splimo.modifications.ModificationChoice;
 import org.prelle.splimo.modifications.SkillModification;
 import org.prelle.splimo.npc.CreatureTypeController;
 import org.prelle.splimo.npc.NPCGenerator;
-import org.prelle.splittermond.chargen.gen.jfx.DistributeSkillsPage;
-import org.prelle.splittermond.chargen.gen.jfx.SelectMastershipDialog2;
-import org.prelle.splittermond.chargen.jfx.BaseDataBlockSpliMo;
-import org.prelle.splittermond.chargen.jfx.UserDistributeDialog;
 import org.prelle.splittermond.chargen.jfx.ViewMode;
-import org.prelle.splittermond.chargen.lvl.jfx.RewardDialog;
-import org.prelle.splittermond.jfx.attributes.AttributePane;
-import org.prelle.splittermond.jfx.creatures.CreatureCreateScreen;
-import org.prelle.splittermond.jfx.creatures.CreaturePane;
-import org.prelle.splittermond.jfx.creatures.CreatureTypePane;
-import org.prelle.splittermond.jfx.creatures.CreatureWizardSpliMo;
-import org.prelle.splittermond.jfx.cultures.CultureLorePane;
-import org.prelle.splittermond.jfx.equip.EditItemScreen;
-import org.prelle.splittermond.jfx.equip.EnhancementTypeScreen;
-import org.prelle.splittermond.jfx.equip.ItemGeneratorPane;
-import org.prelle.splittermond.jfx.resources.ResourceScreen;
-import org.prelle.splittermond.jfx.skills.SkillPane;
-import org.prelle.splittermond.jfx.skills.SkillScreen2;
+import org.prelle.splittermond.chargen.jfx.attributes.AttributesView;
+import org.prelle.splittermond.chargen.jfx.creatures.CreatureCreateDialog;
+import org.prelle.splittermond.chargen.jfx.dialogs.EditCarriedItemDialog;
+import org.prelle.splittermond.chargen.jfx.dialogs.MastershipDialog;
 
 import javafx.application.Application;
 import javafx.scene.Parent;
@@ -67,74 +54,74 @@ public class MyStarter extends Application {
 			model.setExperienceFree(30);
 			model.setExperienceInvested(200);
 			charGen = new CharacterLeveller(model, null);
-			dia = new SelectMastershipDialog2(charGen.getMastershipController(), model, skill2);
+			dia = new MastershipDialog(charGen);
+			((MastershipDialog)dia).setData(model, model.getSkillValue(skill1));
 			break;
 		case 1:
 			charGen = new SpliMoCharacterGenerator(model, null);
 			((SpliMoCharacterGenerator)charGen).apply(new AttributeModification(Attribute.AGILITY, 1));
 			model.getAttribute(Attribute.WILLPOWER).setStart(3);
 			model.getAttribute(Attribute.WILLPOWER).setDistributed(3);
-			dia = new AttributePane(charGen.getAttributeController(),ViewMode.MODIFICATION);
-			((AttributePane)dia).setData(model);
+			dia = new AttributesView(charGen);
 			break;
-		case 5:
-			model.setExperienceFree(50);
-			model.setExperienceInvested(200);
-			model.getSkillValue(SplitterMondCore.getSkill("empathy")).setValue(3);
-			charGen = new CharacterLeveller(model, null);
-			dia = new SkillPane(null, charGen.getSkillController(), charGen.getMastershipController(), true, SkillType.NORMAL);
-			((SkillPane)dia).setContent(model);
-			break;
-		case 6:
-			charGen = new SpliMoCharacterGenerator(model, null);
-			dia = new DistributeSkillsPage(null, model, (SpliMoCharacterGenerator) charGen);
-			break;
-		case 7:
-			dia = new RewardDialog();
-			break;
-		case 8:
-			model.setExperienceFree(20);
-			model.addCultureLore(new CultureLoreReference(SplitterMondCore.getCultureLore("borombri")));
-			charGen = new CharacterLeveller(model, null);
-			dia = new CultureLorePane(((CharacterLeveller)charGen).getCultureLoreController());
-			((CultureLorePane)dia).setData(model);
-			break;
-		case 10:
-			charGen = new SpliMoCharacterGenerator(model, null);
-			model.setRace("gnome");
-			model.setEducation("elementalist");
-			model.setCulture("patalis");
-			model.setBackground("academics");
-			dia = new BaseDataBlockSpliMo(ViewMode.MODIFICATION, charGen);
-			((BaseDataBlockSpliMo)dia).setManager(new ScreenManager());
-			((BaseDataBlockSpliMo)dia).setData(model);
-			break;
-		case 11:
-			Creature creature = SplitterMondCore.getCreature("phantom");
-//			creature.initializeDefaultSkills();
-			dia = new CreaturePane(ViewMode.MODIFICATION);
-			((CreaturePane)dia).setData(creature);
-			break;
+//		case 5:
+//			model.setExperienceFree(50);
+//			model.setExperienceInvested(200);
+//			model.getSkillValue(SplitterMondCore.getSkill("empathy")).setValue(3);
+//			charGen = new CharacterLeveller(model, null);
+//			dia = new SkillPane(null, charGen.getSkillController(), charGen.getMastershipController(), true, SkillType.NORMAL);
+//			((SkillPane)dia).setContent(model);
+//			break;
+//		case 6:
+//			charGen = new SpliMoCharacterGenerator(model, null);
+//			dia = new DistributeSkillsPage(null, model, (SpliMoCharacterGenerator) charGen);
+//			break;
+//		case 7:
+//			dia = new RewardDialog();
+//			break;
+//		case 8:
+//			model.setExperienceFree(20);
+//			model.addCultureLore(new CultureLoreReference(SplitterMondCore.getCultureLore("borombri")));
+//			charGen = new CharacterLeveller(model, null);
+//			dia = new CultureLorePane(((CharacterLeveller)charGen).getCultureLoreController());
+//			((CultureLorePane)dia).setData(model);
+//			break;
+//		case 10:
+//			charGen = new SpliMoCharacterGenerator(model, null);
+//			model.setRace("gnome");
+//			model.setEducation("elementalist");
+//			model.setCulture("patalis");
+//			model.setBackground("academics");
+//			dia = new BaseDataBlockSpliMo(ViewMode.MODIFICATION, charGen);
+//			((BaseDataBlockSpliMo)dia).setManager(new ScreenManager());
+//			((BaseDataBlockSpliMo)dia).setData(model);
+//			break;
+//		case 11:
+//			Creature creature = SplitterMondCore.getCreature("phantom");
+////			creature.initializeDefaultSkills();
+//			dia = new CreaturePane(ViewMode.MODIFICATION);
+//			((CreaturePane)dia).setData(creature);
+//			break;
 		case 12:
 			charGen = new CharacterLeveller(model, null);
 			model.setExperienceFree(15);
 			CarriedItem item = new CarriedItem();
-			item.setItem(SplitterMondCore.getItem("falchion"));
-			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("tickmalus")));
-			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("damage")));
-			item.setCustomName("Tolles Ding");
-			model.addItem(item);
-			ResourceReference rref = charGen.getResourceController().openResource(SplitterMondCore.getResource("rank"));
-			rref.setDescription("Wächterbund");
-//			charGen.getResourceController().increase(rref);
-			model.getResources().add(rref);
-			ResourceScreen screen = new ResourceScreen(charGen, manager);
-			dia = manager;
-//			manager.show(screen);
-////			dia = new ResourcePane2(charGen.getResourceController(), true);
-////			((ResourcePane2)dia).setManager(manager);
-////			((ResourcePane2)dia).setData(model);
-//			screen.setData(model);
+//			item.setItem(SplitterMondCore.getItem("falchion"));
+//			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("tickmalus")));
+//			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("damage")));
+//			item.setCustomName("Tolles Ding");
+//			model.addItem(item);
+//			ResourceReference rref = charGen.getResourceController().openResource(SplitterMondCore.getResource("rank"));
+//			rref.setDescription("Wächterbund");
+////			charGen.getResourceController().increase(rref);
+//			model.getResources().add(rref);
+//			ResourceScreen screen = new ResourceScreen(charGen, manager);
+//			dia = manager;
+////			manager.show(screen);
+//////			dia = new ResourcePane2(charGen.getResourceController(), true);
+//////			((ResourcePane2)dia).setManager(manager);
+//////			((ResourcePane2)dia).setData(model);
+////			screen.setData(model);
 			break;
 		case 13:
 			item = new CarriedItem();
@@ -144,24 +131,24 @@ public class MyStarter extends Application {
 			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("load")));
 //			LogManager.getLogger("splittermond.chargen").setLevel(Level.DEBUG);
 			ItemLevellerAndGenerator itemLvl = new ItemLevellerAndGenerator(item, 3);
-			ItemGeneratorPane pane = new ItemGeneratorPane();
-			GenerationEventDispatcher.addListener(pane);
-			pane.setData(itemLvl);
-			dia = pane;
+//			ItemGeneratorPane pane = new ItemGeneratorPane();
+//			GenerationEventDispatcher.addListener(pane);
+//			pane.setData(itemLvl);
+//			dia = pane;
 			break;
-		case 14:
-			ModificationChoice choice = new ModificationChoice(new SkillModification("blades", 0), new SkillModification("empathy", 0));
-			choice.setValues(new int[]{2,1});
-			UserDistributeDialog ddia = new UserDistributeDialog("Händler", choice);
-			dia = manager;
-			manager.show(ddia);
-			break;
-		case 15:
-			Creature modCreat = new Creature("test");
-			CreatureTypePane ctPane = new CreatureTypePane(new CreatureTypeController(modCreat));
-			ctPane.setData(modCreat);
-			dia = ctPane;
-			break;
+//		case 14:
+//			ModificationChoice choice = new ModificationChoice(new SkillModification("blades", 0), new SkillModification("empathy", 0));
+//			choice.setValues(new int[]{2,1});
+//			UserDistributeDialog ddia = new UserDistributeDialog("Händler", choice);
+//			dia = manager;
+//			manager.show(ddia);
+//			break;
+//		case 15:
+//			Creature modCreat = new Creature("test");
+//			CreatureTypePane ctPane = new CreatureTypePane(new CreatureTypeController(modCreat));
+//			ctPane.setData(modCreat);
+//			dia = ctPane;
+//			break;
 		case 16:
 			item = new CarriedItem();
 			item.setResource(new ResourceReference(new Resource(), 4));
@@ -177,57 +164,44 @@ public class MyStarter extends Application {
 //			GenerationEventDispatcher.addListener(pane2);
 //			pane2.setData(itemLvl);
 //			dia = pane2;
-			EditItemScreen screen2 = new EditItemScreen();
-			screen2.setData(model, itemLvl);
-//			ManagedScreen screen2 = new ManagedScreen();
-//			screen2.setContent(pane2);
-//			screen2.setSkin(new ManagedScreenStructuredSkin(screen2));
+			EditCarriedItemDialog screen2 = new EditCarriedItemDialog(null, itemLvl);
 			dia = manager;
-			manager.show(screen2);
+			manager.showAndWait(screen2);
 			break;
-		case 17:
-			item = new CarriedItem();
+//		case 17:
+//			item = new CarriedItem();
+////			item.setItem(SplitterMondCore.getItem("falchion"));
+////			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("tickmalus")));
 //			item.setItem(SplitterMondCore.getItem("falchion"));
-//			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("tickmalus")));
-			item.setItem(SplitterMondCore.getItem("falchion"));
-			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("load")));
-//			Logger.getLogger( "splittermond.chargen").setLevel(Level.DEBUG);
-			itemLvl = new ItemLevellerAndGenerator(item, 3);
-			EnhancementTypeScreen screen3 = new EnhancementTypeScreen(EnhancementType.NORMAL, new ItemLevellerAndGenerator(item, 4));
-			GenerationEventDispatcher.addListener(screen3);
-			dia = manager;
-			manager.show(screen3);
-			break;
-		case 18:
-			model.getSkillValue(SplitterMondCore.getSkill("hunting")).setValue(5);
-			charGen = new CharacterLeveller(model, null);
-			SkillScreen2 screen4 = new SkillScreen2(charGen, manager, SkillType.NORMAL);
-			dia = manager;
-//			manager.show(screen4);
-			break;
+//			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("load")));
+////			Logger.getLogger( "splittermond.chargen").setLevel(Level.DEBUG);
+//			itemLvl = new ItemLevellerAndGenerator(item, 3);
+//			EnhancementTypeScreen screen3 = new EnhancementTypeScreen(EnhancementType.NORMAL, new ItemLevellerAndGenerator(item, 4));
+//			GenerationEventDispatcher.addListener(screen3);
+//			dia = manager;
+//			manager.show(screen3);
+//			break;
+//		case 18:
+//			model.getSkillValue(SplitterMondCore.getSkill("hunting")).setValue(5);
+//			charGen = new CharacterLeveller(model, null);
+//			SkillScreen2 screen4 = new SkillScreen2(charGen, manager, SkillType.NORMAL);
+//			dia = manager;
+////			manager.show(screen4);
+//			break;
 		case 19:
 			CreatureGenerator creaCtrl = new CreatureGenerator(new ResourceReference(SplitterMondCore.getResource("creature"), 4));
-			CreatureCreateScreen screen5 = new CreatureCreateScreen(creaCtrl);
+			CreatureCreateDialog screen5 = new CreatureCreateDialog(creaCtrl);
 			dia = manager;
-			manager.show(screen5);
+			manager.showAndWait(screen5);
 			break;
-		case 20:
-			Creature creature2 = new Creature();
-			NPCGenerator npcGen = new NPCGenerator(creature2);
-			CreatureWizardSpliMo creaWiz = new CreatureWizardSpliMo(npcGen);
-			dia = manager;
-			manager.show(creaWiz);
-			break;
-		case 21:
-
 		}
 
 		dia.getStyleClass().add("page");
 		Scene scene = new Scene(dia, 1400, 800);
 		scene.getStylesheets().add("css/size-medium.css");
-		scene.getStylesheets().add("css/color.css");
-		scene.getStylesheets().add("css/layout.css");
-		scene.getStylesheets().add("css/typography.css");
+//		scene.getStylesheets().add("css/color.css");
+//		scene.getStylesheets().add("css/layout.css");
+//		scene.getStylesheets().add("css/typography.css");
 		scene.getStylesheets().add("css/splittermond.css");
 		stage.setScene(scene);
 		stage.show();

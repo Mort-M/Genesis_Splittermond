@@ -40,12 +40,12 @@
 			<version>[3.0.0-SNAPSHOT,3.99.99)</version>
 			<scope>test</scope>
 		</dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j.version}</version>
-            <scope>test</scope>
-        </dependency>
+<!--         <dependency> -->
+<!--             <groupId>org.apache.logging.log4j</groupId> -->
+<!--             <artifactId>log4j-core</artifactId> -->
+<!--             <version>${log4j.version}</version> -->
+<!--             <scope>test</scope> -->
+<!--         </dependency> -->
         <dependency>
             <groupId>org.prelle.rpgframework</groupId>
             <artifactId>splittermond-data</artifactId>

@@ -1,51 +1,21 @@
 package org.prelle.splimo.chargen.jfx;
 
-import java.util.function.Predicate;
-
-import org.prelle.javafx.ManagedScreen;
-import org.prelle.javafx.ModernUI;
-import org.prelle.javafx.ScreenManager;
 import org.prelle.javafx.TriStateCheckBox;
 import org.prelle.javafx.TriStateCheckBox.State;
-import org.prelle.javafx.skin.MetroSliderSkin;
-import org.prelle.rpgframework.jfx.CharacterDocumentView;
-import org.prelle.rpgframework.jfx.Section;
-import org.prelle.rpgframework.jfx.SingleSection;
 import org.prelle.splimo.DummyRulePlugin;
-import org.prelle.splimo.ResourceReference;
-import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.SplittermondCustomDataCore;
-import org.prelle.splimo.charctrl.CharacterController;
-import org.prelle.splimo.chargen.LetUserChooseListener;
-import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
-import org.prelle.splimo.chargen.creature.CreatureGenerator;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
-import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.equip.ItemLevellerAndGenerator;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.EnhancementReference;
 import org.prelle.splimo.items.ItemTemplate;
-import org.prelle.splimo.levelling.CharacterLeveller;
-import org.prelle.splimo.modifications.MastershipModification;
-import org.prelle.splimo.modifications.ModificationChoice;
-import org.prelle.splimo.npc.NPCGenerator;
-import org.prelle.splittermond.chargen.fluent.AttributesView;
-import org.prelle.splittermond.chargen.fluent.SplittermondCharGenView;
-import org.prelle.splittermond.chargen.jfx.CharGenWizardSpliMo;
-import org.prelle.splittermond.jfx.creatures.CreatureCreateScreen;
-import org.prelle.splittermond.jfx.creatures.CreatureWizardSpliMo;
-import org.prelle.splittermond.jfx.equip.ItemGeneratorPane;
-import org.prelle.splittermond.jfx.equip.input.EnterItemTemplatePane;
-import org.prelle.splittermond.jfx.spells.SpellSlider;
+import org.prelle.splittermond.chargen.jfx.SpellSlider;
+import org.prelle.splittermond.chargen.jfx.dialogs.EditCarriedItemDialog;
 
 import de.rpgframework.RPGFrameworkLoader;
-import de.rpgframework.genericrpg.ToDoElement;
-import de.rpgframework.genericrpg.modification.Modification;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -80,9 +50,9 @@ public class SPRStarter extends Application {
 			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("load")));
 			item.addEnhancement(new EnhancementReference(SplitterMondCore.getEnhancement("speed")));
 			ItemLevellerAndGenerator itemGen = new ItemLevellerAndGenerator(item, Integer.MAX_VALUE);
-			Parent toShow = new ItemGeneratorPane();
-			GenerationEventDispatcher.addListener((ItemGeneratorPane)toShow);
-			((ItemGeneratorPane)toShow).setData(itemGen);
+			Parent toShow = new EditCarriedItemDialog(null, itemGen);
+			GenerationEventDispatcher.addListener((EditCarriedItemDialog)toShow);
+			((EditCarriedItemDialog)toShow).refresh();
 			toShow.getStyleClass().add("page");
 
 
@@ -95,7 +65,7 @@ public class SPRStarter extends Application {
 			break;
 		case 2:
 			Slider slider = new Slider(0, 2, 0);
-			slider.setSkin(new MetroSliderSkin(slider));
+//			slider.setSkin(new MetroSliderSkin(slider));
 			slider.setMinorTickCount(0);
 	        slider.setMajorTickUnit(1);
 	        slider.setSnapToTicks(true);
@@ -151,127 +121,127 @@ public class SPRStarter extends Application {
 
 			scene = new Scene(slider3);
 			break;
-		case 4:
-			SplitterMondCore.initialize(new DummyRulePlugin<>());
-			template = SplitterMondCore.getItem("bihander");
-			System.out.println("Show "+template);
-			toShow = new EnterItemTemplatePane(template);
-			toShow.getStyleClass().add("page");
-
-
-			scene = new Scene(toShow);
-			scene.getStylesheets().addAll("css/splittermond.css");
-			break;
-		case 5:
-			template = SplitterMondCore.getItem("longbow");
-			template.setCustomName("Mein Langbogen");
-//			Logger.getLogger("xml").setLevel(Level.DEBUG);
-			SplittermondCustomDataCore.addItem(template);
-			System.exit(0);
-		case 6:
-			SplitterMondCore.initialize(new DummyRulePlugin<>());
-			Creature creature = new Creature();
-			NPCGenerator npcGen = new NPCGenerator(creature);
-			CreatureWizardSpliMo creaWiz = new CreatureWizardSpliMo(npcGen);
-			ScreenManager mgmr = new ScreenManager();
-			mgmr.show(creaWiz);
-			scene = new Scene(mgmr, 1000, 10000);
-			scene.getStylesheets().addAll("css/splittermond.css");
-			break;
-		case 7:
-			SplitterMondCore.initialize(new DummyRulePlugin<>());
-			ResourceReference resource = new ResourceReference(SplitterMondCore.getResource("creature"),2);
-			LetUserChooseListener callback = new LetUserChooseListener() {
-
-				@Override
-				public MastershipModification letUserChoose(String choiceReason,
-						MastershipModification vagueMod) {
-					// TODO Auto-generated method stub
-					return null;
-				}
-
-				@Override
-				public Modification[] letUserChoose(String choiceReason,
-						ModificationChoice choice) {
-					// TODO Auto-generated method stub
-					return null;
-				}
-
-				@Override
-				public void addPrefilter(Predicate<Modification> filter) {
-					// TODO Auto-generated method stub
-
-				}
-			};
-			ManagedScreen dia = new CreatureCreateDialog(new CreatureGenerator(resource));
-			mgmr = new ScreenManager();
-			mgmr.show(dia);
-			scene = new Scene(mgmr, 1500, 1000);
-			scene.getStylesheets().addAll("css/splittermond.css");
-			break;
-		case 8:
-			SplitterMondCore.initialize(new DummyRulePlugin<>());
-			SpliMoCharacter lenkan = SplitterMondCore.load(ClassLoader.getSystemResourceAsStream("Lenkan.xml"));
-			CharacterController control = new CharacterLeveller(lenkan, null);
-
-			mgmr = new ScreenManager();
-			scene = new Scene(mgmr, 1570, 1000);
-			ModernUI.initialize(scene);
-			scene.getStylesheets().addAll("css/rpgframework.css");
-			SplittermondCharGenView diaS = new SplittermondCharGenView(control, mgmr, null);
-			diaS.setData(lenkan, null);
-			mgmr.show(diaS);
-			break;
-		case 9:
-			CharacterDocumentView view = new CharacterDocumentView();
-			Label longText = new Label("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
-			longText.setWrapText(true);
-			view.setDescriptionNode(longText);
-			SingleSection sect1 = new SingleSection();
-			sect1.setTitle("Abschnitt 1");
-			sect1.setContent(new Label("Hallo Welt"));
-//			sect1.getToDoList().add(new Label("Einfache Anweisung"));
-			SingleSection sect2 = new SingleSection();
-			sect2.setTitle("Abschnitt 2");
-			sect2.setContent(new Label("Hell(o) World\nHow are you?\n\nOh, I see! :("));
-			sect2.getToDoList().add(new ToDoElement(ToDoElement.Severity.STOPPER, "Einfache Anweisung"));
-			sect2.getToDoList().add(new ToDoElement(ToDoElement.Severity.WARNING, "Warnmeldung"));
-			view.getSectionList().addAll(sect1, sect2);
-
-			mgmr = new ScreenManager();
-			scene = new Scene(view, 1500, 1000);
-			scene.getStylesheets().addAll("css/rpgframework.css");
-
-//			ManagedScreen charViewScreen = new ManagedScreen() {
+//		case 4:
+//			SplitterMondCore.initialize(new DummyRulePlugin<>());
+//			template = SplitterMondCore.getItem("bihander");
+//			System.out.println("Show "+template);
+//			toShow = new EnterItemTemplatePane(template);
+//			toShow.getStyleClass().add("page");
+//
+//
+//			scene = new Scene(toShow);
+//			scene.getStylesheets().addAll("css/splittermond.css");
+//			break;
+//		case 5:
+//			template = SplitterMondCore.getItem("longbow");
+//			template.setCustomName("Mein Langbogen");
+////			Logger.getLogger("xml").setLevel(Level.DEBUG);
+//			SplittermondCustomDataCore.addItem(template);
+//			System.exit(0);
+//		case 6:
+//			SplitterMondCore.initialize(new DummyRulePlugin<>());
+//			Creature creature = new Creature();
+//			NPCGenerator npcGen = new NPCGenerator(creature);
+//			CreatureWizardSpliMo creaWiz = new CreatureWizardSpliMo(npcGen);
+//			ScreenManager mgmr = new ScreenManager();
+//			mgmr.show(creaWiz);
+//			scene = new Scene(mgmr, 1000, 10000);
+//			scene.getStylesheets().addAll("css/splittermond.css");
+//			break;
+//		case 7:
+//			SplitterMondCore.initialize(new DummyRulePlugin<>());
+//			ResourceReference resource = new ResourceReference(SplitterMondCore.getResource("creature"),2);
+//			LetUserChooseListener callback = new LetUserChooseListener() {
 //
 //				@Override
-//				public String[] getStyleSheets() {
+//				public MastershipModification letUserChoose(String choiceReason,
+//						MastershipModification vagueMod) {
 //					// TODO Auto-generated method stub
-//					return new String[] {"css/rpgframework.css"};
+//					return null;
+//				}
+//
+//				@Override
+//				public Modification[] letUserChoose(String choiceReason,
+//						ModificationChoice choice) {
+//					// TODO Auto-generated method stub
+//					return null;
+//				}
+//
+//				@Override
+//				public void addPrefilter(Predicate<Modification> filter) {
+//					// TODO Auto-generated method stub
+//
 //				}
 //			};
-//			charViewScreen.setContent(view);
-//			mgmr.replaceContent(charViewScreen);
-			break;
-		case 10:
-			SplitterMondCore.initialize(new DummyRulePlugin<>());
-			control = new SpliMoCharacterGenerator(new SpliMoCharacter(), null);
-			AttributesView aView = new AttributesView(control);
-			scene = new Scene(aView);
-			ModernUI.initialize(scene);
-			scene.getStylesheets().addAll("css/rpgframework.css","css/splittermond.css");
-			break;
-		case 11:
-			SplitterMondCore.initialize(new DummyRulePlugin<>());
-			SpliMoCharacter model = new SpliMoCharacter();
-			SpliMoCharacterGenerator charGen = new SpliMoCharacterGenerator(model, null);
-			CharGenWizardSpliMo charWiz = new CharGenWizardSpliMo(model, charGen);
-			mgmr = new ScreenManager();
-			mgmr.show(charWiz);
-			scene = new Scene(mgmr, 1000, 10000);
-			ModernUI.initialize(scene);
-			scene.getStylesheets().addAll("css/rpgframework.css");
-			break;
+//			ManagedScreen dia = new CreatureCreateDialog(new CreatureGenerator(resource));
+//			mgmr = new ScreenManager();
+//			mgmr.show(dia);
+//			scene = new Scene(mgmr, 1500, 1000);
+//			scene.getStylesheets().addAll("css/splittermond.css");
+//			break;
+//		case 8:
+//			SplitterMondCore.initialize(new DummyRulePlugin<>());
+//			SpliMoCharacter lenkan = SplitterMondCore.load(ClassLoader.getSystemResourceAsStream("Lenkan.xml"));
+//			CharacterController control = new CharacterLeveller(lenkan, null);
+//
+//			mgmr = new ScreenManager();
+//			scene = new Scene(mgmr, 1570, 1000);
+//			ModernUI.initialize(scene);
+//			scene.getStylesheets().addAll("css/rpgframework.css");
+//			SplittermondCharGenView2 diaS = new SplittermondCharGenView2(control, mgmr, null);
+//			diaS.setData(lenkan, null);
+//			mgmr.show(diaS);
+//			break;
+//		case 9:
+//			CharacterDocumentView view = new CharacterDocumentView();
+//			Label longText = new Label("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
+//			longText.setWrapText(true);
+//			view.setDescriptionNode(longText);
+//			SingleSection sect1 = new SingleSection();
+//			sect1.setTitle("Abschnitt 1");
+//			sect1.setContent(new Label("Hallo Welt"));
+////			sect1.getToDoList().add(new Label("Einfache Anweisung"));
+//			SingleSection sect2 = new SingleSection();
+//			sect2.setTitle("Abschnitt 2");
+//			sect2.setContent(new Label("Hell(o) World\nHow are you?\n\nOh, I see! :("));
+//			sect2.getToDoList().add(new ToDoElement(ToDoElement.Severity.STOPPER, "Einfache Anweisung"));
+//			sect2.getToDoList().add(new ToDoElement(ToDoElement.Severity.WARNING, "Warnmeldung"));
+//			view.getSectionList().addAll(sect1, sect2);
+//
+//			mgmr = new ScreenManager();
+//			scene = new Scene(view, 1500, 1000);
+//			scene.getStylesheets().addAll("css/rpgframework.css");
+//
+////			ManagedScreen charViewScreen = new ManagedScreen() {
+////
+////				@Override
+////				public String[] getStyleSheets() {
+////					// TODO Auto-generated method stub
+////					return new String[] {"css/rpgframework.css"};
+////				}
+////			};
+////			charViewScreen.setContent(view);
+////			mgmr.replaceContent(charViewScreen);
+//			break;
+//		case 10:
+//			SplitterMondCore.initialize(new DummyRulePlugin<>());
+//			control = new SpliMoCharacterGenerator(new SpliMoCharacter(), null);
+//			AttributesView aView = new AttributesView(control);
+//			scene = new Scene(aView);
+//			ModernUI.initialize(scene);
+//			scene.getStylesheets().addAll("css/rpgframework.css","css/splittermond.css");
+//			break;
+//		case 11:
+//			SplitterMondCore.initialize(new DummyRulePlugin<>());
+//			SpliMoCharacter model = new SpliMoCharacter();
+//			SpliMoCharacterGenerator charGen = new SpliMoCharacterGenerator(model, null);
+//			CharGenWizardSpliMo charWiz = new CharGenWizardSpliMo(model, charGen);
+//			mgmr = new ScreenManager();
+//			mgmr.show(charWiz);
+//			scene = new Scene(mgmr, 1000, 10000);
+//			ModernUI.initialize(scene);
+//			scene.getStylesheets().addAll("css/rpgframework.css");
+//			break;
 		}
 
 //		ModernUI.initialize(scene);
