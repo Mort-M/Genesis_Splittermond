@@ -36,7 +36,7 @@
 			<creaturefeature type="COWARD"/>
 			<creaturefeature type="CREATURE" level="4"/>
 			<creaturefeature type="WEAK"/>
-	 		<creaturefeature type="vulnurable_damage" damage="WATER"/>
+	 		<creaturefeature type="vulnurable_damage" damage="WATER"/> <!-- müsste Kälteschaden sein -->
 		</features>
 	</creature>
 
@@ -84,7 +84,7 @@
 			<creaturefeature type="COWARD"/>
 			<creaturefeature type="CREATURE" level="4"/>
 			<creaturefeature type="WEAK"/>
-	 		<creaturefeature type="vulnurable_damage" damage="WATER"/>
+	 		<creaturefeature type="vulnurable_damage" damage="WATER"/> <!-- müsste Kälteschaden sein -->
 		</features>
 	</creature>
 

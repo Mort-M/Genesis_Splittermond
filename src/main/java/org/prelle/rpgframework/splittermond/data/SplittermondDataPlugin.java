@@ -1,7 +1,4 @@
-/**
- *
- */
-package org.prelle.rpgframework.splittermond.data;
+﻿package org.prelle.rpgframework.splittermond.data;
 
 import java.io.InputStream;
 import java.util.Arrays;
@@ -310,11 +307,11 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadMaterials(KESH, clazz.getResourceAsStream("kesh/data/materials-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
 		SplitterMondCore.loadMasterships(KESH, clazz.getResourceAsStream("kesh/data/masterships-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
 		SplitterMondCore.loadSpells(KESH, clazz.getResourceAsStream("kesh/data/spells-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
+		SplitterMondCore.loadEducations(KESH, clazz.getResourceAsStream("kesh/data/educations-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
 		SplitterMondCore.loadCreatures(KESH, clazz.getResourceAsStream("kesh/data/creatures-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
 		SplitterMondCore.loadNameTable(KESH, clazz.getResourceAsStream("kesh/data/nametable-keshabid.xml"), KESH.getResources(), KESH.getHelpResources());
 		SplitterMondCore.loadNameTable(KESH, clazz.getResourceAsStream("kesh/data/nametable-keshubim.xml"), KESH.getResources(), KESH.getHelpResources());
 		SplitterMondCore.loadNameTable(KESH, clazz.getResourceAsStream("kesh/data/nametable-turubar.xml"), KESH.getResources(), KESH.getHelpResources());
-
 		BasePluginData.flushMissingKeys();
 		logger.debug("STOP  Initialize");
 //		logger.fatal("Stop here");
