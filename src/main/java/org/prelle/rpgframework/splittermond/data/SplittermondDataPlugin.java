@@ -1,4 +1,4 @@
-﻿package org.prelle.rpgframework.splittermond.data;
+package org.prelle.rpgframework.splittermond.data;
 
 import java.io.InputStream;
 import java.util.Arrays;
