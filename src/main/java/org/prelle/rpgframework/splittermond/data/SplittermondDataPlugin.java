@@ -305,7 +305,6 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 
 		logger.info("START -------------------------------Kesh----------------------------------------------");
 		PluginSkeleton KESH = new PluginSkeleton("Kesh", "Das Erbe von Kesh");
-		SplitterMondCore.loadCreatureFeatureTypes(KESH, clazz.getResourceAsStream("kesh/data/creaturefeaturetypes-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
 		SplitterMondCore.loadEquipment(KESH, clazz.getResourceAsStream("kesh/data/equipment-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
 		SplitterMondCore.loadEquipment(KESH, clazz.getResourceAsStream("kesh/data/alchemy-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
 		SplitterMondCore.loadMaterials(KESH, clazz.getResourceAsStream("kesh/data/materials-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
