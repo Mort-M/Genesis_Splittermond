@@ -163,7 +163,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadMasterships(MSK, clazz.getResourceAsStream("msk/data/skills-msk.xml"), MSK.getResources(), MSK.getHelpResources());
 
 		logger.info("START -------------------------------BuU-----------------------------------------------");
-		PluginSkeleton BUU = new PluginSkeleton("BuU", "Bestien und Unheheuer");
+		PluginSkeleton BUU = new PluginSkeleton("BuU", "Bestien und Ungeheuer");
 		SplitterMondCore.loadCreatureTypes(BUU, clazz.getResourceAsStream("buu/data/creaturetypes-buu.xml"), BUU.getResources(), BUU.getHelpResources());
 		SplitterMondCore.loadCreatureFeatureTypes(BUU, clazz.getResourceAsStream("buu/data/creaturefeaturetypes-buu.xml"), BUU.getResources(), BUU.getHelpResources());
 		SplitterMondCore.loadCreatures(BUU, clazz.getResourceAsStream("buu/data/creatures-buu.xml"), BUU.getResources(), BUU.getHelpResources());
@@ -300,6 +300,14 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadSpells(ZHOU, clazz.getResourceAsStream("zhoujiang/data/spells-zhoujiang.xml"), ZHOU.getResources(), ZHOU.getHelpResources());
 		SplitterMondCore.loadNameTable(ZHOU, clazz.getResourceAsStream("zhoujiang/data/nametable-zhoujiang.xml"), ZHOU.getResources(), ZHOU.getHelpResources());
 
+		logger.info("START -------------------------------Suderinseln---------------------------------------");
+		PluginSkeleton SUDER = new PluginSkeleton("Suderinseln", "Die Suderinseln");
+		SplitterMondCore.loadEquipment(SUDER, clazz.getResourceAsStream("suderinseln/data/equipment-suderinseln.xml"), SUDER.getResources(), SUDER.getHelpResources());
+		SplitterMondCore.loadEducations(SUDER, clazz.getResourceAsStream("suderinseln/data/educations-suderinseln.xml"), SUDER.getResources(), SUDER.getHelpResources());
+		SplitterMondCore.loadCreatures(SUDER, clazz.getResourceAsStream("suderinseln/data/creatures-suderinseln.xml"), SUDER.getResources(), SUDER.getHelpResources());
+		SplitterMondCore.loadNameTable(SUDER, clazz.getResourceAsStream("suderinseln/data/nametable-schaedel.xml"), SUDER.getResources(), SUDER.getHelpResources());
+		SplitterMondCore.loadNameTable(SUDER, clazz.getResourceAsStream("suderinseln/data/nametable-anuu.xml"), SUDER.getResources(), SUDER.getHelpResources());
+		
 		logger.info("START -------------------------------Kesh----------------------------------------------");
 		PluginSkeleton KESH = new PluginSkeleton("Kesh", "Das Erbe von Kesh");
 		SplitterMondCore.loadEquipment(KESH, clazz.getResourceAsStream("kesh/data/equipment-kesh.xml"), KESH.getResources(), KESH.getHelpResources());
