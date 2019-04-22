@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
   <!--#####################  KLEIDUNG UND SCHMUCK  #####################-->
-  <item avail="LARGE_TOWN" cplx="G" id="furVestWoolRhinoceros" load="3" material="FABRIC" price="150" robust="2" type="CLOTHING" />
-  <item avail="LARGE_TOWN" cplx="G" id="furHatWoolRhinoceros" load="1" material="FABRIC" price="50" robust="2" type="CLOTHING" />
-  <item avail="LARGE_TOWN" cplx="G" id="glovesWoolRhinoceros" load="0" material="FABRIC" price="50" robust="0" type="CLOTHING" />
-  <item avail="SMALL_TOWN" cplx="G" id="caftanGenealogy" load="3" material="FABRIC" price="100" robust="0" skill="diplomacy" spec="diplomacy/etiquettes" type="CLOTHING" />
-  <item avail="VILLAGE" cplx="G" id="colorfulFeatherJewelry" load="0" material="OTHER" price="300" robust="1" type="CLOTHING" />
-  <item avail="VILLAGE" cplx="G" id="bodypaint" load="0" material="OTHER" price="500" robust="0" type="CLOTHING" />
-  <item avail="VILLAGE" cplx="G" id="hornwax" load="0" material="OTHER" price="500" robust="0" skill="diplomacy" type="CLOTHING" />
+  <item avail="LARGE_TOWN" cplx="G" id="furVestWoolRhinoceros" load="3" material="FABRIC" price="1500" robust="2" type="CLOTHING" />
+  <item avail="LARGE_TOWN" cplx="G" id="furHatWoolRhinoceros" load="1" material="FABRIC" price="500" robust="2" type="CLOTHING" />
+  <item avail="LARGE_TOWN" cplx="G" id="glovesWoolRhinoceros" load="0" material="FABRIC" price="500" robust="0" type="CLOTHING" />
+  <item avail="SMALL_TOWN" cplx="G" id="caftanGenealogy" load="3" material="FABRIC" price="1000" robust="0" skill="diplomacy" spec="diplomacy/etiquettes" type="CLOTHING" />
+  <item avail="VILLAGE" cplx="G" id="colorfulFeatherJewelry" load="0" material="OTHER" price="30" robust="1" type="CLOTHING" />
+  <item avail="VILLAGE" cplx="G" id="bodypaint" load="0" material="OTHER" price="50" robust="0" type="CLOTHING" />
+  <item avail="VILLAGE" cplx="G" id="hornwax" load="0" material="OTHER" price="50" robust="0" skill="diplomacy" type="CLOTHING" />
   <!--####################  ESSEN UND TRINKEN  #########################-->
-  <item avail="VILLAGE" cplx="G" id="beerBarrel" load="5" material="OTHER" price="10" robust="3" type="OTHER" />
-  <item avail="SMALL_TOWN" cplx="F" id="djinnenbrandBottle" load="1" material="OTHER" price="50" robust="1" type="OTHER" />
-  <item avail="SMALL_TOWN" cplx="F" id="simurghendrinkBottle" load="1" material="OTHER" price="20" robust="1" type="OTHER" />
-  <item avail="VILLAGE" cplx="G" id="teaTurubar" load="0" material="OTHER" price="5" robust="0" type="OTHER" />
-  <item avail="VILLAGE" cplx="G" id="teaSet" load="1" material="OTHER" price="10" robust="2" type="OTHER" />
+  <item avail="VILLAGE" cplx="G" id="beerBarrel" load="5" material="WOOD" price="100" robust="3" type="OTHER" />
+  <item avail="SMALL_TOWN" cplx="F" id="djinnenbrandBottle" load="1" material="OTHER" price="500" robust="1" type="OTHER" />
+  <item avail="SMALL_TOWN" cplx="F" id="simurghendrinkBottle" load="1" material="OTHER" price="200" robust="1" type="OTHER" />
+  <item avail="VILLAGE" cplx="G" id="tea_Turubar" load="0" material="OTHER" price="5" robust="0" type="OTHER" />
+  <item avail="VILLAGE" cplx="G" id="teaSet" load="1" material="OTHER" price="100" robust="2" type="OTHER" />
 </items>
