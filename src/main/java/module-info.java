@@ -15,6 +15,7 @@ module splittermond.data {
 	opens org.prelle.rpgframework.splittermond.data.ungebrochen.data;
 	opens org.prelle.rpgframework.splittermond.data.unreich.data;
 	opens org.prelle.rpgframework.splittermond.data.zhoujiang.data;
+	opens org.prelle.rpgframework.splittermond.data.kesh.data;
 
 	provides de.rpgframework.RulePlugin with org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 
