@@ -512,7 +512,7 @@
                 <skillmod ref="insightmagic" value="3"/>
             </selmod>
             
-            <mastermod ref="survival/terrainlore_mountain"/> <!-- Geländekunde (Höhlen) normalerweise -->
+            <mastermod ref="survival/terrainlore_caves"/>
             <mastermod ref="countrylore/polymath"/>
 
         </modifications>
