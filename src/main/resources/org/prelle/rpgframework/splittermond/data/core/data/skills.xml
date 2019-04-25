@@ -1289,6 +1289,7 @@
         <mastership level="1" key="terrainlore_jungle" />
         <mastership level="1" key="terrainlore_faerie" />
         <mastership level="1" key="terrainlore_caves" />
+        <mastership level="1" key="terrainlore_tundra" />        
         <mastership level="1" key="meteologist">
             <requires>
                 <specialreq ref="weatherforecast"/>
