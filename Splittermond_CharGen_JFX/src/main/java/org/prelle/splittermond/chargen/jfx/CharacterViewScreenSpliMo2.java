@@ -491,9 +491,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			refresh();
 		} else {
 			logger.warn("Wizard "+close);
-//			getScreenManager().closeCurrent(close);
-			getScreenManager().close(this, close);
-			
+			getScreenManager().closeScreen();
 		}
 	}
 

@@ -1,12 +1,9 @@
 package org.prelle.splittermond.chargen.jfx;
 
-import org.prelle.rpgframework.jfx.FreePointsNode;
 import org.prelle.splimo.SpliMoCharacter;
 
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
 import javafx.scene.layout.HBox;
 
 /**
