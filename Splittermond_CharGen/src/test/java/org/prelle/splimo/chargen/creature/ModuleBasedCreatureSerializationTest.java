@@ -14,9 +14,9 @@ import org.apache.logging.log4j.LogManager;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
-import org.prelle.simplepersist.Persister;
-import org.prelle.simplepersist.SerializationException;
-import org.prelle.simplepersist.Serializer;
+//import org.prelle.simplepersist.Persister;
+//import org.prelle.simplepersist.SerializationException;
+//import org.prelle.simplepersist.Serializer;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.creature.CreatureModuleReference;
 import org.prelle.splimo.creature.CreatureTypeValue;
@@ -170,7 +170,7 @@ public class ModuleBasedCreatureSerializationTest {
 			"         </modcreature>"+SEP;
 
 	final static ModuleBasedCreature CHARAC = new ModuleBasedCreature();
-	static private Serializer m;
+//	static private Serializer m;
 
 	//-------------------------------------------------------------------
 	/**
@@ -226,24 +226,7 @@ public class ModuleBasedCreatureSerializationTest {
 		weapon.setDamage(30604);;
 		CHARAC.addWeapon(weapon);
 
-
-		//		CHARAC.getSkillValue(SplitterMondCore.getSkill("acrobatics")).setValue(11);
-		//		SkillValue insight = CHARAC.getSkillValue(SplitterMondCore.getSkill("naturemagic"));
-		//		insight.setValue(9);
-		//		insight.addMastership(new MastershipReference(insight.getSkill().getMastership("naturesong")));
-		////		MastershipReference mRef = new MastershipReference(insight.getSkill().getMastership("savingcaster"));
-		////		mRef.setFree(1);
-		////		insight.addMastership(mRef);
-		//		
-		//		SpellValue spell1 = new SpellValue(SplitterMondCore.getSpell("truesight"), insight.getSkill());
-		//		SpellValue spell2 = new SpellValue(SplitterMondCore.getSpell("magicmessage"), insight.getSkill());
-		//		spell2.setFreeLevel(1);
-		//		CHARAC.addSpell(spell1);
-		//		CHARAC.addSpell(spell2);
-
-		m = new Persister();
-
-		//		Logger.getLogger("xml").setLevel(Level.DEBUG);
+//		m = new Persister();
 	}
 
 	//-------------------------------------------------------------------
@@ -252,11 +235,11 @@ public class ModuleBasedCreatureSerializationTest {
 
 	//-------------------------------------------------------------------
 	@Test
-	public void serialize() throws SerializationException, IOException {
+	public void serialize() throws Exception {
 		System.out.println("-----serialize----------------------------------");
 		//		Logger.getLogger("xml").setLevel(Level.DEBUG);
 		StringWriter out = new StringWriter();
-		m.write(CHARAC, out);
+//		m.write(CHARAC, out);
 
 		System.out.println("OUT: "+out);
 		assertEquals(DATA, out.toString());
@@ -266,22 +249,22 @@ public class ModuleBasedCreatureSerializationTest {
 	@Test
 	public void deserialize() {
 		System.out.println("-----deserialize----------------------------------");
-		try {
-			ModuleBasedCreature result = m.read(ModuleBasedCreature.class, new StringReader(DATA));
-			System.out.println("Read "+result.dump());
-
-			//			assertEquals(11, result.getSkillPoints(SplitterMondCore.getSkill("acrobatics")));
-			//			assertEquals(4, result.getAttribute(Attribute.CHARISMA).getDistributed());
-			//			assertEquals(3, result.getAttribute(Attribute.MIND).getBought());
-			//			assertNotNull(result.getImage());
-			//			byte[] img = result.getImage();
-			//			assertEquals(4, img.length);
-			//			assertEquals(1, img[0]);
-			//			assertEquals(4, img[3]);
-		} catch (Exception e) {
-			e.printStackTrace();
-			fail(e.toString());
-		}
+//		try {
+//			ModuleBasedCreature result = m.read(ModuleBasedCreature.class, new StringReader(DATA));
+//			System.out.println("Read "+result.dump());
+//
+//			//			assertEquals(11, result.getSkillPoints(SplitterMondCore.getSkill("acrobatics")));
+//			//			assertEquals(4, result.getAttribute(Attribute.CHARISMA).getDistributed());
+//			//			assertEquals(3, result.getAttribute(Attribute.MIND).getBought());
+//			//			assertNotNull(result.getImage());
+//			//			byte[] img = result.getImage();
+//			//			assertEquals(4, img.length);
+//			//			assertEquals(1, img[0]);
+//			//			assertEquals(4, img[3]);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			fail(e.toString());
+//		}
 	}
 
 }
