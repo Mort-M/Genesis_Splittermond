@@ -17,7 +17,7 @@ module splittermond.chargen {
 	requires java.xml;
 	requires org.apache.logging.log4j;
 	requires transitive rpgframework.api;
-	requires simple.persist;
 	requires transitive splittermond.core;
 	requires splittermond.data;
+	
 }
