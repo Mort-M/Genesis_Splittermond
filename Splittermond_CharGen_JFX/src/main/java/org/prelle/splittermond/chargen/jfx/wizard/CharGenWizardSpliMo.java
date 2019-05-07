@@ -1,6 +1,8 @@
 package org.prelle.splittermond.chargen.jfx.wizard;
 
 import org.apache.logging.log4j.LogManager;
+import org.prelle.javafx.AlertType;
+import org.prelle.javafx.CloseType;
 import org.prelle.javafx.Wizard;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
@@ -36,6 +38,14 @@ public class CharGenWizardSpliMo extends Wizard implements GenerationEventListen
 				);
 		
 		GenerationEventDispatcher.addListener(this);
+
+		this.setConfirmCancelCallback( wizardParam -> {
+			CloseType answer = getScreenManager().showAlertAndCall(
+					AlertType.CONFIRMATION,
+					SpliMoCharGenJFXConstants.UI.getString("wizard.cancelconfirm.header"),
+					SpliMoCharGenJFXConstants.UI.getString("wizard.cancelconfirm.content"));
+			return answer==CloseType.OK || answer==CloseType.YES;
+		});
 	}
 
 	//-------------------------------------------------------------------
