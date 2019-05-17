@@ -33,13 +33,13 @@ public class ItemUtils {
 		iView.setFitHeight(48);
 		iView.setFitWidth(48);
 		switch (type) {
-		case ARMOR  : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_armor.png"))); break;
-		case LONG_RANGE_WEAPON: iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_bow.png"))); break;
-		case WEAPON : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_sword.png"))); break;
-		case SHIELD : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_shield.png"))); break;
-		case POTION : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_potion.png"))); break;
-		case CONTAINER: iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_container.png"))); break;
-		case TRAVEL : iView.setImage(new Image(ClassLoader.getSystemResourceAsStream(SpliMoCharGenJFXConstants.PREFIX+"/images/icon_travel.png"))); break;
+		case ARMOR  : iView.setImage(new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_armor.png"))); break;
+		case LONG_RANGE_WEAPON: iView.setImage(new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_bow.png"))); break;
+		case WEAPON : iView.setImage(new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_sword.png"))); break;
+		case SHIELD : iView.setImage(new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_shield.png"))); break;
+		case POTION : iView.setImage(new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_potion.png"))); break;
+		case CONTAINER: iView.setImage(new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_container.png"))); break;
+		case TRAVEL : iView.setImage(new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_travel.png"))); break;
 		default:
 			break;
 		}
