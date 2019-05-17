@@ -4,8 +4,12 @@
 package org.prelle.splittermond.chargen.jfx.sections;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,8 +21,12 @@ import org.prelle.splimo.Deity;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CharacterController;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
+import de.rpgframework.RPGFramework;
 import de.rpgframework.character.CharacterHandle;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
@@ -35,6 +43,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 /**
  * @author prelle
@@ -43,6 +53,8 @@ import javafx.scene.layout.Region;
 public class PortraitSection extends SingleSection {
 
 	private final static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
+
+	private static Preferences CONFIG = Preferences.userRoot().node(RPGFramework.LAST_OPEN_DIR);
 
 	private static PropertyResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle(PortraitSection.class.getName());
 
@@ -60,6 +72,7 @@ public class PortraitSection extends SingleSection {
 	private ImageView            ivPortrait;
 
 	private ObjectProperty<BasePluginData> showHelpFor = new SimpleObjectProperty<>();
+	private Image dummy;
 
 	//-------------------------------------------------------------------
 	public PortraitSection(String title, CharacterController ctrl, CharacterHandle handle, ScreenManagerProvider provider) {
@@ -67,7 +80,7 @@ public class PortraitSection extends SingleSection {
 		control = ctrl;
 		this.handle = handle;
 		model = ctrl.getModel();
-
+		
 		initComponents();
 		initLayout();
 		refresh();
@@ -89,8 +102,10 @@ public class PortraitSection extends SingleSection {
 		tfSkin      = new TextField();
 		tfBirth     = new TextField();
 
+		dummy = new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/guest-256.png"));
+
 		cbDeity.setDisable(true);
-		ivPortrait  = new ImageView();
+		ivPortrait  = new ImageView(dummy);
 		ivPortrait.setPreserveRatio(true);
 		ivPortrait.setFitHeight(200);
 		ivPortrait.setFitWidth(200);
@@ -188,30 +203,34 @@ public class PortraitSection extends SingleSection {
 	//-------------------------------------------------------------------
 	private void onAdd() {
 		logger.debug("opening image selection dialog");
-		
-//		ItemTemplateSelector selector = new ItemTemplateSelector(allowedItemTypes, ctrl.getEquipmentController());
-//		SelectorWithHelp<ItemTemplate> pane = new SelectorWithHelp<ItemTemplate>(selector);
-//		ManagedDialog dialog = new ManagedDialog(UI.getString("selectiondialog.title"), pane, CloseType.OK, CloseType.CANCEL);
-//		
-//		CloseType close = (CloseType) getManagerProvider().getScreenManager().showAndWait(dialog);
-//		logger.debug("Closed with "+close);
-//		if (close==CloseType.OK) {
-//			ItemTemplate selected = selector.getSelectedItem();
-//			logger.debug("Selected gear: "+selected);
-//			if (selected!=null) {
-//				CarriedItem item = ctrl.getEquipmentController().select(selected);
-//				if (item==null) {
-//					getManagerProvider().getScreenManager().showAlertAndCall(AlertType.ERROR, "header", "Cannot select "+selected);
-//				}
-//				refresh();
-//			}
-//		}
+
+		FileChooser chooser = new FileChooser();
+		chooser.setTitle(RES.getString("appearance.filechooser.title"));
+		String lastDir = CONFIG.get(RPGFramework.PROP_LAST_OPEN_IMAGE_DIR, System.getProperty("user.home"));
+		chooser.setInitialDirectory(new File(lastDir));
+		chooser.getExtensionFilters().addAll(
+				new FileChooser.ExtensionFilter("All", "*.*"),
+				new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+				new FileChooser.ExtensionFilter("PNG", "*.png")
+				);
+		File selection = chooser.showOpenDialog(new Stage());
+		if (selection!=null) {
+			CONFIG.put(RPGFramework.PROP_LAST_OPEN_IMAGE_DIR, selection.getParentFile().getAbsolutePath().toString());
+			try {
+				byte[] imgBytes = Files.readAllBytes(selection.toPath());
+				ivPortrait.setImage(new Image(new ByteArrayInputStream(imgBytes)));
+				control.getModel().setImage(imgBytes);
+				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, null));
+			} catch (IOException e) {
+				logger.warn("Failed loading image from "+selection+": "+e);
+			}
+		}
 	}
 
 	//-------------------------------------------------------------------
 	private void onDelete() {
 		model.setImage(null);
-		ivPortrait.setImage(null);
+		ivPortrait.setImage(dummy);
 	}
 
 }
