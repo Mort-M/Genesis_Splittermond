@@ -11,14 +11,11 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 import org.prelle.splimo.Resource;
 import org.prelle.splimo.ResourceReference;
@@ -37,8 +34,6 @@ import org.prelle.splimo.items.Material;
  */
 @FixMethodOrder
 public class ItemControllerTest {
-
-	private final static Logger logger = LogManager.getLogger("junit.power");
 
 	private static ItemTemplate DAGGER;
 	private static Enhancement SPEED;
@@ -101,7 +96,6 @@ public class ItemControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testIdleState() {
-		logger.debug("------testIdleState----------");
 		assertEquals(0, generator.getPointsLeft());
 		assertEquals(0, model.getArtifactQuality());
 		assertEquals(0, model.getItemQuality());
@@ -115,8 +109,6 @@ public class ItemControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testEnhancementsOnNonRelic() {
-		logger.debug("------testEnhancementsNonRelic----------");
-
 		assertTrue(generator.canBeAdded(SPEED));
 		assertTrue(generator.canBeAdded(DAMAGE));
 		assertFalse(generator.canBeAdded(DMGREDUC));
@@ -128,8 +120,6 @@ public class ItemControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testEnhancementsOnRelic() {
-		logger.debug("------testEnhancementsRelic----------");
-
 		model.setResource(new ResourceReference(new Resource(), 3));
 
 		assertTrue(generator.canBeAdded(SPEED));
@@ -143,8 +133,6 @@ public class ItemControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testMaxCountLimits() {
-		logger.debug("------testMaxCountLimits----------");
-
 		assertTrue(generator.canBeAdded(DAMAGE));
 		assertNotNull(generator.addEnhancement(DAMAGE));
 		assertTrue(generator.canBeAdded(DAMAGE));
@@ -158,8 +146,6 @@ public class ItemControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testNonAvailableEnhancements() {
-		logger.debug("------testNonAvailableEnhancements----------");
-
 		assertTrue(generator.canBeAdded(DAMAGE));
 		assertNotNull(generator.addEnhancement(DAMAGE));
 		assertTrue(generator.canBeAdded(DAMAGE));
@@ -173,8 +159,6 @@ public class ItemControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testPointsCalculations() {
-		logger.debug("------testPointsCalculations----------");
-
 		assertNotNull(generator.addEnhancement(SPELL1));
 		assertNotNull(generator.addEnhancement(DAMAGE));
 //		assertNotNull(generator.addEnhancement(DAMAGE));

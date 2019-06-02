@@ -9,14 +9,11 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.Skill;
@@ -37,8 +34,6 @@ import de.rpgframework.genericrpg.modification.Modification;
  */
 @FixMethodOrder
 public class MastershipControllerTest {
-
-	private final static Logger logger = LogManager.getLogger("junit.power");
 
 	private static Skill skill;
 	private static Mastership EVADE1;
@@ -86,7 +81,6 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testIdleState() {
-		logger.debug("------testIdleState----------");
 		assertEquals(0, generator.getFreeMasterships(skill));
 		assertFalse(generator.isEditable(EVADE1));
 		assertFalse(generator.isEditable(LVL1_B));
@@ -102,7 +96,6 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testIdleStateSkillChanged() {
-		logger.debug("------testIdleStateSkillChanged----------");
 		generator = new MastershipLevellerAndGenerator(0, model, new ArrayList<Modification>(), null, null);
 
 		// Raise skill to 5 - should have no influence
@@ -165,7 +158,6 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testIdleOneFree() {
-		logger.debug("------testIdleOneFree----------");
 		generator.addModification(new MastershipModification(skill, 1));
 		model.getSkillValue(skill).setValue(1);
 		assertEquals(1, generator.getFreeMasterships(skill));
@@ -183,7 +175,6 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testLevel1Free() {
-		logger.debug("------testLevel1Free----------");
 		generator = new MastershipLevellerAndGenerator(1, model, new ArrayList<Modification>(), null, null);
 		model.getSkillValue(skill).setValue(1);
 //		generator.addModification(new MastershipModification(skill, 1));
@@ -221,7 +212,6 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testLevel1() {
-		logger.debug("------testLevel1----------");
 		model.setExperienceFree(15);
 		model.getSkillValue(skill).setValue(1);
 		assertTrue(generator.isEditable(EVADE1));
@@ -241,7 +231,6 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testLevel1SpecialFree() {
-		logger.debug("------testLevel1SpecialFree----------");
 		generator = new MastershipLevellerAndGenerator(1, model, new ArrayList<Modification>(), null, null);
 //		generator.addModification(new MastershipModification(skill, 1));
 		model.getSkillValue(skill).setValue(1);
@@ -281,7 +270,6 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testLevel1Special() {
-		logger.debug("------testLevel1Special------------------------------------------");
 		model.setExperienceFree(15);
 		model.getSkillValue(skill).setValue(1);
 		assertTrue(generator.isEditable(special1,1));
@@ -300,7 +288,6 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testRaiseAndLowerSkill() {
-		logger.debug("------testRaiseAndLowerSkill----------");
 		model.getSkillValue(skill).setValue(1);
 		generator = new MastershipLevellerAndGenerator(1, model, new ArrayList<Modification>(), null, null);
 		generator.addModification(new MastershipModification(skill, 5));
@@ -338,7 +325,6 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testLevel2Special() {
-		logger.debug("------testLevel2Special----------");
 		model.setExperienceInvested(600);
 		model.setLevel(3);
 		model.getSkillValue(skill).setValue(12);
@@ -366,7 +352,6 @@ public class MastershipControllerTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testLevel2Req() {
-		logger.debug("------testLevel2Req----------");
 		model.setExperienceInvested(140);
 		model.setLevel(2);
 		model.getSkillValue(skill).setValue(9);

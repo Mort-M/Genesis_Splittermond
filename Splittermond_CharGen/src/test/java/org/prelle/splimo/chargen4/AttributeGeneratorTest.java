@@ -10,6 +10,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.DummyRulePlugin;
 import org.prelle.splimo.SpliMoCharacter;
@@ -32,8 +33,8 @@ public class AttributeGeneratorTest {
 	//-------------------------------------------------------------------
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		SplitterMondCore.initialize(new DummyRulePlugin<SpliMoCharacter>());
-//		System.exit(0);
+		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
+		plugin.init();
 	}
 
 	//-------------------------------------------------------------------

@@ -12,8 +12,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -39,8 +37,6 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class SpellControllerTest implements GenerationEventListener {
-
-	private final static Logger logger = LogManager.getLogger("junit");
 	
 	private static Skill HEALMAGIC;
 	private static Skill ENHANCEMAGIC;
@@ -88,7 +84,7 @@ public class SpellControllerTest implements GenerationEventListener {
 	 */
 	@Override
 	public void handleGenerationEvent(GenerationEvent event) {
-		logger.debug("RCV "+event);
+		System.out.println("RCV "+event);
 		events.add(event);
 	}
 
@@ -112,7 +108,6 @@ public class SpellControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void testIdleNoExp() {
-		logger.debug("testIdleNoExp----------------------------");
 		assertTrue(control.getAvailableSpellSchools().isEmpty());
 		assertTrue(control.getFreeSelections().isEmpty());
 		assertTrue(model.getSpells().isEmpty());
@@ -121,8 +116,6 @@ public class SpellControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void testGetAvailableSpellSchools() {
-		logger.debug("testGetAvailableSpellSchools----------------------------");
-		
 		// Increase school to 1
 		model.getSkillValue(HEALMAGIC).setValue(1);
 		// Ensure school is available
@@ -149,8 +142,6 @@ public class SpellControllerTest implements GenerationEventListener {
 	 */
 	@Test
 	public void testGetAvailableSpellSchoolsAfterSelection() {
-		logger.debug("testGetAvailableSpellSchoolsAfterSelection----------------------------");
-		
 		// Increase school to 1
 		model.getSkillValue(HEALMAGIC).setValue(1);
 
@@ -166,8 +157,6 @@ public class SpellControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void testGetAvailableSpellsIdle() {
-		logger.debug("testGetAvailableSpells----------------------------");
-		
 		// Increase school to 1
 		model.getSkillValue(HEALMAGIC).setValue(1);
 		
@@ -194,8 +183,6 @@ public class SpellControllerTest implements GenerationEventListener {
 	 */
 	@Test
 	public void testGetAvailableSpellsAfterFreeSelection() {
-		logger.debug("testGetAvailableSpellsAfterSelection----------------------------");
-		
 		// Increase school to 1
 		model.getSkillValue(HEALMAGIC).setValue(1);
 		
@@ -239,8 +226,6 @@ public class SpellControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void testSelect() {
-		logger.debug("testSelect----------------------------");
-		
 		SpellValue spell = new SpellValue(ENHANCECONST, HEALMAGIC);
 		
 		// Increase school to 1 and sufficient exp
@@ -257,8 +242,6 @@ public class SpellControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void testGetFreeSelections() {
-		logger.debug("testGetFreeSelections----------------------------");
-		
 		model.getSkillValue(HEALMAGIC).setValue(1);
 		model.getSkillValue(ENHANCEMAGIC).setValue(6);
 		
@@ -270,8 +253,6 @@ public class SpellControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void testCanBeFreeSelected() {
-		logger.debug("testCanBeFreeSelected----------------------------");
-		
 		model.getSkillValue(ENHANCEMAGIC).setValue(6);
 		
 		FreeSelection possToken = control.canBeFreeSelected(new SpellValue(ENHANCECONST, ENHANCEMAGIC));
@@ -285,8 +266,6 @@ public class SpellControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void testSelectFree() {
-		logger.debug("testSelectFree----------------------------");
-		
 		model.getSkillValue(ENHANCEMAGIC).setValue(1);
 		model.getSkillValue(HEALMAGIC).setValue(1);
 		
@@ -331,8 +310,6 @@ public class SpellControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void testGetPossibleSpells() {
-		logger.debug("testGetPossibleSpells----------------------------");
-		
 		model.getSkillValue(HEALMAGIC).setValue(1);
 
 		assertFalse(control.getUnusedFreeSelections().isEmpty());
@@ -353,8 +330,6 @@ public class SpellControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void testSelectFreeThenReduce() {
-		logger.debug("testSelectFreeThenReduce----------------------------");
-		
 		model.getSkillValue(HEALMAGIC).setValue(3);
 		
 		SpellValue spell0 = new SpellValue(REFRESH, HEALMAGIC);

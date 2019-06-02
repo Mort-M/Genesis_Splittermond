@@ -11,8 +11,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -36,8 +34,6 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class PowerControllerTest implements GenerationEventListener {
-
-	private final static Logger logger = LogManager.getLogger("junit");
 	
 	private static Power ONCE_GENONLY;
 	private static Power ONCE_ALWAYS;
@@ -119,7 +115,6 @@ public class PowerControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void testIdleNoEXP() {
-		logger.debug("testIdleNoExp----------------------------");
 		assertFalse(control.canBeSelected(ONCE_GENONLY));
 		assertFalse(control.getAvailablePowers().contains(ONCE_GENONLY));
 		assertFalse(control.canBeSelected(ONCE_ALWAYS));
@@ -135,7 +130,6 @@ public class PowerControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void testIdleWithEXP() {
-		logger.debug("testIdleWithExp----------------------------");
 		model.setExperienceFree(99);
 		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.EXPERIENCE_CHANGED, null, new int[]{
 				model.getExperienceFree(),
@@ -156,7 +150,6 @@ public class PowerControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void selectNormal() {
-		logger.debug("selectNormal----------------------------");
 		model.setExperienceFree(50);
 		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.EXPERIENCE_CHANGED, null, new int[]{
 				model.getExperienceFree(),
@@ -206,7 +199,6 @@ public class PowerControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void selectMultiAlways() {
-		logger.debug("selectMultiAlways----------------------------");
 		model.setExperienceFree(50);
 		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.EXPERIENCE_CHANGED, null, new int[]{
 				model.getExperienceFree(),
@@ -265,7 +257,6 @@ public class PowerControllerTest implements GenerationEventListener {
 		
 		// Decrease now
 		events.clear();
-		logger.debug("sele2ctMultiAlways----------------------------");
 		assertTrue(control.decrease(ref));
 		assertEquals(1, ref.getCount());
 		assertTrue(model.hasPower(MULTI_ALWAYS));
@@ -292,7 +283,6 @@ public class PowerControllerTest implements GenerationEventListener {
 	//--------------------------------------------------------------------
 	@Test
 	public void selectMultiLevel() {
-		logger.debug("selectMultiLevel----------------------------");
 		model.setExperienceFree(50);
 		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.EXPERIENCE_CHANGED, null, new int[]{
 				model.getExperienceFree(),

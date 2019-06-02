@@ -76,7 +76,7 @@ public class ExampleCharactersTest {
 
 	//-------------------------------------------------------------------
 	@Test
-	public void generateTiai() {
+	public void testGenerateTiai() {
 		assertEquals(10, (((Generator)charGen.getPowerController()).getPointsLeft()));
 		assertEquals(8, ((Generator)charGen.getResourceController()).getPointsLeft());
 		assertEquals(55, (((Generator)charGen.getSkillController()).getPointsLeft()));

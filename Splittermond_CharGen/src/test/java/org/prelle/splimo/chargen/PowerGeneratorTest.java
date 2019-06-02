@@ -9,8 +9,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -29,8 +27,6 @@ import de.rpgframework.genericrpg.modification.Modification;
  *
  */
 public class PowerGeneratorTest {
-
-	private static Logger logger = LogManager.getLogger("junit.power");
 
 	private final static int MAX = 10;
 
@@ -71,7 +67,6 @@ public class PowerGeneratorTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testIdleState() {
-		logger.debug("testIdleState-------------------------------");
 		assertEquals(MAX, generator.getPointsLeft());
 		assertTrue(model.getPowers().isEmpty());
 	}
@@ -79,7 +74,6 @@ public class PowerGeneratorTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testModifcationSelection() {
-		logger.debug("testModifcationSelection-------------------------------");
 		PowerModification mod1 = new PowerModification(ONCE_GENONLY);
 		generator.addModification(mod1);
 		generator.addModification(new PowerModification(ONCE_ALWAYS));
@@ -98,7 +92,6 @@ public class PowerGeneratorTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testDoubleModifcationSelection() {
-		logger.debug("testDoubleModifcationSelection-------------------------------");
 		generator.addModification(new PowerModification(ONCE_GENONLY));
 		generator.addModification(new PowerModification(ONCE_GENONLY));
 		assertEquals(MAX-ONCE_GENONLY.getCost(), generator.getPointsLeft());
@@ -108,7 +101,6 @@ public class PowerGeneratorTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testIdleCanBeIncreased() {
-		logger.debug("testCanBeIncreased-------------------------------");
 		assertFalse(generator.canBeIncreased(new PowerReference(ONCE_GENONLY)));
 		assertFalse(generator.canBeIncreased(new PowerReference(ONCE_ALWAYS)));
 		assertFalse(generator.canBeIncreased(new PowerReference(MULTI_ALWAYS)));
@@ -118,7 +110,6 @@ public class PowerGeneratorTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testIdleCanBeDecreased() {
-		logger.debug("testCanBeDecreased-------------------------------");
 		assertFalse(generator.canBeDecreased(new PowerReference(ONCE_GENONLY)));
 		assertFalse(generator.canBeDecreased(new PowerReference(ONCE_ALWAYS)));
 		assertFalse(generator.canBeDecreased(new PowerReference(MULTI_ALWAYS)));
@@ -128,7 +119,6 @@ public class PowerGeneratorTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testIdleCanBeSelected() {
-		logger.debug("testIdleCanBeSelected-------------------------------");
 		assertTrue(generator.canBeSelected(ONCE_GENONLY));
 		assertTrue(generator.canBeSelected(ONCE_ALWAYS));
 		assertTrue(generator.canBeSelected(MULTI_ALWAYS));
@@ -138,7 +128,6 @@ public class PowerGeneratorTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testIdleCanBeDeselected() {
-		logger.debug("testIdleCanBeDeselected-------------------------------");
 		assertFalse(generator.canBeDeselected(new PowerReference(ONCE_GENONLY)));
 		assertFalse(generator.canBeDeselected(new PowerReference(ONCE_ALWAYS)));
 		assertFalse(generator.canBeDeselected(new PowerReference(MULTI_ALWAYS)));
@@ -148,7 +137,6 @@ public class PowerGeneratorTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testCanBeSelectedNotEnoughGP() {
-		logger.debug("testCanBeSelectedNotEnoughGP-------------------------------");
 		generator.select(MULTI_ALWAYS); // 2 GP
 		generator.select(MULTI_ALWAYS); // 2 GP
 		generator.select(MULTI_ALWAYS); // 2 GP
@@ -163,7 +151,6 @@ public class PowerGeneratorTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testManualSelection() {
-		logger.debug("testManualSelection-------------------------------");
 		PowerReference ref1 = generator.select(ONCE_GENONLY);
 //		PowerReference ref2 = generator.select(ONCE_ALWAYS);
 		assertTrue(model.hasPower(ONCE_GENONLY));
@@ -183,7 +170,6 @@ public class PowerGeneratorTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void testManualDoubleSelection() {
-		logger.debug("testManualDoubleSelection-------------------------------");
 		PowerReference ref1a = generator.select(ONCE_GENONLY);
 		PowerReference ref1b = generator.select(ONCE_GENONLY);
 		assertEquals(MAX-ONCE_GENONLY.getCost(), generator.getPointsLeft());

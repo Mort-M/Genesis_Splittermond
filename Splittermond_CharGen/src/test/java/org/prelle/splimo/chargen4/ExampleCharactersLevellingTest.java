@@ -41,7 +41,7 @@ public class ExampleCharactersLevellingTest {
 	public void setUp() throws Exception {
 		generator = new ExampleCharactersTest();
 		generator.setUp();
-		generator.generateTiai();	
+		generator.testGenerateTiai();	
 		System.err.println("model = "+generator.getModel().dump());
 		charGen = new NewSpliMoCharacterLeveller(generator.getModel());
 		model = charGen.getModel();

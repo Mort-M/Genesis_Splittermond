@@ -4,16 +4,11 @@
 package org.prelle.splimo.chargen.creature;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
-import java.io.IOException;
-import java.io.StringReader;
 import java.io.StringWriter;
 
-import org.apache.logging.log4j.LogManager;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.prelle.rpgframework.splittermond.SplittermondRules;
 //import org.prelle.simplepersist.Persister;
 //import org.prelle.simplepersist.SerializationException;
 //import org.prelle.simplepersist.Serializer;
@@ -23,8 +18,6 @@ import org.prelle.splimo.creature.CreatureTypeValue;
 import org.prelle.splimo.creature.CreatureWeapon;
 import org.prelle.splimo.creature.ModuleBasedCreature;
 import org.prelle.splimo.modifications.MastershipModification;
-
-import de.rpgframework.RPGFrameworkLoader;
 
 /**
  * @author prelle
