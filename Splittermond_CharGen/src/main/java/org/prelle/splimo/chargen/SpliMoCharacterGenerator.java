@@ -449,7 +449,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 
 	//-------------------------------------------------------------------
 	public void selectCulture(Culture selected, LetUserChooseListener callback) {
-		logger.info("selectCulture("+selected.getName()+")");
+		logger.info("selectCulture("+selected+")");
 		if (selected==selectedCulture) {
 			// Nothing changed
 			return;

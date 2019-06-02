@@ -258,7 +258,7 @@ public class WizardPageCulture extends WizardPage implements GenerationEventList
 	 */
 	@Override
 	public void pageLeft() {
-		Culture toSelect = options.getSelectionModel().getSelectedItem().getValue();
+		Culture toSelect = (options.getSelectionModel().getSelectedItem()!=null)?options.getSelectionModel().getSelectedItem().getValue():null;
 		logger.debug("Select "+toSelect);
 		/*
 		 * Call in extra thread, since it invokes blocking dialogs

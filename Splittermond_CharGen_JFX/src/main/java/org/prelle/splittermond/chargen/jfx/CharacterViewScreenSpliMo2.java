@@ -199,6 +199,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 				}
 				logger.info("Save character "+model.getName());
 				RPGFrameworkLoader.getInstance().getCharacterAndRules().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, null, encoded);
+				handle.setCharacter(model);
 				logger.info("Saved character "+model.getName()+" successfully");
 			} catch (IOException e) {
 				logger.error("Failed saving character",e);
@@ -251,6 +252,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			logger.warn("TODO: Check if creation is finished");
 			if ( ((SpliMoCharacterGenerator)control).hasEnoughData() ) {
 				logger.info("User wants to leave and generator is finished - try to save character");
+				((SpliMoCharacterGenerator)control).generate();
 				return saveCharacter();
 			} else {
 				logger.info("User wants to leave the generation early.");
