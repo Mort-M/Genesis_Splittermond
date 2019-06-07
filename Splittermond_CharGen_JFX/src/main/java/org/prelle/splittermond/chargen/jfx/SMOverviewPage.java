@@ -14,6 +14,8 @@ import org.prelle.splittermond.chargen.jfx.sections.PortraitSection;
 import de.rpgframework.character.CharacterHandle;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
+import de.rpgframework.genericrpg.ToDoElement;
+import de.rpgframework.genericrpg.ToDoElement.Severity;
 
 /**
  * @author Stefan Prelle
@@ -85,6 +87,15 @@ public class SMOverviewPage extends SpliMoManagedScreenPage {
 	private void initInteractivity() {
 		cmdPrint.setOnAction( ev -> {BabylonEventBus.fireEvent(BabylonEventType.PRINT_REQUESTED, handle, charGen.getModel());});
 		cmdDelete.setOnAction( ev -> BabylonEventBus.fireEvent(BabylonEventType.PRINT_REQUESTED, handle, charGen.getModel()));
+	}
+
+	//-------------------------------------------------------------------
+	public void refresh() {
+		super.refresh();
+		
+		secAttrib.getToDoList().clear();
+		for (String todo : charGen.getAttributeController().getToDos())
+			secAttrib.getToDoList().add(new ToDoElement(Severity.STOPPER, todo));
 	}
 
 	//-------------------------------------------------------------------
