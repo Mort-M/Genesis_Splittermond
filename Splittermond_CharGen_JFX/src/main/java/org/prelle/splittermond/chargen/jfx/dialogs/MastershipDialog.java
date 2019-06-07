@@ -15,6 +15,7 @@ import org.prelle.javafx.CloseType;
 import org.prelle.javafx.CommandBar;
 import org.prelle.javafx.ManagedDialog;
 import org.prelle.rpgframework.jfx.FreePointsNode;
+import org.prelle.rpgframework.jfx.HelpTextPane;
 import org.prelle.rpgframework.jfx.ThreeColumnPane;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.MastershipOrSpecialization;
@@ -47,6 +48,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.DragEvent;
@@ -80,9 +82,10 @@ public class MastershipDialog extends ManagedDialog implements GenerationEventLi
 	private ListView<MastershipOrSpecialization> lvAvailable;
 	private ListView<MastershipReference> lvSelected;
 	private AttentionPane attention;
-	private Label lblName;
-	private Label lblProduct;
-	private Label lblDescr;
+	private HelpTextPane description;
+//	private Label lblName;
+//	private Label lblProduct;
+//	private Label lblDescr;
 
 	private FreePointsNode freePoints;
 	private CommandBar commands;
@@ -113,11 +116,12 @@ public class MastershipDialog extends ManagedDialog implements GenerationEventLi
 		lvSelected = new ListView<MastershipReference>();
 		lvSelected.setCellFactory( listView -> new MastershipReferenceListCell(control));
 
-		lblName = new Label();
-		lblName.getStyleClass().add("text-subheader");
-		lblProduct = new Label();
-		lblDescr = new Label();
-		lblDescr.setWrapText(true);
+		description = new HelpTextPane();
+//		lblName = new Label();
+//		lblName.getStyleClass().add("text-subheader");
+//		lblProduct = new Label();
+//		lblDescr = new Label();
+//		lblDescr.setWrapText(true);
 
 		toggle = new ToggleGroup();
 		rbMaster = new RadioButton(UI.getString("label.masterships"));
@@ -155,13 +159,15 @@ public class MastershipDialog extends ManagedDialog implements GenerationEventLi
 		lineSearch.getChildren().addAll(lblSearch, tfSearch);
 
 
-		VBox bxDescr = new VBox(lblName, lblProduct, lblDescr);
-		VBox.setMargin(lblDescr, new Insets(20, 20, 0, 0));
+//		VBox bxDescr = new VBox(lblName, lblProduct, lblDescr);
+//		VBox.setMargin(lblDescr, new Insets(20, 20, 0, 0));
+		VBox.setMargin(description, new Insets(20, 20, 0, 0));
 		attention  = new AttentionPane(lvAvailable, Pos.TOP_RIGHT);
 
 		lvAvailable.setStyle("-fx-pref-width: 25em");
-		bxDescr.setStyle("-fx-pref-width: 25em");
-		lblDescr.setStyle("-fx-pref-width: 25em");
+//		bxDescr.setStyle("-fx-pref-width: 25em");
+//		lblDescr.setStyle("-fx-pref-width: 25em");
+		description.setStyle("-fx-pref-width: 25em");
 
 		ThreeColumnPane threeCol = new ThreeColumnPane();
 
@@ -172,7 +178,8 @@ public class MastershipDialog extends ManagedDialog implements GenerationEventLi
 
 		threeCol.setColumn1Node(attention);
 		threeCol.setColumn2Node(lvSelected);
-		threeCol.setColumn3Node(bxDescr);
+//		threeCol.setColumn3Node(bxDescr);
+		threeCol.setColumn3Node(new ScrollPane(description));
 		threeCol.setMaxHeight(Double.MAX_VALUE);
 
 		VBox box = new VBox();
@@ -228,26 +235,29 @@ public class MastershipDialog extends ManagedDialog implements GenerationEventLi
 	private void mastershipSelected(MastershipOrSpecialization selected) {
 		logger.debug("mastershipSelected: "+selected);
 		if (selected==null) {
-			lblName.setText(null);
-			lblProduct.setText(null);
-			lblDescr.setText(null);
+			description.setData(null);
+//			lblName.setText(null);
+//			lblProduct.setText(null);
+//			lblDescr.setText(null);
 			return;
 		}
 
 		if (selected instanceof Mastership) {
 			Mastership master = (Mastership)selected;
 			boolean hasLicense = RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(RoleplayingSystem.SPLITTERMOND, master.getPlugin().getID());
-			lblName.setText(master.getName());
-			lblProduct.setText(master.getProductName()+" "+master.getPage());
-			if (hasLicense)
-				lblDescr.setText(master.getHelpText());
-			else
-				lblDescr.setText(UI.getString("warning.license"));
+			description.setData(master);
+//			lblName.setText(master.getName());
+//			lblProduct.setText(master.getProductName()+" "+master.getPage());
+//			if (hasLicense)
+//				lblDescr.setText(master.getHelpText());
+//			else
+//				lblDescr.setText(UI.getString("warning.license"));
 		} else {
 			SkillSpecialization special = (SkillSpecialization)selected;
-			lblName.setText(special.getName());
-			lblProduct.setText(selected.getSkill().getProductName()+" "+selected.getSkill().getPage());
-			lblDescr.setText(null);
+			description.setData(special.getName(), selected.getSkill().getProductName()+" "+selected.getSkill().getPage(), null);
+//			lblName.setText(special.getName());
+//			lblProduct.setText(selected.getSkill().getProductName()+" "+selected.getSkill().getPage());
+//			lblDescr.setText(null);
 			if (special.getType()==SkillSpecializationType.SPELLTYPE) {
 				Skill skill = special.getSkill();
 				// Build list of spelly with that type in that school
@@ -269,7 +279,8 @@ public class MastershipDialog extends ManagedDialog implements GenerationEventLi
 				// Build text
 				StringBuffer buf = new StringBuffer();
 				spells.forEach( spell -> buf.append(spell.getLevelInSchool(skill)+" "+spell.getName()+"\n"));
-				lblDescr.setText(buf.toString());
+//				lblDescr.setText(buf.toString());
+				description.setData(special.getName(), selected.getSkill().getProductName()+" "+selected.getSkill().getPage(), buf.toString());
 			}
 		}
 	}
