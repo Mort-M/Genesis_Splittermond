@@ -189,7 +189,8 @@ public class SpliMoCharacterGenerator implements CharacterController {
 			RequirementModification req = (RequirementModification)mod;
 			logger.warn("Don't know how to apply requirement for type "+req.getType());
 		} else if (mod instanceof CultureLoreModification) {
-			model.addCultureLore( new CultureLoreReference(((CultureLoreModification)mod).getData()) );
+			cultlores.select(((CultureLoreModification)mod).getData());
+//			model.addCultureLore( new CultureLoreReference(((CultureLoreModification)mod).getData()) );
 		} else if (mod instanceof LanguageModification) {
 			languages.select(((LanguageModification)mod).getData());
 		} else if (mod instanceof AttitudeModification) {
