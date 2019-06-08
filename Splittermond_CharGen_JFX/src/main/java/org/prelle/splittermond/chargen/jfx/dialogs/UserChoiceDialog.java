@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedDialog;
 import org.prelle.javafx.NavigButtonControl;
+import org.prelle.javafx.skin.ManagedDialogSkin;
 import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.modifications.ModificationChoice;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
@@ -22,6 +23,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
+import javafx.util.Callback;
 import javafx.util.StringConverter;
 
 /**
@@ -39,8 +41,6 @@ public class UserChoiceDialog extends ManagedDialog implements ChangeListener<Bo
 
 	private boolean isChoiceBox;
 	private Modification choiceByChoiceBox;
-	
-	private NavigButtonControl buttonControl;
 
 	//-------------------------------------------------------------------
 	/**
@@ -49,10 +49,31 @@ public class UserChoiceDialog extends ManagedDialog implements ChangeListener<Bo
 		super(null, null, CloseType.OK);
 		this.choice = choice;
 
-		buttonControl = new NavigButtonControl();
-		buttonControl.setDisabled(CloseType.OK, true);
-
 		initComponents();
+		
+		setButtonPredicateCheck(new Callback<CloseType, Boolean>() {
+			@Override
+			public Boolean call(CloseType param) {
+				int numSelected = 0;
+				for (Node node : content.getChildren()) {
+					ButtonBase tmp = (ButtonBase)node;
+					boolean isSelected = (tmp instanceof Toggle)?((Toggle)tmp).isSelected():((CheckBox)tmp).isSelected();
+					if (isSelected)
+						numSelected++;
+				}
+
+				for (Node node : content.getChildren()) {
+					ButtonBase tmp = (ButtonBase)node;
+					boolean isSelected = (tmp instanceof Toggle)?((Toggle)tmp).isSelected():((CheckBox)tmp).isSelected();
+					if (!isSelected)
+						tmp.setDisable(numSelected>=choice.getNumberOfChoices());
+				}
+				boolean active = numSelected==choice.getNumberOfChoices();
+				logger.debug("check of "+param+" returns "+active);
+				return active;
+			}
+		});
+		((ManagedDialogSkin)getSkin()).refreshButtons();
 	}
 
 	//-------------------------------------------------------------------
@@ -129,20 +150,17 @@ public class UserChoiceDialog extends ManagedDialog implements ChangeListener<Bo
 				tmp.setDisable(numSelected>=choice.getNumberOfChoices());
 		}
 
-
-		buttonControl.setDisabled(CloseType.OK, (numSelected!=choice.getNumberOfChoices()));
-	}
-
-	//-------------------------------------------------------------------
-	public NavigButtonControl getButtonControl() {
-		return buttonControl;
+		logger.debug("Set button to "+(numSelected!=choice.getNumberOfChoices()));
+//		buttonControl.setDisabled(CloseType.OK, (numSelected!=choice.getNumberOfChoices()));
+		((ManagedDialogSkin)getSkin()).refreshButtons();
 	}
 
 	//-------------------------------------------------------------------
 	private void selectionChanged(Modification mod) {
 		logger.debug("Selected "+mod);
 		choiceByChoiceBox = mod;
-		buttonControl.setDisabled(CloseType.OK, choiceByChoiceBox==null);
+//		buttonControl.setDisabled(CloseType.OK, choiceByChoiceBox==null);
+		((ManagedDialogSkin)getSkin()).refreshButtons();
 	}
 
 	//-------------------------------------------------------------------

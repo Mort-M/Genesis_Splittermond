@@ -72,9 +72,9 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 		name    = new Label();
 		tfDescr = new Label();
 		btnEdit = new Button("\uE1C2");
-		btnDec  = new Button("\uE738");
+		btnDec  = new Button("\uE0C6"); // E738
 		lblVal  = new Label("?");
-		btnInc  = new Button("\uE710");
+		btnInc  = new Button("\uE0C5"); // E710
 
 		initStyle();
 		initLayout();
@@ -85,8 +85,8 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 	private void initStyle() {
 		btnDec.setStyle("-fx-background-color: transparent");
 		btnInc.setStyle("-fx-background-color: transparent");
-		btnDec.getStyleClass().add("bordered");
-		btnInc.getStyleClass().add("bordered");
+		btnDec.getStyleClass().addAll("bordered","mini-button");
+		btnInc.getStyleClass().addAll("bordered","mini-button");
 		name.getStyleClass().add("text-small-subheader");
 		lblVal.getStyleClass().add("text-subheader");
 

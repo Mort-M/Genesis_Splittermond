@@ -44,12 +44,16 @@ public class EnhancementListCell extends ListCell<Enhancement> {
 	
 	//-------------------------------------------------------------------
 	static {
-		IMAGES.put(EnhancementType.NORMAL, new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_enhancement_normal.png")));
-		IMAGES.put(EnhancementType.MAGIC , new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_enhancement_magic.png")));
-		IMAGES.put(EnhancementType.RELIC , new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_enhancement_relic.png")));
-		IMAGES.put(EnhancementType.ALCHEMY,new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_enhancement_alchemy.png")));
-		IMAGES.put(EnhancementType.DIVINE, new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_enhancement_divine.png")));
-		IMAGES.put(EnhancementType.SAINT , new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_enhancement_saint.png")));
+		try {
+			IMAGES.put(EnhancementType.NORMAL, new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_enhancement_normal.png")));
+			IMAGES.put(EnhancementType.MAGIC , new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_enhancement_magic.png")));
+			IMAGES.put(EnhancementType.RELIC , new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_enhancement_relic.png")));
+			IMAGES.put(EnhancementType.ALCHEMY,new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_enhancement_alchemy.png")));
+			IMAGES.put(EnhancementType.DIVINE, new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_enhancement_divine.png")));
+			IMAGES.put(EnhancementType.SAINT , new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/icon_enhancement_saint.png")));
+		} catch (NullPointerException e) {
+			logger.error("Failed reading image resources",e);
+		}
 	}
 	
 	//-------------------------------------------------------------------
