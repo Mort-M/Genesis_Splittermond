@@ -145,10 +145,13 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 
 		navOverview   = new AttentionMenuItem(RES.getString("navItem.overview"), new SymbolIcon("home"));
 		navPowers     = new AttentionMenuItem(RES.getString("navItem.powers"), new FontIcon("\uD83C\uDFAD"));
-		navSkills     = new AttentionMenuItem(RES.getString("navItem.skills"), new FontIcon("\uE7BE"));
-		navSpells     = new AttentionMenuItem(RES.getString("navItem.spells"), icoMagic);
-		navResources  = new AttentionMenuItem(RES.getString("navItem.resources"), icoChest);
-		navEquipment  = new MenuItem(RES.getString("navItem.gear"), icoGear);
+		navSkills     = new AttentionMenuItem(RES.getString("navItem.skills"), new SymbolIcon("education"));
+//		navSpells     = new AttentionMenuItem(RES.getString("navItem.spells"), icoMagic);
+		navSpells     = new AttentionMenuItem(RES.getString("navItem.spells"), new FontIcon("\u26E4"));
+//		navResources  = new AttentionMenuItem(RES.getString("navItem.resources"), icoChest);
+		navResources  = new AttentionMenuItem(RES.getString("navItem.resources"), new FontIcon("\uD83D\uDC0E"));
+//		navEquipment  = new MenuItem(RES.getString("navItem.gear"), icoGear);
+		navEquipment  = new MenuItem(RES.getString("navItem.gear"), new FontIcon("\u2694"));
 		navDevelop    = new MenuItem(RES.getString("navItem.develop"), new FontIcon("\uD83D\uDCC8"));
 
 		this.getNavigationItems().addAll(navOverview, navPowers, navSkills, navSpells, navResources, navEquipment, navDevelop);

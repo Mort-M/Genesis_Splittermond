@@ -54,23 +54,30 @@ public class UserChoiceDialog extends ManagedDialog implements ChangeListener<Bo
 		setButtonPredicateCheck(new Callback<CloseType, Boolean>() {
 			@Override
 			public Boolean call(CloseType param) {
-				int numSelected = 0;
-				for (Node node : content.getChildren()) {
-					ButtonBase tmp = (ButtonBase)node;
-					boolean isSelected = (tmp instanceof Toggle)?((Toggle)tmp).isSelected():((CheckBox)tmp).isSelected();
-					if (isSelected)
-						numSelected++;
-				}
+				try {
+					int numSelected = 0;
+					for (Node node : content.getChildren()) {
+						if (node instanceof ChoiceBox)
+							return true;
+						ButtonBase tmp = (ButtonBase)node;
+						boolean isSelected = (tmp instanceof Toggle)?((Toggle)tmp).isSelected():((CheckBox)tmp).isSelected();
+						if (isSelected)
+							numSelected++;
+					}
 
-				for (Node node : content.getChildren()) {
-					ButtonBase tmp = (ButtonBase)node;
-					boolean isSelected = (tmp instanceof Toggle)?((Toggle)tmp).isSelected():((CheckBox)tmp).isSelected();
-					if (!isSelected)
-						tmp.setDisable(numSelected>=choice.getNumberOfChoices());
+					for (Node node : content.getChildren()) {
+						ButtonBase tmp = (ButtonBase)node;
+						boolean isSelected = (tmp instanceof Toggle)?((Toggle)tmp).isSelected():((CheckBox)tmp).isSelected();
+						if (!isSelected)
+							tmp.setDisable(numSelected>=choice.getNumberOfChoices());
+					}
+					boolean active = numSelected==choice.getNumberOfChoices();
+					logger.debug("check of "+param+" returns "+active);
+					return active;
+				} catch (Exception e) {
+					logger.error("Unexpected error",e);
+					return true;
 				}
-				boolean active = numSelected==choice.getNumberOfChoices();
-				logger.debug("check of "+param+" returns "+active);
-				return active;
 			}
 		});
 		((ManagedDialogSkin)getSkin()).refreshButtons();
