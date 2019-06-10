@@ -15,7 +15,7 @@
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="stun" diff="15" cost="1" castdur="1T" range="5m" enh="1/+1V1">
+    <spell id="stun" diff="KW" cost="1" castdur="1T" range="5m" enh="1/+1V1">
         <school skill="combatmagic" level="0" />
         <type>DAMAGE</type>
         <enhancementtype>RELEASETIME</enhancementtype>
