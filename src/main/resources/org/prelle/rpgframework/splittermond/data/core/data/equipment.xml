@@ -104,7 +104,7 @@
             </features>
         </weapon>
     </item>
-    <item id="khopesh" avail="SMALL_TOWN" price="600" load="2" robust="2" cplx="G" material="METAL">
+    <item id="khopesh" avail="SMALL_TOWN" price="600" load="2" robust="6" cplx="G" material="METAL">
         <weapon skill="blades"
                 damage="1W10+1" speed="7" att1="AGILITY" att2="STRENGTH">
             <requires>
@@ -253,16 +253,16 @@
     </item>
     <item id="doubleaxe" avail="SMALL_TOWN" price="1800" load="4" robust="5" cplx="G" material="METAL">
         <weapon skill="slashing"
-                damage="3W6+3" speed="13" att1="INTUITION" att2="STRENGTH">
+                damage="3W6+4" speed="13" att1="INTUITION" att2="STRENGTH">
             <requires>
                 <attrreq attr="INTUITION" val="3"/>
                 <attrreq attr="STRENGTH" val="5"/>
             </requires>
             <features>
                 <feature type="PENETRATING" level="2"/>
+                <feature type="ENCUMBRANT"/>
                 <feature type="HEAVY"/>
                 <feature type="TWO_HANDED"/>
-                <feature type="ENCUMBRANT"/>
             </features>
         </weapon>
     </item>
@@ -884,7 +884,7 @@
             <features/>
         </armor>
     </item>
-    <item id="fellrüstung" avail="VILLAGE" price="400" load="2" robust="2" cplx="U" material="LEATHER">
+    <item id="fellrüstung" avail="VILLAGE" price="400" load="3" robust="2" cplx="U" material="LEATHER">
         <armor def="1" dr="2" hc="0" tickMalus="1" type="ARMOR">
             <requires>
                 <attrreq attr="STRENGTH" val="1"/>
@@ -990,18 +990,18 @@
     <item id="wasserschlauch" avail="VILLAGE" price="10" load="1" robust="1" cplx="U" type="TRAVEL"/>
     <item id="zeltproperson" avail="SMALL_TOWN" price="100" load="4" robust="1" cplx="G" type="TRAVEL"/>
     <item id="basepotion" avail="VILLAGE" price="1000" load="0" robust="0" type="POTION"/>
-    <item id="ausdauertrunk" avail="SMALL_TOWN" price="1000" load="0" robust="0" type="POTION"/>
-    <item id="echsentarr" avail="SMALL_TOWN" price="2000" load="0" robust="0" type="POTION"/>
-    <item id="gegengiftleicht" avail="SMALL_TOWN" price="1000" load="0" robust="0" type="POTION"/>
-    <item id="gegengiftmittel" avail="SMALL_TOWN" price="2000" load="0" robust="0" type="POTION"/>
-    <item id="gegengiftstark" avail="SMALL_TOWN" price="5000" load="0" robust="0" type="POTION"/>
-    <item id="gegengiftsehrstark" avail="LARGE_TOWN" price="10000" load="0" robust="0" type="POTION"/>
+    <item id="ausdauertrunk" avail="SMALL_TOWN" price="500" load="0" robust="0" type="POTION"/>
+    <item id="echsentarr" avail="SMALL_TOWN" price="1000" load="0" robust="0" type="POTION"/>
+    <item id="gegengiftleicht" avail="SMALL_TOWN" price="500" load="0" robust="0" type="POTION"/>
+    <item id="gegengiftmittel" avail="SMALL_TOWN" price="1000" load="0" robust="0" type="POTION"/>
+    <item id="gegengiftstark" avail="SMALL_TOWN" price="1500" load="0" robust="0" type="POTION"/>
+    <item id="gegengiftsehrstark" avail="LARGE_TOWN" price="2500" load="0" robust="0" type="POTION"/>
     <item id="heilkraut" avail="VILLAGE" price="50" load="0" robust="0" type="POTION"/>
     <item id="heiltrankleicht" avail="SMALL_TOWN" price="500" load="0" robust="0" type="POTION"/>
     <item id="heiltrankstark" avail="SMALL_TOWN" price="1000" load="0" robust="0" type="POTION"/>
-    <item id="karmesintraum" avail="LARGE_TOWN" price="2500" load="0" robust="0" type="POTION"/>
-    <item id="klingenfett" avail="SMALL_TOWN" price="1000" load="0" robust="0" type="POTION"/>
+    <item id="karmesintraum" avail="LARGE_TOWN" price="1000" load="0" robust="0" type="POTION"/>
+    <item id="klingenfett" avail="SMALL_TOWN" price="500" load="0" robust="0" type="POTION"/>
     <item id="königsblut" avail="CAPITAL" price="10000" load="0" robust="0" type="POTION"/>
-    <item id="rosentrunk" avail="LARGE_TOWN" price="2500" load="0" robust="0" type="POTION"/>
-    <item id="streunerweiß" avail="LARGE_TOWN" price="2000" load="0" robust="0" type="POTION"/>
+    <item id="rosentrunk" avail="LARGE_TOWN" price="1000" load="0" robust="0" type="POTION"/>
+    <item id="streunerweiß" avail="LARGE_TOWN" price="1000" load="0" robust="0" type="POTION"/>
 </items>

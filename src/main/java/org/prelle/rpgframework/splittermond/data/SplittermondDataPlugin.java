@@ -145,6 +145,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEquipment(MSK, clazz.getResourceAsStream("msk/data/wurfwaffen.xml"), MSK.getResources(), MSK.getHelpResources());
 		SplitterMondCore.loadEquipment(MSK, clazz.getResourceAsStream("msk/data/ruestungen.xml"), MSK.getResources(), MSK.getHelpResources());
 		SplitterMondCore.loadEquipment(MSK, clazz.getResourceAsStream("msk/data/schilde.xml"), MSK.getResources(), MSK.getHelpResources());
+		SplitterMondCore.loadEquipment(MSK, clazz.getResourceAsStream("msk/data/projectiles.xml"), MSK.getResources(), MSK.getHelpResources());
 		SplitterMondCore.loadEquipment(MSK, clazz.getResourceAsStream("msk/data/weaponitems.xml"), MSK.getResources(), MSK.getHelpResources());
 		SplitterMondCore.loadEquipment(MSK, clazz.getResourceAsStream("msk/data/container.xml"), MSK.getResources(), MSK.getHelpResources());
 		SplitterMondCore.loadEquipment(MSK, clazz.getResourceAsStream("msk/data/tools.xml"), MSK.getResources(), MSK.getHelpResources());
