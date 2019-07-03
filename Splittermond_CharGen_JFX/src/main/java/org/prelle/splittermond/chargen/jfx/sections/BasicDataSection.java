@@ -3,7 +3,6 @@
  */
 package org.prelle.splittermond.chargen.jfx.sections;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
@@ -30,10 +29,7 @@ import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splittermond.chargen.jfx.ViewMode;
 
-import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.character.CharacterHandle;
-import de.rpgframework.core.BabylonEventBus;
-import de.rpgframework.core.BabylonEventType;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -162,13 +158,6 @@ public class BasicDataSection extends SingleSection {
 			}
 			logger.info("rename character from "+control.getModel().getName()+" to "+n);
 			control.getModel().setName(n);
-			try {
-				if (handle!=null)
-					RPGFrameworkLoader.getInstance().getCharacterService().renameCharacter(handle, n);
-			} catch (IOException e) {
-				logger.error("Renaming failed",e);
-				BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Renaming failed: "+e);
-			}
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.BASE_DATA_CHANGED, control.getModel()));
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, control.getModel()));
 		});

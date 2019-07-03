@@ -32,6 +32,8 @@ import de.rpgframework.character.CharacterHandle;
 import de.rpgframework.character.CharacterHandle.Format;
 import de.rpgframework.character.CharacterHandle.Type;
 import de.rpgframework.character.CharacterProvider;
+import de.rpgframework.core.BabylonEventBus;
+import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.RoleplayingSystem;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.Region;
@@ -214,6 +216,17 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 						RES.getString("error.saving_character.message")+"\n"+out
 						);
 				return false;
+			}
+
+			// 3. Eventually rename
+			try {
+				if (handle!=null && !handle.getName().equals(model.getName())) {
+					logger.info("Character has been renamed");
+					RPGFrameworkLoader.getInstance().getCharacterService().renameCharacter(handle, model.getName());
+				}
+			} catch (IOException e) {
+				logger.error("Renaming failed",e);
+				BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Renaming failed: "+e);
 			}
 
 			/*

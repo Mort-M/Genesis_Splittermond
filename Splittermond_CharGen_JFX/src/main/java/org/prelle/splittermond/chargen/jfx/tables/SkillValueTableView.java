@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.prelle.javafx.AttentionPane;
+import org.prelle.javafx.CloseType;
 import org.prelle.javafx.NavigButtonControl;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.javafx.SymbolIcon;
@@ -39,6 +40,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.util.Callback;
 
 /**
  * @author Stefan Prelle
@@ -325,7 +327,8 @@ class SkillValueMasteriesTableCell extends TableCell<SkillValue, String> {
 		MastershipDialog dialog = new MastershipDialog(control);
 		dialog.setData(control.getModel(), sval);
 		NavigButtonControl ctrl = new NavigButtonControl();
-		ctrl.initialize(provider.getScreenManager(), dialog);
+//		ctrl.initialize(provider.getScreenManager(), dialog);
+//		ctrl.setDisabled(CloseType.OK, false);
 		provider.getScreenManager().showAlertAndCall(dialog, ctrl);
 		LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME).debug("STOP : editMasterships");
 //		getTableView().refresh();

@@ -11,6 +11,7 @@ import org.prelle.splimo.Attribute;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.ViewMode;
 import org.prelle.splittermond.chargen.jfx.attributes.AttributesPrimaryTableView;
 
 import javafx.beans.property.ObjectProperty;
@@ -33,20 +34,20 @@ public class AttributePrimarySection extends SingleSection {
 	private ObjectProperty<Attribute> showHelpFor = new SimpleObjectProperty<>();
 
 	//-------------------------------------------------------------------
-	public AttributePrimarySection(String title, CharacterController ctrl, ScreenManagerProvider provider) {
+	public AttributePrimarySection(String title, CharacterController ctrl, ViewMode mode, ScreenManagerProvider provider) {
 		super(provider, title, null);
 		control = ctrl;
 		model = ctrl.getModel();
 
-		initComponents();
+		initComponents(mode);
 		initLayout();
 		refresh();
 		initInteractivity();
 	}
 
 	//-------------------------------------------------------------------
-	private void initComponents() {
-		table = new AttributesPrimaryTableView(control);
+	private void initComponents(ViewMode mode) {
+		table = new AttributesPrimaryTableView(control, mode);
 		table.setData(model);
 	}
 

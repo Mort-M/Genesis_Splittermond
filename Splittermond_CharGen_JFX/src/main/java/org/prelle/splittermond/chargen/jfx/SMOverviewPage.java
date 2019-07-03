@@ -65,7 +65,7 @@ public class SMOverviewPage extends SpliMoManagedScreenPage {
 
 	//-------------------------------------------------------------------
 	private void initAttributes() {
-		attrPri = new AttributePrimarySection(UI.getString("section.attr.primary"), charGen, provider);
+		attrPri = new AttributePrimarySection(UI.getString("section.attr.primary"), charGen, mode, provider);
 		attrSec = new AttributeSecondarySection(UI.getString("section.attr.secondary"), charGen, provider);
 
 		secAttrib = new DoubleSection(attrPri, attrSec);
