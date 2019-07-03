@@ -17,6 +17,11 @@
 			<username>${env.ARTIFACTORY_USER_TOKEN}</username>
 			<password>${env.ARTIFACTORY_PWD_TOKEN}</password>
 		</server>
+        <server>
+            <id>google</id>
+            <username>${env.GCLOUD_USER_TOKEN}</username>
+            <password>${env.GCLOUD_PWD_TOKEN}</password>
+        </server>
 	</servers>
 	<profiles>
 		<profile>
