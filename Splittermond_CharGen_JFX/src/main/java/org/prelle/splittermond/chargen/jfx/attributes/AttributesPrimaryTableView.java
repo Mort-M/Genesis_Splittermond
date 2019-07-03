@@ -49,7 +49,7 @@ public class AttributesPrimaryTableView extends TableView<AttributeValue> {
 		priAttrLong = new TableColumn<AttributeValue, String>(RES.getString("label.name"));
 		priAttrShort= new TableColumn<AttributeValue, String>();
 		priStart    = new TableColumn<AttributeValue, Number>(RES.getString((mode==ViewMode.GENERATION)?"label.modified.short":"label.start"));
-		priValue    = new TableColumn<AttributeValue, AttributeValue>((mode==ViewMode.GENERATION)?"label.points":RES.getString("label.value"));
+		priValue    = new TableColumn<AttributeValue, AttributeValue>(RES.getString((mode==ViewMode.GENERATION)?"label.points":"label.value"));
 		priSum      = new TableColumn<AttributeValue, Number>(RES.getString("label.value"));
 
 		priAttrLong.setPrefWidth(150); // Percent
@@ -59,6 +59,7 @@ public class AttributesPrimaryTableView extends TableView<AttributeValue> {
 		priSum.setPrefWidth(50);
 		
 		priStart.setStyle("-fx-alignment:center");
+		priSum.setStyle("-fx-alignment:center");
 
 		getColumns().addAll(priAttrLong, priAttrShort, priStart, priValue);
 		if (mode==ViewMode.GENERATION)
