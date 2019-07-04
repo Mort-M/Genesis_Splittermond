@@ -12,6 +12,11 @@
             <username>${env.ARTIFACTORY_USER_TOKEN}</username>
             <password>${env.ARTIFACTORY_PWD_TOKEN}</password>
         </server>
+        <server>
+            <id>google</id>
+            <username>${env.GCLOUD_USER_TOKEN}</username>
+            <password>${env.GCLOUD_PWD_TOKEN}</password>
+        </server>
 	</servers>
 	<profiles>
 		<profile>
@@ -22,29 +27,6 @@
 				<gpg.keyname>${env.GPG_KEY}</gpg.keyname>
 				<gpg.passphrase>${env.GPG_PWD}</gpg.passphrase>
 			</properties>
-			<repositories>
-				<repository>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-					<id>central</id>
-					<name>libs-release</name>
-					<url>http://repository.rpgframework.de:8081/artifactory/libs-release</url>
-				</repository>
-				<repository>
-					<snapshots />
-					<id>snapshots</id>
-					<name>libs-snapshot</name>
-					<url>http://repository.rpgframework.de:8081/artifactory/libs-snapshot</url>
-				</repository>
-				<repository>
-					<id>ossrh</id>
-					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-					<releases>
-						<enabled>false</enabled>
-					</releases>
-				</repository>
-			</repositories>
 		</profile>
 	</profiles>
 </settings>

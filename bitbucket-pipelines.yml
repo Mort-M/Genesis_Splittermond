@@ -6,4 +6,4 @@ pipelines:
         caches:
           - maven
         script:
-          - mvn -s settings.xml -B deploy
+          - mvn -s settings.xml -B deploy -Dgpg.skip=true
