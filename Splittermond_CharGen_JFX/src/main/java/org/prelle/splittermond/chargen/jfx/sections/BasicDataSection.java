@@ -135,6 +135,21 @@ public class BasicDataSection extends SingleSection {
 		grid.add(cbGender    , 1,5);
 		grid.add(hdMoonsign  , 0,6);
 		grid.add(cbMoonsign  , 1,6);
+
+		GridPane.setFillWidth(tfName, true);
+		GridPane.setFillWidth(cbEducation, true);
+		GridPane.setFillWidth(cbCulture, true);
+		GridPane.setFillWidth(cbBackground, true);
+		GridPane.setFillWidth(cbRace, true);
+		GridPane.setFillWidth(cbGender, true);
+		GridPane.setFillWidth(cbMoonsign, true);
+		tfName.setMaxWidth(Double.MAX_VALUE);
+		cbEducation.setMaxWidth(Double.MAX_VALUE);
+		cbCulture.setMaxWidth(Double.MAX_VALUE);
+		cbBackground.setMaxWidth(Double.MAX_VALUE);
+		cbRace.setMaxWidth(Double.MAX_VALUE);
+		cbGender.setMaxWidth(Double.MAX_VALUE);
+		cbMoonsign.setMaxWidth(Double.MAX_VALUE);
 		
 		
 		for (Node child : grid.getChildren()) {
