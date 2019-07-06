@@ -277,6 +277,14 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 						RES.getString("alert.cancel_creation.title"),
 						RES.getString("alert.cancel_creation.message")
 						);
+				if (result==CloseType.YES && handle!=null) {
+					// Delete previously saved char
+					try {
+						RPGFrameworkLoader.getInstance().getCharacterService().deleteCharacter(handle);
+					} catch (IOException e) {
+						logger.error("Failed deleting cancelled character",e);
+					}
+				}
 				return result==CloseType.YES;
 			}
 		} else {
