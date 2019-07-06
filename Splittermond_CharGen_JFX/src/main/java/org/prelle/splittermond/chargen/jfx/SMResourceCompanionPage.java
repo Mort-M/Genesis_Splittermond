@@ -5,6 +5,7 @@ import org.prelle.rpgframework.jfx.DoubleSection;
 import org.prelle.rpgframework.jfx.Section;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.BasePluginData;
+import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.creature.CreatureReference;
 import org.prelle.splittermond.chargen.jfx.creatures.CreaturePane;
@@ -22,6 +23,8 @@ import org.prelle.splittermond.chargen.jfx.sections.ResourceSection;
 import de.rpgframework.character.CharacterHandle;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
+import de.rpgframework.genericrpg.ToDoElement;
+import de.rpgframework.genericrpg.ToDoElement.Severity;
 
 /**
  * @author Stefan Prelle
@@ -119,6 +122,15 @@ public class SMResourceCompanionPage extends SpliMoManagedScreenPage {
 			this.setDescriptionHeading(null);
 			this.setDescriptionPageRef(null);
 			this.setDescriptionText(null);
+		}
+	}
+
+	//-------------------------------------------------------------------
+	public void refresh() {
+		super.refresh();
+		resources.getToDoList().clear();
+		for (String tmp : charGen.getResourceController().getToDos()) {
+			resources.getToDoList().add(new ToDoElement(Severity.WARNING, tmp));
 		}
 	}
 
