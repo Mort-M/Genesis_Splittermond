@@ -5,6 +5,7 @@ package org.prelle.splimo.chargen;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -198,6 +199,7 @@ public class PowerGenerator2 implements PowerController {
 	 */
 	@Override
 	public List<Power> getAvailablePowers() {
+		Collections.sort(available);
 		return available;
 	}
 
