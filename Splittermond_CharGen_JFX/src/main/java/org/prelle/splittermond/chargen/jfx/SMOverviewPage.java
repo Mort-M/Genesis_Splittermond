@@ -1,5 +1,6 @@
 package org.prelle.splittermond.chargen.jfx;
 
+import org.prelle.javafx.ScreenManager;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.rpgframework.jfx.DoubleSection;
 import org.prelle.rpgframework.jfx.Section;
@@ -23,7 +24,6 @@ import de.rpgframework.genericrpg.ToDoElement.Severity;
  */
 public class SMOverviewPage extends SpliMoManagedScreenPage {
 
-	private ViewMode mode;
 	private ScreenManagerProvider provider;
 
 	private BasicDataSection basic;
@@ -36,11 +36,10 @@ public class SMOverviewPage extends SpliMoManagedScreenPage {
 
 	//-------------------------------------------------------------------
 	public SMOverviewPage(CharacterController control, ViewMode mode, CharacterHandle handle, ScreenManagerProvider provider) {
-		super(control, handle);
+		super(control, mode, handle);
 		this.setId("splittermond-overview");
 		this.setTitle(control.getModel().getName());
 		this.provider = provider;
-		this.handle   = handle;
 		this.mode = mode;
 		if (this.mode==null)
 			this.mode = ViewMode.MODIFICATION;
@@ -86,7 +85,6 @@ public class SMOverviewPage extends SpliMoManagedScreenPage {
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
 		cmdPrint.setOnAction( ev -> {BabylonEventBus.fireEvent(BabylonEventType.PRINT_REQUESTED, handle, charGen.getModel());});
-		cmdDelete.setOnAction( ev -> BabylonEventBus.fireEvent(BabylonEventType.PRINT_REQUESTED, handle, charGen.getModel()));
 	}
 
 	//-------------------------------------------------------------------
@@ -122,6 +120,15 @@ public class SMOverviewPage extends SpliMoManagedScreenPage {
 			this.setDescriptionPageRef(null);
 			this.setDescriptionText(null);
 		}
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.NodeWithCommandBar#getScreenManager()
+	 */
+	@Override
+	public ScreenManager getScreenManager() { 
+		return provider.getScreenManager();
 	}
 
 }

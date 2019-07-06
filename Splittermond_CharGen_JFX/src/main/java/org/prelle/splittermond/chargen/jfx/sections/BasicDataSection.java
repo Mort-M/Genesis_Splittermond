@@ -96,9 +96,11 @@ public class BasicDataSection extends SingleSection {
 		cbMoonsign  = new ChoiceBox<>(FXCollections.observableArrayList(Moonsign.values()));
 		cbDeity     = new ChoiceBox<>(FXCollections.observableArrayList(SplitterMondCore.getDeities()));
 
-		cbEducation.setEditable(true);
-		cbCulture.setEditable(true);
-		cbBackground.setEditable(true);
+		cbEducation.setEditable(false);
+		cbCulture.setEditable(false);
+		cbBackground.setEditable(false);
+		cbRace.setDisable(true);
+		cbRace.setStyle("-fx-opacity: 1");
 		cbDeity.setDisable(true);
 	}
 

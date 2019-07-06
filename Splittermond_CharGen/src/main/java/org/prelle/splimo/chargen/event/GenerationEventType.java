@@ -121,4 +121,6 @@ public enum GenerationEventType {
 	CREATURE_CHANGED, 
 	
 	NOTES_CHANGED,
+	
+	FINISH_REQUESTED
 }

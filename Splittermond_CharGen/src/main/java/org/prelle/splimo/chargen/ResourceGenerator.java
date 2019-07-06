@@ -333,6 +333,8 @@ public class ResourceGenerator implements GeneratingResourceController {
 	//--------------------------------------------------------------------
 	@Override
 	public boolean canBeDeselected(ResourceReference key) {
+		if (key==null)
+			return false;
 		return key.getValue()>0 && !BASE_RESOURCES.contains(key.getResource());
 	}
 

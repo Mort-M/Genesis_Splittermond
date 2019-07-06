@@ -1,5 +1,6 @@
 package org.prelle.splittermond.chargen.jfx;
 
+import org.prelle.javafx.ScreenManager;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.rpgframework.jfx.DoubleSection;
 import org.prelle.rpgframework.jfx.Section;
@@ -22,7 +23,6 @@ import de.rpgframework.genericrpg.ToDoElement.Severity;
  */
 public class SMPowerLangCultPage extends SpliMoManagedScreenPage {
 
-	private ViewMode mode;
 	private ScreenManagerProvider provider;
 
 	private PowerSection powers;
@@ -35,11 +35,10 @@ public class SMPowerLangCultPage extends SpliMoManagedScreenPage {
 
 	//-------------------------------------------------------------------
 	public SMPowerLangCultPage(CharacterController control, ViewMode mode, CharacterHandle handle, ScreenManagerProvider provider) {
-		super(control, handle);
+		super(control, mode, handle);
 		this.setId("splittermond-powers");
 		this.setTitle(control.getModel().getName());
 		this.provider = provider;
-		this.mode = mode;
 		if (this.mode==null)
 			this.mode = ViewMode.MODIFICATION;
 		
@@ -116,6 +115,15 @@ public class SMPowerLangCultPage extends SpliMoManagedScreenPage {
 		for (String tmp : charGen.getCultureLoreController().getToDos()) {
 			secLine2.getToDoList().add(new ToDoElement(Severity.STOPPER, tmp));
 		}
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.NodeWithCommandBar#getScreenManager()
+	 */
+	@Override
+	public ScreenManager getScreenManager() { 
+		return provider.getScreenManager();
 	}
 
 }

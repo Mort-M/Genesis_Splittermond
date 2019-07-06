@@ -690,7 +690,10 @@ public class SpliMoCharacterGenerator implements CharacterController {
 		CharacterProvider charProv     = RPGFrameworkLoader.getInstance().getCharacterService();
 		try {
 			CharacterHandle handle = charProv.createCharacter(model.getName(), RoleplayingSystem.SPLITTERMOND);
+			logger.info("Calling handle.setCharacter("+model+")");
 			handle.setCharacter(model);
+//			RPGFrameworkLoader.getInstance().getCharacterAndRules().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, null, SplitterMondCore.save(model));
+//			BabylonEventBus.fireEvent(BabylonEventType.CHAR_MODIFIED, handle, 2);
 			// Attach image if exists
 			if (model.getImage()!=null) {
 				Attachment imgAttachment = handle.getFirstAttachment(Type.CHARACTER, Format.IMAGE);

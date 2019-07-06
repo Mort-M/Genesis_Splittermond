@@ -138,7 +138,7 @@ public class MastershipReferenceListCell extends ListCell<MastershipReference> {
         else
         	content.putString("special:deselect:"+data.getSpecialization().getSpecial().getSkill()+"/"+data.getSpecialization().getSpecial().getId()+"/"+data.getSpecialization().getSpecial().getLevel());
         db.setContent(content);
-        System.out.println("Drag started: "+content.getString());
+        logger.debug("Drag started: "+content.getString());
 
         /* Drag image */
         WritableImage snapshot = source.snapshot(new SnapshotParameters(), null);

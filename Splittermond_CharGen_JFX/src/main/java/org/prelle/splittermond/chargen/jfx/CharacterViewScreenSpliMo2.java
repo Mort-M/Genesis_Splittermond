@@ -166,7 +166,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 
 	//-------------------------------------------------------------------
 	private boolean saveCharacter() {
-		logger.debug("START: saveCharacter");
+		logger.debug("START: saveCharacter   (handle="+handle+",  mode="+mode+")");
 
 		if (mode==ViewMode.MODIFICATION) {
 			/*
@@ -180,7 +180,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			/*
 			 * 1. Convert character into Byte Buffer - or fail
 			 */
-			byte[] encoded = SplitterMondCore.save(model);;
+			byte[] encoded = SplitterMondCore.save(model);
 //			byte[] encoded = null;
 //			try { encoded = SplitterMondCore.save(model); } catch (IOException e) {
 //				logger.error("Cannot save character, since encoding failed: "+e);
@@ -200,11 +200,11 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			try {
 				if (handle==null) {
 					logger.debug("CharacterHandle does not exist yet - prepare it");
-					handle = RPGFrameworkLoader.getInstance().getCharacterService().createCharacter(model.getName(), RoleplayingSystem.SHADOWRUN);
+					handle = RPGFrameworkLoader.getInstance().getCharacterService().createCharacter(model.getName(), RoleplayingSystem.SPLITTERMOND);
+					handle.setCharacter(model);
+					RPGFrameworkLoader.getInstance().getCharacterAndRules().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, null, encoded);
+					BabylonEventBus.fireEvent(BabylonEventType.CHAR_MODIFIED, handle, 2);
 				}
-				logger.info("Save character "+model.getName());
-				RPGFrameworkLoader.getInstance().getCharacterAndRules().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, null, encoded);
-				handle.setCharacter(model);
 				logger.info("Saved character "+model.getName()+" successfully");
 			} catch (IOException e) {
 				logger.error("Failed saving character",e);
@@ -262,14 +262,14 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 
 	//-------------------------------------------------------------------
 	private boolean userTriesToLeave() {
-		logger.info("userTriesToLeave");
+		logger.info("userTriesToLeave  "+mode);
 		
 		if (mode==ViewMode.GENERATION) {
 			logger.warn("TODO: Check if creation is finished");
 			if ( ((SpliMoCharacterGenerator)control).hasEnoughData() ) {
 				logger.info("User wants to leave and generator is finished - try to save character");
 				((SpliMoCharacterGenerator)control).generate();
-				return saveCharacter();
+				return true;
 			} else {
 				logger.info("User wants to leave the generation early.");
 				CloseType result = getManager().showAlertAndCall(
@@ -279,6 +279,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 						);
 				if (result==CloseType.YES && handle!=null) {
 					// Delete previously saved char
+					logger.info("Delete eventually existing character on disk");
 					try {
 						RPGFrameworkLoader.getInstance().getCharacterService().deleteCharacter(handle);
 					} catch (IOException e) {
@@ -455,6 +456,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		case RESOURCE_ADDED:
 		case RESOURCE_CHANGED:
 		case RESOURCE_REMOVED:
+		case RESOURCES_CHANGED:
 		case CREATURE_CHANGED:
 			pgResources.refresh();
 			break;
@@ -482,6 +484,13 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			break;
 		case UNDO_LIST_CHANGED:
 			break;
+		case FINISH_REQUESTED:
+			logger.info("FINISH_REQUESTED");
+			if (userTriesToLeave()) {
+				logger.info("Saved successfully");
+				getScreenManager().closeScreen();
+			}
+			break;
 		default:
 			logger.warn("What to do on "+event.getType());
 		}
@@ -502,19 +511,19 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 
 		if (close==CloseType.FINISH) {
 			logger.info("Wizard finished");
-			try {
-				byte[] data =SplitterMondCore.save(model);
-				handle = RPGFrameworkLoader.getInstance().getCharacterService().createCharacter(model.getName(), RoleplayingSystem.SPLITTERMOND);
-				handle.setCharacter(model);
-				RPGFrameworkLoader.getInstance().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, model.getName()+".xml", data);
+//			try {
+//				byte[] data =SplitterMondCore.save(model);
+//				handle = RPGFrameworkLoader.getInstance().getCharacterService().createCharacter(model.getName(), RoleplayingSystem.SPLITTERMOND);
+//				handle.setCharacter(model);
+//				RPGFrameworkLoader.getInstance().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, model.getName()+".xml", data);
 				getManager().showAlertAndCall(AlertType.NOTIFICATION, RES.getString("alert.start_tuning.title"),
-						String.format(RES.getString("alert.start_tuning.message"), handle.getPath().toString()));
-//				commandBar.getItems().addAll(cmdPrint);
-			} catch (IOException e) {
-				logger.error("Failed writing newly created character to disk",e);
-				getManager().showAlertAndCall(AlertType.ERROR, RES.getString("error.saving_character.title"),
-						String.format(RES.getString("error.saving_character.message"), e.toString()));
-			}
+						RES.getString("alert.start_tuning.message"));
+////				commandBar.getItems().addAll(cmdPrint);
+//			} catch (IOException e) {
+//				logger.error("Failed writing newly created character to disk",e);
+//				getManager().showAlertAndCall(AlertType.ERROR, RES.getString("error.saving_character.title"),
+//						String.format(RES.getString("error.saving_character.message"), e.toString()));
+//			}
 			refresh();
 		} else {
 			logger.warn("Wizard "+close);

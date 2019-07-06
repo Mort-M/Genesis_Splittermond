@@ -1,23 +1,14 @@
 package org.prelle.splittermond.chargen.jfx;
 
+import org.prelle.javafx.ScreenManager;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.rpgframework.jfx.DoubleSection;
 import org.prelle.rpgframework.jfx.Section;
-import org.prelle.splimo.Attribute;
 import org.prelle.splimo.BasePluginData;
-import org.prelle.splimo.Skill.SkillType;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.creature.CreatureReference;
 import org.prelle.splittermond.chargen.jfx.creatures.CreaturePane;
-import org.prelle.splittermond.chargen.jfx.sections.AttributePrimarySection;
-import org.prelle.splittermond.chargen.jfx.sections.AttributeSecondarySection;
-import org.prelle.splittermond.chargen.jfx.sections.BasicDataSection;
 import org.prelle.splittermond.chargen.jfx.sections.CompanionSection;
-import org.prelle.splittermond.chargen.jfx.sections.CultureLoreSection;
-import org.prelle.splittermond.chargen.jfx.sections.FlawsSection;
-import org.prelle.splittermond.chargen.jfx.sections.LanguagesSection;
-import org.prelle.splittermond.chargen.jfx.sections.PortraitSection;
-import org.prelle.splittermond.chargen.jfx.sections.PowerSection;
 import org.prelle.splittermond.chargen.jfx.sections.ResourceSection;
 
 import de.rpgframework.character.CharacterHandle;
@@ -32,7 +23,6 @@ import de.rpgframework.genericrpg.ToDoElement.Severity;
  */
 public class SMResourceCompanionPage extends SpliMoManagedScreenPage {
 
-	private ViewMode mode;
 	private ScreenManagerProvider provider;
 
 	private ResourceSection resources;
@@ -43,11 +33,10 @@ public class SMResourceCompanionPage extends SpliMoManagedScreenPage {
 
 	//-------------------------------------------------------------------
 	public SMResourceCompanionPage(CharacterController control, ViewMode mode, CharacterHandle handle, ScreenManagerProvider provider) {
-		super(control, handle);
+		super(control, mode, handle);
 		this.setId("splittermond-resources");
 		this.setTitle(control.getModel().getName());
 		this.provider = provider;
-		this.mode = mode;
 		if (this.mode==null)
 			this.mode = ViewMode.MODIFICATION;
 		
@@ -132,6 +121,15 @@ public class SMResourceCompanionPage extends SpliMoManagedScreenPage {
 		for (String tmp : charGen.getResourceController().getToDos()) {
 			resources.getToDoList().add(new ToDoElement(Severity.WARNING, tmp));
 		}
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.NodeWithCommandBar#getScreenManager()
+	 */
+	@Override
+	public ScreenManager getScreenManager() { 
+		return provider.getScreenManager();
 	}
 
 }

@@ -43,7 +43,7 @@ public class PowerSection extends GenericListSection<PowerReference> {
 	 */
 	@Override
 	protected void onAdd() {
-		logger.trace("onAdd");
+		logger.debug("onAdd");
 		Label question = new Label(RES.getString("section.power.dialog.add.question"));
 		ListView<Power> myList = new ListView<>();
 		myList.setCellFactory(lv -> new AvailablePowerCell(control));

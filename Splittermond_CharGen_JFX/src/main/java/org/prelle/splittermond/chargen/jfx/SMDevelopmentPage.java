@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ManagedDialog;
-import org.prelle.javafx.ManagedScreen;
+import org.prelle.javafx.ScreenManager;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.rpgframework.jfx.DevelopmentPage;
 import org.prelle.splimo.HistoryElementImpl;
@@ -29,8 +29,6 @@ import de.rpgframework.core.RoleplayingSystem;
 import de.rpgframework.genericrpg.HistoryElement;
 import de.rpgframework.genericrpg.Reward;
 import de.rpgframework.genericrpg.modification.Modification;
-import de.rpgframework.products.Adventure;
-import de.rpgframework.products.ProductService;
 import javafx.util.StringConverter;
 
 /**
@@ -204,6 +202,15 @@ public class SMDevelopmentPage extends DevelopmentPage {
 //			return true;
 //		}
 		return false;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.NodeWithCommandBar#getScreenManager()
+	 */
+	@Override
+	public ScreenManager getScreenManager() { 
+		return provider.getScreenManager();
 	}
 
 }

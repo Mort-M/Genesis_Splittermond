@@ -17,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
 
 public class NewCultureLoreEditingCell extends ListCell<CultureLoreReference> {
 	
@@ -24,17 +25,19 @@ public class NewCultureLoreEditingCell extends ListCell<CultureLoreReference> {
 	
 	private CultureLoreController charGen;
 	private SymbolIcon icoLock;
-	private HBox layout;
+	private StackPane layout;
 	private Label name;
 	
 	//-------------------------------------------------------------------
 	public NewCultureLoreEditingCell(CharacterController charGen) {
 		this.charGen = charGen.getCultureLoreController();
 		
-		layout  = new HBox();
+		layout  = new StackPane();
 		icoLock = new SymbolIcon("lock");
 		name    = new Label();
 		layout.getChildren().addAll(name, icoLock);
+		StackPane.setAlignment(name, Pos.CENTER_LEFT);
+		StackPane.setAlignment(icoLock, Pos.CENTER_RIGHT);
 		
 		name.getStyleClass().add("text-small-subheader");
 		icoLock.setStyle("-fx-font-size: 200%");

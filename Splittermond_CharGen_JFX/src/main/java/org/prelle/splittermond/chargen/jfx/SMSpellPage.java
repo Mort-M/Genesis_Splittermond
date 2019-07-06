@@ -40,7 +40,6 @@ import javafx.util.StringConverter;
  */
 public class SMSpellPage extends SpliMoManagedScreenPage {
 	
-	private ViewMode mode;
 	private ScreenManagerProvider provider;
 
 	private SpellSchoolSection schools;
@@ -53,11 +52,10 @@ public class SMSpellPage extends SpliMoManagedScreenPage {
 
 	//-------------------------------------------------------------------
 	public SMSpellPage(CharacterController control, ViewMode mode, CharacterHandle handle, ScreenManagerProvider provider) {
-		super(control, handle);
+		super(control, mode, handle);
 		this.setId("splittermond-spells");
 		this.setTitle(control.getModel().getName());
 		this.provider = provider;
-		this.mode = mode;
 		if (this.mode==null)
 			this.mode = ViewMode.MODIFICATION;
 		
@@ -112,7 +110,6 @@ public class SMSpellPage extends SpliMoManagedScreenPage {
 		commandContent.setAlignment(Pos.CENTER_LEFT);
 		commandContent.setMaxWidth(Double.MAX_VALUE);;
 		getCommandBar().setContent(commandContent);
-		getCommandBar().getPrimaryCommands().add(new MenuItem("Test"));
 
 		initLine1();
 		initLine2();
@@ -151,6 +148,7 @@ public class SMSpellPage extends SpliMoManagedScreenPage {
 	
 	//-------------------------------------------------------------------
 	public void refreshSpells() {
+		super.refresh();
 		spells.refresh();
 		specials.refresh();
 		setPointsFree(charGen.getModel().getExperienceFree());

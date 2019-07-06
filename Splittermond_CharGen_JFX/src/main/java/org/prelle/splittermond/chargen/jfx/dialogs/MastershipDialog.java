@@ -485,7 +485,7 @@ public class MastershipDialog extends ManagedDialog implements GenerationEventLi
 	 * Deselect
 	 */
 	private void dragOverSelected(DragEvent event) {
-//        logger.warn("dragOverSelected "+event);
+        logger.warn("dragOverSelected "+event);
 		Node target = (Node) event.getSource();
 		if (event.getGestureSource() != target && event.getDragboard().hasString()) {
             String enhanceID = event.getDragboard().getString();

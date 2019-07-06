@@ -1,5 +1,6 @@
 package org.prelle.splittermond.chargen.jfx;
 
+import org.prelle.javafx.ScreenManager;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.BasePluginData;
 import org.prelle.splimo.Skill.SkillType;
@@ -18,7 +19,6 @@ import de.rpgframework.genericrpg.ToDoElement.Severity;
  */
 public class SMSkillPage extends SpliMoManagedScreenPage {
 
-	private ViewMode mode;
 	private ScreenManagerProvider provider;
 
 	private SkillSection normal;
@@ -27,11 +27,10 @@ public class SMSkillPage extends SpliMoManagedScreenPage {
 
 	//-------------------------------------------------------------------
 	public SMSkillPage(CharacterController control, ViewMode mode, CharacterHandle handle, ScreenManagerProvider provider) {
-		super(control, handle);
+		super(control, mode, handle);
 		this.setId("splittermond-skills");
 		this.setTitle(control.getModel().getName());
 		this.provider = provider;
-		this.mode = mode;
 		if (this.mode==null)
 			this.mode = ViewMode.MODIFICATION;
 		
@@ -80,7 +79,6 @@ public class SMSkillPage extends SpliMoManagedScreenPage {
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
 		cmdPrint.setOnAction( ev -> {BabylonEventBus.fireEvent(BabylonEventType.PRINT_REQUESTED, handle, charGen.getModel());});
-		cmdDelete.setOnAction( ev -> BabylonEventBus.fireEvent(BabylonEventType.PRINT_REQUESTED, handle, charGen.getModel()));
 	}
 
 	//-------------------------------------------------------------------
@@ -111,6 +109,15 @@ public class SMSkillPage extends SpliMoManagedScreenPage {
 		for (String tmp : charGen.getSkillController().getToDos(SkillType.MAGIC)) {
 			magic.getToDoList().add(new ToDoElement(Severity.WARNING, tmp));
 		}
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.NodeWithCommandBar#getScreenManager()
+	 */
+	@Override
+	public ScreenManager getScreenManager() { 
+		return provider.getScreenManager();
 	}
 
 }

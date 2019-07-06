@@ -2,8 +2,8 @@ package org.prelle.splittermond.chargen.jfx;
 
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
-import java.util.function.BiConsumer;
 
+import org.prelle.javafx.ScreenManager;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.rpgframework.jfx.DoubleSection;
 import org.prelle.rpgframework.jfx.Section;
@@ -12,7 +12,6 @@ import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.ItemLocationType;
-import org.prelle.splittermond.chargen.jfx.sections.CompanionSection;
 import org.prelle.splittermond.chargen.jfx.sections.EquipmentSection;
 
 import de.rpgframework.character.CharacterHandle;
@@ -27,7 +26,6 @@ public class SMEquipmentPage extends SpliMoManagedScreenPage {
 
 	private static PropertyResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle(EquipmentSection.class.getName());
 
-	private ViewMode mode;
 	private ScreenManagerProvider provider;
 
 	private EquipmentSection body;
@@ -40,12 +38,11 @@ public class SMEquipmentPage extends SpliMoManagedScreenPage {
 
 	//-------------------------------------------------------------------
 	public SMEquipmentPage(CharacterController control, ViewMode mode, CharacterHandle handle, ScreenManagerProvider provider) {
-		super(control, handle);
+		super(control, mode, handle);
 		this.setId("splittermond-equipment");
 		this.setTitle(control.getModel().getName());
 		this.provider = provider;
 		this.handle   = handle;
-		this.mode = mode;
 		if (this.mode==null)
 			this.mode = ViewMode.MODIFICATION;
 		
@@ -98,7 +95,11 @@ public class SMEquipmentPage extends SpliMoManagedScreenPage {
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
 		cmdPrint.setOnAction( ev -> {BabylonEventBus.fireEvent(BabylonEventType.PRINT_REQUESTED, handle, charGen.getModel());});
-		cmdDelete.setOnAction( ev -> BabylonEventBus.fireEvent(BabylonEventType.PRINT_REQUESTED, handle, charGen.getModel()));
+	}
+	
+	//-------------------------------------------------------------------
+	public void refresh() {
+		super.refresh();
 	}
 
 	//-------------------------------------------------------------------
@@ -150,6 +151,15 @@ public class SMEquipmentPage extends SpliMoManagedScreenPage {
 		}
 		
 		refresh();
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.javafx.NodeWithCommandBar#getScreenManager()
+	 */
+	@Override
+	public ScreenManager getScreenManager() { 
+		return provider.getScreenManager();
 	}
 
 }

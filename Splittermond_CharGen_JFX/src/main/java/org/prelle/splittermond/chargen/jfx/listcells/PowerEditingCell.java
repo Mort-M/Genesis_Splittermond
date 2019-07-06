@@ -1,10 +1,12 @@
 package org.prelle.splittermond.chargen.jfx.listcells;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.PowerReference;
 import org.prelle.splimo.charctrl.PowerController;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import javafx.beans.value.ObservableValue;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.Spinner;
@@ -13,6 +15,8 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 public class PowerEditingCell extends ListCell<PowerReference> {
+
+	private static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 	
 	private Label lbName;
 	private Label lbShortDesc;
@@ -41,6 +45,20 @@ public class PowerEditingCell extends ListCell<PowerReference> {
 		layout = new HBox(10, col1, spinner);
 		HBox.setHgrow(col1, Priority.ALWAYS);
 		setStyle("-fx-pref-width: 25em");
+		
+		spinner.valueProperty().addListener( (ov,o,n) -> {
+			PowerReference data = PowerEditingCell.this.getItem();
+			if (data==null)
+				return;
+			
+			if (o<n) {
+				logger.debug("Increase "+data);
+				charGen.increase(data);
+			} else if (o>n) {
+				logger.debug("Decrease "+data);
+				charGen.decrease(data);
+			}
+		});
 	}
 	
 	//-------------------------------------------------------------------
