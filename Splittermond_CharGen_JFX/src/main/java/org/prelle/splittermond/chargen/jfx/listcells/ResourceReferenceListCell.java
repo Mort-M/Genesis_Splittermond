@@ -12,6 +12,9 @@ import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.charctrl.ResourceController;
+import org.prelle.splimo.chargen.event.GenerationEvent;
+import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
+import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.creature.CreatureReference;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.levelling.ResourceLeveller;
@@ -565,6 +568,7 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 				tfDescr.setText(tf.getText());
 			}
 		}
+		GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.RESOURCE_CHANGED, ref));
 	}
 
 	//-------------------------------------------------------------------
