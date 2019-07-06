@@ -204,6 +204,8 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 					handle.setCharacter(model);
 					RPGFrameworkLoader.getInstance().getCharacterAndRules().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, null, encoded);
 					BabylonEventBus.fireEvent(BabylonEventType.CHAR_MODIFIED, handle, 2);
+				} else {
+					handle.setCharacter(model);
 				}
 				logger.info("Saved character "+model.getName()+" successfully");
 			} catch (IOException e) {
