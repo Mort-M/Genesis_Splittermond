@@ -489,7 +489,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 
 		CharGenWizardSpliMo wizard = new CharGenWizardSpliMo(model, (SpliMoCharacterGenerator)control);
 		CloseType close = (CloseType)getManager().showAndWait(wizard);
-		logger.info("TODO Closed with "+close);
+		logger.info("Closed with "+close);
 		GenerationEventDispatcher.removeListener(wizard);
 
 		if (close==CloseType.FINISH) {
@@ -497,6 +497,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			try {
 				byte[] data =SplitterMondCore.save(model);
 				handle = RPGFrameworkLoader.getInstance().getCharacterService().createCharacter(model.getName(), RoleplayingSystem.SPLITTERMOND);
+				handle.setCharacter(model);
 				RPGFrameworkLoader.getInstance().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, model.getName()+".xml", data);
 				getManager().showAlertAndCall(AlertType.NOTIFICATION, RES.getString("alert.start_tuning.title"),
 						String.format(RES.getString("alert.start_tuning.message"), handle.getPath().toString()));
