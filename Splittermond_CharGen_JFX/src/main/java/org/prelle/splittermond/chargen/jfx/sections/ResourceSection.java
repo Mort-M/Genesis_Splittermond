@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import org.prelle.javafx.AlertType;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ScreenManagerProvider;
+import org.prelle.javafx.SymbolIcon;
 import org.prelle.rpgframework.jfx.DescriptionPane;
 import org.prelle.rpgframework.jfx.OptionalDescriptionPane;
 import org.prelle.splimo.Resource;
@@ -15,6 +16,7 @@ import org.prelle.splittermond.chargen.jfx.listcells.ResourceListCell;
 import org.prelle.splittermond.chargen.jfx.listcells.ResourceReferenceListCell;
 
 import javafx.application.Platform;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.GridPane;
@@ -40,6 +42,8 @@ public class ResourceSection extends GenericListSection<ResourceReference> {
 		list.setMaxHeight(Double.MAX_VALUE);
 
 		list.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> getDeleteButton().setDisable(n==null));
+
+		setSettingsButton( new Button(null, new SymbolIcon("setting")) );
 	}
 
 	//-------------------------------------------------------------------
@@ -50,6 +54,7 @@ public class ResourceSection extends GenericListSection<ResourceReference> {
 				getDeleteButton().setDisable( !control.getResourceController().canBeDeselected(n));
 			});
 		});
+		getSettingsButton().setOnAction( ev -> logger.warn("TODO: Support settings"));
 	}
 
 	//-------------------------------------------------------------------
