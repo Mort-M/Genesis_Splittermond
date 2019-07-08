@@ -6,7 +6,7 @@
  <!-- ############ WAFFEN ############ -->
  <items>
  	<item id="kronarsclaws" avail="SMALL_TOWN" price="500" load="1" robust="6" cplx="G">
- 		<weapon skill="slashing" damage="1W10" speed="8" att1="AGILITY" att2="INTUITION" type="WEAPON">
+ 		<weapon skill="melee" damage="1W10" speed="8" att1="AGILITY" att2="INTUITION" type="WEAPON">
  			<requires>
  				<attrreq attr="AGILITY" val="2"/>
  				<attrreq attr="STRENGTH" val="2"/>
