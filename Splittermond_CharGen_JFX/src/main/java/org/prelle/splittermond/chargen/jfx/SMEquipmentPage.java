@@ -17,6 +17,10 @@ import org.prelle.splittermond.chargen.jfx.sections.EquipmentSection;
 import de.rpgframework.character.CharacterHandle;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
+import javafx.geometry.Insets;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 
 /**
  * @author Stefan Prelle
@@ -28,6 +32,10 @@ public class SMEquipmentPage extends SpliMoManagedScreenPage {
 
 	private ScreenManagerProvider provider;
 
+	private TextField tfSolare;
+	private TextField tfLunare;
+	private TextField tfTelare;
+	
 	private EquipmentSection body;
 	private EquipmentSection container;
 	private EquipmentSection beast;
@@ -87,6 +95,20 @@ public class SMEquipmentPage extends SpliMoManagedScreenPage {
 	//-------------------------------------------------------------------
 	protected void initComponents() {
 		setPointsNameProperty(UI.getString("label.experience.short"));
+		
+		tfSolare = new TextField();
+		tfSolare.setPrefColumnCount(2);
+		tfLunare = new TextField();
+		tfLunare.setPrefColumnCount(2);
+		tfTelare = new TextField();
+		tfTelare.setPrefColumnCount(2);
+		Label lbSol = new Label(UI.getString("label.currency.solare"));
+		Label lbLun = new Label(UI.getString("label.currency.lunare"));
+		Label lbTel = new Label(UI.getString("label.currency.telare"));
+		expLine.getChildren().addAll(lbSol, tfSolare);
+		expLine.getChildren().addAll(lbLun, tfLunare);
+		expLine.getChildren().addAll(lbTel, tfTelare);
+		HBox.setMargin(lbSol, new Insets(0,0,0,40));
 
 		initLine1();
 		initLine2();
@@ -95,11 +117,30 @@ public class SMEquipmentPage extends SpliMoManagedScreenPage {
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
 		cmdPrint.setOnAction( ev -> {BabylonEventBus.fireEvent(BabylonEventType.PRINT_REQUESTED, handle, charGen.getModel());});
+		tfSolare.textProperty().addListener(ev -> readCurrency());
+		tfLunare.textProperty().addListener(ev -> readCurrency());
+		tfTelare.textProperty().addListener(ev -> readCurrency());
 	}
 	
 	//-------------------------------------------------------------------
 	public void refresh() {
 		super.refresh();
+		tfSolare.setText(String.valueOf(charGen.getModel().getTelare()/10000));
+		tfLunare.setText(String.valueOf((charGen.getModel().getTelare()/100)%100));
+		tfTelare.setText(String.valueOf(charGen.getModel().getTelare()%100));
+	}
+	
+	//-------------------------------------------------------------------
+	private void readCurrency() {
+		try {
+			int sol = Integer.parseInt(tfSolare.getText());
+			int lun = Integer.parseInt(tfLunare.getText());
+			int tel = Integer.parseInt(tfTelare.getText());
+			int val = sol*10000 + lun*100 + tel;
+			charGen.getModel().setTelare(val);
+		} catch (NumberFormatException e) {
+			logger.warn("Failed parsing currency",e);
+		}
 	}
 
 	//-------------------------------------------------------------------
