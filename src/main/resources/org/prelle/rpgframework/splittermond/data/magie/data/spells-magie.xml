@@ -1760,7 +1760,7 @@
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
     <spell id="speedy_undead" diff="18" cost="4V1" castdur="6T" range="10m" spelldur="30T" enh="1/+1V1">
-        <school skill="deathmagic" level="3" />
+        <school skill="deathmagic" level="1" />
         <type>NECROMANCY</type>
         <enhancementtype>RELEASETIME</enhancementtype>
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
