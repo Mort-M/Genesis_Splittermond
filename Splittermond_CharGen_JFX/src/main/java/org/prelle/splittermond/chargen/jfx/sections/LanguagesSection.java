@@ -31,6 +31,14 @@ public class LanguagesSection extends GenericListSection<LanguageReference> {
 		
 		setData(ctrl.getModel().getLanguages());
 		list.setStyle("-fx-min-width: 15em; -fx-pref-height: 15em;");
+		list.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
+			if (n==null)
+				getDeleteButton().setDisable(true);
+			else {
+				logger.debug("can be deselected = "+ctrl.getLanguageController().canBeDeselected(n));
+				getDeleteButton().setDisable(!ctrl.getLanguageController().canBeDeselected(n));
+			}
+		});
 	}
 
 	//-------------------------------------------------------------------

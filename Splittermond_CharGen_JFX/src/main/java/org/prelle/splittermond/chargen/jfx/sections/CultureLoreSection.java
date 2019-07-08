@@ -33,7 +33,14 @@ public class CultureLoreSection extends GenericListSection<CultureLoreReference>
 		setData(ctrl.getModel().getCultureLores());
 		list.setStyle("-fx-min-width: 15em; -fx-pref-height: 15em;");
 		
-		list.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> getDeleteButton().setDisable(n==null));
+		list.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
+			if (n==null)
+				getDeleteButton().setDisable(true);
+			else {
+				logger.debug("can be deselected = "+ctrl.getCultureLoreController().canBeDeselected(n));
+				getDeleteButton().setDisable(!ctrl.getCultureLoreController().canBeDeselected(n));
+			}
+		});
 	}
 
 	//-------------------------------------------------------------------
