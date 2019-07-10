@@ -55,6 +55,12 @@ public abstract class GenericListSection<T> extends SingleSection {
 		getDeleteButton().setTooltip(new Tooltip(RES.getString("button.delete.tooltip")));
 		getAddButton().setTooltip(new Tooltip(RES.getString("button.add.tooltip")));
 		getDeleteButton().setDisable(true);
+		settingsButtonProperty().addListener( (ov,o,n) -> {
+			if (o!=null)
+				o.setOnAction(null);
+			if (n!=null)
+				n.setOnAction(ev -> onSettings());
+		});
 	}
 
 	//-------------------------------------------------------------------
@@ -91,5 +97,10 @@ public abstract class GenericListSection<T> extends SingleSection {
 
 	//-------------------------------------------------------------------
 	protected abstract void onDelete();
+
+	//-------------------------------------------------------------------
+	protected void onSettings() {
+		logger.warn("onSettings() not overloaded in "+getClass());
+	}
 
 }

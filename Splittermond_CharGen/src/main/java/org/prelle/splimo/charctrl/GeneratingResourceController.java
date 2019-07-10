@@ -12,5 +12,8 @@ public interface GeneratingResourceController extends ResourceController, Genera
 
 	//-------------------------------------------------------------------
 	public void setAllowMaxResources(boolean allow);
+
+	//-------------------------------------------------------------------
+	public boolean isAllowMaxResources();
 	
 }

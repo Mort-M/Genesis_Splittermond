@@ -308,6 +308,11 @@ public class ResourceGenerator implements GeneratingResourceController {
 //		updateAvailableResources();
 	}
 
+	@Override
+	public boolean isAllowMaxResources() {
+		return maxValue == 6;
+	}
+
 	//--------------------------------------------------------------------
 	@Override
 	public ResourceReference openResource(Resource res) {

@@ -12,11 +12,13 @@ import org.prelle.rpgframework.jfx.OptionalDescriptionPane;
 import org.prelle.splimo.Resource;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.charctrl.CharacterController;
+import org.prelle.splimo.charctrl.GeneratingResourceController;
 import org.prelle.splittermond.chargen.jfx.listcells.ResourceListCell;
 import org.prelle.splittermond.chargen.jfx.listcells.ResourceReferenceListCell;
 
 import javafx.application.Platform;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.GridPane;
@@ -30,6 +32,8 @@ import javafx.scene.layout.VBox;
 public class ResourceSection extends GenericListSection<ResourceReference> {
 
 	private static PropertyResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle(ResourceSection.class.getName());
+	
+	private GeneratingResourceController resCtrl;
 
 	//-------------------------------------------------------------------
 	public ResourceSection(String title, CharacterController ctrl, ScreenManagerProvider provider) {
@@ -43,7 +47,10 @@ public class ResourceSection extends GenericListSection<ResourceReference> {
 
 		list.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> getDeleteButton().setDisable(n==null));
 
-		setSettingsButton( new Button(null, new SymbolIcon("setting")) );
+		if (ctrl.getResourceController() instanceof GeneratingResourceController) {
+			resCtrl = (GeneratingResourceController) ctrl.getResourceController();
+			setSettingsButton( new Button(null, new SymbolIcon("setting")) );
+		}
 	}
 
 	//-------------------------------------------------------------------
@@ -54,7 +61,6 @@ public class ResourceSection extends GenericListSection<ResourceReference> {
 				getDeleteButton().setDisable( !control.getResourceController().canBeDeselected(n));
 			});
 		});
-		getSettingsButton().setOnAction( ev -> logger.warn("TODO: Support settings"));
 	}
 
 	//-------------------------------------------------------------------
@@ -106,6 +112,19 @@ public class ResourceSection extends GenericListSection<ResourceReference> {
 			} else 
 				logger.warn("GUI allowed removing a resource which cannot be deselected: "+toDelete);
 		}
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see org.prelle.splittermond.chargen.jfx.sections.GenericListSection#onSettings()
+	 */
+	@Override
+	protected void onSettings() {
+		logger.trace("onSettings");
+		CheckBox cbAllow = new CheckBox(RES.getString("section.resource.dialog.settings.cbAllow"));
+		cbAllow.setSelected(resCtrl.isAllowMaxResources());
+		cbAllow.selectedProperty().addListener( (ov,o,n) -> resCtrl.setAllowMaxResources(n));
+		getManagerProvider().getScreenManager().showAlertAndCall(AlertType.NOTIFICATION, RES.getString("section.resource.dialog.settings.title"), cbAllow);
 	}
 
 	//-------------------------------------------------------------------
