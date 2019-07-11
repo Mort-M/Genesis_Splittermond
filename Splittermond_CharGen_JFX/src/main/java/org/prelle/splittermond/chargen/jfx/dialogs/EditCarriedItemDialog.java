@@ -198,6 +198,9 @@ public class EditCarriedItemDialog extends ManagedDialog implements GenerationEv
 		public ReadOnlyStringProperty textProperty() {
 			return pane.textProperty();
 		}
+		public ReadOnlyStringProperty nameProperty() {
+			return name.textProperty();
+		}
 	}
 
 	private CharacterController charGen;
@@ -318,6 +321,18 @@ public class EditCarriedItemDialog extends ManagedDialog implements GenerationEv
 		});
 		
 		paneDescr.textProperty().addListener( (ov,o,n) -> itemCtrl.getItem().setDescription(n));
+		paneDescr.nameProperty().addListener( (ov,o,n) -> {
+			CarriedItem item = itemCtrl.getItem();
+			logger.debug("Set custom name to '"+n+"' while default name is '"+item.getName());
+			if (item.getItem().getName().equals(n)) {
+				// Identical to normal name
+				logger.debug("Clear custom name");
+				item.setCustomName(null);
+			} else {
+				logger.debug("Set custom name");
+				item.setCustomName(n);
+			}
+		});
 	}
 
 	//-------------------------------------------------------------------
