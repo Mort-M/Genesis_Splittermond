@@ -755,7 +755,7 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 //		if (material!=null && !material.getId().startsWith("common"))
 //			normal++;
 		for (EnhancementReference enhance : enhancements) {
-			logger.warn("****Enhancement "+enhance+" is of type "+enhance.getEnhancement().getType()+" and of size "+enhance.getEnhancement().getSize());
+//			logger.warn("****Enhancement "+enhance+" is of type "+enhance.getEnhancement().getType()+" and of size "+enhance.getEnhancement().getSize());
 			switch (enhance.getEnhancement().getType()) {
 			case MAGIC: magic+=enhance.getEnhancement().getSize(); break;
 //			case RELIC: relic+=enhance.getEnhancement().getSize(); break;
@@ -764,8 +764,10 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 			}
 		}
 		
-		if (material!=null)
+		if (material!=null) {
+			normal++;
 			normal = Math.max(normal, material.getQuality());
+		}
 		return new int[]{normal, magic, relic};
 	}
 
@@ -815,8 +817,10 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 			quality+=enhance.getEnhancement().getSize();
 		}
 		
-		if (material!=null)
+		if (material!=null) {
+			quality++;
 			quality = Math.max(quality, material.getQuality());
+		}
 		return quality;
 	}
 
