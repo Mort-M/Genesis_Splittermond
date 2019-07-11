@@ -42,6 +42,7 @@
 		<dependency>
 			<groupId>org.prelle</groupId>
 			<artifactId>javafx-extensions</artifactId>
+			<version>[4.0.3, 4.0.99)</version>
 		</dependency>
 		<dependency>
 			<groupId>de.rpgframework</groupId>
