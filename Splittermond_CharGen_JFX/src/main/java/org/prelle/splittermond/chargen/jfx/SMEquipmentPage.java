@@ -44,6 +44,8 @@ public class SMEquipmentPage extends SpliMoManagedScreenPage {
 	private Section secLine1;
 	private Section secLine2;
 
+	private boolean ignoreEvent;
+
 	//-------------------------------------------------------------------
 	public SMEquipmentPage(CharacterController control, ViewMode mode, CharacterHandle handle, ScreenManagerProvider provider) {
 		super(control, mode, handle);
@@ -125,13 +127,17 @@ public class SMEquipmentPage extends SpliMoManagedScreenPage {
 	//-------------------------------------------------------------------
 	public void refresh() {
 		super.refresh();
+		ignoreEvent = true;
 		tfSolare.setText(String.valueOf(charGen.getModel().getTelare()/10000));
 		tfLunare.setText(String.valueOf((charGen.getModel().getTelare()/100)%100));
 		tfTelare.setText(String.valueOf(charGen.getModel().getTelare()%100));
+		ignoreEvent = false;
 	}
 	
 	//-------------------------------------------------------------------
 	private void readCurrency() {
+		if (ignoreEvent)
+			return;
 		try {
 			int sol = Integer.parseInt(tfSolare.getText());
 			int lun = Integer.parseInt(tfLunare.getText());

@@ -1,5 +1,7 @@
 package org.prelle.splittermond.chargen.jfx.listcells;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
@@ -10,15 +12,20 @@ import org.prelle.javafx.CloseType;
 import org.prelle.javafx.NavigButtonControl;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.ResourceReference;
+import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.charctrl.ResourceController;
+import org.prelle.splimo.chargen.creature.CreatureGenerator;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventType;
+import org.prelle.splimo.creature.Creature;
+import org.prelle.splimo.creature.CreatureFeature;
 import org.prelle.splimo.creature.CreatureReference;
+import org.prelle.splimo.creature.ModuleBasedCreature;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.levelling.ResourceLeveller;
-import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.creatures.CreatureCreateDialog;
 import org.prelle.splittermond.chargen.jfx.sections.ResourceSection;
 
 import javafx.geometry.Orientation;
@@ -26,6 +33,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -37,11 +45,13 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
+import javafx.util.StringConverter;
 
 public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 
@@ -332,193 +342,193 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 		 * Build list of creatures already added to character that have
 		 * a matching creature feature level
 		 */
-//		List<CreatureReference> matching = new ArrayList<>();
-//		for (CreatureReference tmp : parent.getData().getCreatures()) {
-//			for (CreatureFeature feat : tmp.getFeatures()) {
-//				if (feat.getType()==SplitterMondCore.getCreatureFeatureType("CREATURE") && feat.getLevel()==ref.getValue()) {
-//					matching.add(tmp);
-//					break;
-//				}
-//			}
-//		}
-//
-//		/*
-//		 * Build list of new creatures that might be added
-//		 */
-//		List<CreatureReference> possible = new ArrayList<>();
-//		for (Creature real : SplitterMondCore.getCreatures(SplitterMondCore.getCreatureFeatureType("CREATURE"))) {
-//			for (CreatureFeature feat : real.getFeatures()) {
-//				if (feat.getType()==SplitterMondCore.getCreatureFeatureType("CREATURE") && feat.getLevel()==ref.getValue()) {
-//					possible.add(new CreatureReference(real));
-//					break;
-//				}
-//			}
-//		}
-//
-//
-//		String heading = UI.getString("resourcelistview.creaturedialog.title");
-//		String explain = UI.getString("resourcelistview.creaturedialog.descr");
-//
-//		// Description
-//		Label lblExplain = new Label(String.format(explain, ref.getValue()));
-//		lblExplain.setWrapText(true);
-//
-//		ToggleGroup tgOptions = new ToggleGroup();
-//		GridPane grid = new GridPane();
-//
-//		/*
-//		 * Option 1: Select a predefined creature
-//		 */
-//		RadioButton option1 = new RadioButton(UI.getString("resourcelistview.creaturedialog.option.choose_mine"));
-//		tgOptions.getToggles().add(option1);
-//
-//		ChoiceBox<CreatureReference> cbPossible = new ChoiceBox<>();
-//		cbPossible.setConverter(new StringConverter<CreatureReference>() {
-//			public String toString(CreatureReference object) { return object.getName();}
-//			public CreatureReference fromString(String string) { return null;}
-//		});
-//		cbPossible.getItems().addAll(matching);
-//		if (matching.isEmpty())
-//			option1.setDisable(true);
-////		Button btnAdd = new Button(UI.getString("button.add"));
-////		btnAdd.setDisable(true);
-//
-//		/*
-//		 * Option 2
-//		 */
-//		RadioButton option2 = new RadioButton(UI.getString("resourcelistview.creaturedialog.option.choose_predefined"));
-//		tgOptions.getToggles().add(option2);
-//
-//		ChoiceBox<CreatureReference> listAvailable = new ChoiceBox<CreatureReference>();
-//		listAvailable.getItems().addAll(matching);
-////		listAvailable.setStyle("-fx-max-width: 20em");
-////		listAvailable.setStyle("-fx-pref-height: 10em");
-//		listAvailable.setConverter(new StringConverter<CreatureReference>() {
-//			public String toString(CreatureReference object) { return object.getName();}
-//			public CreatureReference fromString(String string) { return null;}
-//		});
-//		listAvailable.getItems().addAll(possible);
-//		if (possible.isEmpty())
-//			option2.setDisable(true);
-/////		listAvailable.setCellFactory(new Callback<ListView<CreatureReference>, ListCell<CreatureReference>>() {
-////			public ListCell<CreatureReference> call(ListView<CreatureReference> param) {
-////				return new ListCell<CreatureReference>() {
-////					@Override
-////					public void updateItem(CreatureReference item, boolean empty) {
-////						super.updateItem(item, empty);
-////						setText( empty?null:item.getTemplate().getName());
-////					}
-////				};
-////			}
-////		});
-//
-//		/*
-//		 * Option 3
-//		 */
-//		RadioButton option3 = new RadioButton(UI.getString("resourcelistview.creaturedialog.option.build_new"));
-//		tgOptions.getToggles().add(option3);
-//		if (ref.getValue()<2)
-//			option3.setDisable(true);
-//		Label lblNameBuilt = new Label();
-//		Button btnBuild = new Button(String.format(UI.getString("resourcelistview.creaturedialog.option.build_new.button"), ref.getValue()));
-//		btnBuild.getStyleClass().add("bordered");
-//		HBox line3 = new HBox(10, lblNameBuilt, btnBuild);
-//		line3.setAlignment(Pos.CENTER_LEFT);
-//
-//
-//
-//		/*
-//		 * Interactivity
-//		 */
-//		tgOptions.selectedToggleProperty().addListener( (ov,o,n) -> {
-//			cbPossible.setDisable(true);
-//			listAvailable.setDisable(true);
-//			btnBuild.setDisable(true);
-//			if (n==option1) {
-//				cbPossible.setDisable(false);
-//			} else if (n==option2) {
-//				listAvailable.setDisable(false);
-//			} else if (n==option3) {
-//				btnBuild.setDisable(false);
+		List<CreatureReference> matching = new ArrayList<>();
+		for (CreatureReference tmp : control.getModel().getCreatures()) {
+			for (CreatureFeature feat : tmp.getFeatures()) {
+				if (feat.getType()==SplitterMondCore.getCreatureFeatureType("CREATURE") && feat.getLevel()==ref.getValue()) {
+					matching.add(tmp);
+					break;
+				}
+			}
+		}
+
+		/*
+		 * Build list of new creatures that might be added
+		 */
+		List<CreatureReference> possible = new ArrayList<>();
+		for (Creature real : SplitterMondCore.getCreatures(SplitterMondCore.getCreatureFeatureType("CREATURE"))) {
+			for (CreatureFeature feat : real.getFeatures()) {
+				if (feat.getType()==SplitterMondCore.getCreatureFeatureType("CREATURE") && feat.getLevel()==ref.getValue()) {
+					possible.add(new CreatureReference(real));
+					break;
+				}
+			}
+		}
+
+
+		String heading = UI.getString("resourcelistview.creaturedialog.title");
+		String explain = UI.getString("resourcelistview.creaturedialog.descr");
+
+		// Description
+		Label lblExplain = new Label(String.format(explain, ref.getValue()));
+		lblExplain.setWrapText(true);
+
+		ToggleGroup tgOptions = new ToggleGroup();
+		GridPane grid = new GridPane();
+
+		/*
+		 * Option 1: Select a predefined creature
+		 */
+		RadioButton option1 = new RadioButton(UI.getString("resourcelistview.creaturedialog.option.choose_mine"));
+		tgOptions.getToggles().add(option1);
+
+		ChoiceBox<CreatureReference> cbPossible = new ChoiceBox<>();
+		cbPossible.setConverter(new StringConverter<CreatureReference>() {
+			public String toString(CreatureReference object) { return object.getName();}
+			public CreatureReference fromString(String string) { return null;}
+		});
+		cbPossible.getItems().addAll(matching);
+		if (matching.isEmpty())
+			option1.setDisable(true);
+//		Button btnAdd = new Button(UI.getString("button.add"));
+//		btnAdd.setDisable(true);
+
+		/*
+		 * Option 2
+		 */
+		RadioButton option2 = new RadioButton(UI.getString("resourcelistview.creaturedialog.option.choose_predefined"));
+		tgOptions.getToggles().add(option2);
+
+		ChoiceBox<CreatureReference> listAvailable = new ChoiceBox<CreatureReference>();
+		listAvailable.getItems().addAll(matching);
+//		listAvailable.setStyle("-fx-max-width: 20em");
+//		listAvailable.setStyle("-fx-pref-height: 10em");
+		listAvailable.setConverter(new StringConverter<CreatureReference>() {
+			public String toString(CreatureReference object) { return object.getName();}
+			public CreatureReference fromString(String string) { return null;}
+		});
+		listAvailable.getItems().addAll(possible);
+		if (possible.isEmpty())
+			option2.setDisable(true);
+///		listAvailable.setCellFactory(new Callback<ListView<CreatureReference>, ListCell<CreatureReference>>() {
+//			public ListCell<CreatureReference> call(ListView<CreatureReference> param) {
+//				return new ListCell<CreatureReference>() {
+//					@Override
+//					public void updateItem(CreatureReference item, boolean empty) {
+//						super.updateItem(item, empty);
+//						setText( empty?null:item.getTemplate().getName());
+//					}
+//				};
 //			}
 //		});
-//		tgOptions.selectToggle(option1);
-//		cbPossible.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
-//			if (n!=null) {
-//				item = n;
-//			}
+
+		/*
+		 * Option 3
+		 */
+		RadioButton option3 = new RadioButton(UI.getString("resourcelistview.creaturedialog.option.build_new"));
+		tgOptions.getToggles().add(option3);
+		if (ref.getValue()<2)
+			option3.setDisable(true);
+		Label lblNameBuilt = new Label();
+		Button btnBuild = new Button(String.format(UI.getString("resourcelistview.creaturedialog.option.build_new.button"), ref.getValue()));
+		btnBuild.getStyleClass().add("bordered");
+		HBox line3 = new HBox(10, lblNameBuilt, btnBuild);
+		line3.setAlignment(Pos.CENTER_LEFT);
+
+
+
+		/*
+		 * Interactivity
+		 */
+		tgOptions.selectedToggleProperty().addListener( (ov,o,n) -> {
+			cbPossible.setDisable(true);
+			listAvailable.setDisable(true);
+			btnBuild.setDisable(true);
+			if (n==option1) {
+				cbPossible.setDisable(false);
+			} else if (n==option2) {
+				listAvailable.setDisable(false);
+			} else if (n==option3) {
+				btnBuild.setDisable(false);
+			}
+		});
+		tgOptions.selectToggle(option1);
+		cbPossible.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
+			if (n!=null) {
+				item = n;
+			}
+		});
+		listAvailable.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
+			if (n!=null) {
+				item = n;
+			}
+		});
+
+		btnBuild.setOnAction(event -> {
+			logger.debug("Build new creature");
+			CreatureGenerator ctrl = new CreatureGenerator(ref);
+			CreatureCreateDialog screen = new CreatureCreateDialog(ctrl);
+			CloseType result = (CloseType) provider.getScreenManager().showAndWait(screen);
+			logger.debug("Result = "+result);
+			if (result==CloseType.APPLY) {
+				ModuleBasedCreature toAdd = ctrl.getCreature().getModuleBasedCreature();
+				logger.info("Created "+toAdd);
+				item = ctrl.getCreature();
+				item.setResource(data);
+				item.setUniqueId(ref.getIdReference());
+				askName(item);
+				control.getModel().addCreature(item);
+
+				lblNameBuilt.setText(item.getName());
+				data.setDescription(item.getName());
+			}
+		});
+
+//		cbPossible.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> btnAdd.setDisable(n==null));
+//		btnAdd.setOnAction(event -> {
+//			CreatureReference ref2 = cbPossible.getSelectionModel().getSelectedItem();
+//			parent.getData().addCreature(ref2);
+//			listAvailable.getItems().add(ref2);
+//			listAvailable.getSelectionModel().select(ref2);
 //		});
-//		listAvailable.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
-//			if (n!=null) {
-//				item = n;
-//			}
-//		});
-//
-//		btnBuild.setOnAction(event -> {
-//			logger.debug("Build new creature");
-//			CreatureGenerator ctrl = new CreatureGenerator(ref);
-//			CreatureCreateScreen screen = new CreatureCreateScreen(ctrl);
-//			CloseType result = (CloseType) parent.getScreenManager().showAndWait(screen);
-//			logger.debug("Result = "+result);
-//			if (result==CloseType.APPLY) {
-//				ModuleBasedCreature toAdd = ctrl.getCreature().getModuleBasedCreature();
-//				logger.info("Created "+toAdd);
-//				item = ctrl.getCreature();
-//				item.setResource(data);
-//				item.setUniqueId(ref.getIdReference());
-//				askName(item);
-//				parent.getCharacter().addCreature(item);
-//
-//				lblNameBuilt.setText(item.getName());
-//				data.setDescription(item.getName());
-//			}
-//		});
-//
-////		cbPossible.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> btnAdd.setDisable(n==null));
-////		btnAdd.setOnAction(event -> {
-////			CreatureReference ref2 = cbPossible.getSelectionModel().getSelectedItem();
-////			parent.getData().addCreature(ref2);
-////			listAvailable.getItems().add(ref2);
-////			listAvailable.getSelectionModel().select(ref2);
-////		});
-//
-//		/*
-//		 * Layout
-//		 */
-//		grid.setVgap(10);
-//		grid.setHgap(10);
-//		grid.add(option1   , 0, 0);
-//		grid.add(cbPossible, 1, 0);
-//		grid.add(option2   , 0, 1);
-//		grid.add(listAvailable, 1, 1);
-//		grid.add(option3   , 0, 2);
-//		grid.add(line3     , 1, 2);
-//
-//		//		HBox addLine = new HBox(5);
-////		addLine.getChildren().addAll(cbPossible, btnAdd);
-//
-//		VBox content = new VBox(20);
-//		content.getChildren().addAll(lblExplain, grid);
-//		content.setStyle("-fx-max-width: 40em");
-//
-//		CloseType close = parent.getManager().showAlertAndCall(
-//				AlertType.QUESTION,
-//				heading,
-//				content);
-//		if (close==CloseType.OK) {
-//			if (item!=null) {
-//
-//				logger.info("Selected creature "+item);
-//				ref.setIdReference(item.getUniqueId());
-//				ref.setDescription(item.getName());
-//				item.setResource(data);
-//				tfDescr.setText(item.getName());
-//
-//				logger.info("Add creature "+item.getName()+" to character");
-//				parent.getCharacter().addCreature(item);
-//				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, parent.getCharacter()));
-//			}
-//		}
+
+		/*
+		 * Layout
+		 */
+		grid.setVgap(10);
+		grid.setHgap(10);
+		grid.add(option1   , 0, 0);
+		grid.add(cbPossible, 1, 0);
+		grid.add(option2   , 0, 1);
+		grid.add(listAvailable, 1, 1);
+		grid.add(option3   , 0, 2);
+		grid.add(line3     , 1, 2);
+
+		//		HBox addLine = new HBox(5);
+//		addLine.getChildren().addAll(cbPossible, btnAdd);
+
+		VBox content = new VBox(20);
+		content.getChildren().addAll(lblExplain, grid);
+		content.setStyle("-fx-max-width: 40em");
+
+		CloseType close = provider.getScreenManager().showAlertAndCall(
+				AlertType.QUESTION,
+				heading,
+				content);
+		if (close==CloseType.OK) {
+			if (item!=null) {
+
+				logger.info("Selected creature "+item);
+				ref.setIdReference(item.getUniqueId());
+				ref.setDescription(item.getName());
+				item.setResource(data);
+				tfDescr.setText(item.getName());
+
+				logger.info("Add creature "+item.getName()+" to character");
+				control.getModel().addCreature(item);
+				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, control.getModel()));
+			}
+		}
 
 	}
 
