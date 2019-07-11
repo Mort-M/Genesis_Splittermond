@@ -14,6 +14,7 @@ import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CharacterController;
+import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.charctrl.ResourceController;
 import org.prelle.splimo.chargen.creature.CreatureGenerator;
 import org.prelle.splimo.chargen.event.GenerationEvent;
@@ -23,11 +24,15 @@ import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.creature.CreatureFeature;
 import org.prelle.splimo.creature.CreatureReference;
 import org.prelle.splimo.creature.ModuleBasedCreature;
+import org.prelle.splimo.equip.ItemLevellerAndGenerator;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.levelling.ResourceLeveller;
 import org.prelle.splittermond.chargen.jfx.creatures.CreatureCreateDialog;
+import org.prelle.splittermond.chargen.jfx.dialogs.EditCarriedItemDialog;
+import org.prelle.splittermond.chargen.jfx.dialogs.SelectItemDialog;
 import org.prelle.splittermond.chargen.jfx.sections.ResourceSection;
 
+import javafx.event.ActionEvent;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -215,7 +220,7 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 					@Override
 					public void updateItem(CarriedItem item, boolean empty) {
 						super.updateItem(item, empty);
-						setText( empty?null:String.format(UI.getString("listcell.resourceref.relicdialog.cell"), (item.getArtifactQuality() + item.getItemQuality()), item.getName()));
+						setText( empty?null:String.format(UI.getString("listcell.resourceref.relicdialog.cell"), (item.getRelicQuality()), item.getName()));
 					}
 				};
 			}
@@ -227,110 +232,120 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 		HBox optionPane = new HBox();
 		optionPane.setStyle("-fx-pref-width: 20em; -fx-pref-heigh: 20em");
 
-//		/*
-//		 * Build list of items already added to character that have
-//		 * a matching quality level
-//		 */
-//		List<CarriedItem> matching = new ArrayList<>();
-//		for (CarriedItem tmp : parent.getData().getItems()) {
-//			int quality = tmp.getArtifactQuality() + tmp.getItemQuality();
-//			if (quality==ref.getValue()) {
-//				matching.add(tmp);
-//				break;
-//			}
-//		}
-//
-//
-//
-//		/*
-//		 * Button
-//		 */
-//		Button btnAdd = new Button(UI.getString("button.add"));
-//		btnAdd.getStyleClass().add("bordered");
-//
-//		/*
-//		 * Interactivity
-//		 */
-//		group.selectedToggleProperty().addListener( (ov,o,n) -> {
-//			if (n==option1) {
-//				optionPane.getChildren().clear();
-//				optionPane.getChildren().add(listAvailable);
-//				listAvailable.getItems().clear();
-//				listAvailable.getItems().addAll(matching);
-//			} else if (n==option2) {
-//				optionPane.getChildren().clear();
-//				optionPane.getChildren().add(listAvailable);
-//				listAvailable.getItems().clear();
-//				for (CarriedItem item : parent.getData().getItems())
-//					if (item.getItemQuality()==0 && item.getArtifactQuality()==0)
-//						listAvailable.getItems().add(item);
-//			} else if (n==option3) {
-//				optionPane.getChildren().clear();
-//				optionPane.getChildren().add(btnAdd);
-//				listAvailable.getItems().addAll(parent.getData().getItems());
-//			}
-//		});
-//		NavigButtonControl control = new NavigButtonControl();
-//		btnAdd.setOnAction(event -> {
-//			SelectItemDialogScreen select = new SelectItemDialogScreen(parent.getManager(), ref.getValue(), ref);
+		/*
+		 * Build list of items already added to character that have
+		 * a matching quality level
+		 */
+		List<CarriedItem> matching = new ArrayList<>();
+		for (CarriedItem tmp : control.getModel().getItems()) {
+			logger.warn("-----"+tmp.getName()+"  = "+tmp.getTotalQuality()+" / "+tmp.getArtifactQuality()+" / "+tmp.getItemQuality()+" / "+tmp.getRelicQuality());
+			int quality = tmp.getRelicQuality();
+			if (quality==ref.getValue()) {
+				matching.add(tmp);
+				break;
+			}
+		}
+
+
+
+		/*
+		 * Button
+		 */
+		Button btnAdd = new Button(UI.getString("button.add"));
+		btnAdd.getStyleClass().add("bordered");
+
+		/*
+		 * Interactivity
+		 */
+		group.selectedToggleProperty().addListener( (ov,o,n) -> {
+			if (n==option1) {
+				optionPane.getChildren().clear();
+				optionPane.getChildren().add(listAvailable);
+				listAvailable.getItems().clear();
+				listAvailable.getItems().addAll(matching);
+			} else if (n==option2) {
+				optionPane.getChildren().clear();
+				optionPane.getChildren().add(listAvailable);
+				listAvailable.getItems().clear();
+				for (CarriedItem item : control.getModel().getItems())
+					if (item.getItemQuality()==0 && item.getArtifactQuality()==0)
+						listAvailable.getItems().add(item);
+			} else if (n==option3) {
+				optionPane.getChildren().clear();
+				optionPane.getChildren().add(btnAdd);
+				listAvailable.getItems().addAll(control.getModel().getItems());
+			}
+		});
+		NavigButtonControl navControl = new NavigButtonControl();
+		btnAdd.setOnAction(event -> {
+			logger.warn("TODO");
+////			SelectItemDialogScreen select = new SelectItemDialogScreen(provider.getScreenManager(), ref.getValue(), ref);
+//			SelectItemDialog select = new SelectItemDialog(provider.getScreenManager(), ref.getValue(), ref);
 //			select.startListenForEvents();
 ////			CloseType closed = (CloseType) parent.getManager().showAndWait(select);
-//			CloseType closed = (CloseType) parent.getManager().showAlertAndCall(AlertType.QUESTION, select.getTitle(), select.getContent());
+//			CloseType closed = (CloseType) provider.getScreenManager().showAlertAndCall(AlertType.QUESTION, select.getTitle(), select.getContent());
 //			select.stopListenForEvents();
 //			if (closed==CloseType.OK) {
 //				CarriedItem ref2 = select.getSelectedItem();
 //				logger.info("Selected item had Q"+ref2.getItemQuality()+"/"+ref2.getArtifactQuality()+" and was "+ref2);
-//				parent.getData().addItem(ref2);
+//				control.getModel().addItem(ref2);
 //				listAvailable.getItems().add(ref2);
 //				listAvailable.getSelectionModel().select(ref2);
 //				control.fireEvent(CloseType.OK, event);
 //
 //			}
-//		});
-//		listAvailable.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> control.setDisabled(CloseType.OK, n==null));
-//
-//		// Default selection
-//		group.selectToggle(option2);
-//
-//		/*
-//		 * Layout
-//		 */
-//		VBox optionLine = new VBox(5);
-//		optionLine.getChildren().addAll(option1, option2, option3);
-//
-//		VBox content = new VBox(20);
-//		content.getChildren().addAll(lblExplain, optionLine, optionPane);
-//
-//		CloseType close = parent.getManager().showAlertAndCall(
-//				AlertType.QUESTION,
-//				heading,
-//				content,
-//				control);
-//		if (close==CloseType.OK) {
-//			CarriedItem item = listAvailable.getSelectionModel().getSelectedItem();
-//			logger.debug("Closed with item "+item);
-//			if (item!=null) {
-//				if (group.getSelectedToggle()==option2) {
-//					// Levelling the item
-//					item.setResource(ref);
+			
+			
+//			NewItemController itemCtrl = new ItemLevellerAndGenerator(item, 2);
+////			NewItemGeneratorPane itemPane = new NewItemGeneratorPane();
+////			itemPane.setData(itemCtrl);
+////			itemPane.updateContent();
+////			
+////			ManagedDialog dialog = new ManagedDialog("Edit", itemPane, CloseType.OK);
+//			
+//			EditCarriedItemDialog dialog = new EditCarriedItemDialog(control, itemCtrl);
+
+		});
+		listAvailable.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> navControl.setDisabled(CloseType.OK, n==null));
+
+		// Default selection
+		group.selectToggle(option2);
+
+		/*
+		 * Layout
+		 */
+		VBox optionLine = new VBox(5);
+		optionLine.getChildren().addAll(option1, option2, option3);
+
+		VBox content = new VBox(20);
+		content.getChildren().addAll(lblExplain, optionLine, optionPane);
+
+		CloseType close = provider.getScreenManager().showAlertAndCall(
+				AlertType.QUESTION,
+				heading,
+				content,
+				navControl);
+		if (close==CloseType.OK) {
+			CarriedItem item = listAvailable.getSelectionModel().getSelectedItem();
+			logger.debug("Closed with item "+item);
+			if (item!=null) {
+				if (group.getSelectedToggle()==option2) {
+					// Levelling the item
+					item.setResource(ref);
+					logger.warn("TODO: ?");
 //					EditItemScreen screen = new EditItemScreen();
-//					screen.setData(parent.getData(), new ItemLevellerAndGenerator(item, ref.getValue()));
-//					CloseType closed = (CloseType) parent.getManager().showAndWait(screen);
+//					screen.setData(control.getModel(), new ItemLevellerAndGenerator(item, ref.getValue()));
+//					CloseType closed = (CloseType) provider.getScreenManager().showAndWait(screen);
 //					logger.warn("TODO: closed with "+closed);
-////					GenerationEventDispatcher.removeListener(pane);
-//					if (closed==CloseType.OK) {
-//						control.fireEvent(CloseType.OK, new ActionEvent());
-//					}
-//
-//				}
-//
-//				ref.setIdReference(item.getUniqueId());
-//				ref.setDescription(item.getName());
-//				tfDescr.setText(item.getName());
-//
-//				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, parent.getCharacter()));
-//			}
-//		}
+				}
+
+				ref.setIdReference(item.getUniqueId());
+				ref.setDescription(item.getName());
+				tfDescr.setText(item.getName());
+
+				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, control.getModel()));
+			}
+		}
 
 	}
 

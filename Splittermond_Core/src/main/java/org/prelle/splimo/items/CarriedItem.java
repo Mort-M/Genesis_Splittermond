@@ -765,7 +765,6 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 		}
 		
 		if (material!=null) {
-			normal++;
 			normal = Math.max(normal, material.getQuality());
 		}
 		return new int[]{normal, magic, relic};
@@ -818,7 +817,6 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 		}
 		
 		if (material!=null) {
-			quality++;
 			quality = Math.max(quality, material.getQuality());
 		}
 		return quality;
