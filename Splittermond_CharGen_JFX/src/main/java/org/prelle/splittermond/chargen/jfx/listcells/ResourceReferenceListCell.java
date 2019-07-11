@@ -203,7 +203,7 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 		RadioButton option2 = new RadioButton(String.format(UI.getString("listcell.resourceref.relicdialog.option2"), ref.getValue(), ref.getValue()));
 		RadioButton option3 = new RadioButton(String.format(UI.getString("listcell.resourceref.relicdialog.option3"), ref.getValue(), ref.getValue()));
 		ToggleGroup group = new ToggleGroup();
-		group.getToggles().addAll(option1, option2, option3);
+		group.getToggles().addAll(option1, option2); // option3 currently not working
 
 		/*
 		 * List
@@ -238,7 +238,6 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 		 */
 		List<CarriedItem> matching = new ArrayList<>();
 		for (CarriedItem tmp : control.getModel().getItems()) {
-			logger.warn("-----"+tmp.getName()+"  = "+tmp.getTotalQuality()+" / "+tmp.getArtifactQuality()+" / "+tmp.getItemQuality()+" / "+tmp.getRelicQuality());
 			int quality = tmp.getRelicQuality();
 			if (quality==ref.getValue()) {
 				matching.add(tmp);
@@ -279,8 +278,24 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 		NavigButtonControl navControl = new NavigButtonControl();
 		btnAdd.setOnAction(event -> {
 			logger.warn("TODO");
-////			SelectItemDialogScreen select = new SelectItemDialogScreen(provider.getScreenManager(), ref.getValue(), ref);
-//			SelectItemDialog select = new SelectItemDialog(provider.getScreenManager(), ref.getValue(), ref);
+			SelectItemDialog select = new SelectItemDialog(control);
+			CloseType closed = (CloseType) provider.getScreenManager().showAlertAndCall(AlertType.QUESTION, select.getTitle(), select.getContent());
+			if (closed==CloseType.OK) {
+				CarriedItem item = new CarriedItem(select.selectedItemProperty().get());
+				NewItemController itemCtrl = new ItemLevellerAndGenerator(item, 2);
+////			NewItemGeneratorPane itemPane = new NewItemGeneratorPane();
+////			itemPane.setData(itemCtrl);
+////			itemPane.updateContent();
+////			
+////			ManagedDialog dialog = new ManagedDialog("Edit", itemPane, CloseType.OK);
+			
+				EditCarriedItemDialog dialog = new EditCarriedItemDialog(control, itemCtrl);
+				closed = (CloseType) provider.getScreenManager().showAlertAndCall(AlertType.QUESTION, "?", dialog);
+				logger.warn("TODO "+closed);
+			}
+			
+////		SelectItemDialogScreen select = new SelectItemDialogScreen(provider.getScreenManager(), ref.getValue(), ref);
+			
 //			select.startListenForEvents();
 ////			CloseType closed = (CloseType) parent.getManager().showAndWait(select);
 //			CloseType closed = (CloseType) provider.getScreenManager().showAlertAndCall(AlertType.QUESTION, select.getTitle(), select.getContent());
@@ -296,14 +311,6 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 //			}
 			
 			
-//			NewItemController itemCtrl = new ItemLevellerAndGenerator(item, 2);
-////			NewItemGeneratorPane itemPane = new NewItemGeneratorPane();
-////			itemPane.setData(itemCtrl);
-////			itemPane.updateContent();
-////			
-////			ManagedDialog dialog = new ManagedDialog("Edit", itemPane, CloseType.OK);
-//			
-//			EditCarriedItemDialog dialog = new EditCarriedItemDialog(control, itemCtrl);
 
 		});
 		listAvailable.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> navControl.setDisabled(CloseType.OK, n==null));
@@ -315,7 +322,7 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 		 * Layout
 		 */
 		VBox optionLine = new VBox(5);
-		optionLine.getChildren().addAll(option1, option2, option3);
+		optionLine.getChildren().addAll(option1, option2); // option3 currently not working
 
 		VBox content = new VBox(20);
 		content.getChildren().addAll(lblExplain, optionLine, optionPane);
