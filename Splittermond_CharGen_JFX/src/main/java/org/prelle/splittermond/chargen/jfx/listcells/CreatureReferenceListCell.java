@@ -79,12 +79,15 @@ public class CreatureReferenceListCell extends ListCell<CreatureReference> {
 	private void initLayout() {
 		Label hdType  = new Label(RES.getString("label.type"));
 		Label hdTrain = new Label(RES.getString("label.training"));
+		hdType.getStyleClass().add("base");
+		hdTrain.getStyleClass().add("base");
 		
 		GridPane grid = new GridPane();
 		grid.add(hdType , 0, 0);
 		grid.add(lbType , 1, 0);
 		grid.add(hdTrain, 0, 1);
 		grid.add(lbTrain, 1, 1);
+		grid.setVgap(10);
 		
 		HBox line2 = new HBox(5);
 		line2.getChildren().addAll(btnEdit, grid);
@@ -180,7 +183,7 @@ public class CreatureReferenceListCell extends ListCell<CreatureReference> {
 			lbType.setText(String.join(", ", names));
 			// Trainings
 			names.clear();
-			resRef.getTrainings().forEach(tmp -> names.add(tmp.toString()));
+			resRef.getTrainings().forEach(tmp -> names.add(tmp.getModule().getName()));
 			lbTrain.setText(String.join(", ", names));
 
 			setGraphic(layout);
