@@ -202,7 +202,7 @@ public class EquipmentSection extends GenericListSection<CarriedItem> {
 	private void onEdit(CarriedItem item) {
 		logger.warn("TODO: Edit "+item);
 		
-		NewItemController itemCtrl = new ItemLevellerAndGenerator(item, 2);
+		NewItemController itemCtrl = new ItemLevellerAndGenerator(item, 7);
 //		NewItemGeneratorPane itemPane = new NewItemGeneratorPane();
 //		itemPane.setData(itemCtrl);
 //		itemPane.updateContent();
