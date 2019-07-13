@@ -8,11 +8,13 @@ import java.util.List;
 import org.prelle.splimo.Power;
 import org.prelle.splimo.PowerReference;
 
+import de.rpgframework.genericrpg.NumericalValueController;
+
 /**
  * @author prelle
  *
  */
-public interface PowerController extends Generator {
+public interface PowerController extends Generator, NumericalValueController<Power, PowerReference> {
 	
 	//-------------------------------------------------------------------
 	/**

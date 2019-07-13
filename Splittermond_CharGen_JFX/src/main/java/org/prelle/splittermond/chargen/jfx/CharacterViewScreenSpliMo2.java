@@ -443,8 +443,9 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		case POINTS_LEFT_ATTRIBUTES:
 			pgOverview.refresh();
 			break;
-		case POWER_ADDED:
 		case POWER_CHANGED:
+			break;
+		case POWER_ADDED:
 		case POWER_REMOVED:
 		case CULTURELORE_REMOVED:
 		case CULTURELORE_ADDED:

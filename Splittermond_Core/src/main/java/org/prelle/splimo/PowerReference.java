@@ -10,6 +10,7 @@ import org.prelle.simplepersist.Attribute;
 import org.prelle.splimo.modifications.PowerModification;
 import org.prelle.splimo.persist.PowerConverter;
 
+import de.rpgframework.genericrpg.NumericalValue;
 import de.rpgframework.genericrpg.modification.Modification;
 import de.rpgframework.genericrpg.modification.ModifyableImpl;
 
@@ -17,7 +18,7 @@ import de.rpgframework.genericrpg.modification.ModifyableImpl;
  * @author prelle
  *
  */
-public class PowerReference extends ModifyableImpl implements Comparable<PowerReference> {
+public class PowerReference extends ModifyableImpl implements Comparable<PowerReference>, NumericalValue<Power> {
 
 	
 	@Attribute(name="ref")
@@ -157,6 +158,33 @@ public class PowerReference extends ModifyableImpl implements Comparable<PowerRe
 	 */
 	public void setFixed(boolean fixed) {
 		this.fixed = fixed;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.SelectedValue#getModifyable()
+	 */
+	@Override
+	public Power getModifyable() {
+		return power;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.NumericalValue#getPoints()
+	 */
+	@Override
+	public int getPoints() {
+		return count;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.genericrpg.NumericalValue#setPoints(int)
+	 */
+	@Override
+	public void setPoints(int points) {
+		this.count = points;
 	}
 
 }

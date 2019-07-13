@@ -92,6 +92,7 @@ public class PowerSection extends GenericListSection<PowerReference> {
 	 */
 	@Override
 	public void refresh() {
+		logger.debug("REFRESH");
 		setData(control.getModel().getPowers());
 	}
 
