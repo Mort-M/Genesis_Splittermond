@@ -390,10 +390,10 @@ public class ItemTemplate extends BasePluginData implements Comparable<ItemTempl
 	 */
 	public Skill getSkill() {
 		try {
-			if (isType(ItemType.WEAPON))
-				return getType(Weapon.class).getSkill();
 			if (isType(ItemType.LONG_RANGE_WEAPON))
 				return getType(LongRangeWeapon.class).getSkill();
+			if (isType(ItemType.WEAPON))
+				return getType(Weapon.class).getSkill();
 		} catch (NullPointerException e) {
 			logger.error("NPE while getting skill of "+this,e);
 		}

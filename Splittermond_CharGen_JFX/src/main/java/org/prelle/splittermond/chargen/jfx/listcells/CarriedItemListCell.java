@@ -131,6 +131,7 @@ public class CarriedItemListCell extends ListCell<CarriedItem> {
 			image.setImage(ItemUtils.getItemTypeIcon(ItemType.WEAPON).getImage());
 			Weapon weapon = item.getItem().getType(Weapon.class);
 
+			System.err.println("CarriedItemList.fillGrid: "+weapon.getRequirements());
 			String minAttr = weapon.getRequirements().stream().filter(AttributeRequirement.class::isInstance)
 					                                          .map(AttributeRequirement.class::cast)
 					                                          .map(aReq -> aReq.getAttribute().getShortName()+" "+aReq.getValue())

@@ -28,7 +28,7 @@ public class LongRangeWeapon extends Weapon {
 	
 	//--------------------------------------------------------------------
 	public String toString() {
-		return "RangeWeapon(dmg="+damage+",spd="+speed+",a1="+attribute1+",a2="+attribute2+",range="+range+")";
+		return "RangeWeapon(dmg="+damage+",spd="+speed+",a1="+attribute1+",a2="+attribute2+",range="+range+",skill="+skill+")";
 	}
 	
 	//--------------------------------------------------------------------
