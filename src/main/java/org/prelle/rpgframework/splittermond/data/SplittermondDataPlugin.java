@@ -280,6 +280,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEquipment(UNGE, clazz.getResourceAsStream("ungebrochen/data/schusswaffen-ungebrochen.xml"), UNGE.getResources(), UNGE.getHelpResources());
 		SplitterMondCore.loadEquipment(UNGE, clazz.getResourceAsStream("ungebrochen/data/stangenwaffen-ungebrochen.xml"), UNGE.getResources(), UNGE.getHelpResources());
 		SplitterMondCore.loadEquipment(UNGE, clazz.getResourceAsStream("ungebrochen/data/wurfwaffen-ungebrochen.xml"), UNGE.getResources(), UNGE.getHelpResources());
+		SplitterMondCore.loadEquipment(UNGE, clazz.getResourceAsStream("ungebrochen/data/spells-ungebrochen.xml"), UNGE.getResources(), UNGE.getHelpResources());
 
 		logger.info("START -------------------------------Unreich-------------------------------------------");
 		PluginSkeleton UNREICH = new PluginSkeleton("Unreich", "Das Unreich");
