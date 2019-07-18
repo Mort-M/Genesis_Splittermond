@@ -28,16 +28,15 @@
   </spell>
   <spell id="peace" diff="GW" cost="8V2" castdur="5T" range="5m" spelldur="10m" enh="1/+2V2">
     <school skill="controlmagic" level="2" />
-    <school skill="windmagic" level="1" />
-    <type>ATTITUDE</type>
+        <type>ATTITUDE</type>
     <enhancementtype>RELEASETIME</enhancementtype>
     <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
     <enhancementtype>RANGE</enhancementtype>
     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
   </spell>
   <spell id="poisonSusceptibility" diff="KW" cost="K4V1" castdur="2T" range="5m" spelldur="K" enh="1/+K1V1">
-    <school skill="stonemagic" level="1" />
-    <school skill="combatmagic" level="0" />
+    <school skill="naturemagic" level="1" />
+    <school skill="enhancemagic" level="2" />
     <type>POISON</type>
     <type>WEAKEN</type>
     <enhancementtype>RELEASETIME</enhancementtype>
@@ -46,8 +45,8 @@
     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
   </spell>
   <spell id="poisonBlade" diff="21" cost="K8V2" castdur="5T" range="TOUCH" spelldur="K" enh="1/+K2V2">
-    <school skill="stonemagic" level="1" />
-    <school skill="combatmagic" level="0" />
+    <school skill="naturemagic" level="2" />
+    <school skill="combatmagic" level="1" />
     <type>POISON</type>
     <type>WEAPON</type>
     <enhancementtype>RELEASETIME</enhancementtype>
@@ -55,8 +54,8 @@
     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
   </spell>
   <spell id="poisonArrow" diff="18" cost="K4V1" castdur="3T" range="TOUCH" spelldur="K" enh="2/+K1V1">
-    <school skill="stonemagic" level="1" />
-    <school skill="combatmagic" level="0" />
+    <school skill="naturemagic" level="1" />
+    <school skill="combatmagic" level="1" />
     <type>POISON</type>
     <type>OBJECT</type>
     <type>ARROW</type>
@@ -65,8 +64,7 @@
     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
   </spell>
   <spell id="groupsPeace" diff="GW" cost="16V4" castdur="10T" range="5m" spelldur="10m" enh="1/+4V4">
-    <school skill="stonemagic" level="1" />
-    <school skill="combatmagic" level="0" />
+    <school skill="controlmagic" level="4" />
     <type>ATTITUDE</type>
     <enhancementtype>RELEASETIME</enhancementtype>
     <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
@@ -74,8 +72,8 @@
     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
   </spell>
   <spell id="lurkingShadows" diff="24" cost="K12V3" castdur="10T" range="CASTER" spelldur="K" enh="1/+K3V3">
-    <school skill="stonemagic" level="1" />
-    <school skill="combatmagic" level="0" />
+    <school skill="motionmagic" level="3" />
+    <school skill="shadowmagic" level="3" />
     <type>ENHANCE_MOTION</type>
     <enhancementtype>RELEASETIME</enhancementtype>
     <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
