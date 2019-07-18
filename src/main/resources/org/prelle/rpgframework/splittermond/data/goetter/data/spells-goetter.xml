@@ -32,7 +32,7 @@
   </spell>
   <spell id="foreign_tongues" diff="24" cost="K12V3" castdur="5M" range="CASTER" spelldur="K" enh="1/+K3V3"> 
     <school skill="insightmagic" level="3"/>
-    <school skill="enhancemagic" level="3"/>
+    <school skill="enhancemagic" level="4"/>
     <type>COMMUNICATION</type>
     <enhancementtype>RELEASETIME</enhancementtype>
     <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
@@ -137,8 +137,7 @@
      </requires>
    </spell>
    <spell id="divine_talisman" diff="27" cost="16V4" castdur="15M" range="CASTER" spelldur="1h" enh="2/+4V4"> 
-     <school skill="fatemagic" level="4"/>
-     <school skill="transformationmagic" level="5"/>
+     <school skill="fatemagic" level="4"/>     
      <type>DIVINE</type>
      <type>SUMMON</type>
      <type>OBJECT</type>
