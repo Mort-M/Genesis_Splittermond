@@ -134,7 +134,7 @@
     </spell>
     <spell id="absolute_silence" diff="24" cost="K12V3" castdur="5T"
         range="CASTER" spelldur="K" effectRange="5" enh="2/+K3V3">
-        <school skill="illusionmagic" level="2" />
+        <school skill="illusionmagic" level="3" />
         <type>SOUND</type>
         <enhancementtype>RELEASETIME</enhancementtype>
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
@@ -143,7 +143,7 @@
     </spell>
     <spell id="ancestor_advice" diff="24" cost="K12V3" castdur="15m"
         range="CASTER" spelldur="K" enh="1/+K3V3">
-        <school skill="fatemagic" level="2" />
+        <school skill="fatemagic" level="4" />
         <school skill="deathmagic" level="3" />
         <type>OTHERWORLD</type>
         <type>GHOST_CREATURE</type>
@@ -184,7 +184,8 @@
     </spell>
     <spell id="sense_age" diff="18" cost="4V1" castdur="12T"
         range="TOUCH" enh="1/+1V1">
-        <school skill="controlmagic" level="1" />
+        <school skill="insightmagic" level="2" />
+        <school skill="deathmagic" level="1" />
         <type>AGE</type>
         <type>CLAIRVOYANCE</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -254,8 +255,8 @@
     </spell>
     <spell id="antimagic_shell" diff="24" cost="12V3" castdur="8T"
         range="10m" spelldur="40T" effectRange="5" enh="1/+1V1">
-        <school skill="controlmagic" level="5" />
-        <school skill="transformationmagic" level="5" />
+        <school skill="antimagic" level="3" />
+        <school skill="protectionmagic" level="4" />
         <type>COUNTER</type>
         <type>PROTECTIONFIELD</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -294,7 +295,7 @@
     </spell>
     <spell id="wave_of_counter_artifact" diff="24" cost="12V3" castdur="7T"
         range="CASTER" spelldur="30T" effectRange="5" enh="2/+K3V3">
-        <school skill="antimagic" level="2" />
+        <school skill="antimagic" level="3" />
         <type>OBJECT</type>
         <type>CONSTRUCT</type>
         <type>BREAKSPELL</type>
@@ -485,8 +486,8 @@
     </spell>
     <spell id="aura_clearmind" diff="27" cost="K16V4" castdur="5m"
         range="CASTER" spelldur="K" effectRange="5" enh="1/+K4V4">
-        <school skill="protectionmagic" level="5" />
-        <school skill="antimagic" level="4" />
+        <school skill="protectionmagic" level="4" />
+        <school skill="antimagic" level="5" />
         <type>AURA</type>
         <type>THOUGHTS</type>
         <type>COUNTER</type>
@@ -1001,7 +1002,7 @@
     </spell>
 
     <spell id="transform_other" diff="KW" cost="8V2" castdur="5T" range="5m" spelldur="10T" enh="2/+2V2">
-        <school skill="transformationmagic" level="3" />
+        <school skill="transformationmagic" level="2" />
         <type>SHAPE</type>
         <enhancementtype>RELEASETIME</enhancementtype>
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
@@ -1010,7 +1011,8 @@
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
     <spell id="rain_of_sparks" diff="GW" cost="K4V1" castdur="2T" range="10m" spelldur="K" enh="1/+K1V1">
-        <school skill="transformationmagic" level="3" />
+        <school skill="illusionmagic" level="2" />
+        <school skill="lightmagic" level="1" />        
         <type>ILLUMINATION</type>
         <type>WEAKEN</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -1019,7 +1021,7 @@
         <enhancementtype>RANGE</enhancementtype>
     </spell>
     <spell id="mental_image" diff="18" cost="4V1" castdur="7T" range="TOUCH" spelldur="15s" enh="1/+1V1">
-        <school skill="insightmagic" level="3" />
+        <school skill="insightmagic" level="1" />
         <type>THOUGHTS</type>
         <type>MESSAGE</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -2129,7 +2131,7 @@
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
     <spell id="deep_sleep_field" diff="GW" cost="20V5" castdur="12T" range="5m" enh="2/+4V4">
-        <school skill="controlmagic" level="5" />
+        <school skill="controlmagic" level="4" />
         <type>CONTROL</type>
         <enhancementtype>RELEASETIME</enhancementtype>
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
@@ -2418,7 +2420,7 @@
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
     <spell id="water_thrust" diff="18" cost="4V1" castdur="2T" range="5m" enh="1/+1V1">
-        <school skill="motionmagic" level="1" />
+        <school skill="motionmagic" level="2" />
         <school skill="watermagic" level="1" />
         <type>ENHANCE_MOTION</type>
         <type>ELEMENTALCONTROL</type>
@@ -2517,7 +2519,7 @@
     </spell>
     <spell id="copy_throwing_weapon" diff="21" cost="K8V2" castdur="7T" range="TOUCH" spelldur="K" enh="1/+K2V2">
         <school skill="combatmagic" level="3" />
-        <school skill="transformationmagic" level="3" />
+        <school skill="transformationmagic" level="2" />
         <type>OBJECT</type>
          <enhancementtype>RELEASETIME</enhancementtype>
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
@@ -2579,7 +2581,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
 
-    <!-- BeschwÃ¶rungszauber S.186 -->
+    <!-- Beschwörungszauber S.186 -->
     <spell id="summon_stone_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="stonemagic" level="0" />
         <type>SUMMON</type>
