@@ -826,8 +826,8 @@
         <mastership level="3" key="close"/>
         <mastership level="3" key="magic_defender"><requires><masterreq ref="protectionmagic/protectionmagicmaster"/></requires></mastership>
         <mastership level="3" key="granted_protection"><requires><masterreq ref="protectionmagic/castershand"/></requires></mastership>
-        <mastership level="3" key="thorny_protection"/>
-        <mastership level="3" key="shared_protection"><requires><masterreq ref="protectionmagic/granted_protection"/></requires></mastership>
+        <mastership level="4" key="thorny_protection"/>
+        <mastership level="4" key="shared_protection"><requires><masterreq ref="protectionmagic/granted_protection"/></requires></mastership>
     </skill>
     
     <skill id="enhancemagic">
