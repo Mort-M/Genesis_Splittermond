@@ -7,6 +7,7 @@
    					<masterreq ref="melee/push"/>
    					<masterreq ref="melee/clutch"/>
    					<masterreq ref="melee/rush"/>
+                    <masterreq ref="melee/knock"/>
    					<masterreq ref="melee/disarm"/>
    					<masterreq ref="melee/sweepingblow"/>
    					<masterreq ref="melee/confusion"/>
@@ -31,6 +32,7 @@
    					<masterreq ref="melee/push"/>
    					<masterreq ref="melee/clutch"/>
    					<masterreq ref="melee/rush"/>
+                    <masterreq ref="melee/knock"/>
    					<masterreq ref="melee/disarm"/>
    					<masterreq ref="melee/sweepingblow"/>
    					<masterreq ref="melee/confusion"/>
@@ -49,6 +51,7 @@
    					<masterreq ref="melee/push"/>
    					<masterreq ref="melee/clutch"/>
    					<masterreq ref="melee/rush"/>
+                    <masterreq ref="melee/knock"/>
    					<masterreq ref="melee/disarm"/>
    					<masterreq ref="melee/sweepingblow"/>
    					<masterreq ref="melee/confusion"/>
@@ -73,6 +76,7 @@
    					<masterreq ref="melee/push"/>
    					<masterreq ref="melee/clutch"/>
    					<masterreq ref="melee/rush"/>
+                    <masterreq ref="melee/knock"/>
    					<masterreq ref="melee/disarm"/>
    					<masterreq ref="melee/sweepingblow"/>
    					<masterreq ref="melee/confusion"/>
@@ -90,6 +94,7 @@
    					<masterreq ref="melee/push"/>
    					<masterreq ref="melee/clutch"/>
    					<masterreq ref="melee/rush"/>
+                    <masterreq ref="melee/knock"/>
    					<masterreq ref="melee/disarm"/>
    					<masterreq ref="melee/sweepingblow"/>
    					<masterreq ref="melee/confusion"/>
@@ -114,6 +119,7 @@
    					<masterreq ref="melee/push"/>
    					<masterreq ref="melee/clutch"/>
    					<masterreq ref="melee/rush"/>
+                    <masterreq ref="melee/knock"/>
    					<masterreq ref="melee/disarm"/>
    					<masterreq ref="melee/sweepingblow"/>
    					<masterreq ref="melee/confusion"/>
@@ -132,6 +138,7 @@
    					<masterreq ref="melee/push"/>
    					<masterreq ref="melee/clutch"/>
    					<masterreq ref="melee/rush"/>
+                    <masterreq ref="melee/knock"/>
    					<masterreq ref="melee/disarm"/>
    					<masterreq ref="melee/sweepingblow"/>
    					<masterreq ref="melee/confusion"/>
@@ -156,6 +163,7 @@
    					<masterreq ref="melee/push"/>
    					<masterreq ref="melee/clutch"/>
    					<masterreq ref="melee/rush"/>
+                    <masterreq ref="melee/knock"/>
    					<masterreq ref="melee/disarm"/>
    					<masterreq ref="melee/sweepingblow"/>
    					<masterreq ref="melee/confusion"/>
@@ -174,6 +182,7 @@
    					<masterreq ref="melee/push"/>
    					<masterreq ref="melee/clutch"/>
    					<masterreq ref="melee/rush"/>
+                    <masterreq ref="melee/knock"/>
    					<masterreq ref="melee/disarm"/>
    					<masterreq ref="melee/sweepingblow"/>
    					<masterreq ref="melee/confusion"/>
@@ -198,6 +207,7 @@
    					<masterreq ref="melee/push"/>
    					<masterreq ref="melee/clutch"/>
    					<masterreq ref="melee/rush"/>
+                    <masterreq ref="melee/knock"/>
    					<masterreq ref="melee/disarm"/>
    					<masterreq ref="melee/sweepingblow"/>
    					<masterreq ref="melee/confusion"/>
