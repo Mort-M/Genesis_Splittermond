@@ -134,7 +134,15 @@
         <mastership level="2" key="hammerblow"/>
         <mastership level="2" key="relentless"/>
         <mastership level="3" key="sweepingslash"/>
+            <requires>
+                <masterreq ref="hammerblow"/>
+            </requires>
+        </mastership>
         <mastership level="3" key="chainshackles"/>
+            <requires>
+                <masterreq ref="clutch"/>
+            </requires>
+        </mastership>
     </skill>
     <skill id="blades" type="COMBAT">
         <mastership level="1" common="true" key="push"/>
