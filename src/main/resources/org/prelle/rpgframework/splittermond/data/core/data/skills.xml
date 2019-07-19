@@ -133,12 +133,12 @@
         </mastership>
         <mastership level="2" key="hammerblow"/>
         <mastership level="2" key="relentless"/>
-        <mastership level="3" key="sweepingslash"/>
+        <mastership level="3" key="sweepingslash">
             <requires>
                 <masterreq ref="hammerblow"/>
             </requires>
         </mastership>
-        <mastership level="3" key="chainshackles"/>
+        <mastership level="3" key="chainshackles">
             <requires>
                 <masterreq ref="clutch"/>
             </requires>
