@@ -583,7 +583,7 @@
         <mastership level="1" key="power_of_the_ore"><requires><masterreq ref="craftmanship/materialmaster"/></requires></mastership>
         <mastership level="1" key="stone_former"/>
         <mastership level="1" key="object_caster"/>
-        <mastership level="2" key="sense_stone"><requires><masterreq ref="craftmanship/master"/></requires></mastership>
+        <mastership level="2" key="sense_stone"><requires><masterreq ref="stonemagic/mastersmith"/></requires></mastership>
         <mastership level="2" key="object_destroyer"/>
         <mastership level="2" key="stubborn_as_stone"/>
         <mastership level="3" key="fists_of_steel"><requires><masterreq ref="stonemagic/object_destroyer"/></requires></mastership>
