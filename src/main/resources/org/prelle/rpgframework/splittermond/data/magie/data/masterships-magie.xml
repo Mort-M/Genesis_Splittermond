@@ -744,7 +744,7 @@
         <mastership level="2" key="animalcompany" />
         <mastership level="2" key="rootsleep"><requires><masterreq ref="naturemagic/natureprotection"/></requires></mastership>
         <mastership level="3" key="wildernessservant">
-            <requires><masterreq ref="naturemagic/natureprotection"/></requires>
+            <requires><masterreq ref="naturemagic/naturecloseness"/></requires>
             <requires><masterreq ref="naturemagic/wildernesschild"/></requires>
         </mastership>
         <mastership level="3" key="nature_nourishment"><requires><masterreq ref="naturemagic/natureharmony"/></requires></mastership>
