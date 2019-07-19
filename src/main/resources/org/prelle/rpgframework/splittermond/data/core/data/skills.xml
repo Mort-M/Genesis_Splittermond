@@ -36,7 +36,7 @@
         <mastership level="4" common="true" key="grandmaster"/>
 
         <mastership level="1" key="block"/>
-        <mastership level="1" key="hold"/>
+        <mastership level="1" key="hold">
             <requires>
                 <masterreq ref="clutch"/>
             </requires>
@@ -44,18 +44,18 @@
         <mastership level="1" key="confusion"/>
         <mastership level="2" key="painful"/>
         <mastership level="2" key="lethal"/>
-        <mastership level="2" key="betterknock"/>
+        <mastership level="2" key="betterknock">
             <requires>
                 <masterreq ref="knock"/>
             </requires>
         </mastership>
-        <mastership level="3" key="betterdisarm"/>
+        <mastership level="3" key="betterdisarm">
             <requires>
                 <masterreq ref="block"/>
                 <masterreq ref="disarm"/>
             </requires>
         </mastership>
-        <mastership level="3" key="strangehold"/>
+        <mastership level="3" key="strangehold">
             <requires>
                 <masterreq ref="clutch"/>
             </requires>
