@@ -590,7 +590,7 @@
         <mastership level="3" key="stoneaffinity"><requires><masterreq ref="stonemagic/earthaffinity"/></requires></mastership>
         <mastership level="3" key="heavens_enemy"/>
         <mastership level="4" key="root_in_stone"/>
-        <mastership level="2" key="mind_of_seel"><requires><masterreq ref="stonemagic/stubborn_as_stone"/></requires></mastership>
+        <mastership level="4" key="mind_of_seel"><requires><masterreq ref="stonemagic/stubborn_as_stone"/></requires></mastership>
     </skill>
     
     <skill id="firemagic">
