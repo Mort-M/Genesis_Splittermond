@@ -691,7 +691,7 @@
         <mastership level="3" key="destroyerblood"><requires><masterreq ref="combatmagic/destroyerheart"/></requires></mastership>
         <mastership level="3" key="hardtoescape"><requires><masterreq ref="combatmagic/veteranofmelee"/></requires></mastership>
         <mastership level="3" key="masterofmelee"><requires><masterreq ref="combatmagic/veteranofmelee"/></requires></mastership>
-        <mastership level="3" key="destroyermind"><requires><masterreq ref="combatmagic/destroyerheart"/></requires></mastership>
+        <mastership level="3" key="destroyermind"><requires><masterreq ref="combatmagic/destroyerghost"/></requires></mastership>
         <mastership level="4" key="moonsteel_concentration"><requires><masterreq ref="combatmagic/steelconcentration"/></requires></mastership>
     </skill>
     
