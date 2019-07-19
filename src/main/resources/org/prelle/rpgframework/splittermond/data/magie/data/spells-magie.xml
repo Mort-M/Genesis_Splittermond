@@ -2581,7 +2581,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
 
-    <!-- Beschwörungszauber S.186 -->
+    <!-- BeschwÃ¶rungszauber S.186 -->
     <spell id="summon_stone_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="stonemagic" level="0" />
         <type>SUMMON</type>

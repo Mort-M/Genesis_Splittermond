@@ -313,7 +313,11 @@
     </skill>
 
     <skill id="deathmagic">
-    	<mastership level="1" key="ghosthunter"/><requires><masterreq ref="deathmagic/ghostexpert"/></requires>
+    	<mastership level="1" key="ghosthunter">
+    	   <requires>
+    	       <masterreq ref="deathmagic/ghostexpert"/>
+    	   </requires>
+    	</mastership>
     	<mastership level="3" key="ghostpresence">
     		<requires>
     		    <selreq>
