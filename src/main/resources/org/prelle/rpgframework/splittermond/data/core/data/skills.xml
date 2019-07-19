@@ -2196,7 +2196,7 @@
 
         <mastership level="1" key="formbanishing"/>
         <mastership level="1" key="favoredform"/>
-        <mastership level="1" key="freedomofform"/>
+        <mastership level="1" key="freedomofform">
             <requires>
                 <masterreq ref="favoredform"/>
                 <selreq>
@@ -2204,6 +2204,7 @@
                     <spellreq ref="smallanimalshape"/>
                 </selreq>
             </requires>
+        </mastership>
         <mastership level="2" key="animalskin">
             <requires>
                 <masterreq ref="favoredform"/>
