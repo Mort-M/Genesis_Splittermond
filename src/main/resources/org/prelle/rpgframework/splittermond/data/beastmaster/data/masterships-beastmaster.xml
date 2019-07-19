@@ -336,7 +336,7 @@
        </mastership>
        <mastership level="3" key="favoredform_familiar">
             <requires>
-                <masterreq ref="naturemagic/familiarbond"/>
+                <powerreq ref="animalfamiliar"/>
             </requires>
        </mastership>
        
