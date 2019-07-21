@@ -28,6 +28,7 @@ import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.creature.CreatureFeatureType;
 import org.prelle.splimo.creature.CreatureType;
 import org.prelle.splimo.items.FeatureType;
+import org.prelle.splimo.creature.Creature;
 
 /**
  * @author prelle
@@ -293,11 +294,11 @@ public class IDExporter {
 		out.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 		out.println("<html>");
 		out.println(" <head>");
-		out.println("   <title>St√§rken</title>");
+		out.println("   <title>St‰rken</title>");
 		out.println(" </head>");
 		out.println(" <body>");
 		out.println("   <table border=\"1\">");
-		out.println("    <tr><th>St√§rke</th><th>ID</th><th>Quelle</th></tr>");
+		out.println("    <tr><th>St‰rke</th><th>ID</th><th>Quelle</th></tr>");
 		List<Power> list =SplitterMondCore.getPowers();
 		Collections.sort(list, new Comparator<Power>() {
 			public int compare(Power o1, Power o2) {
@@ -421,6 +422,35 @@ public class IDExporter {
 			}
 		});
 		for (FeatureType data : list) {
+			out.println("    <tr><td>"+data.getName()+"</td><td>"+data.getId()+"</td><td>"+data.getProductNameShort()+" "+data.getPage()+"</td></tr>");
+		}
+		out.println("  </table>");
+		out.println(" </body>");
+		out.flush();
+		out.close();
+	}
+	
+	//-------------------------------------------------------------------
+	/**
+	 * @throws IOException - Neu 17.04.2019 AS
+	 */
+	private static void generateCreatures() throws IOException {
+		PrintWriter out = new PrintWriter(new FileWriter(new File("creature.html")));
+		out.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+		out.println("<html>");
+		out.println(" <head>");
+		out.println("   <title>Kreaturen</title>");
+		out.println(" </head>");
+		out.println(" <body>");
+		out.println("   <table border=\"1\">");
+		out.println("    <tr><th>Kreatur</th><th>ID</th><th>Quelle</th></tr>");
+		List<Creature> list =SplitterMondCore.getCreatures();
+		Collections.sort(list, new Comparator<Creature>() {
+			public int compare(Creature o1, Creature o2) {
+				return o1.getName().compareTo(o2.getName());
+			}
+		});
+		for (Creature data : list) {
 			out.println("    <tr><td>"+data.getName()+"</td><td>"+data.getId()+"</td><td>"+data.getProductNameShort()+" "+data.getPage()+"</td></tr>");
 		}
 		out.println("  </table>");
