@@ -24,7 +24,11 @@
                 <masterreq ref="animals/familiar_trainer1"/>
             </requires>
        </mastership>
-       <mastership level="2" key="swarmkeeper"/>
+       <mastership level="2" key="swarmkeeper">
+           <requires>
+               <masterreq ref="animals/swarmleader"/>
+           </requires>
+       </mastership>
        <mastership level="2" key="animaldefender">
             <requires>
                 <selreq>
@@ -56,7 +60,13 @@
        <mastership level="1" common="true" key="fellow_fighter" />
        <mastership level="1" common="true" key="shield_and_claw">
             <requires>
+                <selreq>
                 <masterreq ref="melee/defender"/>
+                <masterreq ref="slashing/defender"/>
+                <masterreq ref="chains/defender"/>
+                <masterreq ref="blades/defender"/>
+                <masterreq ref="staffs/defender"/>                    
+                </selreq>
             </requires>
        </mastership>
        <mastership level="1" common="true" key="sword_and_claw1" />
