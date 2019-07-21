@@ -26,7 +26,7 @@
        </mastership>
        <mastership level="2" key="swarmkeeper">
            <requires>
-               <masterreq ref="swarmleader"/>
+               <masterreq ref="animals/swarmleader"/>
            </requires>
        </mastership>
        <mastership level="2" key="animaldefender">
