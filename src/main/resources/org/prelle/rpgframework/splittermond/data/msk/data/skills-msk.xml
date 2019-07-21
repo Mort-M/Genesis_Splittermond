@@ -35,17 +35,29 @@
     </skill>
 
     <skill id="alchemy" attr1="MYSTIC" attr2="MIND">
-        <mastership level="2" key="materialmaster"/>
+        <mastership level="2" key="materialmaster">
+            <requires>
+                <masterreq ref="alchemy/expert"/>
+            </requires>
+        </mastership>
     </skill>
     <skill id="clscraft" attr1="INTUITION" attr2="MIND" grouped="true">
-        <mastership level="2" key="materialmaster"/>
+        <mastership level="2" key="materialmaster">
+            <requires>
+                <masterreq ref="clscraft/expert"/>
+            </requires>
+        </mastership>
         <mastership level="3" key="frommaster"/>
     </skill>
     <skill id="craftmanship" attr1="CONSTITUTION" attr2="MIND" grouped="true">
-        <mastership level="2" key="materialmaster"/>
+        <mastership level="2" key="materialmaster">
+            <requires>
+                <masterreq ref="craftmanship/expert"/>
+            </requires>
+        </mastership>
         <mastership level="2" key="efweaponforge">
             <requires>
-                <masterreq ref="craftmanship/journeyman"/>
+                <masterreq ref="craftmanship/expert"/>
             </requires>
         </mastership>
         <mastership level="3" key="frommaster"/>
