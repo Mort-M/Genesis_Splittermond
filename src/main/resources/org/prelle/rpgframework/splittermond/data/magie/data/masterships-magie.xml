@@ -112,7 +112,7 @@
         <mastership level="2" key="magic_detector" />
         <mastership level="2" key="magic_gesture_expert" />
 
-        <mastership level="1" key="ritual_lore_1" />
+        <mastership level="2" key="ritual_lore_1" />
         <mastership level="1" key="ritual_connection">
             <requires>
                 <masterreq ref="arcanelore/ritual_lore_1"/>
@@ -123,19 +123,43 @@
                 <masterreq ref="arcanelore/ritual_connection"/>
             </requires>
         </mastership>
-        <mastership level="2" key="ritual_lore_2">
+        <mastership level="3" key="ritual_lore_2">
             <requires>
                 <masterreq ref="arcanelore/ritual_lore_1"/>
             </requires>
         </mastership>
-        <mastership level="3" key="ritual_lore_3">
+        <mastership level="4" key="ritual_lore_3">
             <requires>
                 <masterreq ref="arcanelore/ritual_lore_2"/>
             </requires>
         </mastership>
         <!--  S.178 -->
         <mastership level="1" key="versed_scrolluser" />
-        <mastership level="1" key="artifact_speeder" />
+        <mastership level="1" key="artifact_speeder" >
+            <requires>
+                <selreq>
+                    <masterreq ref="antimagic/magiccrafter"/>
+                    <masterreq ref="combatmagic/magiccrafter"/>
+                    <masterreq ref="windmagic/magiccrafter"/>
+                    <masterreq ref="stonemagic/magiccrafter"/>
+                    <masterreq ref="enhancemagic/magiccrafter"/>
+                    <masterreq ref="firemagic/magiccrafter"/>
+                    <masterreq ref="watermagic/magiccrafter"/>
+                    <masterreq ref="shadowmagic/magiccrafter"/>
+                    <masterreq ref="naturemagic/magiccrafter"/>
+                    <masterreq ref="illusionmagic/magiccrafter"/>
+                    <masterreq ref="controlmagic/magiccrafter"/>
+                    <masterreq ref="motionmagic/magiccrafter"/>
+                    <masterreq ref="insightmagic/magiccrafter"/>
+                    <masterreq ref="healmagic/magiccrafter"/>
+                    <masterreq ref="lightmagic/magiccrafter"/>
+                    <masterreq ref="fatemagic/magiccrafter"/>
+                    <masterreq ref="protectionmagic/magiccrafter"/>
+                    <masterreq ref="deathmagic/magiccrafter"/>
+                    <masterreq ref="transformationmagic/magiccrafter"/>
+                </selreq>
+            </requires>
+        </mastership>
         <mastership level="1" key="artifact_stacking">
             <requires>
                 <masterreq ref="arcanelore/artifactlore"/>
@@ -343,19 +367,17 @@
         <mastership level="1" key="transporting_beings_1"/>
         <mastership level="1" key="lore_of_beings"/>
         <mastership level="1" key="casting_beings"/>
-        <mastership level="1" key="transporting_beings_2">
+        <mastership level="2" key="transporting_beings_2">
           <requires>
               <masterreq ref="arcanelore/transporting_beings_1"/>
           </requires>
         </mastership>
         <mastership level="2" key="promising_conjuror">
             <requires>
-                <masterreq ref="arcanelore/artifactlore"/>
                 <selreq>
                     <masterreq ref="arcanelore/healing_beings"/>
                     <masterreq ref="arcanelore/helpful_beings"/>
                     <masterreq ref="arcanelore/fighting_beings"/>
-                    <masterreq ref="arcanelore/combatcasting_beings"/>
                     <masterreq ref="arcanelore/scouting_beings"/>
                     <masterreq ref="arcanelore/protecting_beings"/>
                     <masterreq ref="arcanelore/transporting_beings_1"/>
