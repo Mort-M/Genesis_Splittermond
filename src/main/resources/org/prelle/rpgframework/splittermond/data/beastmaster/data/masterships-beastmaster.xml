@@ -75,7 +75,7 @@
                 <selreq>
                 	<masterreq ref="melee/fellow_fighter"/>                    
                 	<masterreq ref="melee/sword_and_claw1"/>                    
-                	</selreq>
+                </selreq>
             </requires>
        </mastership>
        <mastership level="2" common="true" key="impr_fellow_fighter">
@@ -100,25 +100,29 @@
        <mastership level="1" common="true" key="shield_and_claw">
             <requires>
                 <masterreq ref="melee/defender"/>
+                <masterreq ref="slashing/defender"/>
+                <masterreq ref="chains/defender"/>
+                <masterreq ref="blades/defender"/>
+                <masterreq ref="staffs/defender"/>
             </requires>
        </mastership>
        <mastership level="1" common="true" key="sword_and_claw1" />
        <mastership level="2" common="true" key="patient_fellow">
             <requires>
                 <selreq>
-                	<masterreq ref="melee/fellow_fighter"/>                    
-                	<masterreq ref="melee/sword_and_claw1"/>                    
+                	<masterreq ref="slashing/fellow_fighter"/>                    
+                	<masterreq ref="slashing/sword_and_claw1"/>                    
                 	</selreq>
             </requires>
        </mastership>
        <mastership level="2" common="true" key="impr_fellow_fighter">
             <requires>
-                <masterreq ref="melee/fellow_fighter"/>
+                <masterreq ref="slashing/fellow_fighter"/>
             </requires>
        </mastership>
        <mastership level="2" common="true" key="sword_and_claw2">
             <requires>
-                <masterreq ref="melee/sword_and_claw1"/>
+                <masterreq ref="slashing/sword_and_claw1"/>
             </requires>
        </mastership>
        <mastership level="2" common="true" key="riding_rush">
@@ -133,25 +137,29 @@
        <mastership level="1" common="true" key="shield_and_claw">
             <requires>
                 <masterreq ref="melee/defender"/>
+                <masterreq ref="slashing/defender"/>
+                <masterreq ref="chains/defender"/>
+                <masterreq ref="blades/defender"/>
+                <masterreq ref="staffs/defender"/>
             </requires>
        </mastership>
        <mastership level="1" common="true" key="sword_and_claw1" />
        <mastership level="2" common="true" key="patient_fellow">
             <requires>
                 <selreq>
-                	<masterreq ref="melee/fellow_fighter"/>                    
-                	<masterreq ref="melee/sword_and_claw1"/>                    
+                	<masterreq ref="chains/fellow_fighter"/>                    
+                	<masterreq ref="chains/sword_and_claw1"/>                    
                 	</selreq>
             </requires>
        </mastership>
        <mastership level="2" common="true" key="impr_fellow_fighter">
             <requires>
-                <masterreq ref="melee/fellow_fighter"/>
+                <masterreq ref="chains/fellow_fighter"/>
             </requires>
        </mastership>
        <mastership level="2" common="true" key="sword_and_claw2">
             <requires>
-                <masterreq ref="melee/sword_and_claw1"/>
+                <masterreq ref="chains/sword_and_claw1"/>
             </requires>
        </mastership>
        <mastership level="2" common="true" key="riding_rush">
@@ -166,25 +174,29 @@
        <mastership level="1" common="true" key="shield_and_claw">
             <requires>
                 <masterreq ref="melee/defender"/>
+                <masterreq ref="slashing/defender"/>
+                <masterreq ref="chains/defender"/>
+                <masterreq ref="blades/defender"/>
+                <masterreq ref="staffs/defender"/>
             </requires>
        </mastership>
        <mastership level="1" common="true" key="sword_and_claw1" />
        <mastership level="2" common="true" key="patient_fellow">
             <requires>
                 <selreq>
-                	<masterreq ref="melee/fellow_fighter"/>                    
-                	<masterreq ref="melee/sword_and_claw1"/>                    
+                	<masterreq ref="blades/fellow_fighter"/>                    
+                	<masterreq ref="blades/sword_and_claw1"/>                    
                 	</selreq>
             </requires>
        </mastership>
        <mastership level="2" common="true" key="impr_fellow_fighter">
             <requires>
-                <masterreq ref="melee/fellow_fighter"/>
+                <masterreq ref="blades/fellow_fighter"/>
             </requires>
        </mastership>
        <mastership level="2" common="true" key="sword_and_claw2">
             <requires>
-                <masterreq ref="melee/sword_and_claw1"/>
+                <masterreq ref="blades/sword_and_claw1"/>
             </requires>
        </mastership>
        <mastership level="2" common="true" key="riding_rush">
@@ -199,25 +211,29 @@
        <mastership level="1" common="true" key="shield_and_claw">
             <requires>
                 <masterreq ref="melee/defender"/>
+                <masterreq ref="slashing/defender"/>
+                <masterreq ref="chains/defender"/>
+                <masterreq ref="blades/defender"/>
+                <masterreq ref="staffs/defender"/>
             </requires>
        </mastership>
        <mastership level="1" common="true" key="sword_and_claw1" />
        <mastership level="2" common="true" key="patient_fellow">
             <requires>
                 <selreq>
-                	<masterreq ref="melee/fellow_fighter"/>                    
-                	<masterreq ref="melee/sword_and_claw1"/>                    
+                	<masterreq ref="staffs/fellow_fighter"/>                    
+                	<masterreq ref="staffs/sword_and_claw1"/>                    
                 	</selreq>
             </requires>
        </mastership>
        <mastership level="2" common="true" key="impr_fellow_fighter">
             <requires>
-                <masterreq ref="melee/fellow_fighter"/>
+                <masterreq ref="staffs/fellow_fighter"/>
             </requires>
        </mastership>
        <mastership level="2" common="true" key="sword_and_claw2">
             <requires>
-                <masterreq ref="melee/sword_and_claw1"/>
+                <masterreq ref="staffs/sword_and_claw1"/>
             </requires>
        </mastership>
        <mastership level="2" common="true" key="riding_rush">
