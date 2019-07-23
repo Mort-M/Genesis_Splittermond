@@ -14,7 +14,6 @@ import org.prelle.rpgframework.jfx.SingleSection;
 import org.prelle.splimo.Background;
 import org.prelle.splimo.BasePluginData;
 import org.prelle.splimo.Culture;
-import org.prelle.splimo.Deity;
 import org.prelle.splimo.Education;
 import org.prelle.splimo.Moonsign;
 import org.prelle.splimo.Race;
@@ -66,7 +65,6 @@ public class BasicDataSection extends SingleSection {
 	private ChoiceBox<Race>      cbRace;
 	private ChoiceBox<Gender>    cbGender;
 	private ChoiceBox<Moonsign>  cbMoonsign;
-	private ChoiceBox<Deity>     cbDeity;
 
 
 	private ObjectProperty<BasePluginData> showHelpFor = new SimpleObjectProperty<>();
@@ -94,14 +92,12 @@ public class BasicDataSection extends SingleSection {
 		cbRace      = new ChoiceBox<>(); cbRace.getItems().addAll( SplitterMondCore.getRaces() );
 		cbGender    = new ChoiceBox<>(); cbGender.getItems().addAll( Arrays.asList(Gender.values()) );
 		cbMoonsign  = new ChoiceBox<>(FXCollections.observableArrayList(Moonsign.values()));
-		cbDeity     = new ChoiceBox<>(FXCollections.observableArrayList(SplitterMondCore.getDeities()));
 
 		cbEducation.setEditable(false);
 		cbCulture.setEditable(false);
 		cbBackground.setEditable(false);
 		cbRace.setDisable(true);
 		cbRace.setStyle("-fx-opacity: 1");
-		cbDeity.setDisable(true);
 	}
 
 	//-------------------------------------------------------------------

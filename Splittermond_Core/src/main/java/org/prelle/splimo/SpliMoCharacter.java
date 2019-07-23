@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.simplepersist.AfterLoadHook;
+import org.prelle.simplepersist.AttribConvert;
 import org.prelle.simplepersist.Element;
 import org.prelle.simplepersist.ElementList;
 import org.prelle.simplepersist.Root;
@@ -33,6 +34,7 @@ import org.prelle.splimo.items.ItemLocationType;
 import org.prelle.splimo.items.ItemTemplate;
 import org.prelle.splimo.modifications.ModificationList;
 import org.prelle.splimo.persist.CustomItemHook;
+import org.prelle.splimo.persist.DeityConverter;
 import org.prelle.splimo.requirements.AnyRequirement;
 import org.prelle.splimo.requirements.AttributeRequirement;
 import org.prelle.splimo.requirements.FavoredSkillRequirement;
@@ -123,6 +125,9 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 	private Gender gender;
 	@ElementList(entry="weakness", type=String.class)
 	private List<String> weaknesses;
+	@org.prelle.simplepersist.Attribute
+	@AttribConvert(DeityConverter.class)
+	private Deity deity;
 
 
 	@ElementList(entry="item", type=ItemTemplate.class)
@@ -1175,6 +1180,22 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 	//-------------------------------------------------------------------
 	public void setNotes(String txt) {
 		this.notes = txt;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @return the deity
+	 */
+	public Deity getDeity() {
+		return deity;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @param deity the deity to set
+	 */
+	public void setDeity(Deity deity) {
+		this.deity = deity;
 	}
 
 }

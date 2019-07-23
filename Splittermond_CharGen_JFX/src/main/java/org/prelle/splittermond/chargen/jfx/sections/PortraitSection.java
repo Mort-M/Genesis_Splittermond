@@ -45,6 +45,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 
 /**
  * @author prelle
@@ -95,6 +96,10 @@ public class PortraitSection extends SingleSection {
 		getAddButton().setTooltip(new Tooltip(RES.getString("button.add.tooltip")));
 
 		cbDeity     = new ChoiceBox<>(FXCollections.observableArrayList(SplitterMondCore.getDeities()));
+		cbDeity.setConverter(new StringConverter<Deity>() {
+			public String toString(Deity object) { return object.getName();}
+			public Deity fromString(String string) {return null;}
+		});
 		tfHair      = new TextField();
 		tfEyes      = new TextField();
 		tfSize      = new TextField();
@@ -104,7 +109,7 @@ public class PortraitSection extends SingleSection {
 
 		dummy = new Image(SpliMoCharGenJFXConstants.class.getResourceAsStream("images/guest-256.png"));
 
-		cbDeity.setDisable(true);
+//		cbDeity.setDisable(true);
 		ivPortrait  = new ImageView(dummy);
 		ivPortrait.setPreserveRatio(true);
 		ivPortrait.setFitHeight(200);
@@ -171,8 +176,7 @@ public class PortraitSection extends SingleSection {
 		tfSize.textProperty().addListener( (ov,o,n) -> control.getModel().setSize(Integer.parseInt(n)));
 		tfWeight.textProperty().addListener( (ov,o,n) -> control.getModel().setWeight(Integer.parseInt(n)));
 		cbDeity.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
-			logger.warn("TODO: implement setting deity");
-//			control.getModel().setDeity(n);
+			control.getModel().setDeity(n);
 		});
 		getAddButton().setOnAction(ev -> onAdd());
 		getDeleteButton().setOnAction(ev -> onDelete());
@@ -188,7 +192,7 @@ public class PortraitSection extends SingleSection {
 		tfWeight.setText(String.valueOf(model.getWeight()));
 		tfSkin.setText(model.getFurColor());
 		tfBirth.setText(model.getBirthplace());
-//		cbDeity.getSelectionModel().select(model.getDeity());
+		cbDeity.getSelectionModel().select(model.getDeity());
 
 		if (model.getImage()!=null) {
 			ivPortrait.setImage(new Image(new ByteArrayInputStream(model.getImage())));
