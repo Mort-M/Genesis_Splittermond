@@ -62,6 +62,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 	private SMResourceCompanionPage  pgResources;
 	private SMEquipmentPage  pgEquipment;
 	private SMDevelopmentPage pgDevelop;
+	private SMNotesPage pgNotes;
 
 	private AttentionMenuItem navOverview;
 	private AttentionMenuItem navPowers;
@@ -70,6 +71,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 	private AttentionMenuItem navResources;
 	private MenuItem navEquipment;
 	private MenuItem navDevelop;
+	private MenuItem navNotes;
 
 	//-------------------------------------------------------------------
 	public CharacterViewScreenSpliMo2(CharacterController control, ViewMode mode, CharacterHandle handle) {
@@ -109,6 +111,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		pgResources = new SMResourceCompanionPage(control, mode, handle, this);
 		pgEquipment = new SMEquipmentPage(control, mode, handle, this);
 		pgDevelop   = new SMDevelopmentPage(control, handle, this);
+		pgNotes     = new SMNotesPage(control, mode, handle, this);
 	}
 
 	//-------------------------------------------------------------------
@@ -155,8 +158,9 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 //		navEquipment  = new MenuItem(RES.getString("navItem.gear"), icoGear);
 		navEquipment  = new MenuItem(RES.getString("navItem.gear"), new FontIcon("\u2694"));
 		navDevelop    = new MenuItem(RES.getString("navItem.develop"), new FontIcon("\uD83D\uDCC8"));
+		navNotes      = new MenuItem(RES.getString("navItem.notes"), new SymbolIcon("edit"));
 
-		this.getNavigationItems().addAll(navOverview, navPowers, navSkills, navSpells, navResources, navEquipment, navDevelop);
+		this.getNavigationItems().addAll(navOverview, navPowers, navSkills, navSpells, navResources, navEquipment, navDevelop, navNotes);
 	}
 
 	//-------------------------------------------------------------------
@@ -412,6 +416,8 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			setContent(pgEquipment);
 		} else if (newValue==navDevelop) {
 			setContent(pgDevelop);
+		} else if (newValue==navNotes) {
+			setContent(pgNotes);
 		}
 	}
 
@@ -427,7 +433,8 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		pgSpells.setResponsiveMode(value);
 		pgResources.setResponsiveMode(value);
 		pgEquipment.setResponsiveMode(value);
-//		pgDevelop.setResponsiveMode(value);
+		pgDevelop.setResponsiveMode(value);
+		pgNotes.setResponsiveMode(value);
 	}
 
 	//-------------------------------------------------------------------
