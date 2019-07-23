@@ -13,8 +13,7 @@
    					<masterreq ref="melee/confusion"/>
    					<masterreq ref="melee/painful"/>
    					<masterreq ref="melee/strangehold"/>
-   					<masterreq ref="melee/riding_rush"/>
-   			    </selreq>
+               </selreq>
    			</requires>
    		</mastership>
 
@@ -38,8 +37,7 @@
    					<masterreq ref="melee/confusion"/>
    					<masterreq ref="melee/painful"/>
    					<masterreq ref="melee/strangehold"/>
-   					<masterreq ref="melee/riding_rush"/>
-   			    </selreq>
+                </selreq>
   			</requires>
    		</mastership>
       </skill>
@@ -48,16 +46,16 @@
     	<mastership level="1" common="true" key="hard_style">
    			<requires>
    			    <selreq>
-   					<masterreq ref="melee/push"/>
-   					<masterreq ref="melee/clutch"/>
-   					<masterreq ref="melee/rush"/>
-                    <masterreq ref="melee/knock"/>
-   					<masterreq ref="melee/disarm"/>
-   					<masterreq ref="melee/sweepingblow"/>
-   					<masterreq ref="melee/confusion"/>
-   					<masterreq ref="melee/painful"/>
-   					<masterreq ref="melee/strangehold"/>
-   					<masterreq ref="melee/riding_rush"/>
+   					<masterreq ref="slashing/push"/>
+   					<masterreq ref="slashing/clutch"/>
+   					<masterreq ref="slashing/rush"/>
+                    <masterreq ref="slashing/knock"/>
+                    <masterreq ref="slashing/shieldbreaker"/>
+   					<masterreq ref="slashing/disarm"/>
+   					<masterreq ref="slashing/sweepingblow"/>
+   					<masterreq ref="slashing/hammerblow"/>
+   					<masterreq ref="slashing/dashingblow"/>
+   					<masterreq ref="slashing/bonebreaker"/>
    			    </selreq>
    			</requires>
    		</mastership>
@@ -72,17 +70,17 @@
 
    		<mastership level="1" common="true" key="soft_style">
   			<requires>
-    			    <selreq>
-   					<masterreq ref="melee/push"/>
-   					<masterreq ref="melee/clutch"/>
-   					<masterreq ref="melee/rush"/>
-                    <masterreq ref="melee/knock"/>
-   					<masterreq ref="melee/disarm"/>
-   					<masterreq ref="melee/sweepingblow"/>
-   					<masterreq ref="melee/confusion"/>
-   					<masterreq ref="melee/painful"/>
-   					<masterreq ref="melee/strangehold"/>
-   					<masterreq ref="melee/riding_rush"/>
+   			    <selreq>
+   					<masterreq ref="slashing/push"/>
+   					<masterreq ref="slashing/clutch"/>
+   					<masterreq ref="slashing/rush"/>
+                    <masterreq ref="slashing/knock"/>
+                    <masterreq ref="slashing/shieldbreaker"/>
+   					<masterreq ref="slashing/disarm"/>
+   					<masterreq ref="slashing/sweepingblow"/>
+   					<masterreq ref="slashing/hammerblow"/>
+   					<masterreq ref="slashing/dashingblow"/>
+   					<masterreq ref="slashing/bonebreaker"/>
    			    </selreq>
   			</requires>
    		</mastership>
@@ -91,16 +89,14 @@
     	<mastership level="1" common="true" key="hard_style">
    			<requires>
    			    <selreq>
-   					<masterreq ref="melee/push"/>
-   					<masterreq ref="melee/clutch"/>
-   					<masterreq ref="melee/rush"/>
-                    <masterreq ref="melee/knock"/>
-   					<masterreq ref="melee/disarm"/>
-   					<masterreq ref="melee/sweepingblow"/>
-   					<masterreq ref="melee/confusion"/>
-   					<masterreq ref="melee/painful"/>
-   					<masterreq ref="melee/strangehold"/>
-   					<masterreq ref="melee/riding_rush"/>
+   					<masterreq ref="chains/push"/>
+   					<masterreq ref="chains/clutch"/>
+   					<masterreq ref="chains/rush"/>
+                    <masterreq ref="chains/knock"/>
+   					<masterreq ref="chains/disarm"/>
+   					<masterreq ref="chains/sweepingblow"/>
+   					<masterreq ref="chains/whirlingdefense"/>
+   					<masterreq ref="chains/hammerblow"/>
    			    </selreq>
    			</requires>
    		</mastership>
@@ -116,16 +112,14 @@
    		<mastership level="1" common="true" key="soft_style">
    			<requires>
    			    <selreq>
-   					<masterreq ref="melee/push"/>
-   					<masterreq ref="melee/clutch"/>
-   					<masterreq ref="melee/rush"/>
-                    <masterreq ref="melee/knock"/>
-   					<masterreq ref="melee/disarm"/>
-   					<masterreq ref="melee/sweepingblow"/>
-   					<masterreq ref="melee/confusion"/>
-   					<masterreq ref="melee/painful"/>
-   					<masterreq ref="melee/strangehold"/>
-   					<masterreq ref="melee/riding_rush"/>
+   					<masterreq ref="chains/push"/>
+   					<masterreq ref="chains/clutch"/>
+   					<masterreq ref="chains/rush"/>
+                    <masterreq ref="chains/knock"/>
+   					<masterreq ref="chains/disarm"/>
+   					<masterreq ref="chains/sweepingblow"/>
+   					<masterreq ref="chains/whirlingdefense"/>
+   					<masterreq ref="chains/hammerblow"/>
    			    </selreq>
    			</requires>
    		</mastership>
@@ -135,16 +129,17 @@
     	<mastership level="1" common="true" key="hard_style">
    			<requires>
    			    <selreq>
-   					<masterreq ref="melee/push"/>
-   					<masterreq ref="melee/clutch"/>
-   					<masterreq ref="melee/rush"/>
-                    <masterreq ref="melee/knock"/>
-   					<masterreq ref="melee/disarm"/>
-   					<masterreq ref="melee/sweepingblow"/>
-   					<masterreq ref="melee/confusion"/>
-   					<masterreq ref="melee/painful"/>
-   					<masterreq ref="melee/strangehold"/>
-   					<masterreq ref="melee/riding_rush"/>
+   					<masterreq ref="blades/push"/>
+   					<masterreq ref="blades/clutch"/>
+   					<masterreq ref="blades/rush"/>
+                    <masterreq ref="blades/knock"/>
+                    <masterreq ref="blades/whirlingdefense"/>
+                    <masterreq ref="blades/sortie"/>
+   					<masterreq ref="blades/disarm"/>
+   					<masterreq ref="blades/sweepingblow"/>
+   					<masterreq ref="blades/confusion"/>
+   					<masterreq ref="blades/whirlingblades"/>
+   					<masterreq ref="blades/bloodletting"/>
    			    </selreq>
    			</requires>
    		</mastership>
@@ -160,16 +155,17 @@
    		<mastership level="1" common="true" key="soft_style">
    			<requires>
    			    <selreq>
-   					<masterreq ref="melee/push"/>
-   					<masterreq ref="melee/clutch"/>
-   					<masterreq ref="melee/rush"/>
-                    <masterreq ref="melee/knock"/>
-   					<masterreq ref="melee/disarm"/>
-   					<masterreq ref="melee/sweepingblow"/>
-   					<masterreq ref="melee/confusion"/>
-   					<masterreq ref="melee/painful"/>
-   					<masterreq ref="melee/strangehold"/>
-   					<masterreq ref="melee/riding_rush"/>
+   					<masterreq ref="blades/push"/>
+   					<masterreq ref="blades/clutch"/>
+   					<masterreq ref="blades/rush"/>
+                    <masterreq ref="blades/knock"/>
+                    <masterreq ref="blades/whirlingdefense"/>
+                    <masterreq ref="blades/sortie"/>
+   					<masterreq ref="blades/disarm"/>
+   					<masterreq ref="blades/sweepingblow"/>
+   					<masterreq ref="blades/confusion"/>
+   					<masterreq ref="blades/whirlingblades"/>
+   					<masterreq ref="blades/bloodletting"/>
    			    </selreq>
    			</requires>
    		</mastership>
@@ -179,16 +175,15 @@
     	<mastership level="1" common="true" key="hard_style">
    			<requires>
    			    <selreq>
-   					<masterreq ref="melee/push"/>
-   					<masterreq ref="melee/clutch"/>
-   					<masterreq ref="melee/rush"/>
-                    <masterreq ref="melee/knock"/>
-   					<masterreq ref="melee/disarm"/>
-   					<masterreq ref="melee/sweepingblow"/>
-   					<masterreq ref="melee/confusion"/>
-   					<masterreq ref="melee/painful"/>
-   					<masterreq ref="melee/strangehold"/>
-   					<masterreq ref="melee/riding_rush"/>
+   					<masterreq ref="staffs/push"/>
+   					<masterreq ref="staffs/clutch"/>
+   					<masterreq ref="staffs/rush"/>
+                    <masterreq ref="staffs/knock"/>
+                    <masterreq ref="staffs/sortie"/>
+   					<masterreq ref="staffs/disarm"/>
+   					<masterreq ref="staffs/sweepingblow"/>
+   					<masterreq ref="staffs/whirlingblades"/>
+   					<masterreq ref="staffs/dashingblow"/>
    			    </selreq>
    			</requires>
    		</mastership>
@@ -204,16 +199,15 @@
    		<mastership level="1" common="true" key="soft_style">
     		<requires>
    			    <selreq>
-   					<masterreq ref="melee/push"/>
-   					<masterreq ref="melee/clutch"/>
-   					<masterreq ref="melee/rush"/>
-                    <masterreq ref="melee/knock"/>
-   					<masterreq ref="melee/disarm"/>
-   					<masterreq ref="melee/sweepingblow"/>
-   					<masterreq ref="melee/confusion"/>
-   					<masterreq ref="melee/painful"/>
-   					<masterreq ref="melee/strangehold"/>
-   					<masterreq ref="melee/riding_rush"/>
+   					<masterreq ref="staffs/push"/>
+   					<masterreq ref="staffs/clutch"/>
+   					<masterreq ref="staffs/rush"/>
+                    <masterreq ref="staffs/knock"/>
+                    <masterreq ref="staffs/sortie"/>
+   					<masterreq ref="staffs/disarm"/>
+   					<masterreq ref="staffs/sweepingblow"/>
+   					<masterreq ref="staffs/whirlingblades"/>
+   					<masterreq ref="staffs/dashingblow"/>
    			    </selreq>
    			</requires>
    		</mastership>
