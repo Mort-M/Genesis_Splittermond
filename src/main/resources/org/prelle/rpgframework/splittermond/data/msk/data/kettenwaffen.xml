@@ -24,7 +24,7 @@
             <attrreq attr="STRENGTH" val="2"/>
          </requires>
          <features>
-            <feature type="DISTRACTING"/>
+            <feature level="1" type="DISTRACTING"/>
             <feature type="DOUBLE_WEAPON"/>
             <feature level="1" type="DISARMING"/>
             <feature level="2" type="CRITICAL"/>
@@ -40,7 +40,7 @@
             <attrreq attr="STRENGTH" val="3"/>
          </requires>
          <features>
-            <feature type="DISTRACTING"/>
+            <feature level="1" type="DISTRACTING"/>
             <feature type="LONG_WEAPON"/>
             <feature level="3" type="PIERCING"/>
             <feature type="CLUTCH"/>
@@ -56,7 +56,7 @@
             <attrreq attr="INTUITION" val="4"/>
          </requires>
          <features>
-            <feature type="DISTRACTING"/>
+            <feature level="1" type="DISTRACTING"/>
             <feature type="DOUBLE_WEAPON"/>
             <feature type="LONG_WEAPON"/>
             <feature level="3" type="PIERCING"/>
@@ -85,7 +85,7 @@
             <attrreq attr="STRENGTH" val="2"/>
          </requires>
          <features>
-            <feature type="DISTRACTING"/>
+            <feature level="1" type="DISTRACTING"/>
             <feature level="1" type="EXACT"/>
             <feature level="1" type="CRITICAL"/>
             <feature level="2" type="PIERCING"/>
@@ -147,17 +147,6 @@
          </features>
       </weapon>
    </item>
-   <item avail="SMALL_TOWN" cplx="G" id="morningstar" load="2" material="METAL" price="90000" robust="0" type="WEAPON">
-      <weapon att1="AGILITY" att2="CONSTITUTION" damage="1W1+0" skill="chains" speed="20" type="WEAPON">
-         <requires>
-            <attrreq attr="AGILITY" val="7"/>
-            <attrreq attr="CONSTITUTION" val="7"/>
-         </requires>
-         <features>
-            <feature type="ENCUMBRANT"/>
-         </features>
-      </weapon>
-   </item>
    <item avail="VILLAGE" cplx="U" id="peitsche" load="2" material="OTHER" price="100" robust="1" type="WEAPON">
       <weapon att1="AGILITY" att2="INTUITION" damage="1W10-2" skill="chains" speed="15" type="WEAPON">
          <requires>
@@ -192,7 +181,7 @@
             <attrreq attr="INTUITION" val="3"/>
          </requires>
          <features>
-            <feature type="DISTRACTING"/>
+            <feature level="1" type="DISTRACTING"/>
             <feature type="LONG_WEAPON"/>
             <feature level="3" type="PIERCING"/>
             <feature type="ENCUMBRANT"/>
@@ -227,7 +216,7 @@
             <attrreq attr="INTUITION" val="3"/>
          </requires>
          <features>
-            <feature type="DISTRACTING"/>
+            <feature level="1" type="DISTRACTING"/>
             <feature level="3" type="CRITICAL"/>
             <feature level="2" type="PIERCING"/>
             <feature type="FLEXIBLE"/>
