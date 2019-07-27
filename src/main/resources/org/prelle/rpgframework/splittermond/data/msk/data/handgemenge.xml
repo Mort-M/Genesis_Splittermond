@@ -53,7 +53,7 @@
             <attrreq attr="INTUITION" val="3"/>
          </requires>
          <features>
-            <feature type="DISTRACTING"/>
+            <feature level="1" type="DISTRACTING"/>
             <feature level="2" type="PIERCING"/>
          </features>
       </weapon>
