@@ -29,6 +29,8 @@ import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splimo.modifications.SpellModification;
 import org.prelle.splimo.requirements.Requirement;
 
+import de.rpgframework.core.BabylonEventBus;
+import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.genericrpg.modification.Modification;
 
 /**
@@ -59,14 +61,17 @@ public class SpellLevellerAndGenerator implements SpellController, GenerationEve
 		updateTokens();
 
 		// Fill with data from character
-		for (SpellValue val : model.getSpells()) {
+		for (SpellValue val : new ArrayList<SpellValue>(model.getSpells())) {
 			if (!val.wasFree())
 				continue;
 			// Find the lowest possible 
 			FreeSelection token = findLowestPossibleToken(val);
 			if (token==null) {
 				logger.warn("Character says "+val+" was free selected, but this is not possible");
-				throw new IllegalArgumentException("No possible free selection for "+val);
+//				throw new IllegalArgumentException("No possible free selection for "+val);
+				model.removeSpell(val);
+				BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 1, "Der Zauber '"+val.getSpell().getName()+" in "+val.getSkill().getName()+" hätte eigentlich nicht gewählt werden dürfen. Dieser Zauber wird entfernt.");
+				continue;
 			}
 			token.setUsedFor(val);
 			val.setFreeLevel(token.getLevel());
