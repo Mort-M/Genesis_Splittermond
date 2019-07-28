@@ -464,6 +464,7 @@
 
 	<creaturemodule id="enhanced_focus" type="TRAINING"
 		cost="2" multiple="true">
+		<attrmod attr="FOCUS" val="5" />
 		<requires>
 			<masterreq ref="animals/familiar_trainer1" />
 			<powerreq ref="animalfamiliar" />
