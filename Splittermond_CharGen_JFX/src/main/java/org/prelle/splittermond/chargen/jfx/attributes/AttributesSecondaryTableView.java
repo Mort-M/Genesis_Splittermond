@@ -7,11 +7,15 @@ import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
+import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXUtil;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Tooltip;
 
 /**
  * @author Stefan Prelle
@@ -63,6 +67,20 @@ public class AttributesSecondaryTableView extends TableView<AttributeValue> {
 		secNormal.setCellValueFactory( param-> new SimpleIntegerProperty(param.getValue().getDistributed()));
 		secMod.setCellValueFactory( param-> new SimpleIntegerProperty(param.getValue().getModifier()));
 		secValue.setCellValueFactory( param-> new SimpleIntegerProperty(param.getValue().getValue()));
+		
+		secMod.setCellFactory(col -> new TableCell<AttributeValue,Number>(){
+			@Override
+            protected void updateItem(Number item, boolean empty){
+				super.updateItem(item, empty);
+				if (empty) {
+					setGraphic(null);
+				} else {
+					Label lbl = new Label(String.valueOf(item));
+					lbl.setTooltip(new Tooltip(SpliMoCharGenJFXUtil.getModificationTooltip(this.getTableRow().getItem())));
+					setGraphic(lbl);
+				}
+            }
+		});
 	}
 
 	//-------------------------------------------------------------------
