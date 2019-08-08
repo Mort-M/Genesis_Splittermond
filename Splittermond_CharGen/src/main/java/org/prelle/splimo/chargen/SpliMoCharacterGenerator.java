@@ -633,7 +633,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 		if (attributes.getPointsLeft()>0) logger.debug("attributes.getPointsLeft() > 0");
 		if (powers.getPointsLeft()>0) logger.debug("powers.getPointsLeft() > 0");
 		if (resources.getPointsLeft()>0) logger.debug("resources.getPointsLeft() > 0");
-		if (skills.getPointsLeft()>0) logger.debug("skills.getPointsLeft() > 0");
+		if (skills.getPointsLeft()>0) logger.debug("skills.getPointsLeft() > 0 ("+skills.getPointsLeft()+")");
 
 		boolean result = (model.getName()!=null && model.getName().length()>0)
 				&& selectedRace!=null

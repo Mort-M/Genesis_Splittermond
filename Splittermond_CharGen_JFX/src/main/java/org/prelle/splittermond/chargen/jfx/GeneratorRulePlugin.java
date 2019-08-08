@@ -191,6 +191,7 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 			screen = new CharacterViewScreenSpliMo2(control, ViewMode.GENERATION, null);
 			manager.navigateTo(screen);
 			screen.startGeneration();
+			logger.info("-----------------return--------------------");
 
 			CommandResult result = new CommandResult(type, true);
 			result.setReturnValue(model);
