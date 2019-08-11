@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <!-- ###########################  Alchemika  ###########################-->
+  <!--Wirkungen fehlt -->
+  <item avail="SMALL_TOWN" cplx="U" id="kekoanokela" load="0" material="OTHER" price="3000" robust="0" type="POTION" />
+  <item avail="SMALL_TOWN" cplx="U" id="puhTakJuice" load="0" material="OTHER" price="1000" robust="0" type="POTION" />
+  <item avail="LARGE_TOWN" cplx="U" id="purpleBlowfishPoison" load="0" material="OTHER" price="3000" robust="0" type="POTION" />
+  <item avail="VILLAGE" cplx="U" id="taNiHalk" load="0" material="OTHER" price="500" robust="0" type="POTION" />
+  <item avail="LARGE_TOWN" cplx="U" id="deepVelvetSpore" load="0" material="OTHER" price="5000" robust="0" type="POTION" />
+  <item avail="VILLAGE" cplx="U" id="aulolaPollen" load="0" material="OTHER" price="500" robust="0" type="POTION" />
+  <item avail="VILLAGE" cplx="U" id="huulalaCactusThorn" load="0" material="OTHER" price="2500" robust="0" type="POTION" />
+</items>

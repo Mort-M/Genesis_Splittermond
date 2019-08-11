@@ -322,6 +322,14 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadNameTable(KESH, clazz.getResourceAsStream("kesh/data/nametable-keshabid.xml"), KESH.getResources(), KESH.getHelpResources());
 		SplitterMondCore.loadNameTable(KESH, clazz.getResourceAsStream("kesh/data/nametable-keshubim.xml"), KESH.getResources(), KESH.getHelpResources());
 		SplitterMondCore.loadNameTable(KESH, clazz.getResourceAsStream("kesh/data/nametable-turubar.xml"), KESH.getResources(), KESH.getHelpResources());
+
+		logger.info("START -------------------------------Mahaluu-------------------------------------------");
+		PluginSkeleton MAHA = new PluginSkeleton("Mahaluu", "Mahaluu");
+		SplitterMondCore.loadEquipment(MAHA, clazz.getResourceAsStream("mahaluu/data/equipment-mahaluu.xml"), MAHA.getResources(), MAHA.getHelpResources());
+		SplitterMondCore.loadEducations(MAHA, clazz.getResourceAsStream("mahaluu/data/educations-mahaluu.xml"), MAHA.getResources(), MAHA.getHelpResources());
+		SplitterMondCore.loadCreatures(MAHA, clazz.getResourceAsStream("mahaluu/data/creatures-mahaluu.xml"), MAHA.getResources(), MAHA.getHelpResources());
+		SplitterMondCore.loadNameTable(MAHA, clazz.getResourceAsStream("mahaluu/data/nametable-mahaluu.xml"), MAHA.getResources(), MAHA.getHelpResources());
+		
 		BasePluginData.flushMissingKeys();
 		logger.debug("STOP  Initialize");
 //		logger.fatal("Stop here");
