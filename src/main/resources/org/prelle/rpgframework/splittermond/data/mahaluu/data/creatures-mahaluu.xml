@@ -153,7 +153,12 @@
 			<creaturefeature type="CREATURE" level="6"/>
 			<creaturefeature type="WEAK"/>
 			<creaturefeature type="swarm" count="6" level="5"/>
-			<creaturefeature type="swarm_presence" level="2"/>
+			<creaturefeature type="swarm_presence" level="2">
+			  <modifies>
+			    <skillmod ref="naturemagic" value="3"/>
+			    <mastermod ref="melee/knock"/>
+			  </modifies>
+			</creaturefeature>
 		</features>
 	</creature>
 
@@ -206,7 +211,12 @@
 			<creaturefeature type="CREATURE" level="6"/>
 			<creaturefeature type="WEAK"/>
 			<creaturefeature type="swarm" count="6" level="5"/>
-			<creaturefeature type="swarm_presence" level="2"/>
+            <creaturefeature type="swarm_presence" level="2">
+              <modifies>
+                <skillmod ref="firemagic" value="3"/>
+                <mastermod ref="melee/knock"/>
+              </modifies>
+            </creaturefeature>
 		</features>
 	</creature>
 
@@ -261,7 +271,14 @@
 			<creaturefeature type="CREATURE" level="6"/>
 			<creaturefeature type="WEAK"/>
 			<creaturefeature type="swarm" count="6" level="5"/>
-			<creaturefeature type="swarm_presence" level="2"/>
+            <creaturefeature type="swarm_presence" level="2">
+              <modifies>
+                <skillmod ref="firemagic" value="3"/>
+                <spellmod>
+                  <spell spell="healing_rain" school="healmagic"/>
+                </spellmod>
+              </modifies>
+            </creaturefeature>
 		</features>
 	</creature>
 	
