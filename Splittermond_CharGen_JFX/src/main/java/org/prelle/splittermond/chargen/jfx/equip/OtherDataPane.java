@@ -1,5 +1,6 @@
 package org.prelle.splittermond.chargen.jfx.equip;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
@@ -37,6 +38,7 @@ public class OtherDataPane extends GridPane {
 	public OtherDataPane() {
 		initComponents();
 		initLayout();
+		initInteractivity();
 	}
 
 	//-------------------------------------------------------------------
@@ -95,6 +97,21 @@ public class OtherDataPane extends GridPane {
 		heaMaterial.getStyleClass().add("base");
 		heaPers1.getStyleClass().add("base");
 		heaPers2.getStyleClass().add("base");
+	}
+
+	//-------------------------------------------------------------------
+	private void updatePersonalizations() {
+		model.getPersonalizations().clear();
+		if (cbPersonal1.getValue()!=null)
+			model.getPersonalizations().add(cbPersonal1.getValue());
+		if (cbPersonal2.getValue()!=null)
+			model.getPersonalizations().add(cbPersonal2.getValue());
+	}
+
+	//-------------------------------------------------------------------
+	private void initInteractivity() {
+		cbPersonal1.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> updatePersonalizations());
+		cbPersonal2.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> updatePersonalizations());
 	}
 
 	//-------------------------------------------------------------------
