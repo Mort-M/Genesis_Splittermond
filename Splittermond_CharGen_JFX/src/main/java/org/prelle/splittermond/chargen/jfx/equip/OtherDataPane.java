@@ -112,6 +112,7 @@ public class OtherDataPane extends GridPane {
 	private void initInteractivity() {
 		cbPersonal1.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> updatePersonalizations());
 		cbPersonal2.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> updatePersonalizations());
+		cbMaterial.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> model.setMaterial(n));
 	}
 
 	//-------------------------------------------------------------------
