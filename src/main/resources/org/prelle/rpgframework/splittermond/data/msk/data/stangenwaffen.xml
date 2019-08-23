@@ -167,13 +167,14 @@
       </weapon>
    </item>
    <item avail="LARGE_TOWN" cplx="F" id="mondaxt" load="4" material="METAL" price="2000" robust="5" type="WEAPON">
-      <weapon att1="AGILITY" att2="STRENGTH" damage="2W10+2" skill="staffs" speed="12" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="2W10+3" skill="staffs" speed="13" type="WEAPON">
          <requires>
             <attrreq attr="AGILITY" val="2"/>
             <attrreq attr="STRENGTH" val="4"/>
          </requires>
          <features>
-            <feature type="DOUBLE_WEAPON"/>
+            <feature type="LONG_WEAPON"/>
+            <feature level="3" type="CRITICAL"/>
             <feature type="HEAVY"/>
             <feature type="TWO_HANDED"/>
          </features>
