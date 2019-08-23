@@ -1102,6 +1102,8 @@ public class SplitterMondCore {
 
 	//-------------------------------------------------------------------
 	private static void makeEquipmentUnlicensed(ItemTemplate tmp) {
+		if (tmp.getPlugin().getID().equals("CORE"))
+			return;
 		if (tmp.isType(ItemType.WEAPON)) {
 			if (tmp.getType(Weapon.class)==null) {
 				logger.error("Invalid XML data for "+tmp);
