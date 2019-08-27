@@ -18,6 +18,7 @@ module splittermond.data {
 	opens org.prelle.rpgframework.splittermond.data.suderinseln.data;
 	opens org.prelle.rpgframework.splittermond.data.kesh.data;
 	opens org.prelle.rpgframework.splittermond.data.mahaluu.data;
+	opens org.prelle.rpgframework.splittermond.data.badashan.data;
 
 	provides de.rpgframework.RulePlugin with org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 

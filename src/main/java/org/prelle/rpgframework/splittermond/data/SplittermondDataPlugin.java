@@ -329,6 +329,14 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEducations(MAHA, clazz.getResourceAsStream("mahaluu/data/educations-mahaluu.xml"), MAHA.getResources(), MAHA.getHelpResources());
 		SplitterMondCore.loadCreatures(MAHA, clazz.getResourceAsStream("mahaluu/data/creatures-mahaluu.xml"), MAHA.getResources(), MAHA.getHelpResources());
 		SplitterMondCore.loadNameTable(MAHA, clazz.getResourceAsStream("mahaluu/data/nametable-mahaluu.xml"), MAHA.getResources(), MAHA.getHelpResources());
+
+		logger.info("START -------------------------------Badashan------------------------------------------");
+		PluginSkeleton BAD = new PluginSkeleton("Badashan", "Badashan - Im Reich des Affengottes");
+		SplitterMondCore.loadEquipment(BAD, clazz.getResourceAsStream("badashan/data/equipment-badashan.xml"), BAD.getResources(), BAD.getHelpResources());
+		SplitterMondCore.loadEquipment(BAD, clazz.getResourceAsStream("badashan/data/alchemy-badashan.xml"), BAD.getResources(), BAD.getHelpResources());
+		SplitterMondCore.loadEducations(BAD, clazz.getResourceAsStream("badashan/data/educations-badashan.xml"), BAD.getResources(), BAD.getHelpResources());
+		SplitterMondCore.loadNameTable(BAD, clazz.getResourceAsStream("badashan/data/nametable-badashan.xml"), BAD.getResources(), BAD.getHelpResources());
+
 		
 		BasePluginData.flushMissingKeys();
 		logger.debug("STOP  Initialize");
