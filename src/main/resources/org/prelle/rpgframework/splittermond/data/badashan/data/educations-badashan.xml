@@ -45,7 +45,7 @@
             <skillmod ref="protectionmagic" value="3"/>
             <skillmod ref="combatmagic" value="1"/>
 
-            <mastermod spec="history/bloodJudge"/> <!-- müsste Geschichte und Mythen SP Blutrichter sein-->
+<!--            <mastermod spec="history/bloodJudge"/> <!-- müsste Geschichte und Mythen SP Blutrichter sein-->
             <selmod num="1">
                 <mastermod skilltype="MAGIC" level="1"/>
                 <mastermod skilltype="COMBAT" level="1"/>
@@ -76,12 +76,19 @@
           <skillmod ref="survival" value="3"/>
 		  <skillmod ref="endurance" value="2"/>
 		  <skillmod ref="antimagic" value="2"/>
- 			<selmod num="1">
-		          	<skillmod ref="windmagic" value="4"/>
-		          	<skillmod ref="stonemagic" value="4"/>
-		          	<skillmod ref="firemagic" value="4"/>
-		          	<skillmod ref="watermagic" value="4"/>
-			</selmod>		  
+          <selmod num="1">
+          	<powermod ref="friendearth"/>
+          	<powermod ref="friendfire"/>
+          	<powermod ref="friendghost"/>
+          	<powermod ref="friendgodservant"/>
+          	<powermod ref="friendlight"/>
+          	<powermod ref="friendair"/>
+          	<powermod ref="friendnature"/>
+          	<powermod ref="friendair"/>
+          	<powermod ref="friendshadow"/>
+          	<powermod ref="friendwater"/>
+          	<powermod ref="friendundead"/>
+          </selmod>		  
           <selmod num="1">
           	<mastermod skill="naturemagic" level="1"/>
           </selmod>
@@ -116,7 +123,19 @@
             <skillmod ref="insightmagic" value="4"/>
             <skillmod ref="protectionmagic" value="4"/>
             <mastermod ref="diplomacy/diplomat"/>
-            <mastermod ref="protectionmagic/protection_ghostcreature"/> <!-- Schutz vor Feenwesen -->
+            <selmod num="1">
+                <mastermod ref="protectionmagic/protection_bloodcreature"/>
+                <mastermod ref="protectionmagic/protection_stonecreature"/>
+                <mastermod ref="protectionmagic/protection_firecreature"/>
+                <mastermod ref="protectionmagic/protection_ghostcreature"/>
+                <mastermod ref="protectionmagic/protection_godservant"/>
+                <mastermod ref="protectionmagic/protection_lightcreature"/>
+                <mastermod ref="protectionmagic/protection_naturecreature"/>
+                <mastermod ref="protectionmagic/protection_shadowcreature"/>
+                <mastermod ref="protectionmagic/protection_watercreature"/>
+                <mastermod ref="protectionmagic/protection_creature_darkness"/>
+                <mastermod ref="protectionmagic/protection_windcreature"/>
+            </selmod>
         </modifications>
     </education>
 </educations>
