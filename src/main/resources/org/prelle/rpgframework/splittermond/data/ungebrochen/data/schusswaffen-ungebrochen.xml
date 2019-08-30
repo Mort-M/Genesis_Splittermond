@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <items>
-   <item avail="SMALL_TOWN" cplx="F" id="skefta_bow" load="3" material="WOOD" price="1220" robust="3" type="LONG_RANGE_WEAPON">
+   <item avail="SMALL_TOWN" cplx="F" id="skefta_bow" load="3" material="WOOD" price="1200" robust="3" type="LONG_RANGE_WEAPON">
       <rangeweapon att1="INTUITION" att2="STRENGTH" damage="1W10+3" range="30" skill="longrange" speed="7" type="LONG_RANGE_WEAPON">
          <requires>
             <attrreq attr="INTUITION" val="3"/>
