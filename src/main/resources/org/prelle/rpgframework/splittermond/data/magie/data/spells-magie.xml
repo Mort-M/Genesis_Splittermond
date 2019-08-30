@@ -1274,7 +1274,7 @@
         <enhancementtype>RANGE</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="gravebeast" diff="27" cost="16V4" castdur="10m" spelldur="1D" enh="2/+4V4">
+    <spell id="gravebeast" diff="27" cost="16V4" castdur="10m" range="TOUCH" spelldur="1D" enh="2/+4V4">
         <school skill="deathmagic" level="4" />
         <type>NECROMANCY</type>
         <enhancementtype>RELEASETIME</enhancementtype>
