@@ -53,8 +53,7 @@
             <attrreq attr="INTUITION" val="3"/>
          </requires>
          <features>
-            <feature level="1" type="DISTRACTING"/>
-            <feature level="2" type="PIERCING"/>
+            <feature level="1" type="DISTRACTING"/>            
          </features>
       </weapon>
    </item>
@@ -186,7 +185,7 @@
          </features>
       </weapon>
    </item>
-   <item avail="LARGE_TOWN" cplx="F" id="schuhsporn" load="0" material="METAL" price="300" robust="6" type="WEAPON">
+   <item avail="LARGE_TOWN" cplx="F" id="schuhsporn" load="0" material="METAL" price="1500" robust="6" type="WEAPON">
       <weapon att1="AGILITY" att2="INTUITION" damage="1W6" skill="melee" speed="6" type="WEAPON">
          <requires>
             <attrreq attr="AGILITY" val="2"/>
