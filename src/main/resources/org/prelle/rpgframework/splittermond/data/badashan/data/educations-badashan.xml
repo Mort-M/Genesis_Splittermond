@@ -45,7 +45,7 @@
             <skillmod ref="protectionmagic" value="3"/>
             <skillmod ref="combatmagic" value="1"/>
 
-<!--            <mastermod spec="history/bloodJudge"/> <!-- müsste Geschichte und Mythen SP Blutrichter sein-->
+              <mastermod spec="history/theme"/> 
             <selmod num="1">
                 <mastermod skilltype="MAGIC" level="1"/>
                 <mastermod skilltype="COMBAT" level="1"/>
@@ -102,7 +102,13 @@
         <modifications>
             <reqmod type="culture" ref="badashan"/>	
 
-            <powermod ref="literate"/> <!-- Müsste Erwählter der Feenwesen sein -->
+            <selmod><!-- Müsste Erwählter der Feenwesen sein -->
+             <powermod ref="friendearth"/> 
+             <powermod ref="friendfire"/> 
+             <powermod ref="friendwater"/> 
+             <powermod ref="frienwind"/> 
+            </selmod>
+
             <powermod ref="sensesocial"/>
 
             <selmod dist="2">

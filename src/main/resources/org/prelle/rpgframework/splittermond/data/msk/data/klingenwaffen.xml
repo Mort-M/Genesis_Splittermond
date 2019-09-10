@@ -99,7 +99,7 @@
       </weapon>
    </item>
    <item avail="SMALL_TOWN" cplx="G" id="gabeldolch" load="1" material="METAL" price="800" robust="7" type="WEAPON">
-      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6+1" skill="blades" speed="6" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6" skill="blades" speed="6" type="WEAPON">
          <requires>
             <attrreq attr="AGILITY" val="2"/>
             <attrreq attr="STRENGTH" val="2"/>
@@ -145,7 +145,7 @@
          </features>
       </weapon>
    </item>
-   <item avail="SMALL_TOWN" cplx="G" id="khopesh" load="2" material="METAL" price="600" robust="2" type="WEAPON">
+   <item avail="SMALL_TOWN" cplx="G" id="khopesh" load="2" material="METAL" price="600" robust="6" type="WEAPON">
       <weapon att1="AGILITY" att2="STRENGTH" damage="1W10+1" skill="blades" speed="7" type="WEAPON">
          <requires>
             <attrreq attr="AGILITY" val="2"/>
