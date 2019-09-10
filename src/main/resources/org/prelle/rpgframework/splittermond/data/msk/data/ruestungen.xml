@@ -93,7 +93,7 @@
          </features>
       </armor>
    </item>
-   <item avail="LARGE_TOWN" cplx="F" id="ketteschwer" load="4" material="METAL" price="1500" robust="6" type="ARMOR">
+   <item avail="SMALL_TOWN" cplx="F" id="ketteschwer" load="4" material="METAL" price="1500" robust="6" type="ARMOR">
       <armor def="3" dr="2" hc="3" tickMalus="2" type="ARMOR">
          <requires>
             <attrreq attr="STRENGTH" val="2"/>
