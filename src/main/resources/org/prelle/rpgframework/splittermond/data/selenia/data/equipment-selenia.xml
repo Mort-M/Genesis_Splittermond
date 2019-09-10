@@ -60,8 +60,8 @@
          </features>
       </weapon>
    </item>   
-   <item avail="LARGE_TOWN" cplx="F" id="dwarvenhammer" load="3" material="METAL" price="1100" robust="6" type="WEAPON">
-      <weapon att1="CONSTITUTION" att2="STRENGTH" damage="1W6+2" skill="slashing" speed="10" type="WEAPON">
+   <item avail="LARGE_TOWN" cplx="F" id="dwarvenhammer" load="3" material="METAL" price="1000" robust="6" type="WEAPON">
+      <weapon att1="CONSTITUTION" att2="STRENGTH" damage="1W10+3" skill="slashing" speed="10" type="WEAPON">
          <requires>
             <attrreq attr="CONSTITUTION" val="3"/>
             <attrreq attr="STRENGTH" val="2"/>
