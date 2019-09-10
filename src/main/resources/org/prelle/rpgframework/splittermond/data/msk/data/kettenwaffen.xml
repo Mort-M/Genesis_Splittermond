@@ -183,7 +183,7 @@
          <features>
             <feature level="1" type="DISTRACTING"/>
             <feature type="LONG_WEAPON"/>
-            <feature level="3" type="PIERCING"/>
+            <feature level="2" type="PIERCING"/>
             <feature type="ENCUMBRANT"/>
          </features>
       </weapon>
