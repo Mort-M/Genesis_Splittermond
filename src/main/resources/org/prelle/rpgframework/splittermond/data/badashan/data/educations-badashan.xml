@@ -106,7 +106,7 @@
              <powermod ref="friendearth"/> 
              <powermod ref="friendfire"/> 
              <powermod ref="friendwater"/> 
-             <powermod ref="frienwind"/> 
+             <powermod ref="friendair"/> 
             </selmod>
 
             <powermod ref="sensesocial"/>
