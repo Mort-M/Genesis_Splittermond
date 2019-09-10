@@ -18,10 +18,10 @@
    <item avail="CAPITAL" id="galanskefta" load="0" material="METAL" price="600" robust="0" type="PROJECTILE">
       <projectile type="PROJECTILE"/>
    </item>
-   <item avail="SMALL_TOWN" id="bleikugel" load="0" material="METAL" price="5" robust="0" type="PROJECTILE">
+   <item avail="SMALL_TOWN" id="bleikugel" load="0" material="METAL" price="30" robust="0" type="PROJECTILE">
       <projectile type="PROJECTILE"/>
    </item>
-   <item avail="LARGE_TOWN" id="brandkugel" load="0" material="METAL" price="1000" robust="0" type="PROJECTILE">
+   <item avail="LARGE_TOWN" id="brandkugel" load="0" material="METAL" price="500" robust="0" type="PROJECTILE">
       <projectile type="PROJECTILE"/>
    </item>
    <item avail="LARGE_TOWN" id="sprengkugel" load="0" material="METAL" price="1000" robust="0" type="PROJECTILE">
