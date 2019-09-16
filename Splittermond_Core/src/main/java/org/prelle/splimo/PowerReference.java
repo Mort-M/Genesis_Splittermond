@@ -71,7 +71,7 @@ public class PowerReference extends ModifyableImpl implements Comparable<PowerRe
 	public String toString() {
 		if (power!=null && power.canBeUsedMultipleTimes())
 			return String.valueOf(power)+" "+getModifiedCount()+" (mods="+modifications+")";
-		return String.valueOf(power)+" (mods="+modifications+")";
+		return String.valueOf(power);
 	}
 
 	//-------------------------------------------------------------------

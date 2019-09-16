@@ -113,7 +113,7 @@ public class SkillModification extends ModificationImpl {
 
 	//-------------------------------------------------------------------
 	public String toString() {
-		String sourceString = source != null ? " (" + source + ")" : "";
+//		String sourceString = source != null ? " (" + source + ")" : "";
 		
 		StringBuffer buf = new StringBuffer();
 		if (ref==null) {
@@ -148,7 +148,7 @@ public class SkillModification extends ModificationImpl {
 		} else {
 			buf.append(" and add "+value);
 		}
-		buf.append(sourceString);
+//		buf.append(sourceString);
 		return buf.toString();
 	}
 
