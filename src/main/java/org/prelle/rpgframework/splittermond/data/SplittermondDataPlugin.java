@@ -28,6 +28,8 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 
 	private static Logger logger = LogManager.getLogger("splittermond.data");
 
+	private static boolean alreadyInitialized = false;
+
 	//--------------------------------------------------------------------
 	public SplittermondDataPlugin() {
 	}
@@ -102,6 +104,9 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 	 */
 	@Override
 	public void init() {
+		if (alreadyInitialized)
+			return;
+		alreadyInitialized = true;
 		logger.info("START -------------------------------Core-----------------------------------------------");
 		PluginSkeleton CORE = new PluginSkeleton("CORE", "Splittermond Core Rules");
 		Class<SplittermondDataPlugin> clazz = SplittermondDataPlugin.class;
