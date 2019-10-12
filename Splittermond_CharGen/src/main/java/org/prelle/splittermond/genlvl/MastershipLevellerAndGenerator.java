@@ -615,7 +615,7 @@ public class MastershipLevellerAndGenerator implements MastershipController, Gen
 		}
 
 		// Does character fulfill skill requirement
-		if (data.getSkillPoints(master.getSkill())< (master.getLevel()*3)+3) {
+		if (data.getSkillValue(master.getSkill()).getPoints()< (master.getLevel()*3)+3) {
 //			if (logger.isTraceEnabled())
 //				logger.trace("cannot select "+skill+": value ("+data.getSkillPoints(skill)+" not met and no free selections)");
 			return false;
