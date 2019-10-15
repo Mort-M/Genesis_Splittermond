@@ -14,7 +14,7 @@
         </selreq>
     </requires>
   </spell>
-  <spell id="bless_earth" diff="24" cost="K12V3" castdur="10M" range="5m" spelldur="1D" enh="2/+3V3"> 
+  <spell id="bless_earth" diff="24" cost="K12V3" castdur="10m" range="5m" spelldur="1D" enh="2/+3V3">
     <school skill="fatemagic" level="3"/>
     <type>DIVINE</type>
     <type>BLESSING</type>
@@ -30,7 +30,7 @@
         </selreq>
     </requires>
   </spell>
-  <spell id="foreign_tongues" diff="24" cost="K12V3" castdur="5M" range="CASTER" spelldur="K" enh="1/+K3V3"> 
+  <spell id="foreign_tongues" diff="24" cost="K12V3" castdur="5m" range="CASTER" spelldur="K" enh="1/+K3V3">
     <school skill="insightmagic" level="3"/>
     <school skill="enhancemagic" level="4"/>
     <type>COMMUNICATION</type>
@@ -120,7 +120,7 @@
         </selreq>
      </requires>
    </spell>
-   <spell id="divine_touch" diff="27" cost="K16V4" castdur="15M" range="TOUCH" spelldur="K" enh="2/+K4V4"> 
+   <spell id="divine_touch" diff="27" cost="K16V4" castdur="15m" range="TOUCH" spelldur="K" enh="2/+K4V4">
      <school skill="fatemagic" level="4"/>
      <school skill="transformationmagic" level="5"/>
      <type>DIVINE</type>
@@ -136,7 +136,7 @@
         </selreq>
      </requires>
    </spell>
-   <spell id="divine_talisman" diff="27" cost="16V4" castdur="15M" range="CASTER" spelldur="1h" enh="2/+4V4"> 
+   <spell id="divine_talisman" diff="27" cost="16V4" castdur="15m" range="CASTER" spelldur="1h" enh="2/+4V4">
      <school skill="fatemagic" level="4"/>     
      <type>DIVINE</type>
      <type>SUMMON</type>
@@ -230,7 +230,7 @@
         </selreq>
      </requires>
    </spell>
-   <spell id="bless_home" diff="24" cost="K12V3" castdur="30M" range="TOUCH" spelldur="7D" enh="1/+K3V3"> 
+   <spell id="bless_home" diff="24" cost="K12V3" castdur="30m" range="TOUCH" spelldur="7D" enh="1/+K3V3">
      <school skill="protectionmagic" level="3"/>
      <school skill="fatemagic" level="4"/>
      <type>PROTECTIONFIELD</type>
@@ -242,7 +242,7 @@
      <enhancementtype>EFFECT_RANGE</enhancementtype>
      <enhancementtype>SPELLDURATION</enhancementtype>
    </spell>
-   <spell id="major_consecration" diff="27" cost="16V4" castdur="5M" range="TOUCH" spelldur="6h" enh="2/+4V4"> 
+   <spell id="major_consecration" diff="27" cost="16V4" castdur="5m" range="TOUCH" spelldur="6h" enh="2/+4V4">
      <school skill="fatemagic" level="4"/>
      <type>OBJECT</type>
      <type>BLESSING</type>
@@ -258,7 +258,7 @@
         </selreq>
      </requires>
    </spell>
-   <spell id="grasp_danger" diff="24" cost="12V3" castdur="8M" range="CASTER" spelldur="7D" enh="2/+3V3"> 
+   <spell id="grasp_danger" diff="24" cost="12V3" castdur="8m" range="CASTER" spelldur="7D" enh="2/+3V3">
      <school skill="insightmagic" level="2"/>
      <school skill="fatemagic" level="3"/>
      <type>PERCEPTION</type>
