@@ -6,10 +6,28 @@ pipelines:
         caches:
           - maven
         script:
-          - openssl aes-256-cbc -pass pass:$OPENSSL_PWD -in private-key.gpg.enc -out private-key.gpg -d
-          - gpg --import --no-tty --batch --yes private-key.gpg
-          - mvn -f Splittermond_Core        -s settings.xml -B -U deploy -DskipTests=true -Dgpg.skip
-          - mvn -f Splittermond_CharGen     -s settings.xml -B deploy -DskipTests=true -Dgpg.skip
-          - mvn -f Splittermond_CharGen_JFX -s settings.xml -B deploy -Dgpg.skip
-          - mvn -f Splittermond_BBCode      -s settings_bbcode.xml -B deploy  -Dgpg.skip
-#          - mvn -f Splittermond_BBCode      -s settings_bbcode.xml -B deploy -DaltDeploymentRepository=ossrh::default::https://oss.sonatype.org/service/local/staging/deploy/maven2
+          - mvn -B -U -s settings.xml deploy -DskipTests=true
+#          - curl -X POST "https://${BB_AUTH_STRING}@api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"Space1889_Plugin/target/space1889-2.0.0-SNAPSHOT.jar"
+    - step:
+        name: Deploy to Development
+        deployment: Development
+        caches:
+          - maven
+        script:
+          - mvn -B -U -s settings.xml deploy -DskipTests=true -P Development
+    - step:
+       name: Deploy to Staging
+       deployment: Staging
+       trigger: manual
+       caches:
+          - maven
+       script:
+         - mvn -B -U -s settings.xml deploy -DskipTests=true -P Staging
+    - step:
+       name: Deploy to Production
+       deployment: Production
+       trigger: manual
+       caches:
+          - maven
+       script:
+         - mvn -B -U -s settings.xml deploy -DskipTests=true -P Production

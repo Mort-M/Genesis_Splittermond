@@ -2,59 +2,88 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0   https://maven.apache.org/xsd/settings-1.0.0.xsd">
 	<servers>
-<!-- 		<server> -->
-<!-- 			<id>ossrh</id> -->
-<!-- 			<username>${env.OSSRH_USER_TOKEN}</username> -->
-<!-- 			<password>${env.OSSRH_PWD_TOKEN}</password> -->
-<!-- 		</server> -->
 		<server>
-			<id>releases</id>
-			<username>${env.ARTIFACTORY_USER_TOKEN}</username>
-			<password>${env.ARTIFACTORY_PWD_TOKEN}</password>
+			<id>ossrh</id>
+			<username>${env.OSSRH_USER_TOKEN}</username>
+			<password>${env.OSSRH_PWD_TOKEN}</password>
 		</server>
 		<server>
-			<id>snapshots</id>
-			<username>${env.ARTIFACTORY_USER_TOKEN}</username>
-			<password>${env.ARTIFACTORY_PWD_TOKEN}</password>
+			<id>google</id>
+			<username>${env.GCLOUD_USER_TOKEN}</username>
+			<password>${env.GCLOUD_PWD_TOKEN}</password>
+		</server>
+		<server>
+			<id>rpgframework</id>
+ 			<username>${env.BB_USER_TOKEN}</username>
+ 			<password>${env.BB_PWD_TOKEN}</password>
+<!-- 			<privateKey></privateKey> -->
+			<configuration>
+			     <strictHostKeyChecking>no</strictHostKeyChecking>
+           <interactive>false</interactive> 
+			 <!--hostkey>www.rpgframework.de ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzeiNcfCKWv3HnwFMGkecxLZ2+kwvGATZdLxagJJGuw9YyKS4HvFbfCGOgj4sycIGV3ctDAP7IEVWCB0E6YkwvWKqN47KFUrfvy/TSy1iny9H6Ax6Id5IZyMc4ntNTcM7C4A400DhvnjELYdk0Ghop7V6dDt56+oKdW2m+xvjyY4F8+vu0yKqkUXD0le7POY84q+qBEbQP8iNA9ntqvJ1yuHANP6HaAwGKv6zo48GgoS3ypWFn2xLF3GTwKp3CWoWdA7MLsuDql8W7iNLdgI+8LY9pIAPZ7GazmtA/xwGOuidgmjE/WDtg3Cp+kK1fRpOIV7rJtGD+FEwyY02hIJpl</hostkey-->
+			</configuration>
 		</server>
         <server>
-            <id>google</id>
-            <username>${env.GCLOUD_USER_TOKEN}</username>
-            <password>${env.GCLOUD_PWD_TOKEN}</password>
+            <id>github</id>
+            <username>${env.GITHUB_USER_TOKEN}</username>
+            <password>${env.GITHUB_PWD_TOKEN}</password>
         </server>
 	</servers>
+
 	<profiles>
 		<profile>
+			<id>Development</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<gpg.keyname>${env.GPG_KEY}</gpg.keyname>
-				<gpg.passphrase>${env.GPG_PWD}</gpg.passphrase>
+				<deploymentServer>www.rpgframework.de</deploymentServer>
+				<deploymentPath>/var/www/html/plugins/development</deploymentPath>
 			</properties>
 			<repositories>
-				<repository>
-					<id>ossrh</id>
-					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-					<releases>
-						<enabled>false</enabled>
-					</releases>
-				</repository>
 <!-- 				<repository> -->
-<!-- 					<id>snapshots</id> -->
-<!-- 					<url>http://repository.rpgframework.de:8081/artifactory/libs-snapshot</url> -->
+<!-- 					<id>github</id> -->
+<!-- 					<name>GitHub Taranion Apache Maven Packages</name> -->
+<!-- 					<url>https://maven.pkg.github.com/taranion/rpgframework</url> -->
 <!-- 					<releases> -->
-<!-- 						<enabled>false</enabled> -->
+<!-- 						<enabled>true</enabled> -->
 <!-- 					</releases> -->
-<!-- 				</repository> -->
-<!-- 				<repository> -->
-<!-- 					<id>releases</id> -->
-<!-- 					<url>http://repository.rpgframework.de:8081/artifactory/libs-release</url> -->
 <!-- 					<snapshots> -->
 <!-- 						<enabled>false</enabled> -->
 <!-- 					</snapshots> -->
 <!-- 				</repository> -->
+
+				<repository>
+					<id>google</id>
+					<url>http://rpgframework-maven-repository.appspot.com/</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
 			</repositories>
+		</profile>
+		<profile>
+			<id>Staging</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<deploymentServer>www.rpgframework.de</deploymentServer>
+				<deploymentPath>/var/www/html/plugins/staging</deploymentPath>
+			</properties>
+		</profile>
+		<profile>
+			<id>Production</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<deploymentServer>www.rpgframework.de</deploymentServer>
+				<deploymentPath>/var/www/html/plugins/release</deploymentPath>
+			</properties>
 		</profile>
 	</profiles>
 </settings>
