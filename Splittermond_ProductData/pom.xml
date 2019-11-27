@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.prelle.rpgframework</groupId>
+		<artifactId>splittermond-all</artifactId>
+             <version>2.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>space1889-productdata</artifactId>
+	<name>Space 1889 ProductData</name>
+	<description>Adventure modules released for Space 1889</description>
+
+	<properties>
+		<maven.install.skip>true</maven.install.skip>
+		<maven.deploy.skip>false</maven.deploy.skip>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>de.rpgframework</groupId>
+			<artifactId>babylon</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>de.rpgframework</groupId>
+			<artifactId>babylon-charrules</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>de.rpgframework</groupId>
+			<artifactId>rpgframework-api</artifactId>
+			<version>[3.0.0-SNAPSHOT,3.99.99)</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>scp</id>
+						<phase>deploy</phase>
+						<configuration>
+							<tasks>
+								<scp
+									todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}"
+									sftp="true" failonerror="true" trust="true" verbose="true">
+									<fileset dir="target">
+										<include name="*.jar" />
+									</fileset>
+								</scp>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant-jsch</artifactId>
+						<version>1.9.4</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+</project>
