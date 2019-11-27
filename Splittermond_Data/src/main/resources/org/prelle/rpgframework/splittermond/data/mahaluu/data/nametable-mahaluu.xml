@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nametable culture="mahaluu">
+  <maleFirstNames>
+    <entry>Aikawaku</entry>
+    <entry>Avan(t)ui</entry>
+    <entry>Buokko</entry>
+    <entry>Dawauntuan</entry>
+    <entry>Ewokko</entry>
+    <entry>Fai-Huaka</entry>
+    <entry>Hereanohu</entry>
+    <entry>Hunaka</entry>
+    <entry>Ikepo</entry>
+    <entry>Kanunukamea</entry>
+    <entry>Kelimakalani</entry>
+    <entry>Keyavu</entry>
+    <entry>Lolomele (irrer Gesang)</entry>
+    <entry>Makanawai (Geschenk des Meeres)</entry>
+    <entry>Malatau</entry>
+    <entry>Mauakoa (immer Krieger)</entry>
+    <entry>Naiamaunu (lockt Delfine)</entry>
+    <entry>Nokepo-Nokela (Tag und Nacht)</entry>
+    <entry>Oyavu(mea)</entry>
+    <entry>Tahaitane (Mann mit langem Speer)</entry>
+    <entry>Tauwalui</entry>
+    <entry>Tokko</entry>
+    <entry>Ulumalani</entry>
+    <entry>Waowaia(vu)</entry>
+    <entry>Wikihonu (schnelle Schildkröte)</entry>
+    <entry>Yuaku</entry>
+  </maleFirstNames>
+  <femaleFirstNames>
+    <entry>Amuenue (Regenbogen)</entry>
+    <entry>Aulola</entry>
+    <entry>Bunulaua</entry>
+    <entry>Daulauai</entry>
+    <entry>Eke-He,</entry>
+    <entry>Fai-Wele</entry>
+    <entry>Hoanaia</entry>
+    <entry>Imilaua</entry>
+    <entry>Kaleahina (Frau, hell wie der Mond)</entry>
+    <entry>Kekoanohea (Beschützerin der Schönheit)</entry>
+    <entry>Kiki-He</entry>
+    <entry>Kuaulaua</entry>
+    <entry>Leolavaia</entry>
+    <entry>Mialauai</entry>
+    <entry>Moanaroha</entry>
+    <entry>Nenewiwi (dürrer Vogel)</entry>
+    <entry>Nunokali (Ich begehre)</entry>
+    <entry>Oaua</entry>
+    <entry>Ralaoala</entry>
+    <entry>Teke-Wana</entry>
+    <entry>Tikilaua</entry>
+    <entry>Unalohea</entry>
+    <entry>Wahinakunu (Lehrfrau)</entry>
+    <entry>Wiwi-Wana</entry>
+    <entry>Yulawaia</entry>
+  </femaleFirstNames>
+  <lastNames>
+    <entry>Algenstoßer</entry>
+    <entry>Blütentänzer</entry>
+    <entry>Dünenmöwen</entry>
+    <entry>Erpelschmauser</entry>
+    <entry>Flutträumer</entry>
+    <entry>Glänzende Federn</entry>
+    <entry>Jungtukane</entry>
+    <entry>Korallenkinder</entry>
+    <entry>Lapislazuli</entry>
+    <entry>Malatakaia</entry>
+    <entry>Meer-im-Herz</entry>
+    <entry>Muschelrausch</entry>
+    <entry>Nachtmangos</entry>
+    <entry>Rotfeuerschweif</entry>
+    <entry>Sand-im-Haar</entry>
+    <entry>Sternschiff</entry>
+    <entry>Taumeltrommler</entry>
+    <entry>Welle-Rauscht-Welle-Schläft</entry>
+    <entry>Wogenaugen</entry>
+    <entry>Zwitschermuscheln</entry>
+  </lastNames>
+</nametable>

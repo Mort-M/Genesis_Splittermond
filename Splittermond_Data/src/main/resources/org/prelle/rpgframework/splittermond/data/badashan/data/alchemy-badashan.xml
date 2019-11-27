@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item id="cankav" avail="VILLAGE" price="100" load="0" robust="0" type="POTION" />
+  <item id="blackRaja" avail="VILLAGE" price="100" load="0" robust="0" type="POTION" />
+  <item id="jivasami" avail="LARGE_TOWN" price="2500" load="0" robust="0" type="POTION" />
+  <item id="henna" avail="VILLAGE" price="500" load="0" robust="0" type="POTION" />
+</items>

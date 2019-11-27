@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<creaturemodules>
+	<creaturemodule id="distract" type="TRAINING" cost="1">
+		<requires>
+			<masterreq ref="animals/dompteur" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="wreak_havok" type="TRAINING">
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+			<creatmodreq ref="distract" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="big_tricks1" type="TRAINING"
+		multiple="true" cost="1">
+		<selmod>
+			<allofmod>
+				<mastermod level="1" />
+				<mastermod level="1" />
+			</allofmod>
+			<mastermod level="2" />
+		</selmod>
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+			<creatmodreq ref="distract" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="big_tricks2" type="TRAINING"
+		multiple="true" cost="1">
+		<mastermod level="3" />
+		<requires>
+			<masterreq ref="animals/master_tamer" />
+			<creatmodreq ref="distract" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="stabilized" type="TRAINING"
+		multiple="true" cost="1">
+		<selmod>
+			<creaturefeaturemod feature="TACTICIAN" />
+			<creaturefeaturemod feature="uncontrollable" />
+			<creaturefeaturemod remove="true" feature="COWARD" />
+		</selmod>
+		<skillmod ref="determination" value="2" />
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="basic_messenger" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/dompteur" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="basic_thief" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/dompteur" />
+			<skillreq ref="dexterity" value="1" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="basic_hoarder" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/dompteur" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="basic_combatcomp" type="TRAINING"
+		cost="1">
+		<creaturefeaturemod remove="true" feature="COWARD" />
+		<requires>
+			<masterreq ref="animals/dompteur" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="basic_scout" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/dompteur" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="basic_hunter" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/dompteur" />
+			<skillreq ref="hunting" value="1" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="basic_mount1" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/dompteur" />
+			<creattypereq type="MOUNT" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="basic_goodnose" type="TRAINING"
+		multiple="true" cost="1">
+		<requires>
+			<masterreq ref="animals/dompteur" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="basic_guard" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/dompteur" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="sanatory" type="TRAINING" cost="1">
+		<selmod>
+			<creaturefeaturemod feature="TACTICIAN" />
+			<creaturefeaturemod feature="uncontrollable" />
+			<creaturefeaturemod remove="true" feature="COWARD" />
+		</selmod>
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+			<selreq>
+				<skillreq ref="enhancemagic" value="1" />
+				<skillreq ref="healmagic" value="1" />
+			</selreq>
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="helper_empath" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+			<skillreq ref="empathy" value="1" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="helper_lucky_charm" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+			<selreq>
+				<skillreq ref="performance" value="1" />
+				<skillreq ref="dexterity" value="1" />
+			</selreq>
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="helper_healer" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+			<selreq>
+				<skillreq ref="performance" value="1" />
+				<creatmodreq ref="helper_empath" />
+			</selreq>
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="helper_hunter" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+			<creatmodreq ref="basic_hunter" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="helper_artist" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+			<skillreq ref="performance" value="1" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="helper_prestige" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="helper_mount" type="TRAINING"
+		cost="1">
+		<attrmod attr="SPEED" val="1" />
+		<skillmod ref="athletics" value="3" />
+		<mastermod skill="athletics" level="2" />
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+			<creatmodreq ref="basic_mount1" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="helper_scoundrel" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="helper_scout" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="helper_stable_mind" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="hunting_pair" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/dompteur" />
+			<skillreq ref="hunting" value="1" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="feat" type="TRAINING" cost="0"
+		multiple="true">
+		<requires>
+			<masterreq ref="animals/dompteur" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="loyal" type="TRAINING" cost="0">
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="reassuring" type="TRAINING" cost="1">
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="trained" type="TRAINING" cost="0">
+		<requires>
+			<masterreq ref="animals/dompteur" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="firm_mind" type="TRAINING" cost="1">
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+			<creatmodreq ref="helper_stable_mind" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="enhanced_skill" type="TRAINING"
+		cost="1">
+		<skillmod type="NORMAL" restrict="MUST_EXIST" value="3" />
+		<skillmod type="NORMAL" restrict="MUST_EXIST" value="3" />
+		<skillmod type="NORMAL" restrict="MUST_EXIST" value="2" />
+		<requires>
+			<masterreq ref="animals/beastmaster" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="runner" type="TRAINING" cost="1">
+		<attrmod attr="SPEED" val="3" />
+		<creaturefeaturemod feature="RESIST_EXHAUSTION" />
+		<requires>
+			<masterreq ref="animals/dompteur" />
+			<creatmodreq ref="basic_mount1" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="war_horse" type="TRAINING" cost="1">
+		<requires>
+			<masterreq ref="animals/dompteur" />
+			<creatmodreq ref="basic_mount1" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="palfrey" type="TRAINING" cost="1">
+		<creaturefeaturemod feature="RESIST_EXHAUSTION"
+			level="+1" />
+		<requires>
+			<masterreq ref="animals/dompteur" />
+			<creatmodreq ref="basic_mount1" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="attacker" type="TRAINING" cost="1">
+		<skillmod ref="melee" value="2" />
+		<damagemod damage="1" />
+		<itemfeaturemod feature="CRITICAL" level="1" />
+		<requires>
+			<masterreq ref="animals/combat_trainer2" />
+			<creatmodreq ref="fighter" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="menacing_defender" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/combat_trainer2" />
+			<creatmodreq ref="basic_combatcomp" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="bombard" type="TRAINING" cost="1">
+		<requires>
+			<masterreq ref="animals/combat_trainer1" />
+			<creatmodreq ref="basic_combatcomp" />
+			<creatfeatreq ref="FLYING" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="terrifying_roar" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/combat_trainer2" />
+			<creatmodreq ref="basic_combatcomp" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="terrifying_growl" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/combat_trainer2" />
+			<creatmodreq ref="basic_combatcomp" />
+			<attrreq attr="SIZE" val="4" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="easy_to_lead" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/combat_trainer1" />
+			<creatmodreq ref="basic_combatcomp" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="keep_in_check" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/combat_trainer1" />
+			<creatmodreq ref="basic_combatcomp" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="fighter" type="TRAINING" cost="1">
+		<attrmod attr="DEFENSE" val="2" />
+		<attrmod attr="BODYRESIST" val="2" />
+		<attrmod attr="MINDRESIST" val="2" />
+		<mastermod skill="melee" />
+		<skillmod ref="melee" value="3" />
+		<damagemod damage="1" />
+		<itemfeaturemod feature="CRITICAL" level="1" />
+		<requires>
+			<masterreq ref="animals/combat_trainer1" />
+			<creatmodreq ref="basic_combatcomp" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="fighter2" type="TRAINING" cost="1">
+		<attrmod attr="DEFENSE" val="2" />
+		<attrmod attr="BODYRESIST" val="2" />
+		<attrmod attr="MINDRESIST" val="2" />
+		<mastermod skill="melee" />
+		<skillmod ref="melee" value="3" />
+		<damagemod damage="1" />
+		<itemfeaturemod feature="CRITICAL" level="1" />
+		<requires>
+			<masterreq ref="animals/combat_trainer2" />
+			<creatmodreq ref="fighter" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="fighter3" type="TRAINING" cost="1">
+		<attrmod attr="DEFENSE" val="2" />
+		<attrmod attr="BODYRESIST" val="2" />
+		<attrmod attr="MINDRESIST" val="2" />
+		<mastermod skill="melee" />
+		<skillmod ref="melee" value="3" />
+		<damagemod damage="1" />
+		<itemfeaturemod feature="CRITICAL" level="1" />
+		<requires>
+			<masterreq ref="animals/master_tamer" />
+			<creatmodreq ref="fighter2" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="fighter4" type="TRAINING" cost="1">
+		<attrmod attr="DEFENSE" val="2" />
+		<attrmod attr="BODYRESIST" val="2" />
+		<attrmod attr="MINDRESIST" val="2" />
+		<mastermod skill="melee" />
+		<skillmod ref="melee" value="3" />
+		<damagemod damage="1" />
+		<itemfeaturemod feature="CRITICAL" level="1" />
+		<requires>
+			<masterreq ref="animals/lord_of_the_beasts" />
+			<creatmodreq ref="fighter3" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="supporter" type="TRAINING" cost="1">
+		<requires>
+			<masterreq ref="animals/combat_trainer2" />
+			<creatmodreq ref="basic_combatcomp" />
+		</requires>
+	</creaturemodule>
+
+
+	<creaturemodule id="arcane_tie" type="TRAINING" cost="1">
+		<requires>
+			<masterreq ref="animals/familiar_trainer1" />
+			<powerreq ref="animalfamiliar" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="arcane_tie2" type="TRAINING"
+		cost="0">
+		<requires>
+			<masterreq ref="animals/familiar_trainer2" />
+			<creatmodreq ref="arcane_tie" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="arcane_range" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/familiar_trainer1" />
+			<creatmodreq ref="arcane_tie" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="arcane_stability" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/familiar_trainer2" />
+			<masterreq ref="animals/master_tamer" />
+			<creatmodreq ref="arcane_tie" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="arcane_connection" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/familiar_trainer1" />
+			<creatmodreq ref="arcane_tie" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="advisor" type="TRAINING" cost="1">
+		<requires>
+			<masterreq ref="animals/familiar_trainer2" />
+			<powerreq ref="animalfamiliar" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="enhanced_focus" type="TRAINING"
+		cost="2" multiple="true">
+		<attrmod attr="FOCUS" val="5" />
+		<requires>
+			<masterreq ref="animals/familiar_trainer1" />
+			<powerreq ref="animalfamiliar" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="fairyfamiliar" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/familiar_trainer2" />
+			<powerreq ref="animalfamiliar" />
+			<creattypereq type="FAIRY" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="blessed_animal" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/familiar_trainer2" />
+			<creatmodreq ref="arcane_tie" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="protecting_connection"
+		type="TRAINING" cost="1">
+		<requires>
+			<masterreq ref="animals/familiar_trainer2" />
+			<creatmodreq ref="arcane_tie" />
+			<creatfeatreq ref="resist_damage" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="strong_aura" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/familiar_trainer2" />
+			<creatmodreq ref="arcane_tie" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="bracing_connection" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/familiar_trainer1" />
+			<creatmodreq ref="arcane_tie" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="cloaking" type="TRAINING" cost="1">
+		<requires>
+			<masterreq ref="animals/familiar_trainer2" />
+			<powerreq ref="animalfamiliar" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="spellbridge" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/familiar_trainer2" />
+			<powerreq ref="animalfamiliar" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="sense_spells" type="TRAINING"
+		cost="1">
+		<requires>
+			<masterreq ref="animals/familiar_trainer1" />
+			<powerreq ref="animalfamiliar" />
+		</requires>
+	</creaturemodule>
+
+	<creaturemodule id="spell_lore" type="TRAINING" cost="1">
+		<requires>
+			<powerreq ref="animalfamiliar" />
+		</requires>
+	</creaturemodule>
+
+</creaturemodules>
+

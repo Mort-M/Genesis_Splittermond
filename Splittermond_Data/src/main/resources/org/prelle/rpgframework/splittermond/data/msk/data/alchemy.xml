@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="CAPITAL" cplx="F" id="alchemistenkoffer" load="3" material="OTHER" price="3000" robust="3" skill="alchemy" type="POTION"/>
+   <item avail="SMALL_TOWN" cplx="F" id="alchemistenhandschuhe" load="1" material="OTHER" price="1000" robust="1" type="POTION"/>
+   <item avail="SMALL_TOWN" cplx="F" id="alchemistenschürze" load="3" material="LEATHER" price="200" robust="3" type="POTION"/>
+   <item avail="CAPITAL" cplx="F" id="atemmaske" load="2" material="OTHER" price="500" robust="3" type="POTION"/>
+   <item avail="SMALL_TOWN" cplx="G" id="glasphiole" load="0" material="OTHER" price="100" robust="0" type="POTION"/>
+   <item avail="VILLAGE" cplx="G" id="öl05l" load="1" material="OTHER" price="20" robust="0" type="POTION"/>
+</items>

@@ -1,0 +1,1328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<creaturemodules>
+  <creaturemodule id="agile" type="BASE">
+    <attrmod attr="CHARISMA"     	val="2"/>
+    <attrmod attr="AGILITY"      	val="4"/>
+    <attrmod attr="INTUITION"    	val="2"/>
+    <attrmod attr="CONSTITUTION" 	val="2"/>
+    <attrmod attr="MYSTIC"       	val="0"/>
+    <attrmod attr="STRENGTH"     	val="1"/>
+    <attrmod attr="MIND"         	val="1"/>
+    <attrmod attr="WILLPOWER"    	val="1"/>
+    
+    <attrmod attr="SIZE"         	val="3"/>
+    <attrmod attr="SPEED"        	val="7"/>
+    <attrmod attr="LIFE"         	val="5"/>
+    <attrmod attr="FOCUS"        	val="2"/>
+    <attrmod attr="DEFENSE"      	val="15"/>
+    <attrmod attr="DAMAGE_REDUCTION" val="0"/>
+    <attrmod attr="BODYRESIST"   	val="14"/>
+    <attrmod attr="MINDRESIST"   	val="14"/>
+    
+    <itemmod attr="INITIATIVE" val="7"/>
+
+    <skillmod ref="acrobatics"		value="9" />
+    <skillmod ref="athletics"		value="8" />
+    <skillmod ref="determination" 	value="4" />
+    <skillmod ref="stealth"			value="8" />
+    <skillmod ref="perception"		value="6" />
+    <skillmod ref="endurance" 		value="5" />
+    <skillmod ref="melee"			value="4" />
+    
+    <creaturefeaturemod feature="COWARD"/>
+    <creaturefeaturemod feature="WEAK"/>
+    
+  </creaturemodule>
+  
+  <creaturemodule id="fast" type="BASE">
+    <attrmod attr="CHARISMA"		val="2"/>
+    <attrmod attr="AGILITY"			val="3"/>
+    <attrmod attr="INTUITION"		val="3"/>
+    <attrmod attr="CONSTITUTION"	val="1"/>
+    <attrmod attr="MYSTIC"			val="0"/>
+    <attrmod attr="STRENGTH" 		val="1"/>
+    <attrmod attr="MIND"			val="1"/>
+    <attrmod attr="WILLPOWER"		val="1"/>
+    
+    <attrmod attr="SIZE"			val="3"/>
+    <attrmod attr="SPEED"			val="9"/>
+    <attrmod attr="LIFE"			val="4"/>
+    <attrmod attr="FOCUS"			val="2"/>
+    <attrmod attr="DEFENSE"      	val="15"/>
+    <attrmod attr="DAMAGE_REDUCTION" val="0"/>
+    <attrmod attr="BODYRESIST"   	val="13"/>
+    <attrmod attr="MINDRESIST"   	val="13"/>
+    
+    <itemmod attr="INITIATIVE" val="7"/>
+    
+    <skillmod ref="acrobatics" 		value="8" />
+    <skillmod ref="athletics"  		value="7" />
+    <skillmod ref="determination" 	value="4" />
+    <skillmod ref="stealth"    		value="8" />
+    <skillmod ref="perception" 		value="7" />
+    <skillmod ref="endurance"  		value="6" />
+    <skillmod ref="melee"		value="4" /> 
+    
+    <creaturefeaturemod feature="COWARD"/>
+    <creaturefeaturemod feature="WEAK"/> 
+  </creaturemodule>
+  
+  <creaturemodule id="tough" type="BASE">
+    <attrmod attr="CHARISMA" 		val="2"/>
+    <attrmod attr="AGILITY" 		val="2"/>
+    <attrmod attr="INTUITION" 		val="2"/>
+    <attrmod attr="CONSTITUTION"	val="3"/>
+    <attrmod attr="MYSTIC" 			val="0"/>
+    <attrmod attr="STRENGTH"		val="2"/>
+    <attrmod attr="MIND" 			val="1"/>
+    <attrmod attr="WILLPOWER"		val="1"/>
+    
+    <attrmod attr="SIZE"			val="3"/>
+    <attrmod attr="SPEED"			val="5"/>
+    <attrmod attr="LIFE"			val="6"/>
+    <attrmod attr="FOCUS"			val="2"/>
+    <attrmod attr="DEFENSE"			val="15"/>
+    <attrmod attr="DAMAGE_REDUCTION" val="0"/>
+    <attrmod attr="BODYRESIST"		val="15"/>
+    <attrmod attr="MINDRESIST"		val="13"/>
+    
+    <itemmod attr="INITIATIVE" val="8"/>
+    
+    <skillmod ref="acrobatics"		value="7"	/>
+    <skillmod ref="athletics"		value="7"	/>
+    <skillmod ref="determination" 	value="5"	/>
+    <skillmod ref="stealth"    		value="6"	/>
+    <skillmod ref="perception" 		value="6"	/>
+    <skillmod ref="endurance"  		value="9"	/>
+    <skillmod ref="melee"		    value="4" />
+    
+    <creaturefeaturemod feature="COWARD"/>
+    <creaturefeaturemod feature="WEAK"/> 
+  </creaturemodule>
+  
+  <creaturemodule id="strong" type="BASE">
+    <attrmod attr="CHARISMA" 		val="2"/>
+    <attrmod attr="AGILITY" 		val="2"/>
+    <attrmod attr="INTUITION" 		val="2"/>
+    <attrmod attr="CONSTITUTION"	val="2"/>
+    <attrmod attr="MYSTIC" 			val="0"/>
+    <attrmod attr="STRENGTH"		val="3"/>
+    <attrmod attr="MIND" 			val="1"/>
+    <attrmod attr="WILLPOWER"		val="1"/>
+    
+    <attrmod attr="SIZE"			val="3"/>
+    <attrmod attr="SPEED"			val="5"/>
+    <attrmod attr="LIFE"			val="5"/>
+    <attrmod attr="FOCUS"			val="2"/>
+    <attrmod attr="DEFENSE"			val="14"/>
+    <attrmod attr="DAMAGE_REDUCTION" val="0"/>
+    <attrmod attr="BODYRESIST"		val="16"/>
+    <attrmod attr="MINDRESIST"		val="14"/>
+    
+    <itemmod attr="INITIATIVE" val="8"/>
+    
+    <skillmod ref="acrobatics"		value="7"	/>
+    <skillmod ref="athletics"		value="8"	/>
+    <skillmod ref="determination" 	value="6"	/>
+    <skillmod ref="stealth"    		value="6"	/>
+    <skillmod ref="perception" 		value="5"	/>
+    <skillmod ref="endurance"  		value="8"	/>
+    <skillmod ref="melee"		value="4" />
+    
+    <creaturefeaturemod feature="COWARD"/>
+    <creaturefeaturemod feature="WEAK"/> 
+  </creaturemodule>
+  
+  <!--###################################################################-->
+  <!--##            Rollen                                             ##-->
+  <!--###################################################################-->
+  <creaturemodule id="familiar" type="ROLE">
+    <attrmod attr="MYSTIC"       val="2"/>
+    <attrmod attr="MIND"         val="6"/>
+    <attrmod attr="WILLPOWER"    val="6"/>
+    
+    <attrmod attr="FOCUS"        val="6"/>
+    <attrmod attr="SPEED"        val="6"/>
+    <attrmod attr="DEFENSE"      val="2"/>
+    <attrmod attr="MINDRESIST"   val="2"/>
+    
+    <skillmod ref="determination" value="6" />
+    <skillmod ref="stealth"    	value="3" />
+    <skillmod ref="perception" 	value="3" />
+    <skillmod choice="MAGIC" value="6"/>
+    <spellmod levelplusone="1" />
+  </creaturemodule>
+  
+  <creaturemodule id="combatanimal" type="ROLE">
+    <attrmod attr="DEFENSE"			val="3" />
+    <attrmod attr="BODYRESIST"		val="2" />
+    <attrmod attr="MINDRESIST"		val="2" />
+    <attrmod attr="FOCUS"			val="3" />
+    <attrmod attr="SPEED"			val="2" />
+    
+    <skillmod ref="melee"		value="5" />
+    <skillmod ref="acrobatics" 		value="1" />
+    <skillmod ref="athletics"		value="1" />
+    <skillmod ref="determination"	value="2" />
+    <skillmod ref="endurance"		value="2" />
+    
+    <mastermod skill="melee" level="1" /> 
+    <damagemod damage="1" />
+    <itemmod attr="SPEED" val="-1"/>
+    <attrmod attr="INITIATIVE"      val="-2"/>
+    <itemfeaturemod feature="BLUNT" remove="true" />
+    <itemfeaturemod feature="PIERCING" level="2" />
+    <creaturefeaturemod feature="COWARD" remove="true"/> 
+
+  </creaturemodule>
+  
+  <creaturemodule id="packanimal" type="ROLE">
+    <attrmod attr="AGILITY" 		val="2" />
+    <attrmod attr="CONSTITUTION"	val="3" />
+    <attrmod attr="STRENGTH"		val="3" />
+    <attrmod attr="SIZE"			val="3" />
+    <attrmod attr="SPEED"			val="4" />
+    <attrmod attr="LIFE"			val="5" />
+    <attrmod attr="FOCUS"			val="3" />
+    <attrmod attr="DEFENSE"			val="3" />
+    <attrmod attr="BODYRESIST"		val="4" />
+    <attrmod attr="MINDRESIST"		val="2" />
+    
+    <skillmod ref="melee"		    value="3" />
+    <skillmod ref="acrobatics"		value="3" />
+    <skillmod ref="athletics"		value="8" />
+    <skillmod ref="determination"	value="3" />
+    
+    <mastermod ref="athletics/muscleman" />
+    <creaturefeaturemod feature="WEAK" remove="true"/>
+    <itemfeaturemod feature="BLUNT" />
+    <itemfeaturemod feature="BLUNT" />
+    <!-- Merkmal schwächlich entfällt, zweimal Merkmal Stumpf -->
+	<damagemod damage="1W0" />
+  </creaturemodule>
+  
+  <creaturemodule id="mascot" type="ROLE">
+    <attrmod attr="CHARISMA"		val="1" />
+    <attrmod attr="AGILITY"			val="2" />
+    <attrmod attr="INTUITION"		val="1" />
+    <attrmod attr="WILLPOWER"		val="1" />
+    <attrmod attr="SPEED"			val="3" />
+    <attrmod attr="FOCUS"			val="3" />
+    <attrmod attr="BODYRESIST"		val="1" />
+    <attrmod attr="MINDRESIST"		val="2" />
+    
+    <skillmod ref="acrobatics"		value="4" />
+    <skillmod ref="athletics"		value="3" />
+    <skillmod ref="empathy"			value="8" />
+    <selmod num="1">
+      <skillmod ref="dexterity"		value="10" />
+      <skillmod ref="performance"	value="10" />
+    </selmod>
+    
+    <mastermod ref="acrobatics/masterbalance" />
+    <mastermod ref="athletics/monkey" />
+    <!-- wenn Darbietung gewählt dann Meisterschaft Geselle -->
+  </creaturemodule>
+  
+  <creaturemodule id="seeker" type="ROLE">
+    <attrmod attr="INTUITION"		val="1" />
+    <attrmod attr="DEFENSE"			val="2" />
+    <attrmod attr="BODYRESIST"		val="1" />
+    <attrmod attr="MINDRESIST"		val="1" />
+    <attrmod attr="SPEED"			val="2" />
+    
+    <skillmod ref="stealth"			value="3" />
+    <skillmod ref="perception"		value="5" />
+    <skillmod ref="hunting"			value="9" />
+    
+    <creaturefeaturemod feature="LOWLIGHT"/>
+    
+    <selmod num="1">
+      <creaturefeaturemod feature="nightvision"/> <!-- DUNKELSICHT -->
+      <creaturefeaturemod feature="FLYING"/>
+      <creaturefeaturemod feature="diver"/>
+      <creaturefeaturemod feature="TACTICIAN"/>
+    </selmod>
+    <mastermod ref="stealth/creeper"/>
+  </creaturemodule>
+  
+  <!--###################################################################-->
+  <!--##            Verfeinerungen                                     ##-->
+  <!--###################################################################-->
+  <creaturemodule id="tiny" type="OPTION" cost="-2">
+    <selmod>
+      <attrmod attr="STRENGTH"     val="-1"/>
+      <attrmod attr="AGILITY"      val="-1"/>
+    </selmod>
+    <attrmod attr="CONSTITUTION" val="-2"/>
+    
+    <attrmod attr="SIZE"         val="-2"/>
+    <attrmod attr="LIFE"         val="-4"/>
+    <attrmod attr="FOCUS"        val="-6"/>
+    <attrmod attr="DEFENSE"      val="-4"/>
+    <attrmod attr="BODYRESIST"   val="-5"/>
+    
+    <skillmod ref="melee"	 value="-4" />
+    <featuremod remove="true" feature="PENETRATING" />
+    <skillmod restrict="ANY_EXIST" value="-4" />
+    <skillmod ref="endurance"  value="-1" />
+    <countmod type="SPELL" count="4" />
+    <creaturefeaturemod feature="WEAK"/>
+    <countmod type="MASTERSHIP" count="3" />
+    <countmod type="CREATURE_FEATURE_POSITIVE" count="-1" />
+    <condmod>
+      <conditions>
+        <damagereq damage="2W6"/>
+      </conditions>
+      <truemod>
+    	<damagemod substract="true" damage="1W0" />
+      </truemod>
+    </condmod>
+    <damagemod substract="false" damage="-4" />
+    
+    <requires>
+      <creatmodreq not="true" ref="big"/>
+      <creatmodreq not="true" ref="huge" />
+    </requires>
+  </creaturemodule>
+  
+  <creaturemodule id="small" type="OPTION" cost="-1">
+    <selmod>
+      <attrmod attr="STRENGTH"     val="-1"/>
+      <attrmod attr="AGILITY"      val="-1"/>
+    </selmod>
+    <attrmod attr="CONSTITUTION" val="-1"/>
+    
+    <attrmod attr="SIZE"         val="-1"/>
+    <attrmod attr="LIFE"         val="-1"/>
+    <attrmod attr="FOCUS"        val="-3"/>
+    <attrmod attr="DEFENSE"      val="-1"/>
+    <attrmod attr="BODYRESIST"   val="-1"/>
+    <attrmod attr="SPEED"		 val="-2"/>
+    
+    <featuremod remove="true" feature="PENETRATING" />
+    <skillmod restrict="ANY_EXIST" value="-1" />
+    <skillmod ref="endurance"  		value="-1" />
+    <skillmod ref="athletics"	 value="-1" />
+    <skillmod ref="melee"	 value="-1" />
+    <itemmod attr="SPEED" val="-1"/>
+    <countmod type="SPELL" count="2" />
+    <countmod type="MASTERSHIP" count="1" />
+    <condmod>
+      <conditions>
+        <damagereq damage="2W6"/>
+      </conditions>
+      <truemod>
+    	<damagemod substract="true" damage="1W0" />
+      </truemod>
+    </condmod>
+    <skillmod choice="MAGIC" restrict="ANY_EXIST" value="-2"/>
+    <requires>
+      <creatmodreq not="true" ref="big"/>
+      <creatmodreq not="true" ref="huge" />
+    </requires>
+  </creaturemodule>
+
+  <creaturemodule id="big" type="OPTION" cost="1">
+    <attrmod attr="STRENGTH"     	val="1"/>
+    <attrmod attr="CONSTITUTION" 	val="1"/>
+    <attrmod attr="SIZE"        	val="1"/>
+    <attrmod attr="LIFE"        	val="2"/>
+    <attrmod attr="SPEED"			val="2"/>
+    
+    <skillmod ref="athletics"		value="2" />
+    <skillmod ref="endurance"  		value="1" />
+    <skillmod ref="melee"	 	value="2" />
+    <itemmod attr="DAMAGE" val="2"/>
+    <itemmod attr="SPEED" val="1"/>
+     <mastermod level="1" /> 
+    <selmod num="1">
+      <creaturefeaturemod remove="true" feature="LOWLIGHT" />
+      <creaturefeaturemod remove="true" feature="WEAK" />
+      <creaturefeaturemod remove="true" feature="COWARD" />
+    </selmod>
+    <requires>
+      <creatmodreq not="true" ref="tiny"/>
+      <creatmodreq not="true" ref="small" />
+    </requires>	
+  </creaturemodule>
+  
+  <creaturemodule id="huge" type="OPTION" cost="2">
+    <attrmod attr="CONSTITUTION" 	val="2" />
+    <attrmod attr="STRENGTH"		val="2" />
+    <attrmod attr="SIZE"			val="2" />
+    <attrmod attr="SPEED"			val="4" />
+    <attrmod attr="LIFE"			val="3" />
+    <attrmod attr="DEFENSE"			val="1" />
+    <attrmod attr="BODYRESIST"		val="2" />
+    <attrmod attr="MINDRESIST"		val="1" />
+    
+    <skillmod ref="melee" 		value="4" />
+    <itemmod attr="DAMAGE" val="3"/>
+    <itemmod attr="SPEED" val="2"/>
+    <itemfeaturemod feature="HEAVY"/>
+    <skillmod choice="NORMAL" restrict="ANY_EXIST" value="1"/>
+    <skillmod ref="athletics" 	value="1" />
+    <skillmod ref="endurance" 	value="1" />
+    <skillmod ref="determination" value="1"	/>
+    
+    <creaturefeaturemod remove="true" feature="WEAK" />
+    <selmod num="1">
+      <creaturefeaturemod remove="true" feature="COWARD" />
+      <attrmod attr="DAMAGE_REDUCTION" val="1"/>
+  		<creaturefeaturemod feature="LOWLIGHT"/> 
+  		<creaturefeaturemod feature="RESIST_PAIN" />
+  		<creaturefeaturemod feature="uncontrollable" /> 
+    </selmod>
+    <requires>
+      <creatmodreq not="true" ref="tiny"/>
+      <creatmodreq not="true" ref="small" />
+    </requires>	
+  </creaturemodule>
+  
+  <creaturemodule id="colossal" type="OPTION" cost="3">
+    <attrmod attr="DEFENSE" val="2" />
+    <attrmod attr="BODYRESIST"		val="3" />
+    <attrmod attr="MINDRESIST"		val="2" />
+    <attrmod attr="SIZE"			val="3" />
+    
+    <skillmod ref="melee"		value="2"/>
+    <creaturefeaturemod feature="colossal" level="2" />
+    <requires>
+      <creatmodreq ref="teeth_and_claws"/> 
+    </requires>	
+  </creaturemodule>
+  
+  
+  <creaturemodule id="shrink" type="OPTION" cost="1">
+    <requires>
+      <attrreq attr="SIZE" val="4"/> 
+    </requires>	
+  </creaturemodule>
+  
+  <creaturemodule id="fairybeing" type="OPTION" cost="1">
+    <attrmod attr="CHARISMA"		val="1" />
+    <attrmod attr="FOCUS"			val="3" />
+    <attrmod attr="DEFENSE"			val="1" />
+    <attrmod attr="BODYRESIST"		val="1" />
+    <attrmod attr="MINDRESIST"		val="1" />
+    <skillmod ref="melee"		value="1" />
+    <skillmod choice="NORMAL" restrict="ANY_EXIST" value="1"/> 
+    <selmod num="1">  
+      <skillmod choice="MAGIC" value="3" restrict="MUST_NOT_EXIST"/>
+      <skillmod choice="MAGIC" value="2" restrict="MUST_EXIST"/>
+    </selmod> 
+    <spellmod levelplusone="1" />
+    <creaturefeaturemod feature="FAIRYORIGIN"/>
+    <creaturetypemod type="FAIRY"/>
+  </creaturemodule>
+  
+  <creaturemodule id="ghost" type="OPTION" cost="1">
+    <attrmod attr="AGILITY" 		val="-1"/>
+    <attrmod attr="FOCUS"			val="2"/>
+    <selmod num="1">  
+      <skillmod choice="MAGIC" value="3" restrict="MUST_NOT_EXIST"/>
+      <skillmod choice="MAGIC" value="2" restrict="MUST_EXIST"/>
+    </selmod> 
+    <spellmod levelplusone="1" />
+	<creaturefeaturemod feature="LOWLIGHT"/> 
+    <creaturefeaturemod feature="GHOST"/>
+    <creaturetypemod type="GHOST"/>
+  </creaturemodule>
+   
+ <creaturemodule id="collective" type="OPTION" cost="1">
+ 	<attrmod attr="DEFENSE"			val="1"/>
+ 	<attrmod attr="BODYRESIST" 		val="2"/>
+ 	<attrmod attr="MINDRESIST"		val="1"/>
+ 	<skillmod ref="melee"		value="1"/>
+ 	<attrmod attr="FOCUS"			val="2"/>
+ 	<skillmod value="1" restrict="MUST_EXIST"/>
+ 	<creaturefeaturemod feature="WEAK"/>
+ 	<mastermod level="1"/>
+ 	<spellmod levelplusone="1" />
+    <creaturetypemod type="collective"/>
+ 	<creaturefeaturemod feature="swarm"/> 
+ 	<requires>
+      <creatmodreq not="true" ref="disembodied"/>
+    </requires>
+ </creaturemodule> 
+ 
+ <creaturemodule id="undead" type="OPTION" cost="3">
+ 	<attrmod attr="AGILITY" 		val="-2"/>
+ 	<attrmod attr="DEFENSE"			val="2"/>
+ 	<attrmod attr="BODYRESIST"		val="2"/>
+ 	<attrmod attr="MINDRESIST"		val="2"/>
+ 	<skillmod ref="melee"		value="3"/>
+ 	<damagemod damage="3"/>
+    <itemmod attr="SPEED" val="1"/>
+ 	<skillmod value="1" choice="NORMAL" restrict="MUST_EXIST"/>
+ 	<creaturefeaturemod feature="LOWLIGHT"/>
+ 	<creaturefeaturemod feature="IMMUNE_POISON"/>
+ 	<creaturefeaturemod feature="UNDEAD"/>
+ 	<creaturefeaturemod feature="IMMUNE_TORPIDITY"/>
+ 	<creaturefeaturemod feature="IMMUNE_PAIN"/>
+ 	<condmod>
+ 	  <conditions>
+ 	    <creatfeatreq not="true" ref="SCARY"/>
+ 	  </conditions>
+ 	  <truemod>
+ 	    <creaturefeaturemod feature="SCARY" level="10"/> 
+ 	  </truemod>
+ 	  <elsemod>
+ 		<creaturefeaturemod feature="SCARY" level="3"/> 
+ 	  </elsemod>
+ 	</condmod>
+ 	<creaturefeaturemod feature="vulnurable_damage" damagetype="FIRE"/>
+ 	<creaturefeaturemod feature="vulnurable_damage" damagetype="LIGHT"/>
+    <creaturetypemod type="UNDEAD"/>
+ </creaturemodule>
+ 
+ <creaturemodule id="flyer" type="OPTION" cost="1">
+ 	<attrmod attr="DEFENSE" 		val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="1"/> 	
+ 	<skillmod ref="melee"		value="1"/>
+ 	<damagemod damage="1"/>
+ 	<skillmod ref="perception" value="2" />
+    <skillmod choice="NORMAL" restrict="ANY_EXIST" value="1" />
+    <attrmod attr="SPEED" val="+5"/> 
+  <mastermod level="1"/>
+ 	<condmod>
+ 	  <conditions>
+ 	    <creatfeatreq not="true" ref="FLYING"/>
+ 	  </conditions>
+ 	  <truemod>
+ 		<creaturefeaturemod feature="FLYING"/>
+ 	  </truemod>
+ 	  <elsemod>
+ 		<mastermod level="1"/>
+ 	  </elsemod>
+ 	</condmod>
+ </creaturemodule>
+
+ <creaturemodule id="swimmer" type="OPTION" cost="1">
+ 	<attrmod attr="CONSTITUTION"		val="1"/>
+ 	<attrmod attr="LIFE"				val="1"/>
+ 	<attrmod attr="DEFENSE"				val="1"/>
+ 	<attrmod attr="BODYRESIST"			val="2"/>
+ 	<attrmod attr="MINDRESIST"			val="1"/>
+    <attrmod attr="SPEED" val="+5"/> 
+ 	<condmod>
+ 	  <conditions>
+ 	    <skillreq ref="swim" value="1"/>
+ 	  </conditions>
+ 	  <truemod>
+ 		<skillmod ref="swim" value="5"/>
+ 	  </truemod>
+ 	  <elsemod>
+ 		<skillmod ref="swim" value="10"/>
+ 	  </elsemod>
+ 	</condmod>
+ 	<skillmod ref="melee"			value="2"/>
+ 	<mastermod skill="swim"	level="1"/>
+ 	<mastermod skill="swim"	level="2"/>
+ 	<mastermod level="1"/>
+ 	<selmod num="1">
+ 		<creaturefeaturemod feature="diver"/>
+ 		<mastermod level="2"/>
+ 	</selmod>
+ </creaturemodule>
+ 
+ <creaturemodule id="underwater_creature" type="OPTION" cost="0">
+ 	<condmod>
+ 	  <conditions>
+ 	    <skillreq ref="swim" value="1"/>
+ 	  </conditions>
+ 	  <truemod>
+ 		<skillmod ref="swim" value="10"/>
+ 	  </truemod>
+ 	  <elsemod>
+ 		<skillmod ref="swim" value="12"/>
+ 	  </elsemod>
+ 	</condmod>
+    <attrmod attr="SPEED" val="+3"/> 
+ 	<creaturefeaturemod feature="WATERCREATURE"/>
+ </creaturemodule>
+ 
+ <creaturemodule id="observer" type="OPTION" cost="1">
+ 	<attrmod attr="AGILITY"			val="1"/>
+ 	<attrmod attr="MIND"			val="1"/>
+ 	<attrmod attr="FOCUS"			val="2"/>
+ 	<attrmod attr="DEFENSE"			val="2"/>
+ 	<attrmod attr="BODYRESIST"		val="2"/>
+ 	<attrmod attr="MINDRESIST"		val="2"/>
+ 	
+ 	<skillmod ref="athletics"		value="1"/>
+ 	<skillmod ref="endurance"		value="1"/>
+ 	<skillmod ref="stealth"		value="2"/>
+ 	<skillmod ref="perception"	value="4"/>
+ 	<condmod>
+ 	  <conditions>
+ 	    <skillreq ref="empathy" value="0"/>
+ 	  </conditions>
+ 	  <truemod>
+ 	  </truemod>
+ 	  <elsemod>
+ 		<skillmod ref="empathy"	value="2"/>
+ 	  </elsemod>
+ 	</condmod>
+ 	<mastermod level="1"/>
+ 	<mastermod skill="perception" level="2"/>
+ 	
+ 	<selmod num="1">
+ 	  <creaturefeaturemod remove="true" feature="COWARD" />
+ 		<creaturefeaturemod feature="LOWLIGHT"/>
+ 		<creaturefeaturemod feature="immune_fear"/>
+ 		<creaturefeaturemod feature="concentrated"/>
+ 		<creaturefeaturemod feature="TACTICIAN"/>
+ 		<creaturefeaturemod feature="uncontrollable"/>	
+ 	</selmod>
+ </creaturemodule>
+  
+ <creaturemodule id="envoy" type="OPTION" cost="1">
+ 	<attrmod attr="DEFENSE"			val="2"/>
+ 	<attrmod attr="BODYRESIST"		val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="1"/>
+ 	<attrmod attr="SPEED"			val="2"/>
+ 	<!-- sofern vorhanden fliegen / schwimmend +2 -->
+ 	<skillmod ref="melee"		value="1"/>
+ 	<skillmod ref="athletics"		value="2"/>
+ 	<skillmod ref="stealth"		value="3"/>
+ 	<skillmod ref="perception"	value="3"/>
+ 	<mastermod level="1"/>
+ 	<mastermod level="1"/>
+	<creaturefeaturemod feature="LOWLIGHT"/>
+ 	<selmod num="1">
+  		<creaturefeaturemod remove="true" feature="COWARD" />
+ 			<creaturefeaturemod feature="TACTICIAN"/>
+ 			<creaturefeaturemod feature="immune_fear"/>
+ 	</selmod>
+ </creaturemodule>
+ 
+ <creaturemodule id="hunter" type="OPTION" cost="1">
+ 	<attrmod attr="AGILITY"			val="1"/>
+ 	<attrmod attr="INTUITION"		val="1"/>
+ 	<attrmod attr="DEFENSE"			val="2"/>
+ 	<attrmod attr="BODYRESIST"		val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="1"/>
+ 	
+ 	<skillmod ref="melee"		value="1"/>
+ 	<selmod num="1">
+      <itemfeaturemod feature="BLUNT" remove="true" />
+      <itemfeaturemod feature="CRITICAL" level="1" />
+ 	</selmod>
+ 	<skillmod ref="athletics"		value="2"/>
+ 	<skillmod ref="endurance"		value="1"/>
+ 	<skillmod ref="stealth"		value="1"/>
+ 	<skillmod ref="perception"	value="3"/>
+  	<condmod>
+ 	  <conditions>
+ 	    <skillreq ref="hunting" value="1"/>
+ 	  </conditions>
+ 	  <truemod>
+ 		<skillmod ref="hunting"		value="6"/>
+ 	  </truemod>
+ 	  <elsemod>
+ 	<skillmod ref="hunting"		value="10"/>
+ 	  </elsemod>
+ 	</condmod>
+ 	<mastermod level="1"/>
+ 	<mastermod level="1"/>
+ </creaturemodule>
+ 
+ <creaturemodule id="helper" type="OPTION" cost="1">
+ 	<attrmod attr="CHARISMA"		val="1"/>
+ 	<attrmod attr="INTUITION"		val="1"/>
+ 	<attrmod attr="DEFENSE"			val="2"/>
+ 	<attrmod attr="BODYRESIST"		val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="3"/>
+ 	
+ 	<skillmod ref="melee"			value="1"/>
+ 	<skillmod ref="acrobatics"	value="3"/>
+ 	<skillmod ref="stealth"		value="2"/>
+ 	<skillmod ref="perception"	value="3"/>
+ 	<condmod>
+ 	  <conditions>
+ 	    <skillreq ref="empathy" value="1"/>
+ 	  </conditions>
+ 	  <truemod>
+ 		<skillmod ref="empathy"	value="4"/>
+ 	  </truemod>
+ 	  <elsemod>
+ 		<skillmod ref="empathy"	value="8"/>
+ 	  </elsemod>
+ 	</condmod>
+ 	<condmod>
+ 	  <conditions>
+ 	    <skillreq ref="dexterity" value="1"/>
+ 	  </conditions>
+ 	  <truemod>
+ 		<skillmod ref="dexterity"	value="3"/>
+ 	  </truemod>
+ 	  <elsemod>
+ 		<skillmod ref="dexterity"	value="7"/>
+ 	  </elsemod>
+ 	</condmod>
+ 	<mastermod skill="dexterity"	level="1"/>
+ 	<mastermod level="1"/>
+ </creaturemodule>
+
+ <creaturemodule id="linguistically_gifted" type="OPTION" cost="1">
+ 	<selmod num="1">
+ 		<attrmod attr="WILLPOWER"			val="1"/>
+ 		<attrmod attr="MIND"				val="1"/>
+ 	</selmod>
+ 	<attrmod attr="FOCUS"			val="2"/>
+ 	<attrmod attr="DEFENSE"			val="1"/>
+ 	<attrmod attr="BODYRESIST"		val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="1"/>
+    <skillmod choice="NORMAL" restrict="ANY_EXIST" value="1"/>
+ 	<mastermod level="1"/>
+ 	<spellmod levelplusone="1"/>
+ </creaturemodule>
+ 
+ <creaturemodule id="rational" type="OPTION" cost="1">
+ 	<attrmod attr="MIND"			val="1"/>
+ 	<attrmod attr="DEFENSE"		 	val="1"/>
+ 	<attrmod attr="BODYRESIST"		val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="1"/>
+ 	
+    <skillmod choice="NORMAL" restrict="ANY_EXIST" value="1"/>
+ 	<mastermod level="1"/>
+ 	<spellmod levelplusone="1"/>
+ 	<creaturefeaturemod feature="TACTICIAN"/>
+ </creaturemodule>
+ 
+ <creaturemodule id="strong_minded" type="OPTION" cost="1">
+ 	<attrmod attr="MIND"			val="1"/>
+ 	<attrmod attr="WILLPOWER"		val="1"/>
+ 	<attrmod attr="FOCUS"			val="4"/>
+ 	<attrmod attr="DEFENSE"			val="1"/>
+ 	<attrmod attr="BODYRESIST"		val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="2"/>
+ 	
+    <skillmod choice="NORMAL" restrict="ANY_EXIST" value="1"/>
+ 	<skillmod ref="endurance"		value="3"/>
+ 	<spellmod levelplusone="1"/>
+ 	<mastermod level="1"/>
+ 	<selmod num="1">
+ 		<creaturefeaturemod remove="true" feature="COWARD" />
+ 		<creaturefeaturemod feature="immune_fear"/>
+ 		<creaturefeaturemod feature="concentrated"/>
+ 		<creaturefeaturemod feature="TACTICIAN"/>
+ 		<creaturefeaturemod feature="uncontrollable"/>
+ 	</selmod>
+ </creaturemodule>
+ 
+ <creaturemodule id="agressiv" type="OPTION" cost="1">
+ 	<selmod num="1">
+ 		<attrmod attr="STRENGTH"			val="1"/>
+ 		<attrmod attr="AGILITY"				val="1"/>
+ 	</selmod>
+ 	<attrmod attr="INTUITION"		val="1"/>
+ 	<attrmod attr="FOCUS"			val="1"/>
+ 	<attrmod attr="DEFENSE"			val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="1"/>
+ 	<attrmod attr="BODYRESIST"		val="2"/>
+ 	<attrmod attr="INITIATIVE"		val="-1"/>
+ 	<skillmod ref="melee"			value="2"/>
+    <damagemod damage="1" />
+    <itemmod attr="SPEED" val="+1"/>
+    <attrmod attr="INITIATIVE" val="-1"/>
+    <selmod num="1">
+      <itemfeaturemod feature="BLUNT" remove="true" />
+      <itemfeaturemod feature="PENETRATING" level="1" />
+    </selmod>
+ 	<skillmod ref="acrobatics"	value="1"/>
+ 	<skillmod ref="athletics"	value="1"/>
+ 	<mastermod skill="melee" level="1"/>
+ 	<mastermod level="1"/>
+ </creaturemodule>
+ 
+ <creaturemodule id="threatening" type="OPTION" cost="1">
+ 	<attrmod attr="STRENGTH"		val="1"/>
+ 	<attrmod attr="DEFENSE"			val="1"/>
+ 	<attrmod attr="BODYRESIST"		val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="1"/>
+ 	<attrmod attr="DAMAGE_REDUCTION" val="2"/>
+ 	<skillmod ref="melee"				value="2"/>
+    <itemfeaturemod feature="CRITICAL" level="1" />
+ 	<skillmod ref="determination"			value="1"/>
+ 	<skillmod ref="stealth"				value="2"/>
+ 	<skillmod ref="perception"			value="3"/>
+ 	<skillmod ref="endurance"				value="1"/>
+ 	<mastermod level="1"/>
+ 	<condmod>
+ 	  <conditions>
+ 	    <creatfeatreq not="true" ref="SCARY"/>
+ 	  </conditions>
+ 	  <truemod>
+ 	    <creaturefeaturemod feature="SCARY" level="10"/> 
+ 	  </truemod>
+ 	  <elsemod>
+ 		<creaturefeaturemod feature="SCARY" level="6"/> 
+ 	  </elsemod>
+ 	</condmod>
+ </creaturemodule>
+ 
+ <creaturemodule id="blood_rage" type="OPTION" cost="1">
+ 	<attrmod attr="INTUITION"				val="1"/>
+ 	<attrmod attr="DEFENSE"					val="1"/>
+ 	<attrmod attr="BODYRESIST"				val="1"/>
+ 	<attrmod attr="MINDRESIST"				val="1"/>
+ 	<attrmod attr="INITIATIVE"				val="-2"/>
+ 	
+ 	<skillmod ref="melee"				value="2"/>
+    <itemfeaturemod feature="CRITICAL" level="1" />
+ 	<skillmod ref="acrobatics"			value="2"/>
+ 	<skillmod ref="athletics"				value="2"/>
+ 	<skillmod ref="perception"			value="1"/>
+ 	<skillmod ref="endurance"				value="1"/>
+ 	<mastermod skill="melee" level="1"/>
+ 	<creaturefeaturemod feature="berserk"/>
+ 	<selmod num="1">
+ 		<creaturefeaturemod remove="true" feature="COWARD" />
+ 		<creaturefeaturemod feature="immune_fear"/>
+ 		<creaturefeaturemod feature="TACTICIAN"/>
+ 	</selmod>
+ </creaturemodule>
+ 
+ <creaturemodule id="trap1" type="OPTION" cost="1">
+ 	<attrmod attr="DEFENSE"					val="1"/>
+ 	<attrmod attr="BODYRESIST"				val="1"/>
+ 	<attrmod attr="MINDRESIST"				val="1"/>
+ 	
+ 	<skillmod ref="melee"				value="0"/>
+ 	<skillmod ref="stealth"				value="2"/>
+    <skillmod choice="NORMAL" restrict="ANY_EXIST" value="1"/>
+ 	<creaturefeaturemod feature="trap" level="1"/>
+    <requires>
+      <creatmodreq not="true" ref="trap2"/>
+    </requires>
+ </creaturemodule>
+ 
+ <creaturemodule id="trap2" type="OPTION" cost="2">
+ 	<attrmod attr="DEFENSE"					val="2"/>
+ 	<attrmod attr="BODYRESIST"				val="2"/>
+ 	<attrmod attr="MINDRESIST"				val="2"/>
+ 	
+ 	<skillmod ref="melee"				value="1"/>
+ 	<skillmod ref="stealth"				value="4"/>
+    <skillmod choice="NORMAL" restrict="ANY_EXIST" value="2"/>
+ 	<creaturefeaturemod feature="trap" level="2"/>
+    <requires>
+      <creatmodreq not="true" ref="trap1" />
+    </requires>
+ </creaturemodule>
+ 
+ <creaturemodule id="toxic1" type="OPTION" cost="1">
+ 	<attrmod attr="DEFENSE"					val="1"/>
+ 	<attrmod attr="BODYRESIST"				val="1"/>
+ 	<attrmod attr="MINDRESIST"				val="1"/>
+ 	<attrmod attr="LIFE"					val="-1"/>
+ 	<skillmod ref="melee"					value="1"/>
+ 	<creaturefeaturemod feature="POISON" />
+    <requires>
+      <creatmodreq not="true" ref="toxic2"/>
+      <creatmodreq not="true" ref="toxic3"/>
+    </requires>
+ </creaturemodule>
+ 
+ <creaturemodule id="toxic2" type="OPTION" cost="2">
+ 	<attrmod attr="DEFENSE"					val="2"/>
+ 	<attrmod attr="BODYRESIST"				val="2"/>
+ 	<attrmod attr="MINDRESIST"				val="2"/>
+ 	<attrmod attr="LIFE"					val="-1"/>
+ 	<skillmod ref="melee"					value="2"/>
+ 	<creaturefeaturemod feature="POISON" level="2" />
+    <requires>
+      <creatmodreq not="true" ref="toxic1"/>
+      <creatmodreq not="true" ref="toxic3"/>
+    </requires>
+ </creaturemodule>
+ 
+ <creaturemodule id="toxic3" type="OPTION" cost="3">
+ 	<attrmod attr="DEFENSE"					val="3"/>
+ 	<attrmod attr="BODYRESIST"				val="3"/>
+ 	<attrmod attr="MINDRESIST"				val="3"/>
+ 	<attrmod attr="LIFE"					val="-1"/>
+ 	<skillmod ref="melee"					value="3"/>
+ 	<creaturefeaturemod feature="POISON" level="3" />
+    <requires>
+      <creatmodreq not="true" ref="toxic2"/>
+      <creatmodreq not="true" ref="toxic3"/>
+    </requires>
+ </creaturemodule>
+ 
+ <creaturemodule id="defender" type="OPTION" cost="1">
+ 	<selmod num="1">
+ 		<attrmod attr="STRENGTH"			val="1"/>
+ 		<attrmod attr="CONSTITUTION" 		val="1"/>
+ 		<attrmod attr="AGILITY"      		val="1"/>
+ 	</selmod>
+ 	<attrmod attr="INTUITION"				val="1"/>
+ 	<attrmod attr="SIZE"					val="1"/>
+ 	<attrmod attr="LIFE"					val="1"/>
+ 	<attrmod attr="DEFENSE"					val="2"/>
+ 	<attrmod attr="BODYRESIST"				val="2"/>
+ 	<attrmod attr="MINDRESIST"				val="1"/>
+ 	
+ 	<skillmod ref="melee"		 value="1"/>
+ 	<skillmod ref="acrobatics"	 value="1"/>
+ 	<skillmod ref="athletics"		value="1"/>
+ 	<skillmod ref="determination" value="3"/>
+ 	<skillmod ref="perception"	value="2"/>
+ 	<skillmod ref="endurance"		value="2"/> 
+ 	
+ 	<mastermod ref="melee/defender" />
+ 	<condmod>
+ 	   <conditions>
+ 	    <creatfeatreq not="true" ref="SCARY"/>
+ 	   </conditions>
+ 	   <truemod>
+  	     <selmod num="1">
+ 	  	    <creaturefeaturemod feature="TACTICIAN"/>
+ 	  	    <creaturefeaturemod feature="LOWLIGHT"/> <!-- Dämmersicht -->
+ 	    	<creaturefeaturemod feature="SCARY" level="10"/> 
+ 		 </selmod>
+ 	   </truemod>
+ 	   <elsemod>
+  	     <selmod num="1">
+ 	  	    <creaturefeaturemod feature="TACTICIAN"/>
+ 	  	    <creaturefeaturemod feature="LOWLIGHT"/> <!-- Dämmersicht -->
+ 	    	<creaturefeaturemod feature="SCARY" level="6"/> 
+ 		 </selmod>
+ 	   </elsemod>
+ 	</condmod>
+ </creaturemodule>
+ 
+ <creaturemodule id="teeth_and_claws" type="OPTION" cost="2">
+ 	<selmod num="1">
+ 		<attrmod attr="STRENGTH"			val="1"/>
+ 		<attrmod attr="AGILITY"      		val="1"/>
+ 	</selmod>
+ 	<selmod num="1">
+ 		<attrmod attr="CHARISMA"		val="1"/>
+ 		<attrmod attr="CONSTITUTION" 	val="1"/>
+ 	</selmod>
+ 	<attrmod attr="DEFENSE"			val="2"/>
+ 	<attrmod attr="BODYRESIST"		val="3"/>
+ 	<attrmod attr="MINDRESIST"		val="2"/>
+ 	<attrmod attr="SPEED"			val="3"/>
+ 	<attrmod attr="INTUITION"		val="3"/>
+ 	
+ 	<skillmod ref="melee"			value="4"/>
+ 	<!-- Zusätzliche Waffe aus untenstehender List oder verbesserte Werte -->
+ 	<selmod num="1">
+        <countmod type="WEAPON" count="1" />
+        <allofmod>
+ 		  <damagemod damage="1" /> 
+    	  <itemfeaturemod feature="CRITICAL" level="1" />
+        </allofmod>
+ 	</selmod>
+    <skillmod choice="NORMAL" restrict="ANY_EXIST" value="1"/>
+ 	<selmod num="1">
+ 		<mastermod skill="melee"	level="1"/>
+ 		<mastermod skill="slashing" level="1"/>
+ 		<mastermod skill="chains" level="1"/>
+ 		<mastermod skill="blades" level="1"/>
+ 		<mastermod skill="staffs" level="1"/>
+ 	</selmod>
+ 	<mastermod level="1"/>
+    <requires>
+      <itemfeatreq not="true" ref="BLUNT"/>
+    </requires>
+ </creaturemodule>
+ 
+ <creaturemodule id="steeped_in_magic" type="OPTION" cost="2">
+ 	<selmod num="1">
+ 		<attrmod attr="CHARISMA"		val="1"/>
+ 		<attrmod attr="MIND"         	val="1"/>
+ 	</selmod>
+ 	<attrmod attr="MYSTIC"		val="1"/>
+ 	<attrmod attr="FOCUS"		val="6"/>
+ 	<attrmod attr="DEFENSE"		val="1"/>
+ 	<attrmod attr="BODYRESIST"	val="2"/>
+ 	<attrmod attr="MINDRESIST"	val="3"/>
+ 	<selmod num="1">
+    	<skillmod choice="MAGIC" restrict="ANY_EXIST" value="3"/>
+    	<skillmod choice="MAGIC" restrict="MUST_NOT_EXIST" value="9"/>
+ 	</selmod>
+ 	<selmod num="1">
+    	<skillmod choice="MAGIC" restrict="ANY_EXIST" value="3"/>
+    	<skillmod choice="MAGIC" restrict="MUST_NOT_EXIST" value="6"/>
+ 	</selmod>
+ 	<mastermod skilltype="MAGIC" level="1"/>
+ 	<spellmod levelplusone="1"/>
+ 	<spellmod levelplusone="1"/>
+ 	<spellmod levelplusone="2"/>
+ 	<spellmod levelplusone="3"/>
+ 	<selmod num="1">
+ 		<creaturefeaturemod remove="true" feature="COWARD" />
+ 		<creaturefeaturemod feature="uncontrollable"/>
+ 		<creaturefeaturemod feature="concentrated"/>
+ 	</selmod>
+ </creaturemodule>
+ 
+ <creaturemodule id="additional_spell" type="OPTION" cost="1">
+ 	<attrmod attr="MYSTIC"		val="1"/>
+ 	<attrmod attr="WILLPOWER"   val="1"/>
+ 	<attrmod attr="FOCUS"		val="2"/>
+ 	
+ 	<selmod num="1">
+    	<skillmod choice="MAGIC" restrict="ANY_EXIST" value="3"/>
+    	<skillmod choice="MAGIC" restrict="MUST_NOT_EXIST" value="6"/>
+ 	</selmod>
+ 	<spellmod levelplusone="2"/>
+ 	<spellmod levelplusone="2"/>
+ 	<spellmod levelplusone="3"/>
+ </creaturemodule>
+ 
+ <creaturemodule id="artist" type="OPTION"	cost="1">
+ 	<attrmod attr="CHARISMA"		val="1"/>
+ 	<attrmod attr="WILLPOWER"   	val="1"/>
+ 	<attrmod attr="FOCUS"			val="1"/>
+ 	<attrmod attr="DEFENSE"			val="1"/>
+ 	<attrmod attr="BODYRESIST"		val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="2"/>
+ 	
+ 	<skillmod ref="acrobatics"	value="2"/>
+ 	<skillmod ref="determination" value="1"/>
+ 	<skillmod ref="stealth"		value="3"/>
+ 	<skillmod ref="perception"	value="3"/>
+ 	<condmod>
+ 	  <conditions>
+ 	    <skillreq ref="performance" value="1"/>
+ 	  </conditions>
+ 	  <truemod>
+ 		<skillmod ref="performance"	value="3"/>
+ 	  </truemod>
+ 	  <elsemod>
+ 		<skillmod ref="performance"	value="9"/>
+ 	  </elsemod>
+ 	</condmod>
+ 	<condmod>
+ 	  <conditions>
+ 	    <skillreq ref="empathy" value="1"/>
+ 	  </conditions>
+ 	  <truemod>
+ 		<skillmod ref="empathy"	value="6"/>
+ 	  </truemod>
+ 	  <elsemod>
+ 		<skillmod ref="empathy"	value="11"/>
+ 	  </elsemod>
+ 	</condmod>
+ 	<mastermod skill="performance" level="1"/>
+ 	<mastermod skill="performance" level="2"/>
+ 	<spellmod levelplusone="1"/>
+ </creaturemodule>
+ 
+ <creaturemodule id="gorgeous" type="OPTION" cost="1">
+ 	<attrmod attr="CHARISMA"		val="1"/>
+ 	<attrmod attr="WILLPOWER"			val="1"/>
+ 	<attrmod attr="FOCUS"			val="1"/>
+ 	<attrmod attr="DEFENSE"			val="1"/>
+ 	<attrmod attr="BODYRESIST"		val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="2"/>
+ 	
+ 	<skillmod ref="melee"			value="1"/>
+ 	<skillmod value="1"/>
+ 	<spellmod levelplusone="1"/>
+ 	<mastermod level="1"/>
+ 	<mastermod level="2"/>
+ 	<selmod num="1">
+ 		<creaturefeaturemod remove="true" feature="COWARD" />
+ 		<creaturefeaturemod feature="uncontrollable"/>
+ 		<creaturefeaturemod feature="TACTICIAN"/>
+ 		<creaturefeaturemod feature="concentrated"/>
+ 	</selmod>
+ </creaturemodule>
+ 
+ <creaturemodule id="circus_animal" type="OPTION" cost="1">
+ 	<attrmod attr="CHARISMA"		val="1"/>
+ 	<attrmod attr="WILLPOWER"			val="1"/>
+ 	<attrmod attr="FOCUS"			val="2"/>
+ 	<attrmod attr="DEFENSE"			val="2"/>
+ 	<attrmod attr="BODYRESIST"		val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="2"/>
+ 	
+ 	<skillmod ref="melee"			value="1"/>
+ 	<skillmod ref="acrobatics"	value="3"/>
+ 	<skillmod ref="stealth"		value="3"/>
+ 	<skillmod ref="perception"	value="1"/>
+ 	<condmod>
+ 	  <conditions>
+ 	    <skillreq ref="performance" value="1"/>
+ 	  </conditions>
+ 	  <truemod>
+ 		<skillmod ref="performance"	value="3"/>
+ 	  </truemod>
+ 	  <elsemod>
+ 		<skillmod ref="performance"	value="7"/>
+ 	  </elsemod>
+ 	</condmod>
+ 	<condmod>
+ 	  <conditions>
+ 	    <skillreq ref="empathy" value="1"/>
+ 	  </conditions>
+ 	  <truemod>
+ 		<skillmod ref="empathy"	value="4"/>
+ 	  </truemod>
+ 	  <elsemod>
+ 		<skillmod ref="empathy"	value="8"/>
+ 	  </elsemod>
+ 	</condmod>
+  	<mastermod skill="performance" level="1"/>
+ 	<mastermod level="1"/>
+ 	<creaturefeaturemod feature="TACTICIAN"/>
+ </creaturemodule>
+ 
+ <creaturemodule id="shapeshifter" type="OPTION">
+ 	<!-- neue Kreatur, in die sich die Kreatur verwandeln kann Kosten die der zusätzlichen Kreatur -->
+ </creaturemodule>
+
+ <creaturemodule id="mount" type="OPTION" cost="1">
+ 	<attrmod attr="CONSTITUTION"	val="1"/>
+ 	<attrmod attr="STRENGTH"		val="1"/>
+ 	<attrmod attr="SPEED"			val="3"/>
+ 	<attrmod attr="DEFENSE"			val="1"/>
+ 	<attrmod attr="BODYRESIST"		val="3"/>
+ 	
+ 	<skillmod ref="determination" value="1"/>
+ 	<skillmod ref="athletics"		value="6"/>
+ 	<skillmod ref="endurance"		value="1"/>
+ 	<skillmod ref="melee"			value="1"/>
+    <itemfeaturemod feature="BLUNT" />
+ 	<mastermod ref="melee/rush"/> <!-- Vorstürmen -->
+ 	<mastermod ref="athletics/swiftpursuit"/><!-- flinker Verfolger -->
+    <creaturefeaturemod feature="RESIST_EXHAUSTION" level="1"/> 
+    <creaturetypemod type="MOUNT"/>
+ 	<requires>
+      <creattypereq not="true" type="MOUNT"/>
+      <attrreq attr="SIZE" val="5"/>
+      <creatmodreq not="true" ref="disembodied"/>
+    </requires>
+ </creaturemodule>
+ 
+ <creaturemodule id="mount_diving" type="OPTION" cost="2">
+ 	<attrmod attr="CONSTITUTION"	val="1"/>
+ 	<attrmod attr="STRENGTH"		val="1"/>
+ 	<attrmod attr="SPEED"			val="3"/>
+ 	<attrmod attr="DEFENSE"			val="1"/>
+ 	<attrmod attr="BODYRESIST"		val="3"/>
+ 	
+ 	<skillmod ref="determination" value="1"/>
+ 	<skillmod ref="athletics"		value="6"/>
+ 	<skillmod ref="endurance"		value="1"/>
+ 	<skillmod ref="melee"			value="1"/>
+    <itemfeaturemod feature="BLUNT" />
+ 	<mastermod ref="melee/rush"/> <!-- Vorstürmen -->
+ 	<mastermod ref="athletics/swiftpursuit"/><!-- flinker Verfolger -->
+    <creaturefeaturemod feature="RESIST_EXHAUSTION" level="1"/> 
+    <creaturetypemod type="MOUNT"/>
+ 	<requires>
+      <creattypereq not="true" type="MOUNT"/>
+      <attrreq attr="SIZE" val="5"/>
+      <creatmodreq not="true" ref="disembodied"/>
+      <creatmodreq ref="underwater_creature"/>
+    </requires>
+ </creaturemodule>
+ 
+ <creaturemodule id="mount_flying" type="OPTION" cost="3">
+ 	<attrmod attr="CONSTITUTION"	val="1"/>
+ 	<attrmod attr="STRENGTH"		val="1"/>
+ 	<attrmod attr="SPEED"			val="3"/>
+ 	<attrmod attr="DEFENSE"			val="1"/>
+ 	<attrmod attr="BODYRESIST"		val="3"/>
+ 	
+ 	<skillmod ref="determination" value="1"/>
+ 	<skillmod ref="athletics"		value="6"/>
+ 	<skillmod ref="endurance"		value="1"/>
+ 	<skillmod ref="melee"			value="1"/>
+    <itemfeaturemod feature="BLUNT" />
+ 	<mastermod ref="melee/rush"/> <!-- Vorstürmen -->
+ 	<mastermod ref="athletics/swiftpursuit"/><!-- flinker Verfolger -->
+    <creaturefeaturemod feature="RESIST_EXHAUSTION" level="1"/> 
+    <creaturetypemod type="MOUNT"/>
+ 	<requires>
+      <creattypereq not="true" type="MOUNT"/>
+      <attrreq attr="SIZE" val="5"/>
+      <creatmodreq not="true" ref="disembodied"/>
+      <creatmodreq ref="flyer"/>
+    </requires>
+ </creaturemodule>
+ 
+ <creaturemodule id="disembodied" type="OPTION" cost="2">
+ 	<attrmod attr="DEFENSE"			val="1"/>
+ 	<attrmod attr="BODYRESIST"		val="2"/>
+ 	<attrmod attr="MINDRESIST"		val="1"/>
+ 	<attrmod attr="FOCUS"			val="2"/>
+ 	<attrmod attr="DAMAGE_REDUCTION" val="4"/>
+ 	<spellmod levelplusone="1"/>
+ 	
+ 	<creaturefeaturemod feature="DISEMBODIED"/>
+ 	<creaturefeaturemod feature="CREATURE" level="2"/> 
+ </creaturemodule>
+ 
+ <creaturemodule id="fragil" type="OPTION" cost="-1">
+ 	<selmod num="1">
+ 		<attrmod attr="AGILITY"			val="-1"/>
+ 		<attrmod attr="STRENGTH"		val="-1"/>
+ 		<attrmod attr="CONSTITUTION" 	val="-1"/>
+ 	</selmod>
+ 	<attrmod attr="CONSTITUTION" 	val="-1"/>
+ 	<attrmod attr="DEFENSE"			val="-1"/>
+ 	<attrmod attr="BODYRESIST"		val="-1"/>
+ 	<attrmod attr="MINDRESIST"		val="-1"/>
+ 	<attrmod attr="LIFE"			val="-1"/>
+ 	<attrmod attr="DAMAGE_REDUCTION" val="-2"/>
+ 	<attrmod attr="FOCUS"			val="-2"/>
+ 	
+ 	<skillmod ref="melee"			value="-1"/>
+    <itemmod attr="SPEED" val="1"/>
+ 	<skillmod restrict="ANY_EXIST" type="NORMAL" value="-1"/>
+ 	<skillmod restrict="ANY_EXIST" type="COMMON" value="-1"/>
+ 	<skillmod ref="endurance"		value="-1"/>
+ 	<countmod type="SPELL" count="2" />
+    <countmod type="MASTERSHIP" count="1" />
+ 	<damagemod substract="true" damage="1W6" /> 
+ 	<requires>
+      <creatmodreq not="true" ref="tough_option"/>
+    </requires>
+    <creaturefeaturemod feature="CREATURE" level="-1"/>
+ 	<creaturefeaturemod feature="WEAK"/>
+ 	<requires>
+      <creatmodreq not="true" ref="tough_option"/>
+    </requires>
+ </creaturemodule>
+ 
+ <creaturemodule id="immune" type="OPTION" cost="1">
+ 	<selmod num="1">
+ 		<attrmod attr="CONSTITUTION" 		val="1"/>
+ 		<attrmod attr="AGILITY" 			val="1"/>
+ 		<attrmod attr="STRENGTH"			val="1"/> 		
+ 	</selmod>
+ 	<attrmod attr="WILLPOWER"			val="1"/>
+ 	<attrmod attr="FOCUS"			val="2"/>
+ 	<attrmod attr="DEFENSE"			val="1"/>
+ 	<attrmod attr="BODYRESIST"		val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="1"/>
+ 	
+ 	<skillmod ref="melee"			value="1"/>
+ 	<skillmod ref="acrobatics"	value="1"/>
+ 	<skillmod ref="athletics"		value="1"/>
+ 	<skillmod ref="perception"	value="1"/>
+ 	<skillmod ref="endurance"		value="2"/>
+ 	<selmod num="2">
+ 		<attrmod attr="DAMAGE_REDUCTION" val="1"/>
+ 		<creaturefeaturemod feature="IMMUNE_POISON"/>
+ 		<creaturefeaturemod feature="IMMUNE_TORPIDITY"/>
+ 		<creaturefeaturemod feature="RESIST_PAIN" />
+ 		<creaturefeaturemod feature="immune_fear"/>
+ 	</selmod>
+ </creaturemodule>
+ 
+ <creaturemodule id="resistent" type="OPTION" cost="1">
+ 	<selmod num="1">
+ 		<attrmod attr="CONSTITUTION" 		val="1"/>
+ 		<attrmod attr="AGILITY" 			val="1"/>
+ 		<attrmod attr="STRENGTH"			val="1"/> 		
+ 	</selmod>
+ 	<attrmod attr="WILLPOWER"			val="1"/>
+ 	<attrmod attr="FOCUS"			val="2"/>
+ 	<attrmod attr="LIFE"			val="1"/>
+ 	<attrmod attr="DAMAGE_REDUCTION" val="1"/>
+ 	<attrmod attr="DEFENSE"			val="1"/>
+ 	<attrmod attr="BODYRESIST"		val="1"/>
+ 	<attrmod attr="MINDRESIST"		val="1"/>
+ 	
+ 	<skillmod ref="melee"			value="1"/>
+ 	<skillmod ref="athletics"		value="1"/>
+ 	<skillmod ref="perception"	value="1"/>
+ 	<skillmod ref="endurance"		value="2"/>
+ 	<selmod num="1">
+ 		<attrmod attr="DAMAGE_REDUCTION" val="1"/>
+ 		<creaturefeaturemod feature="resist_damage" damagetype="FIRE" level="3"/>
+ 		<creaturefeaturemod feature="resist_damage" damagetype="WATER" level="3"/>
+ 		<creaturefeaturemod feature="resist_damage" damagetype="STONE" level="3"/>
+ 		<creaturefeaturemod feature="resist_damage" damagetype="AIR" level="3"/>
+ 		<creaturefeaturemod feature="resist_damage" damagetype="LIGHT" level="3"/>
+ 		<creaturefeaturemod feature="resist_damage" damagetype="SHADOW" level="3"/>
+ 	</selmod>
+ 	<selmod num="1">
+ 		<attrmod attr="DAMAGE_REDUCTION" val="1"/>
+ 		<creaturefeaturemod feature="RESIST_HEAT" level="3"/>
+ 		<creaturefeaturemod feature="RESIST_COLD" level="3"/>
+ 	</selmod>
+ </creaturemodule>
+ 
+ <creaturemodule id="strong_and_weak" type="OPTION">
+ 	<selmod num="1">
+ 		<creaturefeaturemod feature="resist_damage" damagetype="FIRE" level="4"/>
+ 		<creaturefeaturemod feature="resist_damage" damagetype="WATER" level="4"/>
+ 		<creaturefeaturemod feature="resist_damage" damagetype="STONE" level="4"/>
+ 		<creaturefeaturemod feature="resist_damage" damagetype="AIR" level="4"/>
+ 		<creaturefeaturemod feature="resist_damage" damagetype="LIGHT" level="4"/>
+ 		<creaturefeaturemod feature="resist_damage" damagetype="SHADOW" level="4"/>
+ 	</selmod>
+ 	<selmod num="1">
+ 		<creaturefeaturemod feature="vulnurable_damage" damagetype="FIRE" level="4"/>
+ 		<creaturefeaturemod feature="vulnurable_damage" damagetype="WATER" level="4"/>
+ 		<creaturefeaturemod feature="vulnurable_damage" damagetype="STONE" level="4"/>
+ 		<creaturefeaturemod feature="vulnurable_damage" damagetype="AIR" level="4"/>
+ 		<creaturefeaturemod feature="vulnurable_damage" damagetype="LIGHT" level="4"/>
+ 		<creaturefeaturemod feature="vulnurable_damage" damagetype="SHADOW" level="4"/>
+ 	</selmod>
+ 	
+ </creaturemodule>
+ 
+ <creaturemodule id="vulnerable" type="OPTION" cost="-1">
+ 	<attrmod attr="CONSTITUTION" 		val="-1"/>
+ 	<attrmod attr="LIFE"				val="-1"/>
+ 	<attrmod attr="FOCUS"				val="-2"/>
+ 	<attrmod attr="DEFENSE"				val="-1"/>
+ 	<attrmod attr="BODYRESIST"			val="-1"/>
+ 	<attrmod attr="MINDRESIST"			val="-1"/>
+ 	<skillmod type="NORMAL" restrict="ANY_EXIST" value="-1"/>
+ 	<skillmod type="MAGIC" restrict="ANY_EXIST" value="-1"/>
+ 	<countmod type="SPELL" count="2" />
+    <countmod type="MASTERSHIP" count="1" />
+ 	<selmod num="1">
+ 		<creaturefeaturemod feature="vulnurable_damage" damagetype="FIRE"  level="2"/>
+ 		<creaturefeaturemod feature="vulnurable_damage" damagetype="WATER" level="2"/>
+ 		<creaturefeaturemod feature="vulnurable_damage" damagetype="STONE" level="2"/>
+ 		<creaturefeaturemod feature="vulnurable_damage" damagetype="AIR"   level="2"/>
+ 		<creaturefeaturemod feature="vulnurable_damage" damagetype="LIGHT" level="2"/>
+ 		<creaturefeaturemod feature="vulnurable_damage" damagetype="SHADOW" level="2"/>
+ 		<creaturefeaturemod feature="light_sensitive" level="2"/>
+    </selmod>
+    <damagemod substract="true" damage="1W6" /> <!-- soll nur um 1W6 reduziert werden -->
+ </creaturemodule>
+ 
+ <creaturemodule id="tough_option" type="OPTION" cost="1">
+ 	<attrmod attr="CONSTITUTION" 		val="1"/>
+ 	<attrmod attr="STRENGTH"			val="1"/>
+ 	<attrmod attr="DEFENSE"				val="1"/>
+ 	<attrmod attr="BODYRESIST"			val="2"/>
+ 	<attrmod attr="LIFE"				val="1"/>
+ 	
+ 	<skillmod ref="melee"			value="1"/>
+ 	<skillmod ref="acrobatics"	    value="2"/>
+ 	<skillmod ref="athletics"		value="2"/>
+ 	<skillmod ref="endurance"		value="4"/>
+ 	
+ 	<mastermod level="1"/>
+ 	<creaturefeaturemod feature="RESIST_EXHAUSTION"/>
+ 	
+ 	<selmod num="1">
+ 	    <attrmod attr="DAMAGE_REDUCTION" val="2"/>
+ 		<creaturefeaturemod feature="IMMUNE_TORPIDITY"/>
+ 		<creaturefeaturemod feature="RESIST_PAIN" />
+ 	</selmod>
+      <creaturefeaturemod remove="true" feature="WEAK" />
+ 	<requires>
+      <creatmodreq not="true" ref="fragil"/>
+    </requires>
+ </creaturemodule>
+  
+</creaturemodules>
+

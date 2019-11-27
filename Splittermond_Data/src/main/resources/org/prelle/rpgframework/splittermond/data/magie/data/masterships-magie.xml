@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+
+	<skill id="arcanelore">
+		<mastership level="1" key="analyst" />
+        <mastership level="1" key="meditation" />
+        <mastership level="1" key="flexible_weakening" />
+        <mastership level="1" key="cleansing_concentration">
+            <requires>
+                <selreq>
+                    <masterreq ref="antimagic/delayedcaster"/>
+                    <masterreq ref="combatmagic/delayedcaster"/>
+                    <masterreq ref="windmagic/delayedcaster"/>
+                    <masterreq ref="stonemagic/delayedcaster"/>
+                    <masterreq ref="enhancemagic/delayedcaster"/>
+                    <masterreq ref="firemagic/delayedcaster"/>
+                    <masterreq ref="watermagic/delayedcaster"/>
+                    <masterreq ref="shadowmagic/delayedcaster"/>
+                    <masterreq ref="naturemagic/delayedcaster"/>
+                    <masterreq ref="illusionmagic/delayedcaster"/>
+                    <masterreq ref="controlmagic/delayedcaster"/>
+                    <masterreq ref="motionmagic/delayedcaster"/>
+                    <masterreq ref="insightmagic/delayedcaster"/>
+                    <masterreq ref="healmagic/delayedcaster"/>
+                    <masterreq ref="lightmagic/delayedcaster"/>
+                    <masterreq ref="fatemagic/delayedcaster"/>
+                    <masterreq ref="protectionmagic/delayedcaster"/>
+                    <masterreq ref="deathmagic/delayedcaster"/>
+                    <masterreq ref="transformationmagic/delayedcaster"/>
+                </selreq>
+            </requires>
+        </mastership>
+        <mastership level="1" key="protecting_concentration">
+            <requires>
+                <selreq>
+                    <masterreq ref="antimagic/delayedcaster"/>
+                    <masterreq ref="combatmagic/delayedcaster"/>
+                    <masterreq ref="windmagic/delayedcaster"/>
+                    <masterreq ref="stonemagic/delayedcaster"/>
+                    <masterreq ref="enhancemagic/delayedcaster"/>
+                    <masterreq ref="firemagic/delayedcaster"/>
+                    <masterreq ref="watermagic/delayedcaster"/>
+                    <masterreq ref="shadowmagic/delayedcaster"/>
+                    <masterreq ref="naturemagic/delayedcaster"/>
+                    <masterreq ref="illusionmagic/delayedcaster"/>
+                    <masterreq ref="controlmagic/delayedcaster"/>
+                    <masterreq ref="motionmagic/delayedcaster"/>
+                    <masterreq ref="insightmagic/delayedcaster"/>
+                    <masterreq ref="healmagic/delayedcaster"/>
+                    <masterreq ref="lightmagic/delayedcaster"/>
+                    <masterreq ref="fatemagic/delayedcaster"/>
+                    <masterreq ref="protectionmagic/delayedcaster"/>
+                    <masterreq ref="deathmagic/delayedcaster"/>
+                    <masterreq ref="transformationmagic/delayedcaster"/>
+                </selreq>
+            </requires>
+        </mastership>
+        <mastership level="1" key="weakening_concentration">
+            <requires>
+                <selreq>
+                    <masterreq ref="antimagic/delayedcaster"/>
+                    <masterreq ref="combatmagic/delayedcaster"/>
+                    <masterreq ref="windmagic/delayedcaster"/>
+                    <masterreq ref="stonemagic/delayedcaster"/>
+                    <masterreq ref="enhancemagic/delayedcaster"/>
+                    <masterreq ref="firemagic/delayedcaster"/>
+                    <masterreq ref="watermagic/delayedcaster"/>
+                    <masterreq ref="shadowmagic/delayedcaster"/>
+                    <masterreq ref="naturemagic/delayedcaster"/>
+                    <masterreq ref="illusionmagic/delayedcaster"/>
+                    <masterreq ref="controlmagic/delayedcaster"/>
+                    <masterreq ref="motionmagic/delayedcaster"/>
+                    <masterreq ref="insightmagic/delayedcaster"/>
+                    <masterreq ref="healmagic/delayedcaster"/>
+                    <masterreq ref="lightmagic/delayedcaster"/>
+                    <masterreq ref="fatemagic/delayedcaster"/>
+                    <masterreq ref="protectionmagic/delayedcaster"/>
+                    <masterreq ref="deathmagic/delayedcaster"/>
+                    <masterreq ref="transformationmagic/delayedcaster"/>
+                </selreq>
+            </requires>
+        </mastership>
+        <mastership level="1" key="strong_weakening" />
+        <mastership level="1" key="wallmaster" />
+        <mastership level="1" key="destroying_concentration">
+            <requires>
+                <selreq>
+                    <masterreq ref="antimagic/delayedcaster"/>
+                    <masterreq ref="combatmagic/delayedcaster"/>
+                    <masterreq ref="windmagic/delayedcaster"/>
+                    <masterreq ref="stonemagic/delayedcaster"/>
+                    <masterreq ref="enhancemagic/delayedcaster"/>
+                    <masterreq ref="firemagic/delayedcaster"/>
+                    <masterreq ref="watermagic/delayedcaster"/>
+                    <masterreq ref="shadowmagic/delayedcaster"/>
+                    <masterreq ref="naturemagic/delayedcaster"/>
+                    <masterreq ref="illusionmagic/delayedcaster"/>
+                    <masterreq ref="controlmagic/delayedcaster"/>
+                    <masterreq ref="motionmagic/delayedcaster"/>
+                    <masterreq ref="insightmagic/delayedcaster"/>
+                    <masterreq ref="healmagic/delayedcaster"/>
+                    <masterreq ref="lightmagic/delayedcaster"/>
+                    <masterreq ref="fatemagic/delayedcaster"/>
+                    <masterreq ref="protectionmagic/delayedcaster"/>
+                    <masterreq ref="deathmagic/delayedcaster"/>
+                    <masterreq ref="transformationmagic/delayedcaster"/>
+                </selreq>
+            </requires>
+        </mastership>
+        <mastership level="2" key="overwhelming_profiency" />
+        <mastership level="2" key="longterm_observation" />
+        <mastership level="2" key="magic_detector" />
+        <mastership level="2" key="magic_gesture_expert" />
+
+        <mastership level="2" key="ritual_lore_1" />
+        <mastership level="1" key="ritual_connection">
+            <requires>
+                <masterreq ref="arcanelore/ritual_lore_1"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="focus_theft">
+            <requires>
+                <masterreq ref="arcanelore/ritual_connection"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="ritual_lore_2">
+            <requires>
+                <masterreq ref="arcanelore/ritual_lore_1"/>
+            </requires>
+        </mastership>
+        <mastership level="4" key="ritual_lore_3">
+            <requires>
+                <masterreq ref="arcanelore/ritual_lore_2"/>
+            </requires>
+        </mastership>
+        <!--  S.178 -->
+        <mastership level="1" key="versed_scrolluser" />
+        <mastership level="1" key="artifact_speeder" >
+            <requires>
+                <selreq>
+                    <masterreq ref="antimagic/magiccrafter"/>
+                    <masterreq ref="combatmagic/magiccrafter"/>
+                    <masterreq ref="windmagic/magiccrafter"/>
+                    <masterreq ref="stonemagic/magiccrafter"/>
+                    <masterreq ref="enhancemagic/magiccrafter"/>
+                    <masterreq ref="firemagic/magiccrafter"/>
+                    <masterreq ref="watermagic/magiccrafter"/>
+                    <masterreq ref="shadowmagic/magiccrafter"/>
+                    <masterreq ref="naturemagic/magiccrafter"/>
+                    <masterreq ref="illusionmagic/magiccrafter"/>
+                    <masterreq ref="controlmagic/magiccrafter"/>
+                    <masterreq ref="motionmagic/magiccrafter"/>
+                    <masterreq ref="insightmagic/magiccrafter"/>
+                    <masterreq ref="healmagic/magiccrafter"/>
+                    <masterreq ref="lightmagic/magiccrafter"/>
+                    <masterreq ref="fatemagic/magiccrafter"/>
+                    <masterreq ref="protectionmagic/magiccrafter"/>
+                    <masterreq ref="deathmagic/magiccrafter"/>
+                    <masterreq ref="transformationmagic/magiccrafter"/>
+                </selreq>
+            </requires>
+        </mastership>
+        <mastership level="1" key="artifact_stacking">
+            <requires>
+                <masterreq ref="arcanelore/artifactlore"/>
+                <selreq>
+                    <masterreq ref="antimagic/magiccrafter"/>
+                    <masterreq ref="combatmagic/magiccrafter"/>
+                    <masterreq ref="windmagic/magiccrafter"/>
+                    <masterreq ref="stonemagic/magiccrafter"/>
+                    <masterreq ref="enhancemagic/magiccrafter"/>
+                    <masterreq ref="firemagic/magiccrafter"/>
+                    <masterreq ref="watermagic/magiccrafter"/>
+                    <masterreq ref="shadowmagic/magiccrafter"/>
+                    <masterreq ref="naturemagic/magiccrafter"/>
+                    <masterreq ref="illusionmagic/magiccrafter"/>
+                    <masterreq ref="controlmagic/magiccrafter"/>
+                    <masterreq ref="motionmagic/magiccrafter"/>
+                    <masterreq ref="insightmagic/magiccrafter"/>
+                    <masterreq ref="healmagic/magiccrafter"/>
+                    <masterreq ref="lightmagic/magiccrafter"/>
+                    <masterreq ref="fatemagic/magiccrafter"/>
+                    <masterreq ref="protectionmagic/magiccrafter"/>
+                    <masterreq ref="deathmagic/magiccrafter"/>
+                    <masterreq ref="transformationmagic/magiccrafter"/>
+                </selreq>
+            </requires>
+        </mastership>
+        <mastership level="1" key="artifact_prolonging">
+            <requires>
+                <selreq>
+                    <masterreq ref="antimagic/magiccrafter"/>
+                    <masterreq ref="combatmagic/magiccrafter"/>
+                    <masterreq ref="windmagic/magiccrafter"/>
+                    <masterreq ref="stonemagic/magiccrafter"/>
+                    <masterreq ref="enhancemagic/magiccrafter"/>
+                    <masterreq ref="firemagic/magiccrafter"/>
+                    <masterreq ref="watermagic/magiccrafter"/>
+                    <masterreq ref="shadowmagic/magiccrafter"/>
+                    <masterreq ref="naturemagic/magiccrafter"/>
+                    <masterreq ref="illusionmagic/magiccrafter"/>
+                    <masterreq ref="controlmagic/magiccrafter"/>
+                    <masterreq ref="motionmagic/magiccrafter"/>
+                    <masterreq ref="insightmagic/magiccrafter"/>
+                    <masterreq ref="healmagic/magiccrafter"/>
+                    <masterreq ref="lightmagic/magiccrafter"/>
+                    <masterreq ref="fatemagic/magiccrafter"/>
+                    <masterreq ref="protectionmagic/magiccrafter"/>
+                    <masterreq ref="deathmagic/magiccrafter"/>
+                    <masterreq ref="transformationmagic/magiccrafter"/>
+                </selreq>
+             </requires>
+        </mastership>    
+        <mastership level="1" key="create_talismans">
+            <requires>
+                <selreq>
+                    <masterreq ref="antimagic/magiccrafter"/>
+                    <masterreq ref="combatmagic/magiccrafter"/>
+                    <masterreq ref="windmagic/magiccrafter"/>
+                    <masterreq ref="stonemagic/magiccrafter"/>
+                    <masterreq ref="enhancemagic/magiccrafter"/>
+                    <masterreq ref="firemagic/magiccrafter"/>
+                    <masterreq ref="watermagic/magiccrafter"/>
+                    <masterreq ref="shadowmagic/magiccrafter"/>
+                    <masterreq ref="naturemagic/magiccrafter"/>
+                    <masterreq ref="illusionmagic/magiccrafter"/>
+                    <masterreq ref="controlmagic/magiccrafter"/>
+                    <masterreq ref="motionmagic/magiccrafter"/>
+                    <masterreq ref="insightmagic/magiccrafter"/>
+                    <masterreq ref="healmagic/magiccrafter"/>
+                    <masterreq ref="lightmagic/magiccrafter"/>
+                    <masterreq ref="fatemagic/magiccrafter"/>
+                    <masterreq ref="protectionmagic/magiccrafter"/>
+                    <masterreq ref="deathmagic/magiccrafter"/>
+                    <masterreq ref="transformationmagic/magiccrafter"/>
+                </selreq>
+            </requires>
+        </mastership>
+        <mastership level="1" key="enhanced_anchor">
+            <requires>
+                <selreq>
+                    <masterreq ref="antimagic/magiccrafter"/>
+                    <masterreq ref="combatmagic/magiccrafter"/>
+                    <masterreq ref="windmagic/magiccrafter"/>
+                    <masterreq ref="stonemagic/magiccrafter"/>
+                    <masterreq ref="enhancemagic/magiccrafter"/>
+                    <masterreq ref="firemagic/magiccrafter"/>
+                    <masterreq ref="watermagic/magiccrafter"/>
+                    <masterreq ref="shadowmagic/magiccrafter"/>
+                    <masterreq ref="naturemagic/magiccrafter"/>
+                    <masterreq ref="illusionmagic/magiccrafter"/>
+                    <masterreq ref="controlmagic/magiccrafter"/>
+                    <masterreq ref="motionmagic/magiccrafter"/>
+                    <masterreq ref="insightmagic/magiccrafter"/>
+                    <masterreq ref="healmagic/magiccrafter"/>
+                    <masterreq ref="lightmagic/magiccrafter"/>
+                    <masterreq ref="fatemagic/magiccrafter"/>
+                    <masterreq ref="protectionmagic/magiccrafter"/>
+                    <masterreq ref="deathmagic/magiccrafter"/>
+                    <masterreq ref="transformationmagic/magiccrafter"/>
+                </selreq>
+                <masterreq ref="arcanelore/createscroll1"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="scroll_expert">
+            <requires>
+                <masterreq ref="arcanelore/versed_scrolluser"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="customized_artifacts">
+            <requires>
+                <masterreq ref="arcanelore/artifactlore"/>
+                <selreq>
+                    <masterreq ref="antimagic/magiccrafter"/>
+                    <masterreq ref="combatmagic/magiccrafter"/>
+                    <masterreq ref="windmagic/magiccrafter"/>
+                    <masterreq ref="stonemagic/magiccrafter"/>
+                    <masterreq ref="enhancemagic/magiccrafter"/>
+                    <masterreq ref="firemagic/magiccrafter"/>
+                    <masterreq ref="watermagic/magiccrafter"/>
+                    <masterreq ref="shadowmagic/magiccrafter"/>
+                    <masterreq ref="naturemagic/magiccrafter"/>
+                    <masterreq ref="illusionmagic/magiccrafter"/>
+                    <masterreq ref="controlmagic/magiccrafter"/>
+                    <masterreq ref="motionmagic/magiccrafter"/>
+                    <masterreq ref="insightmagic/magiccrafter"/>
+                    <masterreq ref="healmagic/magiccrafter"/>
+                    <masterreq ref="lightmagic/magiccrafter"/>
+                    <masterreq ref="fatemagic/magiccrafter"/>
+                    <masterreq ref="protectionmagic/magiccrafter"/>
+                    <masterreq ref="deathmagic/magiccrafter"/>
+                    <masterreq ref="transformationmagic/magiccrafter"/>
+                </selreq>
+            </requires>
+        </mastership>
+        <mastership level="2" key="create_spellstore">
+            <requires>
+                <selreq>
+                    <masterreq ref="antimagic/magiccrafter"/>
+                    <masterreq ref="combatmagic/magiccrafter"/>
+                    <masterreq ref="windmagic/magiccrafter"/>
+                    <masterreq ref="stonemagic/magiccrafter"/>
+                    <masterreq ref="enhancemagic/magiccrafter"/>
+                    <masterreq ref="firemagic/magiccrafter"/>
+                    <masterreq ref="watermagic/magiccrafter"/>
+                    <masterreq ref="shadowmagic/magiccrafter"/>
+                    <masterreq ref="naturemagic/magiccrafter"/>
+                    <masterreq ref="illusionmagic/magiccrafter"/>
+                    <masterreq ref="controlmagic/magiccrafter"/>
+                    <masterreq ref="motionmagic/magiccrafter"/>
+                    <masterreq ref="insightmagic/magiccrafter"/>
+                    <masterreq ref="healmagic/magiccrafter"/>
+                    <masterreq ref="lightmagic/magiccrafter"/>
+                    <masterreq ref="fatemagic/magiccrafter"/>
+                    <masterreq ref="protectionmagic/magiccrafter"/>
+                    <masterreq ref="deathmagic/magiccrafter"/>
+                    <masterreq ref="transformationmagic/magiccrafter"/>
+                </selreq>
+            </requires>
+        </mastership>
+        <mastership level="2" key="fast_spellstore_replenish">
+            <requires>
+                <masterreq ref="arcanelore/spellstore_replenish"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="spellstore_replenish">
+            <requires>
+                <masterreq ref="arcanelore/artifactlore"/>
+            </requires>
+        </mastership>
+        <mastership level="3" key="higher_artifactmaster">
+            <requires>
+                <masterreq ref="arcanelore/artifactlore"/>
+                <selreq>
+                    <masterreq ref="antimagic/relicmaster"/>
+                    <masterreq ref="combatmagic/relicmaster"/>
+                    <masterreq ref="windmagic/relicmaster"/>
+                    <masterreq ref="stonemagic/relicmaster"/>
+                    <masterreq ref="enhancemagic/relicmaster"/>
+                    <masterreq ref="firemagic/relicmaster"/>
+                    <masterreq ref="watermagic/relicmaster"/>
+                    <masterreq ref="shadowmagic/relicmaster"/>
+                    <masterreq ref="naturemagic/relicmaster"/>
+                    <masterreq ref="illusionmagic/relicmaster"/>
+                    <masterreq ref="controlmagic/relicmaster"/>
+                    <masterreq ref="motionmagic/relicmaster"/>
+                    <masterreq ref="insightmagic/relicmaster"/>
+                    <masterreq ref="healmagic/relicmaster"/>
+                    <masterreq ref="lightmagic/relicmaster"/>
+                    <masterreq ref="fatemagic/relicmaster"/>
+                    <masterreq ref="protectionmagic/relicmaster"/>
+                    <masterreq ref="deathmagic/relicmaster"/>
+                    <masterreq ref="transformationmagic/relicmaster"/>
+                </selreq>
+            </requires>
+        </mastership>
+        <!-- S.190 -->
+        <mastership level="1" key="service_expert"/>
+        <mastership level="1" key="healing_beings"/>
+        <mastership level="1" key="helpful_beings"/>
+        <mastership level="1" key="combat_conjuror"/>
+        <mastership level="1" key="fighting_beings"/>
+        <mastership level="1" key="combatcasting_beings"/>
+        <mastership level="1" key="scouting_beings"/>
+        <mastership level="1" key="protecting_beings"/>
+        <mastership level="1" key="powerful_conjuror"/>
+        <mastership level="1" key="transporting_beings_1"/>
+        <mastership level="1" key="lore_of_beings"/>
+        <mastership level="1" key="casting_beings"/>
+        <mastership level="2" key="transporting_beings_2">
+          <requires>
+              <masterreq ref="arcanelore/transporting_beings_1"/>
+          </requires>
+        </mastership>
+        <mastership level="2" key="promising_conjuror">
+            <requires>
+                <selreq>
+                    <masterreq ref="arcanelore/healing_beings"/>
+                    <masterreq ref="arcanelore/helpful_beings"/>
+                    <masterreq ref="arcanelore/fighting_beings"/>
+                    <masterreq ref="arcanelore/scouting_beings"/>
+                    <masterreq ref="arcanelore/protecting_beings"/>
+                    <masterreq ref="arcanelore/transporting_beings_1"/>
+                    <masterreq ref="arcanelore/casting_beings"/>
+                </selreq>
+            </requires>
+        </mastership>
+        <mastership level="3" key="excellent_conjuror">
+          <requires>
+              <masterreq ref="arcanelore/promising_conjuror"/>
+          </requires>
+        </mastership>
+        <mastership level="3" key="transporting_beings_3">
+          <requires>
+              <masterreq ref="arcanelore/transporting_beings_2"/>
+          </requires>
+        </mastership>
+    
+         <!-- S.204 -->
+       <mastership level="1" key="arcane_overload" />
+       <mastership level="1" key="complex_commands" />
+       <mastership level="1" key="personal_synchronisation" />
+       <mastership level="1" key="spontaneous_instruction" />
+	</skill>
+
+    <skill id="craftmanship">
+        <mastership level="1" key="designer"/>
+        <mastership level="2" key="adaptive_designer">
+          <requires>
+              <masterreq ref="craftmanship/designer"/>
+          </requires>
+        </mastership>
+        <mastership level="2" key="binding_animation">
+          <requires>
+              <masterreq ref="craftmanship/designer"/>
+          </requires>
+        </mastership>
+        <mastership level="2" key="restoration">
+          <requires>
+              <masterreq ref="craftmanship/designer"/>
+          </requires>
+        </mastership>
+    </skill>
+
+    <skill id="clscraft">
+        <mastership level="1" key="designer"/>
+        <mastership level="2" key="adaptive_designer">
+          <requires>
+              <masterreq ref="clscraft/designer"/>
+          </requires>
+        </mastership>
+        <mastership level="2" key="binding_animation">
+          <requires>
+              <masterreq ref="clscraft/designer"/>
+          </requires>
+        </mastership>
+        <mastership level="2" key="restoration">
+          <requires>
+              <masterreq ref="clscraft/designer"/>
+          </requires>
+        </mastership>
+    </skill>
+
+    <skill id="dexterity">
+        <mastership level="1" key="fake_magic_gesture">
+          <requires>
+            <skillreq ref="arcanelore" value="6"/>
+          </requires>
+        </mastership>
+    </skill>
+
+    <skill id="antimagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+        
+        <mastership level="1" key="broad_knowledge"/>
+        <mastership level="1" key="opponent_blood"/>
+        <mastership level="1" key="opponent_stone"/>
+        <mastership level="1" key="opponent_fire"/>
+        <mastership level="1" key="opponent_ghost"/>
+        <mastership level="1" key="opponent_god"/>
+        <mastership level="1" key="opponent_light"/>
+        <mastership level="1" key="opponent_nature"/>
+        <mastership level="1" key="opponent_shadow"/>
+        <mastership level="1" key="opponent_water"/>
+        <mastership level="1" key="opponent_darkness"/>
+        <mastership level="1" key="opponent_wind"/>
+        <mastership level="1" key="magehunter"/>
+        <mastership level="1" key="selective_field"/>
+        <mastership level="2" key="antimagic_hardening"/>
+        <mastership level="2" key="brute_banishing"/>
+        <mastership level="2" key="effective_banisher"/>
+        <mastership level="2" key="enemy_blood"><requires><masterreq ref="antimagic/opponent_blood"/></requires></mastership>
+        <mastership level="2" key="enemy_stone"><requires><masterreq ref="antimagic/opponent_stone"/></requires></mastership>
+        <mastership level="2" key="enemy_fire"><requires><masterreq ref="antimagic/opponent_fire"/></requires></mastership>
+        <mastership level="2" key="enemy_ghost"><requires><masterreq ref="antimagic/opponent_ghost"/></requires></mastership>
+        <mastership level="2" key="enemy_god"><requires><masterreq ref="antimagic/opponent_god"/></requires></mastership>
+        <mastership level="2" key="enemy_light"><requires><masterreq ref="antimagic/opponent_light"/></requires></mastership>
+        <mastership level="2" key="enemy_nature"><requires><masterreq ref="antimagic/opponent_nature"/></requires></mastership>
+        <mastership level="2" key="enemy_shadow"><requires><masterreq ref="antimagic/opponent_shadow"/></requires></mastership>
+        <mastership level="2" key="enemy_water"><requires><masterreq ref="antimagic/opponent_water"/></requires></mastership>
+        <mastership level="2" key="enemy_darkness"><requires><masterreq ref="antimagic/opponent_darkness"/></requires></mastership>
+        <mastership level="2" key="enemy_wind"><requires><masterreq ref="antimagic/opponent_wind"/></requires></mastership>
+        <mastership level="3" key="broadband_antimagic"/>
+        <mastership level="3" key="archenemy_blood"><requires><masterreq ref="antimagic/enemy_blood"/></requires></mastership>
+        <mastership level="3" key="archenemy_stone"><requires><masterreq ref="antimagic/enemy_stone"/></requires></mastership>
+        <mastership level="3" key="archenemy_fire"><requires><masterreq ref="antimagic/enemy_fire"/></requires></mastership>
+        <mastership level="3" key="archenemy_ghost"><requires><masterreq ref="antimagic/enemy_ghost"/></requires></mastership>
+        <mastership level="3" key="archenemy_god"><requires><masterreq ref="antimagic/enemy_god"/></requires></mastership>
+        <mastership level="3" key="archenemy_light"><requires><masterreq ref="antimagic/enemy_light"/></requires></mastership>
+        <mastership level="3" key="archenemy_nature"><requires><masterreq ref="antimagic/enemy_nature"/></requires></mastership>
+        <mastership level="3" key="archenemy_shadow"><requires><masterreq ref="antimagic/enemy_shadow"/></requires></mastership>
+        <mastership level="3" key="archenemy_water"><requires><masterreq ref="antimagic/enemy_water"/></requires></mastership>
+        <mastership level="3" key="archenemy_darkness"><requires><masterreq ref="antimagic/enemy_darkness"/></requires></mastership>
+        <mastership level="3" key="archenemy_wind"><requires><masterreq ref="antimagic/enemy_wind"/></requires></mastership>
+        <mastership level="3" key="fast_counter"><requires><masterreq ref="antimagic/countermagic"/></requires></mastership>
+        <mastership level="3" key="superior_counter"><requires><masterreq ref="antimagic/countermagic"/></requires></mastership>
+        <mastership level="4" key="countermagic_armor"/>
+    </skill>
+    
+    <skill id="controlmagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+
+        <mastership level="1" key="penetrating_gaze"/>
+        <mastership level="1" key="subtle_influence"/>
+        <mastership level="1" key="unyielding_will"/>
+        <mastership level="2" key="counter_control"><requires><masterreq ref="controlmagic/willbreaker"/></requires></mastership>
+        <mastership level="2" key="friendly_takeover"><requires><masterreq ref="controlmagic/subtle_influence"/></requires></mastership>
+        <mastership level="2" key="superiority"><requires><masterreq ref="controlmagic/empathy"/></requires></mastership>
+        <mastership level="2" key="duel_of_wills"><requires><masterreq ref="controlmagic/willbreaker"/></requires></mastership>
+        <mastership level="3" key="victory_of_mind"/>
+        <mastership level="3" key="will_enhancer"><requires><masterreq ref="controlmagic/superiority"/></requires></mastership>
+        <mastership level="4" key="materialbond3"><requires><masterreq ref="controlmagic/materialbond2"/></requires></mastership>
+    </skill>
+    
+    <skill id="motionmagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+
+        <mastership level="1" key="firm_anker"/>
+        <mastership level="1" key="hard_to_hit"/>
+        <mastership level="1" key="paralyzing_magic"/>
+        <mastership level="2" key="lasting_speed"><requires><masterreq ref="motionmagic/arcanespeed"/></requires></mastership>
+        <mastership level="2" key="deflect_projectile1"/>
+        <mastership level="2" key="speed_transfer"><requires><masterreq ref="motionmagic/paralyzing_magic"/></requires></mastership>
+        <mastership level="2" key="telekinetic"/>
+        <mastership level="2" key="moving_caster1"/>
+        <mastership level="3" key="deflect_projectile2"><requires><masterreq ref="motionmagic/deflect_projectile1"/></requires></mastership>
+        <mastership level="3" key="unrestricted_motion"/>
+        <mastership level="3" key="moving_caster2"><requires><masterreq ref="motionmagic/moving_caster1"/></requires></mastership>
+        <mastership level="4" key="one_with_the_wind">
+            <requires>
+                <masterreq ref="motionmagic/arcanespeed"/>
+                <masterreq ref="acrobatics/masterbalance"/>
+                <masterreq ref="athletics/steeplechaser"/>
+            </requires>
+            <modifications>
+              <attrmod attr="SPEED" val="1" />
+              <attrmod attr="INITIATIVE" val="-1" />
+            </modifications>
+        </mastership>
+        <mastership level="4" key="reflect_projectile"><requires><masterreq ref="motionmagic/deflect_projectile2"/></requires></mastership>
+    </skill>
+    
+    <skill id="insightmagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+
+        <mastership level="1" key="i_see_through_you"/>
+        <mastership level="1" key="magic_senses">
+          <modifications>
+            <skillmod ref="perception" value="1"/>
+          </modifications>
+        </mastership>
+        <mastership level="1" key="recognize_signature"/>
+        <mastership level="1" key="enhanced_senses"><requires><skillreq ref="perception" value="6"/></requires></mastership>
+        <mastership level="1" key="knowledge_is_power"/>
+        <mastership level="1" key="spellsense1"/>
+        <mastership level="2" key="arcane_forensic1"/>
+        <mastership level="2" key="soothing_aura"/>
+        <mastership level="2" key="shared_insight"/>
+        <mastership level="2" key="forced_insight"/>
+        <mastership level="2" key="illusiondestroyer"/>
+        <mastership level="2" key="deep_insight"/>
+        <mastership level="3" key="arcane_forensic2"><requires><masterreq ref="insightmagic/arcane_forensic1"/></requires></mastership>
+        <mastership level="3" key="thought_cathedral"/>
+        <mastership level="3" key="sense_magic"/>
+        <mastership level="3" key="spellsense2"><requires><masterreq ref="insightmagic/spellsense1"/></requires></mastership>
+        <mastership level="4" key="arcane_forensic3"><requires><masterreq ref="insightmagic/arcane_forensic2"/></requires></mastership>
+        <mastership level="4" key="divider_of_veils"/>
+    </skill>
+     
+    <skill id="stonemagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+
+        <mastership level="1" key="stone_summoner"/>
+        <mastership level="1" key="stone_power"/>
+        <mastership level="1" key="power_of_the_ore"><requires><masterreq ref="craftmanship/materialmaster"/></requires></mastership>
+        <mastership level="1" key="stone_former"/>
+        <mastership level="1" key="object_caster"/>
+        <mastership level="2" key="sense_stone"><requires><masterreq ref="stonemagic/mastersmith"/></requires></mastership>
+        <mastership level="2" key="object_destroyer"/>
+        <mastership level="2" key="stubborn_as_stone"/>
+        <mastership level="3" key="fists_of_steel"><requires><masterreq ref="stonemagic/object_destroyer"/></requires></mastership>
+        <mastership level="3" key="stoneaffinity"><requires><masterreq ref="stonemagic/earthaffinity"/></requires></mastership>
+        <mastership level="3" key="heavens_enemy"/>
+        <mastership level="4" key="root_in_stone"/>
+        <mastership level="4" key="mind_of_seel"><requires><masterreq ref="stonemagic/stubborn_as_stone"/></requires></mastership>
+    </skill>
+    
+    <skill id="firemagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+
+        <mastership level="1" key="impressive_flame"/>
+        <mastership level="1" key="fire_summoner"/>
+        <mastership level="1" key="heat_aura"/>
+        <mastership level="1" key="bonfire"/>
+        <mastership level="1" key="forceful_explosion"/>
+        <mastership level="2" key="burning_rage"/>
+        <mastership level="2" key="efficient_flames"/>
+        <mastership level="2" key="fireproof"><requires><masterreq ref="firemagic/fireresistence1"/></requires></mastership>
+        <mastership level="2" key="fiery_surrounding"/>
+        <mastership level="2" key="firestarter"/>
+        <mastership level="2" key="master_of_heat"/>
+        <mastership level="3" key="firestorm"><requires><masterreq ref="firemagic/burning_rage"/></requires></mastership>
+        <mastership level="3" key="heatmaster"><requires><masterreq ref="firemagic/fireresistence1"/></requires></mastership>
+        <mastership level="3" key="cauterize"/>
+        <mastership level="4" key="feeding_flames"><requires><masterreq ref="firemagic/fireresistence3"/></requires></mastership>
+    </skill>
+    
+    <skill id="healmagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+ 
+        <mastership level="1" key="healing_efficiency"/>
+        <mastership level="1" key="disease_resistence"/>
+        <mastership level="1" key="life_blossom"/>
+        <mastership level="1" key="emergency_balm"/>
+        <mastership level="1" key="signs_of_life"><requires><masterreq ref="healmagic/castershand"/></requires></mastership>
+        <mastership level="2" key="anatomic_secrets">
+          <modifications>
+            <skillmod ref="heal" value="3" />
+          </modifications>
+        </mastership>
+        <mastership level="2" key="magic_poison_immunity"/>
+        <mastership level="2" key="multiple_healing"/>
+        <mastership level="3" key="life_intuition"/>
+        <mastership level="3" key="healing_hands"/>
+        <mastership level="4" key="phoenix_rising"/>
+        <mastership level="4" key="stable_healmagic"/>
+    </skill>
+    
+    <skill id="illusionmagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+ 
+        <mastership level="1" key="clear_sight"/>
+        <mastership level="1" key="blurry_blade"/>
+        <mastership level="2" key="multiple_illusions"/>
+        <mastership level="2" key="selective_illusions"/>
+        <mastership level="2" key="immoderate_trust"/>
+        <mastership level="2" key="inscrutable_magic"><requires><masterreq ref="illusionmagic/disturbclairvoyance"/></requires></mastership>
+        <mastership level="3" key="shared_camouflage"/>
+        <mastership level="3" key="spellhustle"><requires><masterreq ref="illusionmagic/inscrutable_magic"/></requires></mastership>
+        <mastership level="4" key="master_of_weak_minds"/>
+        <mastership level="4" key="unseen_attack"><requires><masterreq ref="illusionmagic/blurry_blade"/></requires></mastership>
+    </skill>
+    
+    <skill id="combatmagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+
+        <mastership level="1" key="constant_disturbance1"/>
+        <mastership level="1" key="arcane_archer"/>
+        <mastership level="1" key="defensive_caster"/>
+        <mastership level="1" key="pierce_darkness"/>
+        <mastership level="1" key="magical_throwing_weapon"/>
+        <mastership level="2" key="constant_disturbance2"><requires><masterreq ref="combatmagic/constant_disturbance1"/></requires></mastership>
+        <mastership level="2" key="one_with_weapon"/>
+        <mastership level="2" key="destroyerghost"/>
+        <mastership level="2" key="protected_caster"><requires><masterreq ref="combatmagic/defensive_caster"/></requires></mastership>
+        <mastership level="2" key="careful_aiming"><requires><masterreq ref="combatmagic/aimedspells"/></requires></mastership>
+        <mastership level="2" key="enhanced_attack"/>
+        <mastership level="2" key="unruly_disturbance"><requires><masterreq ref="combatmagic/constant_disturbance1"/></requires></mastership>
+        <mastership level="3" key="destroyerblood"><requires><masterreq ref="combatmagic/destroyerheart"/></requires></mastership>
+        <mastership level="3" key="hardtoescape"><requires><masterreq ref="combatmagic/veteranofmelee"/></requires></mastership>
+        <mastership level="3" key="masterofmelee"><requires><masterreq ref="combatmagic/veteranofmelee"/></requires></mastership>
+        <mastership level="3" key="destroyermind"><requires><masterreq ref="combatmagic/destroyerghost"/></requires></mastership>
+        <mastership level="4" key="moonsteel_concentration"><requires><masterreq ref="combatmagic/steelconcentration"/></requires></mastership>
+    </skill>
+    
+    <skill id="lightmagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+
+        <mastership level="1" key="blinder"/>
+        <mastership level="1" key="child_of_light"/>
+        <mastership level="1" key="lightsummoner"/>
+        <mastership level="1" key="disrupter_of_shadows"/>
+        <mastership level="1" key="smashing_light"/>
+        <mastership level="2" key="brighter_as_light"/>
+        <mastership level="2" key="master_of_lightcreatures"/>
+        <mastership level="2" key="shining_example">
+          <modifications>
+            <skillmod ref="leadership" value="2"/>
+            <skillmod ref="diplomacy" value="1"/>
+            <skillmod ref="performance" value="1"/>
+          </modifications>
+        </mastership>
+        <mastership level="2" key="light_in_the_dark"><requires><masterreq ref="lightmagic/luminance"/></requires></mastership>
+        <mastership level="2" key="lightenhancer"><requires><masterreq ref="lightmagic/luminance"/></requires></mastership>
+        <mastership level="3" key="shocking_light"><requires><masterreq ref="lightmagic/againstdarkness"/></requires></mastership>
+        <mastership level="3" key="nurturing_light"/>
+        <mastership level="3" key="guardian_of_light"><requires><masterreq ref="lightmagic/protectionlight"/></requires></mastership>
+        <mastership level="4" key="arbiter_of_brightness"><requires><masterreq ref="lightmagic/unblinded"/></requires></mastership>
+        <mastership level="4" key="smasher_of_darkness"><requires><masterreq ref="lightmagic/guardian_of_light"/></requires></mastership>
+    </skill>
+    
+    <skill id="naturemagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+        <mastership level="1" key="localfauna" />
+        <mastership level="1" key="natureconjurer" />
+        <mastership level="1" key="natureprotection" />
+        <mastership level="1" key="animalcaller" />
+        <mastership level="2" key="magichardening" />
+        <mastership level="2" key="naturecloseness"><requires><masterreq ref="naturemagic/naturesong"/></requires></mastership>
+        <mastership level="2" key="animalcompany" />
+        <mastership level="2" key="rootsleep"><requires><masterreq ref="naturemagic/natureprotection"/></requires></mastership>
+        <mastership level="3" key="wildernessservant">
+            <requires><masterreq ref="naturemagic/naturecloseness"/></requires>
+            <requires><masterreq ref="naturemagic/wildernesschild"/></requires>
+        </mastership>
+        <mastership level="3" key="nature_nourishment"><requires><masterreq ref="naturemagic/natureharmony"/></requires></mastership>
+        <mastership level="4" key="onewithanimals" />
+    </skill>
+
+    <skill id="shadowmagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+        <mastership level="1" key="efficientdisguise"><requires><masterreq ref="stealth/creeper"/></requires></mastership>
+        <mastership level="1" key="lightconjurer"/>
+        <mastership level="1" key="disruptor_of_light"/>
+        <mastership level="1" key="unseen">
+          <modifications>
+            <skillmod ref="stealth" value="2" />
+          </modifications>
+        </mastership>
+        <mastership level="2" key="darker_as_shadows"/>
+        <mastership level="2" key="master_of_shadowghosts"/>
+        <mastership level="2" key="nightlyhunter"/>
+        <mastership level="3" key="scaryshadows"/>
+        <mastership level="3" key="caringshadows"><requires><masterreq ref="shadowmagic/protectingshadows"/></requires></mastership>
+        <mastership level="3" key="shadowsense"/>
+        <mastership level="4" key="matterveiler"/>
+    </skill>
+    
+    <skill id="fatemagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+
+        <mastership level="1" key="godly_conjurer"/>
+        <mastership level="1" key="fate_aware"/>
+        <mastership level="1" key="self_blessing"><requires><masterreq ref="fatemagic/castershand"/></requires></mastership>
+        <mastership level="2" key="personalized_curse"/>
+        <mastership level="2" key="fate_knowledge"/>
+        <mastership level="2" key="blessed"><requires><masterreq ref="fatemagic/luckychild"/></requires></mastership>
+        <mastership level="3" key="leased_luck"><requires><masterreq ref="fatemagic/blessed"/></requires></mastership>
+        <mastership level="3" key="curse_master"><requires><masterreq ref="fatemagic/cursebringer"/></requires></mastership>
+        <mastership level="3" key="prophet"><requires><masterreq ref=" fatemagic/fortuneteller"/></requires></mastership>
+        <mastership level="4" key="grand_curse_master"><requires><masterreq ref=" fatemagic/curse_master"/></requires></mastership>
+        <mastership level="4" key="owns_fate_master"><requires><masterreq ref=" fatemagic/fate_aware"/></requires></mastership>
+    </skill>
+    
+    <skill id="protectionmagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+
+        <mastership level="1" key="hastyprotection2"><requires><masterreq ref="protectionmagic/hastyprotection"/></requires></mastership>
+        <mastership level="1" key="protective_knowledge"/>
+        <mastership level="1" key="protection_bloodcreature"/>
+        <mastership level="1" key="protection_stonecreature"/>
+        <mastership level="1" key="protection_firecreature"/>
+        <mastership level="1" key="protection_ghostcreature"/>
+        <mastership level="1" key="protection_godservant"/>
+        <mastership level="1" key="protection_lightcreature"/>
+        <mastership level="1" key="protection_naturecreature"/>
+        <mastership level="1" key="protection_shadowcreature"/>
+        <mastership level="1" key="protection_watercreature"/>
+        <mastership level="1" key="protection_creature_darkness"/>
+        <mastership level="1" key="protection_windcreature"/>
+        <mastership level="2" key="stacked_protection"/>
+        <mastership level="2" key="strong_protection"/>
+        <mastership level="2" key="spell_identification"/>
+        <mastership level="3" key="close"/>
+        <mastership level="3" key="magic_defender"><requires><masterreq ref="protectionmagic/protectionmagicmaster"/></requires></mastership>
+        <mastership level="3" key="granted_protection"><requires><masterreq ref="protectionmagic/castershand"/></requires></mastership>
+        <mastership level="4" key="thorny_protection"/>
+        <mastership level="4" key="shared_protection"><requires><masterreq ref="protectionmagic/granted_protection"/></requires></mastership>
+    </skill>
+    
+    <skill id="enhancemagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+
+        <mastership level="1" key="tightened_morale"/>
+        <mastership level="1" key="magic_and_craftmanship"/>
+        <mastership level="1" key="acuteness"/>
+        <mastership level="2" key="overall_senses"><requires><masterreq ref="enhancemagic/acuteness"/></requires></mastership>
+        <mastership level="2" key="steely_morale"><requires><masterreq ref="enhancemagic/tightened_morale"/></requires></mastership>
+        <mastership level="2" key="longterm_overload"><requires><masterreq ref="enhancemagic/overload"/></requires></mastership>
+        <mastership level="3" key="shared_advantage"><requires><masterreq ref="enhancemagic/ownadvantage"/></requires></mastership>
+        <mastership level="3" key="forcetransfer"/>
+        <mastership level="3" key="magic_runes"><requires><masterreq ref="enhancemagic/magicsymbols"/></requires></mastership>
+        <mastership level="4" key="absolute_awareness"><requires><masterreq ref="enhancemagic/overall_senses"/></requires></mastership>
+        <mastership level="4" key="spelladvantage"/>
+    </skill>
+    
+    <skill id="deathmagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+        <!-- S.103 -->
+        <mastership level="1" key="ghostcreature_conjurer" />
+        <mastership level="1" key="undead_classicist" />
+        <mastership level="2" key="curse_of_curses" />
+        <mastership level="2" key="inspired_by_ghosts" />
+        <mastership level="3" key="necromantic_dulling"><requires><masterreq ref="deathmagic/necromancer"/></requires></mastership>
+        <mastership level="3" key="undead_presence"><requires><masterreq ref="deathmagic/undead_classicist"/></requires></mastership>
+        <mastership level="4" key="ageless"><requires><masterreq ref="deathmagic/masterofage"/></requires></mastership>
+        <!-- S.184 -->
+        <mastership level="1" key="fast_undead"/>
+        <mastership level="1" key="master_abnormities">
+          <requires>
+            <masterreq ref="deathmagic/necromancer"/>
+          </requires>
+        </mastership>
+        <mastership level="1" key="graceful_skeleton"/>
+        <mastership level="1" key="dancing_dead"/>
+        <mastership level="2" key="hard_to_banish"/>
+        <mastership level="2" key="spontaneous_graverobbery"/>
+        <mastership level="2" key="undead_hordes"><requires><masterreq ref="deathmagic/necromancer"/></requires></mastership>
+        <mastership level="2" key="undead_onslaught"><requires><masterreq ref="deathmagic/fast_undead"/></requires></mastership>
+        <mastership level="3" key="rise" />
+        <mastership level="3" key="corpseteacher"><requires><masterreq ref="deathmagic/necromancer"/></requires></mastership>
+        <mastership level="4" key="master_undead_hordes">
+          <requires>
+            <masterreq ref="deathmagic/necromancer"/>
+            <masterreq ref="deathmagic/dancing_dead"/>
+          </requires>
+        </mastership>
+    </skill>
+    
+    <skill id="transformationmagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+
+        <mastership level="1" key="hard_to_see_through"/>
+        <mastership level="1" key="splendid_animalform"/>
+        <mastership level="1" key="form_stability"/>
+        <mastership level="2" key="accustomed_form"><requires><masterreq ref="transformationmagic/favoredform"/></requires></mastership>
+        <mastership level="2" key="harmonized_transformation"/>
+        <mastership level="2" key="fighting_form">
+            <requires>
+                <masterreq ref="transformationmagic/favoredform"/>
+                <masterreq ref="transformationmagic/splendid_animalform"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="mighty_form">
+            <requires>
+                <masterreq ref="transformationmagic/favoredform"/>
+                <masterreq ref="transformationmagic/splendid_animalform"/>
+            </requires>
+        </mastership>
+        <mastership level="2" key="magic_crafter1"/>
+        <mastership level="2" key="second_skin"/>
+        <mastership level="3" key="eternal_form"><requires><masterreq ref="transformationmagic/formveil"/></requires></mastership>
+        <mastership level="3" key="magic_crafter2"><requires><masterreq ref="transformationmagic/magic_crafter1"/></requires></mastership>
+        <mastership level="4" key="master_of_objects"/>
+    </skill>
+    
+    <skill id="watermagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+
+        <mastership level="1" key="flood_guider"/>
+        <mastership level="1" key="cold_aura"/>
+        <mastership level="1" key="water_summoner"/>
+        <mastership level="2" key="icy_surrounding"/>
+        <mastership level="2" key="friend_of_fishes"/>
+        <mastership level="2" key="secrete_poison"><requires><masterreq ref="watermagic/detox"/></requires></mastership>
+        <mastership level="2" key="master_icy_terrain"><requires><masterreq ref="survival/wildernessrunner"/></requires></mastership>
+        <mastership level="2" key="overwhelming_tides"/>
+        <mastership level="2" key="wave_conqueror">
+          <modifications>
+            <skillmod ref="swim" value="2"/>
+            <skillmod ref="seafaring" value="2"/>
+          </modifications>
+        </mastership>
+        <mastership level="3" key="conqueror_of_dryness"/>
+        <mastership level="3" key="quencher_of_flames"/>
+        <mastership level="3" key="master_of_frost"><requires><masterreq ref="watermagic/resistwater1"/></requires></mastership>
+        <mastership level="4" key="one_with_waves">
+            <requires>
+                <masterreq ref="watermagic/masterwaves"/>
+                <masterreq ref="watermagic/resistwater3"/>
+            </requires>
+        </mastership>
+        <mastership level="4" key="ally_of_fishes"><requires><masterreq ref="watermagic/friend_of_fishes"/></requires></mastership>
+    </skill>
+    
+    <skill id="windmagic">
+        <mastership level="1" common="true" key="fast_casting"/>
+        <mastership level="1" common="true" key="enhanced_spells"/>
+        <mastership level="1" common="true" key="targeting_caster"/>
+        <mastership level="2" common="true" key="unhasty_casting"/>
+        <mastership level="2" common="true" key="silent_casting"/>
+        <mastership level="2" common="true" key="ranged_casting"/>
+        <mastership level="3" common="true" key="sustained_casting"/>
+
+        <mastership level="1" key="good_nose"/>
+        <mastership level="1" key="fanned_by_wind"/>
+        <mastership level="1" key="weatherproof"/>
+        <mastership level="1" key="wind_summoner"/>
+        <mastership level="2" key="whispering_wind"/>
+        <mastership level="2" key="master_thunderstorms"/>
+        <mastership level="2" key="deep_breath"/>
+        <mastership level="2" key="carried_by_wind"/>
+        <mastership level="3" key="friend_of_the_sky"/>
+        <mastership level="3" key="flight_knowledge"/>
+        <mastership level="3" key="wings_of_the_storm"/>
+        <mastership level="4" key="one_with_the_wind2">
+            <requires>
+                <masterreq ref="motionmagic/arcanespeed"/>
+                <masterreq ref="acrobatics/masterbalance"/>
+                <masterreq ref="athletics/steeplechaser"/>
+            </requires>
+        </mastership>
+        <mastership level="4" key="free_breath"><requires><masterreq ref="windmagic/deep_breath"/></requires></mastership>
+    </skill>
+
+
+</skills>

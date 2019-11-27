@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+   <skill id="insightmagic">
+        <mastership level="1" key="emotionsense">
+        	<modifications>
+        	  <skillmod ref="empathy" value="2"/>
+        	</modifications>
+        </mastership>
+   </skill>
+   <skill id="controlmagic">
+        <mastership level="1" key="empathy">
+            <modifications>
+              <skillmod ref="empathy" value="2"/>
+            </modifications>
+        </mastership>
+   </skill>
+</skills>

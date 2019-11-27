@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<races>
+    <race id="alben">
+        <modifications>
+            <attrmod type="rel" attr="AGILITY" val="1"/>
+            <attrmod type="rel" attr="CHARISMA" val="1"/>
+            <attrmod type="rel" attr="CONSTITUTION" val="-1"/>
+            <attrmod type="abs" attr="SIZE" val="5"/>
+            <selmod num="1">
+                <attrmod type="rel" attr="AGILITY" val="1"/>
+                <attrmod type="rel" attr="CHARISMA" val="1"/>
+                <attrmod type="rel" attr="CONSTITUTION" val="1"/>
+                <attrmod type="rel" attr="INTUITION" val="1"/>
+                <attrmod type="rel" attr="MIND" val="1"/>
+                <attrmod type="rel" attr="MYSTIC" val="1"/>
+                <attrmod type="rel" attr="STRENGTH" val="1"/>
+                <attrmod type="rel" attr="WILLPOWER" val="1"/>
+            </selmod>
+            <powermod ref="attractive" />
+            <powermod ref="goodhearing" />
+            <powermod ref="lowlight" />
+        </modifications>
+		<hair>
+		  <entries>
+			<color from="2" to="3" value="silberweiß"/>
+			<color from="4" to="5" value="weißblond"/>
+			<color from="6" to="8" value="goldblond"/>
+			<color from="9" to="10" value="dunkelblond"/>
+			<color from="11" to="12" value="hellbraun"/>
+			<color from="13" to="14" value="dunkelbraun"/>
+			<color from="15" to="16" value="rotbraun"/>
+			<color from="17" to="18" value="kupferrot"/>
+			<color from="19" to="20" value="blauschwarz"/>
+		  </entries>
+	    </hair>
+		<eyes>
+		  <entries>
+			<color from="1" to="2" value="schwarz"/>
+			<color from="3" to="4" value="grau"/>
+			<color from="5" to="6" value="graublau"/>
+			<color from="7" to="10" value="blau"/>
+			<color from="11" to="14" value="braun"/>
+			<color from="15" to="17" value="grün"/>
+			<color from="18" to="19" value="bernsteinfarben"/>
+			<color from="20" to="20" value="gold"/>
+	      </entries>
+	    </eyes>
+		<size base="160" d10="5" wmin="50" wmax="100"/>
+    </race>
+    
+    
+    <race id="human">
+        <modifications>
+            <attrmod type="abs" attr="SIZE" val="5"/>
+            <selmod num="2">
+                <attrmod type="rel" attr="AGILITY" val="1"/>
+                <attrmod type="rel" attr="CHARISMA" val="1"/>
+                <attrmod type="rel" attr="CONSTITUTION" val="1"/>
+                <attrmod type="rel" attr="INTUITION" val="1"/>
+                <attrmod type="rel" attr="MIND" val="1"/>
+                <attrmod type="rel" attr="MYSTIC" val="1"/>
+                <attrmod type="rel" attr="STRENGTH" val="1"/>
+                <attrmod type="rel" attr="WILLPOWER" val="1"/>
+            </selmod>
+            <powermod ref="addsplinter"/>
+        </modifications>
+		<hair>
+		  <entries>
+			<color from="2" to="3" value="rot"/>
+			<color from="4" to="5" value="hellblond"/>
+			<color from="6" to="8" value="dunkelblond"/>
+			<color from="9" to="12" value="hellbraun"/>
+			<color from="13" to="15" value="dunkelbraun"/>
+			<color from="16" to="19" value="schwarz"/>
+			<color from="20" to="20" value="grau"/>
+		  </entries>
+	    </hair>
+		<eyes>
+		  <entries>
+			<color from="2" to="2" value="grau"/>
+			<color from="3" to="4" value="graublau"/>
+			<color from="5" to="6" value="blau"/>
+			<color from="7" to="10" value="grünblau"/>
+			<color from="11" to="14" value="grün"/>
+			<color from="15" to="17" value="braun"/>
+			<color from="18" to="19" value="goldbraun"/>
+			<color from="20" to="20" value="gold"/>
+	      </entries>
+	    </eyes>
+		<size base="152" d10="5" wmin="50" wmax="120"/>
+    </race>
+    
+    <race id="dwarf">
+        <modifications>
+            <attrmod type="rel" attr="CONSTITUTION" val="1"/>
+            <attrmod type="rel" attr="WILLPOWER" val="1"/>
+            <attrmod type="rel" attr="AGILITY" val="-1"/>
+            <attrmod type="rel" attr="DEFENSE" val="+2"/>
+            <selmod num="1">
+                <attrmod type="rel" attr="AGILITY" val="1"/>
+                <attrmod type="rel" attr="CHARISMA" val="1"/>
+                <attrmod type="rel" attr="CONSTITUTION" val="1"/>
+                <attrmod type="rel" attr="INTUITION" val="1"/>
+                <attrmod type="rel" attr="MIND" val="1"/>
+                <attrmod type="rel" attr="MYSTIC" val="1"/>
+                <attrmod type="rel" attr="STRENGTH" val="1"/>
+                <attrmod type="rel" attr="WILLPOWER" val="1"/>
+            </selmod>
+            <attrmod type="abs" attr="SIZE" val="4"/>
+            <powermod ref="resistpoison"/>
+            <powermod ref="sturdy"/>
+            <powermod ref="senseorient"/>
+        </modifications>
+		<hair>
+		  <entries>
+			<color from="2"  to= "3" value="weiß"/>
+			<color from="4"  to= "6" value="hellblond"/>
+			<color from="7"  to= "9" value="dunkelblond"/>
+			<color from="10" to="12" value="hellbraun"/>
+			<color from="13" to="14" value="dunkelbraun"/>
+			<color from="15" to="18" value="schwarz"/>
+			<color from="19" to="20" value="feuerrot"/>
+		  </entries>
+	    </hair>
+		<eyes>
+		  <entries>
+			<color from= "2" to= "2" value="schwarz"/>
+			<color from= "3" to= "4" value="grau"/>
+			<color from= "5" to= "6" value="dunkelbraun"/>
+			<color from= "7" to="10" value="hellbraun"/>
+			<color from="11" to="14" value="grünbraun"/>
+			<color from="15" to="17" value="grün"/>
+			<color from="18" to="18" value="kupferfarben"/>
+			<color from="20" to="20" value="silber"/>
+	      </entries>
+	    </eyes>
+		<size base="135" d10="2" wmin="60" wmax="100"/>
+    </race>
+    <race id="varg">
+        <modifications>
+            <attrmod type="rel" attr="STRENGTH" val="2"/>
+            <attrmod type="rel" attr="WILLPOWER" val="-1"/>
+            <attrmod type="rel" attr="DEFENSE" val="-2"/>
+            <selmod num="1">
+                <attrmod type="rel" attr="AGILITY" val="1"/>
+                <attrmod type="rel" attr="CHARISMA" val="1"/>
+                <attrmod type="rel" attr="CONSTITUTION" val="1"/>
+                <attrmod type="rel" attr="INTUITION" val="1"/>
+                <attrmod type="rel" attr="MIND" val="1"/>
+                <attrmod type="rel" attr="MYSTIC" val="1"/>
+                <attrmod type="rel" attr="WILLPOWER" val="1"/>
+            </selmod>
+            <attrmod type="abs" attr="SIZE" val="6"/>
+            <powermod ref="naturalarmor"/>
+            <powermod ref="enduring"/>
+            <powermod ref="naturalweapon"/>
+        </modifications>
+		<hair>
+		  <entries>
+			<color from="2"  to= "3" value="sandfarben"/>
+			<color from="4"  to= "6" value="ocker"/>
+			<color from="7"  to="10" value="hellbraun"/>
+			<color from="11" to="13" value="dunkelbraun"/>
+			<color from="14" to="16" value="dunkelgrau"/>
+			<color from="17" to="20" value="schwarz"/>
+		  </entries>
+	    </hair>
+		<eyes>
+		  <entries>
+			<color from= "2" to= "3" value="schwarz"/>
+			<color from= "4" to= "6" value="goldbraun"/>
+			<color from= "7" to="14" value="bernsteinfarben"/>
+			<color from="15" to="19" value="bernsteinfarben mit grauen Sprengseln"/>
+			<color from="20" to="20" value="eisblau"/>
+	      </entries>
+	    </eyes>
+		<size base="200" d10="3" wmin="110" wmax="160"/>
+    </race>
+    <race id="gnome">
+        <modifications>
+            <attrmod type="rel" attr="MYSTIC" val="1"/>
+            <attrmod type="rel" attr="MIND" val="1"/>
+            <attrmod type="rel" attr="STRENGTH" val="-1"/>
+            <attrmod type="abs" attr="SIZE" val="3"/>
+            <attrmod type="rel" attr="DEFENSE" val="+4"/>
+            <selmod num="1">
+                <attrmod type="rel" attr="AGILITY" val="1"/>
+                <attrmod type="rel" attr="CHARISMA" val="1"/>
+                <attrmod type="rel" attr="CONSTITUTION" val="1"/>
+                <attrmod type="rel" attr="INTUITION" val="1"/>
+                <attrmod type="rel" attr="MIND" val="1"/>
+                <attrmod type="rel" attr="MYSTIC" val="1"/>
+                <attrmod type="rel" attr="STRENGTH" val="1"/>
+                <attrmod type="rel" attr="WILLPOWER" val="1"/>
+            </selmod>
+            <powermod ref="sensefairy" />
+            <powermod ref="resistmind" />
+            <powermod ref="swift" />
+        </modifications>
+		<hair>
+		  <entries>
+			<color from="2" to="2" value="aschgrau"/>
+			<color from="3" to="3" value="weißblond"/>
+			<color from="4" to="6" value="blond"/>
+			<color from="7" to="9" value="dunkelblond"/>
+			<color from="10" to="11" value="rotblond"/>
+			<color from="12" to="13" value="rot"/>
+			<color from="14" to="15" value="hellbraun"/>
+			<color from="16" to="17" value="dunkelbraun"/>
+			<color from="18" to="19" value="blauschwarz"/>
+			<color from="20" to="20" value="blassblau"/>
+		  </entries>
+	    </hair>
+		<eyes>
+		  <entries>
+			<color from="2" to="2" value="orange"/>
+			<color from="3" to="4" value="grau"/>
+			<color from="5" to="6" value="aquamarin"/>
+			<color from="7" to="10" value="dunkelblau"/>
+			<color from="11" to="14" value="dunkelgrün"/>
+			<color from="15" to="17" value="hellgrün"/>
+			<color from="18" to="19" value="schwarz"/>
+			<color from="20" to="20" value="violett"/>
+	      </entries>
+	    </eyes>
+		<size base="105" d10="2" wmin="20" wmax="35"/>
+    </race>
+</races>

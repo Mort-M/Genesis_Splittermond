@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<enhancements>
+  <enhancement id="specialization" cost="2" max="3">
+  	<modifications>
+  	  <mastermod level="+1"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="load" cost="1" max="HALFLOAD">
+  	<modifications>
+  	  <itemmod attr="LOAD" val="-1"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="damage" cost="1" max="2" items="WEAPON,LONG_RANGE_WEAPON">
+  	<modifications>
+  	  <itemmod attr="DAMAGE" val="1"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="speed" cost="2" max="1" items="WEAPON,LONG_RANGE_WEAPON">
+  	<modifications>
+  	  <itemmod attr="SPEED" val="-1"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="damagereduction" cost="2" max="1" items="ARMOR">
+  	<modifications>
+  	  <itemmod attr="DAMAGE_REDUCTION" val="1"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="handicap" cost="2" max="1" items="ARMOR,SHIELD">
+  	<modifications>
+  	  <itemmod attr="HANDICAP" val="-1"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="tickmalus" cost="2" max="1" items="ARMOR,SHIELD">
+  	<modifications>
+  	  <itemmod attr="TICK_MALUS" val="-1"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="rigidity" cost="1" max="2">
+  	<modifications>
+  	  <itemmod attr="RIGIDITY" val="1"/>
+  	</modifications>
+  </enhancement>
+  
+  <enhancement id="heal" cost="1" max="3" type="ALCHEMY" items="POTION"/>
+  <enhancement id="antidot" cost="1" max="6" type="ALCHEMY" items="POTION"/>
+  <enhancement id="easecure" cost="1" max="6" type="ALCHEMY" items="POTION"/>
+  <enhancement id="raiseattrib" cost="1" max="2" type="ALCHEMY" items="POTION">
+  	<modifications>
+  	  <selmod>
+  	    <attrmod attr="CHARISMA" val="1"/>
+  	    <attrmod attr="AGILITY" val="1"/>
+  	    <attrmod attr="INTUITION" val="1"/>
+  	    <attrmod attr="CONSTITUTION" val="1"/>
+  	    <attrmod attr="MYSTIC" val="1"/>
+  	    <attrmod attr="STRENGTH" val="1"/>
+  	    <attrmod attr="MIND" val="1"/>
+  	    <attrmod attr="WILLPOWER" val="1"/>
+  	  </selmod>
+  	</modifications>
+  </enhancement>
+  <enhancement id="undo_unconscious" cost="2" max="1" type="ALCHEMY" items="POTION"/>
+  <enhancement id="undo_exhausted" cost="1" max="6" type="ALCHEMY" items="POTION"/>
+  <enhancement id="undo_infirmity" cost="2" max="2" type="ALCHEMY" items="POTION"/>
+
+  <enhancement id="bodyresist" cost="2" max="3" type="MAGIC">
+  	<modifications>
+  	  <attrmod attr="BODYRESIST" val="1"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="mindresist" cost="2" max="3" type="MAGIC">
+  	<modifications>
+  	  <attrmod attr="MINDRESIST" val="1"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="embedspell0" cost="1" type="MAGIC"/>
+  <enhancement id="embedspell1" cost="2" type="MAGIC"/>
+  <enhancement id="embedspell2" cost="3" type="MAGIC"/>
+  <enhancement id="embedspell3" cost="4" type="MAGIC"/>
+  <enhancement id="embedspell4" cost="5" type="MAGIC"/>
+  <enhancement id="embedspell5" cost="6" type="MAGIC"/>
+ 
+</enhancements>

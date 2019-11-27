@@ -1,0 +1,21 @@
+Okay, die Lizenzsituation in diesem Repository ist schwierig. Es gibt hier
+zwei Punkte zu beachten:
+a) Die Richtlinie für Fanprojekte vom Uhrwerk Verlag
+b) Die Lizenz des Projektinhabers Stefan Prelle, für die Verwendung der
+   Daten
+
+Vorgaben vom Uhrwerk Verlag
+===========================
+siehe hier: http://splitterwiki.de/wiki/Splitterwiki:Richtlinie
+In diesem Repository sind mehr Daten enthalten, als die Richtlinie gestattet. 
+Diese dürfen nur und ausschließlich in der Anwendung Genesis verwendet werden.
+
+Lizenz des RPGFramework Projekts
+================================
+Für die Teile die nicht unter die Einschränkung durch den Uhrwerk Verlag 
+fallen, gilt die LGPL 2.1 (Lesser GNU Public License 2.1)
+
+
+Einfacher ausgedrückt: Ihr dürft Teile der hier enthaltenen Daten in euren 
+eigenen Projekten nutzen. Dabei müssen die Bedingungen für Fanprojekte
+eingehalten werden.

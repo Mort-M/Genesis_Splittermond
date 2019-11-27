@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+
+<!-- ###########################  WAFFEN  ###########################-->
+   <item avail="VILLAGE" cplx="U" id="big_impro_slashweapon" load="4" material="WOOD" price="0" robust="2" >
+   		<weapon att1="CONSTITUTION" att2="STRENGTH" damage="2W10" skill="slashing" speed="14" >
+   			<requires>
+   				<attrreq attr="STRENGTH" val="2"/>
+   			</requires>
+   			<features>
+   				<feature type="IMPROVISED"/>
+   				<feature level="2" type="CRITICAL"/>
+   				<feature type="TWO_HANDED"/>
+   			</features>
+   		</weapon>
+   </item>
+
+   <item avail="LARGE_TOWN" cplx="F" id="dadao" load="3" material="METAL" price="1700" robust="6" >
+   		<weapon att1="AGILITY" att2="STRENGTH" damage="2W10+1" skill="blades" speed="11" >
+   			<requires>
+   				<attrreq attr="STRENGTH" val="3"/>
+   			</requires>
+   			<features>
+   				<feature level="1" type="PENETRATING"/>
+   				<feature level="3" type="CRITICAL"/>
+   				<feature level="2" type="PIERCING"/>
+   				<feature type="TWO_HANDED"/>
+   			</features>
+   		</weapon>
+   </item>
+   
+   <item avail="CAPITAL" cplx="U" id="ju_oshu" load="4" material="METAL" price="2500" robust="7" >
+   		<weapon att1="AGILITY" att2="STRENGTH" damage="2W10" skill="blades" speed="12" >
+   			<requires>
+   				<attrreq attr="STRENGTH" val="2"/>>
+   			</requires>
+   			<features>
+   				<feature level="1" type="EXACT"/>
+   				<feature type="LONG_WEAPON"/>
+   				<feature type="HEAVY"/>
+   				<feature type="TWO_HANDED"/>
+   			</features>
+   		</weapon>
+   </item>
+   
+   <item avail="SMALL_TOWN" cplx="G" id="butterflysword" load="2" material="METAL" price="600" robust="7" >
+   		<weapon att1="AGILITY" att2="INTUITION" damage="1W6+1" skill="blades" speed="6" >
+   			<requires>
+   				<attrreq attr="AGILITY" val="2"/>
+   			</requires>
+   			<features>
+   				<feature level="1" type="DEFENSIVE"/>
+   				<feature level="0" type="PARRY_WEAPON"/>
+   			</features>
+   		</weapon>
+   </item>
+   
+   
+   <item avail="SMALL_TOWN" cplx="F" id="huang_dao" load="4" material="METAL" price="1500" robust="5" >
+   		<weapon att1="AGILITY" att2="STRENGTH" damage="2W10+1" skill="staffs" speed="12" >
+   			<requires>
+   				<attrreq attr="STRENGTH" val="3"/>
+   			</requires>
+   			<features>
+   				<feature level="1" type="DEFENSIVE"/>
+   				<feature level="2" type="CRITICAL"/>
+   				<feature level="2" type="INFANTRY_WEAPON"/>
+   				<feature level="2" type="PIERCING"/>
+   				<feature type="TWO_HANDED"/>
+   			</features>
+   		</weapon>
+   </item>
+   
+   <item avail="VILLAGE" cplx="U" id="impro_staff" load="2" material="WOOD" price="0" robust="2" >
+   		<weapon att1="AGILITY" att2="STRENGTH" damage="2W6-1" skill="staffs" speed="12" >
+   			<requires>
+   				<attrreq attr="AGILITY" val="1"/>
+   			</requires>
+   			<features>
+   				<feature level="1" type="DEFENSIVE"/>
+   				<feature type="DOUBLE_WEAPON"/>
+   				<feature type="IMPROVISED"/>
+   				<feature type="LONG_WEAPON"/>
+   				<feature level="2" type="PIERCING"/>
+   				<feature type="TWO_HANDED"/>
+   			</features>
+   		</weapon>
+   </item>
+   
+   <item avail="LARGE_TOWN" cplx="F" id="lajatang" load="4" material="METAL" price="1800" robust="5" >
+   		<weapon att1="INTUITION" att2="STRENGTH" damage="2W10+2" skill="staffs" speed="12" >
+   			<requires>
+   				<attrreq attr="STRENGTH" val="2"/>
+   			</requires>
+   			<features>
+   				<feature type="DOUBLE_WEAPON"/>   			
+   				<feature type="HEAVY"/>
+   				<feature type="TWO_HANDED"/>
+   			</features>
+   		</weapon>
+   </item>
+   
+   <item avail="LARGE_TOWN" cplx="F" id="moon_shovel" load="4" material="METAL" price="1500" robust="5" >
+   		<weapon att1="AGILITY" att2="STRENGTH" damage="2W6+4" skill="staffs" speed="11" >
+   			<requires>
+   				<attrreq attr="AGILITY" val="3"/>
+   			</requires>
+   			<features>
+   				<feature type="DOUBLE_WEAPON"/>   			
+   				<feature level="2" type="CRITICAL"/>
+   				<feature type="HEAVY"/>
+   				<feature type="TWO_HANDED"/>
+   			</features>
+   		</weapon>
+   </item>
+   
+   <item avail="LARGE_TOWN" cplx="A" id="small_dragontube" load="4" material="METAL" price="3000" robust="4" type="LONG_RANGE_WEAPON">
+   		<rangeweapon att1="CONSTITUTION" att2="WILLPOWER" damage="2W6+6" skill="longrange" speed="15" range="10" >
+   			<requires>
+   				<attrreq attr="STRENGTH" val="2"/>
+   			</requires>
+   			<features>
+   				<feature level="2" type="TRIGGER"/>
+   				<feature level="2" type="RECOIL"/>
+   				<feature level="2" type="DAMAGE_LOSS"/> <!-- 2 -->
+   				<feature type="SHATTERING"/>
+   				<feature type="TWO_HANDED"/>
+   			</features>
+   		</rangeweapon>
+   </item>
+   
+     <item avail="CAPITAL" cplx="A" id="big_dragontube" load="4" material="METAL" price="3500" robust="5" type="LONG_RANGE_WEAPON">
+   		<rangeweapon att1="CONSTITUTION" att2="WILLPOWER" damage="3W6+4" skill="longrange" speed="20" range="12">
+   			<requires>
+   				<attrreq attr="STRENGTH" val="3"/>
+   			</requires>
+   			<features>
+   				<feature level="2" type="TRIGGER"/>
+   				<feature level="2" type="RECOIL"/>
+   				<feature type="DAMAGE_LOSS"/><!-- 1 -->
+   				<feature level="2" type="PIERCING"/>
+   				<feature type="SHATTERING"/>
+   				<feature type="TWO_HANDED"/>
+   			</features>
+   		</rangeweapon>
+   </item>
+   
+   <item avail="LARGE_TOWN" cplx="A" id="fireapple" load="1" material="WOOD" price="2500" robust="2" type="LONG_RANGE_WEAPON">
+   		<rangeweapon att1="INTUITION" att2="STRENGTH" damage="1W6" skill="throwing" speed="5" range="4">
+   			<requires>
+   				<attrreq attr="INTUITION" val="2"/>
+   			</requires>
+   			<features>
+   				<feature type="DETONATION"/> <!-- 3W6 -->
+   				<feature level="2" type="TRIGGER"/>
+   				<feature type="DAMAGE_LOSS"/> <!-- 1W6 -->
+   				<feature type="SHATTERING"/>
+   				<feature type="PROJECTILE"/>
+   				<feature type="TWO_HANDED"/>
+   				<feature type="BLUNT"/>
+   			</features>
+   		</rangeweapon>
+   </item>
+   
+   <item avail="LARGE_TOWN" cplx="F" id="throwneedle" load="1" material="METAL" price="200" robust="3" type="LONG_RANGE_WEAPON">
+   		<rangeweapon att1="AGILITY" att2="INTUITION" damage="1W6" skill="throwing" speed="3" range="5">
+   			<requires>
+   				<attrreq attr="AGILITY" val="2"/>
+   			</requires>
+   			<features>
+   				<feature level="1" type="EXACT"/>
+   			</features>
+   		</rangeweapon>
+   </item>
+   
+  <!-- ###########################  SPIELE  ###########################-->
+  
+   <item avail="SMALL_TOWN" cplx="G" id="sho_zhen_cards" load="0" material="OTHER" price="30" robust="0" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="tsuchu_ball" load="1" material="OTHER" price="10" robust="1" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="weiqi_board" load="1" material="OTHER" price="50" robust="2" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="F" id="xiangqi_board" load="2" material="OTHER" price="100" robust="2" type="OTHER"/>
+   
+   <!-- ###########################  INSTRUMENTE  ###########################-->
+   
+   <item avail="VILLAGE" cplx="U" id="bamboo_flute" load="0" material="OTHER" price="40" robust="1" skill="performance" spec="performance/instrumentwind" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="erhu" load="2" material="OTHER" price="100" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="gong" load="3" material="OTHER" price="100" robust="3" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="F" id="guzheng" load="3" material="OTHER" price="300" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="tabor" load="2" material="OTHER" price="50" robust="2" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="pipa" load="2" material="OTHER" price="200" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
+   
+   <!-- ###########################  SOSNTIGE GEGENSTÄNDE  ###########################-->
+   
+   <item avail="LARGE_TOWN" cplx="F" id="hong_wu_ration" load="1" material="OTHER" price="2000" robust="1" type="OTHER"/>
+   <item avail="LARGE_TOWN" cplx="F" id="jade_jewlery" load="1" material="OTHER" price="3000" robust="3" skill="diplomacy" spec="diplomacy/etiquettes" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="U" id="woodenbox_5" load="1" material="OTHER" price="200" robust="2" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="woodenbox_20" load="3" material="OTHER" price="800" robust="3" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="M" id="china_set" load="3" material="OTHER" price="1500" robust="0" skill="diplomacy" spec="diplomacy/etiquettes" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="straw_hat" load="0" material="OTHER" price="500" robust="0" type="OTHER"/>
+
+</items>

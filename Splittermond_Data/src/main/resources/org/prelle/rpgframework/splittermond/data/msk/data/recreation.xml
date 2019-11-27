@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+   <item avail="SMALL_TOWN" cplx="U" id="brettspiel" load="1" material="OTHER" price="50" robust="2" type="OTHER"/>
+   <item avail="LARGE_TOWN" cplx="F" id="glasspiegel" load="2" material="OTHER" price="1000" robust="0" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="handspiegel" load="1" material="OTHER" price="300" robust="3" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="jonglierball" load="0" material="OTHER" price="5" robust="1" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="spielkarten" load="0" material="OTHER" price="15" robust="0" type="OTHER"/>
+   <item avail="CAPITAL" cplx="M" id="kristallspiegel" load="2" material="OTHER" price="2000" robust="0" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="porzellanpuppe" load="1" material="OTHER" price="500" robust="2" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="puppe" load="0" material="OTHER" price="5" robust="2" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="spiegel" load="2" material="OTHER" price="300" robust="0" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="stundenglas/sanduhr" load="0" material="OTHER" price="100" robust="1" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="würfel" load="0" material="OTHER" price="5" robust="2" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="zinnfiguren" load="0" material="METAL" price="15" robust="4" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="F" id="geschmeideEinfachSatz" load="0" material="METAL" price="1000" robust="2" skill="diplomacy" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="amulett" load="0" material="METAL" price="30" robust="3" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="arm-/fußreifKupfer" load="0" material="METAL" price="60" robust="4" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="arm-/fußreifSilber" load="0" material="METAL" price="200" robust="4" type="OTHER"/>
+   <item avail="LARGE_TOWN" cplx="G" id="arm-/fußreifGold" load="0" material="METAL" price="1000" robust="4" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="F" id="diadem" load="0" material="METAL" price="300" robust="2" type="OTHER"/>
+   <item avail="CAPITAL" cplx="U" id="drachlingsschmuckstück" load="0" material="OTHER" price="3000" robust="4" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="federschmuck" load="0" material="OTHER" price="30" robust="1" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="ketteKupfer" load="0" material="METAL" price="60" robust="2" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="ketteSilber" load="0" material="METAL" price="200" robust="2" type="OTHER"/>
+   <item avail="LARGE_TOWN" cplx="G" id="ketteGold" load="0" material="METAL" price="1000" robust="2" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="ringKupfer" load="0" material="METAL" price="50" robust="4" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="ringSilber" load="0" material="METAL" price="150" robust="4" type="OTHER"/>
+   <item avail="LARGE_TOWN" cplx="G" id="ringGold" load="0" material="METAL" price="800" robust="4" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="pfeife/Kimeru" load="0" material="OTHER" price="15" robust="2" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="tabakEinfach" load="0" material="OTHER" price="5" robust="0" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="U" id="tabakLuxus" load="0" material="OTHER" price="200" robust="0" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="wasserpfeife" load="2" material="OTHER" price="500" robust="2" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="fiedel" load="2" material="OTHER" price="100" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="flöteBesser" load="0" material="OTHER" price="50" robust="2" skill="performance" spec="performance/instrumentwind" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="flöteEinfach" load="0" material="OTHER" price="10" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
+   <item avail="VILLAGE" cplx="U" id="handtrommel" load="2" material="OTHER" price="50" robust="2" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="horn" load="1" material="OTHER" price="100" robust="2" skill="performance" spec="performance/instrumentwind" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="laute/Ud" load="3" material="OTHER" price="200" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="leier" load="2" material="OTHER" price="100" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="pauke" load="4" material="OTHER" price="200" robust="2" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="schalmei" load="2" material="OTHER" price="200" robust="2" skill="performance" spec="performance/instrumentwind" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="F" id="standharfe" load="6" material="OTHER" price="1500" robust="3" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="G" id="trompete/Mizmar" load="3" material="OTHER" price="200" robust="3" skill="performance" spec="performance/instrumentwind" type="OTHER"/>
+   <item avail="CAPITAL" cplx="G" id="valiha" load="3" material="OTHER" price="500" robust="3" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
+   <item avail="LARGE_TOWN" cplx="G" id="kristallkugel" load="1" material="OTHER" price="1500" robust="1" skill="arcanelore" spec="arcanelore/predictions" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="U" id="orakelknochen" load="0" material="OTHER" price="50" robust="1" skill="arcanelore" spec="arcanelore/predictions" type="OTHER"/>
+   <item avail="SMALL_TOWN" cplx="U" id="orakelteller" load="0" material="OTHER" price="100" robust="2" skill="arcanelore" spec="arcanelore/predictions" type="OTHER"/>
+   <item avail="LARGE_TOWN" cplx="G" id="wahrsagebrett" load="1" material="OTHER" price="300" robust="2" skill="arcanelore" spec="arcanelore/predictions" type="OTHER"/>
+</items>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<items>
+		<item id="fireofcolourfulmaeander" avail="LARGE_TOWN" price="1500" load="0" robust="0" cplx="F" type="TRAVEL"/>
+		
+		<item id="salamanderspiess" avail="LARGE_TOWN" price="2500" load="4" robust="6" cplx="F">
+			<weapon skill="staffs" damage="2W10+4" speed="14" att1="STRENGTH" att2="CONSTITUTION">
+            <requires>
+            	<attrreq attr="CONSTITUTION" val="3"/>
+                <attrreq attr="STRENGTH" val="5"/>
+            </requires>
+            <features>
+                <feature level="3" type="CRITICAL"/>
+                <feature type="LONG_WEAPON"/>
+                <feature level="2" type="PIERCING"/>
+                <feature type="HEAVY"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+            </weapon>
+		</item>
+	</items>

@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items>
+    <item id="thorneglove" avail="LARGE_TOWN" price="800" load="1" robust="4" cplx="F" material="LEATHER">
+        <weapon skill="melee" damage="1W6" speed="5" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="DEFENSIVE" level="2"/>
+                <feature type="DISARMING" level="1"/>
+                <feature type="PARRY_WEAPON" level="1"/>
+            </features>
+        </weapon>
+    </item>
+
+    <item id="broadsword" avail="SMALL_TOWN" price="1000" load="2" robust="7" cplx="G" material="METAL">
+        <weapon skill="blades" damage="1W6+4" speed="9"
+                att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="STRENGTH" val="3"/>
+            </requires>
+            <features>
+                <feature type="HEAVY"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="katar" avail="SMALL_TOWN" price="300" load="1" robust="5" cplx="G" material="METAL">
+        <weapon skill="melee" damage="1W6+1" speed="6" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+            </requires>
+            <features>
+                <feature type="PIERCING" level="2"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="liandia" avail="SMALL_TOWN" price="500" load="1" robust="7" cplx="G" material="METAL">
+        <weapon skill="melee"
+                damage="1W6+1" speed="6" att1="AGILITY" att2="INTUITION">
+            <requires>
+                <attrreq attr="INTUITION" val="2"></attrreq>
+            </requires>
+            <features>
+                <feature type="DEFENSIVE" level="1"/>
+                <feature type="DISARMING" level="1"/>
+                <feature type="PARRY_WEAPON" level="0"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="punchring" avail="SMALL_TOWN" price="700" load="1" robust="6" cplx="U" material="METAL">
+        <weapon skill="melee"
+                damage="1W6" speed="5" att1="AGILITY" att2="STRENGTH">
+            <features>
+                <feature type="PIERCING" level="2"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="oneandhalf" avail="LARGE_TOWN" price="1600" load="3" robust="7" cplx="G" material="METAL">
+        <weapon skill="blades"
+                damage="2W6" speed="9" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="AGILITY" val="3"/>
+                <attrreq attr="STRENGTH" val="3"/>
+            </requires>
+            <features>
+                <feature type="PIERCING" level="3"/>
+                <feature type="FLEXIBLE"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="dagger" avail="VILLAGE" price="300" load="1" robust="7" cplx="U" material="METAL">
+        <weapon skill="blades"
+                damage="1W6+1" speed="6" att1="AGILITY" att2="INTUITION">
+            <features>
+                <feature type="THROWABLE"/>
+            </features>
+        </weapon>
+        <rangeweapon skill="throwing"
+               damage="1W6-1" speed="5" att1="AGILITY" att2="INTUITION" range="5">
+            <features>
+                <feature type="IMPROVISED"/>
+                <feature type="CLOSE_COMBAT_SUITABLE"/>
+            </features>
+        </rangeweapon>
+    </item>
+
+    <item id="falchion" avail="SMALL_TOWN" price="800" load="2" robust="7" cplx="G" material="METAL">
+        <weapon skill="blades"
+                damage="1W6+5" speed="9" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+        </weapon>
+    </item>
+    <item id="fulnichalfsword" avail="CAPITAL" price="1500" load="2" robust="7" cplx="A" material="METAL">
+        <weapon skill="blades"
+                damage="1W6+4" speed="8" att1="AGILITY" att2="INTUITION">
+            <requires>
+                <attrreq attr="AGILITY" val="3"/>
+            </requires>
+            <features>
+                <feature type="SEPERATABLE"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="khopesh" avail="SMALL_TOWN" price="600" load="2" robust="6" cplx="G" material="METAL">
+        <weapon skill="blades"
+                damage="1W10+1" speed="7" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+                <attrreq attr="STRENGTH" val="3"/>
+            </requires>
+            <features>
+                <feature type="PIERCING" level="2"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="curveddagger" avail="SMALL_TOWN" price="300" load="1" robust="7" cplx="G" material="METAL">
+        <weapon skill="blades"
+                damage="1W6+2" speed="7" att1="INTUITION" att2="STRENGTH">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+        </weapon>
+    </item>
+    <item id="shortsword" avail="SMALL_TOWN" price="800" load="2" robust="7" cplx="G" material="METAL">
+        <weapon skill="blades"
+                damage="1W6+2" speed="7" att1="AGILITY" att2="INTUITION">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+            </requires>
+        </weapon>
+    </item>
+    <item id="longsword" avail="SMALL_TOWN" price="1000" load="2" robust="7" cplx="G" material="METAL">
+        <weapon skill="blades"
+                damage="1W6+4" speed="8" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="PIERCING" level="2"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="maira" avail="LARGE_TOWN" price="800" load="1" robust="7" cplx="G" material="METAL">
+        <weapon skill="blades"
+                damage="1W6+1" speed="6" att1="AGILITY" att2="INTUITION">
+            <requires>
+                <attrreq attr="AGILITY" val="3"/>
+            </requires>
+            <features>
+                <feature type="PIERCING" level="2"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="peacockfeather" avail="LARGE_TOWN" price="1600" load="4" robust="7" cplx="F" material="METAL">
+        <weapon skill="blades"
+                damage="2W6+4" speed="10" att1="AGILITY" att2="INTUITION">
+            <requires>
+                <attrreq attr="AGILITY" val="4"/>
+                <attrreq attr="INTUITION" val="2"/>
+            </requires>
+            <features>
+                <feature type="PIERCING" level="2"/>
+                <feature type="HEAVY"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="infantrysabre" avail="SMALL_TOWN" price="700" load="2" robust="7" cplx="G" material="METAL">
+        <weapon skill="blades"
+                damage="1W6+3" speed="8" att1="AGILITY" att2="INTUITION">
+            <requires>
+                <attrreq attr="INTUITION" val="3"/>
+            </requires>
+            <features>
+                <feature type="INFANTRY_WEAPON" level="2"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="sabre" avail="SMALL_TOWN" price="700" load="2" robust="7" cplx="G" material="METAL">
+        <weapon skill="blades"
+                damage="1W6+4" speed="8" att1="AGILITY" att2="INTUITION">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+                <attrreq attr="INTUITION" val="2"/>
+            </requires>
+            <features>
+                <feature type="PIERCING" level="2"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="diskdagger" avail="SMALL_TOWN" price="500" load="1" robust="7" cplx="G" material="METAL">
+        <weapon skill="blades"
+                damage="1W6" speed="6" att1="INTUITION" att2="STRENGTH">
+            <requires>
+                <attrreq attr="STRENGTH" val="3"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="2"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="skavona" avail="SMALL_TOWN" price="1000" load="2" robust="7" cplx="G" material="METAL">
+        <weapon skill="blades" damage="1W6+2" speed="7" att1="AGILITY" att2="INTUITION">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+                <attrreq attr="INTUITION" val="2"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="2"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="throwingdagger" avail="VILLAGE" price="200" load="1" robust="7" cplx="U" material="METAL">
+        <weapon skill="blades"
+                damage="1W6-1" speed="8" att1="AGILITY" att2="INTUITION">
+            <requires>
+                <attrreq attr="INTUITION" val="2"/>
+            </requires>
+            <features>
+                <feature type="IMPROVISED"/>
+                <feature type="THROWABLE"/>
+            </features>
+        </weapon>
+        <rangeweapon skill="throwing"
+               damage="1W6+1" speed="3" att1="AGILITY" att2="INTUITION" range="5">
+            <requires>
+                <attrreq attr="INTUITION" val="2"/>
+            </requires>
+            <features>
+                <feature type="CLOSE_COMBAT_SUITABLE"/>
+            </features>
+        </rangeweapon>
+    </item>
+    <item id="bihander" avail="LARGE_TOWN" price="2000" load="4" robust="7" cplx="F" material="METAL">
+        <weapon skill="blades"
+                damage="2W6+4" speed="12" att1="INTUITION" att2="STRENGTH">
+            <requires>
+                <attrreq attr="INTUITION" val="2"/>
+                <attrreq attr="STRENGTH" val="4"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="2"/>
+                <feature type="LONG_WEAPON"/>
+                <feature type="HEAVY"/>
+                <feature type="TWO_HANDED"/>
+                <feature type="PIERCING" level="3"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="doubleaxe" avail="SMALL_TOWN" price="1800" load="4" robust="5" cplx="G" material="METAL">
+        <weapon skill="slashing"
+                damage="3W6+4" speed="13" att1="INTUITION" att2="STRENGTH">
+            <requires>
+                <attrreq attr="INTUITION" val="3"/>
+                <attrreq attr="STRENGTH" val="5"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="2"/>
+                <feature type="ENCUMBRANT"/>
+                <feature type="HEAVY"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="club" avail="VILLAGE" price="100" load="2" robust="3" cplx="U" material="WOOD">
+        <weapon skill="slashing"
+                damage="1W6+2" speed="7" att1="CONSTITUTION" att2="STRENGTH">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="PRIMITIVE"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="battleaxe" avail="SMALL_TOWN" price="800" load="2" robust="5" cplx="G" material="METAL">
+        <weapon skill="slashing"
+                damage="1W10+3" speed="9" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+                <attrreq attr="STRENGTH" val="3"/>
+            </requires>
+        </weapon>
+    </item>
+    <item id="warhammer" avail="SMALL_TOWN" price="1800" load="4" robust="6" cplx="G" material="METAL">
+        <weapon skill="slashing"
+                damage="2W10+4" speed="12" att1="CONSTITUTION" att2="STRENGTH">
+            <requires>
+                <attrreq attr="CONSTITUTION" val="3"/>
+                <attrreq attr="STRENGTH" val="5"/>
+            </requires>
+            <features>
+                <feature type="HEAVY"/>
+                <feature type="TWO_HANDED"/>
+                <feature type="ENCUMBRANT"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="bat" avail="VILLAGE" price="200" load="1" robust="3" cplx="U" material="WOOD">
+        <weapon skill="slashing"
+                damage="1W6+2" speed="6" att1="AGILITY" att2="STRENGTH">
+            <features>
+                <feature type="BLUNT"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="pick" avail="VILLAGE" price="400" load="3" robust="5" cplx="U" material="METAL">
+        <weapon skill="slashing"
+                damage="3W6" speed="14" att1="CONSTITUTION" att2="STRENGTH">
+            <requires>
+                <attrreq attr="CONSTITUTION" val="2"/>
+                <attrreq attr="STRENGTH" val="3"/>
+            </requires>
+            <features>
+                <feature type="HEAVY"/>
+                <feature type="IMPROVISED"/>
+                <feature type="PRIMITIVE"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="poleaxe" avail="SMALL_TOWN" price="1600" load="4" robust="5" cplx="G" material="METAL">
+        <weapon skill="slashing"
+                damage="2W10+1" speed="11" att1="CONSTITUTION" att2="STRENGTH">
+            <requires>
+                <attrreq attr="CONSTITUTION" val="2"/>
+                <attrreq attr="STRENGTH" val="3"/>
+            </requires>
+            <features>
+                <feature type="PIERCING" level="2"/>
+                <feature type="HEAVY"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="streithammer" avail="SMALL_TOWN" price="1600" load="3" robust="6" cplx="G" material="METAL">
+        <weapon skill="slashing"
+                damage="2W6+3" speed="11" att1="CONSTITUTION" att2="STRENGTH">
+            <requires>
+                <attrreq attr="CONSTITUTION" val="2"/>
+                <attrreq attr="STRENGTH" val="4"/>
+            </requires>
+            <features>
+                <feature type="PIERCING" level="2"/>
+                <feature type="FLEXIBLE"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="mace" avail="SMALL_TOWN" price="800" load="2" robust="5" cplx="G" material="METAL">
+        <weapon skill="slashing"
+                damage="1W6+5" speed="9" att1="AGILITY" att2="CONSTITUTION">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+        </weapon>
+    </item>
+    <item id="chairleg" avail="VILLAGE" price="0" load="1" robust="1" cplx="U" material="WOOD">
+        <weapon skill="slashing"
+                damage="1W6+1" speed="9" att1="AGILITY" att2="STRENGTH">
+            <features>
+                <feature type="IMPROVISED"/>
+                <feature type="PRIMITIVE"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="throwingaxe" avail="VILLAGE" price="600" load="2" robust="5" cplx="G" material="METAL">
+        <weapon skill="slashing"
+                damage="1W6+1" speed="10" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="IMPROVISED"/>
+                <feature type="THROWABLE"/>
+            </features>
+        </weapon>
+        <rangeweapon skill="throwing"
+               damage="1W6+4" speed="5" att1="AGILITY" att2="STRENGTH" range="5">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="CLOSE_COMBAT_SUITABLE"/>
+            </features>
+        </rangeweapon>
+    </item>
+    <item id="throwinghammer" avail="VILLAGE" price="500" load="2" robust="5" cplx="G" material="METAL">
+        <weapon skill="slashing"
+                damage="1W6+2" speed="11" att1="CONSTITUTION" att2="STRENGTH">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="IMPROVISED"/>
+                <feature type="THROWABLE"/>
+            </features>
+        </weapon>
+        <rangeweapon skill="throwing"
+               damage="1W6+5" speed="6" att1="AGILITY" att2="STRENGTH" range="5">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="CLOSE_COMBAT_SUITABLE"/>
+            </features>
+        </rangeweapon>
+    </item>
+    <item id="fulnicdoublesword" avail="CAPITAL" price="2500" load="3" robust="7" cplx="A" material="METAL">
+        <weapon skill="staffs"
+                damage="2W10+1" speed="11" att1="AGILITY" att2="INTUITION">
+            <requires>
+                <attrreq attr="AGILITY" val="4"/>
+                <attrreq attr="INTUITION" val="4"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="3"/>
+                <feature type="DOUBLE_WEAPON"/>
+                <feature type="TWO_HANDED"/>
+                <feature type="SEPERATABLE"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="glefe" avail="SMALL_TOWN" price="1200" load="4" robust="4" cplx="F" material="METAL">
+        <weapon skill="staffs"
+                damage="2W10+1" speed="11" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="AGILITY" val="3"/>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="LONG_WEAPON"/>
+                <feature type="TWO_HANDED"/>
+                <feature type="HEAVY"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="halberd" avail="SMALL_TOWN" price="1800" load="4" robust="5" cplx="F" material="METAL">
+        <weapon skill="staffs"
+                damage="3W6+3" speed="12" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+                <attrreq attr="STRENGTH" val="3"/>
+            </requires>
+            <features>
+                <feature type="LONG_WEAPON"/>
+                <feature type="TWO_HANDED"/>
+                <feature type="HEAVY"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="combatstaff" avail="VILLAGE" price="400" load="3" robust="4" cplx="G" material="WOOD">
+        <weapon skill="staffs"
+                damage="1W10+2" speed="9" att1="AGILITY" att2="INTUITION">
+            <features>
+                <feature type="DEFENSIVE" level="2"/>
+                <feature type="DOUBLE_WEAPON"/>
+                <feature type="TWO_HANDED"/>
+                <feature type="LONG_WEAPON"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="bladestaff" avail="SMALL_TOWN" price="600" load="3" robust="5" cplx="F" material="METAL">
+        <weapon skill="staffs"
+                damage="2W6" speed="9" att1="INTUITION" att2="STRENGTH">
+            <requires>
+                <attrreq attr="INTUITION" val="4"/>
+                <attrreq attr="STRENGTH" val="3"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="1"/>
+                <feature type="LONG_WEAPON"/>
+                <feature type="FLEXIBLE"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="lance" avail="SMALL_TOWN" price="1600" load="4" robust="3" cplx="G" material="METAL">
+        <weapon skill="staffs"
+                damage="2W10+1" speed="15" att1="CONSTITUTION" att2="STRENGTH">
+            <requires>
+                <attrreq attr="CONSTITUTION" val="4"/>
+                <attrreq attr="STRENGTH" val="4"/>
+            </requires>
+            <features>
+                <feature type="LONG_WEAPON"/>
+                <feature type="INFANTRY_WEAPON" level="6"/>
+                <feature type="PIERCING" level="3"/>
+                <feature type="HEAVY"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="spear" avail="VILLAGE" price="800" load="3" robust="4" cplx="G" material="METAL">
+        <weapon skill="staffs"
+                damage="1W10+5" speed="12" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="AGILITY" val="3"/>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="PIERCING" level="3"/>
+                <feature type="LONG_WEAPON"/>
+                <feature type="FLEXIBLE"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="scythe" avail="VILLAGE" price="400" load="4" robust="5" cplx="U" material="METAL">
+        <weapon skill="staffs"
+                damage="2W10+4" speed="13" att1="AGILITY" att2="CONSTITUTION">
+            <requires>
+                <attrreq attr="AGILITY" val="3"/>
+                <attrreq attr="CONSTITUTION" val="3"/>
+            </requires>
+            <features>
+                <feature type="LONG_WEAPON"/>
+                <feature type="HEAVY"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+        </weapon>
+    </item>
+   <item id="sturmsense" avail="VILLAGE" cplx="U" load="4" material="METAL" price="400" robust="5" type="WEAPON">
+      <weapon att1="AGILITY" att2="CONSTITUTION" damage="2W10+4" skill="staffs" speed="13" type="WEAPON">
+         <requires>
+            <attrreq attr="CONSTITUTION" val="3"/>
+            <attrreq attr="AGILITY" val="3"/>
+         </requires>
+         <features>
+            <feature type="LONG_WEAPON"/>
+            <feature type="HEAVY"/>
+            <feature type="TWO_HANDED"/>
+         </features>
+      </weapon>
+   </item>
+    <item id="valkyrjaspear" avail="SMALL_TOWN" price="800" load="2" robust="5" cplx="G" material="METAL">
+        <weapon skill="staffs"
+                damage="1W10+2" speed="8" att1="AGILITY" att2="INTUITION">
+            <requires>
+                <attrreq attr="AGILITY" val="3"/>
+                <attrreq attr="INTUITION" val="3"/>
+            </requires>
+            <features>
+                <feature type="THROWABLE"/>
+            </features>
+        </weapon>
+        <rangeweapon skill="throwing"
+               damage="1W10+2" speed="7" att1="AGILITY" att2="STRENGTH" range="12">
+            <requires>
+                <attrreq attr="AGILITY" val="3"/>
+                <attrreq attr="INTUITION" val="3"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="2"/>
+                <feature type="CLOSE_COMBAT_SUITABLE"/>
+            </features>
+        </rangeweapon>
+    </item>
+    <item id="vangarastaff" avail="LARGE_TOWN" price="1400" load="4" robust="5" cplx="F" material="METAL">
+        <weapon skill="staffs"
+                damage="3W6+1" speed="13" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="AGILITY" val="3"/>
+                <attrreq attr="STRENGTH" val="4"/>
+            </requires>
+            <features>
+                <feature type="LONG_WEAPON"/>
+                <feature type="HEAVY"/>
+                <feature type="FLEXIBLE"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="throwingspear" avail="VILLAGE" price="700" load="2" robust="4" cplx="G" material="METAL">
+        <weapon skill="staffs"
+                damage="1W6+2" speed="11" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="IMPROVISED"/>
+                <feature type="THROWABLE"/>
+            </features>
+        </weapon>
+        <rangeweapon skill="throwing"
+               damage="1W10+5" speed="9" att1="AGILITY" att2="STRENGTH" range="10">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="2"/>
+                <feature type="CLOSE_COMBAT_SUITABLE"/>
+                <feature type="HEAVY"/>
+            </features>
+        </rangeweapon>
+    </item>
+    <item id="spikespear" avail="SMALL_TOWN" price="1600" load="3" robust="5" cplx="F" material="METAL">
+        <weapon skill="staffs"
+                damage="1W6+5" speed="11" att1="AGILITY" att2="STRENGTH">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="2"/>
+                <feature type="DISARMING" level="1"/>
+                <feature type="LONG_WEAPON"/>
+                <feature type="FLEXIBLE"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="chainscythe" avail="LARGE_TOWN" price="1200" load="2" robust="6" cplx="F" material="METAL">
+        <weapon skill="chains"
+                damage="1W10" speed="8" att1="AGILITY" att2="INTUITION">
+            <requires>
+                <attrreq attr="AGILITY" val="4"/>
+                <attrreq attr="INTUITION" val="2"/>
+            </requires>
+            <features>
+                <feature type="DISARMING" level="2"/>
+                <feature type="LONG_WEAPON"/>
+                <feature type="FLEXIBLE"/>
+                <feature type="CLUTCH"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="battleflail" avail="SMALL_TOWN" price="1000" load="4" robust="4" cplx="G" material="METAL">
+        <weapon skill="chains"
+                damage="2W10+4" speed="14" att1="CONSTITUTION" att2="STRENGTH">
+            <requires>
+                <attrreq attr="CONSTITUTION" val="5"/>
+                <attrreq attr="STRENGTH" val="5"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="2"/>
+                <feature type="HEAVY"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="morningstar" avail="SMALL_TOWN" price="900" load="2" robust="6" cplx="G" material="METAL">
+        <weapon skill="chains"
+                damage="1W10+5" speed="10" att1="AGILITY" att2="CONSTITUTION">
+            <requires>
+                <attrreq attr="AGILITY" val="3"/>
+                <attrreq attr="CONSTITUTION" val="3"/>
+            </requires>
+            <features>
+                <feature type="ENCUMBRANT"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="whip" avail="VILLAGE" price="100" load="2" robust="1" cplx="U" material="LEATHER">
+        <weapon skill="chains"
+                damage="1W10-2" speed="15" att1="AGILITY" att2="INTUITION">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+            </requires>
+            <features>
+                <feature type="DISARMING" level="3"/>
+                <feature type="IMPROVISED"/>
+                <feature type="LONG_WEAPON"/>
+                <feature type="CLUTCH"/>
+                <feature type="ENCUMBRANT"/>
+            </features>
+        </weapon>
+    </item>
+    <item id="crossbow" avail="CAPITAL" price="3000" load="2" robust="4" cplx="A" material="WOOD">
+        <rangeweapon skill="longrange"
+               damage="1W6+3" speed="7" att1="INTUITION" att2="WILLPOWER" range="8" price_amo="25">
+            <requires>
+                <attrreq attr="INTUITION" val="2"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="3"/>
+            </features>
+        </rangeweapon>
+    </item>
+    <item id="shortbow" avail="VILLAGE" price="800" load="2" robust="3" cplx="U" material="WOOD">
+        <rangeweapon skill="longrange"
+               damage="1W10+1" speed="6" att1="AGILITY" att2="INTUITION" range="20" price_amo="16">
+            <requires>
+                <attrreq attr="STRENGTH" val="1"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="1"/>
+                <feature type="PIERCING" level="2"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+        </rangeweapon>
+    </item>
+    <item id="longbow" avail="SMALL_TOWN" price="1500" load="3" robust="3" cplx="G" material="WOOD">
+        <rangeweapon skill="longrange"
+
+               damage="1W10+8" speed="10" att1="INTUITION" att2="STRENGTH" range="35" price_amo="30">
+            <requires>
+                <attrreq attr="STRENGTH" val="3"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="1"/>
+                <feature type="PIERCING" level="2"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+        </rangeweapon>
+    </item>
+    <item id="lightcrossbow" avail="SMALL_TOWN" price="2000" load="3" robust="3" cplx="F" material="WOOD">
+        <rangeweapon skill="longrange"
+               damage="2W6+6" speed="10" att1="INTUITION" att2="WILLPOWER" range="25" price_amo="40">
+            <requires>
+                <attrreq attr="INTUITION" val="2"/>
+                <attrreq attr="STRENGTH" val="1"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="4"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+        </rangeweapon>
+    </item>
+    <item id="infantrybow" avail="SMALL_TOWN" price="1000" load="3" robust="3" cplx="G" material="WOOD">
+        <rangeweapon skill="longrange"
+               damage="1W10+4" speed="8" att1="INTUITION" att2="STRENGTH" range="25" price_amo="20">
+            <requires>
+                <attrreq attr="INTUITION" val="3"/>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="1"/>
+                <feature type="INFANTRY_WEAPON" level="0"/>
+                <feature type="PIERCING" level="3"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+        </rangeweapon>
+    </item>
+    <item id="slingshot" avail="VILLAGE" price="50" load="1" robust="1" cplx="U" material="OTHER">
+        <rangeweapon skill="longrange"
+               damage="1W6+4" speed="6" att1="AGILITY" att2="INTUITION" range="15" price_amo="1">
+            <requires>
+                <attrreq attr="AGILITY" val="1"/>
+            </requires>
+        </rangeweapon>
+    </item>
+    <item id="heavycrossbow" avail="SMALL_TOWN" price="3000" load="4" robust="4" cplx="M" material="WOOD">
+        <rangeweapon skill="longrange"
+               damage="3W6+4" speed="22" att1="INTUITION" att2="STRENGTH" range="30" price_amo="60">
+            <requires>
+                <attrreq attr="INTUITION" val="2"/>
+                <attrreq attr="STRENGTH" val="4"/>
+            </requires>
+            <features>
+                <feature type="PENETRATING" level="6"/>
+                <feature type="HEAVY"/>
+                <feature type="TWO_HANDED"/>
+            </features>
+        </rangeweapon>
+    </item>
+    <item id="chakram" avail="LARGE_TOWN" price="800" load="2" robust="7" cplx="G" material="METAL">
+        <rangeweapon skill="throwing"
+               damage="2W6" speed="5" att1="INTUITION" att2="STRENGTH" range="8">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="PIERCING" level="2"/>
+            </features>
+        </rangeweapon>
+    </item>
+
+    <item id="stone_mug_boot" avail="VILLAGE" price="0" load="1" robust="1" cplx="U" material="WOOD">
+        <rangeweapon skill="throwing"
+               damage="1W6-2" speed="6" att1="INTUITION" att2="STRENGTH" range="4">
+            <features>
+                <feature type="IMPROVISED"/>
+                <feature type="PRIMITIVE"/>
+            </features>
+        </rangeweapon>
+    </item>
+
+    <item id="dart" avail="SMALL_TOWN" price="200" load="1" robust="3" cplx="U" material="METAL">
+        <rangeweapon skill="throwing"
+               damage="1W6" speed="3" att1="AGILITY" att2="INTUITION" range="8">
+            <requires>
+                <attrreq attr="INTUITION" val="2"/>
+            </requires>
+            <features>
+                <feature type="PIERCING" level="2"/>
+                <feature type="PENETRATING" level="1"/>
+            </features>
+        </rangeweapon>
+    </item>
+
+    <item id="throwingstar" avail="SMALL_TOWN" price="300" load="1" robust="7" cplx="G" material="METAL">
+        <rangeweapon skill="throwing"
+               damage="1W6+2" speed="4" att1="AGILITY" att2="INTUITION" range="5">
+            <requires>
+                <attrreq attr="INTUITION" val="2"/>
+            </requires>
+        </rangeweapon>
+    </item>
+
+    <item id="buckler" avail="SMALL_TOWN" price="400" load="2" robust="6" cplx="G" material="METAL">
+        <shield def="0" hc="1" tickMalus="0" type="SHIELD">
+            <requires>
+                <attrreq attr="AGILITY" val="2"/>
+            </requires>
+            <features>
+                <feature type="DEFENSIVE" level="2"/>
+            </features>
+        </shield>
+    </item>
+    <item id="lederschild" avail="SMALL_TOWN" price="300" load="2" robust="3" cplx="G" material="LEATHER">
+        <shield def="1" hc="1" tickMalus="1" type="SHIELD">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="DEFENSIVE" level="2"/>
+            </features>
+        </shield>
+    </item>
+    <item id="rundschild" avail="SMALL_TOWN" price="500" load="3" robust="3" cplx="G" material="WOOD">
+        <shield def="2" hc="2" tickMalus="0" type="SHIELD">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="DEFENSIVE" level="1"/>
+            </features>
+        </shield>
+    </item>
+    <item id="großschild" avail="SMALL_TOWN" price="700" load="4" robust="5" cplx="F" material="METAL">
+        <shield def="2" hc="2" tickMalus="1" type="SHIELD">
+            <requires>
+                <attrreq attr="STRENGTH" val="3"/>
+            </requires>
+            <features>
+                <feature type="DEFENSIVE" level="2"/>
+            </features>
+        </shield>
+    </item>
+    <item id="turmschild" avail="LARGE_TOWN" price="1200" load="5" robust="7" cplx="F" material="WOOD">
+        <shield def="3" hc="2" tickMalus="2" type="SHIELD">
+            <requires>
+                <attrreq attr="STRENGTH" val="4"/>
+            </requires>
+            <features>
+                <feature type="DEFENSIVE" level="1"/>
+                <feature type="COVER"/>
+            </features>
+        </shield>
+    </item>
+
+    <item id="tuchrüstung" avail="SMALL_TOWN" price="600" load="3" robust="2" cplx="G" material="FABRIC">
+        <armor def="1" dr="0" hc="0" tickMalus="0" type="ARMOR">
+            <requires />
+            <features/>
+        </armor>
+    </item>
+    <item id="lederleicht" avail="SMALL_TOWN" price="900" load="3" robust="3" cplx="G" material="LEATHER">
+        <armor def="1" dr="1" hc="1" tickMalus="0" type="ARMOR">
+            <requires>
+                <attrreq attr="STRENGTH" val="1"/>
+            </requires>
+            <features/>
+        </armor>
+    </item>
+    <item id="ledermittel" avail="SMALL_TOWN" price="1000" load="4" robust="3" cplx="G" material="LEATHER">
+        <armor def="2" dr="1" hc="2" tickMalus="0" type="ARMOR">
+            <requires>
+                <attrreq attr="STRENGTH" val="1"/>
+            </requires>
+            <features>
+                <feature type="FIRM"/>
+            </features>
+        </armor>
+    </item>
+    <item id="lederschwer" avail="SMALL_TOWN" price="1100" load="4" robust="3" cplx="F" material="LEATHER">
+        <armor def="3" dr="0" hc="0" tickMalus="1" type="ARMOR">
+            <requires>
+                <attrreq attr="STRENGTH" val="1"/>
+            </requires>
+            <features/>
+        </armor>
+    </item>
+    <item id="fellrüstung" avail="VILLAGE" price="400" load="3" robust="2" cplx="U" material="LEATHER">
+        <armor def="1" dr="2" hc="0" tickMalus="1" type="ARMOR">
+            <requires>
+                <attrreq attr="STRENGTH" val="1"/>
+            </requires>
+            <features>
+                <feature type="PRIMITIVE"/>
+            </features>
+        </armor>
+    </item>
+    <item id="ketteleicht" avail="SMALL_TOWN" price="1200" load="4" robust="6" cplx="G" material="METAL">
+        <armor def="2" dr="2" hc="1" tickMalus="1" type="ARMOR">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features/>
+        </armor>
+    </item>
+    <item id="ketteschwer" avail="SMALL_TOWN" price="1500" load="4" robust="6" cplx="F" material="METAL">
+        <armor def="3" dr="2" hc="3" tickMalus="2" type="ARMOR">
+            <requires>
+                <attrreq attr="STRENGTH" val="2"/>
+            </requires>
+            <features>
+                <feature type="PADDED"/>
+            </features>
+        </armor>
+    </item>
+    <item id="schuppe" avail="SMALL_TOWN" price="2000" load="5" robust="7" cplx="F" material="METAL">
+        <armor def="4" dr="2" hc="4" tickMalus="2" type="ARMOR">
+            <requires>
+                <attrreq attr="STRENGTH" val="3"/>
+            </requires>
+            <features>
+                <feature type="PADDED"/>
+            </features>
+        </armor>
+    </item>
+    <item id="platteleicht" avail="LARGE_TOWN" price="2500" load="5" robust="7" cplx="F" material="METAL">
+        <armor def="3" dr="1" hc="2" tickMalus="1" type="ARMOR">
+            <requires>
+                <attrreq attr="STRENGTH" val="3"/>
+            </requires>
+            <features>
+                <feature type="FIRM"/>
+            </features>
+        </armor>
+    </item>
+    <item id="platteschwer" avail="LARGE_TOWN" price="3000" load="6" robust="7" cplx="M" material="METAL">
+        <armor def="4" dr="4" hc="3" tickMalus="3" type="ARMOR">
+            <requires>
+                <attrreq attr="STRENGTH" val="4"/>
+            </requires>
+            <features/>
+        </armor>
+    </item>
+    <item id="foliant" avail="LARGE_TOWN" price="1500" load="2" robust="1" cplx="G"/>
+    <item id="heilerbesteck" avail="LARGE_TOWN" price="1000" load="1" robust="4" cplx="G"/>
+    <item id="pergamentbogen" avail="SMALL_TOWN" price="10" load="0" robust="0" cplx="U"/>
+    <item id="schreibutensilien" avail="SMALL_TOWN" price="100" load="0" robust="0" cplx="G"/>
+    <item id="tagebuch" avail="SMALL_TOWN" price="500" load="1" robust="1" cplx="U"/>
+    <item id="verbandszeug" avail="VILLAGE" price="10" load="0" robust="0" cplx="U"/>
+    <item id="brecheisen" avail="VILLAGE" price="200" load="2" robust="6" cplx="U" material="METAL"/>
+    <item id="dietriche" avail="SMALL_TOWN" price="1500" load="1" robust="6" cplx="F"/>
+    <item id="kletterhaken10stück" avail="SMALL_TOWN" price="50" load="1" robust="6" cplx="U"/>
+    <item id="wurfhaken" avail="SMALL_TOWN" price="100" load="2" robust="6" cplx="G"/>
+    <item id="alchemistenkoffer" avail="CAPITAL" price="3000" load="3" robust="1" cplx="F"/>
+    <item id="schmiedeausstattung" avail="SMALL_TOWN" price="3000" load="6" robust="7" cplx="G"/>
+    <item id="schneiderwerkzeug" avail="VILLAGE" price="1000" load="2" robust="4" cplx="G"/>
+    <item id="schreinerwerkzeug" avail="VILLAGE" price="1000" load="4" robust="4" cplx="G"/>
+    <item id="vorschlaghammer" avail="VILLAGE" price="200" load="4" robust="5" cplx="U"/>
+    <item id="brettspiel" avail="SMALL_TOWN" price="50" load="1" robust="2" cplx="U"/>
+    <item id="flöte" avail="VILLAGE" price="50" load="0" robust="2" cplx="G"/>
+    <item id="jonglierball" avail="VILLAGE" price="5" load="0" robust="1" cplx="U"/>
+    <item id="kohlestift" avail="VILLAGE" price="2" load="0" robust="1" cplx="U"/>
+    <item id="kosmetikkoffer" avail="SMALL_TOWN" price="1500" load="2" robust="0" cplx="F"/>
+    <item id="kreide" avail="VILLAGE" price="2" load="0" robust="1" cplx="U"/>
+    <item id="laute" avail="SMALL_TOWN" price="200" load="3" robust="2" cplx="G"/>
+    <item id="leinwand" avail="SMALL_TOWN" price="30" load="2" robust="0" cplx="G"/>
+    <item id="malfarben" avail="SMALL_TOWN" price="50" load="1" robust="0" cplx="G"/>
+    <item id="pinsel" avail="VILLAGE" price="5" load="0" robust="2" cplx="U"/>
+    <item id="spiegel" avail="SMALL_TOWN" price="300" load="2" robust="0" cplx="G"/>
+    <item id="spielkarten" avail="VILLAGE" price="15" load="0" robust="0" cplx="U"/>
+    <item id="würfel" avail="VILLAGE" price="5" load="0" robust="2" cplx="U"/>
+    <item id="prachtgewand" avail="SMALL_TOWN" price="2000" load="4" robust="0" cplx="M"/>
+    <item id="straßenkleidung" avail="VILLAGE" price="100" load="3" robust="0" cplx="U"/>
+    <item id="wildniskleidung" avail="VILLAGE" price="300" load="3" robust="1" cplx="G"/>
+    <item id="beil" avail="VILLAGE" price="400" load="2" robust="5" cplx="U" type="TRAVEL"/>
+    <item id="decke" avail="VILLAGE" price="10" load="1" robust="0" cplx="U" type="TRAVEL"/>
+    <item id="essgeschirr" avail="VILLAGE" price="20" load="1" robust="2" cplx="U" type="TRAVEL"/>
+    <item id="fackel" avail="VILLAGE" price="1" load="1" robust="2" cplx="U" type="TRAVEL"/>
+    <item id="feuersteinstahlundzunder" avail="VILLAGE" price="20" load="0" robust="4" cplx="U" type="TRAVEL"/>
+    <item id="hängematte" avail="SMALL_TOWN" price="20" load="2" robust="1" cplx="U" type="TRAVEL"/>
+    <item id="karren" avail="VILLAGE" price="1500" load="15" robust="3" cplx="F" type="TRAVEL"/>
+    <item id="kochgeschirr" avail="VILLAGE" price="50" load="2" robust="5" cplx="U" type="TRAVEL"/>
+    <item id="kompass" avail="CAPITAL" price="1500" load="2" robust="2" cplx="A" type="TRAVEL"/>
+    <item id="laterneeinfach" avail="VILLAGE" price="50" load="2" robust="3" cplx="G" type="TRAVEL"/>
+    <item id="leinensack" avail="VILLAGE" price="10" load="1" robust="1" cplx="U" type="TRAVEL,CONTAINER"/>
+    <item id="marschrationprotag" avail="VILLAGE" price="10" load="1" robust="0" type="TRAVEL"/>
+    <item id="messer" avail="VILLAGE" price="100" load="1" robust="6" cplx="U" type="TRAVEL"/>
+    <item id="rucksack" avail="VILLAGE" price="100" load="1" robust="1" cplx="U" type="TRAVEL,CONTAINER"/>
+    <item id="seil10m" avail="VILLAGE" price="200" load="1" robust="1" cplx="U" type="TRAVEL"/>
+    <item id="spaten" avail="VILLAGE" price="100" load="3" robust="5" cplx="G" type="TRAVEL"/>
+    <item id="wasserschlauch" avail="VILLAGE" price="10" load="1" robust="1" cplx="U" type="TRAVEL"/>
+    <item id="zeltproperson" avail="SMALL_TOWN" price="100" load="4" robust="1" cplx="G" type="TRAVEL"/>
+    <item id="basepotion" avail="VILLAGE" price="1000" load="0" robust="0" type="POTION"/>
+    <item id="ausdauertrunk" avail="SMALL_TOWN" price="500" load="0" robust="0" type="POTION"/>
+    <item id="echsentarr" avail="SMALL_TOWN" price="1000" load="0" robust="0" type="POTION"/>
+    <item id="gegengiftleicht" avail="SMALL_TOWN" price="500" load="0" robust="0" type="POTION"/>
+    <item id="gegengiftmittel" avail="SMALL_TOWN" price="1000" load="0" robust="0" type="POTION"/>
+    <item id="gegengiftstark" avail="SMALL_TOWN" price="1500" load="0" robust="0" type="POTION"/>
+    <item id="gegengiftsehrstark" avail="LARGE_TOWN" price="2500" load="0" robust="0" type="POTION"/>
+    <item id="heilkraut" avail="VILLAGE" price="50" load="0" robust="0" type="POTION"/>
+    <item id="heiltrankleicht" avail="SMALL_TOWN" price="500" load="0" robust="0" type="POTION"/>
+    <item id="heiltrankstark" avail="SMALL_TOWN" price="1000" load="0" robust="0" type="POTION"/>
+    <item id="karmesintraum" avail="LARGE_TOWN" price="1000" load="0" robust="0" type="POTION"/>
+    <item id="klingenfett" avail="SMALL_TOWN" price="500" load="0" robust="0" type="POTION"/>
+    <item id="königsblut" avail="CAPITAL" price="10000" load="0" robust="0" type="POTION"/>
+    <item id="rosentrunk" avail="LARGE_TOWN" price="1000" load="0" robust="0" type="POTION"/>
+    <item id="streunerweiß" avail="LARGE_TOWN" price="1000" load="0" robust="0" type="POTION"/>
+</items>

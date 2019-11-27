@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<spells>
+  <spell id="protective_circle_deityservant" diff="21" cost="K12V3" castdur="4T" range="CASTER" spelldur="K" enh="1/+K3V3"> 
+    <school skill="antimagic" level="3"/>
+    <type>DIVINE</type>
+    <type>PROTECTIONFIELD</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+    <requires>
+        <selreq>
+            <powerreq ref="priest" />
+            <resourcereq ref="faith" value="3"/>
+        </selreq>
+    </requires>
+  </spell>
+  <spell id="bless_earth" diff="24" cost="K12V3" castdur="10m" range="5m" spelldur="1D" enh="2/+3V3">
+    <school skill="fatemagic" level="3"/>
+    <type>DIVINE</type>
+    <type>BLESSING</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+    <enhancementtype>EFFECT_RANGE</enhancementtype>
+    <enhancementtype>SPELLDURATION</enhancementtype>
+    <requires>
+        <selreq>
+            <powerreq ref="priest" />
+            <resourcereq ref="faith" value="4"/>
+        </selreq>
+    </requires>
+  </spell>
+  <spell id="foreign_tongues" diff="24" cost="K12V3" castdur="5m" range="CASTER" spelldur="K" enh="1/+K3V3">
+    <school skill="insightmagic" level="3"/>
+    <school skill="enhancemagic" level="4"/>
+    <type>COMMUNICATION</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+  </spell>
+  <spell id="doubt_faith" diff="GW" cost="8V2" castdur="6T" range="5m" enh="1/+K2V2"> 
+    <school skill="controlmagic" level="2"/>
+    <type>MENTAL</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+  </spell>
+  <spell id="exorcise_deityservant" diff="KW" cost="K16V4" castdur="17T" range="10m" enh="2/+4V4"> 
+    <school skill="antimagic" level="4"/>
+    <type>DIVINE</type>
+    <type>EXORCISE</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+    <enhancementtype>RANGE</enhancementtype>
+  </spell>
+  <spell id="control_deityservant" diff="GW" cost="K20V5" castdur="14T" range="10m" enh="2/+K5V5"> 
+    <school skill="controlmagic" level="5"/>
+    <type>DIVINE</type>
+    <type>CONTROL</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+    <enhancementtype>RANGE</enhancementtype>
+    <requires>
+        <selreq>
+            <powerreq ref="priest" />
+            <resourcereq ref="faith" value="2"/>
+        </selreq>
+    </requires>
+   </spell>
+   <spell id="identify_deityservant" diff="GW" cost="8V2" castdur="7T" range="5m" enh="1/+K3V3"> 
+    <school skill="insightmagic" level="3"/>
+    <type>DIVINE</type>
+    <type>CLAIRVOYANCE</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+    <enhancementtype>RANGE</enhancementtype>
+   </spell>
+   <spell id="weaken_deityservant" diff="GW" cost="K8V2" castdur="7T" range="5m" spelldur="K" enh="1/+K2V2"> 
+     <school skill="antimagic" level="2"/>
+    <type>DIVINE</type>
+    <type>WEAKEN</type>
+    <enhancementtype>RELEASETIME</enhancementtype>
+    <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
+    <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+    <enhancementtype>RANGE</enhancementtype>
+   </spell>
+   <spell id="divine_aura" diff="24" cost="K12V3" castdur="12T" range="CASTER" spelldur="K" effectRange="5" enh="1/+K3V3"> 
+     <school skill="fatemagic" level="3"/>
+     <school skill="enhancemagic" level="4"/>
+     <type>AURA</type>
+     <type>DIVINE</type>
+     <type>BLESSING</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <enhancementtype>EFFECT_RANGE</enhancementtype>
+     <requires>
+        <selreq>
+            <powerreq ref="priest" />
+            <resourcereq ref="faith" value="3"/>
+        </selreq>
+     </requires>
+   </spell>
+   <spell id="divine_bond" diff="GW" cost="K8V2" castdur="5T" range="10m" spelldur="K" enh="1/+K2V2"> 
+     <school skill="antimagic" level="2"/>
+     <school skill="motionmagic" level="3"/>
+     <type>DIVINE</type>
+     <type>WEAKEN</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <enhancementtype>RANGE</enhancementtype>
+     <requires>
+        <selreq>
+            <powerreq ref="priest" />
+            <resourcereq ref="faith" value="2"/>
+        </selreq>
+     </requires>
+   </spell>
+   <spell id="divine_touch" diff="27" cost="K16V4" castdur="15m" range="TOUCH" spelldur="K" enh="2/+K4V4">
+     <school skill="fatemagic" level="4"/>
+     <school skill="transformationmagic" level="5"/>
+     <type>DIVINE</type>
+     <type>ENHANCE_BODY</type>
+     <type>BLESSING</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <requires>
+        <selreq>
+            <powerreq ref="priest" />
+            <resourcereq ref="faith" value="5"/>
+        </selreq>
+     </requires>
+   </spell>
+   <spell id="divine_talisman" diff="27" cost="16V4" castdur="15m" range="CASTER" spelldur="1h" enh="2/+4V4">
+     <school skill="fatemagic" level="4"/>     
+     <type>DIVINE</type>
+     <type>SUMMON</type>
+     <type>OBJECT</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+    <enhancementtype>SPELLDURATION</enhancementtype>
+     <requires>
+        <selreq>
+            <powerreq ref="priest" />
+            <resourcereq ref="faith" value="2"/>
+        </selreq>
+     </requires>
+   </spell>
+   <spell id="divine_symbol" diff="18" cost="4V1" castdur="3T" range="CASTER" spelldur="10s" enh="2/+1V1"> 
+     <school skill="fatemagic" level="1"/>
+     <type>DIVINE</type>
+     <type>SYMBOL</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <enhancementtype>SPELLDURATION</enhancementtype>
+   </spell>
+   <spell id="fake_divine_symbol" diff="21" cost="8V2" castdur="3T" range="CASTER" spelldur="10s" enh="1/+2V2"> 
+     <school skill="illusionmagic" level="2"/>
+     <type>PHANTASMAGORIA</type>
+     <type>SYMBOL</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <enhancementtype>SPELLDURATION</enhancementtype>
+   </spell>
+   <spell id="disturb_divine_connection" diff="GW" cost="K12V3" castdur="4T" range="10m" spelldur="K" enh="1/+K3V3"> 
+     <school skill="antimagic" level="3"/>
+     <type>DIVINE</type>
+     <type>COUNTER</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <enhancementtype>RANGE</enhancementtype>
+     <requires>
+        <selreq>
+            <powerreq ref="priest" />
+            <resourcereq ref="faith" value="3"/>
+        </selreq>
+     </requires>
+   </spell>
+   <spell id="shake_divine_connection" diff="30" cost="K16V4" castdur="13T" range="CASTER" spelldur="K" effectRange="5" enh="2/+K5V5"> 
+     <school skill="antimagic" level="5"/>
+     <type>DIVINE</type>
+     <type>COUNTER</type>
+     <type>AURA</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <enhancementtype>EFFECT_RANGE</enhancementtype>
+     <requires>
+        <selreq>
+            <powerreq ref="priest" />
+            <resourcereq ref="faith" value="5"/>
+        </selreq>
+     </requires>
+   </spell>
+   <spell id="trust_in_god" diff="21" cost="8V2" castdur="9T" range="CASTER" spelldur="20T" effectRange="5" enh="1/+2V2"> 
+     <school skill="fatemagic" level="2"/>
+     <school skill="enhancemagic" level="3"/>
+     <type>DIVINE</type>
+     <type>MORALE</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <enhancementtype>SPELLDURATION</enhancementtype>
+     <enhancementtype>RANGE</enhancementtype>
+     <enhancementtype>EFFECT_RANGE</enhancementtype>
+     <requires>
+        <resourcereq ref="faith" value="1"/>
+     </requires>
+   </spell>
+   <spell id="summon_divine_animal" diff="24" cost="K12V3" castdur="8T" range="CASTER" spelldur="K" enh="2/+K3V3"> 
+     <school skill="naturemagic" level="3"/>
+     <type>DIVINE</type>
+     <type>SUMMON</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <requires>
+        <selreq>
+            <powerreq ref="priest" />
+            <resourcereq ref="faith" value="2"/>
+        </selreq>
+     </requires>
+   </spell>
+   <spell id="bless_home" diff="24" cost="K12V3" castdur="30m" range="TOUCH" spelldur="7D" enh="1/+K3V3">
+     <school skill="protectionmagic" level="3"/>
+     <school skill="fatemagic" level="4"/>
+     <type>PROTECTIONFIELD</type>
+     <type>BLESSING</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <enhancementtype>RANGE</enhancementtype>
+     <enhancementtype>EFFECT_RANGE</enhancementtype>
+     <enhancementtype>SPELLDURATION</enhancementtype>
+   </spell>
+   <spell id="major_consecration" diff="27" cost="16V4" castdur="5m" range="TOUCH" spelldur="6h" enh="2/+4V4">
+     <school skill="fatemagic" level="4"/>
+     <type>OBJECT</type>
+     <type>BLESSING</type>
+     <type>WEAPON</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <enhancementtype>SPELLDURATION</enhancementtype>
+     <requires>
+        <selreq>
+            <powerreq ref="priest" />
+            <resourcereq ref="faith" value="2"/>
+        </selreq>
+     </requires>
+   </spell>
+   <spell id="grasp_danger" diff="24" cost="12V3" castdur="8m" range="CASTER" spelldur="7D" enh="2/+3V3">
+     <school skill="insightmagic" level="2"/>
+     <school skill="fatemagic" level="3"/>
+     <type>PERCEPTION</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <enhancementtype>RANGE</enhancementtype>
+     <enhancementtype>SPELLDURATION</enhancementtype>
+   </spell>
+   <spell id="voice_of_faith" diff="24" cost="12V3" castdur="5T" range="CASTER" spelldur="15m" effectRange="50" enh="1/+3V3"> 
+     <school skill="controlmagic" level="4"/>
+     <school skill="illusionmagic" level="4"/>
+     <school skill="enhancemagic" level="3"/>
+     <type>SOUND</type>
+     <type>DIVINE</type>
+     <type>ENHANCE_BODY</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <enhancementtype>EFFECT_RANGE</enhancementtype>
+     <enhancementtype>SPELLDURATION</enhancementtype>
+     <requires>
+        <selreq>
+            <powerreq ref="priest" />
+            <resourcereq ref="faith" value="3"/>
+        </selreq>
+     </requires>
+   </spell>
+   <spell id="find_temple" diff="24" cost="K12V3" castdur="6m" range="CASTER" spelldur="K" enh="2/+K3V3"> 
+     <school skill="insightmagic" level="3"/>
+     <school skill="fatemagic" level="4"/>
+     <type>DIVINE</type>
+     <type>PERCEPTION</type>
+     <enhancementtype>RELEASETIME</enhancementtype>
+     <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
+     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+     <requires>
+        <selreq>
+            <powerreq ref="priest" />
+            <resourcereq ref="faith" value="2"/>
+        </selreq>
+     </requires>
+   </spell>
+   
+</spells>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<materials>
+  <!-- 
+   Für "type" gilt
+     FABRIC = Stoffe
+     LEATHER= Leder/Häute/Schuppen
+     METAL  = Erze und Co
+     WOOD   = Hölzer
+     OTHER  = Alles was ansonsten nicht passt (Hörner/Stoßzähne/Federn/Haar/...)
+  -->
+  
+  <material id="ankuumakrabbe_panzer" quality="1" price="500" type="OTHER">
+    <modifications>
+    <featuremod feature="WATERPROOF"/>
+    </modifications>
+  </material>
+  
+  <material id="baumdrache_haut_und_membran" quality="3" price="3000" type="LEATHER">
+    <modifications>
+    <attrmod attr="DAMAGE_REDUCTION" val="2" cond="true"/> <!-- Schutz vor Naturschaden -->
+    <skillmod ref="motionmagic" value="1"/>
+    </modifications>
+  </material>
+  
+  <material id="baumskorpion_panzer" quality="1" price="500" type="OTHER">
+    <modifications>
+    <itemmod attr="RIGIDITY" val="1"/>
+    <itemmod attr="LOAD" val="-1"/>
+    </modifications>
+  </material>
+  
+  <material id="bergdrache_haut" quality="2" price="1500" type="LEATHER">
+    <modifications>
+    <attrmod attr="DAMAGE_REDUCTION" val="2" cond="true"/> <!-- Schutz vor Windschaden -->
+    </modifications>
+  </material>
+  
+  <material id="cewri_haar" quality="2" price="1500" type="OTHER">
+    <modifications>
+    <!-- Seile aus Cewri-Haar zerreißen niemals unter profanen Umständen und können als Klebemittel dienen, um zwei Dinge miteinander zu verbinden. -->
+    </modifications>
+  </material>
+  
+  <material id="daeva_hoerner" quality="2" price="1500" type="OTHER">
+    <modifications>
+    <skillmod ref="transformationmagic" value="1"/> 
+    </modifications>
+  </material>
+  
+  <material id="einhorn_horn" quality="5" price="7500" type="OTHER">
+    <modifications>
+    <skillmod ref="lightmagic" value="2"/>
+    <skillmod ref="enhancemagic" value="2"/>
+    </modifications>
+  </material>
+  
+  <material id="eisbaer_fell" quality="1" price="500" type="LEATHER">
+    <modifications>
+    </modifications>
+  </material>
+  
+  <material id="elefant_stosszaehne" quality="2" price="1500" type="OTHER">
+    <modifications>
+    </modifications>
+  </material>
+  
+  <material id="gargoll_doppelhorn" quality="1" price="500" type="OTHER">
+    <modifications>
+    <skillmod ref="windmagic" value="1"/>
+    </modifications>
+  </material>
+  
+  <material id="gefiederte_schlange_federn" quality="3" price="3000" type="OTHER">
+    <modifications>
+    <skillmod ref="illusionmagic" value="2"/>
+    </modifications>
+  </material>
+  
+  <material id="gnureisser_fluegel" quality="2" price="1500" type="LEATHER">
+    <modifications>
+    </modifications>
+  </material>
+  
+  <material id="gnureisser_leder" quality="1" price="500" type="LEATHER">
+    <modifications>
+    </modifications>
+  </material>
+  
+  <material id="greif_federn" quality="3" price="3000" type="OTHER">
+    <modifications>
+    <skillmod ref="combatmagic" value="2"/>
+    </modifications>
+  </material>
+  
+  <material id="hermelin_fell" quality="1" price="500" type="LEATHER">
+    <modifications>
+    <!-- Manipulationen und Duelle +1 -->
+    </modifications>
+  </material>
+  
+  <material id="hoehlendrache_schuppen" quality="3" price="3000" type="LEATHER">
+    <modifications>
+    <attrmod attr="DAMAGE_REDUCTION" val="2" cond="true"/> <!-- Schutz vor Felsschaden -->
+    <skillmod ref="stonemagic" value="1"/>
+    </modifications>
+  </material>
+  
+  <material id="irrwisch_kristall" quality="4" price="5000" type="OTHER">
+    <modifications>
+    <skillmod ref="controlmagic" value="2"/>
+    </modifications>
+  </material>
+  
+  <material id="mammut_stosszaehne" quality="2" price="1500" type="OTHER">
+    <modifications>
+    </modifications>
+  </material>
+  
+  <material id="miaskatze_fell" quality="4" price="5000" type="LEATHER">
+    <modifications>
+    <skillmod ref="stealth" value="1"/>
+	<skillmod ref="healmagic" value="2"/>
+	<attitudemod val="-2" cond="true"/> <!-- Einstellung von Immersommeralben um 2 Stufen gesenkt -->
+    </modifications>
+  </material>
+  
+  <material id="minotaurus_hoerner" quality="2" price="1500" type="OTHER">
+    <modifications>
+    	<!-- Stärke Ausdauernd / Merkmal Erschöpfungsresistenz 1 (für Tiere) -->
+		<powermod ref="enduring"/>
+		<creaturefeaturemod feature="RESIST_EXHAUSTION"/>
+    </modifications>
+  </material>
+  
+  <material id="mondsteindrache_schuppen" quality="3" price="3000" type="LEATHER">
+    <modifications>
+    <!-- Kampfmagie +1, Manipulationen und Duelle +1 -->
+    <skillmod ref="combatmagic" value="1"/>
+    </modifications>
+  </material>
+  
+  <material id="nymphe_haar" quality="4" price="5000" type="OTHER">
+    <modifications>
+    <!-- Wassermagie +1, Luft anhalten verdreifacht -->
+    <skillmod ref="watermagic" value="1"/>
+    </modifications>
+  </material>
+  
+  <material id="raubsaurier_leder" quality="2" price="1500" type="LEATHER">
+    <modifications>
+    </modifications>
+  </material>
+  
+  <material id="riesenkraken_leder" quality="2" price="1500" type="LEATHER">
+    <modifications>
+    <featuremod feature="PROTECT_COLD"/>
+  	<featuremod feature="WATERPROOF"/>
+  	<featuremod feature="WATERPROOF"/>
+    </modifications>
+  </material>
+  
+  <material id="roc_federn" quality="2" price="1500" type="OTHER">
+    <modifications>
+    <attrmod attr="BODYRESIST" val="1" cond="true"/> <!-- KW +1 gegen positionsverändernde Angriffe -->
+    </modifications>
+  </material>
+  
+  <material id="rosendrache_haut" quality="2" price="1500" type="LEATHER">
+    <modifications>
+    <skillmod ref="naturemagic" value="2"/>
+    </modifications>
+  </material>
+  
+  <material id="rubingorilla_fell" quality="2" price="1500" type="LEATHER">
+    <modifications>
+    </modifications>
+  </material>
+  
+  <material id="sandtiger_leder" quality="1" price="500" type="LEATHER">
+    <modifications>
+    <itemmod attr="RIGIDITY" val="1"/>
+    </modifications>
+  </material>
+  
+  <material id="schneeleopard_fell" quality="3" price="3000" type="LEATHER">
+    <modifications>
+    </modifications>
+  </material>
+  
+  <material id="seeschlange_schuppen" quality="2" price="1500" type="LEATHER">
+    <modifications>
+    <featuremod feature="PROTECT_COLD"/>
+  	<featuremod feature="WATERPROOF"/>
+  	<featuremod feature="WATERPROOF"/>
+    </modifications>
+  </material>
+  
+  <material id="simurgh_federn" quality="5" price="7500" type="OTHER">
+    <modifications>
+    <!-- Heilungsmagie +1, Fokus +5 (wie Firnholz) -->
+    <skillmod ref="healmagic" value="1"/>
+    <attrmod attr="FOCUS" val="5"/>
+    </modifications>
+  </material>
+  
+  <material id="sirene_federn" quality="3" price="3000" type="OTHER">
+    <modifications>
+    <skillmod ref="performance" value="1"/>
+    <skillmod ref="deathmagic" value="1"/>
+    </modifications>
+  </material>
+  
+  <material id="sperberdrache_haut" quality="2" price="1500" type="LEATHER">
+    <modifications>
+    <attrmod attr="DAMAGE_REDUCTION" val="2" cond="true"/><!-- Schutz vor Windschaden 2 -->
+    </modifications>
+  </material>
+  
+  <material id="tiger_fell" quality="2" price="1500" type="LEATHER">
+    <modifications>
+    </modifications>
+  </material>
+  
+  <material id="vulkandrache_schuppen" quality="5" price="7500" type="LEATHER">
+    <modifications>
+    <!-- Schutz vor Feuerschaden 4, Feuermagie +2, Stabil, BE +1 -->
+    <attrmod attr="DAMAGE_REDUCTION" val="4" cond="true"/>
+    <skillmod ref="firemagic" value="2"/>
+    </modifications>
+  </material>
+  
+  <material id="waldmammut_fell" quality="2" price="1500" type="LEATHER">
+    <modifications>
+    <featuremod feature="PROTECT_COLD"/>
+    <featuremod feature="PROTECT_COLD"/>
+    </modifications>
+  </material>
+  
+  <material id="weisser_rabe_federn" quality="3" price="3000" type="OTHER">
+    <modifications>
+    <skillmod ref="insightmagic" value="2"/>
+    </modifications>
+  </material>
+  
+  <material id="weissfell_orang_utan_fell" quality="2" price="1500" type="LEATHER">
+    <modifications>
+    </modifications>
+  </material>
+  
+  <material id="wurzelwurm_holz" quality="2" price="1500" type="WOOD">
+    <modifications>
+    <itemmod attr="RIGIDITY" val="2"/>
+    </modifications>
+  </material>
+  
+  <material id="wyvern_leder" quality="3" price="3000" type="LEATHER">
+    <modifications>
+    <!-- Stabil, BE +1 -->
+      <itemfeaturemod feature="STABLE" />
+      <itemmod attr="HANDICAP" val="1" />
+    </modifications>
+  </material>
+  
+  <material id="yeti_fell" quality="2" price="1500" type="LEATHER">
+    <modifications>
+    <featuremod feature="PROTECT_COLD"/>
+    <featuremod feature="PROTECT_COLD"/>
+    </modifications>
+  </material>
+  
+  <material id="zagirr_alt_haut" quality="1" price="500" type="LEATHER">
+    <modifications>
+    <skillmod ref="insightmagic" value="1"/>
+    </modifications>
+  </material>
+  
+  <material id="zagirr_erw_haut" quality="1" price="500" type="LEATHER">
+    <modifications>
+    <skillmod ref="insightmagic" value="1"/>
+    </modifications>
+  </material>
+  
+  <material id="zagirr_jun_haut" quality="1" price="500" type="LEATHER">
+    <modifications>
+    <skillmod ref="insightmagic" value="1"/>
+    </modifications>
+  </material>
+   
+</materials>

@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+   <skill id="leadership">
+       <mastership level="2" key="prayer_before_combat">
+           <requires>
+ 	          <selreq>
+	        	<resourcereq ref="faith" value="2"/>
+	       		<powerreq ref="priest" />
+	          </selreq>
+           </requires>
+       </mastership>
+       <mastership level="3" key="prayer_before_battle">
+            <requires>
+                <masterreq ref="leadership/prayer_before_combat"/>
+            </requires>
+       </mastership>
+   </skill>
+
+   <skill id="diplomacy">
+       <mastership level="1" key="preacher" />
+       <mastership level="1" key="rewarding_afterlife" />
+   </skill>
+
+   <skill id="determination">
+       <mastership level="1" key="souls_foundation" />
+       <mastership level="2" key="strong_in_faith">
+            <requires>
+                <masterreq ref="determination/souls_foundation"/>
+            </requires>
+       </mastership>
+   </skill>
+
+   <skill id="clscraft">
+       <mastership level="2" key="craftman_of_gods">
+             <requires>
+                <masterreq ref="clscraft/journeyman"/>
+ 	          <selreq>
+	        	<resourcereq ref="faith" value="1"/>
+	       		<powerreq ref="priest" />
+	          </selreq>
+            </requires>
+       </mastership>
+   </skill>
+
+   <skill id="craftmanship">
+       <mastership level="2" key="craftman_of_gods">
+             <requires>
+                <masterreq ref="craftmanship/journeyman"/>
+            </requires>
+       </mastership>
+   </skill>
+
+   <skill id="history">
+   		<mastership level="1" key="common_rites">
+       		<requires>
+	       		<resourcereq ref="faith" value="1"/>
+            </requires>
+       </mastership>
+       <mastership level="1" key="divine_punishment" />
+       <mastership level="1" key="holy_oath">
+           <requires>
+	        	<resourcereq ref="faith" value="2"/>
+	       		<powerreq ref="priest" />
+           </requires>
+       </mastership>
+   		<mastership level="1" key="sexton">
+       		<requires>
+	       		<resourcereq ref="faith" value="1"/>
+            </requires>
+       </mastership>
+       <mastership level="2" key="nature_of_deity" />
+       <mastership level="2" key="masked_prayer" />
+       <mastership level="2" key="divine_wrath">
+       		<requires>
+	       		<resourcereq ref="faith" value="2"/>
+            </requires>
+       </mastership>
+       <mastership level="2" key="sacrificial_offering" />
+   	</skill>
+
+   <skill id="streetlore">
+       <mastership level="1" key="hidden_signs">
+            <requires>
+	       		<resourcereq ref="rank" value="1"/>
+            </requires>
+       </mastership>
+   </skill>
+
+   <skill id="endurance">
+       <mastership level="2" key="selfsacrifice" />
+   </skill>
+
+   <skill id="antimagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="antimagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="antimagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="antimagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="combatmagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="combatmagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="combatmagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="combatmagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="windmagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="windmagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="windmagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="windmagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="stonemagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="stonemagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="stonemagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="stonemagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="enhancemagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="enhancemagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="enhancemagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="enhancemagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="firemagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="firemagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="firemagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="firemagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="watermagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="watermagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="watermagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="watermagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="shadowmagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="shadowmagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="shadowmagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="shadowmagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="naturemagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="naturemagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="naturemagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="naturemagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="illusionmagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="illusionmagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="illusionmagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="illusionmagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="controlmagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="controlmagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="controlmagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="controlmagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="motionmagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="motionmagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="motionmagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="motionmagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="insightmagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="insightmagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="insightmagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="insightmagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="healmagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="healmagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="2" key="healing_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="healmagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="healmagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="lightmagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="lightmagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="lightmagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="lightmagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="fatemagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="fatemagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="fatemagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="fatemagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="protectionmagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="protectionmagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="2" key="faith_armor" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="protectionmagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="protectionmagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="deathmagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="deathmagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="deathmagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="deathmagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+   <skill id="transformationmagic">
+       <mastership level="1" common="true" key="divine_sign_1" >
+           <requires>
+	       		<powerreq ref="priest" />
+	       		<favskillreq/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="power_of_community_1" />
+       <mastership level="2" common="true" key="power_of_community_2" >
+           <requires>
+	       		<masterreq ref="transformationmagic/power_of_community_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="aura_of_faith" >
+           <requires>
+	       		<resourcereq ref="faith" value="2"/>
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="divine_sign_2" >
+           <requires>
+	       		<masterreq ref="transformationmagic/divine_sign_1" />
+           </requires>
+       </mastership>
+       <mastership level="3" common="true" key="power_of_community_3" >
+           <requires>
+	       		<masterreq ref="transformationmagic/power_of_community_2" />
+           </requires>
+       </mastership>
+   </skill>
+
+</skills>
