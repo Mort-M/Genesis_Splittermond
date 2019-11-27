@@ -294,11 +294,11 @@ public class IDExporter {
 		out.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 		out.println("<html>");
 		out.println(" <head>");
-		out.println("   <title>Stärken</title>");
+		out.println("   <title>St&auml;rken</title>");
 		out.println(" </head>");
 		out.println(" <body>");
 		out.println("   <table border=\"1\">");
-		out.println("    <tr><th>Stärke</th><th>ID</th><th>Quelle</th></tr>");
+		out.println("    <tr><th>St&auml;rke</th><th>ID</th><th>Quelle</th></tr>");
 		List<Power> list =SplitterMondCore.getPowers();
 		Collections.sort(list, new Comparator<Power>() {
 			public int compare(Power o1, Power o2) {
