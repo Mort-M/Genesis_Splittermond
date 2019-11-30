@@ -14,15 +14,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.SplittermondCustomDataCore;
 
 import de.rpgframework.ConfigContainer;
 import de.rpgframework.ConfigNode;
 import de.rpgframework.ConfigOption;
 import de.rpgframework.RPGFrameworkLoader;
-import de.rpgframework.RulePlugin;
-import de.rpgframework.RulePluginFeatures;
+import de.rpgframework.character.CharacterProviderLoader;
 import de.rpgframework.character.DecodeEncodeException;
+import de.rpgframework.character.RulePlugin;
+import de.rpgframework.character.RulePluginFeatures;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.CommandBus;
@@ -224,7 +224,7 @@ public class SplittermondRules implements RulePlugin<SpliMoCharacter>, CommandBu
 	public static boolean isDeveloperMode() {
 		try {
 			RulePlugin<SpliMoCharacter> corePlugin = null;
-			for (RulePlugin<?> plugin : RPGFrameworkLoader.getInstance().getCharacterAndRules().getRulePlugins(RoleplayingSystem.SPLITTERMOND)) {
+			for (RulePlugin<?> plugin : CharacterProviderLoader.getRulePlugins(RoleplayingSystem.SPLITTERMOND)) {
 				if (plugin.getID().equals("CORE")) {
 					corePlugin = (RulePlugin<SpliMoCharacter>) plugin;
 					break;

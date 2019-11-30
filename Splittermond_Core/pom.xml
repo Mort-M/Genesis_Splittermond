@@ -21,8 +21,12 @@
 		</dependency>
 		<dependency>
 			<groupId>de.rpgframework</groupId>
-			<artifactId>rpgframework-api</artifactId>
+			<artifactId>rpgframework-chars</artifactId>
 		</dependency>
+        <dependency>
+            <groupId>de.rpgframework</groupId>
+            <artifactId>rpgframework-products</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>org.prelle</groupId>
 			<artifactId>simple-persist</artifactId>
@@ -36,12 +40,6 @@
 			<groupId>com.sun.mail</groupId>
 			<artifactId>javax.mail</artifactId>
 			<version>[1.6.0,)</version>
-		</dependency>
-		<dependency>
-			<groupId>de.rpgframework</groupId>
-			<artifactId>babylon-charrules</artifactId>
-			<version>[3.0.0-SNAPSHOT,3.99.99)</version>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 	

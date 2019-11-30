@@ -3,7 +3,6 @@
  */
 package org.prelle.splimo.chargen;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -67,12 +66,12 @@ import org.prelle.splittermond.genlvl.MastershipLevellerAndGenerator;
 import org.prelle.splittermond.genlvl.SpellLevellerAndGenerator;
 
 import de.rpgframework.ConfigOption;
-import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.character.Attachment;
 import de.rpgframework.character.CharacterHandle;
 import de.rpgframework.character.CharacterHandle.Format;
 import de.rpgframework.character.CharacterHandle.Type;
 import de.rpgframework.character.CharacterProvider;
+import de.rpgframework.character.CharacterProviderLoader;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.RoleplayingSystem;
@@ -687,7 +686,7 @@ public class SpliMoCharacterGenerator implements CharacterController {
 
 		logger.debug("Generate");
 
-		CharacterProvider charProv     = RPGFrameworkLoader.getInstance().getCharacterService();
+		CharacterProvider charProv     = CharacterProviderLoader.getCharacterProvider();
 		try {
 			CharacterHandle handle = charProv.createCharacter(model.getName(), RoleplayingSystem.SPLITTERMOND);
 			logger.info("Calling handle.setCharacter("+model+")");

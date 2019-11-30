@@ -1,6 +1,3 @@
-/**
- *
- */
 package org.prelle.splimo;
 
 import java.util.ArrayList;
@@ -72,6 +69,7 @@ import de.rpgframework.genericrpg.Reward;
 import de.rpgframework.genericrpg.modification.Modification;
 import de.rpgframework.products.Adventure;
 import de.rpgframework.products.ProductService;
+import de.rpgframework.products.ProductServiceLoader;
 
 /**
  * @author prelle
@@ -423,7 +421,7 @@ public class SplitterTools {
 		HistoryElementImpl current = null;
 		ProductService sessServ = null;
 		try {
-			sessServ = RPGFrameworkLoader.getInstance().getProductService();
+			sessServ = ProductServiceLoader.getInstance();
 		} catch (Exception e) {
 			logger.error("Failed loading session service",e);
 		}
@@ -441,7 +439,7 @@ public class SplitterTools {
 					}
 				}
 				// If is same adventure as current, keep same history element
-				if (!aggregate || !(adv!=null && current!=null && adv==current.getAdventure()) ) {
+				if (!aggregate || !(adv!=null && current!=null && adv.getId().equals(current.getAdventureID())) ) {
 					current = new HistoryElementImpl();
 					current.setName(reward.getTitle());
 					if (adv!=null) {

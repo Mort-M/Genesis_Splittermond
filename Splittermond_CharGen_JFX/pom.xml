@@ -21,7 +21,7 @@
 		</dependency>
 		<dependency>
 			<groupId>de.rpgframework</groupId>
-			<artifactId>rpgframework-api</artifactId>
+			<artifactId>rpgframework-core</artifactId>
 		</dependency>
     <dependency>
       <groupId>org.prelle</groupId>
@@ -30,22 +30,19 @@
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
 			<artifactId>splittermond-core</artifactId>
-            <version>[3.0.0-SNAPSHOT, 3.99.99)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
 			<artifactId>splittermond-chargen</artifactId>
-			<version>[3.0.0-SNAPSHOT, 3.99.99)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.prelle</groupId>
 			<artifactId>javafx-extensions</artifactId>
-			<version>[4.0.3, 4.0.99)</version>
 		</dependency>
-		<dependency>
-			<groupId>de.rpgframework</groupId>
-			<artifactId>rpgframework-jfx</artifactId>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>de.rpgframework</groupId> -->
+<!-- 			<artifactId>rpgframework-jfx</artifactId> -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

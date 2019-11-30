@@ -34,6 +34,7 @@ import de.rpgframework.character.CharacterHandle;
 import de.rpgframework.character.CharacterHandle.Format;
 import de.rpgframework.character.CharacterHandle.Type;
 import de.rpgframework.character.CharacterProvider;
+import de.rpgframework.character.CharacterProviderLoader;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.RoleplayingSystem;
@@ -86,7 +87,7 @@ public class NewSpliMoCharacterGenerator extends SplitterEngineCharacterGenerato
 		
 		logger.debug("Generate");
 		
-		CharacterProvider charProv     = RPGFrameworkLoader.getInstance().getCharacterService();
+		CharacterProvider charProv     = CharacterProviderLoader.getCharacterProvider();
 		try {
 			CharacterHandle handle = charProv.createCharacter(model.getName(), RoleplayingSystem.SPLITTERMOND);
 			handle.setCharacter(model);

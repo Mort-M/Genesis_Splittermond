@@ -9,6 +9,7 @@ module splittermond.bbcode {
 
 	requires java.prefs;
 	requires org.apache.logging.log4j;
-	requires rpgframework.api;
+	requires de.rpgframework.core;
 	requires splittermond.core;
+	requires de.rpgframework.chars;
 }

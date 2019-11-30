@@ -31,9 +31,6 @@ public class SpellDifficultyConverter implements StringValueConverter<Integer> {
 	}
 
 	//--------------------------------------------------------------------
-	/**
-	 * @see javax.xml.bind.annotation.adapters.XmlAdapter#marshal(java.lang.Object)
-	 */
 	@Override
 	public String write(Integer v) throws Exception {
 		if (v==null)

@@ -4,10 +4,10 @@
 package org.prelle.rpgframework.splittermond.data;
 
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
@@ -16,8 +16,8 @@ import org.prelle.splimo.SpliMoCharacter;
 
 import de.rpgframework.ConfigContainer;
 import de.rpgframework.ConfigOption;
-import de.rpgframework.RulePlugin;
-import de.rpgframework.RulePluginFeatures;
+import de.rpgframework.character.RulePlugin;
+import de.rpgframework.character.RulePluginFeatures;
 import de.rpgframework.core.CommandResult;
 import de.rpgframework.core.CommandType;
 import de.rpgframework.core.RoleplayingSystem;

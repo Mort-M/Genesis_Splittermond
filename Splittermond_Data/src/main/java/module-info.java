@@ -20,9 +20,10 @@ module splittermond.data {
 	opens org.prelle.rpgframework.splittermond.data.mahaluu.data;
 	opens org.prelle.rpgframework.splittermond.data.badashan.data;
 
-	provides de.rpgframework.RulePlugin with org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
+	provides de.rpgframework.character.RulePlugin with org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 
 	requires org.apache.logging.log4j;
-	requires rpgframework.api;
+	requires de.rpgframework.core;
+	requires de.rpgframework.chars;
 	requires splittermond.core;
 }

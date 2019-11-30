@@ -2,14 +2,14 @@ package de.rpgframework.splittermond.print.bbcode;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.nio.file.Path;
 import java.io.FileWriter;
 import java.io.InputStream;
-import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.Locale;
+import java.util.List;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
@@ -20,8 +20,8 @@ import org.prelle.splimo.SpliMoCharacter;
 
 import de.rpgframework.ConfigContainer;
 import de.rpgframework.ConfigOption;
-import de.rpgframework.RulePlugin;
-import de.rpgframework.RulePluginFeatures;
+import de.rpgframework.character.RulePlugin;
+import de.rpgframework.character.RulePluginFeatures;
 import de.rpgframework.core.CommandBus;
 import de.rpgframework.core.CommandBusListener;
 import de.rpgframework.core.CommandResult;

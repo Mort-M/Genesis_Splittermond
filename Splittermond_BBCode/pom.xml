@@ -39,13 +39,11 @@
 		</dependency>
 		<dependency>
 			<groupId>de.rpgframework</groupId>
-			<artifactId>rpgframework-api</artifactId>
-            <version>[3.0.0-SNAPSHOT, 3.99.99)</version>
+			<artifactId>rpgframework-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
 			<artifactId>splittermond-core</artifactId>
-			<version>[3.0.0-SNAPSHOT, 3.99.99)</version>
 		</dependency>
 	</dependencies>
 </project>

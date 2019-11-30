@@ -14,9 +14,8 @@ module splittermond.chargen {
 	exports org.prelle.splimo.chargen.event;
 	exports org.prelle.splimo.charctrl;
 
-	requires java.xml;
 	requires org.apache.logging.log4j;
-	requires transitive rpgframework.api;
+	requires transitive de.rpgframework.core;
 	requires transitive splittermond.core;
 	requires splittermond.data;
 	

@@ -22,7 +22,7 @@ module splittermond.chargen.jfx {
 //	exports org.prelle.splittermond.chargen.fluent;
 //	exports org.prelle.splittermond.chargen.free.jfx;
 
-	provides de.rpgframework.RulePlugin with org.prelle.splittermond.chargen.jfx.GeneratorRulePlugin;
+	provides de.rpgframework.character.RulePlugin with org.prelle.splittermond.chargen.jfx.GeneratorRulePlugin;
 
 	requires java.prefs;
 	requires javafx.base;
@@ -30,9 +30,8 @@ module splittermond.chargen.jfx {
 	requires javafx.extensions;
 	requires javafx.graphics;
 	requires org.apache.logging.log4j;
-	requires transitive rpgframework.api;
-	requires transitive rpgframework.api.jfx;
-	requires transitive rpgframework.jfx;
+	requires transitive de.rpgframework.core;
+	requires transitive de.rpgframework.chars;
 	requires simple.persist;
 	requires transitive splittermond.chargen;
 	requires transitive splittermond.core;

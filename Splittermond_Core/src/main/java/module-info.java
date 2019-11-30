@@ -14,7 +14,7 @@ module splittermond.core {
 	exports org.prelle.splimo.processor;
 	exports org.prelle.splimo;
 
-	provides de.rpgframework.RulePlugin with org.prelle.rpgframework.splittermond.SplittermondRules;
+	provides de.rpgframework.character.RulePlugin with org.prelle.rpgframework.splittermond.SplittermondRules;
 
 	opens org.prelle.splimo to simple.persist;
 	opens org.prelle.splimo.creature to simple.persist;
@@ -28,6 +28,8 @@ module splittermond.core {
 	requires java.xml;
 	requires java.mail;
 	requires org.apache.logging.log4j;
-	requires rpgframework.api;
+	requires transitive de.rpgframework.core;
 	requires simple.persist;
+	requires transitive de.rpgframework.chars;
+	requires transitive de.rpgframework.products;
 }

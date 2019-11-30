@@ -29,16 +29,21 @@
 
 	<dependencyManagement>
 		<dependencies>
-      <dependency>
-        <groupId>de.rpgframework</groupId>
-        <artifactId>rpgframework-api</artifactId>
-        <version>[3.0.0-SNAPSHOT,3.99.99)</version>
-      </dependency>
-      <dependency>
-        <groupId>de.rpgframework</groupId>
-        <artifactId>rpgframework-jfx</artifactId>
-        <version>[3.0.0-SNAPSHOT, 3.0.99)</version>
-      </dependency>
+			<dependency>
+				<groupId>de.rpgframework</groupId>
+				<artifactId>rpgframework-core</artifactId>
+				<version>[4.0.0-SNAPSHOT,4.99.99)</version>
+			</dependency>
+			<dependency>
+				<groupId>de.rpgframework</groupId>
+				<artifactId>rpgframework-chars</artifactId>
+				<version>[4.0.0-SNAPSHOT, 4.0.99)</version>
+			</dependency>
+            <dependency>
+                <groupId>de.rpgframework</groupId>
+                <artifactId>rpgframework-products</artifactId>
+                <version>[4.0.0-SNAPSHOT, 4.0.99)</version>
+            </dependency>
 			<dependency>
 				<groupId>org.prelle.rpgframework</groupId>
 				<artifactId>splittermond-core</artifactId>
@@ -47,17 +52,17 @@
 			<dependency>
 				<groupId>org.prelle.rpgframework</groupId>
 				<artifactId>splittermond-chargen</artifactId>
-        <version>${revision}</version>
+				<version>${revision}</version>
 			</dependency>
-      <dependency>
-        <groupId>org.prelle.rpgframework</groupId>
-        <artifactId>splittermond-chargen-jfx</artifactId>
-        <version>${revision}</version>
-      </dependency>
+			<dependency>
+				<groupId>org.prelle.rpgframework</groupId>
+				<artifactId>splittermond-chargen-jfx</artifactId>
+				<version>${revision}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.prelle.rpgframework</groupId>
 				<artifactId>splittermond-data</artifactId>
-        <version>${revision}</version>
+				<version>${revision}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -81,7 +86,7 @@
 	</licenses>
 
 	<modules>
-    <module>Splittermond_BBCode</module>
+		<module>Splittermond_BBCode</module>
 		<module>Splittermond_Core</module>
 		<module>Splittermond_CharGen</module>
 		<module>Splittermond_CharGen_JFX</module>

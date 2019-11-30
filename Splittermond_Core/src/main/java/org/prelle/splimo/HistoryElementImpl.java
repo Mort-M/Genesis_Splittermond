@@ -88,9 +88,18 @@ public class HistoryElementImpl implements HistoryElement {
 	 * @see de.rpgframework.genericrpg.HistoryElement#getAdventure()
 	 */
 	@Override
-	public Adventure getAdventure() {
-		return adventure;
+	public String getAdventureID() {
+		return adventure.getId();
 	}
+
+//	//-------------------------------------------------------------------
+//	/**
+//	 * @see de.rpgframework.genericrpg.HistoryElement#getAdventure()
+//	 */
+//	@Override
+//	public Adventure getAdventure() {
+//		return adventure;
+//	}
 
 	//-------------------------------------------------------------------
 	/**

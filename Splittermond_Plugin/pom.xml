@@ -56,7 +56,7 @@
 						<manifest>
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 							<useUniqueVersions>false</useUniqueVersions>
-							<packageName>Space 1889</packageName>
+							<packageName>Splittermond</packageName>
 						</manifest>
 						<manifestEntries>
 							<Url>https://www.rpgframework.de/</Url>

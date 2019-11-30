@@ -10,8 +10,8 @@ import java.util.List;
 
 import de.rpgframework.ConfigContainer;
 import de.rpgframework.ConfigOption;
-import de.rpgframework.RulePlugin;
-import de.rpgframework.RulePluginFeatures;
+import de.rpgframework.character.RulePlugin;
+import de.rpgframework.character.RulePluginFeatures;
 import de.rpgframework.character.RuleSpecificCharacterObject;
 import de.rpgframework.core.CommandResult;
 import de.rpgframework.core.CommandType;

@@ -84,7 +84,7 @@ import org.prelle.splimo.requirements.SpecialRequirement;
 
 import de.rpgframework.RPGFramework;
 import de.rpgframework.RPGFrameworkLoader;
-import de.rpgframework.RulePlugin;
+import de.rpgframework.character.RulePlugin;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.CommandBus;
