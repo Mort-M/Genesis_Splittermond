@@ -85,22 +85,22 @@
 						<phase>deploy</phase>
 						<configuration>
 							<tasks>
+                <echo message="Unpack manifest from jar"/>
+                <unzip src="target/${project.artifactId}-${project.version}.jar" dest="target">
+                  <patternset>
+                        <include name="META-INF/MANIFEST.MF" />
+                    </patternset>
+                </unzip>
+                <copy file="target/META-INF/MANIFEST.MF" tofile="target/${project.artifactId}-${project.version}.mf"/>
+
                 <echo message="Copy plugin descriptor to ${deploymentServer}:${deploymentPath}"/>
                 <scp
                   todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}/"
-                  sftp="true" failonerror="false" trust="true" verbose="alse">
+                  sftp="true" failonerror="true" trust="true" verbose="false">
                   <fileset dir="target">
                     <include name="${project.artifactId}-${project.version}.mf" />
                   </fileset>
                 </scp>
-				<echo message="Unpack manifest from jar"/>
-				<unzip src="target/${project.artifactId}-${project.version}.jar" dest="target">
-                  <patternset>
-		                <include name="META-INF/MANIFEST.MF" />
-	                </patternset>
-				</unzip>
-				<copy file="target/META-INF/MANIFEST.MF" tofile="target/${project.artifactId}-${project.version}.mf"/>
-
                 <echo message="Copy plugin to ${deploymentServer}:${deploymentPath}"/>
                 <scp
                   todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}"
