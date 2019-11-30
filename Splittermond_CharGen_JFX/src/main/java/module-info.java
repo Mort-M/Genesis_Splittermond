@@ -32,6 +32,7 @@ module splittermond.chargen.jfx {
 	requires org.apache.logging.log4j;
 	requires transitive de.rpgframework.core;
 	requires transitive de.rpgframework.chars;
+	requires transitive de.rpgframework.javafx;
 	requires simple.persist;
 	requires transitive splittermond.chargen;
 	requires transitive splittermond.core;

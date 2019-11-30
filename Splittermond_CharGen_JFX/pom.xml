@@ -39,10 +39,10 @@
 			<groupId>org.prelle</groupId>
 			<artifactId>javafx-extensions</artifactId>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>de.rpgframework</groupId> -->
-<!-- 			<artifactId>rpgframework-jfx</artifactId> -->
-<!-- 		</dependency> -->
+		<dependency>
+			<groupId>de.rpgframework</groupId>
+			<artifactId>rpgframework-javafx</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

@@ -44,6 +44,11 @@
                 <artifactId>rpgframework-products</artifactId>
                 <version>[4.0.0-SNAPSHOT, 4.0.99)</version>
             </dependency>
+            <dependency>
+                <groupId>de.rpgframework</groupId>
+                <artifactId>rpgframework-javafx</artifactId>
+                <version>[4.0.0-SNAPSHOT, 4.0.99)</version>
+            </dependency>
 			<dependency>
 				<groupId>org.prelle.rpgframework</groupId>
 				<artifactId>splittermond-core</artifactId>

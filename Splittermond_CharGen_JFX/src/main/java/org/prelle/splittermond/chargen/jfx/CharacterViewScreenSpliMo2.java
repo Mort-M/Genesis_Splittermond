@@ -26,12 +26,12 @@ import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splimo.levelling.CharacterLeveller;
 import org.prelle.splittermond.chargen.jfx.wizard.CharGenWizardSpliMo;
 
-import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.character.Attachment;
 import de.rpgframework.character.CharacterHandle;
 import de.rpgframework.character.CharacterHandle.Format;
 import de.rpgframework.character.CharacterHandle.Type;
 import de.rpgframework.character.CharacterProvider;
+import de.rpgframework.character.CharacterProviderLoader;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.RoleplayingSystem;
@@ -204,9 +204,9 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			try {
 				if (handle==null) {
 					logger.debug("CharacterHandle does not exist yet - prepare it");
-					handle = RPGFrameworkLoader.getInstance().getCharacterService().createCharacter(model.getName(), RoleplayingSystem.SPLITTERMOND);
+					handle = CharacterProviderLoader.getCharacterProvider().createCharacter(model.getName(), RoleplayingSystem.SPLITTERMOND);
 					handle.setCharacter(model);
-					RPGFrameworkLoader.getInstance().getCharacterAndRules().getCharacterService().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, null, encoded);
+					CharacterProviderLoader.getCharacterProvider().addAttachment(handle, Type.CHARACTER, Format.RULESPECIFIC, null, encoded);
 					BabylonEventBus.fireEvent(BabylonEventType.CHAR_MODIFIED, handle, 2);
 				} else {
 					handle.setCharacter(model);
@@ -228,7 +228,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			try {
 				if (handle!=null && !handle.getName().equals(model.getName())) {
 					logger.info("Character has been renamed");
-					RPGFrameworkLoader.getInstance().getCharacterService().renameCharacter(handle, model.getName());
+					CharacterProviderLoader.getCharacterProvider().renameCharacter(handle, model.getName());
 				}
 			} catch (IOException e) {
 				logger.error("Renaming failed",e);
@@ -239,7 +239,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			 * 3. Update portrait
 			 */
 			logger.debug("Update portrait");
-			CharacterProvider charServ = RPGFrameworkLoader.getInstance().getCharacterAndRules().getCharacterService();
+			CharacterProvider charServ = CharacterProviderLoader.getCharacterProvider();
 			try {
 				if (model.getImage()!=null && handle!=null) {
 					Attachment attach = handle.getFirstAttachment(Type.CHARACTER, Format.IMAGE);
@@ -287,7 +287,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 					// Delete previously saved char
 					logger.info("Delete eventually existing character on disk");
 					try {
-						RPGFrameworkLoader.getInstance().getCharacterService().deleteCharacter(handle);
+						CharacterProviderLoader.getCharacterProvider().deleteCharacter(handle);
 					} catch (IOException e) {
 						logger.error("Failed deleting cancelled character",e);
 					}

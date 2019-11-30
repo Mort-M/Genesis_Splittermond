@@ -7,9 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.rpgframework.ConfigContainer;
-import de.rpgframework.FunctionCharacterAndRules;
-import de.rpgframework.FunctionMediaLibraries;
-import de.rpgframework.FunctionSessionManagement;
 import de.rpgframework.RPGFramework;
 import de.rpgframework.RPGFrameworkInitCallback;
 import de.rpgframework.boot.BootStep;
@@ -77,36 +74,6 @@ public class DummyRPGFramework implements RPGFramework {
 	 */
 	@Override
 	public ConfigContainer getPluginConfigurationNode() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	//-------------------------------------------------------------------
-	/**
-	 * @see de.rpgframework.RPGFramework#getCharacterAndRules()
-	 */
-	@Override
-	public FunctionCharacterAndRules getCharacterAndRules() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	//-------------------------------------------------------------------
-	/**
-	 * @see de.rpgframework.RPGFramework#getMediaLibraries()
-	 */
-	@Override
-	public FunctionMediaLibraries getMediaLibraries() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	//-------------------------------------------------------------------
-	/**
-	 * @see de.rpgframework.RPGFramework#getSessionManagement()
-	 */
-	@Override
-	public FunctionSessionManagement getSessionManagement() {
 		// TODO Auto-generated method stub
 		return null;
 	}

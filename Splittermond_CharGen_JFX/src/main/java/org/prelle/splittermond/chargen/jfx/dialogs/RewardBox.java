@@ -26,11 +26,11 @@ import org.prelle.splimo.modifications.ResourceModification;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splittermond.chargen.jfx.ViewMode;
 
-import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.core.RoleplayingSystem;
 import de.rpgframework.genericrpg.Reward;
 import de.rpgframework.genericrpg.modification.Modification;
 import de.rpgframework.products.Adventure;
+import de.rpgframework.products.ProductServiceLoader;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.ListChangeListener;
@@ -228,7 +228,7 @@ public class RewardBox extends HBox {
 		 */
 		tfDescr = new TextField();
 		cbAdventure = new ChoiceBox<>();
-		cbAdventure.getItems().addAll(RPGFrameworkLoader.getInstance().getProductService().getAdventures(RoleplayingSystem.SPLITTERMOND));
+		cbAdventure.getItems().addAll(ProductServiceLoader.getInstance().getAdventures(RoleplayingSystem.SPLITTERMOND));
 		cbAdventure.setConverter(new StringConverter<Adventure>() {
 			public String toString(Adventure value) {return value.getTitle();}
 			public Adventure fromString(String string) {return null;}
@@ -315,7 +315,7 @@ public class RewardBox extends HBox {
 
 		logger.debug("Search "+value.getId());
 		if (value.getId()!=null) {
-			for (Adventure adv : RPGFrameworkLoader.getInstance().getProductService().getAdventures(RoleplayingSystem.SPLITTERMOND))
+			for (Adventure adv : ProductServiceLoader.getInstance().getAdventures(RoleplayingSystem.SPLITTERMOND))
 //				logger.debug("  Compare with "+adv.getId());
 				if (value.getId().equals(adv.getId())) {
 					cbAdventure.getSelectionModel().select(adv);

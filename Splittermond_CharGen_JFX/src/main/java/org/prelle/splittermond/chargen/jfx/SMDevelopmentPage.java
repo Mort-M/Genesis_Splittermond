@@ -23,12 +23,12 @@ import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splittermond.chargen.jfx.dialogs.RewardBox;
 
-import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.character.CharacterHandle;
 import de.rpgframework.core.RoleplayingSystem;
 import de.rpgframework.genericrpg.HistoryElement;
 import de.rpgframework.genericrpg.Reward;
 import de.rpgframework.genericrpg.modification.Modification;
+import de.rpgframework.products.ProductServiceLoader;
 import javafx.util.StringConverter;
 
 /**
@@ -51,7 +51,7 @@ public class SMDevelopmentPage extends DevelopmentPage {
 	/**
 	 */
 	public SMDevelopmentPage(CharacterController control, CharacterHandle handle, ScreenManagerProvider provider) {
-		super(UI);
+		super(UI, RoleplayingSystem.SPLITTERMOND);
 		this.setId("splittermond-development");
 		this.setTitle(control.getModel().getName());
 		this.provider = provider;
@@ -131,7 +131,7 @@ public class SMDevelopmentPage extends DevelopmentPage {
 			elem.setName(reward.getTitle());
 			elem.addGained(reward);
 			if (reward.getId()!=null)
-				elem.setAdventure(RPGFrameworkLoader.getInstance().getProductService().getAdventure(RoleplayingSystem.SPLITTERMOND, reward.getId()));
+				elem.setAdventure(ProductServiceLoader.getInstance().getAdventure(RoleplayingSystem.SPLITTERMOND, reward.getId()));
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.EXPERIENCE_CHANGED, new int[]{model.getExperienceFree(), model.getExperienceInvested()}));
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.MONEY_CHANGED, null));
 			return elem;
