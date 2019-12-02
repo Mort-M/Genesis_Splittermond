@@ -10,8 +10,10 @@ import java.util.Locale;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ScreenManager;
+import org.prelle.rpgframework.splittermond.SplittermondCharacterPlugin;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
 import org.prelle.splimo.levelling.CharacterLeveller;
@@ -21,6 +23,9 @@ import de.rpgframework.ConfigOption;
 import de.rpgframework.character.RulePlugin;
 import de.rpgframework.character.RulePluginFeatures;
 import de.rpgframework.character.CharacterHandle;
+import de.rpgframework.character.DecodeEncodeException;
+import de.rpgframework.core.BabylonEventBus;
+import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.CommandBus;
 import de.rpgframework.core.CommandBusListener;
 import de.rpgframework.core.CommandResult;
@@ -38,8 +43,11 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	private static List<RulePluginFeatures> FEATURES = new ArrayList<RulePluginFeatures>();
 	private static ConfigOption<Double>     hgFactor;
 
+	private SplittermondCharacterPlugin charac;
+
 	//-------------------------------------------------------------------
 	static {
+		FEATURES.add(RulePluginFeatures.PERSISTENCE);
 		FEATURES.add(RulePluginFeatures.CHARACTER_CREATION);
 		FEATURES.add(RulePluginFeatures.DATA_INPUT);
 	}
@@ -130,6 +138,14 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	@Override
 	public boolean willProcessCommand(Object src, CommandType type, Object... values) {
 		switch (type) {
+		case ENCODE:
+			if (values[0]!=RoleplayingSystem.SPLITTERMOND) return false;
+			if (values.length<2) return false;
+			return (values[1] instanceof SpliMoCharacter);
+		case DECODE:
+			if (values[0]!=RoleplayingSystem.SPLITTERMOND) return false;
+			if (values.length<2) return false;
+			return (values[1] instanceof byte[]);
 		case SHOW_CHARACTER_MODIFICATION_GUI:
 			if (values[0]!=RoleplayingSystem.SPLITTERMOND) return false;
 			if (!(values[1] instanceof SpliMoCharacter)) return false;
@@ -165,6 +181,24 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 //		CharacterViewScreenSpliMo screen;
 		CharacterViewScreenSpliMo2 screen;
 		switch (type) {
+		case ENCODE:
+			model = (SpliMoCharacter)values[1];
+			byte[] raw;
+			try {
+				raw = charac.marshal(model);
+				return new CommandResult(type, raw);
+			} catch (DecodeEncodeException e) {
+				return new CommandResult(type, false, e.toString());
+			}
+		case DECODE:
+			raw = (byte[])values[1];
+			try {
+				model = charac.unmarshal(raw);
+				logger.debug("Unmarshal done");
+				return new CommandResult(type, model);
+			} catch (DecodeEncodeException e) {
+				return new CommandResult(type, false, e.toString());
+			}
 		case SHOW_CHARACTER_MODIFICATION_GUI:
 			logger.debug("start character modification");
 			model = (SpliMoCharacter)values[1];
@@ -213,6 +247,26 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	 */
 	@Override
 	public void init() {
+		logger.debug("init");
+
+		SplitterMondCore.initialize(this);
+
+		try {
+//			SplitterMondCore.loadCustomItems();
+//			SplittermondCustomDataCore.getItems();
+		} catch (Exception e) {
+			logger.error("Failed loading custom items",e);
+			BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Error loading database of your custom items");
+		}
+
+		try {
+			SplitterMondCore.loadPromoData();
+		} catch (Exception e) {
+			logger.error("Failed loading promotional data",e);
+			BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, "Error loading database of your promo data");
+		}
+		charac = new SplittermondCharacterPlugin();
+
 		CommandBus.registerBusCommandListener(this);
 	}
 
