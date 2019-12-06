@@ -1,4 +1,4 @@
-package org.prelle.splittermond.chargen.jfx;
+package org.prelle.splittermond.genesis;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -10,44 +10,34 @@ import java.util.Locale;
 import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 import org.prelle.splimo.SpliMoCharacter;
+import org.prelle.splittermond.chargen.jfx.GeneratorRulePlugin;
 
 import de.rpgframework.ConfigContainer;
 import de.rpgframework.ConfigOption;
 import de.rpgframework.character.RulePlugin;
 import de.rpgframework.character.RulePluginFeatures;
-import de.rpgframework.core.CommandBusListener;
 import de.rpgframework.core.CommandResult;
 import de.rpgframework.core.CommandType;
 import de.rpgframework.core.RoleplayingSystem;
 
 /**
- * @author prelle
+ * @author Stefan Prelle
  *
  */
-public class SplittermondBasePlugin implements RulePlugin<SpliMoCharacter>, CommandBusListener {
-
-	private static List<RulePluginFeatures> FEATURES = new ArrayList<RulePluginFeatures>();
+public class SplittermondBasePlugin implements RulePlugin<SpliMoCharacter> {
 
 	private SplittermondRules core;
 	private GeneratorRulePlugin charGen;
 	private SplittermondDataPlugin data;
-
+	
 	//-------------------------------------------------------------------
-	static {
-		FEATURES.add(RulePluginFeatures.PERSISTENCE);
-		FEATURES.add(RulePluginFeatures.CHARACTER_CREATION);
-		FEATURES.add(RulePluginFeatures.DATA_INPUT);
-	}
-
-	//-------------------------------------------------------------------
-	/**
-	 */
 	public SplittermondBasePlugin() {
+		// TODO Auto-generated constructor stub
 	}
 
-	//--------------------------------------------------------------------
+	//-------------------------------------------------------------------
 	/**
-	 * @see de.rpgframework.RulePlugin#getID()
+	 * @see de.rpgframework.character.RulePlugin#getID()
 	 */
 	@Override
 	public String getID() {
@@ -62,21 +52,12 @@ public class SplittermondBasePlugin implements RulePlugin<SpliMoCharacter>, Comm
 	public String getReadableName() {
 		if (this.getClass().getPackage().getImplementationTitle()!=null)
 			return this.getClass().getPackage().getImplementationTitle();
-		return "Splittermond Character Generator";
+		return "Splittermond Core Rules";
 	}
 
 	//-------------------------------------------------------------------
 	/**
-	 * @see de.rpgframework.RulePlugin#getRules()
-	 */
-	@Override
-	public RoleplayingSystem getRules() {
-		return RoleplayingSystem.SPLITTERMOND;
-	}
-
-	//-------------------------------------------------------------------
-	/**
-	 * @see de.rpgframework.RulePlugin#getRequiredPlugins()
+	 * @see de.rpgframework.character.RulePlugin#getRequiredPlugins()
 	 */
 	@Override
 	public Collection<String> getRequiredPlugins() {
@@ -85,31 +66,75 @@ public class SplittermondBasePlugin implements RulePlugin<SpliMoCharacter>, Comm
 
 	//-------------------------------------------------------------------
 	/**
-	 * @see de.rpgframework.RulePlugin#getSupportedFeatures()
+	 * @see de.rpgframework.character.RulePlugin#getRules()
 	 */
 	@Override
-	public Collection<RulePluginFeatures> getSupportedFeatures() {
-		return new ArrayList<>(FEATURES);
+	public RoleplayingSystem getRules() {
+		return RoleplayingSystem.SPLITTERMOND;
 	}
 
 	//-------------------------------------------------------------------
 	/**
-	 * @see de.rpgframework.RulePlugin#attachConfigurationTree(de.rpgframework.ConfigContainer)
+	 * @see de.rpgframework.character.RulePlugin#getSupportedFeatures()
+	 */
+	@Override
+	public Collection<RulePluginFeatures> getSupportedFeatures() {
+		return Arrays.asList(new RulePluginFeatures[] {RulePluginFeatures.PERSISTENCE, RulePluginFeatures.CHARACTER_CREATION,  RulePluginFeatures.DATA});
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.character.RulePlugin#getAboutHTML()
+	 */
+	@Override
+	public InputStream getAboutHTML() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.character.RulePlugin#getConfiguration()
+	 */
+	@Override
+	public List<ConfigOption<?>> getConfiguration() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.character.RulePlugin#getLanguages()
+	 */
+	@Override
+	public List<String> getLanguages() {
+		return Arrays.asList(Locale.GERMAN.getLanguage());
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.character.RulePlugin#init()
+	 */
+	@Override
+	public void init() {
+		core = new SplittermondRules();
+		charGen = new GeneratorRulePlugin();
+		data = new SplittermondDataPlugin();
+		
+		core.init();
+		charGen.init();
+		data.init();
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.character.RulePlugin#attachConfigurationTree(de.rpgframework.ConfigContainer)
 	 */
 	@Override
 	public void attachConfigurationTree(ConfigContainer addBelow) {
 		core.attachConfigurationTree(addBelow);
-		data.attachConfigurationTree(addBelow);
 		charGen.attachConfigurationTree(addBelow);
-	}
-
-	//-------------------------------------------------------------------
-	/**
-	 * @see de.rpgframework.RulePlugin#getConfiguration()
-	 */
-	@Override
-	public List<ConfigOption<?>> getConfiguration() {
-		return new ArrayList<>();
+		data.attachConfigurationTree(addBelow);
 	}
 
 	//-------------------------------------------------------------------
@@ -120,7 +145,7 @@ public class SplittermondBasePlugin implements RulePlugin<SpliMoCharacter>, Comm
 	public boolean willProcessCommand(Object src, CommandType type, Object... values) {
 		switch (type) {
 		case ENCODE:
-		case DECODE:
+		case DECODE: 
 			return core.willProcessCommand(src, type, values);
 		case SHOW_CHARACTER_MODIFICATION_GUI:
 		case SHOW_CHARACTER_CREATION_GUI:
@@ -129,7 +154,6 @@ public class SplittermondBasePlugin implements RulePlugin<SpliMoCharacter>, Comm
 		default:
 			return false;
 		}
-
 	}
 
 	//-------------------------------------------------------------------
@@ -138,9 +162,6 @@ public class SplittermondBasePlugin implements RulePlugin<SpliMoCharacter>, Comm
 	 */
 	@Override
 	public CommandResult handleCommand(Object src, CommandType type, Object... values) {
-		if (!willProcessCommand(src, type, values))
-			return new CommandResult(type, false, null, false);
-
 		switch (type) {
 		case ENCODE:
 		case DECODE:
@@ -150,34 +171,8 @@ public class SplittermondBasePlugin implements RulePlugin<SpliMoCharacter>, Comm
 		case SHOW_DATA_INPUT_GUI:
 			return charGen.handleCommand(src, type, values);
 		default:
-			return new CommandResult(type, false);
+			return new CommandResult(type, false, "Not supported");
 		}
-	}
-
-	//-------------------------------------------------------------------
-	/**
-	 * @see de.rpgframework.RulePlugin#init()
-	 */
-	@Override
-	public void init() {
-		core.init();
-		data.init();
-		charGen.init();
-	}
-
-	//-------------------------------------------------------------------
-	/**
-	 * @see de.rpgframework.RulePlugin#getAboutHTML()
-	 */
-	@Override
-	public InputStream getAboutHTML() {
-		return charGen.getAboutHTML();
-	}
-
-	//-------------------------------------------------------------------
-	@Override
-	public List<String> getLanguages() {
-		return Arrays.asList(Locale.GERMAN.getLanguage());
 	}
 
 }
