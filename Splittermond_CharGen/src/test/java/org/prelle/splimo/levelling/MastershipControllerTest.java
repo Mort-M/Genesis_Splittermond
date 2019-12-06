@@ -48,7 +48,7 @@ public class MastershipControllerTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
-		plugin.init();
+		plugin.init( (percent) -> {});
 
 		skill = SplitterMondCore.getSkill("acrobatics");
 		EVADE1 = skill.getMastership("evade1");

@@ -186,7 +186,7 @@ public class SplittermondRules implements RulePlugin<SpliMoCharacter>, CommandBu
 	 * @see de.rpgframework.RulePlugin#init()
 	 */
 	@Override
-	public void init() {
+	public void init(RulePluginProgessListener callback) {
 		logger.debug("init");
 
 		SplitterMondCore.initialize(this);

@@ -56,7 +56,7 @@ public class ItemControllerTest {
 	public static void setUpBeforeClass() throws Exception {
 		RELICSONLY = new Enhancement("reliconly", 2, null, EnhancementType.RELIC);
 		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
-		plugin.init();
+		plugin.init( (percent) -> {});
 //		SplitterMondCore.initialize(new SplittermondRules());
 //		(new MondstahlklingenPlugin()).init();
 		SplitterMondCore.addEnhancement(RELICSONLY);

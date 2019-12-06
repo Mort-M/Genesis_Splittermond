@@ -50,7 +50,7 @@ public class IDExporter {
 	 */
 	public static void main(String[] args) throws IOException {
 		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
-		plugin.init();
+		plugin.init( (percent) -> {});
 		
 		generateMastershipsBySkills();
 		generateSpells();

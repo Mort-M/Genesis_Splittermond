@@ -14,7 +14,6 @@ import org.prelle.splimo.SplitterMondCore;
 
 import de.rpgframework.ConfigContainer;
 import de.rpgframework.ConfigOption;
-import de.rpgframework.RPGFrameworkLoader;
 import de.rpgframework.character.RulePlugin;
 import de.rpgframework.character.RulePluginFeatures;
 import de.rpgframework.core.CommandResult;
@@ -104,7 +103,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 	 * @see de.rpgframework.RulePlugin#init()
 	 */
 	@Override
-	public void init() {
+	public void init(RulePluginProgessListener callback) {
 		if (alreadyInitialized)
 			return;
 		double totalPlugins = 23.0;
@@ -131,15 +130,15 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadCreatureTypes(CORE, clazz.getResourceAsStream("core/data/creaturetypes.xml"), CORE.getResources(), CORE.getHelpResources());
 		SplitterMondCore.loadCreatureFeatureTypes(CORE, clazz.getResourceAsStream("core/data/creaturefeaturetypes.xml"), CORE.getResources(), CORE.getHelpResources());
 		SplitterMondCore.loadCreatures(CORE, clazz.getResourceAsStream("core/data/creatures.xml"), CORE.getResources(), CORE.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------World-----------------------------------------------");
 		PluginSkeleton WORLD = new PluginSkeleton("World", "Splittermond - Die Welt");
 		SplitterMondCore.loadCultureLores(WORLD, clazz.getResourceAsStream("world/data/culturelores-world.xml"), WORLD.getResources(), WORLD.getHelpResources());
 		SplitterMondCore.loadLanguages(WORLD, clazz.getResourceAsStream("world/data/languages-world.xml"), WORLD.getResources(), WORLD.getHelpResources());
 		SplitterMondCore.loadCultures(WORLD, clazz.getResourceAsStream("world/data/cultures-world.xml"), WORLD.getResources(), WORLD.getHelpResources());
-		RPGFrameworkLoader.getCallback().progressChanged(25.0);
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		callback.progressChanged(25.0);
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Mondstahlklingen------------------------------------");
 		PluginSkeleton MSK = new PluginSkeleton("MSK", "Mondstahlklingen");
@@ -173,7 +172,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEquipment(MSK, clazz.getResourceAsStream("msk/data/recreation.xml"), MSK.getResources(), MSK.getHelpResources());
 		SplitterMondCore.loadSpells   (MSK, clazz.getResourceAsStream("msk/data/spells-msk.xml"), MSK.getResources(), MSK.getHelpResources());
 		SplitterMondCore.loadMasterships(MSK, clazz.getResourceAsStream("msk/data/skills-msk.xml"), MSK.getResources(), MSK.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------BuU-----------------------------------------------");
 		PluginSkeleton BUU = new PluginSkeleton("BuU", "Bestien und Ungeheuer");
@@ -181,7 +180,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadCreatureFeatureTypes(BUU, clazz.getResourceAsStream("buu/data/creaturefeaturetypes-buu.xml"), BUU.getResources(), BUU.getHelpResources());
 		SplitterMondCore.loadCreatures(BUU, clazz.getResourceAsStream("buu/data/creatures-buu.xml"), BUU.getResources(), BUU.getHelpResources());
 		SplitterMondCore.loadMaterials(BUU, clazz.getResourceAsStream("buu/data/materials-buu.xml"), BUU.getResources(), BUU.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Beastmaster---------------------------------------");
 		PluginSkeleton BEAST = new PluginSkeleton("Beastmaster", "Bestienmeister");
@@ -193,7 +192,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadCreatureModules(BEAST, clazz.getResourceAsStream("beastmaster/data/creaturetrainings-beastmaster.xml"), BEAST.getResources(), BEAST.getHelpResources());
 		SplitterMondCore.loadEducations(BEAST, clazz.getResourceAsStream("beastmaster/data/educations-beastmaster.xml"), BEAST.getResources(), BEAST.getHelpResources());
 		SplitterMondCore.loadEquipment(BEAST, clazz.getResourceAsStream("beastmaster/data/equipment-beastmaster.xml"), BEAST.getResources(), BEAST.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Esmoda--------------------------------------------");
 		PluginSkeleton ESMODA = new PluginSkeleton("Esmoda", "Esmoda");
@@ -201,7 +200,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEquipment(ESMODA, clazz.getResourceAsStream("esmoda/data/equipment-esmoda.xml"), ESMODA.getResources(), ESMODA.getHelpResources());
 		SplitterMondCore.loadEducations(ESMODA, clazz.getResourceAsStream("esmoda/data/educations-esmoda.xml"), ESMODA.getResources(), ESMODA.getHelpResources());
 		SplitterMondCore.loadMaterials(ESMODA, clazz.getResourceAsStream("esmoda/data/materials-esmoda.xml"), ESMODA.getResources(), ESMODA.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Fahrende Völker-----------------------------------");
 		PluginSkeleton FAHREND = new PluginSkeleton("FahrendeVoelker", "Fahrende Völker");
@@ -212,7 +211,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadNameTable(FAHREND, clazz.getResourceAsStream("fahrendevoelker/data/nametable-teleshai.xml"), FAHREND.getResources(), FAHREND.getHelpResources());
 		SplitterMondCore.loadSpells(FAHREND, clazz.getResourceAsStream("fahrendevoelker/data/spells-fahrendevoelker.xml"), FAHREND.getResources(), FAHREND.getHelpResources());
 		SplitterMondCore.loadCreatures(FAHREND, clazz.getResourceAsStream("fahrendevoelker/data/creatures-fahrendevoelker.xml"), FAHREND.getResources(), FAHREND.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Farukan-------------------------------------------");
 		PluginSkeleton FARUKAN = new PluginSkeleton("Farukan", "Farukan");
@@ -222,14 +221,14 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEducations(FARUKAN, clazz.getResourceAsStream("farukan/data/educations-farukan.xml"), FARUKAN.getResources(), FARUKAN.getHelpResources());
 		SplitterMondCore.loadNameTable(FARUKAN, clazz.getResourceAsStream("farukan/data/nametable-farukan.xml"), FARUKAN.getResources(), FARUKAN.getHelpResources());
 		SplitterMondCore.loadMaterials(FARUKAN, clazz.getResourceAsStream("farukan/data/materials-farukan.xml"), FARUKAN.getResources(), FARUKAN.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Flammensenke--------------------------------------");
 		PluginSkeleton FLAMMEN = new PluginSkeleton("Flammensenke", "Flammensenke");
 		SplitterMondCore.loadEquipment(FLAMMEN, clazz.getResourceAsStream("flammensenke/data/equipment-flammensenke.xml"), FLAMMEN.getResources(), FLAMMEN.getHelpResources());
 		SplitterMondCore.loadEducations(FLAMMEN, clazz.getResourceAsStream("flammensenke/data/educations-flammensenke.xml"), FLAMMEN.getResources(), FLAMMEN.getHelpResources());
 		SplitterMondCore.loadMaterials(FLAMMEN, clazz.getResourceAsStream("flammensenke/data/materials-flammensenke.xml"), FLAMMEN.getResources(), FLAMMEN.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Selenia-------------------------------------------");
 		PluginSkeleton SELENIA = new PluginSkeleton("Selenia", "Selenia");
@@ -238,7 +237,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEducations(SELENIA, clazz.getResourceAsStream("selenia/data/educations-selenia.xml"), SELENIA.getResources(), SELENIA.getHelpResources());
 		SplitterMondCore.loadNameTable(SELENIA, clazz.getResourceAsStream("selenia/data/nametable-selenia.xml"), SELENIA.getResources(), SELENIA.getHelpResources());
 		SplitterMondCore.loadFeatureTypes(SELENIA, clazz.getResourceAsStream("selenia/data/featuretypes-selenia.xml"), SELENIA.getResources(), SELENIA.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Götter--------------------------------------------");
 		PluginSkeleton GOETTER = new PluginSkeleton("GOETTER", "Die Götter");
@@ -253,19 +252,19 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadDeityTypes(GOETTER, clazz.getResourceAsStream("goetter/data/deitytypes-goetter.xml"), GOETTER.getResources(), GOETTER.getHelpResources());
 		SplitterMondCore.loadHolyPowers(GOETTER, clazz.getResourceAsStream("goetter/data/holypowers-goetter.xml"), GOETTER.getResources(), GOETTER.getHelpResources());
 		SplitterMondCore.loadDeities(GOETTER, clazz.getResourceAsStream("goetter/data/deities-goetter.xml"), GOETTER.getResources(), GOETTER.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Diener der Götter---------------------------------");
 		PluginSkeleton GODSERV = new PluginSkeleton("Goetterdiener", "Diener der Götter");
 		SplitterMondCore.loadEducations(GODSERV, clazz.getResourceAsStream("goetterdiener/data/educations-goetterdiener.xml"), GODSERV.getResources(), GODSERV.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Jenseits der Grenzen------------------------------");
 		PluginSkeleton JDG = new PluginSkeleton("JDG", "Jenseits der Grenzen");
 		SplitterMondCore.loadPowers(JDG, clazz.getResourceAsStream("jdg/data/powers-jdg.xml"), JDG.getResources(), JDG.getHelpResources());
 		SplitterMondCore.loadMasterships(JDG, clazz.getResourceAsStream("jdg/data/masterships-jdg.xml"), JDG.getResources(), JDG.getHelpResources());
 		SplitterMondCore.loadSpells(JDG, clazz.getResourceAsStream("jdg/data/spells-jdg.xml"), JDG.getResources(), JDG.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Die Magie-----------------------------------------");
 		PluginSkeleton MAGIE = new PluginSkeleton("Magie", "Die Magie");
@@ -275,7 +274,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadSpells(MAGIE, clazz.getResourceAsStream("magie/data/spells-magie.xml"), MAGIE.getResources(), MAGIE.getHelpResources());
 		SplitterMondCore.loadEducations(MAGIE, clazz.getResourceAsStream("magie/data/educations-magie.xml"), MAGIE.getResources(), MAGIE.getHelpResources());
 		SplitterMondCore.loadEnhancements(MAGIE, clazz.getResourceAsStream("magie/data/enhancements-magie.xml"), MAGIE.getResources(), MAGIE.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Sadu----------------------------------------------");
 		PluginSkeleton SADU = new PluginSkeleton("SADU", "Sadu");
@@ -283,7 +282,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEquipment(SADU, clazz.getResourceAsStream("sadu/data/equipment-sadu.xml"), SADU.getResources(), SADU.getHelpResources());
 		SplitterMondCore.loadEducations(SADU, clazz.getResourceAsStream("sadu/data/educations-sadu.xml"), SADU.getResources(), SADU.getHelpResources());
 		SplitterMondCore.loadNameTable(SADU, clazz.getResourceAsStream("sadu/data/nametable-sadu.xml"), SADU.getResources(), SADU.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Surmakar------------------------------------------");
 		PluginSkeleton SURM = new PluginSkeleton("Surmakar", "Die Surmakar");
@@ -291,7 +290,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEquipment(SURM, clazz.getResourceAsStream("surmakar/data/alchemy-surmakar.xml"), SURM.getResources(), SURM.getHelpResources());
 		SplitterMondCore.loadEducations(SURM, clazz.getResourceAsStream("surmakar/data/educations-surmakar.xml"), SURM.getResources(), SURM.getHelpResources());
 		SplitterMondCore.loadMaterials(SURM, clazz.getResourceAsStream("surmakar/data/materials-surmakar.xml"), SURM.getResources(), SURM.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Ungebrochen---------------------------------------");
 		PluginSkeleton UNGE = new PluginSkeleton("UNGEBROCHEN", "Ungebrochen");
@@ -306,7 +305,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEquipment(UNGE, clazz.getResourceAsStream("ungebrochen/data/stangenwaffen-ungebrochen.xml"), UNGE.getResources(), UNGE.getHelpResources());
 		SplitterMondCore.loadEquipment(UNGE, clazz.getResourceAsStream("ungebrochen/data/wurfwaffen-ungebrochen.xml"), UNGE.getResources(), UNGE.getHelpResources());
 		SplitterMondCore.loadSpells(UNGE, clazz.getResourceAsStream("ungebrochen/data/spells-ungebrochen.xml"), UNGE.getResources(), UNGE.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Unreich-------------------------------------------");
 		PluginSkeleton UNREICH = new PluginSkeleton("Unreich", "Das Unreich");
@@ -315,7 +314,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEquipment(UNREICH, clazz.getResourceAsStream("unreich/data/alchemy-unreich.xml"), UNREICH.getResources(), UNREICH.getHelpResources());
 		SplitterMondCore.loadMaterials(UNREICH, clazz.getResourceAsStream("unreich/data/materials-unreich.xml"), UNREICH.getResources(), UNREICH.getHelpResources());
 		SplitterMondCore.loadEducations(UNREICH, clazz.getResourceAsStream("unreich/data/educations-unreich.xml"), UNREICH.getResources(), UNREICH.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Zhoujiang-----------------------------------------");
 		PluginSkeleton ZHOU = new PluginSkeleton("zhoujiang", "Zhoujiang");
@@ -328,7 +327,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEducations(ZHOU, clazz.getResourceAsStream("zhoujiang/data/educations-zhoujiang.xml"), ZHOU.getResources(), ZHOU.getHelpResources());
 		SplitterMondCore.loadSpells(ZHOU, clazz.getResourceAsStream("zhoujiang/data/spells-zhoujiang.xml"), ZHOU.getResources(), ZHOU.getHelpResources());
 		SplitterMondCore.loadNameTable(ZHOU, clazz.getResourceAsStream("zhoujiang/data/nametable-zhoujiang.xml"), ZHOU.getResources(), ZHOU.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Suderinseln---------------------------------------");
 		PluginSkeleton SUDER = new PluginSkeleton("Suderinseln", "Die Suderinseln");
@@ -337,7 +336,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadCreatures(SUDER, clazz.getResourceAsStream("suderinseln/data/creatures-suderinseln.xml"), SUDER.getResources(), SUDER.getHelpResources());
 		SplitterMondCore.loadNameTable(SUDER, clazz.getResourceAsStream("suderinseln/data/nametable-schaedel.xml"), SUDER.getResources(), SUDER.getHelpResources());
 		SplitterMondCore.loadNameTable(SUDER, clazz.getResourceAsStream("suderinseln/data/nametable-anuu.xml"), SUDER.getResources(), SUDER.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 		
 		logger.info("START -------------------------------Kesh----------------------------------------------");
 		PluginSkeleton KESH = new PluginSkeleton("Kesh", "Das Erbe von Kesh");
@@ -351,7 +350,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadNameTable(KESH, clazz.getResourceAsStream("kesh/data/nametable-keshabid.xml"), KESH.getResources(), KESH.getHelpResources());
 		SplitterMondCore.loadNameTable(KESH, clazz.getResourceAsStream("kesh/data/nametable-keshubim.xml"), KESH.getResources(), KESH.getHelpResources());
 		SplitterMondCore.loadNameTable(KESH, clazz.getResourceAsStream("kesh/data/nametable-turubar.xml"), KESH.getResources(), KESH.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Mahaluu-------------------------------------------");
 		PluginSkeleton MAHA = new PluginSkeleton("Mahaluu", "Mahaluu");
@@ -359,7 +358,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEducations(MAHA, clazz.getResourceAsStream("mahaluu/data/educations-mahaluu.xml"), MAHA.getResources(), MAHA.getHelpResources());
 		SplitterMondCore.loadCreatures(MAHA, clazz.getResourceAsStream("mahaluu/data/creatures-mahaluu.xml"), MAHA.getResources(), MAHA.getHelpResources());
 		SplitterMondCore.loadNameTable(MAHA, clazz.getResourceAsStream("mahaluu/data/nametable-mahaluu.xml"), MAHA.getResources(), MAHA.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Badashan------------------------------------------");
 		PluginSkeleton BAD = new PluginSkeleton("Badashan", "Badashan - Im Reich des Affengottes");
@@ -367,7 +366,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEquipment(BAD, clazz.getResourceAsStream("badashan/data/alchemy-badashan.xml"), BAD.getResources(), BAD.getHelpResources());
 		SplitterMondCore.loadEducations(BAD, clazz.getResourceAsStream("badashan/data/educations-badashan.xml"), BAD.getResources(), BAD.getHelpResources());
 		SplitterMondCore.loadNameTable(BAD, clazz.getResourceAsStream("badashan/data/nametable-badashan.xml"), BAD.getResources(), BAD.getHelpResources());
-		count++; RPGFrameworkLoader.getCallback().progressChanged( (count/totalPlugins) );
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		
 		BasePluginData.flushMissingKeys();

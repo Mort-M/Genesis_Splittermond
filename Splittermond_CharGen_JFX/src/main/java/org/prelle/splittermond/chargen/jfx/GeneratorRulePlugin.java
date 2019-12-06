@@ -212,7 +212,7 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	 * @see de.rpgframework.RulePlugin#init()
 	 */
 	@Override
-	public void init() {
+	public void init(RulePluginProgessListener callback) {
 		CommandBus.registerBusCommandListener(this);
 	}
 

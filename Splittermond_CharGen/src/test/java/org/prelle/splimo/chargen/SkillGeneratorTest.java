@@ -12,7 +12,6 @@ import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillValue;
@@ -48,7 +47,7 @@ public class SkillGeneratorTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
-		plugin.init();
+		plugin.init( (percent) -> {});
 	}
 
 	//-------------------------------------------------------------------

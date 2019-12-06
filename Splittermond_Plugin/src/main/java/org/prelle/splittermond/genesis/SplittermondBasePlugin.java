@@ -116,14 +116,14 @@ public class SplittermondBasePlugin implements RulePlugin<SpliMoCharacter> {
 	 * @see de.rpgframework.character.RulePlugin#init()
 	 */
 	@Override
-	public void init() {
+	public void init(RulePluginProgessListener callback) {
 		core = new SplittermondRules();
 		charGen = new GeneratorRulePlugin();
 		data = new SplittermondDataPlugin();
 		
-		core.init();
-		charGen.init();
-		data.init();
+		core.init(callback);
+		charGen.init(callback);
+		data.init(callback);
 	}
 
 	//-------------------------------------------------------------------

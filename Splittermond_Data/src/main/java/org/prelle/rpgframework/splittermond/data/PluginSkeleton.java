@@ -90,7 +90,7 @@ public class PluginSkeleton implements RulePlugin<SpliMoCharacter> {
 	}
 
 	@Override
-	public void init() {
+	public void init(RulePluginProgessListener callback) {
 		// TODO Auto-generated method stub
 	}
 

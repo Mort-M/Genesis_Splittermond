@@ -43,7 +43,7 @@ public class ResourceGeneratorTest {
 	//-------------------------------------------------------------------
 	static {
 		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
-		plugin.init();
+		plugin.init( (percent) -> {});
 		nonBaseResource1 = SplitterMondCore.getResource("relic");
 		nonBaseResource2 = SplitterMondCore.getResource("mentor");
 		resource2 = SplitterMondCore.getResource("reputation");

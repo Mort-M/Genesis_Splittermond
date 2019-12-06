@@ -2,14 +2,14 @@ package de.rpgframework.splittermond.print.bbcode;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.nio.file.Path;
 import java.io.FileWriter;
 import java.io.InputStream;
-import java.util.Arrays;
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.Locale;
 import java.util.List;
+import java.util.Locale;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
@@ -202,7 +202,7 @@ public class BBCodePlugin implements RulePlugin<SpliMoCharacter>, CommandBusList
 	 * @see de.rpgframework.RulePlugin#init()
 	 */
 	@Override
-	public void init() {
+	public void init(RulePluginProgessListener callback) {
 		CommandBus.registerBusCommandListener(this);
 	}
 

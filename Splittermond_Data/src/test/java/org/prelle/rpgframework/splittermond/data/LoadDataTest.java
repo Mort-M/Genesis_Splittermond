@@ -15,7 +15,7 @@ public class LoadDataTest {
 	@Test
 	public void loadDataTest() {
 		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
-		plugin.init();
+		plugin.init( (percent) -> {});
 	}
 
 }

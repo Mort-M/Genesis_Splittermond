@@ -34,7 +34,7 @@ public class AttributeGeneratorTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
-		plugin.init();
+		plugin.init( (percent) -> {});
 	}
 
 	//-------------------------------------------------------------------

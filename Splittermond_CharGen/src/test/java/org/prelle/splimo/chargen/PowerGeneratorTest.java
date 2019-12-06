@@ -45,7 +45,7 @@ public class PowerGeneratorTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
-		plugin.init();
+		plugin.init( (percent) -> {});
 		ONCE_GENONLY = SplitterMondCore.getPower("attractive");
 		ONCE_ALWAYS = SplitterMondCore.getPower("socialable");
 		MULTI_ALWAYS = SplitterMondCore.getPower("focuspool");

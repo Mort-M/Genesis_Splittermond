@@ -74,7 +74,7 @@ public class DummyRulePlugin<C extends RuleSpecificCharacterObject> implements R
 	}
 
 	@Override
-	public void init() {
+	public void init(RulePluginProgessListener callback) {
 		// TODO Auto-generated method stub
 		
 	}
