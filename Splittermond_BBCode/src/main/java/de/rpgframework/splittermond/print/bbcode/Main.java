@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.prelle.rpgframework.splittermond.SplittermondRules;
+import org.prelle.splimo.DummyRulePlugin;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 
@@ -18,7 +18,7 @@ public class Main {
 	private static Logger logger = LogManager.getLogger(Main.class);
 
 	public static void main(String[] args) {
-		SplitterMondCore.initialize(new SplittermondRules());
+		SplitterMondCore.initialize(new DummyRulePlugin<>());
 		
 //		MondstahlklingenPlugin msk = new MondstahlklingenPlugin();
 //		msk.init();
