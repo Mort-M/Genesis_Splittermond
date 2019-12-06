@@ -64,7 +64,7 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	 */
 	@Override
 	public String getID() {
-		return "CORE";
+		return "CHARGEN";
 	}
 
 	//-------------------------------------------------------------------
@@ -93,7 +93,7 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	 */
 	@Override
 	public Collection<String> getRequiredPlugins() {
-		return new ArrayList<>();
+		return Arrays.asList("CORE");
 	}
 
 	//-------------------------------------------------------------------
