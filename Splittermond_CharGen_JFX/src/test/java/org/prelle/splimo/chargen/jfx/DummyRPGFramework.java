@@ -99,4 +99,10 @@ public class DummyRPGFramework implements RPGFramework {
 		};
 	}
 
+	@Override
+	public void addStepDefinition(StandardBootSteps arg0, BootStep arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
