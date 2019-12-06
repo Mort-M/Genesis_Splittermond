@@ -15,7 +15,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.prelle.rpgframework.splittermond.SplittermondRules;
+import org.prelle.splimo.DummyRulePlugin;
 import org.prelle.splimo.Power;
 import org.prelle.splimo.PowerReference;
 import org.prelle.splimo.SpliMoCharacter;
@@ -60,7 +60,7 @@ public class PowerControllerTest implements GenerationEventListener {
 //		Logger.getLogger("splimo.level.resource").setLevel(Level.DEBUG);
 //		Logger.getLogger("junit").setLevel(Level.DEBUG);
 
-		SplitterMondCore.initialize(new SplittermondRules());
+		SplitterMondCore.initialize(new DummyRulePlugin<>());
 		ONCE_GENONLY = SplitterMondCore.getPower("attractive");
 		ONCE_ALWAYS = SplitterMondCore.getPower("socialable");
 		MULTI_ALWAYS = SplitterMondCore.getPower("focuspool");

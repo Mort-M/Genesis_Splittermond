@@ -11,7 +11,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.ScreenManager;
 import org.prelle.rpgframework.splittermond.SplittermondCharacterPlugin;
-import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CharacterController;
@@ -39,6 +38,7 @@ import de.rpgframework.core.RoleplayingSystem;
 public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, CommandBusListener {
 
 	private static Logger logger = LogManager.getLogger("splittermond.jfx");
+	private final static String PROP_EXPERIENCE_FACTOR = "exp_factor";
 
 	private static List<RulePluginFeatures> FEATURES = new ArrayList<RulePluginFeatures>();
 	private static ConfigOption<Double>     hgFactor;
@@ -117,8 +117,12 @@ public class GeneratorRulePlugin implements RulePlugin<SpliMoCharacter>, Command
 	@SuppressWarnings("unchecked")
 	public void attachConfigurationTree(ConfigContainer addBelow) {
 		logger.debug("attach");
-		ConfigContainer splittermond = (ConfigContainer)addBelow.getChild("splittermond");
-		hgFactor     = (ConfigOption<Double> ) splittermond.getChild(SplittermondRules.PROP_EXPERIENCE_FACTOR);
+		logger.debug("Add configuration to "+addBelow);
+		ConfigContainer configRoot = addBelow.createContainer("splittermond");
+		configRoot.setResourceBundle(SplitterMondCore.getI18nResources());
+		configRoot.createOption(PROP_EXPERIENCE_FACTOR, ConfigOption.Type.NUMBER, 1.0);
+
+		hgFactor     = (ConfigOption<Double> ) configRoot.getChild(PROP_EXPERIENCE_FACTOR);
 //		System.exit(0);
 	}
 
