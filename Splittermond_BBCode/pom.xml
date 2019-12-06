@@ -3,15 +3,20 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.prelle.rpgframework</groupId>
-    <artifactId>splittermond-all</artifactId>
-    <version>4.0.0-SNAPSHOT</version>
-  </parent>
+	<parent>
+		<groupId>org.prelle.rpgframework</groupId>
+		<artifactId>splittermond-all</artifactId>
+		<version>4.0.0-SNAPSHOT</version>
+	</parent>
 
 	<artifactId>splittermond-bbcode</artifactId>
 	<name>Splittermond_BBCode</name>
 	<description>Splittermond print to BBCode</description>
+
+	<properties>
+		<maven.install.skip>true</maven.install.skip>
+		<maven.deploy.skip>true</maven.deploy.skip>
+	</properties>
 
 	<developers>
 		<developer>
@@ -46,4 +51,86 @@
 			<artifactId>splittermond-core</artifactId>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+
+      <!-- Packaging -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+              <useUniqueVersions>false</useUniqueVersions>
+              <packageName>Splittermond BBCode</packageName>
+            </manifest>
+            <manifestEntries>
+              <State>ACTIVE</State>
+              <Build-Time>${maven.build.timestamp}</Build-Time>
+              <Author>Frank Büttner</Author>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+		
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>scp</id>
+						<phase>deploy</phase>
+						<configuration>
+							<tasks>
+								<echo message="Unpack manifest from jar" />
+								<unzip
+									src="target/${project.artifactId}-${project.version}.jar"
+									dest="target">
+									<patternset>
+										<include name="META-INF/MANIFEST.MF" />
+									</patternset>
+								</unzip>
+								<copy file="target/META-INF/MANIFEST.MF"
+									tofile="target/${project.artifactId}-${project.version}.mf" />
+
+								<echo
+									message="Copy plugin descriptor ${project.artifactId}-${project.version}.mf to ${deploymentServer}:${deploymentPath}" />
+								<scp
+									todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}/"
+									sftp="true" failonerror="false" trust="true" verbose="false">
+									<fileset dir="target">
+										<include
+											name="${project.artifactId}-${project.version}.mf" />
+									</fileset>
+								</scp>
+								<echo
+									message="Copy plugin to ${deploymentServer}:${deploymentPath}" />
+								<scp
+									todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}"
+									sftp="true" failonerror="false" trust="true" verbose="false">
+									<fileset dir="target">
+										<include
+											name="${project.artifactId}-${project.version}.jar" />
+									</fileset>
+								</scp>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant-jsch</artifactId>
+						<version>1.9.4</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+		</plugins>
+	</build>
 </project>
