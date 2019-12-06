@@ -1,0 +1,3 @@
+Implementation-Title: Splittermond Core
+Implementation-Version: 2-0
+Implementation-Vendor: Stefan Prelle, Anja Prelle
