@@ -228,7 +228,11 @@ public class RewardBox extends HBox {
 		 */
 		tfDescr = new TextField();
 		cbAdventure = new ChoiceBox<>();
-		cbAdventure.getItems().addAll(ProductServiceLoader.getInstance().getAdventures(RoleplayingSystem.SPLITTERMOND));
+		if (ProductServiceLoader.getInstance()!=null) {
+			cbAdventure.getItems().addAll(ProductServiceLoader.getInstance().getAdventures(RoleplayingSystem.SPLITTERMOND));
+		} else {
+			logger.error("Missing instanceof ProductServiceLoader");
+		}
 		cbAdventure.setConverter(new StringConverter<Adventure>() {
 			public String toString(Adventure value) {return value.getTitle();}
 			public Adventure fromString(String string) {return null;}

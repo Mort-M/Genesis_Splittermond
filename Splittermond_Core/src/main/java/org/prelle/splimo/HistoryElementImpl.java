@@ -89,6 +89,8 @@ public class HistoryElementImpl implements HistoryElement {
 	 */
 	@Override
 	public String getAdventureID() {
+		if (adventure==null)
+			return null;
 		return adventure.getId();
 	}
 
