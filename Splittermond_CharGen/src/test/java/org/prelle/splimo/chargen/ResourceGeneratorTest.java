@@ -15,8 +15,8 @@ import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
-import org.prelle.splimo.DummyRulePlugin;
 import org.prelle.splimo.Resource;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.SpliMoCharacter;
@@ -56,7 +56,7 @@ public class ResourceGeneratorTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		SplitterMondCore.initialize(new DummyRulePlugin<>());
+		SplitterMondCore.initialize(new SplittermondRules());
 	}
 
 	//-------------------------------------------------------------------

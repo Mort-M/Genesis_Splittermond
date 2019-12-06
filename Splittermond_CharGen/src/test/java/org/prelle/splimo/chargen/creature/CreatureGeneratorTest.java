@@ -18,12 +18,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.charctrl.CreatureController;
+import org.prelle.splimo.chargen.creature.CreatureGenerator;
 import org.prelle.splimo.chargen.event.GenerationEvent;
 import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
@@ -33,6 +35,8 @@ import org.prelle.splimo.creature.CreatureModuleReference;
 import org.prelle.splimo.creature.CreatureWeapon;
 import org.prelle.splimo.creature.ModuleBasedCreature;
 import org.prelle.splimo.modifications.MastershipModification;
+
+import de.rpgframework.RPGFrameworkLoader;
 
 /**
  * @author prelle

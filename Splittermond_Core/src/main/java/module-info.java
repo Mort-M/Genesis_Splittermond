@@ -14,6 +14,8 @@ module splittermond.core {
 	exports org.prelle.splimo.processor;
 	exports org.prelle.splimo;
 
+	provides de.rpgframework.character.RulePlugin with org.prelle.rpgframework.splittermond.SplittermondRules;
+
 	opens org.prelle.splimo to simple.persist;
 	opens org.prelle.splimo.creature to simple.persist;
 	opens org.prelle.splimo.items to simple.persist;

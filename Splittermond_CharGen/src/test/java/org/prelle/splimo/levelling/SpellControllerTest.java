@@ -16,7 +16,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.prelle.splimo.DummyRulePlugin;
+import org.prelle.rpgframework.splittermond.SplittermondRules;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.Spell;
 import org.prelle.splimo.SpellValue;
@@ -64,7 +64,7 @@ public class SpellControllerTest implements GenerationEventListener {
 //		Logger.getLogger("splimo.level.spell").setLevel(Level.DEBUG);
 //		Logger.getLogger("junit").setLevel(Level.DEBUG);
 
-		SplitterMondCore.initialize(new DummyRulePlugin<>());
+		SplitterMondCore.initialize(new SplittermondRules());
 		HEALMAGIC = SplitterMondCore.getSkill("healmagic");
 		ENHANCEMAGIC = SplitterMondCore.getSkill("enhancemagic");
 		
