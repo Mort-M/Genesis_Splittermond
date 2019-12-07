@@ -38,6 +38,28 @@
 
 	<build>
 		<plugins>
+      <!-- Packaging -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+              <useUniqueVersions>false</useUniqueVersions>
+              <packageName>SPLITTERMOND</packageName>
+            </manifest>
+            <manifestEntries>
+              <UUID>7ea06303-dc70-414a-926d-18c17556c26c</UUID>
+              <Implementation-Vendor>Stefan Prelle</Implementation-Vendor>
+              <State>ACTIVE</State>
+              <Build-Time>${maven.build.timestamp}</Build-Time>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>

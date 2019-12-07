@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-  <groupId>org.prelle.rpgframework</groupId>
-  <artifactId>splittermond-all</artifactId>
-  <version>4.0.0-SNAPSHOT</version>
+		<groupId>org.prelle.rpgframework</groupId>
+		<artifactId>splittermond-all</artifactId>
+		<version>4.0.0-SNAPSHOT</version>
 	</parent>
 
-  <artifactId>splittermond-plugin</artifactId>
+	<artifactId>splittermond-plugin</artifactId>
 	<name>Splittermond Genesis Plugin</name>
 
 	<properties>
@@ -56,9 +56,10 @@
 						<manifest>
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 							<useUniqueVersions>false</useUniqueVersions>
-							<packageName>Splittermond</packageName>
+							<packageName>SPLITTERMOND</packageName>
 						</manifest>
 						<manifestEntries>
+						  <UUID>43f97ab7-1f2e-4fa2-a538-32f8878be56a</UUID>
 							<Url>https://www.rpgframework.de/</Url>
 							<Bugtracker>https://rpgframework.atlassian.net/servicedesk/customer/portals</Bugtracker>
 							<State>ACTIVE</State>
@@ -85,30 +86,37 @@
 						<phase>deploy</phase>
 						<configuration>
 							<tasks>
-                <echo message="Unpack manifest from jar"/>
-                <unzip src="target/${project.artifactId}-${project.version}.jar" dest="target">
-                  <patternset>
-                        <include name="META-INF/MANIFEST.MF" />
-                    </patternset>
-                </unzip>
-                <copy file="target/META-INF/MANIFEST.MF" tofile="target/${project.artifactId}-${project.version}.mf"/>
+								<echo message="Unpack manifest from jar" />
+								<unzip
+									src="target/${project.artifactId}-${project.version}.jar"
+									dest="target">
+									<patternset>
+										<include name="META-INF/MANIFEST.MF" />
+									</patternset>
+								</unzip>
+								<copy file="target/META-INF/MANIFEST.MF"
+									tofile="target/${project.artifactId}-${project.version}.mf" />
 
-                <echo message="Copy plugin descriptor ${project.artifactId}-${project.version}.mf to ${deploymentServer}:${deploymentPath}"/>
-                <scp
-                  todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}/"
-                  sftp="true" failonerror="false" trust="true" verbose="false">
-                  <fileset dir="target">
-                    <include name="${project.artifactId}-${project.version}.mf" />
-                  </fileset>
-                </scp>
-                <echo message="Copy plugin to ${deploymentServer}:${deploymentPath}"/>
-                <scp
-                  todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}"
-                  sftp="true" failonerror="false" trust="true" verbose="false">
-                  <fileset dir="target">
-                    <include name="${project.artifactId}-${project.version}.jar" />
-                  </fileset>
-                </scp>
+								<echo
+									message="Copy plugin descriptor ${project.artifactId}-${project.version}.mf to ${deploymentServer}:${deploymentPath}" />
+								<scp
+									todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}/"
+									sftp="true" failonerror="false" trust="true" verbose="false">
+									<fileset dir="target">
+										<include
+											name="${project.artifactId}-${project.version}.mf" />
+									</fileset>
+								</scp>
+								<echo
+									message="Copy plugin to ${deploymentServer}:${deploymentPath}" />
+								<scp
+									todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}"
+									sftp="true" failonerror="false" trust="true" verbose="false">
+									<fileset dir="target">
+										<include
+											name="${project.artifactId}-${project.version}.jar" />
+									</fileset>
+								</scp>
 							</tasks>
 						</configuration>
 						<goals>

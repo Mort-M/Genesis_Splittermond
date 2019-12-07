@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>splittermond-bbcode</artifactId>
-	<name>Splittermond_BBCode</name>
+	<name>Splittermond BBCode</name>
 	<description>Splittermond print to BBCode</description>
 
 	<properties>
@@ -65,12 +65,13 @@
             <manifest>
               <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
               <useUniqueVersions>false</useUniqueVersions>
-              <packageName>Splittermond BBCode</packageName>
+              <packageName>SPLITTERMOND</packageName>
             </manifest>
             <manifestEntries>
+              <UUID>d931981e-f7ab-4cc6-8204-cefa3a4667d2</UUID>
+              <Implementation-Vendor>Frank Buettner</Implementation-Vendor>
               <State>ACTIVE</State>
               <Build-Time>${maven.build.timestamp}</Build-Time>
-              <Author>Frank Büttner</Author>
             </manifestEntries>
           </archive>
         </configuration>
