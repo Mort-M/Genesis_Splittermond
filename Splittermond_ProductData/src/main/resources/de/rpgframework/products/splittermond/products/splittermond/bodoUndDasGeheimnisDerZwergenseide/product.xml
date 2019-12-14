@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="bodoUndDasGeheimnisDerZwergenseide" month="7" rules="SPLITTERMOND" year="2017">
+   <title>Bodo und das Geheimnis der Zwergenseide</title>
+   <description>Wir schreiben das Jahr 992 LZ. Der Spätsommer zeigt sich von seiner schönen Seite. Euer Abenteuer beginnt, wo euer letztes geendet hat. Ihr habt gemeinsam einen zwergischen Händler nach Eisenbrann eskortiert. Die Räuberbanden unterwegs konnten euch wenig entgegensetzten. Euer Dienstherr war so zufrieden, dass er euch einen Bonus ausgezahlt hat, als sich eure Wege trennten.</description>
+   <adventures>
+      <adventure ref="bodoUndDasGeheimnisDerZwergenseide" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

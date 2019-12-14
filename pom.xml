@@ -39,16 +39,16 @@
 				<artifactId>rpgframework-chars</artifactId>
 				<version>[4.0.0-SNAPSHOT, 4.0.99)</version>
 			</dependency>
-            <dependency>
-                <groupId>de.rpgframework</groupId>
-                <artifactId>rpgframework-products</artifactId>
-                <version>[4.0.0-SNAPSHOT, 4.0.99)</version>
-            </dependency>
-            <dependency>
-                <groupId>de.rpgframework</groupId>
-                <artifactId>rpgframework-javafx</artifactId>
-                <version>[4.0.0-SNAPSHOT, 4.0.99)</version>
-            </dependency>
+			<dependency>
+				<groupId>de.rpgframework</groupId>
+				<artifactId>rpgframework-products</artifactId>
+				<version>[4.0.0-SNAPSHOT, 4.0.99)</version>
+			</dependency>
+			<dependency>
+				<groupId>de.rpgframework</groupId>
+				<artifactId>rpgframework-javafx</artifactId>
+				<version>[4.0.0-SNAPSHOT, 4.0.99)</version>
+			</dependency>
 			<dependency>
 				<groupId>org.prelle.rpgframework</groupId>
 				<artifactId>splittermond-core</artifactId>
@@ -100,14 +100,18 @@
 		<module>Splittermond_ProductData</module>
 	</modules>
 
-	<distributionManagement>
-		<snapshotRepository>
-			<id>google</id>
-			<url>https://rpgframework-maven-repository.appspot.com/</url>
-		</snapshotRepository>
-		<repository>
-			<id>google</id>
-			<url>https://rpgframework-maven-repository.appspot.com/</url>
-		</repository>
-	</distributionManagement>
+
+  <distributionManagement>
+    <repository>
+      <id>GitHub</id>
+      <name>GitHub Taranion Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/taranion/rpgframework</url>
+      <uniqueVersion>false</uniqueVersion>
+    </repository>
+    <snapshotRepository>
+      <id>google</id>
+      <url>https://rpgframework-maven-repository.appspot.com/</url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
+  </distributionManagement>
 </project>

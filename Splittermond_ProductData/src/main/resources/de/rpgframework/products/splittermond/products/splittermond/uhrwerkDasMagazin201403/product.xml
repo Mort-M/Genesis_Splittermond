@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="uhrwerkDasMagazin201403" month="8" rules="SPLITTERMOND" year="2014">
+   <title>Uhrwerk! Das Magazin 2014-03</title>
+   <description></description>
+   <adventures>
+      <adventure ref="felsentief" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

@@ -1,0 +1,18 @@
+<product id="mephisto59" rules="SPLITTERMOND,SHADOWRUN" year="2015" month="5">
+	<title>Mephisto 59</title>
+    <description>
+Mit 3,3 Millionen eingesammelten US-Dollar auf Kickstarter ist Conan das bis dato erfolgreichste per Crowdfunding finanzierte Brettspiel der Welt. Für unser Titelthema haben wir für euch einen Blick hinter die Kulissen geworfen und bereits angespielt.
+
+Außer Conan widmen wir uns natürlich auch sonst wieder voll und ganz dem phantastischen Abenteuer!
+
+    Wir tauchen in H.P. Lovecrafts Cthulhu-Mythos ein: So präsentieren wir das furiose Finale unseres Arkham Horror-Szenarienmassakers, wir entführen die Ermittler in die Traumlande des Zweiten Weltkriegs in unserem Abenteuer New Ult City, und wir rezensieren das Brettspiel Eldritch Horror und das Pen&amp;Paper-RSP Achtung! Cthulhu.
+    In dem Splittermond-Abenteuer Feuer amp; Flamme dreht sich alles um Liebe, Ehre, Abenteuer und Intrigen.
+    Für Shadowrun liefern wir umfassendes Ergänzungsmaterial zum Abenteuer [Lost] [Soul] aus Mephisto 58.
+    Wir haben bei den Spieletipps Ideen für ein Crossover zwischen den Star Wars Rollenspielen und dem X-Wing Miniaturen-Spiel zusammengefaßt.
+    Außerdem unterhalten wir uns mit zwei angesagten Fantasy-Autoren: Daniel Illger (Skargat) und Patrick Rothfuss (Die Musik der Stille).
+    In unseren Rezensionen gibt es schließlich jede Menge Informationen über aktuelle Rollen- und Brettspiele, Bücher und Comics!
+    </description>
+    <adventures>
+		<adventure rules="SPLITTERMOND" ref="feuerUndFlamme"/>
+	</adventures>
+</product>

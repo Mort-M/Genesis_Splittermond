@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="vangarasPrüfung" month="2" rules="SPLITTERMOND" year="2018">
+   <title>Vangaras Prüfung</title>
+   <description>In den Verheerten Landen, eine von der Finsternis verwüstete Ödnis nördlich von Selenia, vegetieren verdorrte Gewächse neben abscheulichen Monstern. Nur dank des Wächterbundes sind diese Bestien noch nicht über die Grenzen hinaus vorgedrungen, aber der Arm der Finsternis ist länger als befürchtet. Sogar auf Burg Bärenwehr sind ihre Schatten zu spüren, obwohl das Umland noch friedlich ist und fast einem idyllischen Waldstück gleicht. Jedoch werden ihre Grundfesten von einem Mord erschüttert, der sich in der Nacht von Vangaras Prüfung ereignet – ein Ritual, das den neuen Komtur der Burg in sein Amt erheben sollte. Eile ist nun geboten, da die Burg samt Bewohner nur eine kurze Zeit durch ein Unwetter von der Außenwelt abgeschnitten ist. Können die beherzten Abenteurer das Verbrechen aufklären, bevor sich der sinistere Mörder aus dem Staub machen kann?</description>
+   <adventures>
+      <adventure ref="vangarasPrüfung" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

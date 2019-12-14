@@ -1,0 +1,9 @@
+<product id="dasUnreich" rules="SPLITTERMOND" year="2017" month="3">
+	<title>Das Unreich</title>
+    <description>
+    </description>
+    <adventures>
+		<adventure rules="SPLITTERMOND" ref="dasMaedchenMitDenGruenenAugen"/>
+		<adventure rules="SPLITTERMOND" ref="dieLangeWacht"/>
+    </adventures>
+</product>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="derSchimmerturm" month="9" rules="SPLITTERMOND" year="2017">
+   <title>Der Schimmerturm</title>
+   <description>Auf einer Klippe in der Nähe des Fischerdorfs Rakovica im Mertalischen Städtebund erhebt sich der Schimmerturm, der Wahrzeichen und böses Omen zugleich ist: Denn immer wenn die blaue Flamme auf der Spitze des Turms lodert, wird die Gegend von Naturkatastrophen heimgesucht. Als die Abenteurer während eines solchen Schimmerns nur knapp einem Schiffsuntergang entgehen, beauftragt sie der Prokurator von Rakovica, das Geheimnis des Schimmerturms endlich zu lüften. Doch dazu benötigen sie neben detektivischem Spürsinn auch soziale Kompetenz und einen starken Waffenarm. Können die Abenteurer das Rätsel um den Schimmerturm lösen?</description>
+   <adventures>
+      <adventure ref="derSchimmerturm" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

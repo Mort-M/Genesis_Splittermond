@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="dieLegendeDerBrennendenSchmiede" month="6" rules="SPLITTERMOND" year="2016">
+   <title>Die Legende der brennenden Schmiede</title>
+   <description>(fehlt)</description>
+   <adventures>
+      <adventure ref="dieLegendeDerBrennendenSchmiede" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

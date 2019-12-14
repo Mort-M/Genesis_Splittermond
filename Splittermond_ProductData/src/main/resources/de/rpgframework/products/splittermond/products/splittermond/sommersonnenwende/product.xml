@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="sommersonnenwende" month="10" rules="SPLITTERMOND" year="2016">
+   <title>Sommersonnenwende</title>
+   <description>Im Norden Dragoreas liegt das geheimnisumwitterte Land Tir Durghachan, das weniger durch Sterbliche als mehr durch die Herrscher der nahen Feenwelten geprägt wird. Seit langer Zeit leben die Durghach, ein rauer, aber tapferer Menschenschlag, unter dem Joch der Feen und haben uralte Pakte mit ihnen geschlossen. Das Abenteuer Sommersonnenwende führt Abenteurer des zweiten Heldengrades mitten im Hochsommer nach Tir Durghachan, wo sie die Schergen der Stechginsterkönigin herausfordern und in die Kultur der Durghach und die Wildnis der feenbeherrschten Lande eindringen können.</description>
+   <adventures>
+      <adventure ref="sommersonnenwende" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

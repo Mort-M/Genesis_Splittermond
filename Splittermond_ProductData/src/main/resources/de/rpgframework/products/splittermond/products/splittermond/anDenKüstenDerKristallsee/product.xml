@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="anDenKüstenDerKristallsee" month="1" rules="SPLITTERMOND" year="2016">
+   <title>An den Küsten der Kristallsee</title>
+   <description>Mitten in Lorakis, im Herzen des Kontinents und seiner Bewohner, liegt die Kristallsee, die die Bewohner der umliegenden Länder sowohl miteinander verbindet als auch voneinander trennt. Ganze Völker leben auf und mit dem Meer, fahren als Händler zu fernen Städten, erbeuten als Seeräuber lohnende Prisen oder schützen auf wohlgerüsteten Schiffen die Grenzen ihrer Heimat. An den Küsten der Kristallsee enthält die vier bestplatzierten Abenteuer des gleichnamigen Splittermond-Abenteuerwettwerbs, erweitert und vollständig überarbeitet. Mit diesen Abenteuern können Sie und Ihre Spieler die unterschiedlichen Seiten der Kristallsee kennenlernen – von der lebensspendenden Verbündeten bis zur tosenden Urgewalt.</description>
+   <adventures>
+      <adventure ref="dasGeschenkDerSeealben" rules="SPLITTERMOND"/>
+      <adventure ref="desSeekönigsZorn" rules="SPLITTERMOND"/>
+      <adventure ref="mordImSchwimmendenZirkus" rules="SPLITTERMOND"/>
+      <adventure ref="pashtarischePäckchen" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

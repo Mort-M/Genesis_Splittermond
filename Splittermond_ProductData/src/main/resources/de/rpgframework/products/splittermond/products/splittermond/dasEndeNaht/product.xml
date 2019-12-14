@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="dasEndeNaht" month="6" rules="SPLITTERMOND" year="2016">
+   <title>Das Ende naht</title>
+   <description>(fehlt)</description>
+   <adventures>
+      <adventure ref="dasEndeNaht" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

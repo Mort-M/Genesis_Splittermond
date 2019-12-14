@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="dasWanderndeWarenhaus" month="9" rules="SPLITTERMOND" year="2017">
+   <title>Das Wandernde Warenhaus</title>
+   <description>Das sagenumwobene Wandernde Warenhaus folgt besonders starken Gefühlen; vor allem Verzweiflung und Angst. Sein Eigentümer, Ahendra, gibt den Trägern dieser Gefühle die Dinge, die sie benötigen. Im Gegenzug nimmt er ihnen Empfindungen und Erinnerungen…</description>
+   <adventures>
+      <adventure ref="dasWanderndeWarenhaus" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

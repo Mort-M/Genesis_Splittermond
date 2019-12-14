@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="kettenrasseln" month="7" rules="SPLITTERMOND" year="2015">
+   <title>Kettenrasseln</title>
+   <description>'Der Tod geht um!' &#x003c;br&#x003e; Die Erde bebt im Ort Brynntal, inmitten der unwirtlichen Berge des nördlichen Kynhold. Noch ahnt niemand, dass dahinter mehr steckt - dass eine uralte Macht erwacht ist und nun voller Hass danach trachtet, die Bewohner der Region ins Verderben zu stürzen. Doch noch ist nichts verloren: Denn eine Schar tapferer Abenteurer steht bereit, um sich den Mächten des Bösen in den Weg zu stellen. Ihre Abenteurer! &#x003c;br&#x003e; In diesem Heft finden Sie eine vollständige, vorgefertigte Kampagne, mit der Sie und Ihre Spielrunde Ihre ersten Schritte in Lorakis unternehmen können. Dabei werden auch einige Hilfestellungen und Tipps für unerfahrene Spielleiter angegeben - sodass das erste der vier Abenteuer sogar spielbar ist, ohne das Regelheft im Vorhinein gelesen zu haben. Schnappen Sie sich einfach ein paar Freunde, verteilen Sie die vorgefertigten Abenteurer aus dieser Box und tauchen Sie ein in die spannende Welt von Lorakis!</description>
+   <adventures>
+      <adventure ref="dasSchwächsteGlied" rules="SPLITTERMOND"/>
+      <adventure ref="gedenktDerToten" rules="SPLITTERMOND"/>
+      <adventure ref="stimmenAusDemJenseits" rules="SPLITTERMOND"/>
+      <adventure ref="unterFelsBegraben" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

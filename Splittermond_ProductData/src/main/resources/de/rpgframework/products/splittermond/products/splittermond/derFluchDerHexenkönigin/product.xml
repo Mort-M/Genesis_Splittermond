@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="derFluchDerHexenkönigin" month="7" rules="SPLITTERMOND" year="2014">
+   <title>Der Fluch der Hexenkönigin</title>
+   <description>Ioria, die strahlende Metropole im Herzen des Kontinents Lorakis, ist das Ziel zahlloser Pilger aus aller Herren Länder. Sie alle streben dem großen Orakel auf der Himmelstreppe entgegen, durch das die Götter selbst zu den Sterblichen sprechen. Ein Spruch dieses Orakels verkündet das Erscheinen eines Kindes im kleinen Königreich Midstad, dem ein großes Schicksal vorherbestimmt ist. Im Dienst eines iorischen Priesters des angesehenen Bewahrer-Ordens begeben sich die Abenteurer auf die Suche nach dem prophezeiten Schicksalskind - doch schon bald erkennen sie, dass sie damit nicht die einzigen sind. Will der tyrannische König Finn von Harreburg diese mögliche Bedrohung seiner Herrschaft beseitigen? Oder strecken andere, dunklere Mächte ihre Hände nach dem Kind aus? Erfüllt sich in ihm gar der einst von der Göttin Hekaria ausgesprochene Fluch über das Königshaus von Midstad? Der Fluch der Hexenkönigin führt die Gruppe auf eine Reise durch das geknechtete Königreich Midstad, über die schimmernden Wogen der Kristallsee bis zu den wimmelnden Gassen der heiligen Stadt Ioria - und von dort auf einen Pfad zwischen den Welten, wo die Wahl zwischen Licht und Finsternis getroffen werden soll.</description>
+   <adventures>
+      <adventure ref="derFluchDerHexenkönigin" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="dracheUndNachtigall" month="3" rules="SPLITTERMOND" year="2018">
+   <title>Drache und Nachtigall</title>
+   <description>Das Land Zwingard ist nicht nur für seine tapferen Ritter und sangesgewaltigen Barden bekannt, sondern auch für die Wyvern – drachenartige Ungeheuer voller Hinterlist und Bosheit. Als solch ein Monstrum das Dörfchen Westhaga am Fuße des Riesheim-Gebirges überfällt, macht sich der alternde Thain Hagbard persönlich auf, um sich dem Wyvern zum Kampf zu stellen. Dies ist die Stunde der Abenteurer, denn es braucht wahrhaft tapfere Gesellen, um dem alten Sturkopf bei seinem womöglich letzten Kampf zur Seite zu stehen. Werden es die Abenteurer schaffen, Hagbards Vertrauen zu gewinnen und sein sorgsam gehütetes Geheimnis zu lüften? Und wird es ihnen gelingen, den alten Ritter lebend zurückzubringen – oder am Ende gar den Wyvern selbst zu bezwingen?</description>
+   <adventures>
+      <adventure ref="dracheUndNachtigall" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

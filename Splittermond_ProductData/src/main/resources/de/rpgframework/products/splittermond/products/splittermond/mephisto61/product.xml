@@ -1,0 +1,9 @@
+<product id="mephisto61" rules="SPLITTERMOND" year="2016" month="5">
+	<title>Mephisto 61</title>
+    <description>
+	Ausgabe 61 des Magazins
+    </description>
+    <adventures>
+		<adventure rules="SPLITTERMOND" ref="inFeindschaftVerbunden"/>
+	</adventures>
+</product>

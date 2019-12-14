@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="rachengold" month="1" rules="SPLITTERMOND" year="2015">
+   <title>Rachengold</title>
+   <description>Das Abenteuer 'Rachengold' führt die Splitterträger in das farukanische Shahirat Pashtar, genauer gesagt in die Küstenstadt Tiakabir, wo sie sich im Auftrag eines einflussreichen Händlers auf die verzweifelte Suche nach einigen Dokumenten machen, die sie in bisher unerforschte Gewässer führen.</description>
+   <adventures>
+      <adventure ref="rachengold" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

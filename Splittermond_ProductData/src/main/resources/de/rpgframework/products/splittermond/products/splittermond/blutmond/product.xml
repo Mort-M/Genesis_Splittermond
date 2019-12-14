@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="blutmond" month="6" rules="SPLITTERMOND" year="2018">
+   <title>Blutmond</title>
+   <description>Die Abenteurer werden von einem befreundeten Gelehrten kontaktiert. Einer seiner Kollegen erlitt kürzlich einen schweren Nervenzusammenbruch und hat seitdem furchterregende Visionen einer bevorstehenden Katastrophe: Der Zerstörung eines zweiten Mondes, des Düster- oder Blutmondes. Die angefertigten Bilder der Vision führen die Abenteurer auf eine Reise nach Termark zu einer vergessenen Burg am Schwarzen Berg, in der ein Kult der Jesavis seit Jahrhunderten einen zweiten Mondfall und damit die endgültige Befreiung ihrer Göttin vorbereitet.</description>
+   <adventures>
+      <adventure ref="blutmond" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

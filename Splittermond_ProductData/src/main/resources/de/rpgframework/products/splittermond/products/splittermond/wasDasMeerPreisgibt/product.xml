@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="wasDasMeerPreisgibt" month="6" rules="SPLITTERMOND" year="2018">
+   <title>Was das Meer preisgibt</title>
+   <description>Die Stadt Gischtthron, die kurz nach dem Mondfall aus ungeklärter Ursache im Meer versunken ist, ist wieder aufgetaucht. Die Abenteurer schließen sich in Arwingen einer offizielle See-Expedition an, die das Ziel hat insbesondere die reichen Mondstahlvorkommen, für die die Stadt einst berühmt war, zu bergen.</description>
+   <adventures>
+      <adventure ref="wasDasMeerPreisgibt" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

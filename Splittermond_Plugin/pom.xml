@@ -62,7 +62,7 @@
 						  <UUID>43f97ab7-1f2e-4fa2-a538-32f8878be56a</UUID>
 							<Url>https://www.rpgframework.de/</Url>
 							<Bugtracker>https://rpgframework.atlassian.net/servicedesk/customer/portals</Bugtracker>
-							<State>ACTIVE</State>
+							<State>STABLE</State>
 							<Build-Time>${maven.build.timestamp}</Build-Time>
 						</manifestEntries>
 					</archive>
@@ -101,7 +101,7 @@
 									message="Copy plugin descriptor ${project.artifactId}-${project.version}.mf to ${deploymentServer}:${deploymentPath}" />
 								<scp
 									todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}/"
-									sftp="true" failonerror="false" trust="true" verbose="false">
+									sftp="true" failonerror="true" trust="true" verbose="false">
 									<fileset dir="target">
 										<include
 											name="${project.artifactId}-${project.version}.mf" />
@@ -111,7 +111,7 @@
 									message="Copy plugin to ${deploymentServer}:${deploymentPath}" />
 								<scp
 									todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}"
-									sftp="true" failonerror="false" trust="true" verbose="false">
+									sftp="true" failonerror="true" trust="true" verbose="false">
 									<fileset dir="target">
 										<include
 											name="${project.artifactId}-${project.version}.jar" />

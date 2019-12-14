@@ -1,0 +1,9 @@
+<product id="mephisto61" rules="SPLITTERMOND" year="2016" month="12">
+	<title>Mephisto 63</title>
+    <description>
+	Ausgabe 63 des Magazins
+    </description>
+    <adventures>
+		<adventure rules="SPLITTERMOND" ref="jagdfieber"/>
+	</adventures>
+</product>

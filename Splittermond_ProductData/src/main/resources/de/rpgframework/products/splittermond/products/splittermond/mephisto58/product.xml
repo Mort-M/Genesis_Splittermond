@@ -1,0 +1,9 @@
+<product id="mephisto58" rules="SPLITTERMOND" year="2015" month="2">
+	<title>Mephisto 58</title>
+    <description>
+	Ausgabe 58 des Magazins
+    </description>
+    <adventures>
+		<adventure rules="SPLITTERMOND" ref="zornDerNatur"/>
+	</adventures>
+</product>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="mondsteinsuche" month="6" rules="SPLITTERMOND" year="2018">
+   <title>Mondsteinsuche</title>
+   <description>Die Abenteurer werden in einem Wettlauf, um einen abgestürzten Mondsplitter verwickelt. Sie können sich eine von drei Gruppen anschließen oder es auf eigener Faust versuchen, doch müssen sich dabei mit Ihren Konkurrenten auseinander setzen.</description>
+   <adventures>
+      <adventure ref="mondsteinsuche" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

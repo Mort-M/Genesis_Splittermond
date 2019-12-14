@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="verwunscheneMauern" month="9" rules="SPLITTERMOND" year="2017">
+   <title>Verwunschene Mauern</title>
+   <description>Wenn die Wände doch Ohren hätten oder noch besser, Zungen! Was würden sie Interessantes, Fesselndes, Beflügelndes und Grausiges erzählen? Will der Lorakier von nebenan wirklich wissen, was uralte Paläste, vergessene Tempel und verlassene Gemäuer alles wissen? Oder sind diese Geschichten nur für wagemutige Abenteurer gedacht, die vor nichts zurückschrecken? Verwunschene Mauern enthält drei der bestplatzierten Abenteuer des Splittermond-Abenteuerwettbewerbs „Besondere Bauwerke“ von 2016, erweitert und vollständig überarbeitet. Im ersten Abenteuer schließt ein gefangener Prinz im fernen Zhoujiang einen verhängnisvollen Pakt und stürzt den Palast der tausend Zimmer ins Chaos. Schaffen es die Abenteurer trotz zwielichtiger Verbündeter, den unglückseligen Prinzen zu befreien und herauszufinden, was die Feen im Palast suchen? Im in Kintai gelegenen Tempel der tausend Tore besuchen die Abenteurer das sagenumwobene Lichterfest und werden mit einem mysteriösen Mord konfrontiert. Künden die letzten Aufzeichnungen des Opfers von einer Katastrophe, die bald über die Stadt losbrechen wird? Ist wirklich ein uraltes Wesen des Grauens kurz davor, seine Fesseln zu lösen? Die Antworten hierzu finden sich im nahe gelegenen Geisterwald Kamioku. Das dritte Abenteuer Wenn die Wasser verstummen spielt in einer Kleinstadt in Aitushar, die plötzlich von Elementarwesen angegriffen wird. Auf der Suche nach dem Grund stoßen die Abenteurer auf einen längst vergessenen Pakt, der zu bröckeln droht. Um dies zu verhindern haben sie alle Hände voll zu tun, denn die Stadt hält den Angriffen der erbosten Elementare nicht mehr lange stand.</description>
+   <adventures>
+      <adventure ref="derPalastDerTausendZimmer" rules="SPLITTERMOND"/>
+      <adventure ref="derTempelDerTausendTore" rules="SPLITTERMOND"/>
+      <adventure ref="wennDieWasserVerstummen" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="derLeuchtturmDesXarxuris" month="1" rules="SPLITTERMOND" year="2018">
+   <title>Der Leuchtturm des Xarxuris</title>
+   <description>Mitten in der Kristallsee auf dem Seeweg zwischen Ioria und Pashtar liegen die Nebelfelsen. So nennt man ein Areal von einigen Seemeilen, in dem hunderte schroffer Felsinselchen aus dem Meer ragen und ein Labyrinth bilden, dessen enge Wasserstraßen für Schiffe nur schwer zu passieren sind. Zahlreiche Geschichten ranken sich um die Gegend, denn im ständigen Nebel vor Ort verschwinden immer wieder Schiffe. Sind sie an den Riffen zerschellt, von Seeungeheuern verschlungen oder lauern ganz andere, unbekannte Gefahren in den Nebeln? Der Leuchtturm des Xarxuris verschlägt die Abenteurer zu den Nebelfelsen und lässt sie auf der Insel eines achteckigen Turms stranden. Ist das tatsächlich der berühmte Leuchtturm des sagenumwobenen Padishah, der hier vor über 300 Jahren gestanden haben soll und seinerzeit durch eine Sturmflut zerstört wurde? Was spielt sich dort mit den Geistern seiner Bewohner ab und was hat das mit Xarxuris’ historischem Angriff auf Ioria zu tun? Und das Allerwichtigste: Sind die Abenteurer mutig genug, all diesen Fragen mitten im geisterhaften Nebel auf den Grund zu gehen?</description>
+   <adventures>
+      <adventure ref="derLeuchtturmDesXarxuris" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

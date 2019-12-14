@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="dakardsmyr" month="5" rules="SPLITTERMOND" year="2016">
+   <title>Dakardsmyr</title>
+   <description>Tief in den Myrkansümpfen, am Rande des Krakengrundes, liegt Dakardsmyr, Heimat der Sumpfgnome und legendäre Zitadelle der Alchemisten. Hier, wo Schwefeldämpfe das Atmen schwer machen, wo sich schwankende Brücken hoch über träge dahinfließenden Kanälen erheben, streiten Gildenräte und Bürgermeister um Ansehen und Einfluss, erkunden Gelehrte die jahrhundertealte Geschichte, wagen sich Schatzsucher in die im Sumpf versunkenen Kavernen der Unterstadt und forschen die besten Alchemisten von ganz Lorakis an immer neuen Rezepturen. Dakardsmyr ist eine Insel der Zivilisation mitten in einem der größten Sumpfgebiete von Lorakis. In den Senken und Wasserläufen der Myrkansümpfe warten nicht nur Gefahren wie Sumpflöcher, feindselig gestimmte Feen und lauernde Sumpfdrachen, sondern auch wertvolle Rohstoffe und kostbare Ingredienzen für die Labore und Werkstätten in der Stadt. Immer wieder senden die Gelehrten der Stadt Sumpfkundige oder Abenteurer in den ewigen Nebel, um seltene Zutaten zu suchen oder einem alten Mysterium nachzugehen, und nicht immer kehren die Ausgesandten zurück. Dakardysmyr – Im Nebel der Myrkansümpfe ist eine Erweiterung für das Rollenspiel Splittermond, das die namensgebende Stadt und die umliegenden Myrkansümpfe beschreibt. Hier wird Spielern und Spielleitern Einblick in Kultur, Leben und Geschichte der Sumpfgnome geboten, in die Tier- und Pflanzenwelt der Sümpfe und in die Geheimnisse der Unterstadt. Ebenfalls enthalten sind zwei Abenteuer in der Region, sodass Sie die Wunder und Gefahren der Myrkansümpfe direkt erleben können…</description>
+   <adventures>
+      <adventure ref="bisZumHals" rules="SPLITTERMOND"/>
+      <adventure ref="dieTotengräberVonDakardsmyr" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

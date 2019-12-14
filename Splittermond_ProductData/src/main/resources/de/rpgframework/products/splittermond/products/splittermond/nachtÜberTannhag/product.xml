@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="nachtÜberTannhag" month="6" rules="SPLITTERMOND" year="2013">
+   <title>Nacht über Tannhag</title>
+   <description>Die Abenteurer finden sich in einem Gasthaus am Rande der Zivilisation ein, als sich mitten in der Nacht plötzlich ein unheimliches Naturschauspiel ereignet. Die Abenteurer gehen der Ursache auf den Grund und finden...</description>
+   <adventures>
+      <adventure ref="nachtÜberTannhag" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

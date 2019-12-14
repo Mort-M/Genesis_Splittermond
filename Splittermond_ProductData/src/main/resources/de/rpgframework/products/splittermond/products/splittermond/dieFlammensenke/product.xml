@@ -1,0 +1,10 @@
+<product id="dieFlammensenke" rules="SPLITTERMOND" year="2017" month="12">
+	<title>Die Flammensenke</title>
+	<description>
+		
+	</description>
+	<adventures>
+		<adventure rules="SPLITTERMOND" ref="derVulkanDesTodes" />
+    <adventure rules="SPLITTERMOND" ref="dasSchwarzeLabyrinth" />
+	</adventures>
+</product>

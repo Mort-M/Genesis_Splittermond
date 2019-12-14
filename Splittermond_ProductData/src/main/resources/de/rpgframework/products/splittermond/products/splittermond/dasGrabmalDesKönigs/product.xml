@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="dasGrabmalDesKönigs" month="6" rules="SPLITTERMOND" year="2018">
+   <title>Das Grabmal des Königs</title>
+   <description>Dies ist ein 'Soloabenteuer' für einen Spieler in Midstad. Es werden keine Würfel benötigt. König Finn von Harreburg, König von Midstad, hat beschlossen sich bereits jetzt ein Grabmal bauen zu lassen, damit seine Grösse und seine Macht für immer im Gedächtnis seiner Untertanen bleiben. Du bist eigentlich Holzfäller, hast dich aber schon vor drei Jahren den Rebellen angeschlossen. Und jetzt geht es darum, den Bau des königlichen Grabmals zu sabotieren. == Hilfsmittel == Eine Karte des Königreichs Midstad findet sich im Download-Bereich der Splittermond-Webseite in den Karten zum Abenteuer "Fluch der Hexenkönigin": http://splittermond.de/wp-content/uploads/2014/07/DFdH_Karten.pdf</description>
+   <adventures>
+      <adventure ref="dasGrabmalDesKönigs" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

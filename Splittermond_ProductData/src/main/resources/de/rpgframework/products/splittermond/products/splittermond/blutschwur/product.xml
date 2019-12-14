@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="blutschwur" month="7" rules="SPLITTERMOND" year="2018">
+   <title>Blutschwur</title>
+   <description>In den rauen Grenzlanden Nyrdfings verehrt der Adel noch immer den düsteren Gott Grimman. In seinem Namen eifern seine Krieger dem legendären Grimmedân Mihal nach, der einst einen mächtigen Drachen niedergestreckt haben soll, einen Widersacher der Götter selbst. Dabei scheuen sie weder Anstrengung noch Blutvergießen, sich dem Heiligen würdig zu erweisen. Nun soll dieses Ungetüm wiederauferstanden sein, und als die Abenteurer hoch oben in den Kyngeszinnen den alten Kampfschauplatz finden, stoßen sie tatsächlich auf einen Drachen. Aber warum scheut er den Kampf? Was hat es mit den Relikten der Vaigarr auf sich? Und mit den beiden symmetrischen Felsnadeln, die wie Opferstätten anmuten? Die Schauergeschichten der Grimmankrieger von Blutwesen in den Kavernen tragen ein übriges dazu bei, nach den Zusammenhängen und der wahren Bedrohung zu fragen … Blutschwur führt die Abenteurer aus Nyrdfings Hauptstadt Catley ins raue Grenzland, in die Schwarzen Wälder der Vaigarr, auf die Höhen der Kyngeszinnen und in die Tiefen alter Kavernen.</description>
+   <adventures>
+      <adventure ref="blutschwur" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

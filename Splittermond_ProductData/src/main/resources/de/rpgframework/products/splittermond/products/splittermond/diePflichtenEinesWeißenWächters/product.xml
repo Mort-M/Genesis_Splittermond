@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="diePflichtenEinesWeißenWächters" month="6" rules="SPLITTERMOND" year="2016">
+   <title>Die Pflichten eines Weißen Wächters</title>
+   <description>(fehlt)</description>
+   <adventures>
+      <adventure ref="diePflichtenEinesWeißenWächters" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="flussUndFelsen" month="6" rules="SPLITTERMOND" year="2018">
+   <title>Fluss und Felsen</title>
+   <description>Im Auftrag des Kaisers soll eine Befestigungsanlage auf einer Insel auf dem Myrkan gebaut werden, um die beiden verfeindeten Herzogtümer Norbyr und Winborn besser kontrollieren zu können und die Fehde einzudämmen. Die Abenteurer schlüpfen in die Rolle der Verteidiger der Anlage und überwachen den Bau, bis sich ein altes Geheimnis im Untergrund der Insel offenbart.</description>
+   <adventures>
+      <adventure ref="flussUndFelsen" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

@@ -1,0 +1,14 @@
+<product id="dieArwingerMark" rules="SPLITTERMOND" year="2015" month="1">
+	<title>Die Arwinger Mark</title>
+    <description>
+    Zwischen den schroffen Bergen des Kynhold und den Steilklippen an der Kristallsee liegt die Arwinger Mark, die östlichste Provinz des jungen und stolzen Kaiserreiches Selenia. Von hier brechen die Kauffahrer des Kaisers in die Weiten der See auf und mancher Handelszug zieht auf dem Weg zur Hafenstadt Arwingen durch die fruchtbare Mark.
+
+Doch trügt dieses Bild von Frieden und Wohlstand, denn auch manch düstere Kreatur durchstreift die Wälder und Sümpfe der Mark. Die Harpyien der Berge sind ebenso gefürchtet wie die Rattlinge aus den Sümpfen und den allgegenwärtigen Ruinen der uralten Drachlinge – doch noch mehr Schauergeschichten erzählt man sich über die Wesen, die nördlich der Draugis aus den Verheerten Landen stammen und immer wieder in die Arwinger Mark vordringen. Es braucht tapfere Abenteurer, um diesen Gefahren gegenüber zu treten und die aufrechten Bewohner der Mark zu beschützen!
+
+Die Arwinger Mark ist eine Erweiterung für das Rollenspiel Splittermond, in der die namensgebende Provinz als explizite Einsteigerregion aufbereitet und vorgestellt wird. In der Mark bieten sich sowohl für Abenteurer niedriger Heldengrade als auch für unerfahrene Spieler mannigfache Möglichkeiten, Abenteurer und Kampagnen zu erleben. Entsprechend enthält der Band nicht nur eine ausführliche Beschreibung der Region, sondern auch zwei Abenteuer, die zum sofortigen losspielen einladen. 
+    </description>
+    <adventures>
+		<adventure rules="SPLITTERMOND" ref="seelenqualen"/>
+		<adventure rules="SPLITTERMOND" ref="zwistDerGeschwister"/>
+	</adventures>
+</product>
