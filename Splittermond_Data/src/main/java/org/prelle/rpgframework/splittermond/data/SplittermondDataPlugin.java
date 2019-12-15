@@ -1,5 +1,8 @@
 package org.prelle.rpgframework.splittermond.data;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Collection;
@@ -19,6 +22,7 @@ import de.rpgframework.character.RulePluginFeatures;
 import de.rpgframework.core.CommandResult;
 import de.rpgframework.core.CommandType;
 import de.rpgframework.core.CustomDataHandler;
+import de.rpgframework.core.CustomDataHandler.CustomDataPackage;
 import de.rpgframework.core.CustomDataHandlerLoader;
 import de.rpgframework.core.RoleplayingSystem;
 
@@ -373,12 +377,38 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		/*
 		 * Load custom data
 		 */
+		logger.info("START -------------------------------Custom------------------------------------------");
 		if (CustomDataHandlerLoader.getInstance()!=null) {
 			CustomDataHandler custom = CustomDataHandlerLoader.getInstance();
 			List<String> customIDs = custom.getAvailableCustomIDs(RoleplayingSystem.SPLITTERMOND);
-			System.err.println("Custom IDs = "+customIDs);
+			PluginSkeleton CUSTOM = new PluginSkeleton("Custom", "Custom Data");
 			for (String id : customIDs) {
-				custom.getCustomData(RoleplayingSystem.SPLITTERMOND, id);
+				CustomDataPackage  bundle = custom.getCustomData(RoleplayingSystem.SPLITTERMOND, id);
+				if (bundle!=null) {
+					try (InputStream datastream = new FileInputStream(bundle.datafile.toFile())) {
+						if (id.startsWith("item") || id.startsWith("equipment") || id.startsWith("gear")) {
+							SplitterMondCore.loadEquipment(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
+						} else if (id.startsWith("masterships")) {
+							SplitterMondCore.loadMasterships(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
+						} else if (id.startsWith("education")) {
+							SplitterMondCore.loadEducations(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
+						} else if (id.startsWith("spell")) {
+							SplitterMondCore.loadSpells(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
+						} else if (id.startsWith("enhancement")) {
+							SplitterMondCore.loadEnhancements(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
+						} else if (id.startsWith("power")) {
+							SplitterMondCore.loadPowers(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
+						} else if (id.startsWith("background")) {
+							SplitterMondCore.loadBackgrounds(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
+						} else  {
+							logger.warn("Don't know how to deal with custom data "+bundle.datafile);
+							continue;
+						}
+						logger.info("Loaded custom data  "+bundle.datafile);
+					} catch (IOException e) {
+						logger.error("Failed for custom data "+bundle.datafile+" and its properties",e);
+					}
+				}
 			}
 		}
 		
