@@ -41,7 +41,7 @@ public class PluginSkeleton implements RulePlugin<SpliMoCharacter> {
 			i18NResources = (PropertyResourceBundle) ResourceBundle.getBundle("org.prelle.rpgframework.splittermond.data."+id.toLowerCase()+".i18n."+id.toLowerCase());
 			i18NHelpResources = (PropertyResourceBundle) ResourceBundle.getBundle("org.prelle.rpgframework.splittermond.data."+id.toLowerCase()+".i18n."+id.toLowerCase()+"-help");
 		} catch (Exception e) {
-			if (!"custom".equals(id))
+			if (!"custom".equals(id.toLowerCase()))
 				e.printStackTrace();
 		}
 	}
