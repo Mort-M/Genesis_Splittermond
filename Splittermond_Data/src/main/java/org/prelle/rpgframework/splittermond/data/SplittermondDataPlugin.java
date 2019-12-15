@@ -18,6 +18,8 @@ import de.rpgframework.character.RulePlugin;
 import de.rpgframework.character.RulePluginFeatures;
 import de.rpgframework.core.CommandResult;
 import de.rpgframework.core.CommandType;
+import de.rpgframework.core.CustomDataHandler;
+import de.rpgframework.core.CustomDataHandlerLoader;
 import de.rpgframework.core.RoleplayingSystem;
 
 /**
@@ -368,6 +370,17 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadNameTable(BAD, clazz.getResourceAsStream("badashan/data/nametable-badashan.xml"), BAD.getResources(), BAD.getHelpResources());
 		count++; callback.progressChanged( (count/totalPlugins) );
 
+		/*
+		 * Load custom data
+		 */
+		if (CustomDataHandlerLoader.getInstance()!=null) {
+			CustomDataHandler custom = CustomDataHandlerLoader.getInstance();
+			List<String> customIDs = custom.getAvailableCustomIDs(RoleplayingSystem.SPLITTERMOND);
+			System.err.println("Custom IDs = "+customIDs);
+			for (String id : customIDs) {
+				custom.getCustomData(RoleplayingSystem.SPLITTERMOND, id);
+			}
+		}
 		
 		BasePluginData.flushMissingKeys();
 		logger.debug("STOP  Initialize");
