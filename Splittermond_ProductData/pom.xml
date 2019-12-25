@@ -55,6 +55,8 @@
               <Implementation-Vendor>Stefan Prelle</Implementation-Vendor>
               <State>ACTIVE</State>
               <Build-Time>${maven.build.timestamp}</Build-Time>
+              <MinVersion>4.0.0-SNAPSHOT</MinVersion>
+              <MaxVersion>4.99.99</MaxVersion>
             </manifestEntries>
           </archive>
         </configuration>
