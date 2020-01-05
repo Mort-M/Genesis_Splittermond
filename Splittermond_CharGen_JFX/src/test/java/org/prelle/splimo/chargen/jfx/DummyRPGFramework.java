@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.rpgframework.ConfigContainer;
+import de.rpgframework.PluginRegistry;
 import de.rpgframework.RPGFramework;
 import de.rpgframework.RPGFrameworkInitCallback;
 import de.rpgframework.boot.BootStep;
@@ -103,6 +104,12 @@ public class DummyRPGFramework implements RPGFramework {
 	public void addStepDefinition(StandardBootSteps arg0, BootStep arg1) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public PluginRegistry getPluginRegistry() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
