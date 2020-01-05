@@ -40,30 +40,12 @@
 				<deploymentServer>www.rpgframework.de</deploymentServer>
 				<deploymentPath>/var/www/html/plugins/development</deploymentPath>
 			</properties>
-			<repositories>
-<!-- 				<repository> -->
-<!-- 					<id>github</id> -->
-<!-- 					<name>GitHub Taranion Apache Maven Packages</name> -->
-<!-- 					<url>https://maven.pkg.github.com/taranion/rpgframework</url> -->
-<!-- 					<releases> -->
-<!-- 						<enabled>true</enabled> -->
-<!-- 					</releases> -->
-<!-- 					<snapshots> -->
-<!-- 						<enabled>false</enabled> -->
-<!-- 					</snapshots> -->
-<!-- 				</repository> -->
-
-				<repository>
-					<id>google</id>
-					<url>http://rpgframework-maven-repository.appspot.com/</url>
-					<releases>
-						<enabled>true</enabled>
-					</releases>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-				</repository>
-			</repositories>
+      <repositories>
+        <repository>
+          <id>ossrh</id>
+          <url>https://oss.sonatype.org/content/groups/public</url>
+        </repository>
+      </repositories>
 		</profile>
 		<profile>
 			<id>Staging</id>
