@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>splittermond-bbcode</artifactId>
-	<name>Splittermond BBCode</name>
+	<name>Splittermond Print BBCode</name>
 	<description>Splittermond print to BBCode</description>
 
 	<properties>
