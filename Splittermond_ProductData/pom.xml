@@ -42,7 +42,7 @@
             <manifestEntries>
               <UUID>7ea06303-dc70-414a-926d-18c17556c26c</UUID>
               <Implementation-Vendor>Stefan Prelle</Implementation-Vendor>
-              <State>ACTIVE</State>
+              <State>STABLE</State>
               <Build-Time>${maven.build.timestamp}</Build-Time>
               <MinVersion>4.0.0-SNAPSHOT</MinVersion>
               <MaxVersion>4.99.99</MaxVersion>
