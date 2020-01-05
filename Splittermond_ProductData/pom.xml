@@ -10,7 +10,7 @@
   </parent>
 
 	<artifactId>splittermond-productdata</artifactId>
-	<name>Splittermond ProductData</name>
+	<name>Splittermond Adventure Modules</name>
 	<description>Adventure modules released for Splittermond</description>
 
 	<properties>
@@ -19,21 +19,10 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>de.rpgframework</groupId>
-			<artifactId>babylon</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>de.rpgframework</groupId>
-			<artifactId>babylon-charrules</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>de.rpgframework</groupId>
-			<artifactId>rpgframework-api</artifactId>
-			<version>[3.0.0-SNAPSHOT,3.99.99)</version>
-		</dependency>
+    <dependency>
+      <groupId>de.rpgframework</groupId>
+      <artifactId>rpgframework-products</artifactId>
+    </dependency>
 	</dependencies>
 
 	<build>

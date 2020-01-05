@@ -10,10 +10,10 @@
 	</parent>
 
 	<artifactId>splittermond-plugin</artifactId>
-	<name>Splittermond Genesis Plugin</name>
+	<name>Splittermond</name>
 
 	<properties>
-		<maven.install.skip>true</maven.install.skip>
+		<maven.install.skip>false</maven.install.skip>
 		<maven.deploy.skip>true</maven.deploy.skip>
 	</properties>
 
