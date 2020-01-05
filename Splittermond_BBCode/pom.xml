@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>splittermond-bbcode</artifactId>
-	<name>Splittermond Print BBCode</name>
+	<name>Splittermond BBCode Export</name>
 	<description>Splittermond print to BBCode</description>
 
 	<properties>
@@ -70,7 +70,7 @@
             <manifestEntries>
               <UUID>d931981e-f7ab-4cc6-8204-cefa3a4667d2</UUID>
               <Implementation-Vendor>Frank Buettner</Implementation-Vendor>
-              <State>ACTIVE</State>
+              <State>ABANDONED</State>
               <Build-Time>${maven.build.timestamp}</Build-Time>
               <MinVersion>4.0.0-SNAPSHOT</MinVersion>
               <MaxVersion>4.99.99</MaxVersion>
