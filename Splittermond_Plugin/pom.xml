@@ -59,13 +59,14 @@
 							<packageName>SPLITTERMOND</packageName>
 						</manifest>
 						<manifestEntries>
-						  <UUID>43f97ab7-1f2e-4fa2-a538-32f8878be56a</UUID>
+							<UUID>43f97ab7-1f2e-4fa2-a538-32f8878be56a</UUID>
 							<Url>https://www.rpgframework.de/</Url>
 							<Bugtracker>https://rpgframework.atlassian.net/servicedesk/customer/portals</Bugtracker>
 							<State>STABLE</State>
 							<Build-Time>${maven.build.timestamp}</Build-Time>
-              <MinVersion>4.0.0-SNAPSHOT</MinVersion>
-              <MaxVersion>4.99.99</MaxVersion>
+							<MinVersion>4.0.0-SNAPSHOT</MinVersion>
+							<MaxVersion>4.99.99</MaxVersion>
+							<Provides>CORE</Provides>
 						</manifestEntries>
 					</archive>
 				</configuration>
