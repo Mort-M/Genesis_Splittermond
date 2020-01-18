@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.prelle.rpgframework</groupId>
-    <artifactId>splittermond-all</artifactId>
-    <version>4.0.0</version>
-  </parent>
+	<parent>
+		<groupId>org.prelle.rpgframework</groupId>
+		<artifactId>splittermond-all</artifactId>
+		<version>4.0.0</version>
+	</parent>
 
 	<artifactId>splittermond-productdata</artifactId>
 	<name>Splittermond Adventure Modules</name>
@@ -19,37 +19,39 @@
 	</properties>
 
 	<dependencies>
-    <dependency>
-      <groupId>de.rpgframework</groupId>
-      <artifactId>rpgframework-products</artifactId>
-    </dependency>
+		<dependency>
+			<groupId>de.rpgframework</groupId>
+			<artifactId>rpgframework-products</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-      <!-- Packaging -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.1.1</version>
-        <configuration>
-          <archive>
-            <manifest>
-              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-              <useUniqueVersions>false</useUniqueVersions>
-              <packageName>SPLITTERMOND</packageName>
-            </manifest>
-            <manifestEntries>
-              <UUID>7ea06303-dc70-414a-926d-18c17556c26c</UUID>
-              <Implementation-Vendor>Stefan Prelle</Implementation-Vendor>
-              <State>STABLE</State>
-              <Build-Time>${maven.build.timestamp}</Build-Time>
-              <MinVersion>4.0.0-SNAPSHOT</MinVersion>
-              <MaxVersion>4.99.99</MaxVersion>
-            </manifestEntries>
-          </archive>
-        </configuration>
-      </plugin>
+			<!-- Packaging -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<useUniqueVersions>false</useUniqueVersions>
+							<packageName>SPLITTERMOND</packageName>
+						</manifest>
+						<manifestEntries>
+							<UUID>7ea06303-dc70-414a-926d-18c17556c26c</UUID>
+							<Implementation-Vendor>Stefan Prelle</Implementation-Vendor>
+							<State>STABLE</State>
+							<Build-Time>${maven.build.timestamp}</Build-Time>
+							<MinVersion>4.0.0-SNAPSHOT</MinVersion>
+							<MaxVersion>4.99.99</MaxVersion>
+							<Requires>CORE</Requires>
+							<Provides>PRODUCTS</Provides>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
 
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
@@ -59,37 +61,37 @@
 						<phase>deploy</phase>
 						<configuration>
 							<tasks>
-                <echo message="Unpack manifest from jar" />
-                <unzip
-                  src="target/${project.artifactId}-${project.version}.jar"
-                  dest="target">
-                  <patternset>
-                    <include name="META-INF/MANIFEST.MF" />
-                  </patternset>
-                </unzip>
-                <copy file="target/META-INF/MANIFEST.MF"
-                  tofile="target/${project.artifactId}-${project.version}.mf" />
+								<echo message="Unpack manifest from jar" />
+								<unzip
+									src="target/${project.artifactId}-${project.version}.jar"
+									dest="target">
+									<patternset>
+										<include name="META-INF/MANIFEST.MF" />
+									</patternset>
+								</unzip>
+								<copy file="target/META-INF/MANIFEST.MF"
+									tofile="target/${project.artifactId}-${project.version}.mf" />
 
-                <echo
-                  message="Copy plugin descriptor ${project.artifactId}-${project.version}.mf to ${deploymentServer}:${deploymentPath}" />
-                <scp
-                  todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}/"
-                  sftp="true" failonerror="true" trust="true" verbose="false">
-                  <fileset dir="target">
-                    <include
-                      name="${project.artifactId}-${project.version}.mf" />
-                  </fileset>
-                </scp>
-                <echo
-                  message="Copy plugin to ${deploymentServer}:${deploymentPath}" />
-                <scp
-                  todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}"
-                  sftp="true" failonerror="true" trust="true" verbose="false">
-                  <fileset dir="target">
-                    <include
-                      name="${project.artifactId}-${project.version}.jar" />
-                  </fileset>
-                </scp>
+								<echo
+									message="Copy plugin descriptor ${project.artifactId}-${project.version}.mf to ${deploymentServer}:${deploymentPath}" />
+								<scp
+									todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}/"
+									sftp="true" failonerror="true" trust="true" verbose="false">
+									<fileset dir="target">
+										<include
+											name="${project.artifactId}-${project.version}.mf" />
+									</fileset>
+								</scp>
+								<echo
+									message="Copy plugin to ${deploymentServer}:${deploymentPath}" />
+								<scp
+									todir="${BB_USER_TOKEN}:${BB_PWD_TOKEN}@${deploymentServer}:${deploymentPath}"
+									sftp="true" failonerror="true" trust="true" verbose="false">
+									<fileset dir="target">
+										<include
+											name="${project.artifactId}-${project.version}.jar" />
+									</fileset>
+								</scp>
 							</tasks>
 						</configuration>
 						<goals>
