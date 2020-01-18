@@ -55,30 +55,32 @@
 	<build>
 		<plugins>
 
-      <!-- Packaging -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.1.1</version>
-        <configuration>
-          <archive>
-            <manifest>
-              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-              <useUniqueVersions>false</useUniqueVersions>
-              <packageName>SPLITTERMOND</packageName>
-            </manifest>
-            <manifestEntries>
-              <UUID>d931981e-f7ab-4cc6-8204-cefa3a4667d2</UUID>
-              <Implementation-Vendor>Frank Buettner</Implementation-Vendor>
-              <State>ABANDONED</State>
-              <Build-Time>${maven.build.timestamp}</Build-Time>
-              <MinVersion>4.0.0-SNAPSHOT</MinVersion>
-              <MaxVersion>4.99.99</MaxVersion>
-            </manifestEntries>
-          </archive>
-        </configuration>
-      </plugin>
-		
+			<!-- Packaging -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<useUniqueVersions>false</useUniqueVersions>
+							<packageName>SPLITTERMOND</packageName>
+						</manifest>
+						<manifestEntries>
+							<UUID>d931981e-f7ab-4cc6-8204-cefa3a4667d2</UUID>
+							<Implementation-Vendor>Frank Buettner</Implementation-Vendor>
+							<State>ABANDONED</State>
+							<Build-Time>${maven.build.timestamp}</Build-Time>
+							<MinVersion>4.0.0-SNAPSHOT</MinVersion>
+							<MaxVersion>4.99.99</MaxVersion>
+							<Requires>CORE</Requires>
+							<Provides>BBCODE</Provides>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
