@@ -411,7 +411,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 				}
 			}
 		}
-		
+		callback.progressChanged( 1.0f );
 		BasePluginData.flushMissingKeys();
 		logger.debug("STOP  Initialize");
 //		logger.fatal("Stop here");

@@ -114,7 +114,7 @@
 	
 	<education id="farn_ranger" variantof="border_crosser">
 		<modifications>
-			<reqmod type="cultrue" ref="unreich"/>
+			<reqmod type="culture" ref="unreich"/>
 			
 			<selmod num="1">
 				<powermod ref="tinker" />

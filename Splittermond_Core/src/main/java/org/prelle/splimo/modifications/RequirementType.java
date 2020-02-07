@@ -17,5 +17,7 @@ public enum RequirementType {
 	GENDER,
 	@EnumValue("race")
 	RACE,
+	@EnumValue("featuretype")
+	FEATURE_TYPE,
 
 }
