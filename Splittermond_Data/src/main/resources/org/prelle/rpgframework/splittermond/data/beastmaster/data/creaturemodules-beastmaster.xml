@@ -1179,8 +1179,8 @@
  	
  	<skillmod ref="melee"			value="-1"/>
     <itemmod attr="SPEED" val="1"/>
- 	<skillmod restrict="ANY_EXIST" type="NORMAL" value="-1"/>
- 	<skillmod restrict="ANY_EXIST" type="COMMON" value="-1"/>
+ 	<skillmod restrict="ANY_EXIST" choice="NORMAL" value="-1"/>
+ 	<skillmod restrict="ANY_EXIST" choice="MAGIC" value="-1"/>
  	<skillmod ref="endurance"		value="-1"/>
  	<countmod type="SPELL" count="2" />
     <countmod type="MASTERSHIP" count="1" />
@@ -1282,8 +1282,8 @@
  	<attrmod attr="DEFENSE"				val="-1"/>
  	<attrmod attr="BODYRESIST"			val="-1"/>
  	<attrmod attr="MINDRESIST"			val="-1"/>
- 	<skillmod type="NORMAL" restrict="ANY_EXIST" value="-1"/>
- 	<skillmod type="MAGIC" restrict="ANY_EXIST" value="-1"/>
+ 	<skillmod restrict="ANY_EXIST" choice="NORMAL" value="-1"/>
+ 	<skillmod restrict="ANY_EXIST" choice="MAGIC" value="-1"/>
  	<countmod type="SPELL" count="2" />
     <countmod type="MASTERSHIP" count="1" />
  	<selmod num="1">

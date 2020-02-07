@@ -259,9 +259,9 @@
 
 	<creaturemodule id="enhanced_skill" type="TRAINING"
 		cost="1">
-		<skillmod type="NORMAL" restrict="MUST_EXIST" value="3" />
-		<skillmod type="NORMAL" restrict="MUST_EXIST" value="3" />
-		<skillmod type="NORMAL" restrict="MUST_EXIST" value="2" />
+		<skillmod choice="NORMAL" restrict="MUST_EXIST" value="3" />
+		<skillmod choice="NORMAL" restrict="MUST_EXIST" value="3" />
+		<skillmod choice="NORMAL" restrict="MUST_EXIST" value="2" />
 		<requires>
 			<masterreq ref="animals/beastmaster" />
 		</requires>
