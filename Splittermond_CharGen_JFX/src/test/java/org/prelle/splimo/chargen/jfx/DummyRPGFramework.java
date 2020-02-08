@@ -112,4 +112,10 @@ public class DummyRPGFramework implements RPGFramework {
 		return null;
 	}
 
+	@Override
+	public List<String> getUpdateErrors() {
+		// TODO Auto-generated method stub
+		return new ArrayList<String>();
+	}
+
 }
