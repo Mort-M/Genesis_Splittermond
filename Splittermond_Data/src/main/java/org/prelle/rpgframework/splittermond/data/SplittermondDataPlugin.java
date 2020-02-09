@@ -405,7 +405,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 							continue;
 						}
 						logger.info("Loaded custom data  "+bundle.datafile);
-					} catch (IOException e) {
+					} catch (Exception e) {
 						logger.error("Failed for custom data "+bundle.datafile+" and its properties",e);
 					}
 				}
