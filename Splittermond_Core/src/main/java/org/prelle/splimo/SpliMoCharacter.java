@@ -69,8 +69,15 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 		}
 	}
 
+	@org.prelle.simplepersist.Attribute(name="gen")
+    private boolean generationMode;
 	@Element
 	private String name;
+	@Element(name="chargen")
+    private String chargenUsed;
+    @Element(name="chargenSettings")
+    private String chargenSettings;
+    private transient Object chargenSettingsObject;
 	@org.prelle.simplepersist.Attribute(name="race")
 	private String race;
 
@@ -1198,4 +1205,63 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 		this.deity = deity;
 	}
 
+	//-------------------------------------------------------------------
+    /**
+     * @return the generationMode
+     */
+    public boolean isGenerationMode() {
+            return generationMode;
+    }
+
+    //-------------------------------------------------------------------
+    /**
+     * @param generationMode the generationMode to set
+     */
+    public void setGenerationMode(boolean generationMode) {
+            this.generationMode = generationMode;
+    }
+
+    //-------------------------------------------------------------------
+    /**
+     * @return the chargenUsed
+     */
+    public String getChargenUsed() {
+            return chargenUsed;
+    }
+
+    //-------------------------------------------------------------------
+    /**
+     * @param chargenUsed the chargenUsed to set
+     */
+    public void setChargenUsed(String chargenUsed) {
+            this.chargenUsed = chargenUsed;
+    }
+
+    //-------------------------------------------------------------------
+    /**
+     * @return the chargenSettings
+     */
+    public String getChargenSettings() {
+            return chargenSettings;
+    }
+
+    //-------------------------------------------------------------------
+    /**
+     * @param chargenSettings the chargenSettings to set
+     */
+    public void setChargenSettings(String chargenSettings) {
+    	this.chargenSettings = chargenSettings;
+    }
+
+    //-------------------------------------------------------------------
+    public void setTemporaryChargenSettings(Object settings) {
+            this.chargenSettingsObject = settings;
+    }
+
+    //-------------------------------------------------------------------
+    @SuppressWarnings("unchecked")
+    public <T> T getTemporaryChargenSettings(Class<T> cls) {
+            return (T)chargenSettingsObject;
+    }
+    
 }
