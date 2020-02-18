@@ -144,7 +144,7 @@ public class RaceGenerator implements RaceController, SpliMoCharacterProcessor {
 		for (Modification mod : value.getModifications()) {
 			if (mod instanceof ModificationChoice) {
 				logger.debug("  to decide: "+mod);
-				decisions.add(new DecisionToMake(mod));
+				decisions.add(new DecisionToMake(mod, value.getName()));
 			}
 		}
 

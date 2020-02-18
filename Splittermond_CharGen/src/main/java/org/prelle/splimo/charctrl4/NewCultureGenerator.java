@@ -120,12 +120,12 @@ public class NewCultureGenerator implements CultureController, SpliMoCharacterPr
 		for (Modification mod : value.getModifications()) {
 			if (mod instanceof ModificationChoice) {
 				logger.debug("  to decide: "+mod);
-				decisions.add(new DecisionToMake(mod));
+				decisions.add(new DecisionToMake(mod, value.getName()));
 			} else if (mod instanceof MastershipModification) {
 				MastershipModification mmod = (MastershipModification)mod;
 				if (mmod.getMastership()==null && mmod.getSkill()==null && mmod.getSkillType()!=null) {
 					logger.debug("  to decide: "+mod);
-					decisions.add(new DecisionToMake(mod));
+					decisions.add(new DecisionToMake(mod, value.getName()));
 				}
 			}
 		}

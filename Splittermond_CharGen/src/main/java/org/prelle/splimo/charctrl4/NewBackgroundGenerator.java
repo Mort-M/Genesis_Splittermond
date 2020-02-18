@@ -173,7 +173,7 @@ public class NewBackgroundGenerator implements BackgroundController, SpliMoChara
 		for (Modification mod : value.getModifications()) {
 			if (mod instanceof ModificationChoice) {
 				logger.debug("  to decide: "+mod);
-				decisions.add(new DecisionToMake(mod));
+				decisions.add(new DecisionToMake(mod, value.getName()));
 			}
 		}
 
