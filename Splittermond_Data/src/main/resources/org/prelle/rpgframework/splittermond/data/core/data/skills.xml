@@ -2220,7 +2220,7 @@
         <mastership level="4" common="true" key="grandmaster"/>
 
         <mastership level="1" key="formbanishing"/>
-        <mastership level="1" key="favoredform"/>
+        <mastership level="1" key="favoredform" multiple="true"/>
         <mastership level="1" key="freedomofform">
             <requires>
                 <masterreq ref="favoredform"/>
