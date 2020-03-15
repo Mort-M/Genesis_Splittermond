@@ -970,6 +970,11 @@ public class SplitterTools {
 		}
 
 		for (CarriedItem carriedItem : data.getItems()) {
+			if (carriedItem.getItem()==null) {
+				logger.warn("Found a carried item with unknown referenced item: "+carriedItem.getName());
+				data.removeItem(carriedItem);
+				continue;
+			}
 			if (carriedItem.getName().equals(carriedItem.getItem().getName())){
 				carriedItem.setCustomName(null);
 			}

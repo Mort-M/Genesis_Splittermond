@@ -212,6 +212,8 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 	public String getName() {
 		if (customName!=null)
 			return customName;
+		if (ref==null)
+			return "??Unknown??";
 		return ref.getName();
 	}
 
