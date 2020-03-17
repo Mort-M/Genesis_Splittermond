@@ -267,5 +267,7 @@
 .content {
     -fx-background-color: light;
 }
-
+.description-text {
+  -fx-pref-width: 25em;
+}
  
