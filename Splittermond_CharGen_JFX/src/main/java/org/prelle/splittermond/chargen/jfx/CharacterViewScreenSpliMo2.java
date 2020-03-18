@@ -35,6 +35,7 @@ import de.rpgframework.character.CharacterProviderLoader;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
 import de.rpgframework.core.RoleplayingSystem;
+import javafx.scene.Cursor;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.Region;
 import javafx.scene.shape.SVGPath;
@@ -260,6 +261,8 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			} catch (IOException e) {
 				logger.error("Failed modifying portrait attachment",e);
 			}
+			
+			BabylonEventBus.fireEvent(BabylonEventType.CHAR_ADDED, handle);
 		} finally {
 			logger.debug("STOP : saveCharacter");
 		}
@@ -515,6 +518,7 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 		navDevelop.setVisible(true);
 
 		CharGenWizardSpliMo wizard = new CharGenWizardSpliMo(model, (SpliMoCharacterGenerator)control);
+		getScene().setCursor(Cursor.DEFAULT);
 		CloseType close = (CloseType)getManager().showAndWait(wizard);
 		logger.info("Closed with "+close);
 		GenerationEventDispatcher.removeListener(wizard);

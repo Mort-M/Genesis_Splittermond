@@ -77,7 +77,7 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 	//--------------------------------------------------------------------
 	public CarriedItem() {
 		ignoreModifications = new ModificationList();
-		location = ItemLocationType.SOMEWHEREELSE;
+		location = ItemLocationType.CONTAINER;
 		enhancements = new ArrayList<>();
 		modifications = new ArrayList<>();
 		personalizations = new ArrayList<>();
@@ -212,6 +212,8 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 	public String getName() {
 		if (customName!=null)
 			return customName;
+		if (ref==null)
+			return "??Unknown??";
 		return ref.getName();
 	}
 
