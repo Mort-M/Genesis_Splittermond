@@ -134,6 +134,7 @@ public class SplitterMondCore {
 	private static CreatureModuleList creatureModules;
 	private static PromoDataList promos;
 	private static Map<Culture, SpliMoNameTable> nameTables;
+	private static TownList towns;
 
 	private static ArrayList<Resource> BASE_RESOURCES;
 
@@ -169,6 +170,7 @@ public class SplitterMondCore {
 		creatureModules = new CreatureModuleList();
 		promos      = new PromoDataList();
 		nameTables  = new HashMap<>();
+		towns       = new TownList();
 
 		/*
 		 * Information for Gamemaster
@@ -2303,6 +2305,7 @@ public class SplitterMondCore {
 		}
 		return ret;
 	}
+	//-------------------------------------------------------------------
 	public static List<Deity> getDeitiesForCulture(Culture culture) {
 		List<Deity> result = new ArrayList<>();
 		for (Deity deity: deities) {
@@ -2313,6 +2316,7 @@ public class SplitterMondCore {
 		return result;
 	}
 
+	//-------------------------------------------------------------------
 	public static List<Deity> getDeitiesForEducation(Education education) {
 		List<Deity> result = new ArrayList<>();
 		for (Deity deity: deities) {
@@ -2322,5 +2326,54 @@ public class SplitterMondCore {
 		}
 		return result;
 	}
+
+	//-------------------------------------------------------------------
+	public static void loadTowns(RulePlugin<? extends SpliMoCharacter> plugin, InputStream in, ResourceBundle resrc, ResourceBundle helpResources) {
+		logger.debug("Load towns (Plugin="+plugin.getID()+")");
+		try {
+			TownList toAdd = serializer.read(TownList.class, in);
+			logger.info("Successfully loaded "+toAdd.size()+" towns");
+
+			// Set translation
+			for (Town tmp : toAdd) {
+				tmp.setResourceBundle(resrc);
+				tmp.setHelpResourceBundle(helpResources);
+				tmp.setPlugin(plugin);
+				tmp.getName();
+				tmp.getCultures();
+				if (logger.isDebugEnabled())
+					logger.debug("* "+tmp.getName());
+				
+				// If town already existed, remove it
+				Town prev = getTown(tmp.getId());
+				if (prev!=null) {
+					logger.debug("  Prefer "+tmp.getId()+" from '"+prev.getProductName()+"' over that from '"+tmp.getProductName()+"'");
+					toAdd.remove(tmp);
+					continue;
+				}
+			}
+
+			towns.addAll(toAdd);
+			Collections.sort(towns);
+		} catch (Exception e) {
+			logger.fatal("Failed loading towns: "+e,e);
+			return;
+		}
+	}
+
+	//-------------------------------------------------------------------
+	public static List<Town> getTowns() {
+		return towns;
+	}
+
+	//-------------------------------------------------------------------
+	public static Town getTown(String key) {
+		for (Town tmp : towns) {
+			if (tmp.getId().equals(key))
+				return tmp;
+		}
+		return null;
+	}
+
 }
 
