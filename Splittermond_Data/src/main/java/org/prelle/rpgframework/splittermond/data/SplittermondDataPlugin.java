@@ -105,6 +105,57 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 	}
 
 	//--------------------------------------------------------------------
+	public void initCoreOnly(RulePluginProgessListener callback) {
+		if (alreadyInitialized)
+			return;
+		double totalPlugins = 23.0;
+		double count = 0;
+		alreadyInitialized = true;
+		logger.info("START -------------------------------Core-----------------------------------------------");
+		PluginSkeleton CORE = new PluginSkeleton("CORE", "Splittermond Core Rules");
+		Class<SplittermondDataPlugin> clazz = SplittermondDataPlugin.class;
+		SplitterMondCore.loadPowers(CORE, clazz.getResourceAsStream("core/data/powers.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadSkills(CORE, clazz.getResourceAsStream("core/data/skills.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadMasterships(CORE, clazz.getResourceAsStream("core/data/masterships.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadSpells(CORE, clazz.getResourceAsStream("core/data/spells.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadResources(CORE, clazz.getResourceAsStream("core/data/resources.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadLanguages(CORE, clazz.getResourceAsStream("core/data/languages.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadCultureLores(CORE, clazz.getResourceAsStream("core/data/culturelores.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadBackgrounds(CORE, clazz.getResourceAsStream("core/data/backgrounds.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadRaces(CORE, clazz.getResourceAsStream("core/data/races.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadCultures(CORE, clazz.getResourceAsStream("core/data/cultures.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadEducations(CORE, clazz.getResourceAsStream("core/data/educations.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadFeatureTypes(CORE, clazz.getResourceAsStream("core/data/featuretypes.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadMaterials(CORE, clazz.getResourceAsStream("core/data/materials.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadEquipment(CORE, clazz.getResourceAsStream("core/data/equipment.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadEnhancements(CORE, clazz.getResourceAsStream("core/data/enhancements.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadCreatureTypes(CORE, clazz.getResourceAsStream("core/data/creaturetypes.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadCreatureFeatureTypes(CORE, clazz.getResourceAsStream("core/data/creaturefeaturetypes.xml"), CORE.getResources(), CORE.getHelpResources());
+		SplitterMondCore.loadCreatures(CORE, clazz.getResourceAsStream("core/data/creatures.xml"), CORE.getResources(), CORE.getHelpResources());
+		count++; callback.progressChanged( (count/totalPlugins) );
+
+		logger.info("START -------------------------------World-----------------------------------------------");
+		PluginSkeleton WORLD = new PluginSkeleton("World", "Splittermond - Die Welt");
+		SplitterMondCore.loadCultureLores(WORLD, clazz.getResourceAsStream("world/data/culturelores-world.xml"), WORLD.getResources(), WORLD.getHelpResources());
+		SplitterMondCore.loadLanguages(WORLD, clazz.getResourceAsStream("world/data/languages-world.xml"), WORLD.getResources(), WORLD.getHelpResources());
+		SplitterMondCore.loadCultures(WORLD, clazz.getResourceAsStream("world/data/cultures-world.xml"), WORLD.getResources(), WORLD.getHelpResources());
+		SplitterMondCore.loadTowns(WORLD, clazz.getResourceAsStream("world/data/towns-world.xml"), WORLD.getResources(), WORLD.getHelpResources());
+		callback.progressChanged(25.0);
+		count++; callback.progressChanged( (count/totalPlugins) );
+
+		logger.info("START -------------------------------Fahrende Völker-----------------------------------");
+		PluginSkeleton FAHREND = new PluginSkeleton("FahrendeVoelker", "Fahrende Völker");
+		SplitterMondCore.loadMasterships(FAHREND, clazz.getResourceAsStream("fahrendevoelker/data/masterships-fahrendevoelker.xml"), FAHREND.getResources(), FAHREND.getHelpResources());
+		SplitterMondCore.loadCultures(FAHREND, clazz.getResourceAsStream("fahrendevoelker/data/cultures-fahrendevoelker.xml"), FAHREND.getResources(), FAHREND.getHelpResources());
+		SplitterMondCore.loadEquipment(FAHREND, clazz.getResourceAsStream("fahrendevoelker/data/equipment-fahrendevoelker.xml"), FAHREND.getResources(), FAHREND.getHelpResources());
+		SplitterMondCore.loadEducations(FAHREND, clazz.getResourceAsStream("fahrendevoelker/data/educations-fahrendevoelker.xml"), FAHREND.getResources(), FAHREND.getHelpResources());
+		SplitterMondCore.loadNameTable(FAHREND, clazz.getResourceAsStream("fahrendevoelker/data/nametable-teleshai.xml"), FAHREND.getResources(), FAHREND.getHelpResources());
+		SplitterMondCore.loadSpells(FAHREND, clazz.getResourceAsStream("fahrendevoelker/data/spells-fahrendevoelker.xml"), FAHREND.getResources(), FAHREND.getHelpResources());
+		SplitterMondCore.loadCreatures(FAHREND, clazz.getResourceAsStream("fahrendevoelker/data/creatures-fahrendevoelker.xml"), FAHREND.getResources(), FAHREND.getHelpResources());
+		count++; callback.progressChanged( (count/totalPlugins) );
+	}
+	
+	//--------------------------------------------------------------------
 	/**
 	 * @see de.rpgframework.RulePlugin#init()
 	 */
@@ -143,6 +194,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadCultureLores(WORLD, clazz.getResourceAsStream("world/data/culturelores-world.xml"), WORLD.getResources(), WORLD.getHelpResources());
 		SplitterMondCore.loadLanguages(WORLD, clazz.getResourceAsStream("world/data/languages-world.xml"), WORLD.getResources(), WORLD.getHelpResources());
 		SplitterMondCore.loadCultures(WORLD, clazz.getResourceAsStream("world/data/cultures-world.xml"), WORLD.getResources(), WORLD.getHelpResources());
+		SplitterMondCore.loadTowns(WORLD, clazz.getResourceAsStream("world/data/towns-world.xml"), WORLD.getResources(), WORLD.getHelpResources());
 		callback.progressChanged(25.0);
 		count++; callback.progressChanged( (count/totalPlugins) );
 
