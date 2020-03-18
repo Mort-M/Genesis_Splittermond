@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<towns>
+    <town id="sarnburg" size="CAPITAL" cultures="selenia,schwertvolk"/>
+    <town id="winborn" size="LARGE_TOWN" cultures="selenia" />
+    <town id="prym" size="SMALL_TOWN" cultures="selenia" />
+</towns>
