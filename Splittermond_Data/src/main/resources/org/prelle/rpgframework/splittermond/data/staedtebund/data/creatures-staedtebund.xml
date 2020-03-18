@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<creatures>
+	<creature id="smallSeaturtle" lvl1="1" lvl2="0"> <!-- kleine Meeresschildkröte -->
+		<creaturetypes> <!-- Typus: Kreaturentypen/creature_types -->
+			<creaturetype type="REPTILE"/>
+			<creaturetype type="ANIMAL"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="1"/>
+			<attr id="AGILITY"      value="2"/>
+			<attr id="INTUITION"    value="1"/>
+			<attr id="CONSTITUTION" value="2"/>
+			<attr id="MYSTIC"       value="0"/>
+			<attr id="STRENGTH"     value="2"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="1"/>
+			<attr id="SIZE"         value="3"/>
+			<attr id="SPEED"        value="5"/>
+			<attr id="LIFE"         value="5"/>
+			<attr id="FOCUS"        value="2"/>
+			<attr id="DEFENSE"      value="20"/>
+			<attr id="DAMAGE_REDUCTION" value="4"/>
+			<attr id="BODYRESIST"   value="15"/>
+			<attr id="MINDRESIST"   value="14"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="6" dmg="1w6+1" spd="8" ini="9">
+				<features>
+					<feature type="PIERCING" level="2"/>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals> <!-- Fertigkeiten: Fertigkeiten/skills -->
+			<skillval skill="acrobatics"    val="4"/>
+			<skillval skill="athletics"     val="6"/>
+			<skillval skill="determination" val="8"/>
+			<skillval skill="stealth"       val="11"/>
+			<skillval skill="swim" 		    val="9"/>
+			<skillval skill="perception"    val="6"/>
+			<skillval skill="endurance"     val="11"/>
+		</skillvals>
+		<features> <!-- Merkmale: type = Kreaturenmerkmale/creature_feature_types -->
+			<creaturefeature type="CREATURE" level="2"/>
+			<creaturefeature type="WEAK"/>
+	 		<creaturefeature type="diver"/>
+		</features>
+	</creature>
+
+	<creature id="skullSwallow" lvl1="2" lvl2="1"> <!-- Schädelschwalbe -->
+		<creaturetypes> <!-- Typus: Kreaturentypen/creature_types -->
+			<creaturetype type="ANIMAL"/>
+			<creaturetype type="BIRD"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="1"/>
+			<attr id="AGILITY"      value="4"/>
+			<attr id="INTUITION"    value="3"/>
+			<attr id="CONSTITUTION" value="2"/>
+			<attr id="MYSTIC"       value="0"/>
+			<attr id="STRENGTH"     value="2"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="2"/>
+			<attr id="SIZE"         value="3"/>
+			<attr id="SPEED"        value="13"/>
+			<attr id="LIFE"         value="5"/>
+			<attr id="FOCUS"        value="4"/>
+			<attr id="DEFENSE"      value="22"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="15"/>
+			<attr id="MINDRESIST"   value="18"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="12" dmg="1w6+4" spd="8" ini="4">
+				<features>
+					<feature type="PIERCING" level="2"/>
+					<feature type="PENETRATING" level="1"/>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals> <!-- Fertigkeiten: Fertigkeiten/skills -->
+			<skillval skill="melee"    val="0">
+				<masterref ref="melee/rush"/>
+			</skillval>
+			<skillval skill="acrobatics"    val="8"/>
+			<skillval skill="athletics"     val="10"/>
+	 		<skillval skill="determination" val="6"/>
+			<skillval skill="dexterity" val="8"/>
+			<skillval skill="stealth"       val="13">
+				<masterref ref="stealth/creeper"/>
+			</skillval>		
+			<skillval skill="perception"    val="10"/>
+			<skillval skill="endurance"     val="6"/>
+
+		</skillvals>
+		<features> <!-- Merkmale: type = Kreaturenmerkmale/creature_feature_types -->
+			<creaturefeature type="FLYING"/>
+			<creaturefeature type="CREATURE" level="4"/>
+			<creaturefeature type="WEAK"/>
+		</features>
+	</creature>
+
+	<creature id="schillerara" lvl1="2" lvl2="1"> <!-- Schillerara -->
+		<creaturetypes> <!-- Typus: Kreaturentypen/creature_types -->
+			<creaturetype type="ANIMAL"/>
+			<creaturetype type="BIRD"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="3"/>
+			<attr id="AGILITY"      value="3"/>
+			<attr id="INTUITION"    value="2"/>
+			<attr id="CONSTITUTION" value="1"/>
+			<attr id="MYSTIC"       value="0"/>
+			<attr id="STRENGTH"     value="1"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="1"/>
+			<attr id="SIZE"         value="2"/>
+			<attr id="SPEED"        value="16"/>
+			<attr id="LIFE"         value="3"/>
+			<attr id="FOCUS"        value="2"/>
+			<attr id="DEFENSE"      value="18"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="13"/>
+			<attr id="MINDRESIST"   value="12"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="5" dmg="1w6" spd="7" ini="7">
+				<features>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals> <!-- Fertigkeiten: Fertigkeiten/skills -->
+			<skillval skill="acrobatics"    val="8"/>
+			<skillval skill="athletics"     val="10"/>
+			<skillval skill="performance"   val="6"/>
+			<skillval skill="determination" val="6"/>
+			<skillval skill="stealth"       val="8"/>
+			<skillval skill="perception"    val="10"/>
+			<skillval skill="endurance"     val="6"/>
+		</skillvals>
+		<features> <!-- Merkmale: type = Kreaturenmerkmale/creature_feature_types -->
+			<creaturefeature type="FLYING"/>
+			<creaturefeature type="POISON" level="2"/>
+			<creaturefeature type="CREATURE" level="3"/>
+			<creaturefeature type="WEAK"/>
+		</features>
+	</creature>
+	
+	<creature id="meckerape" lvl1="0" lvl2="0"> <!-- Meckeraffe -->
+		<creaturetypes> <!-- Typus: Kreaturentypen/creature_types -->
+			<creaturetype type="APE"/>		
+			<creaturetype type="ANIMAL"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="3"/>
+			<attr id="AGILITY"      value="4"/>
+			<attr id="INTUITION"    value="2"/>
+			<attr id="CONSTITUTION" value="1"/>
+			<attr id="MYSTIC"       value="0"/>
+			<attr id="STRENGTH"     value="1"/>
+			<attr id="MIND"         value="2"/>
+			<attr id="WILLPOWER"    value="2"/>
+			<attr id="SIZE"         value="2"/>
+			<attr id="SPEED"        value="10"/>
+			<attr id="LIFE"         value="3"/>
+			<attr id="FOCUS"        value="4"/>
+			<attr id="DEFENSE"      value="17"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="12"/>
+			<attr id="MINDRESIST"   value="16"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="8" dmg="1w6-1" spd="5" ini="8">
+				<features>
+					<feature type="BLUNT"/>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals> <!-- Fertigkeiten: Fertigkeiten/skills -->
+			<skillval skill="acrobatics"    val="12">
+				<masterref ref="athletics/monkey"/>
+				<masterref ref="athletics/freeclimber"/>
+			</skillval>	
+			<skillval skill="athletics"     val="10"/>
+			<skillval skill="determination" val="3"/>
+			<skillval skill="dexterity"		val="12"/>			
+			<skillval skill="stealth"       val="9"/>
+			<skillval skill="perception"    val="5"/>
+			<skillval skill="endurance"     val="2"/>
+		</skillvals>
+		<features> <!-- Merkmale: type = Kreaturenmerkmale/creature_feature_types -->
+			<creaturefeature type="LOWLIGHT"/>
+			<creaturefeature type="COWARD"/>
+			<creaturefeature type="CREATURE" level="2"/>
+			<creaturefeature type="WEAK"/>
+		</features>
+	</creature>
+
+	<creature id="parrot" lvl1="0" lvl2="0"> <!-- Papagei -->
+		<creaturetypes> <!-- Typus: Kreaturentypen/creature_types -->
+			<creaturetype type="ANIMAL"/>
+			<creaturetype type="BIRD"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="3"/>
+			<attr id="AGILITY"      value="3"/>
+			<attr id="INTUITION"    value="2"/>
+			<attr id="CONSTITUTION" value="1"/>
+			<attr id="MYSTIC"       value="0"/>
+			<attr id="STRENGTH"     value="1"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="1"/>
+			<attr id="SIZE"         value="2"/>
+			<attr id="SPEED"        value="16"/>
+			<attr id="LIFE"         value="3"/>
+			<attr id="FOCUS"        value="2"/>
+			<attr id="DEFENSE"      value="18"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="13"/>
+			<attr id="MINDRESIST"   value="12"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="5" dmg="1w6" spd="7" ini="7">
+				<features>
+					<feature type="BLUNT"/>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals> <!-- Fertigkeiten: Fertigkeiten/skills -->
+			<skillval skill="acrobatics"    val="10"/>
+			<skillval skill="athletics"     val="8"/>
+			<skillval skill="determination" val="4"/>
+			<skillval skill="stealth"       val="11"/>
+			<skillval skill="perception"    val="10"/>
+			<skillval skill="endurance"     val="4"/>
+		</skillvals>
+		<features> <!-- Merkmale: type = Kreaturenmerkmale/creature_feature_types -->
+			<creaturefeature type="FLYING"/>
+			<creaturefeature type="RESIST_HEAT" level="1"/>
+			<creaturefeature type="CREATURE" level="2"/>
+			<creaturefeature type="WEAK"/>
+		</features>
+	</creature>
+	
+</creatures>
