@@ -25,10 +25,11 @@ import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.Spell;
 import org.prelle.splimo.SpellType;
 import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.creature.Creature;
 import org.prelle.splimo.creature.CreatureFeatureType;
 import org.prelle.splimo.creature.CreatureType;
 import org.prelle.splimo.items.FeatureType;
-import org.prelle.splimo.creature.Creature;
+import org.prelle.splimo.items.ItemTemplate;
 
 /**
  * @author prelle
@@ -64,7 +65,10 @@ public class IDExporter {
 		generateResources();
 		generateSpellTypes();
 		generateFeatureTypes();
+		generateCreatures();
+		generateEquipments();
 	}
+
 
 	//-------------------------------------------------------------------
 	/**
@@ -429,7 +433,7 @@ public class IDExporter {
 		out.flush();
 		out.close();
 	}
-	
+
 	//-------------------------------------------------------------------
 	/**
 	 * @throws IOException - Neu 17.04.2019 AS
@@ -458,5 +462,34 @@ public class IDExporter {
 		out.flush();
 		out.close();
 	}
-
+	//-------------------------------------------------------------------
+	/**
+	 * @throws IOException - Neu 20.04.2019 AS
+	 */
+	private static void generateEquipments() throws IOException {
+		PrintWriter out = new PrintWriter(new FileWriter(new File("equipments.html")));
+		out.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+		out.println("<html>");
+		out.println(" <head>");
+		out.println("   <title>Gegenstände</title>");
+		out.println(" </head>");
+		out.println(" <body>");
+		out.println("   <table border=\"1\">");
+		out.println("    <tr><th>Gegenstand</th><th>ID</th><th>Verfügbar</th><th>Preis</th><th>Last</th><th>Härte</th><th>Kompl.</th><th>Fertigkeit/Schwerpunkt</th><th>Material</th><th>Type</th><th>Quelle</th></tr>");
+		List<ItemTemplate> list =SplitterMondCore.getItems();
+		Collections.sort(list, new Comparator<ItemTemplate>() {
+			public int compare(ItemTemplate o1, ItemTemplate o2) {
+				return o1.getName().compareTo(o2.getName());
+			}
+		});
+		for (ItemTemplate data : list) {
+			out.println("    <tr><td>"+data.getName()+"</td><td>"+data.getId()+"</td><td>"+data.getAvailability()+"</td><td>"+data.getPrice()+"</td><td>"+data.getLoad()+"</td><td>"+data.getRigidity()+"</td><td>"+data.getComplexity()+"</td><td>"+data.getSpecialization()+"</td><td>"+data.getMaterialType()+"</td><td>"+data.getFirstItemType()+"</td><td>"+data.getProductNameShort()+" "+data.getPage()+"</td></tr>");
+		}
+		out.println("  </table>");
+		out.println(" </body>");
+		out.flush();
+		out.close();
+	}
+	
+	
 }
