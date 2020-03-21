@@ -426,11 +426,9 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadNameTable(BAD, clazz.getResourceAsStream("badashan/data/nametable-badashan.xml"), BAD.getResources(), BAD.getHelpResources());
 		count++; callback.progressChanged( (count/totalPlugins) );
 
-		logger.info("START -------------------------------Städtebund------------------------------------------");
+		logger.info("START ------------------------Mertalische Städtebund-----------------------------------");
 		PluginSkeleton MSB = new PluginSkeleton("Staedtebund", "Der Mertalische Städtebund");
-//		SplitterMondCore.loadEquipment(BAD, clazz.getResourceAsStream("badashan/data/equipment-badashan.xml"), BAD.getResources(), BAD.getHelpResources());
-//		SplitterMondCore.loadEquipment(BAD, clazz.getResourceAsStream("badashan/data/alchemy-badashan.xml"), BAD.getResources(), BAD.getHelpResources());
-//		SplitterMondCore.loadEducations(BAD, clazz.getResourceAsStream("badashan/data/educations-badashan.xml"), BAD.getResources(), BAD.getHelpResources());
+		SplitterMondCore.loadEducations(MSB, clazz.getResourceAsStream("staedtebund/data/educations-staedtebund.xml"), MSB.getResources(), MSB.getHelpResources());
 		SplitterMondCore.loadNameTable(MSB, clazz.getResourceAsStream("staedtebund/data/nametable-staedtebund.xml"), MSB.getResources(), MSB.getHelpResources());
 		count++; callback.progressChanged( (count/totalPlugins) );		
 
