@@ -1,6 +1,9 @@
 package de.rpgframework.splittermond.print.json;
 
+import java.io.File;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -14,8 +17,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
 
+import com.google.gson.Gson;
+
 import de.rpgframework.ConfigContainer;
 import de.rpgframework.ConfigOption;
+import de.rpgframework.ConfigOption.Type;
 import de.rpgframework.character.RulePlugin;
 import de.rpgframework.character.RulePluginFeatures;
 import de.rpgframework.core.CommandBus;
@@ -38,7 +44,7 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 	private static Logger logger = LogManager.getLogger(JSONExportPlugin.class);
 
 	private static Preferences usr = Preferences.userRoot().node("/org/prelle/splittermond/print");
-	ConfigOption<String> OPTION_PATH;
+	private ConfigOption<String> OPTION_PATH;
 
 	//-------------------------------------------------------------------
 	public JSONExportPlugin() {
@@ -78,10 +84,10 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 			logger.error("Expected splittermond node below "+addBelow.getPathID());
 			return;
 		}
-		ConfigContainer cfgBBCode = cfgSpliMo.createContainer("json");
-		cfgBBCode.changePreferences(usr);
-		cfgBBCode.setResourceBundle( (PropertyResourceBundle)ResourceBundle.getBundle(JSONExportPlugin.class.getName()));
-		OPTION_PATH = cfgBBCode.createOption("path", ConfigOption.Type.DIRECTORY, System.getProperty("user.home"));
+		ConfigContainer cfgJSON = cfgSpliMo.createContainer("json");
+		cfgJSON.changePreferences(usr);
+		cfgJSON.setResourceBundle( (PropertyResourceBundle)ResourceBundle.getBundle(JSONExportPlugin.class.getName()));
+		OPTION_PATH = cfgJSON.createOption("path", ConfigOption.Type.DIRECTORY, System.getProperty("user.home"));
 	}
 
 	//-------------------------------------------------------------------
@@ -94,12 +100,6 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 	@Override
 	public boolean willProcessCommand(Object src, CommandType type,
 			Object... values) {
-		if (logger.isTraceEnabled()) {
-			logger.trace(src);
-			logger.trace(type);
-			logger.trace(values);
-		}
-
 		boolean result = false;
 		switch (type) {
 		case PRINT:
@@ -123,10 +123,6 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 	@Override
 	public CommandResult handleCommand(Object src, CommandType type,
 			Object... values) {
-		logger.trace(src);
-		logger.trace(type);
-		logger.trace(values);
-
 		CommandResult commandResult = null;
 		switch (type) {
 		case PRINT_GET_OPTIONS:
@@ -147,7 +143,13 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 					/*
 					 * Create your JSON
 					 */
+					logger.info("Export as resolved JSON format: "+model.getName());
 					String json = "{}";
+					
+					// Write
+					Path   printToFile = new File(new File(OPTION_PATH.getStringValue()), model.getName()+".json").toPath();
+					Files.writeString(printToFile, json);
+					
 
 					commandResult = new CommandResult(type, json);
 				} catch (Exception e) {
