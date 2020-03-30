@@ -209,6 +209,11 @@ public class SplitterTools {
 				return SplitterMondCore.getI18nResources().getString("label.mastership")
 						+" "+master.getSkill().getName()+"/"+master.getName();
 			} else if (spec!=null) {
+				if (spec.getSpecial()==null)
+					return SplitterMondCore.getI18nResources().getString("label.specialization")+" UNBEKANNT";
+				if (spec.getSpecial().getSkill()==null)
+					return SplitterMondCore.getI18nResources().getString("label.specialization")
+							+" UNBEKANNT/"+spec.getSpecial().getName();
 				return SplitterMondCore.getI18nResources().getString("label.specialization")
 						+" "+spec.getSpecial().getSkill().getName()+"/"+spec.getSpecial().getName();
 			} else {
@@ -586,9 +591,13 @@ public class SplitterTools {
 					logger.debug("Added "+data.getSkill()+" "+special.getLevel());
 				} else if (data.getMastership()==null) {
 					// No specialization, no mastership - must be associated with the skill of the item itself
-					logger.warn("Character has an invalid saved Mastership modification. Try to fix it");
+					logger.warn("Character has an invalid saved Mastership modification for skill "+skill+". Try to fix it");
 					data.setSpecialization(new SkillSpecializationValue(spec, data.getLevel()));
-					logger.warn("Added specializatation  "+model.getSkillValue(skill));
+					try {
+						logger.warn("Added specializatation  "+model.getSkillValue(skill));
+					} catch (NullPointerException e) {
+						logger.error("Character has an invalid saved Mastership modification, that could bot be fixed",e);
+					}
 				} else {
 					logger.warn("Don't know how to apply "+data);
 					throw new RuntimeException("Trace");
