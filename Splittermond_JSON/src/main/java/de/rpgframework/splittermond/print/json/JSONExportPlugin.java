@@ -116,6 +116,10 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 		return result;
 	}
 
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.core.CommandBusListener#handleCommand(java.lang.Object, de.rpgframework.core.CommandType, java.lang.Object[])
+	 */
 	@Override
 	public CommandResult handleCommand(Object src, CommandType type,
 			Object... values) {
