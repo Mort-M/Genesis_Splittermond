@@ -20,8 +20,8 @@
 
 	<developers>
 		<developer>
-			<name>Frank Büttner</name>
-			<email>frank.buettner@posteo.de</email>
+			<name>Anja Prelle</name>
+			<email>anja@rpgframework.de</email>
 			<timezone>GMT+1</timezone>
 			<roles>
 				<role>Lead developer</role>
@@ -68,14 +68,14 @@
 							<packageName>SPLITTERMOND</packageName>
 						</manifest>
 						<manifestEntries>
-							<UUID>d931981e-f7ab-4cc6-8204-cefa3a4667d2</UUID>
-							<Implementation-Vendor>Frank Buettner</Implementation-Vendor>
-							<State>ABANDONED</State>
+							<UUID>01a83173-eac2-482a-9b2d-fffe3be45258</UUID>
+							<Bugtracker>https://rpgframework.atlassian.net/servicedesk/customer/portals</Bugtracker>
+							<State>STABLE</State>
 							<Build-Time>${maven.build.timestamp}</Build-Time>
 							<MinVersion>4.0.0-SNAPSHOT</MinVersion>
 							<MaxVersion>4.99.99</MaxVersion>
 							<Requires>CORE</Requires>
-							<Provides>BBCODE</Provides>
+							<Provides>JSON</Provides>
 						</manifestEntries>
 					</archive>
 				</configuration>
