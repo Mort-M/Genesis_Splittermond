@@ -1,2 +1,0 @@
-2020-03-30 18:22:18.598  INFO [de.rpgframework.splittermond.print.json.JSONExportPlugin] (JSONExportPlugin.java:144) - print called  BBCODE
-2020-03-30 18:22:48.003  INFO [de.rpgframework.splittermond.print.json.JSONExportPlugin] (JSONExportPlugin.java:144) - print called  BBCODE
