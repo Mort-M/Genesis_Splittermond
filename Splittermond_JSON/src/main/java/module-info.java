@@ -4,6 +4,9 @@
  */
 module splittermond.json {
 	exports de.rpgframework.splittermond.print.json;
+	exports de.rpgframework.splittermond.print.json.model;
+
+	opens de.rpgframework.splittermond.print.json.model;
 
 	provides de.rpgframework.character.RulePlugin with de.rpgframework.splittermond.print.json.JSONExportPlugin;
 
