@@ -12,4 +12,5 @@ public class JSONSpell {
     public String spellDuration;
     public String enhancement;
     public String page;
+    public String longDescription ="";
 }

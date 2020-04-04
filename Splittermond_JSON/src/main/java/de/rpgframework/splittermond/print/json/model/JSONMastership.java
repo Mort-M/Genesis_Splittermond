@@ -1,9 +1,9 @@
 package de.rpgframework.splittermond.print.json.model;
 
-public class JSONPower {
+public class JSONMastership {
     public String name;
-    public int count;
+    public int level;
     public String shortDescription = "";
     public String longDescription = "";
-    public String page;
+    public String page = "";
 }

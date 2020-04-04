@@ -14,7 +14,7 @@ public class JSONCharacter {
     public String education;
     public List<String> cultureLores;
     public List<String> languages;
-    public String moonSign;
+    public JSONMoonSign moonSign;
     public int freeExp;
     public int investedExp;
     public String hairColor;
@@ -30,4 +30,11 @@ public class JSONCharacter {
     public List<JSONPower> powers;
     public List<JSONResource> resources;
     public List<JSONSpell> spells;
+    public List<JSONArmor> armors;
+    public List<JSONWeapon> weapons;
+    public List<JSONItem> items;
+    public List<JSONNote> notes;
+    public List<JSONCreature> creatures;
+    public List<JSONShield> shields;
+    public List<JSONMeleeWeapon> meleeWeapons;
 }

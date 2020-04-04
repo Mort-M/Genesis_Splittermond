@@ -8,6 +8,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.prefs.Preferences;
 
+import de.rpgframework.DummyRPGFrameworkInitCallback;
+import de.rpgframework.RPGFramework;
+import de.rpgframework.RPGFrameworkLoader;
+import de.rpgframework.boot.StandardBootSteps;
 import org.junit.Test;
 import org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 import org.prelle.splimo.SpliMoCharacter;
@@ -27,8 +31,14 @@ public class ExportJSONTest {
 	//-------------------------------------------------------------------
 	@Test
 	public void loadDataTest() throws IOException {
+		RPGFramework framework = RPGFrameworkLoader.getInstance();
+		framework.addBootStep(StandardBootSteps.FRAMEWORK_PLUGINS);
+		framework.addBootStep(StandardBootSteps.ROLEPLAYING_SYSTEMS);
+		framework.initialize(new DummyRPGFrameworkInitCallback());
+
 		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
 		plugin.init( (percent) -> {});
+//		SplitterMondCore.initialize(null);
 		ConfigContainer parent = new ConfigContainerImpl(Preferences.userRoot(), "foo");
 		parent.createContainer("splittermond");
 		
