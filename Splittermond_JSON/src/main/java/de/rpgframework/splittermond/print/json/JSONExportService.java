@@ -8,6 +8,7 @@ import de.rpgframework.splittermond.print.json.model.JSONArmor;
 import de.rpgframework.splittermond.print.json.model.JSONAttribute;
 import de.rpgframework.splittermond.print.json.model.JSONCharacter;
 import de.rpgframework.splittermond.print.json.model.JSONFeature;
+import de.rpgframework.splittermond.print.json.model.JSONItem;
 import de.rpgframework.splittermond.print.json.model.JSONMastership;
 import de.rpgframework.splittermond.print.json.model.JSONMeleeWeapon;
 import de.rpgframework.splittermond.print.json.model.JSONMoonSign;
@@ -24,6 +25,7 @@ import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Power;
 import org.prelle.splimo.PowerReference;
 import org.prelle.splimo.ResourceReference;
+import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.Spell;
 import org.prelle.splimo.SpellValue;
@@ -32,6 +34,7 @@ import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.Feature;
+import org.prelle.splimo.items.FeatureType;
 import org.prelle.splimo.items.ItemType;
 import org.prelle.splimo.items.LongRangeWeapon;
 import org.prelle.splimo.persist.WeaponDamageConverter;
@@ -65,7 +68,6 @@ public class JSONExportService {
         setMeleeWeapons(jsonCharacter, character);
         setLongRangeWeapons(jsonCharacter, character);
         setItems(jsonCharacter, character);
-        setCreatures(jsonCharacter, character);
         return jsonCharacter;
     }
 
@@ -129,25 +131,26 @@ public class JSONExportService {
         jsonCharacter.shields = jsonShields;
     }
 
-    private void setCreatures(JSONCharacter jsonCharacter, SpliMoCharacter character) {
-
-    }
-
     private void setItems(JSONCharacter jsonCharacter, SpliMoCharacter character) {
-
+        List<JSONItem> jsonItems = new ArrayList<>();
+        List<CarriedItem> items = character.getItems()
+                .stream()
+                .filter(i -> !i.isType(SHIELD) && !i.isType(ARMOR) && !i.isType(WEAPON) && !i.isType(LONG_RANGE_WEAPON))
+                .collect(Collectors.toList());
+        for (CarriedItem item : items) {
+            JSONItem jsonItem = new JSONItem();
+            jsonItem.name = item.getName();
+            jsonItem.count = item.getCount();
+            jsonItem.relic = item.isRelic();
+            jsonItem.personalized = item.getName() != null && !item.getPersonalizations().isEmpty();
+            jsonItems.add(jsonItem);
+        }
+        jsonCharacter.items = jsonItems;
     }
 
     private void setMeleeWeapons(JSONCharacter jsonCharacter, SpliMoCharacter character) {
         List<JSONMeleeWeapon> meleeWeapons = new ArrayList<>();
         List<CarriedItem> items = character.getItems().stream().filter(i -> i.isType(WEAPON)).collect(Collectors.toList());
-// table.addCell(getWhiteOnDarkCellSmall("Nahkampf"));
-//        table.addCell(getWhiteOnDarkCellSmall("Wert", true));
-//        table.addCell(getWhiteOnDarkCellSmall("Fertigkeit", true));
-//        table.addCell(getWhiteOnDarkCellSmall("Attribute", true));
-//        table.addCell(getWhiteOnDarkCellSmall("Schaden", true));
-//        table.addCell(getWhiteOnDarkCellSmall("Geschw.", true));
-//        table.addCell(getWhiteOnDarkCellSmall("Merkmale"));
-//        table.addCell(getWhiteOnDarkCellSmall("Bemerkung"));
         meleeWeapons.add(getMeleeAsSkill(character));
         for (CarriedItem item : items) {
             JSONMeleeWeapon jsonWeapon = new JSONMeleeWeapon();
@@ -159,15 +162,18 @@ public class JSONExportService {
             String attribute1Name = item.getAttribute1(WEAPON).getShortName();
             String attribute2Name = item.getAttribute2(WEAPON).getShortName();
             int weaponSkill = SplitterTools.getWeaponValueFor(character, item, WEAPON);
-            int weaponSpeed = SplitterTools.getWeaponSpeedFor(character, item, WEAPON);
+            int tickMalus = SplitterTools.getTickMalusSum(character, true);
+            int weaponSpeed = SplitterTools.getWeaponSpeedFor(character, item, WEAPON) - tickMalus;
             jsonWeapon.skill = item.getSkill(WEAPON).getName();
             jsonWeapon.skillValue = weaponSkill;
             jsonWeapon.attribute1 = attribute1Name;
             jsonWeapon.attribute2 = attribute2Name;
             if (hasLicense) {
                 jsonWeapon.damage = getWeaponDamageString(item.getDamage(WEAPON));
-                jsonWeapon.speed = weaponSpeed;
+                jsonWeapon.weaponSpeed = weaponSpeed;
+                jsonWeapon.calculatedSpeed = weaponSpeed + tickMalus;
             }
+            jsonWeapon.characterTickMalus = tickMalus;
             jsonWeapon.relic = item.isRelic();
             jsonWeapon.personalized = item.getPersonalizations() != null && !item.getPersonalizations().isEmpty();
             jsonWeapon.features = getFeatures(item, WEAPON);
@@ -188,20 +194,33 @@ public class JSONExportService {
     private JSONMeleeWeapon getMeleeAsSkill(SpliMoCharacter character) {
         JSONMeleeWeapon weapon = new JSONMeleeWeapon();
         weapon.name = "Waffenlos";
-        weapon.skill = SplitterMondCore.getSkill("melee").getName();
+        Skill melee = SplitterMondCore.getSkill("melee");
+        if (melee != null) {
+            weapon.skill = melee.getName();
+        }
         weapon.attribute1 = Attribute.AGILITY.getShortName();
         weapon.attribute2 = Attribute.STRENGTH.getShortName();
         weapon.skillValue = character.getMeleeValue();
         List<JSONFeature> jsonFeatures = new ArrayList<>();
-        String[] features = new String[]{"Entwaffnend1", "Stumpf" , "Umklammern"};
+        String[] features = new String[]{"DISARMING", "BLUNT" , "CLUTCH"};
         for (String feature : features) {
-            JSONFeature jsonFeature = new JSONFeature();
-            jsonFeature.name = feature;
-            jsonFeatures.add(jsonFeature);
+            FeatureType featureType = SplitterMondCore.getFeatureType(feature);
+            if (featureType != null) {
+                JSONFeature jsonFeature = new JSONFeature();
+                jsonFeature.name = featureType.getName();
+                if (feature.equals("DISARMING")) {
+                    jsonFeature.level = 1;
+                }
+                jsonFeature.description = featureType.getHelpText();
+                jsonFeature.page = getPageString(featureType.getPage(), featureType.getProductNameShort());
+                jsonFeatures.add(jsonFeature);
+            }
         }
         weapon.features = jsonFeatures;
         weapon.damage = "1W6";
-        weapon.speed = 5 + SplitterTools.getTickMalusSum(character, true);
+        weapon.weaponSpeed = 5;
+        weapon.characterTickMalus = SplitterTools.getTickMalusSum(character, true);
+        weapon.calculatedSpeed = 5 + SplitterTools.getTickMalusSum(character, true);
         return weapon;
     }
 
@@ -249,8 +268,7 @@ public class JSONExportService {
             Integer effectRange = spell.getEffectRange();
             jsonSpell.name = spell.getName();
             jsonSpell.id = spell.getId();
-            int value = character.getSpellValueFor(spellValue);
-            jsonSpell.value = value;
+            jsonSpell.value = character.getSpellValueFor(spellValue);
             jsonSpell.school = spellValue.getSkill().getName();
             jsonSpell.schoolGrade = spell.getLevelInSchool(spellValue.getSkill());
             jsonSpell.difficulty = spell.getDifficultyString();
@@ -405,8 +423,10 @@ public class JSONExportService {
         jsonCharacter.size = character.getSize();
         jsonCharacter.weight = character.getWeight();
         jsonCharacter.gender = character.getGender().toString();
-        if (character.getDeity()!=null)
-        	jsonCharacter.deity = character.getDeity().getName();
+        if (character.getDeity()!=null) {
+            jsonCharacter.deity = character.getDeity().getName();
+        }
+        jsonCharacter.notes = character.getNotes();
     }
 
     private JSONMoonSign getJSONMoonSign(SpliMoCharacter character) {
