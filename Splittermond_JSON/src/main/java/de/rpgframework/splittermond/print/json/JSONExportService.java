@@ -405,7 +405,8 @@ public class JSONExportService {
         jsonCharacter.size = character.getSize();
         jsonCharacter.weight = character.getWeight();
         jsonCharacter.gender = character.getGender().toString();
-        jsonCharacter.deity = character.getDeity().getName();
+        if (character.getDeity()!=null)
+        	jsonCharacter.deity = character.getDeity().getName();
     }
 
     private JSONMoonSign getJSONMoonSign(SpliMoCharacter character) {
