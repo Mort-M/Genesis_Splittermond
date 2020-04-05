@@ -400,6 +400,7 @@ public class JSONExportService {
         JSONAttribute jsonAttribute = new JSONAttribute();
         AttributeValue attributeValue = character.getAttribute(attribute);
         jsonAttribute.name = attribute.getName();
+        jsonAttribute.shortName = attribute.getShortName();
         jsonAttribute.startValue = attributeValue.getStart();
         jsonAttribute.value = attributeValue.getValue();
         return jsonAttribute;
@@ -433,11 +434,6 @@ public class JSONExportService {
         JSONMoonSign jsonMoonSign = new JSONMoonSign();
         jsonMoonSign.name = character.getSplinter().getName();
         jsonMoonSign.description = character.getSplinter().getDescription();
-        Map<Integer, String> levelMap = new HashMap<>();
-        for (int i = 1; i < 5; i++) {
-            levelMap.put(i, character.getSplinter().getLevelText(i));
-        }
-        jsonMoonSign.levelTexts = levelMap;
         return jsonMoonSign;
     }
 
