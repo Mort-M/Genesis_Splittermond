@@ -1,10 +1,13 @@
 package de.rpgframework.splittermond.print.json.model;
 
+import de.rpgframework.core.RoleplayingSystem;
+
 import java.util.List;
 
 public class JSONCharacter {
 
     public String jsonExporterVersion = "1";
+    public String system = RoleplayingSystem.SPLITTERMOND.name();
 
     public String name;
     public String race;
@@ -31,10 +34,10 @@ public class JSONCharacter {
     public List<JSONResource> resources;
     public List<JSONSpell> spells;
     public List<JSONArmor> armors;
-    public List<JSONWeapon> weapons;
     public List<JSONItem> items;
     public List<JSONNote> notes;
     public List<JSONCreature> creatures;
     public List<JSONShield> shields;
     public List<JSONMeleeWeapon> meleeWeapons;
+    public List<JSONLongRangeWeapon> longRangeWeapons;
 }

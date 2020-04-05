@@ -2,6 +2,7 @@ package de.rpgframework.splittermond.print.json.model;
 
 public class JSONSpell {
     public String name;
+    public String id;
     public int value;
     public String school;
     public int schoolGrade;

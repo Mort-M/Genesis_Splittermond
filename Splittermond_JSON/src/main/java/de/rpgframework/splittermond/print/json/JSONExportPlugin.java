@@ -32,12 +32,9 @@ import de.rpgframework.core.RoleplayingSystem;
 import de.rpgframework.print.PrintType;
 
 /**
- * This is the print plugin for the creation of bbcodes for a
+ * This is the print plugin for the creation of json output for a
  * {@link SpliMoCharacter}. This class registers itself to the
  * {@link CommandBus}.
- *
- * @author frank.buettner
- *
  */
 public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBusListener {
 
@@ -103,7 +100,7 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 		boolean result = false;
 		switch (type) {
 		case PRINT:
-			result = values[4]==PrintType.BBCODE;
+			result = values[4]==PrintType.JSON;
 			break;
 		case PRINT_GET_OPTIONS:
 			if (values[0] == RoleplayingSystem.SPLITTERMOND)
@@ -127,7 +124,7 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 		switch (type) {
 		case PRINT_GET_OPTIONS:
 			Object[] result = new Object[2];
-			result[0] = Arrays.asList(PrintType.BBCODE);
+			result[0] = Arrays.asList(PrintType.JSON);
 			result[1] = getConfiguration();
 			commandResult = new CommandResult(type, result);
 			break;
@@ -136,9 +133,8 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 			// 2. Scene
 			// 3. ScreenManager
 			PrintType format = (PrintType) values[4];
-			// Only BBCode printing supported
 			logger.info("print called  "+format);
-			if (format == PrintType.BBCODE) {
+			if (format == PrintType.JSON) {
 				try {
 					/*
 					 * Create your JSON
@@ -201,7 +197,7 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 	 */
 	@Override
 	public InputStream getAboutHTML() {
-		return ClassLoader.getSystemResourceAsStream("de/rpgframework/splittermond/print/bbcode/i18n/splittermond/print_json.html");
+		return ClassLoader.getSystemResourceAsStream("de/rpgframework/splittermond/print/json/i18n/splittermond/print_json.html");
 	}
 
 	//-------------------------------------------------------------------

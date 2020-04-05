@@ -38,7 +38,7 @@ public class ExportJSONTest {
 
 		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
 		plugin.init( (percent) -> {});
-//		SplitterMondCore.initialize(null);
+		SplitterMondCore.initialize(null);
 		ConfigContainer parent = new ConfigContainerImpl(Preferences.userRoot(), "foo");
 		parent.createContainer("splittermond");
 		
@@ -57,7 +57,7 @@ public class ExportJSONTest {
         		character,
         		null, // Scene
         		null, // ScreenManager
-        		PrintType.BBCODE
+        		PrintType.JSON
         		);
         
        assertNotNull(result);

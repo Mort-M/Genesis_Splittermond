@@ -12,6 +12,7 @@ import de.rpgframework.splittermond.print.json.model.JSONMastership;
 import de.rpgframework.splittermond.print.json.model.JSONMeleeWeapon;
 import de.rpgframework.splittermond.print.json.model.JSONMoonSign;
 import de.rpgframework.splittermond.print.json.model.JSONPower;
+import de.rpgframework.splittermond.print.json.model.JSONLongRangeWeapon;
 import de.rpgframework.splittermond.print.json.model.JSONResource;
 import de.rpgframework.splittermond.print.json.model.JSONShield;
 import de.rpgframework.splittermond.print.json.model.JSONSkill;
@@ -32,6 +33,7 @@ import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.Feature;
 import org.prelle.splimo.items.ItemType;
+import org.prelle.splimo.items.LongRangeWeapon;
 import org.prelle.splimo.persist.WeaponDamageConverter;
 
 import java.util.ArrayList;
@@ -45,7 +47,7 @@ import static org.prelle.splimo.items.ItemType.*;
 public class JSONExportService {
 
     public String exportCharacter(SpliMoCharacter character) {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
         return gson.toJson(getJSONCharacter(character));
     }
 
@@ -61,14 +63,44 @@ public class JSONExportService {
         setArmors(jsonCharacter, character);
         setShields(jsonCharacter, character);
         setMeleeWeapons(jsonCharacter, character);
-        setRangedWeapons(jsonCharacter, character);
+        setLongRangeWeapons(jsonCharacter, character);
         setItems(jsonCharacter, character);
         setCreatures(jsonCharacter, character);
         return jsonCharacter;
     }
 
-    private void setRangedWeapons(JSONCharacter jsonCharacter, SpliMoCharacter character) {
+    private void setLongRangeWeapons(JSONCharacter jsonCharacter, SpliMoCharacter character) {
+        List<JSONLongRangeWeapon> jsonLongRangeWeapons = new ArrayList<>();
+        List<CarriedItem> items = character.getItems().stream().filter(i -> i.isType(LONG_RANGE_WEAPON)).collect(Collectors.toList());
+        for (CarriedItem item : items) {
+            JSONLongRangeWeapon jsonLongRangeWeapon = new JSONLongRangeWeapon();
+            //Fernkampf Wert Fertigkeit Attribute Schaden Geschw. Reichweite Merkmale
+            jsonLongRangeWeapon.name = item.getName();
 
+            boolean hasLicense = true;
+            if (item.getItem().getPlugin()!=null){
+                hasLicense = RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(RoleplayingSystem.SPLITTERMOND,item.getItem().getPlugin().getID()) || item.getItem().getPlugin().getID().equals("CORE");
+            }
+            jsonLongRangeWeapon.value = SplitterTools.getWeaponValueFor(character, item, LONG_RANGE_WEAPON);
+            jsonLongRangeWeapon.skill = item.getSkill(LONG_RANGE_WEAPON).getName();
+            jsonLongRangeWeapon.attribute1 = item.getAttribute1(LONG_RANGE_WEAPON).getShortName();
+            jsonLongRangeWeapon.attribute2 = item.getAttribute2(LONG_RANGE_WEAPON).getShortName();
+            jsonLongRangeWeapon.damage = hasLicense? getWeaponDamageString(item.getDamage(LONG_RANGE_WEAPON)) : "";
+            int tickMalus   = SplitterTools.getTickMalusSum  (character, true);
+            int weaponSpeed = SplitterTools.getWeaponSpeedFor(character, item, LONG_RANGE_WEAPON) - tickMalus;
+            jsonLongRangeWeapon.weaponSpeed = hasLicense? weaponSpeed: 0;
+            jsonLongRangeWeapon.characterTickMalus = tickMalus;
+            jsonLongRangeWeapon.calculatedSpeed = hasLicense? weaponSpeed - tickMalus : 0;
+
+            LongRangeWeapon longRangeWeapon = item.getItem().getType(LongRangeWeapon.class);
+            int range = longRangeWeapon.getRange();
+            jsonLongRangeWeapon.range = hasLicense? range : 0;
+            jsonLongRangeWeapon.features = getFeatures(item, LONG_RANGE_WEAPON);
+            jsonLongRangeWeapon.relic = item.isRelic();
+            jsonLongRangeWeapon.personalized = item.getPersonalizations() != null && !item.getPersonalizations().isEmpty();
+            jsonLongRangeWeapons.add(jsonLongRangeWeapon);
+        }
+        jsonCharacter.longRangeWeapons = jsonLongRangeWeapons;
     }
 
     private void setShields(JSONCharacter jsonCharacter, SpliMoCharacter character) {
@@ -216,6 +248,7 @@ public class JSONExportService {
             Spell spell = spellValue.getSpell();
             Integer effectRange = spell.getEffectRange();
             jsonSpell.name = spell.getName();
+            jsonSpell.id = spell.getId();
             int value = character.getSpellValueFor(spellValue);
             jsonSpell.value = value;
             jsonSpell.school = spellValue.getSkill().getName();
@@ -264,13 +297,14 @@ public class JSONExportService {
     private JSONSkill getJSONSkill(SkillValue skillValue, SpliMoCharacter character) {
         JSONSkill jsonSkill = new JSONSkill();
         jsonSkill.name = skillValue.getName();
+        jsonSkill.id = skillValue.getModifyable().getId();
         Attribute attribute1 = skillValue.getModifyable().getAttribute1();
         if (attribute1 != null) {
-            jsonSkill.attribute1 = attribute1.getName();
+            jsonSkill.attribute1 = attribute1.getShortName();
         }
         Attribute attribute2 = skillValue.getModifyable().getAttribute2();
         if (attribute2 != null) {
-            jsonSkill.attribute2 = attribute2.getName();
+            jsonSkill.attribute2 = attribute2.getShortName();
         }
         if (attribute1 != null && attribute2 != null) {
             int valueAttr1 = character.getAttribute(attribute1).getValue();
@@ -288,9 +322,11 @@ public class JSONExportService {
             Mastership mastership = mastershipRef.getMastership();
             if (mastership == null){
                 jsonMastership.name = mastershipRef.getSpecialization().getName();
+                jsonMastership.id = mastershipRef.getSpecialization().getSpecial().getId();
                 jsonMastership.level = mastershipRef.getSpecialization().getLevel();
             }   else {
                 jsonMastership.name = mastership.getName();
+                jsonMastership.id = mastership.getId();
                 jsonMastership.level = mastership.getLevel();
                 jsonMastership.shortDescription = mastership.getShortDescription();
                 jsonMastership.longDescription = mastership.getHelpText();
@@ -324,6 +360,7 @@ public class JSONExportService {
             JSONPower jsonPower = new JSONPower();
             Power power = powerReference.getModifyable();
             jsonPower.name = power.getName();
+            jsonPower.id = power.getId();
             jsonPower.count = powerReference.getModifiedCount();
             jsonPower.page = getPageString(power.getPage(), powerReference.getPower().getProductNameShort());
             jsonPower.shortDescription = power.getDescription();
