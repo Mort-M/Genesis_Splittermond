@@ -146,7 +146,7 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 					// Write
 					Path   printToFile = new File(new File(OPTION_PATH.getStringValue()), model.getName()+".json").toPath();
 					Files.writeString(printToFile, json);
-					System.out.println("printToFile = " + printToFile);
+					System.out.println("printToFile = " + json);
 
 					commandResult = new CommandResult(type, printToFile);
 				} catch (Exception e) {

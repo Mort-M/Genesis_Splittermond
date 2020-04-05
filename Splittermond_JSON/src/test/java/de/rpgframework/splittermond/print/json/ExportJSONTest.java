@@ -43,7 +43,7 @@ public class ExportJSONTest {
 		parent.createContainer("splittermond");
 		
 		
-        SpliMoCharacter character = SplitterMondCore.load(new FileInputStream("src/test/resources/testdata/Amberion.xml"));
+        SpliMoCharacter character = SplitterMondCore.load(new FileInputStream("src/test/resources/testdata/Tessa.xml"));
         assertNotNull(character);
         System.out.println("Converting "+character.getName());
        

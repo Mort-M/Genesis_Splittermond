@@ -34,10 +34,9 @@ public class JSONCharacter {
     public List<JSONResource> resources;
     public List<JSONSpell> spells;
     public List<JSONArmor> armors;
-    public List<JSONItem> items;
-    public List<JSONNote> notes;
-    public List<JSONCreature> creatures;
     public List<JSONShield> shields;
     public List<JSONMeleeWeapon> meleeWeapons;
     public List<JSONLongRangeWeapon> longRangeWeapons;
+    public List<JSONItem> items;
+    public String notes;
 }

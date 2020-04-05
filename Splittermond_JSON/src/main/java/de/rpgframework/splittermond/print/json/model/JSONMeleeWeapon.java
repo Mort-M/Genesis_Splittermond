@@ -10,7 +10,9 @@ public class JSONMeleeWeapon {
     public int skillValue;
     public List<JSONFeature> features;
     public String damage;
-    public int speed;
+    public int weaponSpeed;
+    public int characterTickMalus;
+    public int calculatedSpeed;
     public boolean relic;
     public boolean personalized;
 }
