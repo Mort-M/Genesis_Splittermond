@@ -12,7 +12,7 @@
 	<artifactId>splittermond-json</artifactId>
 	<name>Splittermond JSON Export</name>
 	<description>Splittermond export to JSON</description>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 
 	<properties>
 		<maven.install.skip>true</maven.install.skip>
