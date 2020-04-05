@@ -15,6 +15,6 @@ module splittermond.json {
 	requires de.rpgframework.core;
 	requires transitive splittermond.core;
 	requires de.rpgframework.chars;
-	requires gson;
+	requires com.google.gson;
 	
 }
