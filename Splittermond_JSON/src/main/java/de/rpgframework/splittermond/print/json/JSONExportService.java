@@ -40,9 +40,7 @@ import org.prelle.splimo.items.LongRangeWeapon;
 import org.prelle.splimo.persist.WeaponDamageConverter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import static org.prelle.splimo.items.ItemType.*;
@@ -165,7 +163,7 @@ public class JSONExportService {
             int tickMalus = SplitterTools.getTickMalusSum(character, true);
             int weaponSpeed = SplitterTools.getWeaponSpeedFor(character, item, WEAPON) - tickMalus;
             jsonWeapon.skill = item.getSkill(WEAPON).getName();
-            jsonWeapon.skillValue = weaponSkill;
+            jsonWeapon.value = weaponSkill;
             jsonWeapon.attribute1 = attribute1Name;
             jsonWeapon.attribute2 = attribute2Name;
             if (hasLicense) {
@@ -200,7 +198,7 @@ public class JSONExportService {
         }
         weapon.attribute1 = Attribute.AGILITY.getShortName();
         weapon.attribute2 = Attribute.STRENGTH.getShortName();
-        weapon.skillValue = character.getMeleeValue();
+        weapon.value = character.getMeleeValue();
         List<JSONFeature> jsonFeatures = new ArrayList<>();
         String[] features = new String[]{"DISARMING", "BLUNT" , "CLUTCH"};
         for (String feature : features) {

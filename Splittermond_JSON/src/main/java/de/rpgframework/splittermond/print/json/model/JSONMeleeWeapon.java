@@ -7,7 +7,7 @@ public class JSONMeleeWeapon {
     public String skill;
     public String attribute1;
     public String attribute2;
-    public int skillValue;
+    public int value;
     public List<JSONFeature> features;
     public String damage;
     public int weaponSpeed;
