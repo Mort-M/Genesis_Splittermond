@@ -402,8 +402,8 @@ public class EditCarriedItemDialog extends ManagedDialog implements GenerationEv
         					}
         				}
         			});
-        		} else if (res.getId().startsWith("embedspell")) {
-        			int spellLevel = res.getSize()-1;
+        		} else if (res.getId().startsWith("embedspell") || res.getId().startsWith("permanence")) {
+        			int spellLevel = (res.getId().startsWith("permanence")) ? ((res.getSize()-6)/2) : (res.getSize()-1);
         			// run later to prevent dragged object to be still visible in following screen
         			Platform.runLater(new Runnable(){
         				public void run() {

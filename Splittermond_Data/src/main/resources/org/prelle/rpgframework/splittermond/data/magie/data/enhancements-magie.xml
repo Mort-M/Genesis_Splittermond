@@ -17,7 +17,8 @@
   </enhancement>
   <enhancement id="come_in_my_hand" cost="1" type="HIGHARTIFACT" />
   <enhancement id="necromancers_power" cost="3" type="HIGHARTIFACT" />
-  <!-- Permanenz fehlt noch-->
+  <enhancement id="permanence0" cost="6" type="HIGHARTIFACT" />
+  <enhancement id="permanence1" cost="8" type="HIGHARTIFACT" />
   <enhancement id="ritualcomponent" cost="2" type="HIGHARTIFACT" />
   <enhancement id="easy_attuned" cost="1" type="HIGHARTIFACT" />
   <enhancement id="part_of_the_caster" cost="1" type="HIGHARTIFACT" />
