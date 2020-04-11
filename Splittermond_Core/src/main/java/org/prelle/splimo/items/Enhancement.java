@@ -21,6 +21,7 @@ import org.prelle.splimo.modifications.ModificationList;
 import org.prelle.splimo.persist.EnhancementMaxConverter;
 import org.prelle.splimo.persist.ItemTypeConverter;
 
+import de.rpgframework.ResourceI18N;
 import de.rpgframework.genericrpg.modification.Modification;
 
 /**
@@ -34,6 +35,7 @@ public class Enhancement extends BasePluginData implements Comparable<Enhancemen
 	
 	public enum EnhancementType {
 		NORMAL,
+		HIGHARTIFACT,
 		RELIC,
 		MAGIC,
 		ALCHEMY,
@@ -41,7 +43,7 @@ public class Enhancement extends BasePluginData implements Comparable<Enhancemen
 		SAINT;
 		
 		public String getName() {
-			return SplitterMondCore.getI18nResources().getString("enhancementtype."+name().toLowerCase());
+			return ResourceI18N.get(SplitterMondCore.getI18nResources(),"enhancementtype."+name().toLowerCase());
 		}
 
 	}
@@ -110,10 +112,16 @@ public class Enhancement extends BasePluginData implements Comparable<Enhancemen
 	public String getName() {
 		if (i18n==null)
 			return id;
+		String key = "enhancement."+id;
 		try {
-			return i18n.getString("enhancement."+id);
-		} catch (MissingResourceException e) {
-			System.out.println("Missing "+e.getKey()+" in "+i18n.getBaseBundleName());
+			return i18n.getString(key);
+		} catch (MissingResourceException mre) {
+			if (!reportedKeys.contains(mre.getKey())) {
+				reportedKeys.add(mre.getKey());
+				logger.error("Missing property '"+key+"' in "+i18n.getBaseBundleName());
+				if (MISSING!=null)
+					MISSING.println(mre.getKey()+"=");
+			}
 			return "enhancement."+id;
 		}
 	}
