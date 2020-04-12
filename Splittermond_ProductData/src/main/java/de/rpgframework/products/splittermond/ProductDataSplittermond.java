@@ -11,6 +11,7 @@ public class ProductDataSplittermond extends ProductDataPlugin {
 	//-------------------------------------------------------------------
 	public ProductDataSplittermond() {
 		// TODO Auto-generated constructor stub
+		System.err.println("ProductDataSplittermond");
 	}
 
 }
