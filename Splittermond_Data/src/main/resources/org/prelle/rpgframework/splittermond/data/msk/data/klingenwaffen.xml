@@ -320,7 +320,7 @@
             <feature type="THROWABLE"/>
          </features>
       </weapon>
-      <rangeweapon att1="AGILITY" att2="STRENGTH" damage="1W6" range="5" skill="longrange" speed="3" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="AGILITY" att2="STRENGTH" damage="1W6" range="5" skill="throwing" speed="3" type="LONG_RANGE_WEAPON">
          <requires>
             <attrreq attr="AGILITY" val="2"/>
          </requires>
