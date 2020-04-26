@@ -1363,7 +1363,7 @@ public class SplitterTools {
 			val += model.getAttribute(item.getAttribute2(ItemType.LONG_RANGE_WEAPON)).getValue();
 
 			// Check for a skill bonus in the item
-			for (Modification mod : item.getModifications()) {
+			for (Modification mod : item.getCharacterModifications()) {
 				if (mod instanceof MastershipModification) {
 					MastershipModification mmod = (MastershipModification)mod;
 					if (mmod.getSkill()==longRangeWeapon.getSkill() && mmod.getSpecialization().getSpecial().getId().equals(item.getItem().getID())){
