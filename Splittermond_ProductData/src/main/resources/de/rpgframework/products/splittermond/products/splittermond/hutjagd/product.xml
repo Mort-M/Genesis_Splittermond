@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="hutjagd" month="12" rules="SPLITTERMOND" year="2018">
+   <title>Hutjagd</title>
+   <description>Alle fünf Jahre treffen sich die besten Kapitäne der Sturmkorsaren in einem kleinen Dorf an der Küste Pashtars zu den Korsarenspielen.  Bei diesem Wettstreit messen die Schiffsbesatzungen auf friedliche Weise ihre Kräfte, beweisen ihre Überlegenheit gegenüber anderen und regeln ihre Konflikte. Dabei wird gerauft, getrunken, über Balken balanciert und ermittelt, wer der beste Segler ist. Doch der Höhepunkt der Feierlichkeiten ist die Hutjagd: Eine Nacht lang gilt es, möglichst vielen Rivalen die Kopfbedeckung zu stehlen und dabei den eigenen Hut zu verteidigen. Wer am im Morgengrauen die meisten Hüte erbeutet hat, ist der ungekrönte König der Sturmkorsaren. Nur für einen geht es  hierbei um mehr als nur Anerkennung und Respekt, denn Bijan Einauge hat bei den letzten Spielen nicht nur sein linkes Auge eingebüßt ...</description>
+   <adventures>
+      <adventure ref="hutjagd" rules="SPLITTERMOND"/>
+   </adventures>
+</product>
