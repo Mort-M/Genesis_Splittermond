@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="verloreneSeelen" month="2" rules="SPLITTERMOND" year="2019">
+   <title>Verlorene Seelen</title>
+   <description>In 'Verlorene Seelen' spült das Schicksal die Abenteurer an eine unbekannte Küste, wo sie schon bald auf die Spuren eines verschollenen Kapitäns stoßen.</description>
+   <adventures>
+      <adventure ref="verloreneSeelen" rules="SPLITTERMOND"/>
+   </adventures>
+</product>
