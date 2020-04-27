@@ -25,6 +25,10 @@ public class Town extends BasePluginData implements Comparable<Town> {
 	private Availability size;
 	@Attribute
 	private String cultures;
+	@Attribute
+	private String id;	
+	
+	public String getId() { return id; }
 
 	//-------------------------------------------------------------------
 	/**
