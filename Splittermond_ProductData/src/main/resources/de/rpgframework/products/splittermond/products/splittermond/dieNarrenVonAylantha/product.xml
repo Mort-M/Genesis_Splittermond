@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="dieNarrenVonAylantha" month="1" rules="SPLITTERMOND" year="2019">
+   <title>Die Narren von Aylantha</title>
+   <description>In 'Die Narren von Aylantha' besuchen die Abenteurer die Geburtstagsfeier von Herzog Gaspar IV. und sind anschließend auch beim dreitägigen Talentwettbewerb Schatz von Mertalia zugegen. Am zweiten Tag des Wettbewerbs wird der Herzog am helllichten Tag während der Feierlichkeiten entführt. Im weiteren Verlauf haben die Abenteurer die Möglichkeit, den Herzog wieder ausfindig zu machen und hoffentlich wohlbehalten zurückzubringen, während sie von verwirrenden Hinweisen, Unruhen in der Stadt und den Aufregungen des Wettbewerbs daran gehindert werden. Doch wem können sie auf ihrer Suche vertrauen? Es ist schwer, Freund und Feind hinter all den Masken und Verkleidungen voneinander zu unterscheiden …</description>
+   <adventures>
+      <adventure ref="dieNarrenVonAylantha" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

@@ -303,6 +303,7 @@ public class SpellLevellerAndGenerator implements SpellController, GenerationEve
 		if (value>=6) lvl++;
 		if (value>=9) lvl++;
 		if (value>=12) lvl++;
+		if (value>=15) lvl++;
 		return lvl;
 	}
 

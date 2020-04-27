@@ -22,7 +22,6 @@ module splittermond.core {
 	opens org.prelle.splimo.modifications to simple.persist;
 	opens org.prelle.splimo.requirements to simple.persist;
 
-	requires activation;
 	requires java.datatransfer;
 	requires java.prefs;
 	requires java.xml;
@@ -32,4 +31,5 @@ module splittermond.core {
 	requires simple.persist;
 	requires transitive de.rpgframework.chars;
 	requires transitive de.rpgframework.products;
+	requires java.activation;
 }

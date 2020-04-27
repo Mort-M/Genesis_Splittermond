@@ -96,6 +96,7 @@
 		<module>Splittermond_CharGen</module>
 		<module>Splittermond_CharGen_JFX</module>
 		<module>Splittermond_Data</module>
+		<module>Splittermond_JSON</module>
 		<module>Splittermond_Plugin</module>
 		<module>Splittermond_ProductData</module>
 	</modules>

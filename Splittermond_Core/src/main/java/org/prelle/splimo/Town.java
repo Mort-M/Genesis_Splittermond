@@ -20,7 +20,7 @@ import org.prelle.splimo.items.Availability;
 public class Town extends BasePluginData implements Comparable<Town> {
 	
 	@Attribute
-	private String ids;
+	private String id;
 	@Attribute(name="size",required=true)
 	private Availability size;
 	@Attribute
@@ -85,9 +85,9 @@ public class Town extends BasePluginData implements Comparable<Town> {
 	 */
 	public List<Culture> getCultures() {
 		Collection<String> tmp = new ArrayList<String>();
-		if (ids==null)
+		if (cultures==null)
 			return new ArrayList<Culture>();
-		StringTokenizer tok = new StringTokenizer(ids, ", ");
+		StringTokenizer tok = new StringTokenizer(cultures, ", ");
 		while (tok.hasMoreTokens())
 			tmp.add(tok.nextToken());
 		
@@ -107,6 +107,15 @@ public class Town extends BasePluginData implements Comparable<Town> {
 	 */
 	public Availability getSize() {
 		return size;
+	}
+
+	//-------------------------------------------------------------------
+	/**
+	 * @see de.rpgframework.character.PluginData#getId()
+	 */
+	@Override
+	public String getId() {
+		return id;
 	}
 
 }

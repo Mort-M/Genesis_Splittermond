@@ -5,4 +5,24 @@
   	  <attrmod attr="DEFENSE" val="1"/>
   	</modifications>
   </enhancement>
+  
+  <enhancement id="otherworld_emergency_exit" cost="2" type="HIGHARTIFACT" />
+  <enhancement id="artifact_proection" cost="1" max="3" type="HIGHARTIFACT" />
+  <enhancement id="summoning_helper" cost="1" type="HIGHARTIFACT" />
+  <enhancement id="bottomless_bag" cost="1" max="2" type="HIGHARTIFACT" />
+  <enhancement id="focus_support" cost="2" type="HIGHARTIFACT" >
+  	<modifications>
+  	  <attrmod attr="FOCUS" val="5"/>
+  	</modifications>
+  </enhancement>
+  <enhancement id="come_in_my_hand" cost="1" type="HIGHARTIFACT" />
+  <enhancement id="necromancers_power" cost="3" type="HIGHARTIFACT" />
+  <enhancement id="permanence0" cost="6" type="HIGHARTIFACT" />
+  <enhancement id="permanence1" cost="8" type="HIGHARTIFACT" />
+  <enhancement id="ritualcomponent" cost="2" type="HIGHARTIFACT" />
+  <enhancement id="easy_attuned" cost="1" type="HIGHARTIFACT" />
+  <enhancement id="part_of_the_caster" cost="1" type="HIGHARTIFACT" />
+  <enhancement id="thaumaturgic_tool" cost="1" type="HIGHARTIFACT" />
+  <enhancement id="uninterrupted_effect" cost="1" max="3" type="HIGHARTIFACT" />
+  <enhancement id="indestructible" cost="1" type="HIGHARTIFACT" />
 </enhancements>

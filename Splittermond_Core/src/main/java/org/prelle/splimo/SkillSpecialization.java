@@ -7,6 +7,8 @@ import java.text.Collator;
 
 import org.prelle.simplepersist.Attribute;
 
+import de.rpgframework.ResourceI18N;
+
 /**
  * @author prelle
  *
@@ -55,7 +57,7 @@ public class SkillSpecialization implements MastershipOrSpecialization {
 			return "SkillSpecialization.getName()";
 		}
 		if (id!=null)
-			return SplitterMondCore.getI18nResources().getString("skillspecial."+id);
+			return ResourceI18N.get(SplitterMondCore.getI18nResources(),"skillspecial."+id);
 		return "any "+type;
 	}
 

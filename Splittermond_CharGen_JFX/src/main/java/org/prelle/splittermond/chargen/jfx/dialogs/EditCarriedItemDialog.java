@@ -44,6 +44,7 @@ import org.prelle.splittermond.chargen.jfx.equip.WeaponDataPane;
 import org.prelle.splittermond.chargen.jfx.listcells.EnhancementListCell;
 import org.prelle.splittermond.chargen.jfx.listcells.EnhancementReferenceListCell;
 
+import de.rpgframework.ResourceI18N;
 import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyStringProperty;
 import javafx.scene.Node;
@@ -381,9 +382,9 @@ public class EditCarriedItemDialog extends ManagedDialog implements GenerationEv
         					if (spec!=null) {
         						itemCtrl.addEnhancement(res, spec);
         						refresh();
-       					} else {
+        					} else {
         						logger.error("Cannot add specialization");
-        						getScreenManager().showAlertAndCall(AlertType.ERROR, UI.getString("label.hint"), UI.getString("error.not-possible"));
+        						getScreenManager().showAlertAndCall(AlertType.ERROR, ResourceI18N.get(UI,"label.hint"), ResourceI18N.get(UI,"error.not-possible"));
         					}
         				}
         			});
@@ -401,8 +402,8 @@ public class EditCarriedItemDialog extends ManagedDialog implements GenerationEv
         					}
         				}
         			});
-        		} else if (res.getId().startsWith("embedspell")) {
-        			int spellLevel = res.getSize()-1;
+        		} else if (res.getId().startsWith("embedspell") || res.getId().startsWith("permanence")) {
+        			int spellLevel = (res.getId().startsWith("permanence")) ? ((res.getSize()-6)/2) : (res.getSize()-1);
         			// run later to prevent dragged object to be still visible in following screen
         			Platform.runLater(new Runnable(){
         				public void run() {
@@ -412,7 +413,7 @@ public class EditCarriedItemDialog extends ManagedDialog implements GenerationEv
         						refresh();
         					} else {
         						logger.error("Cannot add spell");
-        						getScreenManager().showAlertAndCall(AlertType.ERROR, UI.getString("label.hint"), UI.getString("error.not-possible"));
+        						getScreenManager().showAlertAndCall(AlertType.ERROR, ResourceI18N.get(UI,"label.hint"), ResourceI18N.get(UI,"error.not-possible"));
         					}
         				}
         			});
@@ -421,7 +422,7 @@ public class EditCarriedItemDialog extends ManagedDialog implements GenerationEv
         			EnhancementReference ref = itemCtrl.addEnhancement(res);
 					refresh();
         			if (ref==null) {
-               			getScreenManager().showAlertAndCall(AlertType.NOTIFICATION, UI.getString("label.hint"), UI.getString("error.not-possible"));
+               			getScreenManager().showAlertAndCall(AlertType.NOTIFICATION, ResourceI18N.get(UI,"label.hint"), ResourceI18N.get(UI,"error.not-possible"));
         			}
         		}
         	} else
@@ -485,7 +486,7 @@ public class EditCarriedItemDialog extends ManagedDialog implements GenerationEv
 		pane.add(cbSkills , 1, 0);
 		pane.add(lbSpecial, 0, 1);
 		pane.add(cbSpecs  , 1, 1);
-		CloseType close = getScreenManager().showAlertAndCall(AlertType.QUESTION, UI.getString("dialog.selectSpecializationEnhancement"), pane);
+		CloseType close = getScreenManager().showAlertAndCall(AlertType.QUESTION, ResourceI18N.get(UI,"dialog.selectSpecializationEnhancement"), pane);
 		if (close!=CloseType.OK)
 			return null;
 
@@ -539,14 +540,14 @@ public class EditCarriedItemDialog extends ManagedDialog implements GenerationEv
 
 			VBox pane = new VBox(10);
 			pane.getChildren().addAll(lbSpecial, cbSpecs);
-			CloseType close = getScreenManager().showAlertAndCall(AlertType.QUESTION, UI.getString("dialog.selectSpecializationEnhancement"), pane);
+			CloseType close = getScreenManager().showAlertAndCall(AlertType.QUESTION, ResourceI18N.get(UI,"dialog.selectSpecializationEnhancement"), pane);
 			if (close!=CloseType.OK)
 				return null;
 			return cbSpecs.getValue();
 		}
 
 		logger.warn("Don't know how to select specialization for "+template);
-		getScreenManager().showAlertAndCall(AlertType.NOTIFICATION, UI.getString("error.not-possible"), UI.getString("error.no-skill-assigned"));
+		getScreenManager().showAlertAndCall(AlertType.NOTIFICATION, ResourceI18N.get(UI,"error.not-possible"), ResourceI18N.get(UI,"error.no-skill-assigned"));
 
 		return null;
 	}
@@ -589,7 +590,7 @@ public class EditCarriedItemDialog extends ManagedDialog implements GenerationEv
 
 		VBox pane = new VBox(10);
 		pane.getChildren().addAll(lbSpecial, cbSpecs);
-		CloseType close = getScreenManager().showAlertAndCall(AlertType.QUESTION, UI.getString("dialog.selectSpellEnhancement"), pane);
+		CloseType close = getScreenManager().showAlertAndCall(AlertType.QUESTION, ResourceI18N.get(UI,"dialog.selectSpellEnhancement"), pane);
 		if (close!=CloseType.OK)
 			return null;
 		return cbSpecs.getValue();

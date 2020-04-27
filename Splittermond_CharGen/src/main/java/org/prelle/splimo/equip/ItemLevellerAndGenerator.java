@@ -152,6 +152,7 @@ public class ItemLevellerAndGenerator implements NewItemController {
 
 		switch (toAdd.getType()) {
 		case RELIC:
+		case HIGHARTIFACT:
 			if (!model.isRelic()) {
 				logger.trace("Enhancement "+toAdd+" may only used by relics, but "+model.getName()+" is none");
 				return false;
