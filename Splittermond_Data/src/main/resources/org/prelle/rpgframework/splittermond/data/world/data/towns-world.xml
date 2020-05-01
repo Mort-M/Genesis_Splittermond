@@ -1,6 +1,228 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <towns>
-    <town id="sarnburg" size="CAPITAL" cultures="selenia,schwertvolk"/>
-    <town id="winborn" size="LARGE_TOWN" cultures="selenia" />
-    <town id="prym" size="SMALL_TOWN" cultures="selenia" />
+    <town id="albronnen" size="SMALL_TOWN" cultures="wintholt" /><!-- 32000 -->
+    <town id="cynneseath" size="VILLAGE" cultures="wintholt" /><!-- 6000 -->
+    <town id="wallbeg" size="VILLAGE" cultures="wintholt"/>
+    
+    <town id="gruenhain" size="VILLAGE" cultures="immersomm"/>
+
+    <town id="camo" size="SMALL_TOWN" cultures="dalmreich" /><!-- 45000 -->
+    <town id="matandra" size="LARGE_TOWN" cultures="dalmreich" /><!-- 85000 -->
+    <town id="meratal" size="SMALL_TOWN" cultures="dalmreich"/><!-- 55000 -->
+    <town id="sampera" size="CAPITAL" cultures="dalmreich"/><!-- 190000 -->
+
+    <town id="caeannwyl" size="VILLAGE" cultures="tirdurghachan" />
+    <town id="heolargau" size="VILLAGE" cultures="tirdurghachan" />
+    
+    <town id="catley" size="SMALL_TOWN" cultures="nyrdfing" /><!-- 12000 -->
+    <town id="campden" size="VILLAGE" cultures="nyrdfing" />
+    <town id="rhoding" size="VILLAGE" cultures="nyrdfing"/>
+    <town id="stanburg" size="SMALL_TOWN" cultures="nyrdfing"/><!-- 12000 -->
+
+    <town id="garrchadhur" size="VILLAGE" cultures="vaigarr"/>
+    
+    <town id="dakardsmyr" size="LARGE_TOWN" cultures="dakardsmyr" /><!-- 50000 -->
+    <town id="gruendelgrund" size="VILLAGE" cultures="dakardsmyr" /><!-- 3500 -->
+    <town id="kraehenwacht" size="VILLAGE" cultures="dakardsmyr"/><!-- 1000 -->
+    <town id="myrkansmund" size="VILLAGE" cultures="dakardsmyr"/><!-- 5000 -->
+    
+    <town id="arwingen" size="SMALL_TOWN" cultures="selenia" />
+    <town id="bredenthal" size="VILLAGE" cultures="selenia" />
+    <town id="draborn" size="SMALL_TOWN" cultures="selenia" /><!-- 32000 -->
+    <town id="drakwall" size="VILLAGE" cultures="selenia" />
+    <town id="dreybar" size="SMALL_TOWN" cultures="selenia" />
+    <town id="herathis" size="LARGE_TOWN" cultures="selenia"/><!-- 35000 -->
+    <town id="prym" size="VILLAGE" cultures="selenia"/>
+    <town id="sarnburg" size="CAPITAL" cultures="selenia"/><!-- 240000 -->
+    <town id="suedfang" size="SMALL_TOWN" cultures="selenia"/><!-- 60000 -->
+    <town id="winborn" size="LARGE_TOWN" cultures="selenia"/><!-- 70000 -->
+
+    <town id="burgbaerenwehr" size="VILLAGE" cultures="waechter" />
+    <town id="burgkormoranstein" size="VILLAGE" cultures="waechter" />
+    <town id="burgschwefelwacht" size="VILLAGE" cultures="waechter" />
+    <town id="burgulmengrab" size="VILLAGE" cultures="waechter" />
+    <town id="festungdrakenhorst" size="VILLAGE" cultures="waechter" />
+    <town id="schattenfels" size="VILLAGE" cultures="waechter"/>
+    <town id="vangarasfaust" size="VILLAGE" cultures="waechter"/>
+    <town id="zwifels" size="VILLAGE" cultures="waechter"/>
+
+    <town id="altfeste" size="SMALL_TOWN" cultures="westergrom" />
+    <town id="bergfestegraulenblick" size="VILLAGE" cultures="westergrom" />
+    <town id="kaltenwacht" size="SMALL_TOWN" cultures="westergrom"/>
+
+    <town id="harreburg" size="LARGE_TOWN" cultures="midstad" /><!-- 32000 -->
+    <town id="hellberg" size="LARGE_TOWN" cultures="midstad" /><!-- 18000 -->
+    <town id="karing" size="SMALL_TOWN" cultures="midstad"/><!-- 14000 -->
+    <town id="tralfeim" size="SMALL_TOWN" cultures="midstad"/>
+    
+    <town id="caleria" size="LARGE_TOWN" cultures="patalis" /><!-- 75000 -->
+    <town id="epena" size="SMALL_TOWN" cultures="patalis" /><!-- 22000 -->
+    <town id="larisana" size="SMALL_TOWN" cultures="patalis" /><!-- 32000 -->
+    <town id="marcom" size="SMALL_TOWN" cultures="patalis" /><!-- 28000 -->
+    <town id="rutias" size="SMALL_TOWN" cultures="patalis" />
+    <town id="ultia" size="CAPITAL" cultures="patalis"/><!-- 215000 -->
+    <town id="volos" size="SMALL_TOWN" cultures="patalis"/><!-- 15000 -->
+
+    <town id="beltin" size="LARGE_TOWN" cultures="elyrvolk , elyrrose" /><!-- 28000 -->
+    <town id="teulada" size="SMALL_TOWN" cultures="elyrvolk , elyrrose" /><!-- 9000 -->
+    
+    <town id="heriwahta" size="SMALL_TOWN" cultures="zwingard" /><!-- 19000 -->
+    <town id="isafest" size="SMALL_TOWN" cultures="zwingard" /><!-- 31000 -->
+    <town id="sunnafest" size="LARGE_TOWN" cultures="zwingard"/><!-- 44000 -->
+    <town id="wyrmtrutz" size="SMALL_TOWN" cultures="zwingard"/><!-- 11000 -->
+    
+    <town id="aldentrutz" size="SMALL_TOWN" cultures="termark" /><!-- 500 -->
+    <town id="drasfeld" size="SMALL_TOWN" cultures="termark" />
+    <town id="garstal" size="LARGE_TOWN" cultures="termark"/><!-- 16000 -->
+    <town id="telin" size="SMALL_TOWN" cultures="termark"/>
+    <town id="trisnar" size="SMALL_TOWN" cultures="termark"/><!-- 6000 -->
+    
+    <town id="dhurul-bataar" size="SMALL_TOWN" cultures="jagodien" />
+    <town id="durchan" size="SMALL_TOWN" cultures="jagodien" />
+    <town id="juwad" size="SMALL_TOWN" cultures="jagodien" />
+    <town id="khuitan" size="SMALL_TOWN" cultures="jagodien" />
+    <town id="sindschad" size="SMALL_TOWN" cultures="jagodien" />
+    <town id="sulasjada" size="SMALL_TOWN" cultures="jagodien"/>
+    <town id="timudin" size="SMALL_TOWN" cultures="jagodien"/>
+    
+    <town id="arkuri" size="SMALL_TOWN" cultures="arkuri"/><!-- 13500 -->
+    <town id="suedarkuri" size="SMALL_TOWN" cultures="arkuri"/><!-- 1500 -->
+    
+    <town id="jordheim" size="SMALL_TOWN" cultures="frynjord" /><!-- 17000 -->
+    <town id="zimahora" size="SMALL_TOWN" cultures="frynjord" /><!-- 17000 -->
+    <town id="zitrabyt" size="SMALL_TOWN" cultures="frynjord"/><!-- 8000 -->
+    
+    <town id="kelbrun" size="SMALL_TOWN" cultures="jagodsklav , jagodstamm" /><!-- 2000 - 10000 -->
+    <town id="raszkabrun" size="SMALL_TOWN" cultures="jagodsklav , jagodstamm" /><!-- 1500 -->    
+
+    <town id="atasato" size="LARGE_TOWN" cultures="zhoujiang" />
+    <town id="hilaga" size="SMALL_TOWN" cultures="zhoujiang" />
+    <town id="inani" size="CAPITAL" cultures="zhoujiang" /><!-- 89000 -->
+    <town id="kanluran" size="SMALL_TOWN" cultures="zhoujiang" />
+    <town id="palitan" size="CAPITAL" cultures="zhoujiang" /><!-- 282000 -->
+    <town id="sentatau" size="LARGE_TOWN" cultures="zhoujiang"/><!-- 48000 -->
+    <town id="silangan" size="SMALL_TOWN" cultures="zhoujiang"/><!-- 65000 -->
+
+    <town id="atasato" size="LARGE_TOWN" cultures="schwertadel , schwertvolk" /><!-- 100000 -->
+    <town id="kimeisha" size="SMALL_TOWN" cultures="schwertadel , schwertvolk" /><!-- 7000 -->
+    <town id="kyoryoko" size="SMALL_TOWN" cultures="schwertadel , schwertvolk" /><!-- 20000 -->
+    <town id="miari" size="SMALL_TOWN" cultures="schwertadel , schwertvolk" /><!-- 35000 -->
+    <town id="oshokara" size="SMALL_TOWN" cultures="schwertadel , schwertvolk" /><!-- 282000 -->
+    <town id="senrai" size="CAPITAL" cultures="schwertadel , schwertvolk"/><!-- 120000 -->
+    <town id="tsusaka" size="SMALL_TOWN" cultures="schwertadel , schwertvolk"/>
+    <town id="yuizu" size="SMALL_TOWN" cultures="schwertadel , schwertvolk"/><!-- 40000 -->
+
+    <town id="bawalin" size="SMALL_TOWN" cultures="sadu" /><!-- 25000 -->
+    <town id="digma" size="SMALL_TOWN" cultures="sadu" /><!-- 20000 -->
+    <town id="latian" size="LARGE_TOWN" cultures="sadu" /><!-- 30000 -->
+    <town id="taglamig" size="SMALL_TOWN" cultures="sadu" /><!-- 15000 -->
+    <town id="tagsibul" size="SMALL_TOWN" cultures="sadu" /><!-- 10000 -->
+    <town id="uttali" size="SMALL_TOWN" cultures="sadu"/>
+
+    <town id="gulongal" size="LARGE_TOWN" cultures="gulong" /><!-- 56000 -->
+    <town id="talangal" size="SMALL_TOWN" cultures="gulong" />
+
+    <town id="khanbur" size="LARGE_TOWN" cultures="keshubim" /><!-- 23000 -->
+    <town id="zaruszim" size="SMALL_TOWN" cultures="keshubim" /><!-- 8000 -->
+
+    <town id="awaltak" size="SMALL_TOWN" cultures="strominseln , stromsiprangu , porukala" />
+    <town id="kiparwalabogu" size="SMALL_TOWN" cultures="strominseln , stromsiprangu , porukala" /><!-- 6000 -->
+    <town id="malanuabaikao" size="SMALL_TOWN" cultures="strominseln , stromsiprangu , porukala" /><!-- 4500 -->
+    <town id="pekangat" size="SMALL_TOWN" cultures="strominseln , stromsiprangu , porukala" /><!-- 10000 -->
+    <town id="siprangu" size="CAPITAL" cultures="strominseln , stromsiprangu , porukala" /><!-- 250000 -->
+
+    <town id="wuestentrutz" size="SMALL_TOWN" cultures="tarr" />
+    
+    <town id="aandhar" size="LARGE_TOWN" cultures="daemmeralb" /><!-- 60000 -->
+    <town id="ansiah" size="SMALL_TOWN" cultures="daemmeralb , albseebund " /><!-- 23000 -->    
+    <town id="karzadal" size="SMALL_TOWN" cultures="daemmeralb" /><!-- 7000 -->
+    <town id="siadal" size="SMALL_TOWN" cultures="daemmeralb" /><!-- 15000 -->
+    <town id="vieldal" size="SMALL_TOWN" cultures="daemmeralb" /><!-- 32000 -->
+
+    <town id="ruraroate" size="VILLAGE" cultures="mahaluu" /><!-- 100 -->
+    
+    <town id="bharrasch" size="SMALL_TOWN" cultures="gotmarkut" /><!-- 15000 -->
+    <town id="borgawai" size="SMALL_TOWN" cultures="gotmarkut" /><!-- 20000 -->
+    <town id="dikango" size="SMALL_TOWN" cultures="gotmarkut" /><!-- 8000 -->
+    <town id="diko" size="SMALL_TOWN" cultures="gotmarkut" /><!-- 3800 -->
+    <town id="guranga" size="SMALL_TOWN" cultures="gotmarkut" /><!-- 4000 -->
+    <town id="lunga" size="SMALL_TOWN" cultures="gotmarkut"/>
+    <town id="zuli" size="SMALL_TOWN" cultures="gotmarkut"/><!-- 12000 -->
+    
+    <town id="kelagang" size="SMALL_TOWN" cultures="gotmarkut" />
+    <town id="pirimoy" size="SMALL_TOWN" cultures="gotmarkut, piriwatu" /><!-- 10000 -->
+    <town id="tonatak" size="SMALL_TOWN" cultures="gotmarkut" /><!-- 6000 -->
+    
+    <town id="farukhur" size="SMALL_TOWN" cultures="farukhur" />
+    
+    <town id="badhatir" size="SMALL_TOWN" cultures="ashurmazaan" />
+    <town id="ezteraad" size="LARGE_TOWN" cultures="ashurmazaan, keshabid" /><!-- 54000 -->
+    <town id="majahd" size="SMALL_TOWN" cultures="ashurmazaan" /><!-- 18000 -->
+    <town id="tiakabir" size="LARGE_TOWN" cultures="ashurmazaan" />
+    <town id="zirahyja" size="SMALL_TOWN" cultures="ashurmazaan" /><!-- 31000 -->
+    
+    <town id="ankhat" size="LARGE_TOWN" cultures="fedirin" /><!-- 22000 -->
+    <town id="dushat" size="SMALL_TOWN" cultures="fedirin" /><!-- 41000 -->
+    <town id="fedir" size="CAPITAL" cultures="fedirin, keshabid" /><!-- 78000 -->
+    <town id="zhugaril" size="SMALL_TOWN" cultures="fedirin" />
+
+    <town id="abshaanbir" size="SMALL_TOWN" cultures="pashtar" /><!-- 45000 -->
+    <town id="kishanaar" size="LARGE_TOWN" cultures="pashtar" />
+    <town id="pashanis" size="SMALL_TOWN" cultures="pashtar" /><!-- 10000 -->
+    <town id="tiakabir" size="SMALL_TOWN" cultures="pashtar" /><!-- 90000 -->
+
+    <town id="garashduk" size="SMALL_TOWN" cultures="aitushar" />
+    <town id="nahashtab" size="LARGE_TOWN" cultures="aitushar" /><!-- 36000 -->
+    <town id="qaturib" size="SMALL_TOWN" cultures="aitushar" />
+    <town id="shinshamassu" size="CAPITAL" cultures="aitushar, keshabid" /><!-- 145000 -->
+    <town id="udurim" size="SMALL_TOWN" cultures="aitushar" /><!-- 20000 -->
+
+    <town id="nirdaluk" size="SMALL_TOWN" cultures="demerai" /><!-- 15000 -->
+    <town id="urakhale" size="LARGE_TOWN" cultures="demerai" /><!-- 50000 -->
+ 
+    <town id="eshfam" size="SMALL_TOWN" cultures="turubar" /><!-- 12000 -->
+    <town id="lanrim" size="SMALL_TOWN" cultures="turubar" /><!-- 27000 -->
+    
+    <town id="aktobar" size="SMALL_TOWN" cultures="chorrash" /><!-- 25000 -->
+    <town id="amjatmar" size="SMALL_TOWN" cultures="chorrash" /><!-- 8000 -->
+    <town id="yolum" size="SMALL_TOWN" cultures="chorrash" /><!-- 12000 -->
+    
+    <town id="badashpur" size="SMALL_TOWN" cultures="badashan" /><!-- 8000 -->
+    <town id="jajalabad" size="SMALL_TOWN" cultures="badashan" /><!-- 4000 -->
+    <town id="kulubad" size="SMALL_TOWN" cultures="badashan" /><!-- 18000 -->
+    <town id="shunsarid" size="SMALL_TOWN" cultures="badashan" /><!-- 47000 -->
+    <town id="vaipur" size="SMALL_TOWN" cultures="badashan" /><!-- 34000 -->    
+    
+    <town id="ardur" size="SMALL_TOWN" cultures="shahandir" />
+    <town id="shanchevar" size="SMALL_TOWN" cultures="shahandir" /><!-- 38000 -->
+
+    <town id="ranah" size="SMALL_TOWN" cultures="tarr" /><!-- 3000 -->    
+    
+    <town id="ioria" size="CAPITAL" cultures="ioria" /><!-- 1100000 -->
+    <town id="jeron" size="SMALL_TOWN" cultures="ioria" /><!-- 6000 -->
+    <town id="samutia" size="SMALL_TOWN" cultures="ioria" /><!-- 40000 -->
+
+    <town id="aurigion" size="SMALL_TOWN" cultures="mertstaedt" /><!-- 31000 -->
+    <town id="aylantha" size="SMALL_TOWN" cultures="mertstaedt" /><!-- 82000 -->
+    <town id="drevilna" size="CAPITAL" cultures="mertstaedt" /><!-- 125000 -->
+    <town id="eisenbrann" size="LARGE_TOWN" cultures="mertstaedt" /><!-- 62000 -->
+    <town id="fulnia" size="SMALL_TOWN" cultures="mertstaedt" /><!-- 44000 -->
+    <town id="gondalis" size="SMALL_TOWN" cultures="mertstaedt"/><!-- 52000 -->
+    <town id="nuum" size="SMALL_TOWN" cultures="mertstaedt"/><!-- 49000 -->
+    <town id="talaberis" size="SMALL_TOWN" cultures="mertstaedt" /><!-- 57000 -->
+    <town id="taupio" size="SMALL_TOWN" cultures="mertstaedt" /><!-- 38000 -->
+    <town id="vatenna" size="SMALL_TOWN" cultures="mertstaedt" />
+
+    <town id="alaril" size="SMALL_TOWN" cultures="albseebund" /><!-- 60000 -->
+    <town id="bariu" size="SMALL_TOWN" cultures="albseebund" /><!-- 25000 -->
+    <town id="mieela" size="SMALL_TOWN" cultures="albseebund" /><!-- 10000 -->
+    <town id="shilaou" size="SMALL_TOWN" cultures="albseebund" /><!-- 20000 -->
+    <town id="taraaz" size="SMALL_TOWN" cultures="albseebund" /><!-- 8500 -->
+    <town id="xilliar" size="SMALL_TOWN" cultures="albseebund"/><!-- 6000 -->
+
+    <town id="korobrom" size="SMALL_TOWN" cultures="borombri" />
+    <town id="monotok" size="SMALL_TOWN" cultures="borombri" />
+
+    <town id="navir" size="SMALL_TOWN" cultures="schaedel,anuu" /><!-- 8500 -->
+    <town id="treibgut" size="SMALL_TOWN" cultures="schaedel,anuu" /><!-- 2500 -->    
 </towns>
