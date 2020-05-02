@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="donnerndeHufe" month="05" rules="SPLITTERMOND" year="2019">
+   <title>Drachenpakt</title>
+   <description>Das Shahirat Ashurmazaan ist die Heimat stolzer Reiterorden, und die hiesigen Pferdezuchten sind weit über die Landesgrenzen hinaus berühmt. Das weckt Begehrlichkeiten, und wenn ein paar dieser kostbaren Tiere zum Verkauf stehen, ist man gewiss gut beraten, für einen sicheren Transport Sorge zu tragen. Hier kommen die Abenteurer ins Spiel: Werden sie die ihnen anvertrauten Tiere sicher vom Pferdemarkt in Zirahya zu den Käufern im Hafen von Pashanis bringen? Werden sie sich im stolzen Farukan als ehrbar und vertrauenswürdig erweisen, oder werden sie Schimpf und Schande über sich bringen, weil sie die Schätze des Landes nicht zu bewahren wissen?</description>
+   <adventures>
+      <adventure ref="donnerndeHufe" rules="SPLITTERMOND"/>
+   </adventures>
+</product>

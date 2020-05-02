@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="imAuftragDesOrakels" month="06" rules="SPLITTERMOND" year="2019">
+   <title>Im Auftrag des Orakels</title>
+   <description>Schon viele Jahrtausende bevor der Blaue Mond zerbrach und seine Trümmer auf Lorakis niederregneten und damit das Schicksal der Völker maßgeblich beeinflussten, war das Manteion in Ioria der Sitz des göttlichen Orakels. Pilger aus allen Regionen des Kontinents kommen hier zusammen, um von den Göttern Antworten auf ihre drängendsten Fragen und kryptische Prophezeiungen zu erhalten. Weltlicher Wächter des Orakels ist der Orden der Bewahrer, der die Weissagungen der Götter aufnimmt, dokumentiert und in den legendären Kristallchroniken verwahrt.</description>
+   <adventures>
+      <adventure ref="aufDenSpurenDerSchildkröte" rules="SPLITTERMOND"/>
+      <adventure ref="dieSchaleDesEughos" rules="SPLITTERMOND"/>
+      <adventure ref="schafblut" rules="SPLITTERMOND"/>
+   </adventures>
+</product>
