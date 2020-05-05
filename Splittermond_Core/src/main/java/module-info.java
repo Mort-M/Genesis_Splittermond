@@ -25,11 +25,11 @@ module splittermond.core {
 	requires java.datatransfer;
 	requires java.prefs;
 	requires java.xml;
-	requires java.mail;
+//	requires java.mail;
 	requires org.apache.logging.log4j;
 	requires transitive de.rpgframework.core;
 	requires simple.persist;
 	requires transitive de.rpgframework.chars;
 	requires transitive de.rpgframework.products;
-	requires java.activation;
+//	requires java.activation;
 }

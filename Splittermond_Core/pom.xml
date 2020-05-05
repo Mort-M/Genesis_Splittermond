@@ -41,22 +41,11 @@
 			<scope>test</scope>
 			<version>4.12</version>
 		</dependency>
-		<dependency>
-			<groupId>com.sun.mail</groupId>
-			<artifactId>javax.mail</artifactId>
-			<version>[1.6.1,)</version>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.activation</groupId>
-					<artifactId>activation</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-		    <groupId>javax.activation</groupId>
-		    <artifactId>javax.activation-api</artifactId>
-			<version>1.2.0</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 		    <groupId>javax.activation</groupId> -->
+<!-- 		    <artifactId>javax.activation-api</artifactId> -->
+<!-- 			<version>1.2.0</version> -->
+<!-- 		</dependency> -->
 	</dependencies>
 
 	<build>
