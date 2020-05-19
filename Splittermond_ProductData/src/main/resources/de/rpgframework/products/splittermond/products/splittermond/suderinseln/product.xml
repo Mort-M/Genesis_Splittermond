@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="suderinsen" month="02" rules="SPLITTERMOND" year="2019">
+   <title>Suderinseln</title>
+   <description>Tief im Süden des Schädelgrundes, wo die Gewässer der Binnenmeere in die Ewige See übergehen, liegen die Suderinseln. Geformt aus dem heißen Atem der Vulkane und bewachsen mit undurchdringlichem Dschungel, sind sie die Heimstatt der zurückgezogen lebenden Anuu und der gefürchteten Seeräuber – der Schädelkorsaren.</description>
+   <adventures>
+      <adventure ref="derPreis" rules="SPLITTERMOND"/>
+      <adventure ref="verloreneSeelen" rules="SPLITTERMOND"/>      
+   </adventures>
+</product>
