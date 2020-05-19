@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="badashan" month="8" rules="SPLITTERMOND" year="2019">
+   <title>Badashan</title>
+   <description>Tief im Süden Farukans, zwischen den wolkenverhangenen Nebelhöhen und dem Auge von Telwari, liegt Badashan: Einst stolzes Moghulat, das auf eine Jahrtausende alte Zivilisation zurückblicken kann, steht das Reich seit nunmehr 300 Jahren als Shahirat unter der Verwaltung Farukans. Doch die Badashiris haben sich bis heute ihre einzigartige Kultur bewahrt, und so existieren in den Städten und Dörfern am Maharati beide Völker weitgehend friedlich nebeneinander – wenn man von den Kompetenzstreitigkeiten zwischen Rajas und Satrapen einmal absieht.</description>
+   <adventures>
+      <adventure ref="diePerleTelwaris" rules="SPLITTERMOND"/>
+      <adventure ref="dasFestDerFarben" rules="SPLITTERMOND"/>
+   </adventures>
+</product>
