@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="dieWanderndenWälder" month="10" rules="SPLITTERMOND" year="2016">
+   <title>Die Wandernden Wälder</title>
+   <description>Das Grüne Meer nennen es manche Einwohner Zhoujiangs, die Wandernden Wälder heißen sie in Dragorea. Die schier endlose Waldregion im Norden Lorakis erstreckt sich über eine Weite, die jedes Reich der bekannten Welt verschlingen würde. Gigantische Bäume, unbekannte Kräuter und sagenhafte Kreaturen warten auf die wenigen wagemutigen Reisenden, die dieses riesige Gebiet erforschen wollen - und doch fast alle scheitern. Denn der Wald hat schon ganze Zivilisationen verschlungen, wie die geheimnisvollen Ruinen tief in seinem Herzen beweisen.</description>
+   <adventures>
+      <adventure ref="rufDesWaldes" rules="SPLITTERMOND"/>      
+   </adventures>
+</product>

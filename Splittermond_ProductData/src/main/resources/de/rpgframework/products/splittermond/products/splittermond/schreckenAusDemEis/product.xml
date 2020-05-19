@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="schreckenAusDemEis" month="7" rules="SPLITTERMOND" year="2019">
+   <title>schreckenAusDemEis</title>
+   <description>Eine Überquerung des Drakenpasses, der die östlichen Burgen des Wächterbundes mit Dalmarien verbindet – und das noch im Herbst? Keine besondere Herausforderung für gestandene Recken, sollte man annehmen. Aber bald zeigen ein Schneesturm und der einbrechende Winter den Abenteurern ihre Grenzen. Doch Schnee, eisige Kälte und Lawinen sind nicht die einzigen Gefahren: Inmitten des Schneetreibens lauert ein fremdartiges Wesen auf Beute, und nur mit Müh und Not gelingt es den Abenteurern, sich in ein kleines Bergdorf zu retten.</description>
+   <adventures>
+      <adventure ref="schreckenAusDemEis" rules="SPLITTERMOND"/>
+   </adventures>
+</product>
