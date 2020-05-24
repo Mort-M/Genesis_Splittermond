@@ -460,6 +460,8 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 							SplitterMondCore.loadBackgrounds(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
 						} else if (id.startsWith("material")) {
 							SplitterMondCore.loadMaterials(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
+						} else if (id.startsWith("race")) {
+							SplitterMondCore.loadRaces(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
 						} else  {
 							logger.warn("Don't know how to deal with custom data "+bundle.datafile);
 							continue;
