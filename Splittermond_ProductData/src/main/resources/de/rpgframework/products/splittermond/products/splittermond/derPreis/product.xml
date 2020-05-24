@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<product id="derPreis" month="2" rules="SPLITTERMOND" year="2019">
-   <title>Der Preis</title>
-   <description>In diesem Szenario begeben sich die Abenteurer auf eine Wettfahrt quer durch die Suderinseln, denn es lockt Der Preis eines alternden Korsaren.</description>
-   <adventures>
-      <adventure ref="derPreis" rules="SPLITTERMOND"/>
-   </adventures>
-</product>
