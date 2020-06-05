@@ -146,4 +146,494 @@
 			<creaturefeature type="WEAK" />
 		</features>
 	</creature>
+<creature id="avci" lvl1="0" lvl2="0-">
+		<creaturetypes>
+			<creaturetype type="ANIMAL"/>
+			<creaturetype type="REPTILE"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="1"/>
+			<attr id="AGILITY"      value="3"/>
+			<attr id="INTUITION"    value="2"/>
+			<attr id="CONSTITUTION" value="1"/>
+			<attr id="MYSTIC"       value="0"/>
+			<attr id="STRENGTH"     value="2"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="1"/>
+			<attr id="SIZE"         value="3"/>
+			<attr id="SPEED"        value="15"/>
+			<attr id="LIFE"         value="4"/>
+			<attr id="FOCUS"        value="2"/>
+			<attr id="DEFENSE"      value="18"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="16"/>
+			<attr id="MINDRESIST"   value="15"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="8" dmg="1W6" spd="7" ini="8">
+				<features/>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="melee"		val="8">
+				<masterref ref="melee/rush"/>
+			</skillval>
+			<skillval skill="acrobatics"    val="7"/>
+			<skillval skill="athletics"     val="10"/>
+			<skillval skill="determination" val="6"/>
+			<skillval skill="stealth"       val="10">
+				<masterref ref="stealth/creeper"/>
+			</skillval>
+			<skillval skill="hunting"       val="11"/>
+			<skillval skill="swim"       val="10"/>
+			<skillval skill="perception"    val="13"/>
+			<skillval skill="endurance"     val="9"/>
+		</skillvals>
+		<features>
+			<creaturefeature type="AMPHIBIC"/>
+			<creaturefeature type="COWARD"/>
+			<creaturefeature type="FLYING"/>
+			<creaturefeature type="CREATURE" level="3"/>
+			<creaturefeature type="WEAK"/>
+		</features>
+	</creature>
+
+	<creature id="durok" lvl1="2" lvl2="1">
+		<creaturetypes>
+			<creaturetype type="CHIMERA"/>
+			<creaturetype type="MOUNT"/>
+			<creaturetype type="ANIMAL"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="2"/>
+			<attr id="AGILITY"      value="3"/>
+			<attr id="INTUITION"    value="2"/>
+			<attr id="CONSTITUTION" value="6"/>
+			<attr id="MYSTIC"       value="1"/>
+			<attr id="STRENGTH"     value="7"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="1"/>
+			<attr id="SIZE"         value="5"/>
+			<attr id="SPEED"        value="10"/>
+			<attr id="LIFE"         value="10"/>
+			<attr id="FOCUS"        value="4"/>
+			<attr id="DEFENSE"      value="21"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="22"/>
+			<attr id="MINDRESIST"   value="15"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="9" dmg="2W6" spd="10" ini="8">
+				<features/>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="melee"    	val="9">
+				<masterref ref="melee/knock"/>
+				<masterref ref="melee/rush"/>
+			</skillval>
+			<skillval skill="acrobatics"    val="13"/>
+			<skillval skill="athletics"     val="24">
+				 <masterref ref="athletics/muscleman"/>
+			</skillval>
+			<skillval skill="determination" val="7"/>
+			<skillval skill="stealth"       val="6"/>
+			<skillval skill="perception"    val="9"/>
+			<skillval skill="endurance"     val="16"/>
+		</skillvals>
+		<features>
+			<creaturefeature type="RESIST_EXHAUSTION" level="2"/>
+			<creaturefeature type="RESIST_COLD" level="2"/>
+			<creaturefeature type="CREATURE" level="5"/>
+			<creaturefeature type="RESIST_PAIN"/>
+			<creaturefeature type="UNCONTROLLABLE"/>
+		</features>
+	</creature>
+	<creature id="faesquirrel" lvl1="0-" lvl2="0-">
+		<creaturetypes>
+			<creaturetype type="FAIRY"/>
+			<creaturetype type="NATURECREATURE"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="4"/>
+			<attr id="AGILITY"      value="4"/>
+			<attr id="INTUITION"    value="3"/>
+			<attr id="CONSTITUTION" value="1"/>
+			<attr id="MYSTIC"       value="1"/>
+			<attr id="STRENGTH"     value="0"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="2"/>
+			<attr id="SIZE"         value="2"/>
+			<attr id="SPEED"        value="10"/>
+			<attr id="LIFE"         value="3"/>
+			<attr id="FOCUS"        value="11"/>
+			<attr id="DEFENSE"      value="17"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="17"/>
+			<attr id="MINDRESIST"   value="20"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="3" dmg="1W6" spd="8" ini="7">
+				<features>
+					<feature type="BLUNT"/>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="acrobatics"    val="13">
+				 <masterref ref="acrobatics/masterbalance"/>
+			</skillval>
+			<skillval skill="athletics"     val="10">
+				 <masterref ref="athletics/monkey"/>
+			</skillval>
+			<skillval skill="performance"   val="7"/>
+			<skillval skill="empathie"      val="7"/>
+			<skillval skill="determination" val="6"/>
+			<skillval skill="dexterity"     val="7"/>
+			<skillval skill="stealth"       val="12"/>
+			<skillval skill="perception"    val="9"/>
+			<skillval skill="endurance"     val="4"/>
+			<skillval skill="fatemagic"     val="8"/>
+		</skillvals>
+		<spellvals>
+			<spellval school="fatemagic"   spell="fortune"/>
+		</spellvals>
+		<features>
+			<creaturefeature type="FAIRYORIGIN"/>
+			<creaturefeature type="COWARD"/>
+			<creaturefeature type="FLYING"/>
+			<creaturefeature type="CREATURE" level="4"/>
+			<creaturefeature type="WEAK"/>
+		</features>
+	</creature>
+	<creature id="fairyswarm" lvl1="2" lvl2="0">
+		<creaturetypes>
+			<creaturetype type="FAIRY"/>
+			<creaturetype type="COLLECTIVE"/>
+			<creaturetype type="NATURECREATURE"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="4"/>
+			<attr id="AGILITY"      value="3"/>
+			<attr id="INTUITION"    value="2"/>
+			<attr id="CONSTITUTION" value="0"/>
+			<attr id="MYSTIC"       value="3"/>
+			<attr id="STRENGTH"     value="0"/>
+			<attr id="MIND"         value="2"/>
+			<attr id="WILLPOWER"    value="3"/>
+			<attr id="SIZE"         value="4"/>
+			<attr id="SPEED"        value="12"/>
+			<attr id="LIFE"         value="4"/>
+			<attr id="FOCUS"        value="17"/>
+			<attr id="DEFENSE"      value="19"/>
+			<attr id="DAMAGE_REDUCTION" value="4"/>
+			<attr id="BODYRESIST"   value="18"/>
+			<attr id="MINDRESIST"   value="17"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="4" dmg="1W6" spd="7" ini="8">
+				<features>
+					<feature type="BLUNT"/>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="acrobatics"    val="11"/>
+			<skillval skill="athletics"     val="4"/>
+			<skillval skill="determination" val="13"/>
+			<skillval skill="stealth"       val="8"/>
+			<skillval skill="perception"    val="9"/>
+			<skillval skill="endurance"     val="3"/>
+			<skillval skill="combatmagic"   val="9">
+				 <masterref ref="combatmagic/aimedspells"/>
+			</skillval>
+			<skillval skill="enhancemagic"  val="8"/>
+		</skillvals>
+		<spellvals>
+			<spellval school="combatmagic"   spell="harmitem"/>
+			<spellval school="combatmagic"   spell="magicblow"/>
+			<spellval school="enhancemagic"  spell="enhanceconst"/>
+			<spellval school="enhancemagic"  spell="auradetermin"/>
+			<spellval school="enhancemagic"  spell="ironaura"/>
+		</spellvals>
+		<features>
+			<creaturefeature type="FAIRYORIGIN"/>
+			<creaturefeature type="COWARD"/>
+			<creaturefeature type="FLYING"/>
+			<creaturefeature type="DISEMBODIED"/>
+			<creaturefeature type="CREATURE" level="6"/>
+			<creaturefeature type="WEAK"/>
+			<creaturefeature type="SWARM" level="1" count="5"/>
+			<creaturefeature type="vulnurable_damage" damage="FIRE"/>
+			<creaturefeature type="vulnurable_damage" damage="COLD"/>
+		</features>
+	</creature>
+	<creature id="qirin" lvl1="2" lvl2="1">
+		<creaturetypes>
+			<creaturetype type="ANIMAL"/>
+			<creaturetype type="MOUNT"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="3"/>
+			<attr id="AGILITY"      value="5"/>
+			<attr id="INTUITION"    value="2"/>
+			<attr id="CONSTITUTION" value="4"/>
+			<attr id="MYSTIC"       value="3"/>
+			<attr id="STRENGTH"     value="7"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="3"/>
+			<attr id="SIZE"         value="7"/>
+			<attr id="SPEED"        value="15"/>
+			<attr id="LIFE"         value="10"/>
+			<attr id="FOCUS"        value="17"/>
+			<attr id="DEFENSE"      value="22"/>
+			<attr id="DAMAGE_REDUCTION" value="1"/>
+			<attr id="BODYRESIST"   value="22"/>
+			<attr id="MINDRESIST"   value="20"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="12" dmg="2W6+2" spd="10" ini="8">
+				<features/>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="melee"     	val="12">
+				 <masterref ref="melee/rush"/>
+			</skillval>
+			<skillval skill="acrobatics"    val="12"/>
+			<skillval skill="athletics"     val="21">
+				 <masterref ref="athletics/swiftpursuit"/>
+				 <masterref ref="athletics/muscleman"/>
+			</skillval>
+			<skillval skill="determination" val="5"/>
+			<skillval skill="stealth"       val="8"/>
+			<skillval skill="perception"    val="7"/>
+			<skillval skill="endurance"     val="11"/>
+			<skillval skill="antimagic"     val="12"/>
+		</skillvals>
+		<spellvals>
+			<spellval school="antimagic" 	 spell="interferespell"/>
+			<spellval school="antimagic"	 spell="truesight"/>
+			<spellval school="antimagic" 	 spell="counterspell"/>
+		</spellvals>
+		<features>
+			<creaturefeature type="AMPHIBIC"/>
+			<creaturefeature type="COWARD"/>
+			<creaturefeature type="FLYING"/>
+			<creaturefeature type="CREATURE" level="3"/>
+			<creaturefeature type="WEAK"/>
+		</features>
+	</creature>
+	<creature id="shadowpanther" lvl1="2" lvl2="1">
+		<creaturetypes>
+			<creaturetype type="ANIMAL"/>
+			<creaturetype type="FELINE"/>
+			<creaturetype type="MOUNT"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="3"/>
+			<attr id="AGILITY"      value="6"/>
+			<attr id="INTUITION"    value="4"/>
+			<attr id="CONSTITUTION" value="5"/>
+			<attr id="MYSTIC"       value="1"/>
+			<attr id="STRENGTH"     value="6"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="1"/>
+			<attr id="SIZE"         value="7"/>
+			<attr id="SPEED"        value="14"/>
+			<attr id="LIFE"         value="9"/>
+			<attr id="FOCUS"        value="4"/>
+			<attr id="DEFENSE"      value="22"/>
+			<attr id="DAMAGE_REDUCTION" value="1"/>
+			<attr id="BODYRESIST"   value="25"/>
+			<attr id="MINDRESIST"   value="19"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="16" dmg="2W6+2" spd="10" ini="6">
+				<features>
+					<feature type="PIERCING" level="3"/>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="melee"     	val="16">
+				 <masterref ref="melee/knock"/>
+				 <masterref ref="melee/confusion"/>
+				 <masterref ref="melee/rush"/>
+			</skillval>
+			<skillval skill="acrobatics"    val="13"/>
+			<skillval skill="athletics"     val="19">
+				 <masterref ref="athletics/swiftpursuit"/>
+			</skillval>
+			<skillval skill="determination" val="10"/>
+			<skillval skill="stealth"       val="13"/>
+			<skillval skill="hunting"    	val="11"/>
+			<skillval skill="perception"    val="10"/>
+			<skillval skill="endurance"     val="12"/>
+		</skillvals>
+		<features>
+			<creaturefeature type="LOWLIGHT"/>
+			<creaturefeature type="RESIST_HEAT" level="1"/>
+			<creaturefeature type="CREATURE" level="7"/>
+		</features>
+	</creature>
+	<creature id="undare" lvl1="0-" lvl2="0-">
+		<creaturetypes>
+			<creaturetype type="ANIMAL"/>
+			<creaturetype type="FAIRY"/>
+			<creaturetype type="WATERCREATURE"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="3"/>
+			<attr id="AGILITY"      value="3"/>
+			<attr id="INTUITION"    value="2"/>
+			<attr id="CONSTITUTION" value="0"/>
+			<attr id="MYSTIC"       value="3"/>
+			<attr id="STRENGTH"     value="0"/>
+			<attr id="MIND"         value="2"/>
+			<attr id="WILLPOWER"    value="2"/>
+			<attr id="SIZE"         value="2"/>
+			<attr id="SPEED"        value="8"/>
+			<attr id="LIFE"         value="2"/>
+			<attr id="FOCUS"        value="10"/>
+			<attr id="DEFENSE"      value="17"/>
+			<attr id="DAMAGE_REDUCTION" value="2"/>
+			<attr id="BODYRESIST"   value="16"/>
+			<attr id="MINDRESIST"   value="19"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="2" dmg="1W6" spd="10" ini="8">
+				<features>
+					<feature type="BLUNT"/>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="acrobatics"    val="9"/>
+			<skillval skill="athletics"     val="5"/>
+			<skillval skill="determination" val="7"/>
+			<skillval skill="stealth"       val="8"/>
+			<skillval skill="swim"	        val="8"/>
+			<skillval skill="perception"    val="9"/>
+			<skillval skill="endurance"     val="2"/>
+			<skillval skill="watermagic"    val="8"/>
+		</skillvals>
+		<spellvals>
+			<spellval school="watermagic" 	 spell="cleansewater"/>
+			<spellval school="watermagic"	 spell="quickwash"/>
+			<spellval school="watermagic" 	 spell="coldprotection"/>
+			<spellval school="watermagic" 	 spell="findwater"/>
+		</spellvals>
+		<features>
+			<creaturefeature type="AMPHIBIC"/>
+			<creaturefeature type="FAIRYORIGIN"/>
+			<creaturefeature type="COWARD"/>
+			<creaturefeature type="FLYING"/>
+			<creaturefeature type="DISEMBODIED"/>
+			<creaturefeature type="CREATURE" level="4"/>
+			<creaturefeature type="WEAK"/>
+			<creaturefeature type="vulnerable_damage" damage="FIRE"/>
+		</features>
+	</creature>
+	<creature id="wareishi" lvl1="0-" lvl2="0-">
+		<creaturetypes>
+			<creaturetype type="GHOST"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="2"/>
+			<attr id="AGILITY"      value="2"/>
+			<attr id="INTUITION"    value="3"/>
+			<attr id="CONSTITUTION" value="1"/>
+			<attr id="MYSTIC"       value="3"/>
+			<attr id="STRENGTH"     value="1"/>
+			<attr id="MIND"         value="2"/>
+			<attr id="WILLPOWER"    value="3"/>
+			<attr id="SIZE"         value="2"/>
+			<attr id="SPEED"        value="5"/>
+			<attr id="LIFE"         value="3"/>
+			<attr id="FOCUS"        value="17"/>
+			<attr id="DEFENSE"      value="18"/>
+			<attr id="DAMAGE_REDUCTION" value="3"/>
+			<attr id="BODYRESIST"   value="15"/>
+			<attr id="MINDRESIST"   value="18"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="12" dmg="2W6+3" spd="10" ini="8">
+				<features/>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="acrobatics"    val="4"/>
+			<skillval skill="athletics"     val="6"/>
+			<skillval skill="determination" val="8"/>
+			<skillval skill="stealth"       val="12"/>
+			<skillval skill="perception"    val="9"/>
+			<skillval skill="endurance"     val="4"/>
+			<skillval skill="motionmagic"   val="9"/>
+			<skillval skill="illusionmagic" val="10"/>
+		</skillvals>
+		<spellvals>
+			<spellval school="motionmagic" 	 spell="shove"/>
+			<spellval school="motionmagic"	 spell="moveitem"/>
+			<spellval school="illusinomagic" spell="ventriloquate"/>
+			<spellval school="illusionmagic" spell="dancinglights"/>
+		</spellvals>
+		<features>
+			<creaturefeature type="LOWLIGHT"/>
+			<creaturefeature type="COWARD"/>
+			<creaturefeature type="GHOST"/>
+			<creaturefeature type="DISEMBODIED"/>
+			<creaturefeature type="CREATURE" level="5"/>
+			<creaturefeature type="WEAK"/>
+			<creaturefeature type="vulnerable_damage" damage="LIGHT"/>
+		</features>
+	</creature>
+	<creature id="frog" lvl1="0-" lvl2="0-">
+		<creaturetypes>
+			<creaturetype type="AMPHIBIAN"/>
+			<creaturetype type="ANIMAL"/>
+		</creaturetypes>
+		<attributes>
+			<attr id="CHARISMA"     value="2"/>
+			<attr id="AGILITY"      value="3"/>
+			<attr id="INTUITION"    value="3"/>
+			<attr id="CONSTITUTION" value="0"/>
+			<attr id="MYSTIC"       value="0"/>
+			<attr id="STRENGTH"     value="0"/>
+			<attr id="MIND"         value="1"/>
+			<attr id="WILLPOWER"    value="1"/>
+			<attr id="SIZE"         value="1"/>
+			<attr id="SPEED"        value="12"/>
+			<attr id="LIFE"         value="1"/>
+			<attr id="FOCUS"        value="2"/>
+			<attr id="DEFENSE"      value="18"/>
+			<attr id="DAMAGE_REDUCTION" value="0"/>
+			<attr id="BODYRESIST"   value="12"/>
+			<attr id="MINDRESIST"   value="18"/>
+		</attributes>
+		<weapons>
+			<cweapon id="body" skill="melee" val="4" dmg="1W6-1" spd="10" ini="7">
+				<features>
+					<feature type="BLUNT"/>
+				</features>
+			</cweapon>
+		</weapons>
+		<skillvals>
+			<skillval skill="acrobatics"    val="5"/>
+			<skillval skill="athletics"     val="4"/>
+			<skillval skill="determination" val="8"/>
+			<skillval skill="stealth"       val="14">
+				 <masterref ref="stealth/creeper"/>
+			</skillval>
+			<skillval skill="swim"    val="16"/>
+			<skillval skill="perception"    val="11"/>
+			<skillval skill="endurance"     val="1"/>
+		</skillvals>
+		<features>
+			<creaturefeature type="AMPHIBIC"/>
+			<creaturefeature type="COWARD"/>
+			<creaturefeature type="CREATURE" level="1"/>
+			<creaturefeature type="FRAGILE"/>
+		</features>
+	</creature>
 </creatures>
