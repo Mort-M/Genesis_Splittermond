@@ -299,7 +299,7 @@
                 <masterreq ref="performance/cheer_up"/>
             </requires>
        </mastership>
-       <mastership level="1" key="droll_companion" />
+       <mastership level="2" key="droll_companion" />
    </skill>
 
    <skill id="dexterity">
