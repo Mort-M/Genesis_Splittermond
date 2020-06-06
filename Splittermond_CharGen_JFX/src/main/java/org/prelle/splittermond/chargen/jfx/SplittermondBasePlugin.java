@@ -98,6 +98,11 @@ public class SplittermondBasePlugin implements RulePlugin<SpliMoCharacter>, Comm
 	 */
 	@Override
 	public void attachConfigurationTree(ConfigContainer addBelow) {
+		if (core==null) {
+			core = new SplittermondRules();
+			data = new SplittermondDataPlugin();
+			charGen = new GeneratorRulePlugin();
+		}
 		core.attachConfigurationTree(addBelow);
 		data.attachConfigurationTree(addBelow);
 		charGen.attachConfigurationTree(addBelow);
@@ -160,9 +165,11 @@ public class SplittermondBasePlugin implements RulePlugin<SpliMoCharacter>, Comm
 	 */
 	@Override
 	public void init(RulePluginProgessListener callback) {
-		core = new SplittermondRules();
-		data = new SplittermondDataPlugin();
-		charGen = new GeneratorRulePlugin();
+		if (core==null) {
+			core = new SplittermondRules();
+			data = new SplittermondDataPlugin();
+			charGen = new GeneratorRulePlugin();
+		}
 		
 		core.init(callback);
 		data.init(callback);
