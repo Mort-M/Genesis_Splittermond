@@ -146,7 +146,7 @@
 			<creaturefeature type="WEAK" />
 		</features>
 	</creature>
-<creature id="avci" lvl1="0" lvl2="0-">
+	<creature id="avci" lvl1="0" lvl2="0">
 		<creaturetypes>
 			<creaturetype type="ANIMAL"/>
 			<creaturetype type="REPTILE"/>
@@ -190,7 +190,7 @@
 			<skillval skill="endurance"     val="9"/>
 		</skillvals>
 		<features>
-			<creaturefeature type="AMPHIBIC"/>
+			<creaturefeature type="amphibic"/>
 			<creaturefeature type="COWARD"/>
 			<creaturefeature type="FLYING"/>
 			<creaturefeature type="CREATURE" level="3"/>
@@ -246,10 +246,10 @@
 			<creaturefeature type="RESIST_COLD" level="2"/>
 			<creaturefeature type="CREATURE" level="5"/>
 			<creaturefeature type="RESIST_PAIN"/>
-			<creaturefeature type="UNCONTROLLABLE"/>
+			<creaturefeature type="uncontrollable"/>
 		</features>
 	</creature>
-	<creature id="faesquirrel" lvl1="0-" lvl2="0-">
+	<creature id="faesquirrel" lvl1="0" lvl2="0">
 		<creaturetypes>
 			<creaturetype type="FAIRY"/>
 			<creaturetype type="NATURECREATURE"/>
@@ -287,7 +287,7 @@
 				 <masterref ref="athletics/monkey"/>
 			</skillval>
 			<skillval skill="performance"   val="7"/>
-			<skillval skill="empathie"      val="7"/>
+			<skillval skill="empathy"       val="7"/>
 			<skillval skill="determination" val="6"/>
 			<skillval skill="dexterity"     val="7"/>
 			<skillval skill="stealth"       val="12"/>
@@ -309,7 +309,7 @@
 	<creature id="fairyswarm" lvl1="2" lvl2="0">
 		<creaturetypes>
 			<creaturetype type="FAIRY"/>
-			<creaturetype type="COLLECTIVE"/>
+			<creaturetype type="collective"/>
 			<creaturetype type="NATURECREATURE"/>
 		</creaturetypes>
 		<attributes>
@@ -363,9 +363,9 @@
 			<creaturefeature type="DISEMBODIED"/>
 			<creaturefeature type="CREATURE" level="6"/>
 			<creaturefeature type="WEAK"/>
-			<creaturefeature type="SWARM" level="1" count="5"/>
+			<creaturefeature type="swarm" level="1" count="5"/>
 			<creaturefeature type="vulnurable_damage" damage="FIRE"/>
-			<creaturefeature type="vulnurable_damage" damage="COLD"/>
+			<creaturefeature type="vulnurable_damage" damage="WATER"/>
 		</features>
 	</creature>
 	<creature id="qirin" lvl1="2" lvl2="1">
@@ -417,7 +417,7 @@
 			<spellval school="antimagic" 	 spell="counterspell"/>
 		</spellvals>
 		<features>
-			<creaturefeature type="AMPHIBIC"/>
+			<creaturefeature type="amphibic"/>
 			<creaturefeature type="COWARD"/>
 			<creaturefeature type="FLYING"/>
 			<creaturefeature type="CREATURE" level="3"/>
@@ -477,7 +477,7 @@
 			<creaturefeature type="CREATURE" level="7"/>
 		</features>
 	</creature>
-	<creature id="undare" lvl1="0-" lvl2="0-">
+	<creature id="undare" lvl1="0" lvl2="0">
 		<creaturetypes>
 			<creaturetype type="ANIMAL"/>
 			<creaturetype type="FAIRY"/>
@@ -525,17 +525,17 @@
 			<spellval school="watermagic" 	 spell="findwater"/>
 		</spellvals>
 		<features>
-			<creaturefeature type="AMPHIBIC"/>
+			<creaturefeature type="amphibic"/>
 			<creaturefeature type="FAIRYORIGIN"/>
 			<creaturefeature type="COWARD"/>
 			<creaturefeature type="FLYING"/>
 			<creaturefeature type="DISEMBODIED"/>
 			<creaturefeature type="CREATURE" level="4"/>
 			<creaturefeature type="WEAK"/>
-			<creaturefeature type="vulnerable_damage" damage="FIRE"/>
+			<creaturefeature type="vulnurable_damage" damage="FIRE"/>
 		</features>
 	</creature>
-	<creature id="wareishi" lvl1="0-" lvl2="0-">
+	<creature id="wareishi" lvl1="0" lvl2="0">
 		<creaturetypes>
 			<creaturetype type="GHOST"/>
 		</creaturetypes>
@@ -575,7 +575,7 @@
 		<spellvals>
 			<spellval school="motionmagic" 	 spell="shove"/>
 			<spellval school="motionmagic"	 spell="moveitem"/>
-			<spellval school="illusinomagic" spell="ventriloquate"/>
+			<spellval school="illusionmagic" spell="ventriloquate"/>
 			<spellval school="illusionmagic" spell="dancinglights"/>
 		</spellvals>
 		<features>
@@ -585,10 +585,10 @@
 			<creaturefeature type="DISEMBODIED"/>
 			<creaturefeature type="CREATURE" level="5"/>
 			<creaturefeature type="WEAK"/>
-			<creaturefeature type="vulnerable_damage" damage="LIGHT"/>
+			<creaturefeature type="vulnurable_damage" damage="LIGHT"/>
 		</features>
 	</creature>
-	<creature id="frog" lvl1="0-" lvl2="0-">
+	<creature id="frog" lvl1="0" lvl2="0">
 		<creaturetypes>
 			<creaturetype type="AMPHIBIAN"/>
 			<creaturetype type="ANIMAL"/>
@@ -630,7 +630,7 @@
 			<skillval skill="endurance"     val="1"/>
 		</skillvals>
 		<features>
-			<creaturefeature type="AMPHIBIC"/>
+			<creaturefeature type="amphibic"/>
 			<creaturefeature type="COWARD"/>
 			<creaturefeature type="CREATURE" level="1"/>
 			<creaturefeature type="FRAGILE"/>
