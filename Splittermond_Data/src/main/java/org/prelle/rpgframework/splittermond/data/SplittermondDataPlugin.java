@@ -239,6 +239,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadCreatures(BUU, clazz.getResourceAsStream("buu/data/creatures-buu.xml"), BUU.getResources(), BUU.getHelpResources());
 		SplitterMondCore.loadMaterials(BUU, clazz.getResourceAsStream("buu/data/materials-buu.xml"), BUU.getResources(), BUU.getHelpResources());
 		count++; callback.progressChanged( (count/totalPlugins) );
+		System.exit(1);
 
 		logger.info("START -------------------------------Beastmaster---------------------------------------");
 		PluginSkeleton BEAST = new PluginSkeleton("Beastmaster", "Bestienmeister");
@@ -462,6 +463,8 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 							SplitterMondCore.loadMaterials(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
 						} else if (id.startsWith("race")) {
 							SplitterMondCore.loadRaces(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
+						} else if (id.startsWith("creature")) {
+							SplitterMondCore.loadCreatures(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
 						} else  {
 							logger.warn("Don't know how to deal with custom data "+bundle.datafile);
 							continue;
