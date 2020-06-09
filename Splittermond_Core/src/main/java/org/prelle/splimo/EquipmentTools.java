@@ -481,7 +481,7 @@ public class EquipmentTools {
 		Shield shield = item.getItem().getType(Shield.class);
 		if (shield!=null) {
 			// Defense
-			if (shield.getDefense()!=0) {
+			if (item.getDefense(ItemType.SHIELD)!=0) {
 				ret.add(new AttributeModification(Attribute.DEFENSE, item.getDefense(ItemType.SHIELD), ModificationSource.EQUIPMENT));
 				logger.debug("Added shield defense +"+item.getDefense(ItemType.SHIELD));
 			}
