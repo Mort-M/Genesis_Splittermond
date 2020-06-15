@@ -7,7 +7,9 @@ public class JSONLongRangeWeapon {
     public int value;
     public String skill;
     public String attribute1;
+    public String attribute1Id;
     public String attribute2;
+    public String attribute2Id;
     public String damage;
     public int weaponSpeed;
     public int characterTickMalus;
