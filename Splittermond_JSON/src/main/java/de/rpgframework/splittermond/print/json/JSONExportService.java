@@ -84,7 +84,9 @@ public class JSONExportService {
             jsonLongRangeWeapon.value = SplitterTools.getWeaponValueFor(character, item, LONG_RANGE_WEAPON);
             jsonLongRangeWeapon.skill = item.getSkill(LONG_RANGE_WEAPON).getName();
             jsonLongRangeWeapon.attribute1 = item.getAttribute1(LONG_RANGE_WEAPON).getShortName();
+            jsonLongRangeWeapon.attribute1Id = item.getAttribute1(LONG_RANGE_WEAPON).name();
             jsonLongRangeWeapon.attribute2 = item.getAttribute2(LONG_RANGE_WEAPON).getShortName();
+            jsonLongRangeWeapon.attribute2Id = item.getAttribute2(LONG_RANGE_WEAPON).name();
             jsonLongRangeWeapon.damage = hasLicense? getWeaponDamageString(item.getDamage(LONG_RANGE_WEAPON)) : "";
             int tickMalus   = SplitterTools.getTickMalusSum  (character, true);
             int weaponSpeed = SplitterTools.getWeaponSpeedFor(character, item, LONG_RANGE_WEAPON) - tickMalus;
@@ -158,14 +160,18 @@ public class JSONExportService {
                 hasLicense = RPGFrameworkLoader.getInstance().getLicenseManager().hasLicense(RoleplayingSystem.SPLITTERMOND, item.getItem().getPlugin().getID()) || item.getItem().getPlugin().getID().equals("CORE");
             }
             String attribute1Name = item.getAttribute1(WEAPON).getShortName();
+            String attribute1Id = item.getAttribute1(WEAPON).name();
             String attribute2Name = item.getAttribute2(WEAPON).getShortName();
+            String attribute2Id = item.getAttribute2(WEAPON).name();
             int weaponSkill = SplitterTools.getWeaponValueFor(character, item, WEAPON);
             int tickMalus = SplitterTools.getTickMalusSum(character, true);
             int weaponSpeed = SplitterTools.getWeaponSpeedFor(character, item, WEAPON) - tickMalus;
             jsonWeapon.skill = item.getSkill(WEAPON).getName();
             jsonWeapon.value = weaponSkill;
             jsonWeapon.attribute1 = attribute1Name;
+            jsonWeapon.attribute1Id = attribute1Id;
             jsonWeapon.attribute2 = attribute2Name;
+            jsonWeapon.attribute2Id = attribute2Id;
             if (hasLicense) {
                 jsonWeapon.damage = getWeaponDamageString(item.getDamage(WEAPON));
                 jsonWeapon.weaponSpeed = weaponSpeed;
@@ -197,7 +203,9 @@ public class JSONExportService {
             weapon.skill = melee.getName();
         }
         weapon.attribute1 = Attribute.AGILITY.getShortName();
+        weapon.attribute1Id = Attribute.AGILITY.name();
         weapon.attribute2 = Attribute.STRENGTH.getShortName();
+        weapon.attribute2Id = Attribute.STRENGTH.name();
         weapon.value = character.getMeleeValue();
         List<JSONFeature> jsonFeatures = new ArrayList<>();
         String[] features = new String[]{"DISARMING", "BLUNT" , "CLUTCH"};
@@ -397,6 +405,7 @@ public class JSONExportService {
     private JSONAttribute getJSONAttribute(Attribute attribute, SpliMoCharacter character) {
         JSONAttribute jsonAttribute = new JSONAttribute();
         AttributeValue attributeValue = character.getAttribute(attribute);
+        jsonAttribute.id = attribute.name();
         jsonAttribute.name = attribute.getName();
         jsonAttribute.shortName = attribute.getShortName();
         jsonAttribute.startValue = attributeValue.getStart();
