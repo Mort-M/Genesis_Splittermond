@@ -80,6 +80,7 @@
   <enhancement id="hardened" cost="1" max="1" items="ARMOR,SHIELD">
   	<modifications>
   	  <featuremod feature="HARDENED"/>
+	  <itemmod attr="DEFENSE" val="1"/>
   	  <itemmod attr="TICK_MALUS" val="1"/>
   	</modifications>
   </enhancement>

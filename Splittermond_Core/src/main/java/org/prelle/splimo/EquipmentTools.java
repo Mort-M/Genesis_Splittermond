@@ -461,7 +461,7 @@ public class EquipmentTools {
 		Armor armor = item.getItem().getType(Armor.class);
 		if (armor!=null) {
 			// Defense
-			ret.add(new AttributeModification(Attribute.DEFENSE, armor.getDefense(), ModificationSource.EQUIPMENT));
+			ret.add(new AttributeModification(Attribute.DEFENSE, item.getDefense(ItemType.ARMOR), ModificationSource.EQUIPMENT));
 			// Handicap
 			int hc = getEquippedHandicap(model, item);
 			if (hc>0) {
@@ -481,8 +481,8 @@ public class EquipmentTools {
 		Shield shield = item.getItem().getType(Shield.class);
 		if (shield!=null) {
 			// Defense
-			if (shield.getDefense()!=0) {
-				ret.add(new AttributeModification(Attribute.DEFENSE, shield.getDefense(), ModificationSource.EQUIPMENT));
+			if (item.getDefense(ItemType.SHIELD)!=0) {
+				ret.add(new AttributeModification(Attribute.DEFENSE, item.getDefense(ItemType.SHIELD), ModificationSource.EQUIPMENT));
 				logger.debug("Added shield defense +"+item.getDefense(ItemType.SHIELD));
 			}
 			
