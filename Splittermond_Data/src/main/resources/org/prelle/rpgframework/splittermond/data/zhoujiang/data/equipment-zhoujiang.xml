@@ -186,7 +186,6 @@
    <item avail="VILLAGE" cplx="U" id="erhu" load="2" material="OTHER" price="100" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
    <item avail="SMALL_TOWN" cplx="G" id="gong" load="3" material="OTHER" price="100" robust="3" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
    <item avail="SMALL_TOWN" cplx="F" id="guzheng" load="3" material="OTHER" price="300" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
-   <item avail="VILLAGE" cplx="U" id="tabor" load="2" material="OTHER" price="50" robust="2" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
    <item avail="VILLAGE" cplx="G" id="pipa" load="2" material="OTHER" price="200" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/>
    
    <!-- ###########################  SOSNTIGE GEGENSTÄNDE  ###########################-->
