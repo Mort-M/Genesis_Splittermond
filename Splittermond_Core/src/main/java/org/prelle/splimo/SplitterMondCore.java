@@ -424,7 +424,7 @@ public class SplitterMondCore {
 						tmp.getEnhancementtype().add(SpellEnhancementType.RANGE);
 					if (tmp.getEffectRange()!=null && tmp.getEffectRange()>0)
 						tmp.getEnhancementtype().add(SpellEnhancementType.EFFECT_RANGE);
-					if (!tmp.hasSpellDuration())
+					if (tmp.hasSpellDuration())
 						tmp.getEnhancementtype().add(SpellEnhancementType.SPELLDURATION);
 					tmp.getEnhancementtype().add(SpellEnhancementType.RELEASETIME);
 
