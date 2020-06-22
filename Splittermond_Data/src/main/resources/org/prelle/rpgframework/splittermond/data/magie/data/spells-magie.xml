@@ -80,7 +80,6 @@
         <school skill="insightmagic" level="0" />
         <type>COMMUNICATION</type>
         <enhancementtype>RELEASETIME</enhancementtype>
-        <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
