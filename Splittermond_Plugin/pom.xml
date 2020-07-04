@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.prelle.rpgframework</groupId>
 		<artifactId>splittermond-all</artifactId>
-		<version>4.0.0</version>
+		<version>4.0.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>splittermond-plugin</artifactId>

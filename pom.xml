@@ -11,7 +11,7 @@
 
 	<groupId>org.prelle.rpgframework</groupId>
 	<artifactId>splittermond-all</artifactId>
-	<version>4.0.0</version>
+	<version>4.0.1-SNAPSHOT</version>
 	<name>Splittermond</name>
 	<description>Splittermond Plugin for Genesis</description>
 	<packaging>pom</packaging>
@@ -24,7 +24,7 @@
 	<properties>
 		<maven.install.skip>true</maven.install.skip>
 		<maven.deploy.skip>false</maven.deploy.skip>
-		<revision>4.0.0</revision>
+		<revision>4.0.1-SNAPSHOT</revision>
 	</properties>
 
 	<dependencyManagement>
