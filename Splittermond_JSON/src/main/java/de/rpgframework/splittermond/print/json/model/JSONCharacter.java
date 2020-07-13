@@ -6,7 +6,7 @@ import java.util.List;
 
 public class JSONCharacter {
 
-    public String jsonExporterVersion = "1.0.1";
+    public String jsonExporterVersion = "1.1.0";
     public String system = RoleplayingSystem.SPLITTERMOND.name();
 
     public String name;
