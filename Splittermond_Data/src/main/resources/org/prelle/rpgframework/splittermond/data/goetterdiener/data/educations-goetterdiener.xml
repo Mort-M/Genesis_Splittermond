@@ -169,6 +169,7 @@
                 <resourcemod ref="reputation" value="1"/>
                 <resourcemod ref="relic" value="1"/>
                 <resourcemod ref="status" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <selmod num="1">
                 <resourcemod ref="mentor" value="1"/>
@@ -260,6 +261,7 @@
                 <resourcemod ref="reputation" value="1" />
                 <resourcemod ref="relic" value="1" />
                 <resourcemod ref="status" value="1" />
+                <resourcemod ref="faith" value="1" />
             </selmod>
             <selmod num="1">
                 <resourcemod ref="mentor" value="1" />
@@ -311,6 +313,7 @@
                 <resourcemod ref="reputation" value="1" />
                 <resourcemod ref="relic" value="1" />
                 <resourcemod ref="status" value="1" />
+                <resourcemod ref="faith" value="1" />
             </selmod>
             <resourcemod ref="rank" value="1" />
             
@@ -408,6 +411,7 @@
              <selmod num="1">
                  <resourcemod ref="contacts" value="1"/>
                  <resourcemod ref="relic" value="1"/>
+                 <resourcemod ref="faith" value="1"/>
              </selmod>
              
              <skillmod ref="staffs"  value="2"/>

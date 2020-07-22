@@ -183,6 +183,7 @@
 				<resourcemod ref="reputation" value="1" />
 				<resourcemod ref="relic" value="1" />
 				<resourcemod ref="status" value="1" />
+				<resourcemod ref="faith" value="1" />
 			</selmod>
 			<selmod>
 				<resourcemod ref="mentor" value="1" />
@@ -246,6 +247,7 @@
 			<selmod>
 				<resourcemod ref="contacts" value="1" />
 				<resourcemod ref="relic" value="1" />
+				<resourcemod ref="faith" value="1" />
 			</selmod>
 			<selmod>
 				<skillmod ref="slashing" value="2" />
@@ -273,12 +275,7 @@
 			<skillmod ref="survival" value="3" />
 			<skillmod ref="endurance" value="1" />
 
-			<selmod>
-				<mastermod ref="craftmanship/efficiency" />
-				<mastermod ref="craftmanship/fairycrafter" />
-				<mastermod ref="craftmanship/journeyman" />
-				<mastermod ref="craftmanship/scrimper" />
-			</selmod>
+			<mastermod skill="craftmanship" level="1"/>
 
 			<mastermod ref="antimagic/wardinghand" />
 		</modifications>
