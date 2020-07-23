@@ -1134,7 +1134,7 @@
 	<education id="grimman" variantof="faithwarrior">
     	<modifications>
     		<reqmod type="culture" ref="nyrdfing" />
-                <!-- Missing: Require status to be at least 2 already as input requirement! -->
+		<resourcereq ref="status" value=2" />
     		<selmod num="1">
                 <powermod ref="focuspool" />
                 <powermod ref="sturdy"/>
