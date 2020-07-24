@@ -157,58 +157,6 @@
            </modifications>
     </education>
     
-    <education id="moonwolf" variantof="faithwarrior">
-		<modifications>
-			
-			<reqmod type="culture" ref="tarr" />
-			
-			<powermod ref="resistpoison" />
-			<powermod ref="animalfamiliar" />
-									
-			<selmod num="1">
-                <resourcemod ref="reputation" value="1"/>
-                <resourcemod ref="relic" value="1"/>
-                <resourcemod ref="status" value="1"/>
-                <resourcemod ref="faith" value="1"/>
-            </selmod>
-            <selmod num="1">
-                <resourcemod ref="mentor" value="1"/>
-                <resourcemod ref="rank" value="1"/>
-            </selmod>
-									
-            <selmod values="3 2">
-                <skillmod ref="slashing" />
-                <skillmod ref="melee" />
-                <skillmod ref="chains" />
-                <skillmod ref="blades" />
-                <skillmod ref="staffs" />
-                <skillmod ref="longrange" />
-                <skillmod ref="throwing" />
-            </selmod>
-			<skillmod ref="leadership"    value="1" />
-			<skillmod ref="arcanelore"    value="1" />
-			<skillmod ref="athletics"     value="2" />
-			<skillmod ref="empathy"       value="1" />
-			<skillmod ref="determination" value="3" />
-			<skillmod ref="history" 	  value="3" />
-			<skillmod ref="endurance"     value="3"/>
-            <skillmod ref="enhancemagic" value="2"/>
-            <selmod values="3 1">
-                <skillmod ref="protectionmagic" />
-                <skillmod ref="combatmagic" />
-            </selmod>
-						
-			<skillmod ref="nature"    value="2" />
-			<skillmod ref="survival"  value="3" />
-			
-			<mastermod spec="history/pantheon" />
-			<selmod num="1">
-				<mastermod skilltype="MAGIC" level="1" />
-				<mastermod skilltype="COMBAT" level="1" />
-			</selmod>
-		</modifications>
-	</education>
-    
     <education id="lyxapriest" variantof="cultist">
 		<modifications>
 			<selmod num="1">
