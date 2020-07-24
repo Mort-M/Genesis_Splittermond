@@ -398,6 +398,7 @@
              <selmod>
                  <resourcemod ref="contacts" value="1"/>
                  <resourcemod ref="relic" value="1"/>
+                 <resourcemod ref="faith" value="1"/>
              </selmod>
              <selmod>
                  <skillmod ref="slashing" value="2"/>
