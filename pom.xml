@@ -22,7 +22,7 @@
 	</organization>
 
 	<properties>
-		<maven.install.skip>true</maven.install.skip>
+		<maven.install.skip>false</maven.install.skip>
 		<maven.deploy.skip>false</maven.deploy.skip>
 		<revision>4.0.1-SNAPSHOT</revision>
 	</properties>
