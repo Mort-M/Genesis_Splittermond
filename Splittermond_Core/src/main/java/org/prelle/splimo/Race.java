@@ -5,6 +5,7 @@ package org.prelle.splimo;
 
 import java.text.Collator;
 import java.util.List;
+import java.util.MissingResourceException;
 
 import org.prelle.simplepersist.Attribute;
 import org.prelle.simplepersist.Element;
@@ -72,7 +73,17 @@ public class Race extends BasePluginData implements Comparable<Race> {
 
 	//-------------------------------------------------------------------
 	public String getName() {
-		return SplitterMondCore.getI18nResources().getString("race."+key);
+		try {
+			return i18n.getString("race."+key);
+		} catch (MissingResourceException e) {
+			if (!reportedKeys.contains(e.getKey())) {
+				reportedKeys.add(e.getKey());
+				logger.error("Missing property '"+e.getKey()+"' in "+i18n.getBaseBundleName());
+				if (MISSING!=null)
+					MISSING.println(e.getKey()+"=");
+			}
+			return e.getKey();
+		}
 	}
 
 	//-------------------------------------------------------------------

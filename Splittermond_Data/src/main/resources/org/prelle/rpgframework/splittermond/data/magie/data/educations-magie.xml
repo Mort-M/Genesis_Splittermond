@@ -189,13 +189,13 @@
             <selmod num="1">
                 <powermod ref="friendearth"/>
                 <powermod ref="friendfire"/>
-                <powermod ref="friendair"/>
-                <powermod ref="friendwater"/>
-                <powermod ref="friendghost"/>
-                <powermod ref="friendgodservant"/>
-                <powermod ref="friendlight"/>
-                <powermod ref="friendshadow"/>
-                <powermod ref="friendundead"/>
+                <powermod ref="friendghost" /><powermod ref="friendlight" /><powermod ref="friendnature" /><powermod ref="friendshadow" /><powermod ref="friendundead" /><powermod ref="friendwater" /><powermod ref="friendair"/>
+                
+                
+                
+                
+            	
+                
             </selmod>
             <powermod ref="animalfamiliar"/>
             

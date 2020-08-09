@@ -6,11 +6,13 @@
 	<parent>
 		<groupId>org.prelle.rpgframework</groupId>
 		<artifactId>splittermond-all</artifactId>
-		<version>4.0.0</version>
+		<version>4.0.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>splittermond-productdata</artifactId>
 	<name>Splittermond Adventure Modules</name>
+	<version>4.0.1</version>
+	
 	<description>Adventure modules released for Splittermond</description>
 
 	<properties>

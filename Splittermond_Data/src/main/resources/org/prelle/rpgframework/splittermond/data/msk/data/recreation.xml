@@ -14,6 +14,7 @@
    <item avail="SMALL_TOWN" cplx="G" id="zinnfiguren" load="0" material="METAL" price="15" robust="4" type="OTHER"/>
    <item avail="SMALL_TOWN" cplx="F" id="geschmeideEinfachSatz" load="0" material="METAL" price="1000" robust="2" skill="diplomacy" type="OTHER"/>
    <item avail="VILLAGE" cplx="G" id="amulett" load="0" material="METAL" price="30" robust="3" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="amulett_wood" load="0" material="WOOD" price="30" robust="3" type="OTHER"/>
    <item avail="VILLAGE" cplx="G" id="arm-/fußreifKupfer" load="0" material="METAL" price="60" robust="4" type="OTHER"/>
    <item avail="SMALL_TOWN" cplx="G" id="arm-/fußreifSilber" load="0" material="METAL" price="200" robust="4" type="OTHER"/>
    <item avail="LARGE_TOWN" cplx="G" id="arm-/fußreifGold" load="0" material="METAL" price="1000" robust="4" type="OTHER"/>

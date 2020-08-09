@@ -277,8 +277,11 @@ public class CharacterViewScreenSpliMo2 extends ManagedScreen implements Generat
 			logger.warn("TODO: Check if creation is finished");
 			if ( ((SpliMoCharacterGenerator)control).hasEnoughData() ) {
 				logger.info("User wants to leave and generator is finished - try to save character");
-				((SpliMoCharacterGenerator)control).generate();
-				return true;
+				if (((SpliMoCharacterGenerator)control).generate()!=null) {
+					return true;
+				} else {
+					return false;
+				}
 			} else {
 				logger.info("User wants to leave the generation early.");
 				CloseType result = getManager().showAlertAndCall(

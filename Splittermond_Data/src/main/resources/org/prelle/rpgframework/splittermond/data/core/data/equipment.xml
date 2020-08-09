@@ -945,23 +945,23 @@
     <item id="pergamentbogen" avail="SMALL_TOWN" price="10" load="0" robust="0" cplx="U"/>
     <item id="schreibutensilien" avail="SMALL_TOWN" price="100" load="0" robust="0" cplx="G"/>
     <item id="tagebuch" avail="SMALL_TOWN" price="500" load="1" robust="1" cplx="U"/>
-    <item id="verbandszeug" avail="VILLAGE" price="10" load="0" robust="0" cplx="U"/>
+    <item id="verbandszeug" avail="VILLAGE" price="10" load="0" robust="0" cplx="U" material="FABRIC"/>
     <item id="brecheisen" avail="VILLAGE" price="200" load="2" robust="6" cplx="U" material="METAL"/>
     <item id="dietriche" avail="SMALL_TOWN" price="1500" load="1" robust="6" cplx="F"/>
     <item id="kletterhaken10stück" avail="SMALL_TOWN" price="50" load="1" robust="6" cplx="U"/>
     <item id="wurfhaken" avail="SMALL_TOWN" price="100" load="2" robust="6" cplx="G"/>
-    <item id="alchemistenkoffer" avail="CAPITAL" price="3000" load="3" robust="1" cplx="F"/>
+    <item id="alchemistenkoffer" avail="CAPITAL" price="3000" load="3" robust="1" cplx="F" material="WOOD"/>
     <item id="schmiedeausstattung" avail="SMALL_TOWN" price="3000" load="6" robust="7" cplx="G"/>
-    <item id="schneiderwerkzeug" avail="VILLAGE" price="1000" load="2" robust="4" cplx="G"/>
-    <item id="schreinerwerkzeug" avail="VILLAGE" price="1000" load="4" robust="4" cplx="G"/>
-    <item id="vorschlaghammer" avail="VILLAGE" price="200" load="4" robust="5" cplx="U"/>
+    <item id="schneiderwerkzeug" avail="VILLAGE" price="1000" load="2" robust="4" cplx="G" material="METAL"/>
+    <item id="schreinerwerkzeug" avail="VILLAGE" price="1000" load="4" robust="4" cplx="G" material="WOOD"/>
+    <item id="vorschlaghammer" avail="VILLAGE" price="200" load="4" robust="5" cplx="U" material="WOOD"/>
     <item id="brettspiel" avail="SMALL_TOWN" price="50" load="1" robust="2" cplx="U"/>
-    <item id="flöte" avail="VILLAGE" price="50" load="0" robust="2" cplx="G"/>
+    <item id="flöte" avail="VILLAGE" price="50" load="0" robust="2" cplx="G" material="WOOD"/>
     <item id="jonglierball" avail="VILLAGE" price="5" load="0" robust="1" cplx="U"/>
     <item id="kohlestift" avail="VILLAGE" price="2" load="0" robust="1" cplx="U"/>
     <item id="kosmetikkoffer" avail="SMALL_TOWN" price="1500" load="2" robust="0" cplx="F"/>
     <item id="kreide" avail="VILLAGE" price="2" load="0" robust="1" cplx="U"/>
-    <item id="laute" avail="SMALL_TOWN" price="200" load="3" robust="2" cplx="G"/>
+    <item id="laute" avail="SMALL_TOWN" price="200" load="3" robust="2" cplx="G" material="WOOD"/>
     <item id="leinwand" avail="SMALL_TOWN" price="30" load="2" robust="0" cplx="G"/>
     <item id="malfarben" avail="SMALL_TOWN" price="50" load="1" robust="0" cplx="G"/>
     <item id="pinsel" avail="VILLAGE" price="5" load="0" robust="2" cplx="U"/>

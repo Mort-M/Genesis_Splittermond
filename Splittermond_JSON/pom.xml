@@ -6,13 +6,13 @@
 	<parent>
 		<groupId>org.prelle.rpgframework</groupId>
 		<artifactId>splittermond-all</artifactId>
-		<version>4.0.0</version>
+		<version>4.0.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>splittermond-json</artifactId>
 	<name>Splittermond JSON Export</name>
 	<description>Splittermond export to JSON</description>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 
 	<properties>
 		<maven.install.skip>true</maven.install.skip>

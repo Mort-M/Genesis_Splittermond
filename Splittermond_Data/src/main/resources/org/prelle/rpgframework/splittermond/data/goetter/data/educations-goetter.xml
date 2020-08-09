@@ -1087,6 +1087,7 @@
             <selmod num="1">
                 <resourcemod ref="relic" value="1"/>
                 <resourcemod ref="status" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <selmod num="1">
                 <resourcemod ref="mentor" value="1"/>
@@ -1133,11 +1134,18 @@
 	<education id="grimman" variantof="faithwarrior">
     	<modifications>
     		<reqmod type="culture" ref="nyrdfing" />
+			<!-- Missing: Require status to be at least 2 already as input requirement! -->
+			<!-- Currently cannot be expressed in Genesis -->
     		<selmod num="1">
                 <powermod ref="focuspool" />
                 <powermod ref="sturdy"/>
             </selmod>
-            <resourcemod ref="status" value="2"/>
+            <selmod>
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="relic" value="1"/>
+                <resourcemod ref="status" value="1"/>
+                <resourcemod ref="faith" value="1"/>
+            </selmod>
             <resourcemod ref="rank" value="1"/>
             <selmod values="3 2">
                 <skillmod ref="slashing" />
@@ -1290,6 +1298,7 @@
              <selmod num="1">
                  <resourcemod ref="contacts" value="1"/>
                  <resourcemod ref="relic" value="1"/>
+                 <resourcemod ref="faith" value="1"/>
                  <resourcemod ref="creature" value="1"/>
              </selmod>
              <skillmod ref="leadership"    value="2"/>
@@ -1341,6 +1350,7 @@
             <selmod num="1">
                 <resourcemod ref="rank" value="1"/>
                 <resourcemod ref="relic" value="1"/>
+                <resourcemod ref="faith" value="1"/>
             </selmod>
             <skillmod ref="survival"    value="3"/>
             <skillmod ref="arcanelore" value="3"/>
@@ -1480,6 +1490,7 @@
              <selmod num="1">
                  <resourcemod ref="contacts" value="1"/>
                  <resourcemod ref="relic" value="1"/>
+                 <resourcemod ref="faith" value="1"/>
              </selmod>
              <skillmod ref="leadership"    value="2"/>
              <skillmod ref="determination"    value="1"/>

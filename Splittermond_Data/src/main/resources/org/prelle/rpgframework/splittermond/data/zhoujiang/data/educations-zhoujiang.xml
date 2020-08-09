@@ -269,6 +269,7 @@
 		<selmod num="1">
 			<resourcemod ref="rank" value="1"/>
 			<resourcemod ref="relic" value="1"/>
+			<resourcemod ref="faith" value="1"/>
 		</selmod>
 		
 		<skillmod ref="leadership" value="2"/>
