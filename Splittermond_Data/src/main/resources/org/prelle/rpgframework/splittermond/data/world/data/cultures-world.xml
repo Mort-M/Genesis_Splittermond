@@ -837,7 +837,7 @@
             </selmod>
         </modifications>
     </culture>
-    <culture id="jagodsklav" continent="DRAGOREA">
+    <culture id="jagodsklav" continent="FROSTLANDE">
         <modifications>
             <racemod ref="human"/>
             <racemod ref="gnome"/>
@@ -877,7 +877,7 @@
             <mastermod ref="craftmanship/efficiency"/>
         </modifications>
     </culture>
-    <culture id="jagodstamm" continent="DRAGOREA">
+    <culture id="jagodstamm" continent="FROSTLANDE">
         <modifications>
             <racemod ref="human"/>
 
