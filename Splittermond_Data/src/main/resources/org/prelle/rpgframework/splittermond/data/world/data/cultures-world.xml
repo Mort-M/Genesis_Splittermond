@@ -797,9 +797,7 @@
             <racemod ref="human"/>
             <racemod ref="varg"/>
 
-            <backmod ref="ragtag"/>
-            <backmod ref="craftsmen"/>
-            <backmod ref="traveler"/>
+            <notbackmod ids="nobility,courtier,magister"/>
 
             <languagemod ref="jagodisch"/>
 
