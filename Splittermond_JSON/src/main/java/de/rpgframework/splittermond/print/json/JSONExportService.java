@@ -430,7 +430,9 @@ public class JSONExportService {
         jsonCharacter.furColor = character.getFurColor();
         jsonCharacter.size = character.getSize();
         jsonCharacter.weight = character.getWeight();
-        jsonCharacter.gender = character.getGender().toString();
+        if (character.getGender() != null) {
+            jsonCharacter.gender = character.getGender().toString();
+        }
         if (character.getDeity()!=null) {
             jsonCharacter.deity = character.getDeity().getName();
         }
