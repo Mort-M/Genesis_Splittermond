@@ -96,7 +96,7 @@ public class CreatureWeapon {
 			name = customName;
 		
 		if (name==null)
-			name = toString();
+			name = id;
 		
 		return name;
 	}
