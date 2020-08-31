@@ -214,8 +214,9 @@ public class PortraitSection extends SingleSection {
 		FileChooser chooser = new FileChooser();
 		chooser.setTitle(ResourceI18N.get(RES,"appearance.filechooser.title"));
 		String lastDir = CONFIG.get(RPGFramework.PROP_LAST_OPEN_IMAGE_DIR, System.getProperty("user.home"));
-		logger.info("Open image dialog for  "+lastDir);
-		chooser.setInitialDirectory(new File(lastDir));
+		File lastDir2 = new File(lastDir);
+		if (lastDir2.exists()) 
+			chooser.setInitialDirectory(lastDir2);
 		chooser.getExtensionFilters().addAll(
 				new FileChooser.ExtensionFilter("All", "*.*"),
 				new FileChooser.ExtensionFilter("JPG", "*.jpg"),
