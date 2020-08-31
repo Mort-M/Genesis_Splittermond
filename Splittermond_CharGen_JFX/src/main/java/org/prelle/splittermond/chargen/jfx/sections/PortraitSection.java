@@ -27,7 +27,10 @@ import org.prelle.splimo.chargen.event.GenerationEventType;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
 import de.rpgframework.RPGFramework;
+import de.rpgframework.ResourceI18N;
 import de.rpgframework.character.CharacterHandle;
+import de.rpgframework.core.BabylonEventBus;
+import de.rpgframework.core.BabylonEventType;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -209,25 +212,31 @@ public class PortraitSection extends SingleSection {
 		logger.debug("opening image selection dialog");
 
 		FileChooser chooser = new FileChooser();
-		chooser.setTitle(RES.getString("appearance.filechooser.title"));
+		chooser.setTitle(ResourceI18N.get(RES,"appearance.filechooser.title"));
 		String lastDir = CONFIG.get(RPGFramework.PROP_LAST_OPEN_IMAGE_DIR, System.getProperty("user.home"));
+		logger.info("Open image dialog for  "+lastDir);
 		chooser.setInitialDirectory(new File(lastDir));
 		chooser.getExtensionFilters().addAll(
 				new FileChooser.ExtensionFilter("All", "*.*"),
 				new FileChooser.ExtensionFilter("JPG", "*.jpg"),
 				new FileChooser.ExtensionFilter("PNG", "*.png")
 				);
-		File selection = chooser.showOpenDialog(new Stage());
-		if (selection!=null) {
-			CONFIG.put(RPGFramework.PROP_LAST_OPEN_IMAGE_DIR, selection.getParentFile().getAbsolutePath().toString());
-			try {
-				byte[] imgBytes = Files.readAllBytes(selection.toPath());
-				ivPortrait.setImage(new Image(new ByteArrayInputStream(imgBytes)));
-				control.getModel().setImage(imgBytes);
-				GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, null));
-			} catch (IOException e) {
-				logger.warn("Failed loading image from "+selection+": "+e);
+		try {
+			File selection = chooser.showOpenDialog(new Stage());
+			if (selection!=null) {
+				CONFIG.put(RPGFramework.PROP_LAST_OPEN_IMAGE_DIR, selection.getParentFile().getAbsolutePath().toString());
+				try {
+					byte[] imgBytes = Files.readAllBytes(selection.toPath());
+					ivPortrait.setImage(new Image(new ByteArrayInputStream(imgBytes)));
+					control.getModel().setImage(imgBytes);
+					GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, null));
+				} catch (IOException e) {
+					logger.warn("Failed loading image from "+selection+": "+e);
+				}
 			}
+		} catch (Exception e) {
+			logger.error("Failed opening image dialog: "+e);
+			BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 2, e.toString());
 		}
 	}
 
