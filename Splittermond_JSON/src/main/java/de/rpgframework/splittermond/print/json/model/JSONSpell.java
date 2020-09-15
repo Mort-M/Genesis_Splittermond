@@ -14,4 +14,6 @@ public class JSONSpell {
     public String enhancement;
     public String page;
     public String longDescription ="";
+    public String enhancementDescription;
+    public String enhancementOptions;
 }

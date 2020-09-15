@@ -28,6 +28,7 @@ import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.Spell;
+import org.prelle.splimo.SpellEnhancementType;
 import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
@@ -290,6 +291,8 @@ public class JSONExportService {
                 jsonSpell.castRange = spell.getCastRangeString();
                 jsonSpell.spellDuration = spell.getSpellDurationString();
                 jsonSpell.enhancement = spell.getEnhancementString();
+                jsonSpell.enhancementDescription = spell.getEnhancementDescription();
+                jsonSpell.enhancementOptions = getEnhancements(spell);
             }
             String pageBook;
             pageBook = getPageString(spell.getPage(), spell.getProductNameShort());
@@ -298,6 +301,16 @@ public class JSONExportService {
             jsonSpells.add(jsonSpell);
         }
         jsonCharacter.spells = jsonSpells;
+    }
+
+    private String getEnhancements(Spell spell) {
+        List<String> result = new ArrayList<>();
+        List<SpellEnhancementType> enhancementtype = spell.getEnhancementtype();
+        for (SpellEnhancementType spellEnhancementType : enhancementtype) {
+            result.add(spellEnhancementType.getName());
+        }
+
+        return String.join(", ", result);
     }
 
     private String getPageString(int page, String productNameShort) {
