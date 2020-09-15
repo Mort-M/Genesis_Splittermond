@@ -138,8 +138,8 @@
   <!--###################################################################-->
   <creaturemodule id="familiar" type="ROLE">
     <attrmod attr="MYSTIC"       val="2"/>
-    <attrmod attr="MIND"         val="6"/>
-    <attrmod attr="WILLPOWER"    val="6"/>
+    <attrmod attr="MIND"         val="1"/>
+    <attrmod attr="WILLPOWER"    val="1"/>
     
     <attrmod attr="FOCUS"        val="6"/>
     <attrmod attr="SPEED"        val="6"/>
