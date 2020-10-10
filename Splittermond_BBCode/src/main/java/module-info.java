@@ -14,4 +14,5 @@ module splittermond.bbcode {
 	requires de.rpgframework.core;
 	requires splittermond.core;
 	requires de.rpgframework.chars;
+	requires de.rpgframework.print;
 }

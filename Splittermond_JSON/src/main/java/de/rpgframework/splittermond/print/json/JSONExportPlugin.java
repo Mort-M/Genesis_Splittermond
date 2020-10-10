@@ -17,11 +17,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.splimo.SpliMoCharacter;
 
-import com.google.gson.Gson;
-
 import de.rpgframework.ConfigContainer;
 import de.rpgframework.ConfigOption;
-import de.rpgframework.ConfigOption.Type;
 import de.rpgframework.character.RulePlugin;
 import de.rpgframework.character.RulePluginFeatures;
 import de.rpgframework.core.CommandBus;
