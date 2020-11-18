@@ -20,6 +20,8 @@ import de.rpgframework.splittermond.print.json.model.JSONSkill;
 import de.rpgframework.splittermond.print.json.model.JSONSpell;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
+import org.prelle.splimo.Background;
+import org.prelle.splimo.Culture;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Power;
@@ -429,8 +431,15 @@ public class JSONExportService {
     private void setGeneralInfo(JSONCharacter jsonCharacter, SpliMoCharacter character) {
         jsonCharacter.name = character.getName();
         jsonCharacter.race = character.getRace().getName();
-        jsonCharacter.culture = character.getCulture().getName();
-        jsonCharacter.background = character.getBackground().getName();
+
+        Culture culture = character.getCulture();
+        if (culture != null) {
+            jsonCharacter.culture = culture.getName();
+        }
+        Background background = character.getBackground();
+        if (background != null) {
+            jsonCharacter.background = background.getName();
+        }
         jsonCharacter.birthplace = character.getBirthplace();
         jsonCharacter.education = character.getEducation().getName();
         jsonCharacter.cultureLores = getJSONCultureLores(character);
