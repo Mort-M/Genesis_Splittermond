@@ -15,6 +15,7 @@ import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import de.rpgframework.ResourceI18N;
 import de.rpgframework.character.HardcopyPluginData;
 import de.rpgframework.character.RulePlugin;
 import de.rpgframework.character.RuleSpecificCharacterObject;
@@ -127,7 +128,7 @@ public abstract class BasePluginData implements HardcopyPluginData {
 			return null;
 
 		try {
-			return i18nHelp.getString(key);
+			return ResourceI18N.get(i18nHelp, key);
 		} catch (MissingResourceException mre) {
 			if (!reportedKeys.contains(key)) {
 				reportedKeys.add(key);

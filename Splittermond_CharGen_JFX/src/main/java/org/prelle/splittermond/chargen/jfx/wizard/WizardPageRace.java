@@ -17,6 +17,7 @@ import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splittermond.chargen.jfx.sections.CompanionSection;
 
+import de.rpgframework.ResourceI18N;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -150,9 +151,21 @@ public class WizardPageRace extends WizardPage implements ChangeListener<Race> {
 		}
 		setImage(img);
 
-		description.setText( uiResources.getString("descr.race."+newRace.getKey()) );
-		statsAttributes.setText( uiResources.getString("descr.race."+newRace.getKey()+".attr") );
-		statsPowers.setText( uiResources.getString("descr.race."+newRace.getKey()+".powers") );
+		if (uiResources.containsKey("descr.race."+newRace.getKey())) {
+			description.setText( uiResources.getString("descr.race."+newRace.getKey()) );
+		} else {
+			description.setText( newRace.getHelpText() );
+		}
+		if (uiResources.containsKey("descr.race."+newRace.getKey()+".attr")) {
+			statsAttributes.setText( uiResources.getString("descr.race."+newRace.getKey()+".attr") );
+		} else {
+			statsAttributes.setText( ResourceI18N.get(newRace.getHelpResourceBundle(), "descr.race."+newRace.getKey()+".attr") );
+		}
+		if ( uiResources.containsKey("descr.race."+newRace.getKey()+".powers") ) {
+			statsPowers.setText( uiResources.getString("descr.race."+newRace.getKey()+".powers") );
+		} else {
+			statsPowers.setText( ResourceI18N.get(newRace.getHelpResourceBundle(), "descr.race."+newRace.getKey()+".powers") );
+		}
 	}
 
 	//-------------------------------------------------------------------
