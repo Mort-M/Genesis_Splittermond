@@ -69,6 +69,14 @@ public class MastershipReference implements Comparable<MastershipReference> {
 	}
 
 	//-------------------------------------------------------------------
+	public String getName() {
+		if (data!=null)
+			return data.getName();
+		else
+			return spec.getName();
+	}
+
+	//-------------------------------------------------------------------
 	public boolean equals(Object o) {
 		if (o instanceof MastershipReference) {
 			MastershipReference other = (MastershipReference)o;
