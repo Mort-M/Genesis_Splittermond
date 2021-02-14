@@ -1,6 +1,5 @@
 package de.rpgframework.splittermond.export.foundry;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -8,11 +7,11 @@ import java.util.stream.Collectors;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillValue;
+import org.prelle.splimo.SpellSchoolEntry;
 import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.items.CarriedItem;
-import org.prelle.splimo.items.ItemAttribute;
 import org.prelle.splimo.items.ItemType;
 import org.prelle.splimo.persist.WeaponDamageConverter;
 
@@ -24,6 +23,7 @@ import de.rpgframework.splittermond.foundry.Gear;
 import de.rpgframework.splittermond.foundry.Item;
 import de.rpgframework.splittermond.foundry.JSONSkillValue;
 import de.rpgframework.splittermond.foundry.Spell;
+import de.rpgframework.splittermond.foundry.Spell.SpellInSchool;
 import de.rpgframework.splittermond.foundry.SplittermondFoundryCharacter;
 
 public class FoundryExportService {
@@ -207,11 +207,21 @@ public class FoundryExportService {
 		for (SpellValue item : character.getSpells()) {
 			Spell spell = new Spell();
 			spell.id = item.getSpell().getId();
+			for (SpellSchoolEntry entry : item.getSpell().getSchools()) {
+				Spell.SpellInSchool foo = new SpellInSchool(entry.getSchool().getId(), entry.getLevel());
+				spell.schools.add(foo);
+			}
+			
 			spell.skill= item.getSkill().getId();
 			spell.diff = item.getSpell().getDifficulty();
+			spell.castDur = item.getSpell().getCastDurationString();
+			spell.castTicks= item.getSpell().getCastDurationTicks();
 			spell.costK= item.getSpell().getCost().getChannelled();
 			spell.costV= item.getSpell().getCost().getConsumed();
 			spell.costE= item.getSpell().getCost().getExhausted();
+			spell.effDur = item.getSpell().getSpellDuration();
+			spell.effRangeMeter = item.getSpell().getEffectRange();
+			spell.effRange = item.getSpell().getEffectRange()+"m";
 			
 			Item<Spell> foundry = new Item<Spell>(item.getSpell().getName(), "spell", spell);
 			actor.addItems(foundry);
