@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillValue;
+import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.items.CarriedItem;
@@ -22,6 +23,7 @@ import de.rpgframework.splittermond.foundry.Actor;
 import de.rpgframework.splittermond.foundry.Gear;
 import de.rpgframework.splittermond.foundry.Item;
 import de.rpgframework.splittermond.foundry.JSONSkillValue;
+import de.rpgframework.splittermond.foundry.Spell;
 import de.rpgframework.splittermond.foundry.SplittermondFoundryCharacter;
 
 public class FoundryExportService {
@@ -160,10 +162,13 @@ public class FoundryExportService {
 		}
 	}
 
+	//-------------------------------------------------------------------
 	private void addFoundryItems(Actor actor, SpliMoCharacter character) {
 		addGear(actor, character);		
+		addSpells(actor, character);
 	}
 
+	//-------------------------------------------------------------------
 	private void addGear(Actor actor, SpliMoCharacter character) {
 		WeaponDamageConverter dmgConv = new WeaponDamageConverter();
 		for (CarriedItem item : character.getItems()) {
@@ -193,6 +198,22 @@ public class FoundryExportService {
 			}
 			
 			Item<Gear> foundry = new Item<Gear>(item.getName(), typeName, gear);
+			actor.addItems(foundry);
+		}
+	}
+
+	//-------------------------------------------------------------------
+	private void addSpells(Actor actor, SpliMoCharacter character) {
+		for (SpellValue item : character.getSpells()) {
+			Spell spell = new Spell();
+			spell.id = item.getSpell().getId();
+			spell.skill= item.getSkill().getId();
+			spell.diff = item.getSpell().getDifficulty();
+			spell.costK= item.getSpell().getCost().getChannelled();
+			spell.costV= item.getSpell().getCost().getConsumed();
+			spell.costE= item.getSpell().getCost().getExhausted();
+			
+			Item<Spell> foundry = new Item<Spell>(item.getSpell().getName(), "spell", spell);
 			actor.addItems(foundry);
 		}
 	}
