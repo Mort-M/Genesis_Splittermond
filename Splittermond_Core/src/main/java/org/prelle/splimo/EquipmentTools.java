@@ -528,6 +528,10 @@ public class EquipmentTools {
 					item.addCharacterModification(mod);
 				} else if (mod instanceof FeatureModification) {
 					item.addItemModification(mod);
+				} else if (mod instanceof ItemModification) {
+					item.addItemModification(mod);
+				} else if (mod instanceof SkillModification) {
+					item.addCharacterModification(mod);
 				} else
 					logger.warn("Material: Don't know how to deal with "+mod.getClass()+": "+mod);
 			}
