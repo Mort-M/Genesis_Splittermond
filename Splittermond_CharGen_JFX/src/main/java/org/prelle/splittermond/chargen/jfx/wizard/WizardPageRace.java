@@ -15,7 +15,6 @@ import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.chargen.LetUserChooseListener;
 import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
-import org.prelle.splittermond.chargen.jfx.sections.CompanionSection;
 
 import de.rpgframework.ResourceI18N;
 import javafx.beans.value.ChangeListener;
