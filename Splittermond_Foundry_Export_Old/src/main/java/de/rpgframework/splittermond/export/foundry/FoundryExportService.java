@@ -223,8 +223,10 @@ public class FoundryExportService {
 			spell.costV= item.getSpell().getCost().getConsumed();
 			spell.costE= item.getSpell().getCost().getExhausted();
 			spell.effDur = item.getSpell().getSpellDuration();
-			spell.effRangeMeter = item.getSpell().getEffectRange();
-			spell.effRange = item.getSpell().getEffectRange()+"m";
+			if (item.getSpell().getEffectRange()!=null) {
+				spell.effRangeMeter = item.getSpell().getEffectRange();
+				spell.effRange = item.getSpell().getEffectRange()+"m";
+			}
 			
 			Item<Spell> foundry = new Item<Spell>(item.getSpell().getName(), "spell", spell);
 			actor.addItems(foundry);
