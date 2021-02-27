@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.PowerReference;
+import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpellSchoolEntry;
@@ -24,6 +25,7 @@ import de.rpgframework.splittermond.foundry.Gear;
 import de.rpgframework.splittermond.foundry.Item;
 import de.rpgframework.splittermond.foundry.JSONSkillValue;
 import de.rpgframework.splittermond.foundry.Power;
+import de.rpgframework.splittermond.foundry.Resource;
 import de.rpgframework.splittermond.foundry.Spell;
 import de.rpgframework.splittermond.foundry.Spell.SpellInSchool;
 import de.rpgframework.splittermond.foundry.SplittermondFoundryCharacter;
@@ -169,6 +171,7 @@ public class FoundryExportService {
 		addGear(actor, character);		
 		addSpells(actor, character);
 		addPowers(actor, character);
+		addResources(actor, character);
 	}
 
 	//-------------------------------------------------------------------
@@ -240,9 +243,21 @@ public class FoundryExportService {
 			spell.id = item.getPower().getId();
 			spell.value = item.getModifiedCount();
 			
-			Item<Power> foundry = new Item<Power>(item.getPower().getName(), "spell", spell);
+			Item<Power> foundry = new Item<Power>(item.getPower().getName(), "power", spell);
 			actor.addItems(foundry);
 		}
 	}
 
+
+	//-------------------------------------------------------------------
+	private void addResources(Actor actor, SpliMoCharacter character) {
+		for (ResourceReference item : character.getResources()) {
+			Resource spell = new Resource();
+			spell.id = item.getResource().getId();
+			spell.value = item.getModifiedValue();
+			
+			Item<Resource> foundry = new Item<Resource>(item.getResource().getName(), "resource", spell);
+			actor.addItems(foundry);
+		}
+	}
 }
