@@ -13,6 +13,7 @@
 			<unpack>true</unpack>
 			<scope>runtime</scope>
 			<includes>
+              <include>org.prelle.rpgframework:splittermond-core</include>
               <include>de.rpgframework:splittermond-foundry-export-old</include>
               <include>de.rpgframework:splittermond-foundry</include>
 			</includes>
