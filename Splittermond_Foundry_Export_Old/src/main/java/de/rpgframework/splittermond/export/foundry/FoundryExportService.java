@@ -253,8 +253,8 @@ public class FoundryExportService {
 	private void addResources(Actor actor, SpliMoCharacter character) {
 		for (ResourceReference item : character.getResources()) {
 			Resource spell = new Resource();
-			spell.id = item.getResource().getId();
-			spell.value = item.getModifiedValue();
+//			spell.id = item.getResource().getId();
+//			spell.value = item.getModifiedValue();
 			
 			Item<Resource> foundry = new Item<Resource>(item.getResource().getName(), "resource", spell);
 			actor.addItems(foundry);
