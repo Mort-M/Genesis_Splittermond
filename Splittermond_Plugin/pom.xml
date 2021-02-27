@@ -11,7 +11,7 @@
 
 	<artifactId>splittermond-plugin</artifactId>
 	<name>Splittermond</name>
-	<version>4.1.5</version>
+	<version>4.2.0</version>
 
 	<properties>
 		<maven.install.skip>false</maven.install.skip>
