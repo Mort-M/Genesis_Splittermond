@@ -55,7 +55,7 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 	 */
 	@Override
 	public String getReadableName() {
-		return "Splittermond JSON Export";
+		return "Splittermond JSON Export (Roll20)";
 	}
 
 	//-------------------------------------------------------------------
