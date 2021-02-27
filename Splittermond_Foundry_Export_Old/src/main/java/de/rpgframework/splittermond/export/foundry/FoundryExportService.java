@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.prelle.splimo.Attribute;
+import org.prelle.splimo.PowerReference;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpellSchoolEntry;
@@ -22,6 +23,7 @@ import de.rpgframework.splittermond.foundry.Actor;
 import de.rpgframework.splittermond.foundry.Gear;
 import de.rpgframework.splittermond.foundry.Item;
 import de.rpgframework.splittermond.foundry.JSONSkillValue;
+import de.rpgframework.splittermond.foundry.Power;
 import de.rpgframework.splittermond.foundry.Spell;
 import de.rpgframework.splittermond.foundry.Spell.SpellInSchool;
 import de.rpgframework.splittermond.foundry.SplittermondFoundryCharacter;
@@ -166,6 +168,7 @@ public class FoundryExportService {
 	private void addFoundryItems(Actor actor, SpliMoCharacter character) {
 		addGear(actor, character);		
 		addSpells(actor, character);
+		addPowers(actor, character);
 	}
 
 	//-------------------------------------------------------------------
@@ -224,6 +227,18 @@ public class FoundryExportService {
 			spell.effRange = item.getSpell().getEffectRange()+"m";
 			
 			Item<Spell> foundry = new Item<Spell>(item.getSpell().getName(), "spell", spell);
+			actor.addItems(foundry);
+		}
+	}
+
+	//-------------------------------------------------------------------
+	private void addPowers(Actor actor, SpliMoCharacter character) {
+		for (PowerReference item : character.getPowers()) {
+			Power spell = new Power();
+			spell.id = item.getPower().getId();
+			spell.value = item.getModifiedCount();
+			
+			Item<Power> foundry = new Item<Power>(item.getPower().getName(), "spell", spell);
 			actor.addItems(foundry);
 		}
 	}

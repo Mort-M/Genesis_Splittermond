@@ -27,6 +27,13 @@
 		<revision>4.1.0-SNAPSHOT</revision>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>jfrog</id>
+			<url>https://rpgframework.jfrog.io/artifactory/RPGFramework</url>
+		</repository>
+	</repositories>
+
 	<dependencyManagement>
 		<dependencies>
 <!-- 			<dependency> -->
