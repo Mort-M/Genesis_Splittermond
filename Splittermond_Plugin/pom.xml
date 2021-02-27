@@ -41,11 +41,6 @@
 			<groupId>org.prelle.rpgframework</groupId>
 			<artifactId>splittermond-data</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>de.rpgframework</groupId>
-			<artifactId>splittermond-foundry</artifactId>
-			<version>0.0.2-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 
 	<build>

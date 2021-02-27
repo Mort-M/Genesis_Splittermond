@@ -76,10 +76,13 @@
 
 			<!-- Packaging -->
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.1.1</version>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.0.0</version>
 				<configuration>
+					<appendAssemblyId>false</appendAssemblyId>
+					<descriptors>
+						<descriptor>src/main/assembly.xml</descriptor>
+					</descriptors>
 					<archive>
 						<manifest>
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
