@@ -32,6 +32,10 @@
 			<id>jfrog</id>
 			<url>https://rpgframework.jfrog.io/artifactory/RPGFramework</url>
 		</repository>
+		<repository>
+			<id>sonatype</id>
+			<url>https://oss.sonatype.org/content/groups/public/</url>
+		</repository>
 	</repositories>
 
 	<dependencyManagement>
