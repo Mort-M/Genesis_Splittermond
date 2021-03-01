@@ -524,8 +524,7 @@
 		</modifications>
 	</education>
 	
-<!-- Stimmt in den Büchern nicht wahrschenlich falsche Grundklasse
-	<education id="Antighostwarrior" variantof="mysticwarrior">
+	<education id="spiritbanisher" variantof="magicmediator">
 		<modifications>
 			<reqmod type="culture" ref="zhoujiang"/>
 			
@@ -536,32 +535,22 @@
 			<resourcemod ref="contacts" value="1"/>
 			<resourcemod ref="rank" value="1"/>
 			
-			<selmod values="3 3">
-				<skillmod ref="melee"/>
-	 			<skillmod ref="slashing" />
-	 			<skillmod ref="chains" />
-	 			<skillmod ref="blades" />
-	 			<skillmod ref="staffs" />
-	 			<skillmod ref="longrange"/>
-	 			<skillmod ref="throwing"/>
-			</selmod>
-			<skillmod ref="acrobatics" value="2"/>
-			<skillmod ref="arcanelore" value="4"/>
-			<skillmod ref="clscraft" value="3"/>
-			<skillmod ref="athletics" value="2"/>
-			<skillmod ref="diplomacy" value="1"/>
-			<skillmod ref="determination" value="3"/>
-			<skillmod ref="history" value="1"/>
-			<selmod num="1">
-				<skillmod ref="heal" value="1"/>
-				<skillmod ref="healmagic" value="1"/>
-			</selmod>
-			<skillmod ref="countrylore" value="1"/>
-			<skillmod ref="endurance" value="2"/>
-			<skillmod ref="antimagic" value="3"/>
-			<skillmod ref=""		
-			
-			</modifications>
-	</education>-->
+            <skillmod ref="melee" value="1"/>
+            <skillmod ref="leadership" value="1"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="diplomacy" value="3"/>
+            <skillmod ref="clscraft" value="3"/>
+            <skillmod ref="empathy" value="3"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="countrylore" value="3"/>
+            <skillmod ref="eloquence" value="1"/>
+            <skillmod ref="streetlore" value="1"/>
+            <skillmod ref="perception" value="1"/>
+            <skillmod ref="antimagic" value="3"/>
+            <skillmod ref="insightmagic" value="4"/>
+            <mastermod ref="clscraft/precise_arkancalligraphy"/>
+            <mastermod ref="antimagic/antighostseal"/>
+		</modifications>
+	</education>
 	
 </educations>

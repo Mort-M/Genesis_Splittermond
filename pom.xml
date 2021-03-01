@@ -6,12 +6,12 @@
   <parent>
     <groupId>org.prelle.rpgframework</groupId>
     <artifactId>genesis-plugin</artifactId>
-    <version>6.0.0-SNAPSHOT</version>
+    <version>6.1.0-SNAPSHOT</version>
   </parent>
 
-	<groupId>org.prelle.rpgframework</groupId>
+	<groupId>org.prelle.rpgframework</groupId> 
 	<artifactId>splittermond-all</artifactId>
-	<version>4.0.1-SNAPSHOT</version>
+	<version>4.1.0-SNAPSHOT</version>
 	<name>Splittermond</name>
 	<description>Splittermond Plugin for Genesis</description>
 	<packaging>pom</packaging>
@@ -24,8 +24,19 @@
 	<properties>
 		<maven.install.skip>false</maven.install.skip>
 		<maven.deploy.skip>false</maven.deploy.skip>
-		<revision>4.0.1-SNAPSHOT</revision>
+		<revision>4.1.0-SNAPSHOT</revision>
 	</properties>
+
+	<repositories>
+		<repository>
+			<id>jfrog</id>
+			<url>https://rpgframework.jfrog.io/artifactory/RPGFramework</url>
+		</repository>
+		<repository>
+			<id>sonatype</id>
+			<url>https://oss.sonatype.org/content/groups/public/</url>
+		</repository>
+	</repositories>
 
 	<dependencyManagement>
 		<dependencies>
@@ -99,6 +110,7 @@
 		<module>Splittermond_JSON</module>
 		<module>Splittermond_Plugin</module>
 		<module>Splittermond_ProductData</module>
+		<module>Splittermond_Foundry_Export_Old</module>
 	</modules>
 
 

@@ -20,6 +20,8 @@ import de.rpgframework.splittermond.print.json.model.JSONSkill;
 import de.rpgframework.splittermond.print.json.model.JSONSpell;
 import org.prelle.splimo.Attribute;
 import org.prelle.splimo.AttributeValue;
+import org.prelle.splimo.Background;
+import org.prelle.splimo.Culture;
 import org.prelle.splimo.Mastership;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.Power;
@@ -28,6 +30,7 @@ import org.prelle.splimo.ResourceReference;
 import org.prelle.splimo.Skill;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.Spell;
+import org.prelle.splimo.SpellEnhancementType;
 import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
@@ -290,6 +293,8 @@ public class JSONExportService {
                 jsonSpell.castRange = spell.getCastRangeString();
                 jsonSpell.spellDuration = spell.getSpellDurationString();
                 jsonSpell.enhancement = spell.getEnhancementString();
+                jsonSpell.enhancementDescription = spell.getEnhancementDescription();
+                jsonSpell.enhancementOptions = getEnhancements(spell);
             }
             String pageBook;
             pageBook = getPageString(spell.getPage(), spell.getProductNameShort());
@@ -298,6 +303,16 @@ public class JSONExportService {
             jsonSpells.add(jsonSpell);
         }
         jsonCharacter.spells = jsonSpells;
+    }
+
+    private String getEnhancements(Spell spell) {
+        List<String> result = new ArrayList<>();
+        List<SpellEnhancementType> enhancementtype = spell.getEnhancementtype();
+        for (SpellEnhancementType spellEnhancementType : enhancementtype) {
+            result.add(spellEnhancementType.getName());
+        }
+
+        return String.join(", ", result);
     }
 
     private String getPageString(int page, String productNameShort) {
@@ -416,8 +431,15 @@ public class JSONExportService {
     private void setGeneralInfo(JSONCharacter jsonCharacter, SpliMoCharacter character) {
         jsonCharacter.name = character.getName();
         jsonCharacter.race = character.getRace().getName();
-        jsonCharacter.culture = character.getCulture().getName();
-        jsonCharacter.background = character.getBackground().getName();
+
+        Culture culture = character.getCulture();
+        if (culture != null) {
+            jsonCharacter.culture = culture.getName();
+        }
+        Background background = character.getBackground();
+        if (background != null) {
+            jsonCharacter.background = background.getName();
+        }
         jsonCharacter.birthplace = character.getBirthplace();
         jsonCharacter.education = character.getEducation().getName();
         jsonCharacter.cultureLores = getJSONCultureLores(character);
@@ -430,7 +452,9 @@ public class JSONExportService {
         jsonCharacter.furColor = character.getFurColor();
         jsonCharacter.size = character.getSize();
         jsonCharacter.weight = character.getWeight();
-        jsonCharacter.gender = character.getGender().toString();
+        if (character.getGender() != null) {
+            jsonCharacter.gender = character.getGender().toString();
+        }
         if (character.getDeity()!=null) {
             jsonCharacter.deity = character.getDeity().getName();
         }

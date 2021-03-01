@@ -51,5 +51,22 @@ public class WeaponDamageConverter implements StringValueConverter<Integer> {
 			buf.append( ((buf.length()>0)?"+":"")+(v%100));
 		return buf.toString();
 	}
+
+	//-------------------------------------------------------------------
+	public String writeEnglish(Integer v) {
+		if (v==null)
+			return null;
+		StringBuffer buf = new StringBuffer();
+		if (v>10000) {
+			buf.append(String.valueOf(v/10000));
+			buf.append("d");
+			buf.append(String.valueOf((v%10000)/100));
+		}
+		if ((v%100)>90)
+			buf.append("-"+(100 - v%100));
+		else if ((v%100)>0)
+			buf.append( ((buf.length()>0)?"+":"")+(v%100));
+		return buf.toString();
+	}
 	
 }

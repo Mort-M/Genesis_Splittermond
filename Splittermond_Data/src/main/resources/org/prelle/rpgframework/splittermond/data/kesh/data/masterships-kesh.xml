@@ -9,7 +9,7 @@
   <skill id="stealth">
     <mastership level="1" key="dirtyTricks" />
     <mastership level="1" key="exploitVulnerability" />
-    <mastership level="1" key="sneakAttack" />
+    <mastership level="2" key="sneakAttack" />
   </skill>
   <skill id="locksntraps">
     <mastership level="1" key="arkanoMechanicalTrapRaiser" >

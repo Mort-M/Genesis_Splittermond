@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.prelle.rpgframework</groupId>
 		<artifactId>splittermond-all</artifactId>
-		<version>4.0.1-SNAPSHOT</version>
+		<version>4.1.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>splittermond-bbcode</artifactId>
@@ -47,6 +47,10 @@
 			<artifactId>rpgframework-core</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>de.rpgframework</groupId>
+			<artifactId>rpgframework-print</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>
 			<artifactId>splittermond-core</artifactId>
 		</dependency>
@@ -72,7 +76,7 @@
 							<Implementation-Vendor>Frank Buettner</Implementation-Vendor>
 							<State>ABANDONED</State>
 							<Build-Time>${maven.build.timestamp}</Build-Time>
-							<MinVersion>4.0.0-SNAPSHOT</MinVersion>
+							<MinVersion>4.1.0-SNAPSHOT</MinVersion>
 							<MaxVersion>4.99.99</MaxVersion>
 							<Requires>CORE</Requires>
 							<Provides>BBCODE</Provides>

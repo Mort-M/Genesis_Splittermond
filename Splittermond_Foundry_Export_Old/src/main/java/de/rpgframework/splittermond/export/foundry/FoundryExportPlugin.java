@@ -1,4 +1,4 @@
-package de.rpgframework.splittermond.print.json;
+package de.rpgframework.splittermond.export.foundry;
 
 import java.io.File;
 import java.io.InputStream;
@@ -33,20 +33,20 @@ import de.rpgframework.print.PrintType;
  * {@link SpliMoCharacter}. This class registers itself to the
  * {@link CommandBus}.
  */
-public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBusListener {
+public class FoundryExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBusListener {
 
-	private static Logger logger = LogManager.getLogger(JSONExportPlugin.class);
+	private static Logger logger = LogManager.getLogger(FoundryExportPlugin.class);
 
-	private static Preferences usr = Preferences.userRoot().node("/org/prelle/splittermond/print");
+	private static Preferences usr = Preferences.userRoot().node("/org/prelle/splittermond/foundry");
 	private ConfigOption<String> OPTION_PATH;
 
 	//-------------------------------------------------------------------
-	public JSONExportPlugin() {
+	public FoundryExportPlugin() {
 	}
 
 	//-------------------------------------------------------------------
 	public String getID() {
-		return "JSON";
+		return "FOUNDRY";
 	}
 
 	//-------------------------------------------------------------------
@@ -55,7 +55,7 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 	 */
 	@Override
 	public String getReadableName() {
-		return "Splittermond JSON Export (Roll20)";
+		return "Foundry VTT Export";
 	}
 
 	//-------------------------------------------------------------------
@@ -78,9 +78,9 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 			logger.error("Expected splittermond node below "+addBelow.getPathID());
 			return;
 		}
-		ConfigContainer cfgJSON = cfgSpliMo.createContainer("json");
+		ConfigContainer cfgJSON = cfgSpliMo.createContainer("foundry");
 		cfgJSON.changePreferences(usr);
-		cfgJSON.setResourceBundle( (PropertyResourceBundle)ResourceBundle.getBundle(JSONExportPlugin.class.getName()));
+		cfgJSON.setResourceBundle( (PropertyResourceBundle)ResourceBundle.getBundle(FoundryExportPlugin.class.getName()));
 		OPTION_PATH = cfgJSON.createOption("path", ConfigOption.Type.DIRECTORY, System.getProperty("user.home"));
 	}
 
@@ -138,10 +138,10 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 					 */
 					logger.info("Export as resolved JSON format: "+model.getName());
 
-					String json = new JSONExportService().exportCharacter(model);
+					String json = new FoundryExportService().exportCharacter(model);
 					logger.debug(json);
 					// Write
-					Path   printToFile = new File(new File(OPTION_PATH.getStringValue()), model.getName()+".json").toPath();
+					Path   printToFile = new File(new File(OPTION_PATH.getStringValue()), "Actor_"+model.getName()+".json").toPath();
 					Files.writeString(printToFile, json);
 					System.out.println("printToFile = " + json);
 
@@ -194,7 +194,7 @@ public class JSONExportPlugin implements RulePlugin<SpliMoCharacter>, CommandBus
 	 */
 	@Override
 	public InputStream getAboutHTML() {
-		return ClassLoader.getSystemResourceAsStream("de/rpgframework/splittermond/print/json/i18n/splittermond/print_json.html");
+		return ClassLoader.getSystemResourceAsStream("de/rpgframework/splittermond/print/json/i18n/splittermond/print_foundry.html");
 	}
 
 	//-------------------------------------------------------------------

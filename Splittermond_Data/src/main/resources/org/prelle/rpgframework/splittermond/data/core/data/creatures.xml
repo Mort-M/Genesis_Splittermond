@@ -883,7 +883,7 @@
 		<features>
 			<creaturefeature type="LOWLIGHT"/>
 			<creaturefeature type="COWARD"/>
-			<creaturefeature type="resist_damage" damage="STONE" level="1"/>
+			<creaturefeature type="RESIST_COLD" level="1"/>
 			<creaturefeature type="CREATURE" level="4"/>
 			<creaturefeature type="WEAK"/>
 		</features>

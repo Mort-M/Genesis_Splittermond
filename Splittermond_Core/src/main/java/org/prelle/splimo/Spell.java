@@ -293,6 +293,14 @@ public class Spell extends BasePluginData implements Comparable<Spell> {
 	}
 
 	//-------------------------------------------------------------------
+	public int getCastDurationTicks() {
+		int type = castDur%10;
+		if (type==DURATION_TICK)
+			return castDur/10;
+		return -1;
+	}
+
+	//-------------------------------------------------------------------
 	public String getCastDurationString() {
 		int type = castDur%10;
 		int count= castDur/10;
@@ -330,6 +338,14 @@ public class Spell extends BasePluginData implements Comparable<Spell> {
 	//-------------------------------------------------------------------
 	public String getSpellDuration() {
 		return "";
+	}
+
+	//-------------------------------------------------------------------
+	public int getSpellDurationTicks() {
+		int type = spellDur%10;
+		if (type==DURATION_TICK)
+			return spellDur/10;
+		return -1;
 	}
 
 	//-------------------------------------------------------------------

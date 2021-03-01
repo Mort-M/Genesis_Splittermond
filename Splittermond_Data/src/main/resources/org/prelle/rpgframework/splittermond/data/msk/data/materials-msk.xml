@@ -109,7 +109,7 @@
   <material id="jadeiron" quality="3" price="2500" type="METAL">
     <modifications>
       <itemmod attr="LOAD" val="-1"/>
-      <itemmod attr="ROBUSTNESS" val="1"/>
+      <itemmod attr="RIGIDITY" val="1"/>
       <skillmod ref="leadership" value="2" cond="true"/>
     </modifications>
   </material>

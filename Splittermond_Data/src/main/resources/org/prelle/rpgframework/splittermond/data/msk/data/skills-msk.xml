@@ -57,7 +57,7 @@
         </mastership>
         <mastership level="2" key="efweaponforge">
             <requires>
-                <masterreq ref="craftmanship/expert"/>
+                <masterreq ref="craftmanship/expert_forging"/>
             </requires>
         </mastership>
         <mastership level="3" key="frommaster"/>
