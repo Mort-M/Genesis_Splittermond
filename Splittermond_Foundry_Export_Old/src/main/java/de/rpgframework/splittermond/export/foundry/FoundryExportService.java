@@ -86,43 +86,43 @@ public class FoundryExportService {
 				json.attributes.willpower.advances = model.getAttribute(attribute).getValue() - model.getAttribute(attribute).getStart(); 
 				break;
 
-			case SIZE:
-//				json.attr2.size.value = model.getAttribute(attribute).getDistributed(); 
-//				json.attr2.size.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr2.size.value = model.getAttribute(attribute).getValue(); 
-				break;
-			case SPEED:
-//				json.attr2.speed.value = model.getAttribute(attribute).getDistributed(); 
-//				json.attr2.speed.mod   = model.getAttribute(attribute).getModifier(); 
-//				json.attr2.speed.current = model.getAttribute(attribute).getValue(); 
-				json.attr2.speed.value = model.getAttribute(attribute).getValue(); 
-				break;
-			case LIFE:
-				json.attr2.healthpoints.value = model.getAttribute(attribute).getValue()*5; 
-				break;
-			case FOCUS:
-				json.attr2.focuspoints.value = model.getAttribute(attribute).getValue(); 
-				break;
-			case DEFENSE:
-//				json.attr2.defense.value = model.getAttribute(attribute).getDistributed(); 
-//				json.attr2.defense.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr2.defense.value = model.getAttribute(attribute).getValue(); 
-				break;
-			case DAMAGE_REDUCTION:
-//				json.attr2.sr.value = model.getAttribute(attribute).getDistributed(); 
-//				json.attr2.sr.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr2.sr.value = model.getAttribute(attribute).getValue(); 
-				break;
-			case MINDRESIST:
-//				json.attr2.mindresist.value = model.getAttribute(attribute).getDistributed(); 
-//				json.attr2.mindresist.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr2.mindresist.value = model.getAttribute(attribute).getValue(); 
-				break;
-			case BODYRESIST:
-//				json.attr2.bodyresist.value = model.getAttribute(attribute).getDistributed(); 
-//				json.attr2.bodyresist.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr2.bodyresist.value = model.getAttribute(attribute).getValue(); 
-				break;
+//			case SIZE:
+////				json.attr2.size.value = model.getAttribute(attribute).getDistributed(); 
+////				json.attr2.size.mod   = model.getAttribute(attribute).getModifier(); 
+//				json.attr2.size.value = model.getAttribute(attribute).getValue(); 
+//				break;
+//			case SPEED:
+////				json.attr2.speed.value = model.getAttribute(attribute).getDistributed(); 
+////				json.attr2.speed.mod   = model.getAttribute(attribute).getModifier(); 
+////				json.attr2.speed.current = model.getAttribute(attribute).getValue(); 
+//				json.attr2.speed.value = model.getAttribute(attribute).getValue(); 
+//				break;
+//			case LIFE:
+//				json.attr2.healthpoints.value = model.getAttribute(attribute).getValue()*5; 
+//				break;
+//			case FOCUS:
+//				json.attr2.focuspoints.value = model.getAttribute(attribute).getValue(); 
+//				break;
+//			case DEFENSE:
+////				json.attr2.defense.value = model.getAttribute(attribute).getDistributed(); 
+////				json.attr2.defense.mod   = model.getAttribute(attribute).getModifier(); 
+//				json.attr2.defense.value = model.getAttribute(attribute).getValue(); 
+//				break;
+//			case DAMAGE_REDUCTION:
+////				json.attr2.sr.value = model.getAttribute(attribute).getDistributed(); 
+////				json.attr2.sr.mod   = model.getAttribute(attribute).getModifier(); 
+//				json.attr2.sr.value = model.getAttribute(attribute).getValue(); 
+//				break;
+//			case MINDRESIST:
+////				json.attr2.mindresist.value = model.getAttribute(attribute).getDistributed(); 
+////				json.attr2.mindresist.mod   = model.getAttribute(attribute).getModifier(); 
+//				json.attr2.mindresist.value = model.getAttribute(attribute).getValue(); 
+//				break;
+//			case BODYRESIST:
+////				json.attr2.bodyresist.value = model.getAttribute(attribute).getDistributed(); 
+////				json.attr2.bodyresist.mod   = model.getAttribute(attribute).getModifier(); 
+//				json.attr2.bodyresist.value = model.getAttribute(attribute).getValue(); 
+//				break;
 			default:
 			}
 		}
@@ -173,7 +173,7 @@ public class FoundryExportService {
 		for (CarriedItem item : character.getItems()) {
 			ItemType type = item.getItem().getFirstItemType();
 			Gear gear = new Gear();
-			gear.load = item.getLoad();
+			gear.weight = item.getLoad();
 			gear.availability = item.getAvailability().name();
 			gear.complexity = item.getItem().getComplexity().getID();
 			if (item.getSkill(type)!=null) {
