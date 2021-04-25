@@ -849,6 +849,9 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 			if (ref.getMastership().getKey().equals(master.getKey())) {
 				return true;
 			}
+			if (ref.getMastership().getKey().startsWith(master.getKey())) {
+				return true;
+			}
 		}
 		return false;
 	}
@@ -886,7 +889,7 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 				return getAttribute(real.getAttribute()).getValue()>=real.getValue();
 			} else if (req instanceof MastershipRequirement) {
 				MastershipRequirement real = (MastershipRequirement)req;
-//				logger.debug("Check if mastership "+real.getMastership()+" exists");
+				logger.debug("Check if mastership "+real.getMastership()+" exists");
 				if (real.getMastership()!=null) {
 					if (real.getFokus()==null)
 						return hasMastership(real.getMastership());
