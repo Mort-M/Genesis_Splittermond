@@ -100,7 +100,7 @@
 
 	<education id="schwingenleser" variantof="scout">
 		<modifications>
-			<reqmod type="culture" ref="teleshi" />
+			<reqmod type="culture" ref="teleshai" />
 
 			<powermod ref="animalfamiliar" />
 			<powermod ref="senseorient" />
@@ -144,7 +144,7 @@
 
 	<education id="rabenzunge" variantof="wandererpriest">
 		<modifications>
-			<reqmod type="culture" ref="teleshi" />
+			<reqmod type="culture" ref="teleshai" />
 
 			<powermod ref="goodmemory" />
 			<powermod ref="senseorient" />

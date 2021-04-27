@@ -596,7 +596,7 @@ public class MastershipLevellerAndGenerator implements MastershipController, Gen
 
 		// Some masterships have requirements. Are they met?
 		for (Requirement req : master.getPrerequisites()) {
-//			logger.debug("canBeSelected("+master+") , req = "+req);
+			logger.debug("canBeSelected("+master+") , req = "+req);
 			if (!data.meetsRequirement(req))
 				return false;
 		}

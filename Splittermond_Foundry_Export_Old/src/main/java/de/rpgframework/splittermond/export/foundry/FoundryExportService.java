@@ -13,6 +13,7 @@ import org.prelle.splimo.SpellSchoolEntry;
 import org.prelle.splimo.SpellValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.SplitterMondCore;
+import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.items.CarriedItem;
 import org.prelle.splimo.items.ItemType;
 import org.prelle.splimo.persist.WeaponDamageConverter;
@@ -27,7 +28,6 @@ import de.rpgframework.splittermond.foundry.JSONSkillValue;
 import de.rpgframework.splittermond.foundry.Power;
 import de.rpgframework.splittermond.foundry.Resource;
 import de.rpgframework.splittermond.foundry.Spell;
-import de.rpgframework.splittermond.foundry.Spell.SpellInSchool;
 import de.rpgframework.splittermond.foundry.SplittermondFoundryCharacter;
 
 public class FoundryExportService {
@@ -35,7 +35,7 @@ public class FoundryExportService {
 	public String exportCharacter(SpliMoCharacter character) {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-		Actor actor = new Actor(character.getName(), "pc", getJSONCharacter(character));
+		Actor actor = new Actor(character.getName(), "character", getJSONCharacter(character));
 		addFoundryItems(actor, character);
 		return gson.toJson(actor);
 	}
@@ -54,82 +54,75 @@ public class FoundryExportService {
 		for (Attribute attribute : Attribute.values()) {
 			switch (attribute) {
 			case CHARISMA : 
-				json.attr.aus.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr.aus.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr.aus.current = model.getAttribute(attribute).getValue(); 
+				json.attributes.charisma.initial = model.getAttribute(attribute).getStart(); 
+				json.attributes.charisma.advances = model.getAttribute(attribute).getValue() - model.getAttribute(attribute).getStart(); 
 				break;
 			case AGILITY  : 
-				json.attr.bew.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr.bew.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr.bew.current = model.getAttribute(attribute).getValue(); 
+				json.attributes.agility.initial = model.getAttribute(attribute).getStart(); 
+				json.attributes.agility.advances = model.getAttribute(attribute).getValue() - model.getAttribute(attribute).getStart(); 
 				break;
 			case INTUITION: 
-				json.attr.inn.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr.inn.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr.inn.current = model.getAttribute(attribute).getValue(); 
+				json.attributes.intuition.initial = model.getAttribute(attribute).getStart(); 
+				json.attributes.intuition.advances = model.getAttribute(attribute).getValue() - model.getAttribute(attribute).getStart(); 
 				break;
 			case CONSTITUTION: 
-				json.attr.kon.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr.kon.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr.kon.current = model.getAttribute(attribute).getValue(); 
+				json.attributes.constitution.initial = model.getAttribute(attribute).getStart(); 
+				json.attributes.constitution.advances = model.getAttribute(attribute).getValue() - model.getAttribute(attribute).getStart(); 
 				break;
 			case MYSTIC   : 
-				json.attr.mys.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr.mys.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr.mys.current = model.getAttribute(attribute).getValue(); 
+				json.attributes.mystic.initial = model.getAttribute(attribute).getStart(); 
+				json.attributes.mystic.advances = model.getAttribute(attribute).getValue() - model.getAttribute(attribute).getStart(); 
 				break;
 			case STRENGTH : 
-				json.attr.sta.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr.sta.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr.sta.current = model.getAttribute(attribute).getValue(); 
+				json.attributes.strength.initial = model.getAttribute(attribute).getStart(); 
+				json.attributes.strength.advances = model.getAttribute(attribute).getValue() - model.getAttribute(attribute).getStart(); 
 				break;
 			case MIND     : 
-				json.attr.ver.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr.ver.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr.ver.current = model.getAttribute(attribute).getValue(); 
+				json.attributes.mind.initial = model.getAttribute(attribute).getStart(); 
+				json.attributes.mind.advances = model.getAttribute(attribute).getValue() - model.getAttribute(attribute).getStart(); 
 				break;
 			case WILLPOWER: 
-				json.attr.wil.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr.wil.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr.wil.current = model.getAttribute(attribute).getValue(); 
+				json.attributes.willpower.initial = model.getAttribute(attribute).getStart(); 
+				json.attributes.willpower.advances = model.getAttribute(attribute).getValue() - model.getAttribute(attribute).getStart(); 
 				break;
 
-			case SIZE:
-				json.attr2.gk.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr2.gk.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr2.gk.current = model.getAttribute(attribute).getValue(); 
-				break;
-			case SPEED:
-				json.attr2.gsw.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr2.gsw.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr2.gsw.current = model.getAttribute(attribute).getValue(); 
-				break;
-			case LIFE:
-				json.attr2.lp.max = model.getAttribute(attribute).getValue()*5; 
-				break;
-			case FOCUS:
-				json.attr2.fo.max = model.getAttribute(attribute).getValue(); 
-				break;
-			case DEFENSE:
-				json.attr2.vtd.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr2.vtd.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr2.vtd.current = model.getAttribute(attribute).getValue(); 
-				break;
-			case DAMAGE_REDUCTION:
-				json.attr2.sr.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr2.sr.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr2.sr.current = model.getAttribute(attribute).getValue(); 
-				break;
-			case MINDRESIST:
-				json.attr2.gw.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr2.gw.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr2.gw.current = model.getAttribute(attribute).getValue(); 
-				break;
-			case BODYRESIST:
-				json.attr2.kw.value = model.getAttribute(attribute).getDistributed(); 
-				json.attr2.kw.mod   = model.getAttribute(attribute).getModifier(); 
-				json.attr2.kw.current = model.getAttribute(attribute).getValue(); 
-				break;
+//			case SIZE:
+////				json.attr2.size.value = model.getAttribute(attribute).getDistributed(); 
+////				json.attr2.size.mod   = model.getAttribute(attribute).getModifier(); 
+//				json.attr2.size.value = model.getAttribute(attribute).getValue(); 
+//				break;
+//			case SPEED:
+////				json.attr2.speed.value = model.getAttribute(attribute).getDistributed(); 
+////				json.attr2.speed.mod   = model.getAttribute(attribute).getModifier(); 
+////				json.attr2.speed.current = model.getAttribute(attribute).getValue(); 
+//				json.attr2.speed.value = model.getAttribute(attribute).getValue(); 
+//				break;
+//			case LIFE:
+//				json.attr2.healthpoints.value = model.getAttribute(attribute).getValue()*5; 
+//				break;
+//			case FOCUS:
+//				json.attr2.focuspoints.value = model.getAttribute(attribute).getValue(); 
+//				break;
+//			case DEFENSE:
+////				json.attr2.defense.value = model.getAttribute(attribute).getDistributed(); 
+////				json.attr2.defense.mod   = model.getAttribute(attribute).getModifier(); 
+//				json.attr2.defense.value = model.getAttribute(attribute).getValue(); 
+//				break;
+//			case DAMAGE_REDUCTION:
+////				json.attr2.sr.value = model.getAttribute(attribute).getDistributed(); 
+////				json.attr2.sr.mod   = model.getAttribute(attribute).getModifier(); 
+//				json.attr2.sr.value = model.getAttribute(attribute).getValue(); 
+//				break;
+//			case MINDRESIST:
+////				json.attr2.mindresist.value = model.getAttribute(attribute).getDistributed(); 
+////				json.attr2.mindresist.mod   = model.getAttribute(attribute).getModifier(); 
+//				json.attr2.mindresist.value = model.getAttribute(attribute).getValue(); 
+//				break;
+//			case BODYRESIST:
+////				json.attr2.bodyresist.value = model.getAttribute(attribute).getDistributed(); 
+////				json.attr2.bodyresist.mod   = model.getAttribute(attribute).getModifier(); 
+//				json.attr2.bodyresist.value = model.getAttribute(attribute).getValue(); 
+//				break;
 			default:
 			}
 		}
@@ -142,25 +135,25 @@ public class FoundryExportService {
 		for (Skill skill : skills) {
 			SkillValue val = model.getSkillValue(skill);
 			JSONSkillValue jVal = new JSONSkillValue();
-			jVal.name = skill.getName();
-			if (skill.getAttribute1()!=null) {
-				jVal.attribute1 =  skill.getAttribute1().getShortName().toLowerCase();
-				if (jVal.attribute1.equals("stä")) jVal.attribute1="sta";
-				if (jVal.attribute1.equals("int")) jVal.attribute1="inn";
-			} else 
-				jVal.attribute1="";
-			if (skill.getAttribute2()!=null) {
-				jVal.attribute2 =  skill.getAttribute2().getShortName().toLowerCase();
-				if (jVal.attribute2.equals("stä")) jVal.attribute2="sta";
-				if (jVal.attribute2.equals("int")) jVal.attribute2="inn";
-			} else 
-				jVal.attribute2="";
+//			jVal.name = skill.getName();
+//			if (skill.getAttribute1()!=null) {
+//				jVal.attribute1 =  skill.getAttribute1().getShortName().toLowerCase();
+//				if (jVal.attribute1.equals("stä")) jVal.attribute1="sta";
+//				if (jVal.attribute1.equals("int")) jVal.attribute1="inn";
+//			} else 
+//				jVal.attribute1="";
+//			if (skill.getAttribute2()!=null) {
+//				jVal.attribute2 =  skill.getAttribute2().getShortName().toLowerCase();
+//				if (jVal.attribute2.equals("stä")) jVal.attribute2="sta";
+//				if (jVal.attribute2.equals("int")) jVal.attribute2="inn";
+//			} else 
+//				jVal.attribute2="";
 			jVal.points = val.getPoints();
-			jVal.modifier = val.getModifier();
+//			jVal.modifier = val.getModifier();
 			jVal.value    = val.getModifiedValue();
-			List<String> masterships = val.getMasterships().stream().map(ref -> ref.getName()).collect(Collectors.toList());
-			jVal.masterships = String.join(", ", masterships);
-			jVal.type     = skill.getType().name().toLowerCase();
+//			List<String> masterships = val.getMasterships().stream().map(ref -> ref.getName()).collect(Collectors.toList());
+//			jVal.masterships = String.join(", ", masterships);
+//			jVal.type     = skill.getType().name().toLowerCase();
 			jVal.sortKey  = skill.getType().ordinal()+"-"+skill.getName();
 			json.skills.put(skill.getId(), jVal);
 		}
@@ -180,7 +173,7 @@ public class FoundryExportService {
 		for (CarriedItem item : character.getItems()) {
 			ItemType type = item.getItem().getFirstItemType();
 			Gear gear = new Gear();
-			gear.load = item.getLoad();
+			gear.weight = item.getLoad();
 			gear.availability = item.getAvailability().name();
 			gear.complexity = item.getItem().getComplexity().getID();
 			if (item.getSkill(type)!=null) {
@@ -188,7 +181,7 @@ public class FoundryExportService {
 			}
 			if (item.isType(ItemType.WEAPON) || item.isType(ItemType.LONG_RANGE_WEAPON)) {
 				gear.damage = dmgConv.writeEnglish(item.getDamage(type));
-				gear.speed = item.getSpeed(type);
+				gear.weaponSpeed = item.getSpeed(type);
 				gear.attribute1 = Util.translateAttribute(item.getAttribute1(type)).toUpperCase();
 				gear.attribute2 = Util.translateAttribute(item.getAttribute2(type)).toUpperCase();
 				List<String> features = item.getFeatures(type).stream().map(f -> f.getName()).collect(Collectors.toList());
@@ -214,18 +207,16 @@ public class FoundryExportService {
 			Spell spell = new Spell();
 			spell.id = item.getSpell().getId();
 			for (SpellSchoolEntry entry : item.getSpell().getSchools()) {
-				Spell.SpellInSchool foo = new SpellInSchool(entry.getSchool().getId(), entry.getLevel());
-				spell.schools.add(foo);
+				if (item.getSkill()==entry.getSchool())
+					spell.skillLevel = entry.getLevel();
 			}
 			
 			spell.skill= item.getSkill().getId();
-			spell.diff = item.getSpell().getDifficulty();
-			spell.castDur = item.getSpell().getCastDurationString();
+			spell.difficulty = item.getSpell().getDifficultyString();
+			spell.castDuration = item.getSpell().getCastDurationString();
 			spell.castTicks= item.getSpell().getCastDurationTicks();
-			spell.costK= item.getSpell().getCost().getChannelled();
-			spell.costV= item.getSpell().getCost().getConsumed();
-			spell.costE= item.getSpell().getCost().getExhausted();
-			spell.effDur = item.getSpell().getSpellDuration();
+			spell.costs = SplitterTools.getFocusString( item.getSpell().getCost() );
+			spell.effectDuration = item.getSpell().getSpellDuration();
 			if (item.getSpell().getEffectRange()!=null) {
 				spell.effRangeMeter = item.getSpell().getEffectRange();
 				spell.effRange = item.getSpell().getEffectRange()+"m";
@@ -241,7 +232,7 @@ public class FoundryExportService {
 		for (PowerReference item : character.getPowers()) {
 			Power spell = new Power();
 			spell.id = item.getPower().getId();
-			spell.value = item.getModifiedCount();
+//			spell.level = item.getPower().;
 			
 			Item<Power> foundry = new Item<Power>(item.getPower().getName(), "power", spell);
 			actor.addItems(foundry);

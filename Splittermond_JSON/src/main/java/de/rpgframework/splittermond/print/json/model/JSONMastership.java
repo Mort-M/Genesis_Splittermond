@@ -7,4 +7,5 @@ public class JSONMastership {
     public String shortDescription;
     public String longDescription;
     public String page;
+    public boolean specialization;
 }

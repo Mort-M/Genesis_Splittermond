@@ -179,7 +179,7 @@ public class MastershipDialog extends ManagedDialog implements GenerationEventLi
 		threeCol.setColumn1Node(attention);
 		threeCol.setColumn2Node(lvSelected);
 //		threeCol.setColumn3Node(bxDescr);
-		threeCol.setColumn3Node(new ScrollPane(description));
+		threeCol.setColumn3Node(description);
 		threeCol.setMaxHeight(Double.MAX_VALUE);
 
 		VBox box = new VBox();

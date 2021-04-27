@@ -363,6 +363,7 @@ public class JSONExportService {
                 jsonMastership.name = mastershipRef.getSpecialization().getName();
                 jsonMastership.id = mastershipRef.getSpecialization().getSpecial().getId();
                 jsonMastership.level = mastershipRef.getSpecialization().getLevel();
+                jsonMastership.specialization = true;
             }   else {
                 jsonMastership.name = mastership.getName();
                 jsonMastership.id = mastership.getId();
@@ -370,6 +371,7 @@ public class JSONExportService {
                 jsonMastership.shortDescription = mastership.getShortDescription();
                 jsonMastership.longDescription = mastership.getHelpText();
                 jsonMastership.page = getPageString(mastership.getPage(), mastership.getProductNameShort());
+                jsonMastership.specialization = false;
             }
             jsonMasterships.add(jsonMastership);
         }
