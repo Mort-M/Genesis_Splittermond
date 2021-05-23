@@ -62,7 +62,8 @@ public class SpliMoCharacter implements Lifeform, RuleSpecificCharacterObject {
 
 	public enum Gender {
 		MALE,
-		FEMALE
+		FEMALE,
+		DIVERS
 		;
 		public String toString() {
 			return res.getString("gender."+name().toLowerCase());
