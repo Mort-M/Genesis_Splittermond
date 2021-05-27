@@ -443,7 +443,9 @@ public class JSONExportService {
             jsonCharacter.background = background.getName();
         }
         jsonCharacter.birthplace = character.getBirthplace();
-        jsonCharacter.education = character.getEducation().getName();
+        if (character.getEducation() != null) {
+        	jsonCharacter.education = character.getEducation().getName();
+        }
         jsonCharacter.cultureLores = getJSONCultureLores(character);
         jsonCharacter.languages = getJSONLanguages(character);
         jsonCharacter.moonSign = getJSONMoonSign(character);
