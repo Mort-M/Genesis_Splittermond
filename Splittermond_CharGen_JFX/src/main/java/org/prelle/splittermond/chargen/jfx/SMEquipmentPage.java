@@ -154,7 +154,7 @@ public class SMEquipmentPage extends SpliMoManagedScreenPage {
 		if (data!=null) {
 			this.setDescriptionHeading(data.getName());
 			this.setDescriptionPageRef(data.getItem().getProductNameShort()+" "+data.getItem().getPage());
-			this.setDescriptionText(data.getItem().getHelpText());
+//			this.setDescriptionText(data.getItem().getHelpText());
 		} else {
 			this.setDescriptionHeading(null);
 			this.setDescriptionPageRef(null);
