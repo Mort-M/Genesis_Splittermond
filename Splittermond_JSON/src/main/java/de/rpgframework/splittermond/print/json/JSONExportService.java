@@ -463,6 +463,7 @@ public class JSONExportService {
             jsonCharacter.deity = character.getDeity().getName();
         }
         jsonCharacter.notes = character.getNotes();
+        jsonCharacter.telare = character.getTelare();
     }
 
     private JSONMoonSign getJSONMoonSign(SpliMoCharacter character) {
