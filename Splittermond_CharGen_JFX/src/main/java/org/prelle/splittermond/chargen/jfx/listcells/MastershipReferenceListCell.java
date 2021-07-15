@@ -7,6 +7,7 @@ import java.util.PropertyResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.prelle.splimo.Mastership;
 import org.prelle.splimo.MastershipReference;
 import org.prelle.splimo.SkillSpecializationValue;
 import org.prelle.splimo.charctrl.MastershipController;
@@ -85,6 +86,17 @@ public class MastershipReferenceListCell extends ListCell<MastershipReference> {
 	private void initInteractivity() {
 		field.dec.setOnAction(event -> control.deselect(data.getSpecialization().getSpecial(), data.getSpecialization().getLevel()));
 		field.inc.setOnAction(event -> control.select(data.getSpecialization().getSpecial(), data.getSpecialization().getLevel()+1));
+		this.setOnMouseClicked(ev -> {
+			if (ev.getClickCount()==2) {
+        		Mastership master = data.getMastership();
+         		if (master!=null) {
+        			logger.info("Deselect mastership "+master);
+        			control.deselect(master);
+        		} else {
+        			logger.warn("Cannot deselect unknown mastership: "+data);
+        		}
+			}
+			});
 	}
 
 	//-------------------------------------------------------------------
