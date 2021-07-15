@@ -591,7 +591,7 @@ public class MastershipLevellerAndGenerator implements MastershipController, Gen
 			return false;
 
 		// Is the mastership already selected
-		if (data.hasMastership(master, null))
+		if (data.hasMastership(master, null) && !master.isMultiple())
 			return false;
 
 		// Some masterships have requirements. Are they met?

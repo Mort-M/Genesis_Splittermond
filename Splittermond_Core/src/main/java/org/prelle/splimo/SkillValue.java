@@ -156,7 +156,7 @@ public class SkillValue extends ModifyableImpl implements Comparable<SkillValue>
 	 * @param masterships the masterships to set
 	 */
 	public void addMastership(MastershipReference mastership) {
-		if (!masterships.contains(mastership))
+//		if (!masterships.contains(mastership))
 			masterships.add(mastership);
 	}
 

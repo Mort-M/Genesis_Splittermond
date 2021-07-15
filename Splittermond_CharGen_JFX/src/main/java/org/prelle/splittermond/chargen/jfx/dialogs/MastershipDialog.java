@@ -322,7 +322,7 @@ public class MastershipDialog extends ManagedDialog implements GenerationEventLi
 					if (tmp.getId().equals("journeyman") || tmp.getId().equals("expert"))
 						continue;
 				}
-				if (!sVal.hasMastership(tmp))
+				if (!sVal.hasMastership(tmp) || tmp.isMultiple())
 					toAdd.add(tmp);
 				if (searchFilter!=null && !tmp.getHelpText().toLowerCase().contains(searchFilter.toLowerCase()))
 					toAdd.remove(tmp);
