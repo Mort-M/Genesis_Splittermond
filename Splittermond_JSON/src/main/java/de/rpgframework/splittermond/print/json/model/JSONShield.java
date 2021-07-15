@@ -14,4 +14,10 @@ public class JSONShield {
     public List<JSONFeature> features;
     public boolean relic;
     public boolean personalized;
+    public int load;
+    public int price;
+    public String availability;
+    public int quality;
+    public String complexity;
+    public int durability;
 }

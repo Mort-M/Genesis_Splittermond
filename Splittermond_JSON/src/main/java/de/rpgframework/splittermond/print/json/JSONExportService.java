@@ -103,6 +103,12 @@ public class JSONExportService {
             jsonLongRangeWeapon.features = getFeatures(item, LONG_RANGE_WEAPON);
             jsonLongRangeWeapon.relic = item.isRelic();
             jsonLongRangeWeapon.personalized = item.getPersonalizations() != null && !item.getPersonalizations().isEmpty();
+            jsonLongRangeWeapon.load = item.getLoad();
+            jsonLongRangeWeapon.price = item.getPrice();
+            jsonLongRangeWeapon.availability =item.getAvailability().getName();
+            jsonLongRangeWeapon.quality = item.getTotalQuality();
+            jsonLongRangeWeapon.complexity = item.getItem().getComplexity().getName();
+            jsonLongRangeWeapon.durability = item.getItem().getDurability();
             jsonLongRangeWeapons.add(jsonLongRangeWeapon);
         }
         jsonCharacter.longRangeWeapons = jsonLongRangeWeapons;
@@ -128,6 +134,12 @@ public class JSONExportService {
             jsonShield.tickMalus = item.getTickMalus(SHIELD);
             jsonShield.features = getFeatures(item, SHIELD);
             jsonShield.relic = item.isRelic();
+            jsonShield.load = item.getLoad();
+            jsonShield.price = item.getPrice();
+            jsonShield.availability =item.getAvailability().getName();
+            jsonShield.quality = item.getTotalQuality();
+            jsonShield.durability = item.getItem().getDurability();
+            jsonShield.complexity = item.getItem().getComplexity().getName();
             jsonShield.personalized = item.getPersonalizations() != null && !item.getPersonalizations().isEmpty();
             jsonShields.add(jsonShield);
         }
@@ -145,6 +157,12 @@ public class JSONExportService {
             jsonItem.name = item.getName();
             jsonItem.count = item.getCount();
             jsonItem.relic = item.isRelic();
+            jsonItem.load = item.getLoad();
+            jsonItem.price = item.getPrice();
+            jsonItem.availability =item.getAvailability().getName();
+            jsonItem.quality = item.getTotalQuality();
+            jsonItem.complexity = item.getItem().getComplexity().getName();
+            jsonItem.durability = item.getItem().getDurability();
             jsonItem.personalized = item.getName() != null && !item.getPersonalizations().isEmpty();
             jsonItems.add(jsonItem);
         }
@@ -184,6 +202,12 @@ public class JSONExportService {
             jsonWeapon.relic = item.isRelic();
             jsonWeapon.personalized = item.getPersonalizations() != null && !item.getPersonalizations().isEmpty();
             jsonWeapon.features = getFeatures(item, WEAPON);
+            jsonWeapon.load = item.getLoad();
+            jsonWeapon.price = item.getPrice();
+            jsonWeapon.availability =item.getAvailability().getName();
+            jsonWeapon.quality = item.getTotalQuality();
+            jsonWeapon.complexity = item.getItem().getComplexity().getName();
+            jsonWeapon.durability = item.getItem().getDurability();
             meleeWeapons.add(jsonWeapon);
         }
 
@@ -251,6 +275,12 @@ public class JSONExportService {
             if (!item.getPersonalizations().isEmpty()){
                 jsonArmor.personalized = true;
             }
+            jsonArmor.load = item.getLoad();
+            jsonArmor.price = item.getPrice();
+            jsonArmor.availability =item.getAvailability().getName();
+            jsonArmor.quality = item.getTotalQuality();
+            jsonArmor.complexity = item.getItem().getComplexity().getName();
+            jsonArmor.durability = item.getItem().getDurability();
             jsonArmors.add(jsonArmor);
         }
         jsonCharacter.armors = jsonArmors;

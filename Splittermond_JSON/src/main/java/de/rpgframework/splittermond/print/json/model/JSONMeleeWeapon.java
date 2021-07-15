@@ -17,4 +17,10 @@ public class JSONMeleeWeapon {
     public int calculatedSpeed;
     public boolean relic;
     public boolean personalized;
+    public int load;
+    public int price;
+    public String availability;
+    public int quality;
+    public String complexity;
+    public int durability;
 }
