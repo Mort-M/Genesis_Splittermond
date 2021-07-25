@@ -159,9 +159,13 @@ public class JSONExportService {
             jsonItem.relic = item.isRelic();
             jsonItem.load = item.getLoad();
             jsonItem.price = item.getPrice();
-            jsonItem.availability =item.getAvailability().name();
             jsonItem.quality = item.getTotalQuality();
-            jsonItem.complexity = item.getItem().getComplexity().name();
+            if (item.getAvailability() != null) {
+                jsonItem.availability = item.getAvailability().name();
+            }
+            if (item.getItem().getComplexity() != null) {
+                jsonItem.complexity = item.getItem().getComplexity().name();
+            }
             jsonItem.durability = item.getItem().getDurability();
             jsonItem.personalized = item.getName() != null && !item.getPersonalizations().isEmpty();
             jsonItems.add(jsonItem);
