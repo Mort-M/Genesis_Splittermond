@@ -175,7 +175,10 @@ public class FoundryExportService {
 			Gear gear = new Gear();
 			gear.weight = item.getLoad();
 			gear.availability = item.getAvailability().name();
-			gear.complexity = item.getItem().getComplexity().getID();
+			if (item.getItem().getComplexity()!=null)
+				gear.complexity = item.getItem().getComplexity().getID();
+			else
+				System.err.println("No complexity for "+item.getItem());
 			if (item.getSkill(type)!=null) {
 				gear.skill = item.getSkill(item.getItem().getFirstItemType()).getId();
 			}
