@@ -544,11 +544,11 @@ public class NewMastershipGenerator implements MastershipController, SpliMoChara
 	@Override
 	public List<String> getUnfulfilledRequirements(Mastership master) {
 		List<String> ret = new ArrayList<>();
-		if (canBeSelected(master))
-			return ret;
+//		if (canBeSelected(master))
+//			return ret;
 
-		if (master.getLevel()>data.getLevel())
-			return ret;
+//		if (master.getLevel()>data.getLevel())
+//			return ret;
 
 		// Some masterships have requirements. Are they met?
 		for (Requirement req : master.getPrerequisites()) {
