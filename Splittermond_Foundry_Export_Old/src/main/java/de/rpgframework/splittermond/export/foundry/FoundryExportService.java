@@ -208,7 +208,7 @@ public class FoundryExportService {
 	private void addSpells(Actor actor, SpliMoCharacter character) {
 		for (SpellValue item : character.getSpells()) {
 			Spell spell = new Spell();
-			spell.id = item.getSpell().getId();
+			spell.genesisId = item.getSpell().getId();
 			for (SpellSchoolEntry entry : item.getSpell().getSchools()) {
 				if (item.getSkill()==entry.getSchool())
 					spell.skillLevel = entry.getLevel();
@@ -222,7 +222,7 @@ public class FoundryExportService {
 			spell.effectDuration = item.getSpell().getSpellDuration();
 			if (item.getSpell().getEffectRange()!=null) {
 				spell.effRangeMeter = item.getSpell().getEffectRange();
-				spell.effRange = item.getSpell().getEffectRange()+"m";
+				spell.effectArea = item.getSpell().getEffectRange()+"m";
 			}
 			
 			Item<Spell> foundry = new Item<Spell>(item.getSpell().getName(), "spell", spell);
