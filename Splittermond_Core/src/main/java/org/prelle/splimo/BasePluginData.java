@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.MissingResourceException;
+import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
@@ -141,6 +142,7 @@ public abstract class BasePluginData implements HardcopyPluginData {
 		String key = getHelpI18NKey();
 		if (CustomDataHandlerLoader.getInstance()!=null) {
 			CustomDataHandlerLoader.getInstance().setCustomText(RoleplayingSystem.SPLITTERMOND, key, newText);
+			alreadySearchedUserProvided = false;
 		}
 	}
 

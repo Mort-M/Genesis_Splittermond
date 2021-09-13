@@ -123,13 +123,14 @@ public class SpliMoManagedScreenPage extends CharacterDocumentView {
 		logger.info("change text for "+helpData);
 		try {
 			if (helpData!=null) {
+				logger.info("Call "+helpData.getClass()+".setCustomHelpText()");
 				helpData.setCustomHelpText(newText);
 			} else {
-				getScreenManager().showAlertAndCall(AlertType.ERROR, "There is a problem", ResourceI18N.get(UI, "error.customText.nothing_selected"));
+				getScreenManager().showAlertAndCall(AlertType.ERROR, "Es gibt ein Problem", ResourceI18N.get(UI, "error.customText.nothing_selected"));
 			}
 		} catch (Exception e) {
 			logger.error("Failed setting custom text: ",e);
-			getScreenManager().showAlertAndCall(AlertType.ERROR, "There is a problem", ResourceI18N.get(UI, "error.customText.error_setting")+"\n"+e.toString());
+			getScreenManager().showAlertAndCall(AlertType.ERROR, "Es gibt ein Problem", ResourceI18N.get(UI, "error.customText.error_setting")+"\n"+e.toString());
 		}
 	}
 
