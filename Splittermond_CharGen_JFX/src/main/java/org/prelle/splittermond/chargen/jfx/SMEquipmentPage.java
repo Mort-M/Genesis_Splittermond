@@ -151,7 +151,11 @@ public class SMEquipmentPage extends SpliMoManagedScreenPage {
 
 	//-------------------------------------------------------------------
 	private void updateHelp(CarriedItem data) {
+		if (getManager()==null)
+			setManager(provider.getScreenManager());
+		descrBtnEdit.setVisible(data!=null);
 		if (data!=null) {
+			this.helpData = data.getItem();
 			this.setDescriptionHeading(data.getName());
 			this.setDescriptionPageRef(data.getItem().getProductNameShort()+" "+data.getItem().getPage());
 //			this.setDescriptionText(data.getItem().getHelpText());

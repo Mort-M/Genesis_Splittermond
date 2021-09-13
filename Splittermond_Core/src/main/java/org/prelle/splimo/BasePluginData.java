@@ -19,6 +19,9 @@ import de.rpgframework.ResourceI18N;
 import de.rpgframework.character.HardcopyPluginData;
 import de.rpgframework.character.RulePlugin;
 import de.rpgframework.character.RuleSpecificCharacterObject;
+import de.rpgframework.core.CustomDataHandler.CustomDataPackage;
+import de.rpgframework.core.CustomDataHandlerLoader;
+import de.rpgframework.core.RoleplayingSystem;
 
 /**
  * @author Stefan
@@ -35,6 +38,9 @@ public abstract class BasePluginData implements HardcopyPluginData {
 	protected transient ResourceBundle i18nHelp;
 
 	protected transient RulePlugin<? extends RuleSpecificCharacterObject> plugin;
+	
+	private transient static boolean alreadySearchedUserProvided;
+	private transient static ResourceBundle userProvided;
 
 	//--------------------------------------------------------------------
 	static {
@@ -108,6 +114,36 @@ public abstract class BasePluginData implements HardcopyPluginData {
 		return 0;
 	}
 
+	//-------------------------------------------------------------------
+	private String getCustomHelpText() {
+		String key = getHelpI18NKey();
+		// Search for a user provided key
+		if (!alreadySearchedUserProvided && CustomDataHandlerLoader.getInstance()!=null) {
+			CustomDataPackage pack = CustomDataHandlerLoader.getInstance().getCustomData(RoleplayingSystem.SPLITTERMOND, "fallback");
+			if (pack!=null && pack.helpProperties!=null) {
+				userProvided = pack.helpProperties;
+			}
+			alreadySearchedUserProvided = true;
+		}
+		if (userProvided!=null) {
+			try {
+				return userProvided.getString(key);
+			} catch (MissingResourceException e) {
+//				logger.info("No "+key+" in "+userProvided.getBaseBundleName());
+			}
+		}
+		return ResourceI18N.format(SplitterMondCore.getI18nResources(), "label.no_helptext", key)+"\n"+
+			ResourceI18N.format(SplitterMondCore.getI18nResources(), "label.see_page", getProductName(), getPage());
+	}
+
+	//-------------------------------------------------------------------
+	public void setCustomHelpText(String newText) {
+		String key = getHelpI18NKey();
+		if (CustomDataHandlerLoader.getInstance()!=null) {
+			CustomDataHandlerLoader.getInstance().setCustomText(RoleplayingSystem.SPLITTERMOND, key, newText);
+		}
+	}
+
 	//--------------------------------------------------------------------
 	public void setPage(int page) {
 		String key = getPageI18NKey();
@@ -122,10 +158,10 @@ public abstract class BasePluginData implements HardcopyPluginData {
 	@Override
 	public String getHelpText() {
 		if (i18nHelp==null)
-			return null;
+			return getCustomHelpText();
 		String key = getHelpI18NKey();
 		if (!SplitterMondCore.hasLicense())
-			return null;
+			return getCustomHelpText();
 
 		try {
 			return ResourceI18N.get(i18nHelp, key);
@@ -137,7 +173,8 @@ public abstract class BasePluginData implements HardcopyPluginData {
 					MISSING_HELP.println(mre.getKey()+"=");
 			}
 		}
-		return null;
+		// Search for a user provided key
+		return getCustomHelpText();
 	}
 
 	//--------------------------------------------------------------------

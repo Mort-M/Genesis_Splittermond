@@ -98,6 +98,10 @@ public class SMOverviewPage extends SpliMoManagedScreenPage {
 
 	//-------------------------------------------------------------------
 	private void updateHelp(BasePluginData data) {
+		if (getManager()==null)
+			setManager(provider.getScreenManager());
+		descrBtnEdit.setVisible(data!=null);
+		this.helpData = data;
 		if (data!=null) {
 			this.setDescriptionHeading(data.getName());
 			this.setDescriptionPageRef(data.getProductNameShort()+" "+data.getPage());
@@ -111,6 +115,7 @@ public class SMOverviewPage extends SpliMoManagedScreenPage {
 
 	//-------------------------------------------------------------------
 	private void updateHelp(Attribute data) {
+		descrBtnEdit.setVisible(false);
 		if (data!=null) {
 			this.setDescriptionHeading(data.getName());
 			this.setDescriptionPageRef(null);
