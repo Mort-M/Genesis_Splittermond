@@ -61,7 +61,10 @@ public class SpliMoManagedScreenPage extends CharacterDocumentView {
 		initPrivateComponents();
 		setHandle(handle);
 		initInteractivity();
-		descrBtnEdit.setVisible(false);
+		try {
+			descrBtnEdit.setVisible(false);
+		} catch (NoSuchFieldError e) {
+		}
 	}
 
 	//-------------------------------------------------------------------
