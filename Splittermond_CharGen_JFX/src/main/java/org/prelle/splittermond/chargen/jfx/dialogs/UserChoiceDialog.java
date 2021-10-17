@@ -120,6 +120,7 @@ public class UserChoiceDialog extends ManagedDialog implements ChangeListener<Bo
 			cbSelect.getItems().addAll(choice.getOptionList());
 			cbSelect.setConverter(new StringConverter<Modification>() {
 				public String toString(Modification mod) {
+					if (mod==null) return "-";
 					return SplitterTools.getGenerationModificationString(mod);
 				}
 				public Modification fromString(String arg0) {return null;}

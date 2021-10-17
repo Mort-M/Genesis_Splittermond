@@ -101,14 +101,14 @@ public class CreatureEditPane extends OptionalDescriptionPane implements Generat
 		cbBase = new ChoiceBox<CreatureModule>();
 		cbBase.getItems().addAll(control.getBases());
 		cbBase.setConverter(new StringConverter<CreatureModule>() {
-			public String toString(CreatureModule val) { return val.getName();}
+			public String toString(CreatureModule val) { return (val!=null)?val.getName():"";}
 			public CreatureModule fromString(String string) {return null;}
 		});
 
 		cbRole = new ChoiceBox<CreatureModule>();
 		cbRole.getItems().addAll(control.getRoles());
 		cbRole.setConverter(new StringConverter<CreatureModule>() {
-			public String toString(CreatureModule val) { return val.getName();}
+			public String toString(CreatureModule val) { return (val!=null)?val.getName():"";}
 			public CreatureModule fromString(String string) {return null;}
 		});
 

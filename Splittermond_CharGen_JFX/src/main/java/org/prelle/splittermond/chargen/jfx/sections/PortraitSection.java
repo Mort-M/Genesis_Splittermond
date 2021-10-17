@@ -100,7 +100,7 @@ public class PortraitSection extends SingleSection {
 
 		cbDeity     = new ChoiceBox<>(FXCollections.observableArrayList(SplitterMondCore.getDeities()));
 		cbDeity.setConverter(new StringConverter<Deity>() {
-			public String toString(Deity object) { return object.getName();}
+			public String toString(Deity object) { return (object!=null)?object.getName():"";}
 			public Deity fromString(String string) {return null;}
 		});
 		tfHair      = new TextField();

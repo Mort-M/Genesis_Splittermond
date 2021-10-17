@@ -97,6 +97,7 @@ public class SMSpellPage extends SpliMoManagedScreenPage {
 		cbSort.getItems().addAll(SpecializationSort.values());
 		cbSort.setConverter(new StringConverter<SpecializationSort>() {
 			public String toString(SpecializationSort val) {
+				if (val==null) return "";
 				return UI.getString("specialization.sort."+val.name().toLowerCase());
 			}
 			public SpecializationSort fromString(String string) { return null;}

@@ -255,7 +255,7 @@ public class EditCarriedItemDialog extends ManagedDialog implements GenerationEv
 		cbType = new ChoiceBox<>();
 		cbType.getItems().addAll(EnhancementType.values());
 		cbType.setConverter(new StringConverter<Enhancement.EnhancementType>() {
-			public String toString(EnhancementType value) { return value.getName();}
+			public String toString(EnhancementType value) { return (value!=null)?value.getName():"";}
 			public EnhancementType fromString(String string) { return null; }
 		});
 		
@@ -451,14 +451,14 @@ public class EditCarriedItemDialog extends ManagedDialog implements GenerationEv
 
 		ChoiceBox<Skill> cbSkills = new ChoiceBox<>();
 		cbSkills.setConverter(new StringConverter<Skill>() {
-			public String toString(Skill object) { return object.getName(); }
+			public String toString(Skill val) { return (val!=null)?val.getName():""; }
 			public Skill fromString(String string) { return null; }
 		});
 		cbSkills.getItems().addAll(SplitterMondCore.getSkills(SkillType.NORMAL));
 		cbSkills.getItems().addAll(SplitterMondCore.getSkills(SkillType.MAGIC));
 		ChoiceBox<SkillSpecialization> cbSpecs = new ChoiceBox<>();
 		cbSpecs.setConverter(new StringConverter<SkillSpecialization>() {
-			public String toString(SkillSpecialization object) { return object.getName(); }
+			public String toString(SkillSpecialization val) { return (val!=null)?val.getName():""; }
 			public SkillSpecialization fromString(String string) { return null; }
 		});
 		cbSkills.getSelectionModel().selectedItemProperty().addListener( (ov,o,n) -> {
@@ -531,7 +531,7 @@ public class EditCarriedItemDialog extends ManagedDialog implements GenerationEv
 			ChoiceBox<SkillSpecialization> cbSpecs = new ChoiceBox<>();
 			cbSpecs.getItems().addAll(template.getSkill().getSpecializations());
 			cbSpecs.setConverter(new StringConverter<SkillSpecialization>() {
-				public String toString(SkillSpecialization object) { return object.getName(); }
+				public String toString(SkillSpecialization val) { return (val!=null)?val.getName():""; }
 				public SkillSpecialization fromString(String string) { return null; }
 			});
 			cbSpecs.getSelectionModel().select(0);
