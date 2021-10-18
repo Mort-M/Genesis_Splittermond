@@ -89,7 +89,10 @@ public class SMResourceCompanionPage extends SpliMoManagedScreenPage {
 	private void updateHelp(BasePluginData data) {
 		if (getManager()==null)
 			setManager(provider.getScreenManager());
-		descrBtnEdit.setVisible(data!=null);
+		try {
+			descrBtnEdit.setVisible(data!=null);
+		} catch (NoSuchFieldError e) {
+		}
 		this.helpData = data;
 		if (data!=null) {
 			this.setDescriptionHeading(data.getName());
