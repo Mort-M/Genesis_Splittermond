@@ -96,7 +96,7 @@ public class TrainingPane extends VBox {
 			lblTraining.setStyle("-fx-pref-height: 2em");
 			tiles.getChildren().add(lblTraining);
 		}
-		logger.debug("Creature belongs to resource "+ctrl.getCreature().getResource());
+		logger.info("Creature belongs to resource "+ctrl.getCreature().getResource());
 		lblHeading.setText(UI.getString("trainingpane.heading")+" ("+ctrl.getCreature().getInvestedPotential()+"/"+SplitterTools.getCreaturePotential(model, ctrl.getCreature())+")");
 	}
 

@@ -107,7 +107,8 @@ public class SMResourceCompanionPage extends SpliMoManagedScreenPage {
 
 	//-------------------------------------------------------------------
 	private void updateHelp(CreatureReference data) {
-		descrBtnEdit.setVisible(false);
+		logger.info("updateHelp");
+		try {descrBtnEdit.setVisible(false);} catch (Error e) {}
 		if (data!=null) {
 			this.setDescriptionHeading(data.getName());
 			
