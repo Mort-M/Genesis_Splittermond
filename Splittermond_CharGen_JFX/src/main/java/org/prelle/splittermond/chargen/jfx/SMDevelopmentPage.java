@@ -62,7 +62,7 @@ public class SMDevelopmentPage extends DevelopmentPage {
 		expLine = new ExpLine();
 		getCommandBar().setContent(expLine);
 		setConverter(new StringConverter<Modification>() {
-			public String toString(Modification arg0) {  return SplitterTools.getModificationString(arg0);}
+			public String toString(Modification arg0) {  return (arg0!=null)?SplitterTools.getModificationString(arg0):"-";}
 			public Modification fromString(String arg0) {return null;}
 		});
 		refresh();

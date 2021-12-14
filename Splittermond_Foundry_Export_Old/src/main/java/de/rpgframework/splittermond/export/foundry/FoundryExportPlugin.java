@@ -55,7 +55,7 @@ public class FoundryExportPlugin implements RulePlugin<SpliMoCharacter>, Command
 	 */
 	@Override
 	public String getReadableName() {
-		return "Foundry VTT Export";
+		return "veralteter JSON-Export";
 	}
 
 	//-------------------------------------------------------------------

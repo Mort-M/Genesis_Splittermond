@@ -87,6 +87,13 @@ public class SMResourceCompanionPage extends SpliMoManagedScreenPage {
 
 	//-------------------------------------------------------------------
 	private void updateHelp(BasePluginData data) {
+		if (getManager()==null)
+			setManager(provider.getScreenManager());
+		try {
+			descrBtnEdit.setVisible(data!=null);
+		} catch (NoSuchFieldError e) {
+		}
+		this.helpData = data;
 		if (data!=null) {
 			this.setDescriptionHeading(data.getName());
 			this.setDescriptionPageRef(data.getProductNameShort()+" "+data.getPage());
@@ -100,6 +107,8 @@ public class SMResourceCompanionPage extends SpliMoManagedScreenPage {
 
 	//-------------------------------------------------------------------
 	private void updateHelp(CreatureReference data) {
+		logger.info("updateHelp");
+		try {descrBtnEdit.setVisible(false);} catch (Error e) {}
 		if (data!=null) {
 			this.setDescriptionHeading(data.getName());
 			

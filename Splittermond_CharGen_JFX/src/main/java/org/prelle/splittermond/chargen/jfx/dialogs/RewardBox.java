@@ -234,7 +234,7 @@ public class RewardBox extends HBox {
 			logger.error("Missing instanceof ProductServiceLoader");
 		}
 		cbAdventure.setConverter(new StringConverter<Adventure>() {
-			public String toString(Adventure value) {return value.getTitle();}
+			public String toString(Adventure value) {return (value!=null)?value.getTitle():"";}
 			public Adventure fromString(String string) {return null;}
 		});
 		Collections.sort(cbAdventure.getItems());

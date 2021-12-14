@@ -99,7 +99,7 @@ public class ResourcePane extends VBox implements GenerationEventListener, Event
 		addChoice = new ChoiceBox<>();
 		addChoice.setPrefWidth(200);
 		addChoice.setConverter(new StringConverter<Resource>() {
-			public String toString(Resource object) {return object.getName();}
+			public String toString(Resource object) {return (object!=null)?object.getName():"-";}
 			public Resource fromString(String string) {return null;}
 		});
 		addChoice.getItems().addAll(control.getAvailableResources());

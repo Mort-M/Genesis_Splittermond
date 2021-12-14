@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
@@ -439,6 +441,14 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		if (CustomDataHandlerLoader.getInstance()!=null) {
 			CustomDataHandler custom = CustomDataHandlerLoader.getInstance();
 			List<String> customIDs = custom.getAvailableCustomIDs(RoleplayingSystem.SPLITTERMOND);
+			Collections.sort(customIDs, new Comparator<String>() {
+				public int compare(String c1, String c2) {
+					if (c1.startsWith("skill"))
+						return -1;
+					if (c1.startsWith("education") || c1.startsWith("race") || c1.startsWith("background"))
+						return  1;
+					return 0;
+				}});
 			PluginSkeleton CUSTOM = new PluginSkeleton("Custom", "Custom Data");
 			for (String id : customIDs) {
 				CustomDataPackage  bundle = custom.getCustomData(RoleplayingSystem.SPLITTERMOND, id);
@@ -446,6 +456,8 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 					try (InputStream datastream = new FileInputStream(bundle.datafile.toFile())) {
 						if (id.startsWith("item") || id.startsWith("equipment") || id.startsWith("gear")) {
 							SplitterMondCore.loadEquipment(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
+						} else if (id.startsWith("skills")) {
+							SplitterMondCore.loadSkills(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
 						} else if (id.startsWith("masterships")) {
 							SplitterMondCore.loadMasterships(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
 						} else if (id.startsWith("education")) {

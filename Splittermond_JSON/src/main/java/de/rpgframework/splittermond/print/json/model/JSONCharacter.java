@@ -6,7 +6,7 @@ import java.util.List;
 
 public class JSONCharacter {
 
-    public String jsonExporterVersion = "1.3.0";
+    public String jsonExporterVersion = "1.5.0";
     public String system = RoleplayingSystem.SPLITTERMOND.name();
 
     public String name;
@@ -39,4 +39,5 @@ public class JSONCharacter {
     public List<JSONLongRangeWeapon> longRangeWeapons;
     public List<JSONItem> items;
     public String notes;
+    public int telare;
 }

@@ -65,13 +65,14 @@ public class SelectItemDialog extends ManagedDialog {
 		cbType = new ChoiceBox<>();
 		cbType.getItems().addAll(ItemType.values());
 		cbType.setConverter(new StringConverter<ItemType>() {
-			public String toString(ItemType object) { return object.getName(); }
+			public String toString(ItemType object) { return (object!=null)?object.getName():""; }
 			public ItemType fromString(String string) { return null; }
 		});
 		
 		list = new ListView<ItemTemplate>();
 		StringConverter<ItemTemplate> sv = new StringConverter<ItemTemplate>() {
 			public String toString(ItemTemplate object) {
+				if (object==null) return "-";
 				if (object.getSkill()!=null)
 					return object.getName()+" ("+object.getSkill().getName()+")";
 				return object.getName();

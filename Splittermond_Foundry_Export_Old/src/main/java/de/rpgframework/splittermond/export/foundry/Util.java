@@ -10,6 +10,9 @@ public class Util {
 
 	//-------------------------------------------------------------------
 	public static String translateAttribute(Attribute attr) {
+		if (attr == null) {
+			return "";
+		}
 		switch (attr) {
 		case STRENGTH: return "sta";
 		case INTUITION: return "inn";

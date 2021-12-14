@@ -12,4 +12,5 @@ module splittermond.data {
 	requires transitive de.rpgframework.core;
 	requires transitive de.rpgframework.chars;
 	requires splittermond.core;
+	
 }

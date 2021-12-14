@@ -175,7 +175,10 @@ public class FoundryExportService {
 			Gear gear = new Gear();
 			gear.weight = item.getLoad();
 			gear.availability = item.getAvailability().name();
-			gear.complexity = item.getItem().getComplexity().getID();
+			if (item.getItem().getComplexity()!=null)
+				gear.complexity = item.getItem().getComplexity().getID();
+			else
+				System.err.println("No complexity for "+item.getItem());
 			if (item.getSkill(type)!=null) {
 				gear.skill = item.getSkill(item.getItem().getFirstItemType()).getId();
 			}
@@ -205,7 +208,7 @@ public class FoundryExportService {
 	private void addSpells(Actor actor, SpliMoCharacter character) {
 		for (SpellValue item : character.getSpells()) {
 			Spell spell = new Spell();
-			spell.id = item.getSpell().getId();
+			spell.genesisId = item.getSpell().getId();
 			for (SpellSchoolEntry entry : item.getSpell().getSchools()) {
 				if (item.getSkill()==entry.getSchool())
 					spell.skillLevel = entry.getLevel();
@@ -219,7 +222,7 @@ public class FoundryExportService {
 			spell.effectDuration = item.getSpell().getSpellDuration();
 			if (item.getSpell().getEffectRange()!=null) {
 				spell.effRangeMeter = item.getSpell().getEffectRange();
-				spell.effRange = item.getSpell().getEffectRange()+"m";
+				spell.effectArea = item.getSpell().getEffectRange()+"m";
 			}
 			
 			Item<Spell> foundry = new Item<Spell>(item.getSpell().getName(), "spell", spell);

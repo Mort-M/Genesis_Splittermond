@@ -1203,7 +1203,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="got_it" diff="21" cost="4V1" castdur="4T" range="5m" enh="1/+2V2">
+    <spell id="got_it" diff="21" cost="4V1" castdur="4T" range="5m" enh="2/+2V2">
         <school skill="motionmagic" level="2" />
         <type>OBJECT</type>
         <type>TELEKINESIS</type>
@@ -1924,7 +1924,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="protective_water" diff="21" cost="K8V2" castdur="7T" range="CASTER" spelldur="K" enh="2/+K2V2">
+    <spell id="protective_water" diff="21" cost="K8V2" castdur="7T" range="CASTER" spelldur="K" enh="1/+K2V2">
         <school skill="protectionmagic" level="2" />
         <school skill="watermagic" level="2" />
         <type>PROTECTIONFIELD</type>

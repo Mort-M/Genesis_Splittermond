@@ -80,7 +80,7 @@ public class WizardPageRace extends WizardPage implements ChangeListener<Race> {
 		ListSpinnerValueFactory<Race> factory = new ListSpinnerValueFactory<Race>(FXCollections.observableArrayList(SplitterMondCore.getRaces()));
 		factory.setWrapAround(true);
 		factory.setConverter(new StringConverter<Race>() {
-			public String toString(Race race) { return race.getName();}
+			public String toString(Race object) { return (object!=null)?object.getName():"";}
 			public Race fromString(String string) {return null;}
 		});
 		raceSpinner.setValueFactory(factory);

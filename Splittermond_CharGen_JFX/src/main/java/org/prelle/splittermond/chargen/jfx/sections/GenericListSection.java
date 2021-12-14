@@ -27,7 +27,7 @@ public abstract class GenericListSection<T> extends SingleSection {
 
 	protected final static Logger logger = LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME);
 
-	private static PropertyResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle(PortraitSection.class.getName());
+	private static PropertyResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle(GenericListSection.class.getName());
 
 	protected CharacterController control; 
 	protected ListView<T> list;

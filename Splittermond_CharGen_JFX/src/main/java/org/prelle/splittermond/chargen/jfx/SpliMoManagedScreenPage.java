@@ -13,6 +13,7 @@ import org.prelle.javafx.AppBarButton;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.SymbolIcon;
 import org.prelle.rpgframework.jfx.CharacterDocumentView;
+import org.prelle.splimo.BasePluginData;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.chargen.SpliMoCharacterGenerator;
 import org.prelle.splimo.chargen.event.GenerationEvent;
@@ -20,6 +21,7 @@ import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventType;
 
 import de.rpgframework.RPGFrameworkLoader;
+import de.rpgframework.ResourceI18N;
 import de.rpgframework.character.CharacterHandle;
 import de.rpgframework.core.BabylonEventBus;
 import de.rpgframework.core.BabylonEventType;
@@ -47,6 +49,8 @@ public class SpliMoManagedScreenPage extends CharacterDocumentView {
 	protected ExpLine expLine;
 	protected ViewMode mode;
 	protected AppBarButton cmdFinish;
+	
+	protected BasePluginData helpData;
 
 	//-------------------------------------------------------------------
 	public SpliMoManagedScreenPage(CharacterController charGen, ViewMode mode, CharacterHandle handle) {
@@ -57,6 +61,10 @@ public class SpliMoManagedScreenPage extends CharacterDocumentView {
 		initPrivateComponents();
 		setHandle(handle);
 		initInteractivity();
+		try {
+			descrBtnEdit.setVisible(false);
+		} catch (NoSuchFieldError e) {
+		}
 	}
 
 	//-------------------------------------------------------------------
@@ -111,6 +119,22 @@ public class SpliMoManagedScreenPage extends CharacterDocumentView {
 	private void initInteractivity() {
 		cmdPrint.setOnAction( ev -> {BabylonEventBus.fireEvent(BabylonEventType.PRINT_REQUESTED, handle, charGen.getModel());});
 		cmdFinish.setOnAction( ev -> {GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.FINISH_REQUESTED, handle, charGen.getModel()));});
+	}
+
+	//--------------------------------------------------------------------
+	public void changeCustomTextTo(String newText) {
+		logger.info("change text for "+helpData);
+		try {
+			if (helpData!=null) {
+				logger.info("Call "+helpData.getClass()+".setCustomHelpText()");
+				helpData.setCustomHelpText(newText);
+			} else {
+				getScreenManager().showAlertAndCall(AlertType.ERROR, "Es gibt ein Problem", ResourceI18N.get(UI, "error.customText.nothing_selected"));
+			}
+		} catch (Exception e) {
+			logger.error("Failed setting custom text: ",e);
+			getScreenManager().showAlertAndCall(AlertType.ERROR, "Es gibt ein Problem", ResourceI18N.get(UI, "error.customText.error_setting")+"\n"+e.toString());
+		}
 	}
 
 }

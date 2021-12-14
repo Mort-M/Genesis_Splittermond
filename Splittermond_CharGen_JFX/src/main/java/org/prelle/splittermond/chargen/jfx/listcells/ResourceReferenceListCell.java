@@ -406,7 +406,7 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 
 		ChoiceBox<CreatureReference> cbPossible = new ChoiceBox<>();
 		cbPossible.setConverter(new StringConverter<CreatureReference>() {
-			public String toString(CreatureReference object) { return object.getName();}
+			public String toString(CreatureReference object) { return (object!=null)?object.getName():"";}
 			public CreatureReference fromString(String string) { return null;}
 		});
 		cbPossible.getItems().addAll(matching);
@@ -426,7 +426,7 @@ public class ResourceReferenceListCell extends ListCell<ResourceReference> {
 //		listAvailable.setStyle("-fx-max-width: 20em");
 //		listAvailable.setStyle("-fx-pref-height: 10em");
 		listAvailable.setConverter(new StringConverter<CreatureReference>() {
-			public String toString(CreatureReference object) { return object.getName();}
+			public String toString(CreatureReference object) { return (object!=null)?object.getName():"";}
 			public CreatureReference fromString(String string) { return null;}
 		});
 		listAvailable.getItems().addAll(possible);
