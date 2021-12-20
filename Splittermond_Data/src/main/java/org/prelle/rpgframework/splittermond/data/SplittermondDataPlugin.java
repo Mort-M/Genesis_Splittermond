@@ -165,7 +165,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 	public void init(RulePluginProgessListener callback) {
 		if (alreadyInitialized)
 			return;
-		double totalPlugins = 23.0;
+		double totalPlugins = 24.0;
 		double count = 0;
 		alreadyInitialized = true;
 		logger.info("START -------------------------------Core-----------------------------------------------");
@@ -433,6 +433,13 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadEducations(MSB, clazz.getResourceAsStream("staedtebund/data/educations-staedtebund.xml"), MSB.getResources(), MSB.getHelpResources());
 		SplitterMondCore.loadNameTable(MSB, clazz.getResourceAsStream("staedtebund/data/nametable-staedtebund.xml"), MSB.getResources(), MSB.getHelpResources());
 		count++; callback.progressChanged( (count/totalPlugins) );		
+
+		logger.info("START -------------------------------Arkuri--------------------------------------------");
+		PluginSkeleton ARK = new PluginSkeleton("Arkuri", "Arkuri");
+		SplitterMondCore.loadEquipment(ARK, clazz.getResourceAsStream("arkuri/data/equipment-arkuri.xml"), ARK.getResources(), ARK.getHelpResources());
+		SplitterMondCore.loadEducations(ARK, clazz.getResourceAsStream("arkuri/data/educations-arkuri.xml"), ARK.getResources(), ARK.getHelpResources());
+		SplitterMondCore.loadNameTable(ARK, clazz.getResourceAsStream("arkuri/data/nametable-arkuri.xml"), ARK.getResources(), ARK.getHelpResources());
+		count++; callback.progressChanged( (count/totalPlugins) );
 
 		/*
 		 * Load custom data
