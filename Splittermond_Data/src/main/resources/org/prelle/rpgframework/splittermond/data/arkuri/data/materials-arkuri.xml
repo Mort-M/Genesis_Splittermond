@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<materials>
+  <!-- Materialeigenschaft nicht wirklich eingegeben, hier fehlt mir das Wissen der Begriffe -->
+	<material id="alanjutLeather" quality="3" price="3000" type="OTHER">
+		<modifications>
+			<skillmod ref="controlmagic" value="1"/>
+			<skillmod ref="illusionmagic" value="1"/>
+		</modifications>
+	</material>
+	<material id="khomiteOre" quality="2" price="1500" type="METAL"/>
+	<material id="ironWood" quality="1" price="800" type="WOOD" />
+	<material id="fogPantherArmor" quality="3" price="3000" type="OTHER" />
+	<material id="matureVultureFeather" quality="2" price="1500" type="OTHER" />
+</materials>

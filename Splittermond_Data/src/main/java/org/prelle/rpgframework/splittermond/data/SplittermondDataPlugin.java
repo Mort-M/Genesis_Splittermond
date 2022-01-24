@@ -436,9 +436,13 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 
 		logger.info("START -------------------------------Arkuri--------------------------------------------");
 		PluginSkeleton ARK = new PluginSkeleton("Arkuri", "Arkuri");
-		SplitterMondCore.loadEquipment(ARK, clazz.getResourceAsStream("arkuri/data/equipment-arkuri.xml"), ARK.getResources(), ARK.getHelpResources());
-		SplitterMondCore.loadEducations(ARK, clazz.getResourceAsStream("arkuri/data/educations-arkuri.xml"), ARK.getResources(), ARK.getHelpResources());
-		SplitterMondCore.loadNameTable(ARK, clazz.getResourceAsStream("arkuri/data/nametable-arkuri.xml"), ARK.getResources(), ARK.getHelpResources());
+		SplitterMondCore.loadEquipment(ARK, clazz.getResourceAsStream("arkuri/data/equipment-arkuri.xml"), ARK.getResources(), ARK.getHelpResources()); 
+		SplitterMondCore.loadEducations(ARK, clazz.getResourceAsStream("arkuri/data/educations-arkuri.xml"), ARK.getResources(), ARK.getHelpResources()); 
+		SplitterMondCore.loadNameTable(ARK, clazz.getResourceAsStream("arkuri/data/nametable-arkuri.xml"), ARK.getResources(), ARK.getHelpResources()); 
+		SplitterMondCore.loadCreatures(ARK, clazz.getResourceAsStream("arkuri/data/creatures-arkuri.xml"), ARK.getResources(), ARK.getHelpResources());
+		SplitterMondCore.loadCultures(ARK, clazz.getResourceAsStream("arkuri/data/cultures-arkuri.xml"), ARK.getResources(), ARK.getHelpResources());
+		SplitterMondCore.loadMaterials(ARK, clazz.getResourceAsStream("arkuri/data/materials-arkuri.xml"), ARK.getResources(), ARK.getHelpResources());
+		SplitterMondCore.loadTowns(ARK, clazz.getResourceAsStream("arkuri/data/towns-arkuri.xml"), ARK.getResources(), ARK.getHelpResources());
 		count++; callback.progressChanged( (count/totalPlugins) );
 
 		/*

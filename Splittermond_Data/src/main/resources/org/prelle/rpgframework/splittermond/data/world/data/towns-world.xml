@@ -85,9 +85,6 @@
     <town id="sulasjada" size="SMALL_TOWN" cultures="jagodien"/>
     <town id="timudin" size="SMALL_TOWN" cultures="jagodien"/>
     
-    <town id="arkuri" size="SMALL_TOWN" cultures="arkuri"/><!-- 13500 -->
-    <town id="suedarkuri" size="SMALL_TOWN" cultures="arkuri"/><!-- 1500 -->
-    
     <town id="jordheim" size="SMALL_TOWN" cultures="frynjord" /><!-- 17000 -->
     <town id="zimahora" size="SMALL_TOWN" cultures="frynjord" /><!-- 17000 -->
     <town id="zitrabyt" size="SMALL_TOWN" cultures="frynjord"/><!-- 8000 -->
