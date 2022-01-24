@@ -1,24 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
-  <!--item id="bhurva" avail="SMALL_TOWN" price="700" load="2" robust="7" cplx="G" material="METAL">
-    <weapon skill="blades" damage="1W6+3" speed="8" att1="STRENGTH" att2="AGILITY">
+  <item id="arkuriGlaive" avail="LARGE_TOWN" price="1300" load="3" robust="6" cplx="F" material="METAL">
+    <weapon skill="staffs" damage="2W10" speed="10" att1="STRENGTH" att2="AGILITY" type="WEAPON">
       <requires>
-        <attrreq attr="STRENGTH" val="2" />
-        <attrreq attr="CONSTITUTION" val="2" />
+        <attrreq attr="STRENGTH" val="3" />
+        <attrreq attr="AGILITY" val="2" />
       </requires>
       <features>
-        <feature type="PENETRATING" level="1" />
-        <feature type="CRITICAL" level="2" />
+            <feature type="LONG_WEAPON"/>
+            <feature type="HEAVY"/>
+            <feature type="TWO_HANDED"/>
       </features>
     </weapon>
   </item>
-  
-  <item id="veil" avail="SMALL_TOWN" cplx="G" load="0" material="FABRIC" price="100" robust="0" type="CLOTHING" />
-  <item id="dyeing" avail="SMALL_TOWN" cplx="G" load="0" material="OTHER" price="500" robust="0" type="CLOTHING" />
-  
-  <item id="fruitBeer" avail="VILLAGE" price="50" load="5" robust="3" cplx="G" material="OTHER" />
-  <item id="coffee_badashan" avail="VILLAGE" price="20" load="0" robust="0" cplx="G" material="OTHER" />
-  <item id="tea_turubar" avail="SMALL_TOWN" price="10" load="0" robust="0" cplx="G" material="OTHER" />
-  <item id="spice_basic" avail="VILLAGE" price="10" load="0" robust="1" cplx="U" material="OTHER" />
-  <item id="spice_expensive" avail="SMALL_TOWN" price="300" load="0" robust="1" cplx="U" material="OTHER" /-->
+
+  <item id="catchingSkewer" avail="LARGE_TOWN" price="2300" load="3" robust="5" cplx="F" material="METAL">
+    <weapon skill="staffs" damage="1W6+5" speed="11" att1="STRENGTH" att2="AGILITY" type="WEAPON">
+      <requires>
+        <attrreq attr="STRENGTH" val="2" />
+        <attrreq attr="AGILITY" val="2" />
+      </requires>
+      <features>
+            <feature level="2" type="PENETRATING"/>
+            <feature level="1" type="DISARMING"/>
+            <feature type="LONG_WEAPON"/>
+            <feature type="FLEXIBLE"/>
+      </features>
+    </weapon>
+  </item>
+ 
+
+  <!-- ####################  Kleinode und Alltägliches  ####################-->
+  <item id="yurts" avail="SMALL_TOWN" price="1000" load="10" robust="2" cplx="G" material="OTHER" />
+  <item id="humusOil" avail="SMALL_TOWN" price="10" load="1" robust="0" material="OTHER" type="LIGHT" />
+  <item id="gemmeForstMammothTooth" avail="SMALL_TOWN" price="300" load="0" robust="2" material="OTHER" />
+  <item id="drinkingHornWarping" avail="SMALL_TOWN" price="100" load="0" robust="2" type="CONTAINER" />
+  <item id="chokeLiana" avail="LARGE_TOWN" price="500" load="2" robust="1" material="OTHER" />
+
+  <!-- ##########################  Lebensmittel  #########################-->
+  <item id="alanyutWater" avail="VILLAGE" price="50" load="1" robust="2" material="OTHER" />
+  <item id="fishSmall" avail="SMALL_TOWN" price="2" load="1" robust="2" material="OTHER" />
+  <item id="kussaku" avail="VILLAGE" price="50" load="0" robust="2" material="OTHER" />
+  <item id="pangavianSpiceMix_simple" avail="LARGE_TOWN" price="15" load="0" robust="1" material="OTHER" />
+  <item id="pangavianSpiceMix_noble" avail="LARGE_TOWN" price="400" load="0" robust="1" material="OTHER" />
+  <item id="tropicalFruits" avail="LARGE_TOWN" price="200" load="1" robust="1" material="OTHER" />
+  <item id="symuk" avail="VILLAGE" price="2" load="1" robust="2" material="OTHER" /> 
+
+  <!-- ###################  Kräuter und Alchemika  ########################-->
+  <!--Alchemika fehlt -->
+  <item avail="VILLAGE" cplx="U" id="rujanLeaves" load="0" material="OTHER" price="4" robust="0" type="POTION" />
+  <item avail="LARGE_TOWN" cplx="U" id="blackTravelResin" load="0" material="OTHER" price="1500" robust="0" type="POTION" />
+  <item avail="VILLAGE" cplx="U" id="dreamFern" load="0" material="OTHER" price="500" robust="0" type="POTION" />
+
+  <!-- ###################  Stoffe, Kleidung und Pelze  ########################-->
+
+   <item avail="LARGE_TOWN" cplx="M" id="summerWinterCoat" load="2" material="FABRIC" price="2500" robust="1" type="CLOTHING"/>
+
 </items>
+
+

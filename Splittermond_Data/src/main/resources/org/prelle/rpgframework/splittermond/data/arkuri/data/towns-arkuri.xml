@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<towns>
+    <town id="arkuri" size="SMALL_TOWN" cultures="arkuri"/><!-- 13500 -->
+    <town id="adalbo" size="VILLAGE" cultures="arkuri"/>
+    <town id="blaket" size="VILLAGE" cultures="arkuri"/>
+    <town id="herkanen" size="VILLAGE" cultures="arkuri"/>
+    <town id="hilsbi" size="VILLAGE" cultures="arkuri"/>
+    <town id="koiwu" size="VILLAGE" cultures="arkuri"/>
+    <town id="kula" size="VILLAGE" cultures="arkuri"/>
+    <town id="linne" size="VILLAGE" cultures="arkuri"/>
+    <town id="sorna" size="VILLAGE" cultures="arkuri"/>
+    <town id="stova" size="VILLAGE" cultures="arkuri"/>
+    <town id="taiku" size="VILLAGE" cultures="arkuri"/>
+    <town id="tunbo" size="VILLAGE" cultures="arkuri"/>
+    <town id="uto" size="VILLAGE" cultures="arkuri"/>
+    <town id="verti" size="VILLAGE" cultures="arkuri"/>
+    <town id="vesidam" size="VILLAGE" cultures="arkuri"/>
+
+    <town id="suedarkuri" size="VILLAGE" cultures="south-arkuri"/><!-- 1500 -->
+    <town id="madiga" size="VILLAGE" cultures="south-arkuri"/>
+    <town id="tako" size="VILLAGE" cultures="south-arkuri"/>
+</towns>

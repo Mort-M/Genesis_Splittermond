@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <nametable culture="arkuri">
     <maleFirstNames>
-        <entry>Agusillem</entry>
+        <entry>Adalmar</entry>
+        <entry>Arto</entry>
+        <entry>Bedran</entry>
+        <entry>Endel</entry>
+        <entry>Frowin</entry>
+        <entry>Halvar</entry>
+        <entry>Hannu</entry>
+        <entry>Isko</entry>
+        <entry>Iuwo</entry>
+        <entry>Keke</entry>
+        <entry>Kuldar</entry>
+        <entry>Matti</entry>
+        <entry>Osmo</entry>
+        <entry>Raivo</entry>
+        <entry>Rodger</entry>
+        <entry>Veli</entry>
+        <entry>Yarvel</entry>
     </maleFirstNames>
 
     <femaleFirstNames>
-        <entry>Akshmila</entry>
+        <entry>Alanna</entry>
+        <entry>Alfa</entry>
+        <entry>Alis</entry>
+        <entry>Arku</entry>
+        <entry>Dierte</entry>
+        <entry>Falda</entry>
+        <entry>Hilja</entry>
+        <entry>Ilme</entry>
+        <entry>Irmlind</entry>
+        <entry>Kerti</entry>
+        <entry>Kirvil</entry>
+        <entry>Maiva</entry>
+        <entry>Piret</entry>
+        <entry>Stinje</entry>
+        <entry>Talvi</entry>
+        <entry>Vaike</entry>
+        <entry>Wiethe</entry>
     </femaleFirstNames>
 
     <lastNames>
-        <entry>Awaibeh</entry>
+        <entry>Brunwald</entry>
+        <entry>Dagelus</entry>
+        <entry>Eisenhardt</entry>
+        <entry>Hareinen</entry>
+        <entry>Holter</entry>
+        <entry>Luck</entry>
+        <entry>Naarjek</entry>
+        <entry>Paleke</entry>
+        <entry>Pelsen</entry>
+        <entry>Rhode</entry>
+        <entry>Siltebrink</entry>
+        <entry>Suud</entry>
+        <entry>Torek</entry>
+        <entry>Werninger</entry>
     </lastNames>
 </nametable>
