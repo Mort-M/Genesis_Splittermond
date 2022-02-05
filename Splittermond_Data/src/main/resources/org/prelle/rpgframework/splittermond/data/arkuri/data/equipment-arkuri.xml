@@ -3,8 +3,8 @@
   <item id="arkuriGlaive" avail="LARGE_TOWN" price="1300" load="3" robust="6" cplx="F" material="METAL">
     <weapon skill="staffs" damage="2W10" speed="10" att1="STRENGTH" att2="AGILITY" type="WEAPON">
       <requires>
-        <attrreq attr="STRENGTH" val="3" />
-        <attrreq attr="AGILITY" val="2" />
+        <attrreq attr="STRENGTH" val="2" />
+        <attrreq attr="AGILITY" val="3" />
       </requires>
       <features>
             <feature type="LONG_WEAPON"/>
@@ -31,25 +31,24 @@
  
 
   <!-- ####################  Kleinode und Alltägliches  ####################-->
-  <item id="yurts" avail="SMALL_TOWN" price="1000" load="10" robust="2" cplx="G" material="OTHER" />
   <item id="humusOil" avail="SMALL_TOWN" price="10" load="1" robust="0" material="OTHER" type="LIGHT" />
   <item id="gemmeForstMammothTooth" avail="SMALL_TOWN" price="300" load="0" robust="2" material="OTHER" />
   <item id="drinkingHornWarping" avail="SMALL_TOWN" price="100" load="0" robust="2" type="CONTAINER" />
   <item id="chokeLiana" avail="LARGE_TOWN" price="500" load="2" robust="1" material="OTHER" />
 
   <!-- ##########################  Lebensmittel  #########################-->
-  <item id="alanyutWater" avail="VILLAGE" price="50" load="1" robust="2" material="OTHER" />
-  <item id="fishSmall" avail="SMALL_TOWN" price="2" load="1" robust="2" material="OTHER" />
-  <item id="kussaku" avail="VILLAGE" price="50" load="0" robust="2" material="OTHER" />
-  <item id="pangavianSpiceMix_simple" avail="LARGE_TOWN" price="15" load="0" robust="1" material="OTHER" />
-  <item id="pangavianSpiceMix_noble" avail="LARGE_TOWN" price="400" load="0" robust="1" material="OTHER" />
-  <item id="tropicalFruits" avail="LARGE_TOWN" price="200" load="1" robust="1" material="OTHER" />
-  <item id="symuk" avail="VILLAGE" price="2" load="1" robust="2" material="OTHER" /> 
+  <item id="alanyutWater" avail="VILLAGE" price="50" load="1" robust="2" material="OTHER" type="TRAVEL" />
+  <item id="fishSmall" avail="SMALL_TOWN" price="2" load="1" robust="2" material="OTHER" type="TRAVEL" />
+  <item id="kussaku" avail="VILLAGE" price="50" load="1" robust="2" material="OTHER" type="TRAVEL" />
+  <item id="pangavianSpiceMix_simple" avail="LARGE_TOWN" price="15" load="0" robust="1" material="OTHER" type="TRAVEL" />
+  <item id="pangavianSpiceMix_noble" avail="LARGE_TOWN" price="400" load="0" robust="1" material="OTHER" type="TRAVEL" />
+  <item id="tropicalFruits" avail="LARGE_TOWN" price="200" load="1" robust="1" material="OTHER" type="TRAVEL" />
+  <item id="symuk" avail="VILLAGE" price="2" load="1" robust="2" material="OTHER" type="TRAVEL" /> 
 
   <!-- ###################  Kräuter und Alchemika  ########################-->
   <!--Alchemika fehlt -->
   <item avail="VILLAGE" cplx="U" id="rujanLeaves" load="0" material="OTHER" price="4" robust="0" type="POTION" />
-  <item avail="LARGE_TOWN" cplx="U" id="blackTravelResin" load="0" material="OTHER" price="1500" robust="0" type="POTION" />
+  <item avail="LARGE_TOWN" cplx="U" id="blackGiantResin" load="0" material="OTHER" price="1500" robust="0" type="POTION" />
   <item avail="VILLAGE" cplx="U" id="dreamFern" load="0" material="OTHER" price="500" robust="0" type="POTION" />
 
   <!-- ###################  Stoffe, Kleidung und Pelze  ########################-->

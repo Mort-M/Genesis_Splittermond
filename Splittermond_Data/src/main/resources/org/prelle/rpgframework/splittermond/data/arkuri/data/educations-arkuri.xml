@@ -4,7 +4,7 @@
         <modifications>
             <reqmod type="culture" ref="arkuri, nyrdfing"/>	
 
-            <powermod ref="goodhearing"/>
+            <powermod ref="sensesocial"/>
             <powermod ref="literate"/>
             <powermod ref="priest"/>
 
@@ -19,19 +19,19 @@
                 <skillmod ref="clscraft" value="1"/>
             </selmod>
             <skillmod ref="arcanelore" value="3"/>
-            <skillmod ref="diplomacy" value="2"/>
-            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="diplomacy" value="3"/>
+            <skillmod ref="empathy" value="3"/>
             <skillmod ref="history" value="3"/>
             <skillmod ref="heal" value="1"/>
             <skillmod ref="countrylore" value="3"/>
             <skillmod ref="nature" value="3"/>
             <skillmod ref="perception" value="1"/>
-            <skillmod ref="fatemagic" value="4"/>
+			<skillmod ref="fatemagic" value="4"/>
             <skillmod ref="protectionmagic" value="3"/>
             <skillmod ref="enhancemagic" value="2"/>
 
              <mastermod ref="empathy/speaktome"/>
-             <mastermod ref="fatemagic/magiccrafter"/>
+             <mastermod ref="enhancemagic/magiccrafter"/>
         </modifications>
     </education>
 
