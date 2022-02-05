@@ -165,7 +165,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 	public void init(RulePluginProgessListener callback) {
 		if (alreadyInitialized)
 			return;
-		double totalPlugins = 24.0;
+		double totalPlugins = 25.0;
 		double count = 0;
 		alreadyInitialized = true;
 		logger.info("START -------------------------------Core-----------------------------------------------");
