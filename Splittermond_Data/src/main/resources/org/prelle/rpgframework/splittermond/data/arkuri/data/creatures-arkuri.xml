@@ -33,16 +33,20 @@
 			</cweapon>
 		</weapons>
 		<skillvals>
+			<skillval skill="melee"    	val="0">
+				<masterref ref="melee/rush" />
+			</skillval>
 			<skillval skill="acrobatics" val="7" />
 			<skillval skill="athletics" val="9" />
 			<skillval skill="determination" val="10" />
 			<skillval skill="stealth" val="6" />
 			<skillval skill="perception" val="14" />
 			<skillval skill="endurance" val="6" />
-			<skillval skill="watermagic" val="12" >
-				<masterref ref="melee/rush" />
-			</skillval>
+			<skillval skill="watermagic" val="12" />
 		</skillvals>
+		<spellvals>
+			<spellval school="watermagic"   spell="freeze"/>
+		</spellvals>
 		<features>
 			<creaturefeature type="FLYING" />
 			<creaturefeature type="RESIST_COLD" level="3" />
@@ -81,16 +85,18 @@
 			</cweapon>
 		</weapons>
 		<skillvals>
-			<skillval skill="acrobatics" val="11" />
-			<skillval skill="athletics" val="18" />
-			<skillval skill="determination" val="11" />
-			<skillval skill="stealth" val="8" />
-			<skillval skill="perception" val="11" />
-			<skillval skill="endurance" val="16">
-				<masterref ref="athletics/muscleman" />
+			<skillval skill="melee"    	val="0">
 				<masterref ref="melee/knock" />
 				<masterref ref="melee/defender" />
 			</skillval>
+			<skillval skill="acrobatics" val="11" />
+			<skillval skill="athletics" val="18" >
+				<masterref ref="athletics/muscleman" />
+			</skillval>
+			<skillval skill="determination" val="11" />
+			<skillval skill="stealth" val="8" />
+			<skillval skill="perception" val="11" />
+			<skillval skill="endurance" val="16" />
 		</skillvals>
 		<features>
 			<creaturefeature type="RESIST_EXHAUSTION" level="2" />
@@ -102,8 +108,8 @@
 
 	<creature id="sledDog" lvl1="1" lvl2="0">
 		<creaturetypes>
-			<creaturetype type="ANIMAL"/>
 			<creaturetype type="CANIDS"/>
+			<creaturetype type="ANIMAL"/>
 		</creaturetypes>
 		<attributes>
 			<attr id="CHARISMA"     value="1"/>
@@ -182,7 +188,7 @@
 			</cweapon>
 		</weapons>
 		<skillvals>
-			<skillval skill="melee"    	val="10">
+			<skillval skill="melee"    	val="0">
 				 <masterref ref="melee/rush"/>
 			</skillval>
 			<skillval skill="acrobatics"    val="10"/>
