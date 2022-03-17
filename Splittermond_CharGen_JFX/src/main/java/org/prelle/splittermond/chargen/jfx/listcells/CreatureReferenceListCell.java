@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
-
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.prelle.javafx.AlertType;
+import org.prelle.javafx.CloseType;
 import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.charctrl.ResourceController;
@@ -15,10 +17,17 @@ import org.prelle.splittermond.chargen.jfx.sections.CompanionSection;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
+import javafx.scene.control.TextField;
+import javafx.scene.image.WritableImage;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -30,8 +39,6 @@ public class CreatureReferenceListCell extends ListCell<CreatureReference> {
 
 	private static PropertyResourceBundle RES = (PropertyResourceBundle) ResourceBundle.getBundle(CompanionSection.class.getName());
 
-	private transient CreatureReference data;
-
 	private CharacterController control;
 	private ResourceController charGen;
 	private ScreenManagerProvider provider;
@@ -41,8 +48,6 @@ public class CreatureReferenceListCell extends ListCell<CreatureReference> {
 	private Button btnEdit;
 	private Label lbType;
 	private Label lbTrain;
-
-	private transient CreatureReference item = null;
 
 	//-------------------------------------------------------------------
 	public CreatureReferenceListCell(CharacterController charGen, ScreenManagerProvider provider) {
@@ -102,19 +107,19 @@ public class CreatureReferenceListCell extends ListCell<CreatureReference> {
 
 	//-------------------------------------------------------------------
 	private void initInteractivity() {
-		this.setOnDragDetected(event -> dragStarted(event));
+//		this.setOnDragDetected(event -> dragStarted(event));
 		this.setOnMouseClicked(event -> clicked(event));
+		btnEdit.setOnAction(ev -> askName(getItem()));
 	}
 
-	//-------------------------------------------------------------------
-	private void dragStarted(MouseEvent event) {
-		logger.debug("drag started for "+data);
-		if (data==null)
-			return;
-//		logger.debug("canBeDeselected = "+charGen.canBeDeselected(data));
-//		logger.debug("canBeTrashed    = "+((charGen instanceof ResourceLeveller)?((ResourceLeveller)charGen).canBeTrashed(data):true));
-//		if (!charGen.canBeDeselected(data) && !((charGen instanceof ResourceLeveller)?((ResourceLeveller)charGen).canBeTrashed(data):true))
-//			return;
+//	//-------------------------------------------------------------------
+//	private void dragStarted(MouseEvent event) {
+//		logger.debug("drag started for "+getItem());
+//		CreatureReference data = getItem();
+////		logger.debug("canBeDeselected = "+charGen.canBeDeselected(data));
+////		logger.debug("canBeTrashed    = "+((charGen instanceof ResourceLeveller)?((ResourceLeveller)charGen).canBeTrashed(data):true));
+////		if (!charGen.canBeDeselected(data) && !((charGen instanceof ResourceLeveller)?((ResourceLeveller)charGen).canBeTrashed(data):true))
+////			return;
 //
 //		Node source = (Node) event.getSource();
 //		logger.debug("drag src = "+source);
@@ -134,32 +139,33 @@ public class CreatureReferenceListCell extends ListCell<CreatureReference> {
 //        db.setDragView(snapshot);
 //
 //        event.consume();
-    }
+//    }
 
 	//-------------------------------------------------------------------
 	private void clicked(MouseEvent event) {
 		if (event.getClickCount()!=2)
 			return;
-		if (data==null)
-			return;
 //		LogManager.getLogger("splittermond.jfx").debug("Deselect "+data);
 //		charGen.deselect(data);
 	}
 
-//	//-------------------------------------------------------------------
-//	private void askName(CreatureReference ref) {
-//		Label lbInput = new Label(UI.getString("screen.creatures.namedialog.mess"));
-//		TextField tfInput = new TextField();
-//		tfInput.setStyle("-fx-pref-width: 30em");
-//
-//		VBox layout = new VBox(5, lbInput, tfInput);
-//		CloseType close = provider.getScreenManager().showAlertAndCall(AlertType.QUESTION, UI.getString("screen.creatures.namedialog.title"), layout);
-//		if (close==CloseType.OK) {
-//			String name = tfInput.getText();
-//			logger.info("Rename creature "+ref+" to \""+name+"\"");
-//			ref.setName(name);
-//		}
-//	}
+	//-------------------------------------------------------------------
+	private void askName(CreatureReference ref) {
+		logger.warn("askName for "+ref);
+		Label lbInput = new Label(RES.getString("screen.creatures.namedialog.mess"));
+		TextField tfInput = new TextField();
+		tfInput.setStyle("-fx-pref-width: 30em");
+
+		VBox layout = new VBox(5, lbInput, tfInput);
+		CloseType close = provider.getScreenManager().showAlertAndCall(AlertType.QUESTION, RES.getString("screen.creatures.namedialog.title"), layout);
+		logger.warn("askName closedr "+close);
+		if (close==CloseType.OK) {
+			String name = tfInput.getText();
+			logger.info("Rename creature "+ref+" to \""+name+"\"");
+			ref.setName(name);
+			this.name.setText(name);
+		}
+	}
 
 	//-------------------------------------------------------------------
 	/**
@@ -175,7 +181,6 @@ public class CreatureReferenceListCell extends ListCell<CreatureReference> {
 //			setStyle("-fx-border: 0px; -fx-border-color: transparent; -fx-padding: 2px; -fx-background-color: transparent");
 			return;
 		} else {
-			data = resRef;
 			name.setText(resRef.getName());
 			// Build list of creature types
 			List<String> names = new ArrayList<>();
