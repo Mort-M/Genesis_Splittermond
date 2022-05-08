@@ -60,15 +60,6 @@ public class SMNotesPage extends SpliMoManagedScreenPage {
 		cmdPrint.setOnAction( ev -> {BabylonEventBus.fireEvent(BabylonEventType.PRINT_REQUESTED, handle, charGen.getModel());});
 	}
 
-	//-------------------------------------------------------------------
-	public void refresh() {
-		super.refresh();
-		
-		notes.getToDoList().clear();
-		for (String todo : charGen.getAttributeController().getToDos())
-			notes.getToDoList().add(new ToDoElement(Severity.STOPPER, todo));
-	}
-
 //	//-------------------------------------------------------------------
 //	private void updateHelp(BasePluginData data) {
 //		if (data!=null) {
