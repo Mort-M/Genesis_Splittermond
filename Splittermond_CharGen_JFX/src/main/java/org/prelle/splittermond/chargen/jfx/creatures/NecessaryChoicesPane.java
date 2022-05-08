@@ -10,6 +10,7 @@ import org.prelle.javafx.ScreenManagerProvider;
 import org.prelle.splimo.SplitterTools;
 import org.prelle.splimo.charctrl.CommonCreatureController;
 import org.prelle.splimo.creature.CreatureModuleReference;
+import org.prelle.splimo.modifications.AllOfModification;
 import org.prelle.splimo.modifications.ModificationChoice;
 import org.prelle.splittermond.chargen.jfx.LetUserChooseAdapter;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
@@ -107,13 +108,17 @@ public class NecessaryChoicesPane extends VBox {
 		logger.debug("  convert to "+choice);
 		Modification[] result = adapter.letUserChoose(tmp.originModule.getModule().getName(), choice);
 		logger.debug("  letUserChoose returned "+Arrays.toString(result)+" // size="+result.length);
-		if (result.length!=1) {
+		if (result.length<1) {
 			logger.error("Expect only one selection, but received "+result.length);
 			return null;
-//		} else if (tmp.madeChoice==null) {
-//			logger.debug("  Another choice is necessary");
-//			tmp.originChoice = result[0];
-//			return choose(tmp);
+		} else if (result.length>1) {
+			AllOfModification list = new AllOfModification();
+			for (Modification m : result) {
+				list.add(m);
+			}
+			control.makeChoice(tmp, list);
+			logger.info("User chose more than 1 modification: "+tmp.getMadeChoice());
+			return tmp.getMadeChoice();
 		} else {
 			control.makeChoice(tmp, result[0]);
 			logger.info("User chose "+tmp.getMadeChoice());
