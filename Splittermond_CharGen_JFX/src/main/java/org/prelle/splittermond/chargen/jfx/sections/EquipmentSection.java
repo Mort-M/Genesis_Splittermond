@@ -8,6 +8,7 @@ import java.util.function.BiConsumer;
 import org.prelle.javafx.CloseType;
 import org.prelle.javafx.NavigButtonControl;
 import org.prelle.javafx.ScreenManagerProvider;
+import org.prelle.splimo.EquipmentTools;
 import org.prelle.splimo.charctrl.CharacterController;
 import org.prelle.splimo.charctrl.NewItemController;
 import org.prelle.splimo.chargen.event.GenerationEvent;
@@ -83,13 +84,6 @@ public class EquipmentSection extends GenericListSection<CarriedItem> {
 				onMove.accept(toAdd, location);
 			}
 		}
-//		CarriedItem value = tfFlaw.getText();
-//		if (value!=null && value.length()>0) {
-//			logger.info("Add item: "+value);
-//			control.getModel().addItem(value);
-//			list.getItems().add(value);
-//			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, control.getModel()));
-//		}
 	}
 
 	//-------------------------------------------------------------------
@@ -102,6 +96,9 @@ public class EquipmentSection extends GenericListSection<CarriedItem> {
 		CarriedItem toDelete = list.getSelectionModel().getSelectedItem();
 		if (toDelete!=null) {
 			logger.info("Remove item: "+toDelete);
+			// Unequip item first to properly remove all modifications
+			if (toDelete.getLocation() == ItemLocationType.BODY)
+				EquipmentTools.unequip(control.getModel(), toDelete);
 			control.getModel().removeItem(toDelete);
 			list.getItems().remove(toDelete);
 			GenerationEventDispatcher.fireEvent(new GenerationEvent(GenerationEventType.CHARACTER_CHANGED, control.getModel()));
