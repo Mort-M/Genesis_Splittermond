@@ -84,7 +84,10 @@ public class IDExporter {
 		out.println(" <body>");
 		out.println("   <table border=\"1\">");
 		out.println("    <tr><th>Fertigkeit</th><th>Meisterschaft</th><th>ID</th><th>Quelle</th></tr>");
+		int normal =0;
+		int common = 0;
 		for (Skill skill : SplitterMondCore.getSkills()) {
+			int prev = normal;
 			List<Mastership> list = skill.getMasterships();
 			Collections.sort(list, new Comparator<Mastership>() {
 				public int compare(Mastership o1, Mastership o2) {
@@ -92,8 +95,10 @@ public class IDExporter {
 				}
 			});
 			for (Mastership master : list) {
+				if (master.isCommon()) common++; else normal++;
 				out.println("    <tr><td>"+skill.getName()+"</td><td>"+master.getName()+"</td><td>"+skill.getId()+"/"+master.getId()+"</td><td>"+master.getProductNameShort()+" "+master.getPage()+"</td></tr>");
 			}
+			System.out.println((normal-prev)+" Meisterschaften für "+skill);
 			
 			List<SkillSpecialization> list2 = skill.getSpecializations();
 			Collections.sort(list2, new Comparator<SkillSpecialization>() {
@@ -112,6 +117,7 @@ public class IDExporter {
 		out.println(" </body>");
 		out.flush();
 		out.close();
+		System.out.println(normal+" Meisterschaften + "+common+" allgemeine");
 	}
 
 	//-------------------------------------------------------------------
@@ -166,6 +172,8 @@ public class IDExporter {
 		out.println(" </body>");
 		out.flush();
 		out.close();
+		
+		System.out.println(list.size()+" Zauber");
 	}
 
 	//-------------------------------------------------------------------
@@ -287,6 +295,7 @@ public class IDExporter {
 		out.println(" </body>");
 		out.flush();
 		out.close();
+		System.out.println(list.size()+" Ausbildungen und Varianten");
 	}
 
 	//-------------------------------------------------------------------
@@ -316,6 +325,7 @@ public class IDExporter {
 		out.println(" </body>");
 		out.flush();
 		out.close();
+		System.out.println(list.size()+" Stärken");
 	}
 
 	//-------------------------------------------------------------------
@@ -489,6 +499,7 @@ public class IDExporter {
 		out.println(" </body>");
 		out.flush();
 		out.close();
+		System.out.println(list.size()+" Waffen, Rüstungen und andere Ausrüstungsgegenstände");
 	}
 	
 	
