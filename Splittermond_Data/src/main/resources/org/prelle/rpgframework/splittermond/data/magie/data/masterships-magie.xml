@@ -365,7 +365,7 @@
         <mastership level="1" key="protecting_beings"/>
         <mastership level="1" key="powerful_conjuror"/>
         <mastership level="1" key="transporting_beings_1"/>
-        <mastership level="1" key="lore_of_beings"/>
+        <mastership level="1" key="lore_of_beings" multiple="1"/>
         <mastership level="1" key="casting_beings"/>
         <mastership level="2" key="transporting_beings_2">
           <requires>

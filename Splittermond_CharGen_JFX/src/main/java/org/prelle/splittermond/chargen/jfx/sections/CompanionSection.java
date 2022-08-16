@@ -41,7 +41,7 @@ public class CompanionSection extends GenericListSection<CreatureReference> {
 		super(title, ctrl, provider);
 		list.setCellFactory( lv -> {
 			CreatureReferenceListCell cell = new CreatureReferenceListCell(ctrl, provider);
-			cell.setOnAction( ev -> onEdit(cell.getItem()));
+			//cell.setOnAction( ev -> onEdit(cell.getItem()));
 			return cell;
 		});
 		
@@ -150,7 +150,7 @@ public class CompanionSection extends GenericListSection<CreatureReference> {
 
 	//-------------------------------------------------------------------
 	protected void onEdit(CreatureReference value) {
-		logger.trace("onEdit");
+		logger.warn("onEdit");
 	}
 
 }

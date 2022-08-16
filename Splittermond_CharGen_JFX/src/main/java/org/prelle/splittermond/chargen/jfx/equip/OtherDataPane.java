@@ -118,10 +118,17 @@ public class OtherDataPane extends GridPane {
 	//-------------------------------------------------------------------
 	private void filterCombobox(ChoiceBox<PersonalizationReference>  box, List<PersonalizationReference> allItems, Optional<PersonalizationReference> template) {
 		List<PersonalizationReference> actual = box.getItems();
+		int pos=0;
 		for (int i = 0; i < allItems.size(); i++) {
 			PersonalizationReference test = allItems.get(i);
+			if (test==null) continue;
+			if (test.getPersonalization().getId().equals("other_skillplus") && model.getItem().getSkill()==null) {
+				// Without assigned skill, not "Fertigkeitsbonus"
+				continue;
+			}			
 			if (!actual.contains(test)) {
-				actual.add(i, test);
+				actual.add(pos, test);
+				pos++;
 			}
 		}
 		List<PersonalizationReference> filteredItems = template.map(t -> control.makeCompartibleList(t, allItems)).orElse(allItems);
@@ -146,6 +153,10 @@ public class OtherDataPane extends GridPane {
 		filterCombobox(cbPersonal2, control.getAvailableSecondPersonalizations(), Optional.of(model.getPersonalizations())
 																				          .filter(l -> !l.isEmpty())
 																				          .map(l -> l.get(0)));
+		// Remove "Fertigkeitsbonus" for items without skill
+		
+		
+		
 		if  (model.getPersonalizations().isEmpty()) {
 			cbPersonal1.getSelectionModel().clearSelection();
 		} else {
