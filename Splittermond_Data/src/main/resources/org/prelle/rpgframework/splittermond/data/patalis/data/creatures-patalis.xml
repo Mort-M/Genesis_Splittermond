@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<creatures>
+
+<!-- Elyrischer Ziegenbock -->
+    <creature id="ElyrianBillyGoat" lvl1="0" lvl2="1">
+        <creaturetypes>
+            <creaturetype type="BIGGAME" />
+            <creaturetype type="ANIMAL" />
+        </creaturetypes>
+        <attributes>
+            <attr id="CHARISMA" value="2" />
+            <attr id="AGILITY" value="3" />
+            <attr id="INTUITION" value="3" />
+            <attr id="CONSTITUTION" value="2" />
+            <attr id="MYSTIC" value="0" />
+            <attr id="STRENGTH" value="2" />
+            <attr id="MIND" value="1" />
+            <attr id="WILLPOWER" value="2" />
+            <attr id="SIZE" value="3" />
+            <attr id="SPEED" value="9" />
+            <attr id="LIFE" value="5" />
+            <attr id="FOCUS" value="4" />
+            <attr id="DEFENSE" value="14" />
+            <attr id="DAMAGE_REDUCTION" value="0" />
+            <attr id="BODYRESIST" value="17" />
+            <attr id="MINDRESIST" value="16" />
+        </attributes>
+        <weapons>
+            <cweapon id="body" skill ="melee" val="8" dmg="1W6" spd="8" ini="7" >
+                <features>
+                </features>
+            </cweapon>
+        </weapons>
+        <skillvals>
+            <skillval skill="melee" val="0" />
+            <skillval skill="acrobatics" val="6" />
+            <skillval skill="athletics" val="12" >
+                <masterref ref="athletics/monkey" />"
+            </skillval>
+            <skillval skill="determination" val="10" />
+            <skillval skill="stealth" val="8" />
+            <skillval skill="perception" val="10" />
+            <skillval skill="endurance" val="10" />
+        </skillvals>
+        <spellvals>
+        </spellvals>
+        <features>
+                <creaturefeature type="CREATURE" level="2" />
+                <creaturefeature type="WEAK" />
+        </features>
+    </creature>
+
+<!-- Dreiköpfiger Wolf -->
+    <creature id="ThreeHeadedWolf" lvl1="3" lvl2="2">
+        <creaturetypes>
+            <creaturetype type="MONSTER" />
+            <creaturetype type="ANIMAL" />
+        </creaturetypes>
+        <attributes>
+            <attr id="CHARISMA" value="2" />
+            <attr id="AGILITY" value="4" />
+            <attr id="INTUITION" value="5" />
+            <attr id="CONSTITUTION" value="4" />
+            <attr id="MYSTIC" value="0" />
+            <attr id="STRENGTH" value="6" />
+            <attr id="MIND" value="1" />
+            <attr id="WILLPOWER" value="1" />
+            <attr id="SIZE" value="7" />
+            <attr id="SPEED" value="14" />
+            <attr id="LIFE" value="11" />
+            <attr id="FOCUS" value="2" />
+            <attr id="DEFENSE" value="20" />
+            <attr id="DAMAGE_REDUCTION" value="0" />
+            <attr id="BODYRESIST" value="22" />
+            <attr id="MINDRESIST" value="18" />
+        </attributes>
+        <weapons>
+            <cweapon id="body" skill ="melee" val="19" dmg="2W6+5" spd="7" ini="5" >
+                <features>
+                    <feature type="PIERCING" />
+                    <feature type="HEAVY" />
+                </features>
+            </cweapon>
+        </weapons>
+        <skillvals>
+            <skillval skill="melee" val="0" >
+                <masterref ref="melee/knock" />"
+                <masterref ref="melee/betterknock" />"
+                <masterref ref="melee/rush" />"
+            </skillval>
+            <skillval skill="acrobatics" val="10" />
+            <skillval skill="athletics" val="15" >
+                <masterref ref="athletics/swiftpursuit" />"
+            </skillval>
+            <skillval skill="determination" val="6" />
+            <skillval skill="stealth" val="13" />
+            <skillval skill="hunting" val="14" />
+            <skillval skill="perception" val="15" />
+            <skillval skill="endurance" val="12" />
+        </skillvals>
+        <spellvals>
+        </spellvals>
+        <features>
+                <creaturefeature type="LOWLIGHT" />
+                <creaturefeature type="RESIST_COLD" level="1" />
+        </features>
+    </creature>
+
+<!-- Goldhirsch -->
+    <creature id="GoldDeer" lvl1="3" lvl2="1">
+        <creaturetypes>
+            <creaturetype type="BIGGAME" />
+            <creaturetype type="ANIMAL" />
+        </creaturetypes>
+        <attributes>
+            <attr id="CHARISMA" value="4" />
+            <attr id="AGILITY" value="2" />
+            <attr id="INTUITION" value="4" />
+            <attr id="CONSTITUTION" value="4" />
+            <attr id="MYSTIC" value="1" />
+            <attr id="STRENGTH" value="6" />
+            <attr id="MIND" value="1" />
+            <attr id="WILLPOWER" value="2" />
+            <attr id="SIZE" value="7" />
+            <attr id="SPEED" value="13" />
+            <attr id="LIFE" value="11" />
+            <attr id="FOCUS" value="11" />
+            <attr id="DEFENSE" value="23" />
+            <attr id="DAMAGE_REDUCTION" value="0" />
+            <attr id="BODYRESIST" value="23" />
+            <attr id="MINDRESIST" value="20" />
+        </attributes>
+        <weapons>
+            <cweapon id="body" skill ="melee" val="16" dmg="2W6+3" spd="9" ini="6" >
+                <features>
+                    <feature type="HEAVY" />
+                </features>
+            </cweapon>
+        </weapons>
+        <skillvals>
+            <skillval skill="melee" val="0" >
+                <masterref ref="melee/rush" />"
+            </skillval>
+            <skillval skill="acrobatics" val="10" />
+            <skillval skill="athletics" val="16" />
+            <skillval skill="determination" val="10" />
+            <skillval skill="stealth" val="10" />
+            <skillval skill="perception" val="14" />
+            <skillval skill="endurance" val="15" />
+            <skillval skill="fatemagic" val="11" >
+                <masterref ref="fatemagic/preemption" />"
+            </skillval>
+        </skillvals>
+        <spellvals>
+            <spellval school="fatemagic" spell="protectinghand" />
+            <spellval school="fatemagic" spell="sixthsense" />
+            <spellval school="fatemagic" spell="consecration" />
+        </spellvals>
+        <features>
+                <creaturefeature type="COWARD" />
+        </features>
+    </creature>
+
+<!-- Razgaar -->
+    <creature id="Razgaar" lvl1="3" lvl2="1">
+        <creaturetypes>
+            <creaturetype type="FELINE" />
+            <creaturetype type="ANIMAL" />
+        </creaturetypes>
+        <attributes>
+            <attr id="CHARISMA" value="2" />
+            <attr id="AGILITY" value="4" />
+            <attr id="INTUITION" value="4" />
+            <attr id="CONSTITUTION" value="3" />
+            <attr id="MYSTIC" value="0" />
+            <attr id="STRENGTH" value="5" />
+            <attr id="MIND" value="1" />
+            <attr id="WILLPOWER" value="4" />
+            <attr id="SIZE" value="4" />
+            <attr id="SPEED" value="12" />
+            <attr id="LIFE" value="7" />
+            <attr id="FOCUS" value="8" />
+            <attr id="DEFENSE" value="22" />
+            <attr id="DAMAGE_REDUCTION" value="0" />
+            <attr id="BODYRESIST" value="19" />
+            <attr id="MINDRESIST" value="17" />
+        </attributes>
+        <weapons>
+            <cweapon id="body" skill ="melee" val="14" dmg="2W6+1" spd="8" ini="6" >
+                <features>
+                </features>
+            </cweapon>
+        </weapons>
+        <skillvals>
+            <skillval skill="melee" val="0" >
+                <masterref ref="melee/knock" />"
+            </skillval>
+            <skillval skill="acrobatics" val="13" />
+            <skillval skill="athletics" val="18" >
+                <masterref ref="athletics/swiftpursuit" />"
+                <masterref ref="athletics/freeclimber" />"
+                <masterref ref="athletics/monkey" />"
+            </skillval>
+            <skillval skill="determination" val="7" />
+            <skillval skill="stealth" val="14" />
+            <skillval skill="hunting" val="13" >
+                <masterref ref="hunting/fasthunter" />"
+                <masterref ref="hunting/tirelesschaser" />"
+            </skillval>
+            <skillval skill="perception" val="13" />
+            <skillval skill="endurance" val="9" />
+        </skillvals>
+        <spellvals>
+        </spellvals>
+        <features>
+                <creaturefeature type="RESIST_EXHAUSTION" level="2" />
+        </features>
+    </creature>
+
+<!-- Sichelgreifer -->
+    <creature id="SickleGraber" lvl1="2" lvl2="1">
+        <creaturetypes>
+            <creaturetype type="MONSTER" />
+        </creaturetypes>
+        <attributes>
+            <attr id="CHARISMA" value="2" />
+            <attr id="AGILITY" value="5" />
+            <attr id="INTUITION" value="3" />
+            <attr id="CONSTITUTION" value="5" />
+            <attr id="MYSTIC" value="0" />
+            <attr id="STRENGTH" value="4" />
+            <attr id="MIND" value="1" />
+            <attr id="WILLPOWER" value="1" />
+            <attr id="SIZE" value="5" />
+            <attr id="SPEED" value="12" />
+            <attr id="LIFE" value="8" />
+            <attr id="FOCUS" value="5" />
+            <attr id="DEFENSE" value="23" />
+            <attr id="DAMAGE_REDUCTION" value="1" />
+            <attr id="BODYRESIST" value="22" />
+            <attr id="MINDRESIST" value="20" />
+        </attributes>
+        <weapons>
+            <cweapon id="body" skill ="melee" val="18" dmg="2W6+1" spd="8" ini="3" >
+                <features>
+                    <feature type="PIERCING" />
+                    <feature type="LONG_WEAPON" />
+                </features>
+            </cweapon>
+        </weapons>
+        <skillvals>
+            <skillval skill="melee" val="0" >
+                <masterref ref="melee/hold" />"
+                <masterref ref="melee/clutch" />"
+            </skillval>
+            <skillval skill="acrobatics" val="11" />
+            <skillval skill="athletics" val="13" >
+                <masterref ref="athletics/monkey" />"
+                <masterref ref="athletics/muscleman" />"
+            </skillval>
+            <skillval skill="determination" val="6" />
+            <skillval skill="stealth" val="10" />
+            <skillval skill="hunting" val="10" />
+            <skillval skill="perception" val="10" />
+            <skillval skill="endurance" val="7" />
+        </skillvals>
+        <spellvals>
+        </spellvals>
+        <features>
+                <creaturefeature type="CREATURE" level="7" />
+        </features>
+    </creature>
+
+<!-- Steppenlöwe -->
+    <creature id="SteppeLion" lvl1="3" lvl2="1">
+        <creaturetypes>
+            <creaturetype type="FELINE" />
+            <creaturetype type="ANIMAL" />
+        </creaturetypes>
+        <attributes>
+            <attr id="CHARISMA" value="3" />
+            <attr id="AGILITY" value="4" />
+            <attr id="INTUITION" value="3" />
+            <attr id="CONSTITUTION" value="4" />
+            <attr id="MYSTIC" value="0" />
+            <attr id="STRENGTH" value="6" />
+            <attr id="MIND" value="1" />
+            <attr id="WILLPOWER" value="3" />
+            <attr id="SIZE" value="6" />
+            <attr id="SPEED" value="13" />
+            <attr id="LIFE" value="10" />
+            <attr id="FOCUS" value="6" />
+            <attr id="DEFENSE" value="21" />
+            <attr id="DAMAGE_REDUCTION" value="0" />
+            <attr id="BODYRESIST" value="23" />
+            <attr id="MINDRESIST" value="18" />
+        </attributes>
+        <weapons>
+            <cweapon id="body" skill ="melee" val="18" dmg="2W6+2" spd="8" ini="7" >
+                <features>
+                </features>
+            </cweapon>
+        </weapons>
+        <skillvals>
+            <skillval skill="melee" val="0" >
+                <masterref ref="melee/knock" />"
+            </skillval>
+            <skillval skill="acrobatics" val="12" />
+            <skillval skill="athletics" val="14" />
+            <skillval skill="determination" val="10" />
+            <skillval skill="stealth" val="14" >
+                <masterref ref="stealth/sneakattack1" />"
+            </skillval>
+            <skillval skill="perception" val="10" />
+            <skillval skill="endurance" val="12" />
+        </skillvals>
+        <spellvals>
+        </spellvals>
+        <features>
+                <creaturefeature type="LOWLIGHT" />
+                <creaturefeature type="RESIST_HEAT" level="1" />
+        </features>
+    </creature>
+
+</creatures>

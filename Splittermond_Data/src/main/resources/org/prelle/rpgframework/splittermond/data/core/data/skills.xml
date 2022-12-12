@@ -611,6 +611,7 @@
         <specialization id="painting"/>
         <specialization id="tatooing"/>
         <specialization id="cooking"/>
+        <specialization id="sculptor"/>
         <mastership level="1" key="efficiency"/>
         <mastership level="1" key="journeyman"  multiple="true"/>
         <mastership level="1" key="scrimper"/>

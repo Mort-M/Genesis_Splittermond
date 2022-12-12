@@ -443,6 +443,20 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadCultures(ARK, clazz.getResourceAsStream("arkuri/data/cultures-arkuri.xml"), ARK.getResources(), ARK.getHelpResources());
 		SplitterMondCore.loadMaterials(ARK, clazz.getResourceAsStream("arkuri/data/materials-arkuri.xml"), ARK.getResources(), ARK.getHelpResources());
 		SplitterMondCore.loadTowns(ARK, clazz.getResourceAsStream("arkuri/data/towns-arkuri.xml"), ARK.getResources(), ARK.getHelpResources());
+		
+		logger.info("START -------------------------------Patalis-------------------------------------------");
+		PluginSkeleton PUE = new PluginSkeleton("Patalis", "Patalis und Elyrea");
+		SplitterMondCore.loadCultures(PUE, clazz.getResourceAsStream("patalis/data/cultures-patalis.xml"), PUE.getResources(), PUE.getHelpResources());
+		SplitterMondCore.loadMasterships(PUE, clazz.getResourceAsStream("patalis/data/masterships-patalis.xml"), PUE.getResources(), PUE.getHelpResources());
+		SplitterMondCore.loadResources(PUE, clazz.getResourceAsStream("patalis/data/resources-patalis.xml"), PUE.getResources(), PUE.getHelpResources());
+		SplitterMondCore.loadCreatures(PUE, clazz.getResourceAsStream("patalis/data/creatures-patalis.xml"), PUE.getResources(), PUE.getHelpResources());
+		SplitterMondCore.loadEquipment(PUE, clazz.getResourceAsStream("patalis/data/equipment-patalis.xml"), PUE.getResources(), PUE.getHelpResources()); 
+		SplitterMondCore.loadEducations(PUE, clazz.getResourceAsStream("patalis/data/educations-patalis.xml"), PUE.getResources(), PUE.getHelpResources()); 
+		SplitterMondCore.loadMaterials(PUE, clazz.getResourceAsStream("patalis/data/materials-patalis.xml"), PUE.getResources(), PUE.getHelpResources());
+		SplitterMondCore.loadNameTable(PUE, clazz.getResourceAsStream("patalis/data/nametable-patalis.xml"), PUE.getResources(), PUE.getHelpResources()); 
+		SplitterMondCore.loadNameTable(PUE, clazz.getResourceAsStream("patalis/data/nametable-elyrvolk.xml"), PUE.getResources(), PUE.getHelpResources()); 		
+//		SplitterMondCore.loadTowns(PUE, clazz.getResourceAsStream("patalis/data/towns-patalis.xml"), PUE.getResources(), PUE.getHelpResources());		
+
 		count++; callback.progressChanged( (count/totalPlugins) );
 
 		/*

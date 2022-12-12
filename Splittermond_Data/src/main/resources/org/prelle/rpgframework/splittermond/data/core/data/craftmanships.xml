@@ -9,4 +9,5 @@
   <skillgroupelement skill="clscraft" id="painting" />
   <skillgroupelement skill="clscraft" id="tatooing" />
   <skillgroupelement skill="clscraft" id="cooking" />
+  <skillgroupelement skill="clscraft" id="sculptor" />
 </skillgroupdefs>
