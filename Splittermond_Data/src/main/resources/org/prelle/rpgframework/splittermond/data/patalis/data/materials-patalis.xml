@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<materials>
+	<material id="ElyricLeather" quality="1" price="500" type="LEATHER">
+		<modifications>
+  	  <featuremod feature="DEFLECTDIRT"/>
+		</modifications>
+	</material>
+
+	<!--Besonderheit nicht gepflegt-->
+	<material id="SilverShimmerFabric" quality="2" price="1500" type="FABRIC"/>
+
+	<material id="VyrdarWood" quality="2" price="1500" type="WOOD">
+		<modifications>
+  	  <featuremod feature="STABLE"/>
+  	  <featuremod feature="STABLE"/>
+		</modifications>
+	</material>
+
+</materials>

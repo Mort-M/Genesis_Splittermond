@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+  <skill id="diplomacy">
+    <mastership level="1" key="DidYouKnow" />
+    <mastership level="1" key="MoreAppearancesThanReality" >
+  	  <requires>
+       		<resourcereq ref="wealth" value="1"/>
+   	  </requires>	
+    </mastership>	
+    <mastership level="2" key="AlwaysMoreMoney" >
+  	  <requires>
+	  	<masterreq ref="diplomacy/MoreAppearancesThanReality" />
+       		<resourcereq ref="wealth" value="1"/>
+   	  </requires>
+    </mastership>
+    <mastership level="2" key="emerge" >
+  	  <requires>
+ 	       <masterreq ref="diplomacy/sharptongue" />
+   	  </requires>
+    </mastership>
+  </skill>
+  <skill id="performance">
+    <mastership level="2" key="GoodReputation" />
+  </skill>
+  <skill id="clscraft">
+    <mastership level="2" key="GoodReputation" />
+    <mastership level="2" key="Sought-afterCraftsman" >
+  	  <requires>
+        <masterreq ref="clscraft/GoodReputation" />
+   	  </requires>
+    </mastership>
+  </skill> 
+  <skill id="empathy">
+    <mastership level="1" key="ThumbOnWound"  />
+  </skill>
+  <skill id="determination">
+    <mastership level="2" key="SilenceGrave" />
+  </skill>
+  <skill id="eloquence">
+    <mastership level="1" key="Unfair" />
+    <mastership level="2" key="ArtSeduction" />
+    <mastership level="2" key="ThatWasIt" />
+  </skill>
+  <skill id="melee">
+    <mastership level="2" key="DoYouReally" >
+  	  <requires>
+       		<resourcereq ref="reputation" value="2"/>
+   	  </requires>
+    </mastership>
+  </skill>
+  <skill id="slashing">
+    <mastership level="2" key="DoYouReally" >
+  	  <requires>
+       		<resourcereq ref="reputation" value="2"/>
+   	  </requires>
+    </mastership>
+  </skill>
+  <skill id="chains">
+    <mastership level="2" key="DoYouReally" >
+  	  <requires>
+       		<resourcereq ref="reputation" value="2"/>
+   	  </requires>
+    </mastership>
+  </skill>
+  <skill id="blades">
+    <mastership level="2" key="DoYouReally" >
+  	  <requires>
+       		<resourcereq ref="reputation" value="2"/>
+   	  </requires>
+    </mastership>
+  </skill>
+  <skill id="staffs">
+    <mastership level="2" key="DoYouReally" >
+  	  <requires>
+       		<resourcereq ref="reputation" value="2"/>
+   	  </requires>
+    </mastership>
+  </skill>
+</skills>

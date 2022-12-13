@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cultures>
+    <culture id="patalischeKB" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="dwarf"/>
+
+            <backmod ref="merchant"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="magister"/>
+            <backmod ref="traveler"/>
+            <backmod ref="sailor"/>
+
+            <languagemod ref="patalisch"/>
+
+            <cultureloremod ref="patalis"/>
+
+            <powermod ref="sensesocial"/>
+
+            <skillmod ref="blades" value="1"/>
+            <selmod>
+                <skillmod ref="clscraft" value="2"/>
+                <skillmod ref="craftmanship" value="2"/>
+            </selmod>
+            <skillmod ref="diplomacy" value="2"/>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="countrylore" value="1"/>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="seafaring" value="2"/>
+            <skillmod ref="streetlore" value="1"/>
+
+            <selmod>
+	            <mastermod ref="diplomacy/haggler"/>
+                <mastermod ref="craftmanship/journeyman"/>
+                <mastermod ref="craftmanship/journeyman_woodworking"/>
+                <mastermod ref="craftmanship/journeyman_cooking"/>
+                <mastermod ref="craftmanship/journeyman_forging"/>
+                <mastermod ref="craftmanship/journeyman_tailoring"/>
+                <mastermod ref="craftmanship/journeyman_stoneworking"/>
+            </selmod>
+
+        </modifications>
+    </culture>
+
+    <culture id="silberberge" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="dwarf"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="ragtag"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="traveler"/>
+
+            <languagemod ref="patalisch"/>
+
+            <cultureloremod ref="patalis"/>
+
+            <powermod ref="enduring"/>
+
+            <skillmod ref="slashing" value="1"/>
+            <selmod>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <skillmod ref="acrobatics" value="2"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="2"/>
+                <skillmod ref="heal" value="2"/>
+            </selmod>
+            <skillmod ref="determination" value="2"/>
+
+            <skillmod ref="hunting" value="1"/>
+            <skillmod ref="nature" value="1"/>
+            <skillmod ref="eloquence" value="1"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+
+            <mastermod ref="survival/terrainlore_mountain"/>
+
+        </modifications>
+    </culture>
+
+    <culture id="riesheim" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="human"/>
+            <racemod ref="dwarf"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="ragtag"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="traveler"/>
+
+            <languagemod ref="patalisch"/>
+
+            <cultureloremod ref="patalis"/>
+
+            <powermod ref="enduring"/>
+
+            <skillmod ref="slashing" value="1"/>
+            <selmod>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <skillmod ref="acrobatics" value="2"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="2"/>
+                <skillmod ref="heal" value="2"/>
+            </selmod>
+            <skillmod ref="determination" value="2"/>
+
+            <skillmod ref="hunting" value="1"/>
+            <skillmod ref="nature" value="1"/>
+            <skillmod ref="eloquence" value="1"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+
+            <mastermod ref="survival/terrainlore_mountain"/>
+
+        </modifications>
+    </culture>
+
+</cultures>
