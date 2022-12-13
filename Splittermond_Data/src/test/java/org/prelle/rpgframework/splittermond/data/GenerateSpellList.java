@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.prelle.rpgframework.splittermond.data;
 
 import java.io.FileOutputStream;
@@ -13,8 +10,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.poi.ooxml.POIXMLProperties;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellRangeAddress;
@@ -23,12 +18,7 @@ import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.prelle.splimo.Spell;
 import org.prelle.splimo.SplitterMondCore;
-import org.prelle.splimo.items.ItemTemplate;
-import org.prelle.splimo.items.ItemType;
-import org.prelle.splimo.items.LongRangeWeapon;
-import org.prelle.splimo.items.Weapon;
 import org.prelle.splimo.persist.SpellCostConverter;
-import org.prelle.splimo.persist.WeaponDamageConverter;
 
 /**
  * @author prelle
