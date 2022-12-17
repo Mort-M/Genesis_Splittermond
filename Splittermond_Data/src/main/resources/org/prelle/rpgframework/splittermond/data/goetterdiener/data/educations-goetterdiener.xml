@@ -49,7 +49,7 @@
 			<skillmod ref="survival"     value="2" />
 			</selmod>
 			
-			<mastermod spec="history/pantheon" />
+			<mastermod spec="history/pantheon" level="1" />
 			<selmod num="1">
 				<mastermod skilltype="MAGIC" level="1" />
 				<mastermod skilltype="COMBAT" level="1" />
@@ -246,7 +246,7 @@
 			<skillmod ref="seafaring"   value="1" />
 			<skillmod ref="watermagic"  value="3" />
 			
-			<mastermod spec="history/pantheon" />
+			<mastermod spec="history/pantheon" level="1" />
 			<mastermod ref="watermagic/resistwater1" />
 		</modifications>
 	</education>
