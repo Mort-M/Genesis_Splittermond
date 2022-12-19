@@ -1508,11 +1508,11 @@
     <spell id="knotloosener" diff="18" cost="4V1" castdur="2T" range="5m" enh="1/+1V1">
         <school skill="motionmagic" level="1" />
         <type>OBJECT</type>
-        <type>GHOST_CREATURE</type>
-        <type>EXORCISE</type>
+        <type>TELEKINESIS</type>
         <enhancementtype>RELEASETIME</enhancementtype>
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+        <enhancementtype>RANGE</enhancementtype>
     </spell>
     <spell id="kometenschlag" diff="30" cost="18V6" castdur="22T" range="20m" enh="1/+3V3">
         <school skill="stonemagic" level="5" />

@@ -67,7 +67,7 @@
    </skill>
 
    <skill id="perception">
-       <mastership level="1" key="senseveil" />
+       <mastership level="2" key="senseveil" />
        <mastership level="3" key="veilview" />
    </skill>
 
@@ -88,7 +88,7 @@
 
    <skill id="combatmagic">
        <mastership level="1" key="fairyfoe1" />
-       <mastership level="1" key="fairyfoe2">
+       <mastership level="2" key="fairyfoe2">
             <requires>
                 <masterreq ref="combatmagic/fairyfoe1"/>
             </requires>

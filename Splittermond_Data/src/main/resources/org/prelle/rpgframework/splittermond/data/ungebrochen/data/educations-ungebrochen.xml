@@ -216,7 +216,7 @@
 				<skillmod ref="combatmagic" />
 			</selmod>
 
-			<mastermod spec="history/pantheon" />
+			<mastermod spec="history/pantheon" level="1" />
 			<selmod num="1">
 				<mastermod skilltype="MAGIC" level="1" />
 				<mastermod skilltype="COMBAT" level="1" />
