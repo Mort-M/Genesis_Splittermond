@@ -43,6 +43,11 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 	}
 
 	//--------------------------------------------------------------------
+	public static InputStream loadImage(String fname) {
+		return SplittermondDataPlugin.class.getResourceAsStream(fname);
+	}
+
+	//--------------------------------------------------------------------
 	/**
 	 * @see de.rpgframework.RulePlugin#getID()
 	 */

@@ -37,6 +37,12 @@
 		<dependency>
 			<groupId>de.rpgframework</groupId>
 			<artifactId>rpgframework-core</artifactId>
+			<version>4.2.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>de.rpgframework</groupId>
+			<artifactId>rpgframework-chars</artifactId>
+			<version>4.2.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.prelle.rpgframework</groupId>

@@ -10,6 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.prelle.javafx.Wizard;
 import org.prelle.javafx.WizardPage;
+import org.prelle.rpgframework.splittermond.data.SplittermondDataPlugin;
 import org.prelle.splimo.Education;
 import org.prelle.splimo.SplitterMondCore;
 import org.prelle.splimo.chargen.LetUserChooseListener;
@@ -166,8 +167,9 @@ public class WizardPageEducation extends WizardPage implements ChangeListener<Tr
 		if (img==null) {
 			String fname = plugin+"/data/education_"+selected.getKey()+".png";
 //			InputStream in = ImageAnchor.class.getResourceAsStream(fname);
-			InputStream in = selected.getPlugin().getClass().getResourceAsStream(fname);
-			logger.info("Load "+selected.getPlugin().getClass().getName()+"/"+fname);
+//			InputStream in = selected.getPlugin().getClass().getResourceAsStream(fname);
+			InputStream in = SplittermondDataPlugin.loadImage(fname);
+			logger.info("Load "+fname+" = "+in);
 			if (in!=null) {
 				img = new Image(in);
 				imageByEducation.put(selected, img);
