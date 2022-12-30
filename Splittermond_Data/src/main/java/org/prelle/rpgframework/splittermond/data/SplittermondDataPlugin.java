@@ -295,6 +295,12 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadMaterials(FLAMMEN, clazz.getResourceAsStream("flammensenke/data/materials-flammensenke.xml"), FLAMMEN.getResources(), FLAMMEN.getHelpResources());
 		count++; callback.progressChanged( (count/totalPlugins) );
 
+		logger.info("START ----------------------------Banden und Orden-------------------------------------");
+		PluginSkeleton BUO = new PluginSkeleton("BuO", "Banden und Orden");
+		SplitterMondCore.loadCreatures(BUO, clazz.getResourceAsStream("buo/data/creatures-buo.xml"), BUO.getResources(), BUO.getHelpResources());
+		SplitterMondCore.loadEducations(BUO, clazz.getResourceAsStream("buo/data/educations-buo.xml"), BUO.getResources(), BUO.getHelpResources());
+		count++; callback.progressChanged( (count/totalPlugins) );		
+		
 		logger.info("START -------------------------------Selenia-------------------------------------------");
 		PluginSkeleton SELENIA = new PluginSkeleton("Selenia", "Selenia");
 		SplitterMondCore.loadMasterships(SELENIA, clazz.getResourceAsStream("selenia/data/masterships-selenia.xml"), SELENIA.getResources(), SELENIA.getHelpResources());

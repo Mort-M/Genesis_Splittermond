@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<educations>
+	<!-- Bestienwächter -->
+	<education id="beastguardian" variantof="beastmaster">
+		<modifications>
+			<reqmod type="culture" ref="daemmeralb" />
+			<powermod ref="animallover"/>
+			<powermod ref="animalfamiliar"/>
+			
+			<resourcemod ref="creature" value="2"/>
+			
+			 <selmod num="1">
+                <skillmod ref="slashing" value="3"/>
+                <skillmod ref="melee" value="3"/>
+                <skillmod ref="chains" value="3"/>
+                <skillmod ref="blades" value="3"/>
+                <skillmod ref="staffs" value="3"/>
+                <skillmod ref="longrange" value="3"/>
+                <skillmod ref="throwing" value="3"/>
+            </selmod>
+            <selmod num="1">
+            	<skillmod ref="acrobatics" value="3"/>
+            	<skillmod ref="athletics" value="3"/>
+            	<skillmod ref="swim" value="3"/>
+            </selmod>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="history" value="1"/>
+            <skillmod ref="heal" value="2"/>
+            <selmod>
+            	<skillmod ref="hunting" value="2"/>
+            	<skillmod ref="stealth" value="2"/>
+            </selmod>
+            <skillmod ref="nature" value="3"/>
+            <skillmod ref="eloquence" value="1"/>
+            <skillmod ref="animals" value="3"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="endurance" value="3"/>
+            <skillmod ref="lightmagic" value="1"/>
+            <skillmod ref="naturemagic" value="4"/>
+            
+            <mastermod ref="animals/dompteur"/> 
+            <mastermod ref="naturemagic/familiarbond"/> 
+		</modifications>
+	</education>
+
+	<!-- Brandwehr-Ermittler -->
+	<education id="fireinvestigator" variantof="shadowblade">
+        <modifications>
+            <powermod ref="sensebalance"/>
+            <powermod ref="swift"/>
+
+            <resourcemod ref="contacts" value="1"/>
+            <resourcemod ref="rank" value="1"/>
+
+            <skillmod ref="staffs" value="2"/>
+			 <selmod num="1">
+                <skillmod ref="slashing" value="3"/>
+                <skillmod ref="melee" value="3"/>
+                <skillmod ref="chains" value="3"/>
+                <skillmod ref="blades" value="3"/>
+                <skillmod ref="staffs" value="3"/>
+                <skillmod ref="longrange" value="3"/>
+                <skillmod ref="throwing" value="3"/>
+            </selmod>
+            <skillmod ref="acrobatics" value="3"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="countrylore" value="1"/>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="dexterity" value="2"/>
+            <skillmod ref="stealth" value="3"/>
+            <skillmod ref="eloquence" value="1"/>
+            <skillmod ref="seafaring" value="1"/>
+            <skillmod ref="streetlore" value="3"/>
+            <skillmod ref="perception" value="3"/>
+            <mastermod ref="perception/surroundingsenses_city"/>
+            <mastermod skilltype="COMBAT" level="1"/>
+        </modifications>
+    </education>
+
+	<!-- Krieger des Edelstein-Ordens -->
+    <education id="warriorgemmedal" variantof="warrior">
+           <modifications>
+            <reqmod type="culture" ref="turubar"/>
+               <selmod>
+                   <powermod ref="liferegen"/>
+                   <powermod ref="sturdy"/>
+               </selmod>
+
+               <selmod dist="2">
+                   <resourcemod ref="reputation"/>
+                   <resourcemod ref="creature"/>
+                   <resourcemod ref="status"/>
+                   <resourcemod ref="rank"/>
+               </selmod>
+
+			 <selmod num="1">
+                <skillmod ref="slashing" value="3"/>
+                <skillmod ref="melee" value="3"/>
+                <skillmod ref="chains" value="3"/>
+                <skillmod ref="blades" value="3"/>
+                <skillmod ref="staffs" value="3"/>
+                <skillmod ref="longrange" value="3"/>
+                <skillmod ref="throwing" value="3"/>
+            </selmod>
+               <selmod>
+                   <skillmod ref="acrobatics" value="2"/>
+                   <skillmod ref="athletics" value="2"/>
+               </selmod>
+               <skillmod ref="leadership" value="2"/>
+               <skillmod ref="diplomacy" value="3"/>
+               <skillmod ref="empathy" value="2"/>
+               <skillmod ref="determination" value="3"/>
+               <skillmod ref="history" value="2"/>
+               <skillmod ref="countrylore" value="3"/>
+               <skillmod ref="eloquence" value="1"/>
+               <skillmod ref="animals" value="2"/>
+               <skillmod ref="perception" value="1"/>
+               <skillmod ref="endurance" value="2"/>
+               <skillmod ref="protectionmagic" value="3"/>
+			 <selmod num="1">
+                <skillmod ref="stonemagic" value="1"/>
+                <skillmod ref="enhancemagic" value="1"/>
+                <skillmod ref="windmagic" value="1"/>
+            </selmod>
+            <mastermod spec="countrylore/law" level="1"/>
+               <selmod>
+                   <mastermod ref="endurance/armour1"/>
+                   <mastermod skilltype="COMBAT" level="1"/>
+               </selmod>
+           </modifications>
+    </education>
+
+	<!-- Midstader Freischärler -->
+    <education id="midstadirregulars" variantof="rogue">
+        <modifications>
+            <reqmod type="culture" ref="midstad"/>
+            <powermod ref="swift"/>
+            <powermod ref="senseorient"/>
+
+            <selmod dist="2">
+                <resourcemod ref="contacts"/>
+                <resourcemod ref="mentor"/>
+            </selmod>
+
+            <skillmod ref="acrobatics" value="3"/>
+            <skillmod ref="arcanelore" value="1"/>
+            <skillmod ref="athletics" value="3"/>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="dexterity" value="3"/>
+            <skillmod ref="stealth" value="3"/>
+            <skillmod ref="countrylore" value="1"/>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="streetlore" value="1"/> <!-- Fehler in Regelwerk -->
+            <skillmod ref="perception" value="3"/>
+            <selmod>
+                <skillmod ref="shadowmagic" value="2"/>
+                <skillmod ref="locksntraps" value="2"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="naturemagic" value="1"/>
+                <skillmod ref="hunting" value="1"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="enhancemagic" value="1"/>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee"  value="1"/>
+                <skillmod ref="chains"  value="1"/>
+                <skillmod ref="blades"  value="1"/>
+                <skillmod ref="staffs"  value="1"/>
+                <skillmod ref="longrange"  value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <skillmod ref="longrange"  value="1"/>
+            <mastermod ref="stealth/creeper"/>
+            <mastermod ref="stealth/unobstrusive"/>
+        </modifications>
+    </education>
+
+	<!-- Kame Ma Te -->
+    <education id="kamemate" variantof="mysticwarrior">
+        <modifications>
+			<reqmod type="culture" ref="strominseln, stromsiprangu" />
+            <powermod ref="sensefairy"/>
+            <powermod ref="goodmemory"/>
+
+            <selmod>
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="status" value="1"/>
+            </selmod>
+            <selmod>
+                <resourcemod ref="mentor" value="1"/>
+                <resourcemod ref="wealth" value="1"/>
+                <resourcemod ref="rank" value="1"/>
+            </selmod>
+
+            <selmod values="3 3">
+                <skillmod ref="slashing"  />
+                <skillmod ref="melee" />
+                <skillmod ref="chains" />
+                <skillmod ref="blades" />
+                <skillmod ref="staffs" />
+                <skillmod ref="longrange" />
+                <skillmod ref="throwing" />
+            </selmod>
+            <skillmod ref="acrobatics" value="2"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="diplomacy" value="1"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="healmagic" value="1"/>
+            <skillmod ref="countrylore" value="1"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="streetlore" value="2"/>
+            <skillmod ref="insightmagic" value="3"/>
+            <skillmod ref="illusionmagic" value="2"/>
+            <skillmod ref="combatmagic" value="3"/>
+            <mastermod ref="insightmagic/emotionsense"/>
+            <mastermod skilltype="COMBAT" level="1"/>
+        </modifications>
+    </education>
+
+	<!-- Elucator -->
+    <education id="elucator" variantof="explorer">
+        <modifications>
+            <reqmod type="culture" ref="patalis	"/>
+            <powermod ref="literate"/>
+            <selmod>
+                <powermod ref="goodsight"/>
+                <powermod ref="goodhearing"/>
+            </selmod>
+
+            <selmod dist="2">
+                <resourcemod ref="contacts" />
+                <resourcemod ref="mentor" />
+            </selmod>
+
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <skillmod ref="athletics" value="1"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="diplomacy" value="2"/>
+            <skillmod ref="empathy" value="3"/>
+            <skillmod ref="history" value="3"/>
+            <skillmod ref="heal" value="2"/>
+            <selmod>
+                <skillmod ref="stealth" value="2"/>
+                <skillmod ref="endurance" value="2"/>
+            </selmod>
+            <skillmod ref="countrylore" value="3"/>
+            <skillmod ref="nature" value="1"/>
+            <skillmod ref="locksntraps" value="1"/>
+            <skillmod ref="streetlore" value="3"/>
+            <skillmod ref="perception" value="3"/>
+            <selmod>
+                <skillmod ref="motionmagic" value="2"/>
+                <skillmod ref="insightmagic" value="2"/>
+            </selmod>
+            <mastermod ref="perception/surroundingsenses_city" />
+            <mastermod ref="empathy/speaktome"/>
+        </modifications>
+    </education>
+
+	<!-- Pan-Yemaa -->
+    <education id="panyemaa" variantof="rogue">
+        <modifications>
+            <reqmod type="culture" ref="kungaitan"/>
+            <powermod ref="swift"/>
+            <powermod ref="senseorient"/>
+
+            <selmod dist="2">
+                <resourcemod ref="contacts"/>
+                <resourcemod ref="mentor"/>
+            </selmod>
+
+            <skillmod ref="acrobatics" value="3"/>
+            <skillmod ref="athletics" value="3"/>
+            <skillmod ref="diplomacy" value="1"/>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="dexterity" value="3"/>
+            <skillmod ref="stealth" value="3"/>
+            <skillmod ref="countrylore" value="1"/>
+            <skillmod ref="eloquence" value="2"/>
+            <skillmod ref="streetlore" value="3"/>
+            <skillmod ref="perception" value="3"/>
+            <selmod>
+                <skillmod ref="shadowmagic" value="2"/>
+                <skillmod ref="locksntraps" value="2"/>
+            </selmod>
+            <skillmod ref="motionmagic" value="2"/>
+            <mastermod ref="athletics/monkey"/>
+            <mastermod ref="dexterity/creativedistraction"/>
+        </modifications>
+    </education>
+
+	<!-- Silberring -->
+    <education id="silverring" variantof="intriguer">
+	    <modifications>
+            <reqmod type="culture" ref="patalis"/>
+	        <selmod>
+	            <powermod ref="goodmemory"/>
+	            <powermod ref="literate"/>
+	        </selmod>
+	        <powermod ref="sensesocial"/>
+	
+	        <resourcemod ref="contacts" value="1"/>
+	        <resourcemod ref="wealth" value="1"/>
+	
+	        <selmod>
+	            <skillmod ref="slashing" value="1" />
+	            <skillmod ref="melee"  value="1"/>
+	            <skillmod ref="chains"  value="1"/>
+	            <skillmod ref="blades"  value="1"/>
+	            <skillmod ref="staffs"  value="1"/>
+	        </selmod>
+	        <skillmod ref="leadership" value="2"/>
+	        <selmod>
+	            <skillmod ref="arcanelore" value="1" />
+	            <skillmod ref="history"  value="1"/>
+	            <skillmod ref="illusionmagic"  value="1"/>
+	        </selmod>
+	        <skillmod ref="diplomacy" value="3"/>
+	        <skillmod ref="empathy" value="3"/>
+	        <skillmod ref="determination" value="3"/>
+	        <selmod>
+	            <skillmod ref="dexterity" value="2"/>
+	            <skillmod ref="locksntraps" value="2"/>
+	        </selmod>
+	        <skillmod ref="locksntraps" value="1"/>
+	        <skillmod ref="stealth" value="3"/>
+	        <skillmod ref="countrylore" value="2"/>
+	        <skillmod ref="eloquence" value="3"/>
+	        <skillmod ref="streetlore" value="3"/>
+	        <skillmod ref="perception" value="3"/>
+	        <mastermod ref="diplomacy/diplomat"/>
+	        <mastermod ref="eloquence/improviseddressup"/>
+    </modifications>
+    </education>
+
+	<!-- Triadenkämpfer -->
+    <education id="triadfighter" variantof="shadowblade">
+        <modifications>
+            <reqmod type="culture" ref="zhoujiang"/>
+            <powermod ref="sensebalance"/>
+            <powermod ref="swift"/>
+
+            <resourcemod ref="contacts" value="1"/>
+            <selmod>
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="relic" value="1"/>
+                <resourcemod ref="mentor" value="1"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="melee" value="2"/>
+                <skillmod ref="motionmagic" value="2"/>
+            </selmod>
+			 <selmod num="1">
+                <skillmod ref="slashing" value="3"/>
+                <skillmod ref="melee" value="3"/>
+                <skillmod ref="chains" value="3"/>
+                <skillmod ref="blades" value="3"/>
+                <skillmod ref="staffs" value="3"/>
+                <skillmod ref="longrange" value="3"/>
+                <skillmod ref="throwing" value="3"/>
+            </selmod>
+            <skillmod ref="melee" value="1"/>
+            <skillmod ref="countrylore" value="1"/>
+            <skillmod ref="motionmagic" value="1"/> 
+            <skillmod ref="acrobatics" value="3"/>
+            <selmod>
+                <skillmod ref="arcanelore" value="1"/>
+                <skillmod ref="countrylore" value="1"/>
+            </selmod>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="dexterity" value="2"/>
+            <skillmod ref="stealth" value="3"/>
+            <skillmod ref="eloquence" value="1"/>
+            <skillmod ref="streetlore" value="3"/>
+            <skillmod ref="perception" value="3"/>
+            <mastermod ref="dexterity/quickdrawer"/>
+            <mastermod skilltype="COMBAT" level="1"/>
+        </modifications>
+    </education>
+
+</educations>
