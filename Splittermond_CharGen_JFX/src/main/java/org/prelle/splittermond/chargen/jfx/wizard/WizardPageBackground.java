@@ -19,6 +19,8 @@ import org.prelle.splimo.chargen.event.GenerationEventDispatcher;
 import org.prelle.splimo.chargen.event.GenerationEventListener;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 
+import de.rpgframework.core.BabylonEventBus;
+import de.rpgframework.core.BabylonEventType;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -101,7 +103,7 @@ public class WizardPageBackground extends WizardPage implements ChangeListener<B
 		/*
 		 * Page content
 		 */
-		includeUnusual = new CheckBox(uiResources.getString("wizard.selectBackground.showUnsual"));
+		includeUnusual = new CheckBox("Alle (auch unübliche) anzeigen");
 		includeUnusual.setWrapText(false);
 
 		backgList = new ListView<Background>();
@@ -191,6 +193,7 @@ public class WizardPageBackground extends WizardPage implements ChangeListener<B
 			Background newModel) {
 		selected = newModel;
 
+		
 		if (newModel!=null) {
 			try {
 				description.setText(newModel.getHelpText());
@@ -199,9 +202,7 @@ public class WizardPageBackground extends WizardPage implements ChangeListener<B
 			}
 		}
 
-//		logger.debug("Background now "+selected);
-//		nextButton.set(selected!=null);
-//		finishButton.set(selected!=null);
+		logger.info("Background now "+selected);
 	}
 
 	//-------------------------------------------------------------------
@@ -214,6 +215,10 @@ public class WizardPageBackground extends WizardPage implements ChangeListener<B
 //			return;
 		if (selected!=null)
 			bgGen.select(selected, choiceCallback);
+		else {
+			BabylonEventBus.fireEvent(BabylonEventType.UI_MESSAGE, 0, "Du hast keine Abstammung gewählt.");
+		}
+
 	}
 
 }
