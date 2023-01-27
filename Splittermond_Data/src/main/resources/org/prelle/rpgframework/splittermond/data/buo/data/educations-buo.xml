@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <educations>
-	<!-- Bestienwächter -->
+	<!-- Bestienwächter (Bestienmeister) -->
 	<education id="beastguardian" variantof="beastmaster">
 		<modifications>
 			<reqmod type="culture" ref="daemmeralb" />
@@ -43,7 +43,7 @@
 		</modifications>
 	</education>
 
-	<!-- Brandwehr-Ermittler -->
+	<!-- Brandwehr-Ermittler (Schattenklinge) -->
 	<education id="fireinvestigator" variantof="shadowblade">
         <modifications>
             <powermod ref="sensebalance"/>
@@ -79,7 +79,7 @@
         </modifications>
     </education>
 
-	<!-- Krieger des Edelstein-Ordens -->
+	<!-- Krieger des Edelstein-Ordens (Recke) -->
     <education id="warriorgemmedal" variantof="warrior">
            <modifications>
             <reqmod type="culture" ref="turubar"/>
@@ -132,7 +132,7 @@
            </modifications>
     </education>
 
-	<!-- Midstader Freischärler -->
+	<!-- Midstader Freischärler (Schurke) -->
     <education id="midstadirregulars" variantof="rogue">
         <modifications>
             <reqmod type="culture" ref="midstad"/>
@@ -179,7 +179,7 @@
         </modifications>
     </education>
 
-	<!-- Kame Ma Te -->
+	<!-- Kame Ma Te (Mystischer Krieger) -->
     <education id="kamemate" variantof="mysticwarrior">
         <modifications>
 			<reqmod type="culture" ref="strominseln, stromsiprangu" />
@@ -222,8 +222,9 @@
         </modifications>
     </education>
 
-	<!-- Elucator -->
-    <education id="elucator" variantof="explorer">
+	<!-- auch in PoE 106 --> 
+	<!-- Elucator (Entdecker) -->
+<!-- <education id="elucator" variantof="explorer">
         <modifications>
             <reqmod type="culture" ref="patalis	"/>
             <powermod ref="literate"/>
@@ -269,8 +270,9 @@
             <mastermod ref="empathy/speaktome"/>
         </modifications>
     </education>
+-->
 
-	<!-- Pan-Yemaa -->
+	<!-- Pan-Yemaa (Schurke) -->
     <education id="panyemaa" variantof="rogue">
         <modifications>
             <reqmod type="culture" ref="kungaitan"/>
@@ -303,8 +305,9 @@
         </modifications>
     </education>
 
-	<!-- Silberring -->
-    <education id="silverring" variantof="intriguer">
+	<!-- auch in PoE 107 --> 
+	<!-- Silberring (Ränkeschmied) -->
+<!-- <education id="silverring" variantof="intriguer">
 	    <modifications>
             <reqmod type="culture" ref="patalis"/>
 	        <selmod>
@@ -346,8 +349,9 @@
 	        <mastermod ref="eloquence/improviseddressup"/>
     </modifications>
     </education>
+-->
 
-	<!-- Triadenkämpfer -->
+	<!-- Triadenkämpfer (Magischer Künstler) -->
     <education id="triadfighter" variantof="shadowblade">
         <modifications>
             <reqmod type="culture" ref="zhoujiang"/>
