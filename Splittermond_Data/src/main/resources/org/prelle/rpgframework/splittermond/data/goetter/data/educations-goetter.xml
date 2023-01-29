@@ -1373,7 +1373,8 @@
     	</modifications>
   	</education>
 
-  	<!-- silvershadow###################################################################### -->
+	<!-- auch in PoE 108 -->
+	<!-- Silberschatten (Ränkeschmied) -->
 	<education id="silvershadow" variantof="intriguer">
     	<modifications>
     		<powermod ref="priest"/>
@@ -1470,8 +1471,9 @@
     	</modifications>
   	</education>
 
-  	<!-- vordanshield###################################################################### -->
-	<education id="vordanshield" variantof="wandererpriest">
+	<!-- auch in PoE 108 -->
+	<!-- Vordans Schilde (Wanderpriester) -->
+<!--	<education id="vordanshield" variantof="wandererpriest">
     	<modifications>
     		<selmod num="1">
     			<reqmod type="culture" ref="elyrrose" />
@@ -1515,6 +1517,7 @@
                  <skillmod ref="history"/>
                  <skillmod ref="countrylore" />
              </selmod>
+             <skillmod ref="craftmanship" value="1"/>
              <selmod num="1">
                  <skillmod ref="heal" value="3"/>
                  <skillmod ref="healmagic" value="3"/>
@@ -1541,4 +1544,5 @@
 			 </selmod>
     	</modifications>
   	</education>
+-->
 </educations>

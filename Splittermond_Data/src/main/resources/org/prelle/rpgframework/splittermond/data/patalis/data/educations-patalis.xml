@@ -41,6 +41,7 @@
 		</modifications>
 	</education>
 
+	<!-- Hüter der Gärten (Magischer Künstler) -->
 	<education id="keeperOfGardens" variantof="magicartist">
 		<modifications>
 			<powermod ref="stablemagic" />
@@ -75,6 +76,7 @@
 		</modifications>
 	</education>
 
+	<!-- Schattenspieler (Magischer Künstler) -->
 	<education id="shadowPlayer" variantof="magicartist">
 		<modifications>
 			<reqmod type="culture" ref="strominseln, stromsiprangu" />
@@ -114,6 +116,7 @@
 		</modifications>
 	</education>
 
+	<!-- Theaterfechter (Magischer Künstler) -->
 	<education id="theaterFencer" variantof="magicartist">
 		<modifications>
 			<reqmod type="culture" ref="patalis, patalischeKB" />
@@ -191,6 +194,7 @@
 		</modifications>
 	</education>
 
+	<!-- Handelsagent (Spion) -->
 	<education id="commercialAgent" variantof="spy"> 
 		<modifications>
 			<powermod ref="socialable" />
@@ -224,6 +228,7 @@
 		</modifications>
 	</education>
 
+	<!-- Spielmann des Königs (Spion) -->
 	<education id="minstrelKing" variantof="spy"> 
 		<modifications>
 			<reqmod type="culture" ref="patalis, patalischeKB" />
@@ -263,6 +268,7 @@
 		</modifications>
 	</education>
 
+	<!-- Geheimrat (Spion) -->
 	<education id="privyCouncilor" variantof="spy"> 
 		<modifications>
 			<powermod ref="literate" />
@@ -300,7 +306,7 @@
 		</modifications>
 	</education>
 
-	<!-- Entdecker -->
+	<!-- Elucator (Entdecker) -->
 	<education id="elucator" variantof="explorer"> 
         <modifications>
 			<reqmod type="culture" ref="patalis, patalischeKB" />
@@ -346,7 +352,7 @@
         </modifications>
     </education>
 
-	<!-- Kämpfer -->
+	<!-- Gladiator (Kämpfer) -->
 	<education id="gladiator" variantof="fighter"> 
         <modifications>
             <powermod ref="sturdy"/>
@@ -384,7 +390,7 @@
         </modifications>
     </education>
 
-	<!-- Entdecker -->
+	<!-- Iliensi-Wanderer (Entdecker) -->
 	<education id="iliensiWalker" variantof="explorer">
         <modifications>
 			<reqmod type="race" ref="gnome" />
@@ -436,7 +442,7 @@
         </modifications>
     </education>
 
-	<!-- Magischer Unterhändler -->
+	<!-- Mondbote (Magischer Unterhändler) -->
 	<education id="moonCourier" variantof="magicmediator">
         <modifications>
 			<reqmod type="culture" ref="patalis, patalischeKB" />
@@ -469,7 +475,7 @@
         </modifications>
     </education>
 
-	<!-- Inquisitor -->
+	<!-- Ordensrichter (Inquisitor) -->
 	<education id="orderJudge" variantof="inquisitor">
 		<modifications>
 			<reqmod type="culture" ref="patalis, patalischeKB, elyrvolk, elyrrose" />
@@ -527,8 +533,9 @@
 		</modifications>
 	</education>
 
-	<!-- Kundschafter -->
-	<education id="prospector" variantof="scout">
+	<!-- auch in ARK 35 -->
+	<!-- Prospektor (Kundschafter) -->
+<!--	<education id="prospector" variantof="scout">
         <modifications>
             <powermod ref="enduring"/>
             <powermod ref="senseorient"/>
@@ -579,8 +586,8 @@
             </selmod>
         </modifications>
     </education>
-
-	<!-- Glaubenskrieger -->
+-->
+	<!-- Ritter des Ordens der Schwerter vor dem Schwarzen Holz (Glaubenskrieger) -->
 	<education id="knightSwords" variantof="faithwarrior">
         <modifications>
 			<reqmod type="culture" ref="patalis, patalischeKB" />
@@ -631,7 +638,7 @@
         </modifications>
     </education>
 
-	<!-- Waldläufer -->
+	<!-- Ritter von Vordans Blut (Waldläufer) -->
 	<education id="knightVordanBlood" variantof="ranger">
         <modifications>
 			<reqmod type="culture" ref="patalis, patalischeKB, elyrvolk, elyrrose" />
@@ -672,8 +679,8 @@
         </modifications>
     </education>
 
-	<!-- Ränkeschmied -->
-	<education id="silverRings" variantof="intriguer">
+	<!-- Silberring (Ränkeschmied) -->
+	<education id="silverring" variantof="intriguer">
     <modifications>
 			<reqmod type="culture" ref="patalis, patalischeKB" />
         <selmod>
@@ -713,16 +720,16 @@
     </modifications>
     </education>
 
-	<!-- DOPPELT schon in Götter-->
-	<!-- Ränkeschmied -->
-	<education id="silverShadow" variantof="intriguer">
+	<!-- auch in Götter 110 -->
+	<!-- Silberschatten (Ränkeschmied) -->
+<!--	<education id="silvershadow" variantof="intriguer">
     <modifications>
         <selmod>
             <powermod ref="goodmemory"/>
             <powermod ref="literate"/>
-            <powermod ref="priest"/>
         </selmod>
         <powermod ref="sensesocial"/>
+        <powermod ref="priest"/>
         <resourcemod ref="contacts" value="2"/>
         <selmod>
             <skillmod ref="slashing" value="1" />
@@ -752,16 +759,17 @@
         <skillmod ref="eloquence" value="3"/>
         <skillmod ref="streetlore" value="3"/>
         <skillmod ref="perception" value="2"/>
-        <skillmod ref="controlmagic" value="3"/>
+        <skillmod ref="controlmagic" value="2"/> (prüfen PoE +3/Götter +2)
         <skillmod ref="insightmagic" value="3"/>
         <mastermod ref="insightmagic/exploringmind"/>
         <mastermod ref="eloquence/distract"/>
     </modifications>
     </education>
+-->
 
-	<!-- DOPPELT schon in Götter -->
-	<!-- Wanderpriester -->
-	<education id="vordanShield" variantof="wandererpriest">
+	<!-- auch in Götter 110 -->
+	<!-- Vordans Schilde (Wanderpriester) -->
+	<education id="vordanshield" variantof="wandererpriest">
          <modifications>
 			<reqmod type="culture" ref="patalis, patalischeKB, elyrrose" />
              <selmod>
@@ -788,8 +796,8 @@
                  <skillmod ref="longrange"  value="2"/>
                  <skillmod ref="throwing" value="2"/>
              </selmod>
-             <selmod>
-                 <skillmod ref="leadership" value="2"/>
+             <skillmod ref="leadership" value="2"/> 
+            <selmod>
                  <skillmod ref="athletics" value="1"/>
                  <skillmod ref="animals" value="1"/>
              </selmod>
@@ -799,6 +807,7 @@
                  <skillmod ref="history"/>
                  <skillmod ref="countrylore" />
              </selmod>
+             <skillmod ref="craftmanship" value="1"/>
              <selmod>
                  <skillmod ref="heal" value="3"/>
                  <skillmod ref="healmagic" value="3"/>
@@ -826,4 +835,5 @@
              </selmod>
          </modifications>
     </education>
+
 </educations>
