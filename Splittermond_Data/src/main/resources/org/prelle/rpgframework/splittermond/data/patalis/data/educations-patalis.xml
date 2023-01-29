@@ -533,8 +533,9 @@
 		</modifications>
 	</education>
 
+	<!-- auch in ARK 35 -->
 	<!-- Prospektor (Kundschafter) -->
-	<education id="prospector" variantof="scout">
+<!--	<education id="prospector" variantof="scout">
         <modifications>
             <powermod ref="enduring"/>
             <powermod ref="senseorient"/>
@@ -585,7 +586,7 @@
             </selmod>
         </modifications>
     </education>
-
+-->
 	<!-- Ritter des Ordens der Schwerter vor dem Schwarzen Holz (Glaubenskrieger) -->
 	<education id="knightSwords" variantof="faithwarrior">
         <modifications>
