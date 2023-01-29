@@ -322,7 +322,6 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadMaterials(GOETTER, clazz.getResourceAsStream("goetter/data/materials-goetter.xml"), GOETTER.getResources(), GOETTER.getHelpResources());
 		SplitterMondCore.loadDeityTypes(GOETTER, clazz.getResourceAsStream("goetter/data/deitytypes-goetter.xml"), GOETTER.getResources(), GOETTER.getHelpResources());
 		SplitterMondCore.loadHolyPowers(GOETTER, clazz.getResourceAsStream("goetter/data/holypowers-goetter.xml"), GOETTER.getResources(), GOETTER.getHelpResources());
-		SplitterMondCore.loadDeities(GOETTER, clazz.getResourceAsStream("goetter/data/deities-goetter.xml"), GOETTER.getResources(), GOETTER.getHelpResources());
 		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Diener der Götter---------------------------------");
@@ -466,7 +465,9 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadMaterials(PUE, clazz.getResourceAsStream("patalis/data/materials-patalis.xml"), PUE.getResources(), PUE.getHelpResources());
 		SplitterMondCore.loadNameTable(PUE, clazz.getResourceAsStream("patalis/data/nametable-patalis.xml"), PUE.getResources(), PUE.getHelpResources()); 
 		SplitterMondCore.loadNameTable(PUE, clazz.getResourceAsStream("patalis/data/nametable-elyrvolk.xml"), PUE.getResources(), PUE.getHelpResources()); 		
-//		SplitterMondCore.loadTowns(PUE, clazz.getResourceAsStream("patalis/data/towns-patalis.xml"), PUE.getResources(), PUE.getHelpResources());		
+//		SplitterMondCore.loadTowns(PUE, clazz.getResourceAsStream("patalis/data/towns-patalis.xml"), PUE.getResources(), PUE.getHelpResources());
+		// Following line moved here, because education "vordanshield" moved to PoE and is referenced in this file
+		SplitterMondCore.loadDeities(GOETTER, clazz.getResourceAsStream("goetter/data/deities-goetter.xml"), GOETTER.getResources(), GOETTER.getHelpResources());
 
 		count++; callback.progressChanged( (count/totalPlugins) );
 
