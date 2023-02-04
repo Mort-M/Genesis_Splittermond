@@ -51,23 +51,23 @@
     <town id="kaltenwacht" size="SMALL_TOWN" cultures="westergrom"/>
 
     <town id="harreburg" size="LARGE_TOWN" cultures="midstad" /><!-- 32000 -->
-    <town id="hellberg" size="LARGE_TOWN" cultures="midstad" /><!-- 18000 -->
+<!--    <town id="hellberg" size="LARGE_TOWN" cultures="midstad" /> 18000 PuE-->
     <town id="karing" size="SMALL_TOWN" cultures="midstad"/><!-- 14000 -->
-    <town id="tralfeim" size="SMALL_TOWN" cultures="midstad"/>
+<!--    <town id="tralfeim" size="SMALL_TOWN" cultures="midstad"/> PuE-->
     
-    <town id="caleria" size="LARGE_TOWN" cultures="patalis" /><!-- 75000 -->
-    <town id="epena" size="SMALL_TOWN" cultures="patalis" /><!-- 22000 -->
-    <town id="larisana" size="SMALL_TOWN" cultures="patalis" /><!-- 32000 -->
-    <town id="marcom" size="SMALL_TOWN" cultures="patalis" /><!-- 28000 -->
-    <town id="rutias" size="SMALL_TOWN" cultures="patalis" />
-    <town id="ultia" size="CAPITAL" cultures="patalis"/><!-- 215000 -->
-    <town id="volos" size="SMALL_TOWN" cultures="patalis"/><!-- 15000 -->
+<!--   <town id="caleria" size="LARGE_TOWN" cultures="patalis" /> 75000 PuE-->
+<!--   <town id="epena" size="SMALL_TOWN" cultures="patalis" /> 22000 PuE-->
+<!--   <town id="larisana" size="SMALL_TOWN" cultures="patalis" /> 32000 PuE-->
+<!--   <town id="marcom" size="SMALL_TOWN" cultures="patalis" /> 28000 PuE-->
+<!--   <town id="rutias" size="SMALL_TOWN" cultures="patalis" /> PuE-->
+<!--   <town id="ultia" size="CAPITAL" cultures="patalis"/> 215000 PuE-->
+<!--   <town id="volos" size="SMALL_TOWN" cultures="patalis"/> 15000 PuE-->
 
-    <town id="beltin" size="LARGE_TOWN" cultures="elyrvolk , elyrrose" /><!-- 28000 -->
-    <town id="teulada" size="SMALL_TOWN" cultures="elyrvolk , elyrrose" /><!-- 9000 -->
+<!--   <town id="beltin" size="LARGE_TOWN" cultures="elyrvolk , elyrrose" /> 28000 PuE-->
+<!--   <town id="teulada" size="SMALL_TOWN" cultures="elyrvolk , elyrrose" /> 9000 PuE-->
     
     <town id="heriwahta" size="SMALL_TOWN" cultures="zwingard" /><!-- 19000 -->
-    <town id="isafest" size="SMALL_TOWN" cultures="zwingard" /><!-- 31000 -->
+<!--    <town id="isafest" size="SMALL_TOWN" cultures="zwingard" /> 31000 PuE-->
     <town id="sunnafest" size="LARGE_TOWN" cultures="zwingard"/><!-- 44000 -->
     <town id="wyrmtrutz" size="SMALL_TOWN" cultures="zwingard"/><!-- 11000 -->
     
