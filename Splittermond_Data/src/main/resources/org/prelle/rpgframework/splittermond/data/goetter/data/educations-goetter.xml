@@ -58,7 +58,7 @@
 				<skillmod ref="protectionmagic"    value="2" />
 			</selmod>
 			<mastermod ref="empathy/speaktome" />
-			<!-- mastermod ref="antimagic/wardingexpert" /> -->
+            <mastermod skilltype="COMBAT" level="1"/>
 		</modifications>
 	</education>
 
@@ -83,7 +83,7 @@
                 <skillmod ref="longrange" />
                 <skillmod ref="throwing" />
             </selmod>
-			<skillmod ref="leadership"    value="2" />
+			<skillmod ref="leadership"    value="3" />
 			<skillmod ref="diplomacy"     value="2" />
 			<skillmod ref="empathy"       value="3" />
 			<skillmod ref="history"       value="3" />
@@ -99,7 +99,7 @@
             </selmod>
 			<skillmod ref="lightmagic"   value="2" />
 			<mastermod ref="empathy/speaktome" />
-			<!-- Fehlende Meisterschaft wird frei -->
+            <mastermod skilltype="COMBAT" level="1"/>
 		</modifications>
 	</education>
 
@@ -142,7 +142,7 @@
             </selmod>
 			<skillmod ref="deathmagic"   value="4" />
 			<mastermod ref="empathy/speaktome" />
-			<!-- mastermod ref="antimagic/wardingexpert" /> -->
+            <mastermod skilltype="COMBAT" level="1"/>
 		</modifications>
 	</education>
 	
@@ -189,7 +189,7 @@
 				<skillmod ref="combatmagic"  value="2" />
 			</selmod>
 			<mastermod ref="empathy/speaktome" />
-			<!-- mastermod ref="antimagic/wardingexpert" /> -->
+            <mastermod skilltype="COMBAT" level="1"/>
 		</modifications>
 	</education>
 	
