@@ -192,7 +192,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
     <spell id="attack_premonition" diff="18" cost="4V1" castdur="1T"
-        range="TOUCH" spelldur="20T" enh="1/+1V1">
+        range="CASTER" spelldur="20T" enh="1/+1V1">
         <school skill="insightmagic" level="1" />
         <school skill="fatemagic" level="2" />
         <type>PERCEPTION</type>
