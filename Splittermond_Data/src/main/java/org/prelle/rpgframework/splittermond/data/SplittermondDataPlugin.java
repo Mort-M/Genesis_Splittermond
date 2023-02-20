@@ -344,6 +344,7 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadSpells(MAGIE, clazz.getResourceAsStream("magie/data/spells-magie.xml"), MAGIE.getResources(), MAGIE.getHelpResources());
 		SplitterMondCore.loadEducations(MAGIE, clazz.getResourceAsStream("magie/data/educations-magie.xml"), MAGIE.getResources(), MAGIE.getHelpResources());
 		SplitterMondCore.loadEnhancements(MAGIE, clazz.getResourceAsStream("magie/data/enhancements-magie.xml"), MAGIE.getResources(), MAGIE.getHelpResources());
+		SplitterMondCore.loadCreatureFeatureTypes(MAGIE, clazz.getResourceAsStream("magie/data/creaturefeaturetypes-magie.xml"), MAGIE.getResources(), MAGIE.getHelpResources());
 		count++; callback.progressChanged( (count/totalPlugins) );
 
 		logger.info("START -------------------------------Sadu----------------------------------------------");
