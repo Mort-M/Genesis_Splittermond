@@ -261,9 +261,10 @@
         </modifications>
     </education>
  
+<!-- Errata März 2019 - S. 41 -->
     <education id="snakecharmer" variantof="summoner">
         <modifications>
-            <reqmod type="culture" ref="gulong keshubim"/>
+            <reqmod type="culture" ref="gulong, keshubim"/>
             <selmod num="1">
                 <powermod ref="friendearth"/>
                 <powermod ref="friendfire"/>

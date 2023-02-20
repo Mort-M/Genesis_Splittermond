@@ -961,6 +961,7 @@
         <mastership level="2" key="icy_surrounding"/>
         <mastership level="2" key="friend_of_fishes"/>
         <mastership level="2" key="secrete_poison"><requires><masterreq ref="watermagic/detox"/></requires></mastership>
+		<!-- Errate März 2019 - S. 111) -->
         <mastership level="2" key="master_icy_terrain"><requires><masterreq ref="survival/wildernessrunner"/></requires></mastership>
         <mastership level="2" key="overwhelming_tides"/>
         <mastership level="2" key="wave_conqueror">
