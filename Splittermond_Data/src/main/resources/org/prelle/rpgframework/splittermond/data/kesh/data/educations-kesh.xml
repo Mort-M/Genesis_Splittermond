@@ -112,7 +112,7 @@
 			<skillmod ref="perception" value="3"/>
 			<skillmod ref="motionmagic" value="4"/>
 			
-  			<mastermod ref="clscraft/journeyman"/> <!-- Geselle Mechaniker noch nicht ausgewählt -->
+  			<mastermod ref="clscraft/journeyman_mechanic"/>
   			<mastermod ref="motionmagic/magiccrafter"/>
 		</modifications>
 	</education>
