@@ -1,1212 +1,1062 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<creatures>
+<educations>
+	<education id="bancaster">
+		<modifications>
+			<powermod ref="concentrated"/>
+            <powermod ref="stablemagic"/>
+			
+			<selmod num="1">
+				<resourcemod ref="reputation" value="1"/>
+				<resourcemod ref="mentor" value="1"/>
+			</selmod>
+			<selmod num="1">
+				<resourcemod ref="relic" value="1"/>
+				<resourcemod ref="rank" value="1"/>
+			</selmod>			
+						
+			<skillmod ref="arcanelore" value="3"/>
+            <selmod num="1">
+                <skillmod ref="diplomacy" value="2"/>
+                <skillmod ref="eloquence" value="2"/>
+            </selmod>
+			<skillmod ref="empathy" value="3"/>
+			<skillmod ref="determination" value="3"/>
+			<skillmod ref="history" value="2"/>
+			<selmod num="1">
+				<skillmod ref="countrylore" value="2"/>
+	            <skillmod ref="streetlore" value="2" />
+	        </selmod>
+			<skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="1"/>
+            <skillmod ref="antimagic" value="4"/>
+			<skillmod ref="insightmagic" value="3"/>
+            <skillmod ref="protectionmagic" value="4"/>
+						
+			<mastermod ref="antimagic/hurriedidentify"/>
+            <mastermod ref="antimagic/magehunter"/>
+		</modifications>
+	</education>
+	
+	<education id="charmedagainst" variantof="bancaster">
+		<modifications>
+			<reqmod type="culture" ref="tirdurghachan"/>
+			
+            <selmod num="1">
+                <powermod ref="friendearth"/>
+                <powermod ref="friendfire"/>
+                <powermod ref="friendair"/>
+                <powermod ref="friendwater"/>
+                <powermod ref="friendghost"/>
+                <powermod ref="friendgodservant"/>
+                <powermod ref="friendlight"/>
+                <powermod ref="friendshadow"/>
+                <powermod ref="friendundead"/>
+            </selmod>
+            <powermod ref="stablemagic"/>
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="mentor" value="1"/>
+            </selmod>
+                <resourcemod ref="relic" value="1"/>
+                        
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="diplomacy" value="1"/>
+            <selmod num="1">
+                <skillmod ref="diplomacy" value="2"/>
+                <skillmod ref="eloquence" value="2"/>
+            </selmod>
+            <skillmod ref="empathy" value="3"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="survival" value="1"/>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="1"/>
+            <skillmod ref="antimagic" value="4"/>
+            <skillmod ref="insightmagic" value="3"/>
+            <skillmod ref="protectionmagic" value="4"/>
+									
+            <selmod num="1">
+                <mastermod ref="antimagic/opponent_blood"/>
+                <mastermod ref="antimagic/opponent_stone"/>
+                <mastermod ref="antimagic/opponent_fire"/>
+                <mastermod ref="antimagic/opponent_ghost"/>
+                <mastermod ref="antimagic/opponent_god"/>
+                <mastermod ref="antimagic/opponent_light"/>
+                <mastermod ref="antimagic/opponent_nature"/>
+                <mastermod ref="antimagic/opponent_shadow"/>
+                <mastermod ref="antimagic/opponent_water"/>
+                <mastermod ref="antimagic/opponent_darkness"/>
+                <mastermod ref="antimagic/opponent_wind"/>
+            </selmod>
+            <mastermod ref="antimagic/magehunter"/>
+		</modifications>
+	</education>
+	
+	<education id="shieldwatcher" variantof="bancaster">
+		<modifications>
+			<reqmod type="culture" ref="waechter"/>
+			
+            <powermod ref="concentrated"/>
+            <powermod ref="stablemagic"/>
+            
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="mentor" value="1"/>
+            </selmod>
+            <resourcemod ref="rank" value="1"/>
+                        
+            <selmod num="1">
+                <skillmod ref="melee" value="2"/>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="chains" value="2"/>
+                <skillmod ref="blades" value="2"/>
+                <skillmod ref="longrange" value="2"/>
+                <skillmod ref="staffs" value="2"/>
+                <skillmod ref="throwing" value="2"/>
+            </selmod>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="empathy" value="3"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="survival" value="2" />
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="1"/>
+            <skillmod ref="antimagic" value="4"/>
+            <selmod num="1">
+                <skillmod ref="insightmagic" value="3"/>
+                <skillmod ref="lightmagic" value="3"/>
+            </selmod>
+            <skillmod ref="protectionmagic" value="4"/>
+                        
+            <mastermod ref="antimagic/hurriedidentify"/>
+            <selmod num="1">
+                <mastermod ref="antimagic/opponent_blood"/>
+                <mastermod ref="antimagic/opponent_stone"/>
+                <mastermod ref="antimagic/opponent_fire"/>
+                <mastermod ref="antimagic/opponent_ghost"/>
+                <mastermod ref="antimagic/opponent_god"/>
+                <mastermod ref="antimagic/opponent_light"/>
+                <mastermod ref="antimagic/opponent_nature"/>
+                <mastermod ref="antimagic/opponent_shadow"/>
+                <mastermod ref="antimagic/opponent_water"/>
+                <mastermod ref="antimagic/opponent_darkness"/>
+                <mastermod ref="antimagic/opponent_wind"/>
+            </selmod>
+		</modifications>
+	</education>
+	
+	<education id="rehabilitator" variantof="bancaster">
+		<modifications>
+			<reqmod type="culture" ref="aitushar,ashurmazaan,farukhur,pashtar"/>
+						
+            <powermod ref="concentrated"/>
+            <powermod ref="stablemagic"/>
+            
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="mentor" value="1"/>
+            </selmod>
+            <selmod num="1">
+                <resourcemod ref="relic" value="1"/>
+                <resourcemod ref="wealth" value="1"/>
+            </selmod>           
+                        
+            <skillmod ref="arcanelore" value="2"/>
+            <selmod dist="3">
+                <skillmod ref="diplomacy" />
+                <skillmod ref="eloquence" />
+            </selmod>
+            <skillmod ref="empathy" value="3"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="2"/>
+            <selmod num="1">
+                <skillmod ref="countrylore" value="2"/>
+                <skillmod ref="streetlore" value="2" />
+            </selmod>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="stealth" value="1"/>
+            <skillmod ref="antimagic" value="4"/>
+            <skillmod ref="insightmagic" value="3"/>
+            <skillmod ref="protectionmagic" value="4"/>
+                        
+            <mastermod ref="protectionmagic/castershand"/>
+            <mastermod ref="antimagic/magehunter"/>
+		</modifications>
+	</education>
 
-<!-- komplette Dienst, Intstruktionen, Applikationen, Schwachstellen, Preis fehlen noch -->
-
-<!-- Frühlingskind -->
-    <creature id="SpringChild" lvl1="1" lvl2="0">
-        <creaturetypes>
-            <creaturetype type="FAIRY" />
-            <creaturetype type="NATURECREATURE" />
-            <creaturetype type="WINDCREATURE" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="5" />
-            <attr id="AGILITY" value="4" />
-            <attr id="INTUITION" value="3" />
-            <attr id="CONSTITUTION" value="1" />
-            <attr id="MYSTIC" value="4" />
-            <attr id="STRENGTH" value="1" />
-            <attr id="MIND" value="2" />
-            <attr id="WILLPOWER" value="2" />
-            <attr id="SIZE" value="4" />
-            <attr id="SPEED" value="8/12" />
-            <attr id="LIFE" value="5" />
-            <attr id="FOCUS" value="17" />
-            <attr id="DEFENSE" value="19" />
-            <attr id="DAMAGE_REDUCTION" value="0" />
-            <attr id="BODYRESIST" value="17" />
-            <attr id="MINDRESIST" value="20" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="8" dmg="1W6+1" spd="7" ini="7" >
-                <features>
-                    <feature type="BLUNT" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="11" />
-            <skillval skill="athletics" val="7" />
-            <skillval skill="determination" val="11" />
-            <skillval skill="heal" val="14" >
-                <masterref ref="heal/supporthealing" />"
-                <masterref ref="heal/lifesaver" />"
-            </skillval>
-            <skillval skill="stealth" val="9" />
-            <skillval skill="perception" val="9" />
-            <skillval skill="endurance" val="5" />
-            <skillval skill="healmagic" val="15" >
-                <masterref ref="healmagic/enforcehealing" />"
-                <masterref ref="healmagic/healing_efficiency" />"
-                <masterref ref="healmagic/castershand" />"
-            </skillval>
-            <skillval skill="windmagic" val="12" >
-                <masterref ref="windmagic/castershand" />"
-            </skillval>
-        </skillvals>
-        <spellvals>
-            <spellval school="windmagic" spell="featherfall" />
-            <spellval school="windmagic" spell="smell" />
-            <spellval school="windmagic" spell="lightweight" />
-            <spellval school="windmagic" spell="growth" />
-            <spellval school="windmagic" spell="minorhealing" />
-        </spellvals>
-        <features>
-                <creaturefeature type="summonable_creature" level="8" />
-                <creaturefeature type="FAIRYORIGIN" />
-                <creaturefeature type="COWARD" />
-                <creaturefeature type="FLYING" />
-                <creaturefeature type="WEAK" />
-                <creaturefeature type="vulnurable_damage" damage="STONE" />
-        </features>
-    </creature>
-
-<!-- Gleißender Krieger -->
-    <creature id="ShiningWarrior" lvl1="2" lvl2="1">
-        <creaturetypes>
-            <creaturetype type="FAIRY" />
-            <creaturetype type="LIGHT_CREATURE" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="3" />
-            <attr id="AGILITY" value="4" />
-            <attr id="INTUITION" value="3" />
-            <attr id="CONSTITUTION" value="4" />
-            <attr id="MYSTIC" value="2" />
-            <attr id="STRENGTH" value="4" />
-            <attr id="MIND" value="2" />
-            <attr id="WILLPOWER" value="3" />
-            <attr id="SIZE" value="5" />
-            <attr id="SPEED" value="6/9" />
-            <attr id="LIFE" value="9" />
-            <attr id="FOCUS" value="14" />
-            <attr id="DEFENSE" value="22" />
-            <attr id="DAMAGE_REDUCTION" value="1" />
-            <attr id="BODYRESIST" value="19" />
-            <attr id="MINDRESIST" value="20" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="14" dmg="1W6+4" spd="8" ini="7" >
-                <features>
-                    <feature type="PENETRATING" />
-                    <feature type="PIERCING" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="10" >
-                <masterref ref="acrobatics/skipjack" />"
-            </skillval>
-            <skillval skill="leadership" val="12" >
-                <masterref ref="leadership/troopup" />"
-            </skillval>
-            <skillval skill="athletics" val="13" />
-            <skillval skill="determination" val="12" />
-            <skillval skill="stealth" val="7" />
-            <skillval skill="perception" val="12" />
-            <skillval skill="endurance" val="12" />
-            <skillval skill="lightmagic" val="11" />
-        </skillvals>
-        <spellvals>
-            <spellval school="lightmagic" spell="glare" />
-            <spellval school="lightmagic" spell="blazingbarrier" />
-            <spellval school="lightmagic" spell="weakenundead" />
-            <spellval school="lightmagic" spell="blazingshield" />
-        </spellvals>
-        <features>
-                <creaturefeature type="summonable_creature" level="9" />
-                <creaturefeature type="FAIRYORIGIN" />
-                <creaturefeature type="FLYING" />
-                <creaturefeature type="resist_damage" damage="LIGHT" level="8" />
-                <creaturefeature type="RESIST_PAIN" />
-                <creaturefeature type="TACTICIAN" />
-                <creaturefeature type="vulnurable_damage" damage="SHADOW" />
-        </features>
-    </creature>
-
-<!-- Glutrauch -->
-    <creature id="GlowSmoke" lvl1="2" lvl2="1">
-        <creaturetypes>
-            <creaturetype type="FAIRY" />
-            <creaturetype type="FIRECREATURE" />
-            <creaturetype type="WINDCREATURE" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="3" />
-            <attr id="AGILITY" value="4" />
-            <attr id="INTUITION" value="3" />
-            <attr id="CONSTITUTION" value="4" />
-            <attr id="MYSTIC" value="2" />
-            <attr id="STRENGTH" value="4" />
-            <attr id="MIND" value="2" />
-            <attr id="WILLPOWER" value="3" />
-            <attr id="SIZE" value="4" />
-            <attr id="SPEED" value="12" />
-            <attr id="LIFE" value="8" />
-            <attr id="FOCUS" value="14" />
-            <attr id="DEFENSE" value="21" />
-            <attr id="DAMAGE_REDUCTION" value="3" />
-            <attr id="BODYRESIST" value="24" />
-            <attr id="MINDRESIST" value="19" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="14" dmg="1W6+2" spd="7" ini="6" >
-                <features>
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="15" />
-            <skillval skill="athletics" val="12" />
-            <skillval skill="determination" val="10" />
-            <skillval skill="stealth" val="5" />
-            <skillval skill="perception" val="10" />
-            <skillval skill="endurance" val="10" />
-            <skillval skill="firemagic" val="11" >
-                <masterref ref="firemagic/heat_aura" />"
-            </skillval>
-            <skillval skill="windmagic" val="7" />
-        </skillvals>
-        <spellvals>
-            <spellval school="firemagic" spell="flame" />
-            <spellval school="firemagic" spell="fierce_wind" />
-        </spellvals>
-        <features>
-                <creaturefeature type="summonable_creature" level="5" />
-                <creaturefeature type="IMMUNE_TORPIDITY" />
-                <creaturefeature type="FAIRYORIGIN" />
-                <creaturefeature type="FLYING" />
-                <creaturefeature type="RESIST_HEAT" level="3" />
-                <creaturefeature type="RESIST_PAIN" />
-                <creaturefeature type="vulnurable_damage" damage="WATER" />
-        </features>
-    </creature>
-
-<!-- Steingolem -->
-    <creature id="StoneGolem" lvl1="" lvl2="">
-        <creaturetypes>
-            <creaturetype type="CONSTRUCT" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="2" />
-            <attr id="AGILITY" value="2" />
-            <attr id="INTUITION" value="2" />
-            <attr id="CONSTITUTION" value="5" />
-            <attr id="MYSTIC" value="0" />
-            <attr id="STRENGTH" value="6" />
-            <attr id="MIND" value="2" />
-            <attr id="WILLPOWER" value="1" />
-            <attr id="SIZE" value="6" />
-            <attr id="SPEED" value="5" />
-            <attr id="LIFE" value="11" />
-            <attr id="FOCUS" value="0" />
-            <attr id="DEFENSE" value="19" />
-            <attr id="DAMAGE_REDUCTION" value="1" />
-            <attr id="BODYRESIST" value="22" />
-            <attr id="MINDRESIST" value="17" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="11" dmg="2W6+3" spd="10" ini="8" >
-                <features>
-                    <feature type="PENETRATING" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="6" />
-            <skillval skill="athletics" val="22" />
-            <skillval skill="determination" val="11" />
-            <skillval skill="stealth" val="6" />
-            <skillval skill="perception" val="11" />
-            <skillval skill="endurance" val="13" />
-        </skillvals>
-        <spellvals>
-        </spellvals>
-        <features>
-                <creaturefeature type="IMMUNE_TORPIDITY" />
-                <creaturefeature type="RESIST_EXHAUSTION" level="1" />
-                <creaturefeature type="immune_fear" />
-                <creaturefeature type="golem" level="5" />
-                <creaturefeature type="construct" />
-                <creaturefeature type="RESIST_PAIN" />
-        </features>
-    </creature>
-
-<!-- Hölzerne laufende Truhe -->
-    <creature id="WoodenRunningChest" lvl1="" lvl2="">
-        <creaturetypes>
-            <creaturetype type="CONSTRUCT" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="1" />
-            <attr id="AGILITY" value="3" />
-            <attr id="INTUITION" value="2" />
-            <attr id="CONSTITUTION" value="2" />
-            <attr id="MYSTIC" value="0" />
-            <attr id="STRENGTH" value="3" />
-            <attr id="MIND" value="1" />
-            <attr id="WILLPOWER" value="1" />
-            <attr id="SIZE" value="3" />
-            <attr id="SPEED" value="7" />
-            <attr id="LIFE" value="6" />
-            <attr id="FOCUS" value="0" />
-            <attr id="DEFENSE" value="18" />
-            <attr id="DAMAGE_REDUCTION" value="1" />
-            <attr id="BODYRESIST" value="22" />
-            <attr id="MINDRESIST" value="19" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="6" dmg="1W6+2" spd="7" ini="8" >
-                <features>
-                    <feature type="CRITICAL" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="4" />
-            <skillval skill="athletics" val="12" />
-            <skillval skill="determination" val="9" />
-            <skillval skill="stealth" val="10" >
-                <masterref ref="stealth/creeper" />"
-            </skillval>
-            <skillval skill="perception" val="10" />
-            <skillval skill="endurance" val="11" />
-        </skillvals>
-        <spellvals>
-        </spellvals>
-        <features>
-                <creaturefeature type="IMMUNE_TORPIDITY" />
-                <creaturefeature type="RESIST_EXHAUSTION" level="1" />
-                <creaturefeature type="immune_fear" />
-                <creaturefeature type="golem" level="3" />
-                <creaturefeature type="construct" />
-                <creaturefeature type="pacifist" />
-                <creaturefeature type="RESIST_PAIN" />
-                <creaturefeature type="WEAK" />
-        </features>
-    </creature>
-
-<!-- Metallene Kutsche -->
-    <creature id="MetalCarriage" lvl1="" lvl2="">
-        <creaturetypes>
-            <creaturetype type="CONSTRUCT" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="2" />
-            <attr id="AGILITY" value="3" />
-            <attr id="INTUITION" value="2" />
-            <attr id="CONSTITUTION" value="4" />
-            <attr id="MYSTIC" value="0" />
-            <attr id="STRENGTH" value="6" />
-            <attr id="MIND" value="1" />
-            <attr id="WILLPOWER" value="1" />
-            <attr id="SIZE" value="6" />
-            <attr id="SPEED" value="9" />
-            <attr id="LIFE" value="11" />
-            <attr id="FOCUS" value="0" />
-            <attr id="DEFENSE" value="19" />
-            <attr id="DAMAGE_REDUCTION" value="2" />
-            <attr id="BODYRESIST" value="21" />
-            <attr id="MINDRESIST" value="17" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="9" dmg="2W6+3" spd="10" ini="8" >
-                <features>
-                    <feature type="PENETRATING" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="7" />
-            <skillval skill="athletics" val="17" />
-            <skillval skill="determination" val="8" />
-            <skillval skill="stealth" val="7" />
-            <skillval skill="hunting" val="10" />
-            <skillval skill="perception" val="11" />
-            <skillval skill="endurance" val="15" />
-        </skillvals>
-        <spellvals>
-        </spellvals>
-        <features>
-                <creaturefeature type="IMMUNE_TORPIDITY" />
-                <creaturefeature type="RESIST_EXHAUSTION" level="1" />
-                <creaturefeature type="immune_fear" />
-                <creaturefeature type="golem" level="4" />
-                <creaturefeature type="pacifist" />
-                <creaturefeature type="RESIST_PAIN" />
-        </features>
-    </creature>
-
-<!-- Gruftkatze -->
-    <creature id="TombCat" lvl1="0" lvl2="0">
-        <creaturetypes>
-            <creaturetype type="UNDEAD" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="2" />
-            <attr id="AGILITY" value="3" />
-            <attr id="INTUITION" value="3" />
-            <attr id="CONSTITUTION" value="1" />
-            <attr id="MYSTIC" value="0" />
-            <attr id="STRENGTH" value="1" />
-            <attr id="MIND" value="0" />
-            <attr id="WILLPOWER" value="2" />
-            <attr id="SIZE" value="2" />
-            <attr id="SPEED" value="7" />
-            <attr id="LIFE" value="3" />
-            <attr id="FOCUS" value="4" />
-            <attr id="DEFENSE" value="18" />
-            <attr id="DAMAGE_REDUCTION" value="0" />
-            <attr id="BODYRESIST" value="15" />
-            <attr id="MINDRESIST" value="14" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="7" dmg="1W6" spd="6" ini="7" >
-                <features>
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="8" />
-            <skillval skill="athletics" val="10" />
-            <skillval skill="determination" val="5" />
-            <skillval skill="stealth" val="12" >
-                <masterref ref="stealth/creeper" />"
-            </skillval>
-            <skillval skill="perception" val="7" />
-            <skillval skill="endurance" val="4" />
-        </skillvals>
-        <spellvals>
-        </spellvals>
-        <features>
-                <creaturefeature type="nightvision" />
-                <creaturefeature type="RESIST_EXHAUSTION" level="2" />
-                <creaturefeature type="WEAK" />
-                <creaturefeature type="vulnurable_damage" damage="LIGHT" />
-        </features>
-    </creature>
-
-<!-- Hüter -->
-<!-- Das Element müsste mehrfach verteilt werden - ein Zauber Grad 0 freiwählbar --> 
-    <creature id="Keeper" lvl1="0" lvl2="0">
-        <creaturetypes>
-            <creaturetype type="FAIRY" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="4" />
-            <attr id="AGILITY" value="3" />
-            <attr id="INTUITION" value="3" />
-            <attr id="CONSTITUTION" value="1" />
-            <attr id="MYSTIC" value="3" />
-            <attr id="STRENGTH" value="1" />
-            <attr id="MIND" value="2" />
-            <attr id="WILLPOWER" value="3" />
-            <attr id="SIZE" value="2" />
-            <attr id="SPEED" value="10" />
-            <attr id="LIFE" value="3" />
-            <attr id="FOCUS" value="17" />
-            <attr id="DEFENSE" value="17" />
-            <attr id="DAMAGE_REDUCTION" value="4" />
-            <attr id="BODYRESIST" value="14" />
-            <attr id="MINDRESIST" value="16" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="6" dmg="1W6-1" spd="6" ini="4" >
-                <features>
-                    <feature type="BLUNT" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="6" />
-            <skillval skill="athletics" val="4" />
-            <skillval skill="determination" val="11" />
-            <skillval skill="stealth" val="7" />
-            <skillval skill="perception" val="9" />
-            <skillval skill="endurance" val="6" />
-        </skillvals>
-        <spellvals>
-        </spellvals>
-        <features>
-                <creaturefeature type="summonable_creature" level="1" />
-                <creaturefeature type="FAIRYORIGIN" />
-                <creaturefeature type="FLYING" />
-                <creaturefeature type="DISEMBODIED" />
-                <creaturefeature type="RESIST_PAIN" />
-                <creaturefeature type="WEAK" />
-        </features>
-    </creature>
-
-<!-- Knochenschänder -->
-    <creature id="BoneCrusher" lvl1="3" lvl2="2">
-        <creaturetypes>
-            <creaturetype type="UNDEAD" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="0" />
-            <attr id="AGILITY" value="3" />
-            <attr id="INTUITION" value="3" />
-            <attr id="CONSTITUTION" value="7" />
-            <attr id="MYSTIC" value="0" />
-            <attr id="STRENGTH" value="8" />
-            <attr id="MIND" value="0" />
-            <attr id="WILLPOWER" value="5" />
-            <attr id="SIZE" value="6" />
-            <attr id="SPEED" value="6" />
-            <attr id="LIFE" value="12" />
-            <attr id="FOCUS" value="10" />
-            <attr id="DEFENSE" value="25" />
-            <attr id="DAMAGE_REDUCTION" value="5" />
-            <attr id="BODYRESIST" value="25" />
-            <attr id="MINDRESIST" value="23" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="17" dmg="2W6+6" spd="11" ini="7" >
-                <features>
-                    <feature type="CRITICAL" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" >
-                <masterref ref="melee/push" />"
-                <masterref ref="melee/sweepingblow" />"
-                <masterref ref="melee/defender" />"
-            </skillval>
-            <skillval skill="acrobatics" val="10" />
-            <skillval skill="athletics" val="15" />
-            <skillval skill="determination" val="12" />
-            <skillval skill="stealth" val="5" />
-            <skillval skill="perception" val="8" />
-            <skillval skill="endurance" val="15" />
-        </skillvals>
-        <spellvals>
-        </spellvals>
-        <features>
-                <creaturefeature type="LOWLIGHT" />
-                <creaturefeature type="RESIST_EXHAUSTION" level="4" />
-                <creaturefeature type="IMMUNE_POISON" />
-                <creaturefeature type="IMMUNE_PAIN" />
-                <creaturefeature type="UNDEAD" />
-                <creaturefeature type="vulnurable_damage" damage="LIGHT" />
-        </features>
-    </creature>
-
-<!-- Kristallwandler -->
-    <creature id="CrystalShifter" lvl1="1" lvl2="0">
-        <creaturetypes>
-            <creaturetype type="FAIRY" />
-            <creaturetype type="STONECREATURE" />
-            <creaturetype type="LIGHT_CREATURE" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="4" />
-            <attr id="AGILITY" value="3" />
-            <attr id="INTUITION" value="2" />
-            <attr id="CONSTITUTION" value="4" />
-            <attr id="MYSTIC" value="2" />
-            <attr id="STRENGTH" value="4" />
-            <attr id="MIND" value="2" />
-            <attr id="WILLPOWER" value="3" />
-            <attr id="SIZE" value="3" />
-            <attr id="SPEED" value="6" />
-            <attr id="LIFE" value="8" />
-            <attr id="FOCUS" value="15" />
-            <attr id="DEFENSE" value="19" />
-            <attr id="DAMAGE_REDUCTION" value="3" />
-            <attr id="BODYRESIST" value="22" />
-            <attr id="MINDRESIST" value="17" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="11" dmg="2W6+1" spd="11" ini="8" >
-                <features>
-                    <feature type="HEAVY" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" >
-                <masterref ref="melee/knock" />"
-            </skillval>
-            <skillval skill="acrobatics" val="7" />
-            <skillval skill="athletics" val="12" />
-            <skillval skill="determination" val="9" />
-            <skillval skill="stealth" val="5" />
-            <skillval skill="perception" val="10" />
-            <skillval skill="endurance" val="13" />
-            <skillval skill="stonemagic" val="9" />
-            <skillval skill="lightmagic" val="9" />
-        </skillvals>
-        <spellvals>
-            <spellval school="stonemagic" spell="hardened_skin" />
-            <spellval school="stonemagic" spell="blazingbarrier" />
-        </spellvals>
-        <features>
-                <creaturefeature type="summonable_creature" level="6" />
-                <creaturefeature type="FAIRYORIGIN" />
-                <creaturefeature type="WEAK" />
-                <creaturefeature type="vulnurable_damage" damage="SHADOW" />
-        </features>
-    </creature>
-
-<!-- Magmaläufer -->
-    <creature id="MagmaWalker" lvl1="2" lvl2="1">
-        <creaturetypes>
-            <creaturetype type="FAIRY" />
-            <creaturetype type="STONECREATURE" />
-            <creaturetype type="FIRECREATURE" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="3" />
-            <attr id="AGILITY" value="4" />
-            <attr id="INTUITION" value="2" />
-            <attr id="CONSTITUTION" value="5" />
-            <attr id="MYSTIC" value="2" />
-            <attr id="STRENGTH" value="3" />
-            <attr id="MIND" value="2" />
-            <attr id="WILLPOWER" value="3" />
-            <attr id="SIZE" value="4" />
-            <attr id="SPEED" value="13" />
-            <attr id="LIFE" value="8" />
-            <attr id="FOCUS" value="15" />
-            <attr id="DEFENSE" value="22" />
-            <attr id="DAMAGE_REDUCTION" value="3" />
-            <attr id="BODYRESIST" value="24" />
-            <attr id="MINDRESIST" value="20" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="15" dmg="1W6+3" spd="8" ini="8" >
-                <features>
-                    <feature type="HEAVY" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" >
-                <masterref ref="melee/sweepingblow" />"
-                <masterref ref="melee/knock" />"
-            </skillval>
-            <skillval skill="acrobatics" val="7" />
-            <skillval skill="athletics" val="15" />
-            <skillval skill="determination" val="10" />
-            <skillval skill="stealth" val="6" />
-            <skillval skill="perception" val="10" />
-            <skillval skill="endurance" val="13" />
-            <skillval skill="stonemagic" val="13" />
-            <skillval skill="firemagic" val="11" >
-                <masterref ref="firemagic/heat_aura" />"
-            </skillval>
-        </skillvals>
-        <spellvals>
-            <spellval school="stonemagic" spell="steady" />
-            <spellval school="stonemagic" spell="sense_tremors" />
-            <spellval school="stonemagic" spell="controlfire" />
-        </spellvals>
-        <features>
-                <creaturefeature type="summonable_creature" level="8" />
-                <creaturefeature type="FAIRYORIGIN" />
-                <creaturefeature type="RESIST_HEAT" level="4" />
-        </features>
-    </creature>
-
-<!-- Schwacher Naturgeister -->
-    <creature id="WeakNatureSpirits" lvl1="0" lvl2="0">
-        <creaturetypes>
-            <creaturetype type="GHOST" />
-            <creaturetype type="NATURECREATURE" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="3" />
-            <attr id="AGILITY" value="2" />
-            <attr id="INTUITION" value="3" />
-            <attr id="CONSTITUTION" value="2" />
-            <attr id="MYSTIC" value="2" />
-            <attr id="STRENGTH" value="2" />
-            <attr id="MIND" value="2" />
-            <attr id="WILLPOWER" value="2" />
-            <attr id="SIZE" value="3" />
-            <attr id="SPEED" value="8" />
-            <attr id="LIFE" value="5" />
-            <attr id="FOCUS" value="13" />
-            <attr id="DEFENSE" value="18" />
-            <attr id="DAMAGE_REDUCTION" value="3" />
-            <attr id="BODYRESIST" value="14" />
-            <attr id="MINDRESIST" value="18" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="8" dmg="1W6" spd="6" ini="7" >
-                <features>
-                    <feature type="BLUNT" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="6" />
-            <skillval skill="athletics" val="8" />
-            <skillval skill="determination" val="10" />
-            <skillval skill="stealth" val="9" />
-            <skillval skill="survival" val="11" >
-            </skillval>
-            <skillval skill="perception" val="9" />
-            <skillval skill="endurance" val="6" />
-            <skillval skill="naturemagic" val="8" />
-        </skillvals>
-        <spellvals>
-            <spellval school="naturemagic" spell="barkskin" />
-            <spellval school="naturemagic" spell="growth" />
-        </spellvals>
-        <features>
-                <creaturefeature type="summonable_creature" level="2" />
-                <creaturefeature type="IMMUNE_TORPIDITY" />
-                <creaturefeature type="LOWLIGHT" />
-                <creaturefeature type="GHOST" />
-                <creaturefeature type="WEAK" />
-        </features>
-    </creature>
-
-<!-- Mittlerer Naturgeist -->
-    <creature id="MediumNatureSpirit" lvl1="3" lvl2="1">
-        <creaturetypes>
-            <creaturetype type="GHOST" />
-            <creaturetype type="NATURECREATURE" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="5" />
-            <attr id="AGILITY" value="3" />
-            <attr id="INTUITION" value="3" />
-            <attr id="CONSTITUTION" value="3" />
-            <attr id="MYSTIC" value="3" />
-            <attr id="STRENGTH" value="2" />
-            <attr id="MIND" value="2" />
-            <attr id="WILLPOWER" value="3" />
-            <attr id="SIZE" value="5" />
-            <attr id="SPEED" value="9" />
-            <attr id="LIFE" value="8" />
-            <attr id="FOCUS" value="17" />
-            <attr id="DEFENSE" value="24" />
-            <attr id="DAMAGE_REDUCTION" value="3" />
-            <attr id="BODYRESIST" value="23" />
-            <attr id="MINDRESIST" value="22" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="16" dmg="1W6+2" spd="8" ini="7" >
-                <features>
-                    <feature type="PIERCING" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" >
-            </skillval>
-            <skillval skill="acrobatics" val="13" />
-            <skillval skill="athletics" val="13" />
-            <skillval skill="determination" val="14" />
-            <skillval skill="stealth" val="10" />
-            <skillval skill="hunting" val="11" />
-            <skillval skill="survival" val="15" >
-                <masterref ref="survival/cleverleader" />"
-            </skillval>
-            <skillval skill="perception" val="11" />
-            <skillval skill="endurance" val="10" />
-            <skillval skill="naturemagic" val="14" >
-                <masterref ref="naturemagic/naturesong" />"
-            </skillval>
-        </skillvals>
-        <spellvals>
-            <spellval school="naturemagic" spell="barkskin" />
-            <spellval school="naturemagic" spell="growth" />
-            <spellval school="naturemagic" spell="tendrils" />
-            <spellval school="naturemagic" spell="controlanimal" />
-        </spellvals>
-        <features>
-                <creaturefeature type="summonable_creature" level="5" />
-                <creaturefeature type="IMMUNE_TORPIDITY" />
-                <creaturefeature type="nightvision" />
-                <creaturefeature type="GHOST" />
-                <creaturefeature type="RESIST_PAIN" />
-                <creaturefeature type="uncontrollable" />
-        </features>
-    </creature>
-
-<!-- Rankenbold -->
-    <creature id="Tendril" lvl1="0" lvl2="0">
-        <creaturetypes>
-            <creaturetype type="FAIRY" />
-            <creaturetype type="NATURECREATURE" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="3" />
-            <attr id="AGILITY" value="2" />
-            <attr id="INTUITION" value="2" />
-            <attr id="CONSTITUTION" value="1" />
-            <attr id="MYSTIC" value="1" />
-            <attr id="STRENGTH" value="0" />
-            <attr id="MIND" value="1" />
-            <attr id="WILLPOWER" value="1" />
-            <attr id="SIZE" value="3" />
-            <attr id="SPEED" value="6" />
-            <attr id="LIFE" value="4" />
-            <attr id="FOCUS" value="9" />
-            <attr id="DEFENSE" value="18" />
-            <attr id="DAMAGE_REDUCTION" value="2" />
-            <attr id="BODYRESIST" value="17" />
-            <attr id="MINDRESIST" value="19" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="7" dmg="1W6" spd="6" ini="8" >
-                <features>
-                    <feature type="BLUNT" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="3" />
-            <skillval skill="athletics" val="6" />
-            <skillval skill="determination" val="7" />
-            <skillval skill="stealth" val="9" />
-            <skillval skill="perception" val="6" />
-            <skillval skill="endurance" val="3" />
-            <skillval skill="naturemagic" val="10" />
-        </skillvals>
-        <spellvals>
-            <spellval school="naturemagic" spell="growth" />
-        </spellvals>
-        <features>
-                <creaturefeature type="summonable_creature" level="1" />
-                <creaturefeature type="FAIRYORIGIN" />
-                <creaturefeature type="COWARD" />
-                <creaturefeature type="CREATURE" level="2" />
-                <creaturefeature type="FRAGILE" />
-        </features>
-    </creature>
-
-<!-- Schattenschwinge -->
-    <creature id="Shadowwing" lvl1="0" lvl2="0">
-        <creaturetypes>
-            <creaturetype type="FAIRY" />
-            <creaturetype type="SHADOWCREATURE" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="2" />
-            <attr id="AGILITY" value="3" />
-            <attr id="INTUITION" value="4" />
-            <attr id="CONSTITUTION" value="1" />
-            <attr id="MYSTIC" value="2" />
-            <attr id="STRENGTH" value="1" />
-            <attr id="MIND" value="3" />
-            <attr id="WILLPOWER" value="1" />
-            <attr id="SIZE" value="2" />
-            <attr id="SPEED" value="4/10" />
-            <attr id="LIFE" value="3" />
-            <attr id="FOCUS" value="11" />
-            <attr id="DEFENSE" value="20" />
-            <attr id="DAMAGE_REDUCTION" value="1" />
-            <attr id="BODYRESIST" value="16" />
-            <attr id="MINDRESIST" value="18" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="4" dmg="1W6" spd="7" ini="6" >
-                <features>
-                    <feature type="BLUNT" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="9" />
-            <skillval skill="athletics" val="6" />
-            <skillval skill="determination" val="4" />
-            <skillval skill="dexterity" val="10" />
-            <skillval skill="stealth" val="12" />
-            <skillval skill="perception" val="10" />
-            <skillval skill="endurance" val="5" />
-            <skillval skill="shadowmagic" val="12" >
-                <masterref ref="shadowmagic/darknessview" />"
-            </skillval>
-        </skillvals>
-        <spellvals>
-            <spellval school="shadowmagic" spell="shadowveil" />
-            <spellval school="shadowmagic" spell="darkness" />
-            <spellval school="shadowmagic" spell="veil_object" />
-            <spellval school="shadowmagic" spell="sticky_shadows" />
-        </spellvals>
-        <features>
-                <creaturefeature type="summonable_creature" level="5" />
-                <creaturefeature type="LOWLIGHT" />
-                <creaturefeature type="FAIRYORIGIN" />
-                <creaturefeature type="FLYING" />
-                <creaturefeature type="CREATURE" level="6" />
-                <creaturefeature type="resist_damage" damage="SHADOW" level="4" />
-                <creaturefeature type="WEAK" />
-                <creaturefeature type="TACTICIAN" />
-        </features>
-    </creature>
-
-<!-- Sonnenvogel (Licht) -->
-    <creature id="SunbirdLight" lvl1="2" lvl2="1">
-        <creaturetypes>
-            <creaturetype type="FAIRY" />
-            <creaturetype type="LIGHT_CREATURE" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="4" />
-            <attr id="AGILITY" value="3" />
-            <attr id="INTUITION" value="2" />
-            <attr id="CONSTITUTION" value="2" />
-            <attr id="MYSTIC" value="2" />
-            <attr id="STRENGTH" value="2" />
-            <attr id="MIND" value="2" />
-            <attr id="WILLPOWER" value="3" />
-            <attr id="SIZE" value="3" />
-            <attr id="SPEED" value="2/15" />
-            <attr id="LIFE" value="5" />
-            <attr id="FOCUS" value="15" />
-            <attr id="DEFENSE" value="20" />
-            <attr id="DAMAGE_REDUCTION" value="1" />
-            <attr id="BODYRESIST" value="18" />
-            <attr id="MINDRESIST" value="18" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="11" dmg="1W6+2" spd="7" ini="5" >
-                <features>
-                    <feature type="DISTRACTING" />
-                    <feature type="PENETRATING" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" >
-                <masterref ref="melee/rush" />"
-            </skillval>
-            <skillval skill="acrobatics" val="11" />
-            <skillval skill="athletics" val="8" />
-            <skillval skill="determination" val="13" />
-            <skillval skill="stealth" val="5" />
-            <skillval skill="perception" val="10" />
-            <skillval skill="endurance" val="9" />
-            <skillval skill="lightmagic" val="12" >
-                <masterref ref="lightmagic/luminance" />"
-            </skillval>
-        </skillvals>
-        <spellvals>
-            <spellval school="lightmagic" spell="light" />
-            <spellval school="lightmagic" spell="glare" />
-            <spellval school="lightmagic" spell="blazingbarrier" />
-            <spellval school="lightmagic" spell="undeadprotection" />
-            <spellval school="lightmagic" spell="turnundead" />
-        </spellvals>
-        <features>
-                <creaturefeature type="summonable_creature" level="7" />
-                <creaturefeature type="LOWLIGHT" />
-                <creaturefeature type="FAIRYORIGIN" />
-                <creaturefeature type="FLYING" />
-                <creaturefeature type="resist_damage" damage="LIGHT" level="8" />
-                <creaturefeature type="RESIST_PAIN" />
-                <creaturefeature type="vulnurable_damage" damage="SHADOW" />
-        </features>
-    </creature>
-
-<!-- Spukschatten -->
-    <creature id="HauntedShadow" lvl1="0" lvl2="0">
-        <creaturetypes>
-            <creaturetype type="GHOST" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="1" />
-            <attr id="AGILITY" value="1" />
-            <attr id="INTUITION" value="2" />
-            <attr id="CONSTITUTION" value="1" />
-            <attr id="MYSTIC" value="2" />
-            <attr id="STRENGTH" value="1" />
-            <attr id="MIND" value="1" />
-            <attr id="WILLPOWER" value="2" />
-            <attr id="SIZE" value="3" />
-            <attr id="SPEED" value="2/8" />
-            <attr id="LIFE" value="4" />
-            <attr id="FOCUS" value="15" />
-            <attr id="DEFENSE" value="16" />
-            <attr id="DAMAGE_REDUCTION" value="4" />
-            <attr id="BODYRESIST" value="13" />
-            <attr id="MINDRESIST" value="16" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="4" dmg="1W6" spd="9" ini="8" >
-                <features>
-                    <feature type="BLUNT" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="2" />
-            <skillval skill="athletics" val="2" />
-            <skillval skill="determination" val="6" />
-            <skillval skill="stealth" val="9" />
-            <skillval skill="perception" val="8" />
-            <skillval skill="endurance" val="4" />
-            <skillval skill="motionmagic" val="8" />
-            <skillval skill="illusionmagic" val="10" />
-        </skillvals>
-        <spellvals>
-            <spellval school="motionmagic" spell="shove" />
-            <spellval school="motionmagic" spell="dancinglights" />
-        </spellvals>
-        <features>
-                <creaturefeature type="summonable_creature" level="4" />
-                <creaturefeature type="IMMUNE_TORPIDITY" />
-                <creaturefeature type="LOWLIGHT" />
-                <creaturefeature type="COWARD" />
-                <creaturefeature type="IMMUNE_POISON" />
-                <creaturefeature type="GHOST" />
-                <creaturefeature type="RESIST_HEAT" level="2" />
-                <creaturefeature type="RESIST_COLD" level="2" />
-                <creaturefeature type="DISEMBODIED" />
-                <creaturefeature type="light_sensitive" level="1" />
-                <creaturefeature type="RESIST_PAIN" />
-                <creaturefeature type="WEAK" />
-                <creaturefeature type="veiled" />
-        </features>
-    </creature>
-
-<!-- Sturmtänzer -->
-    <creature id="StormDancer" lvl1="2" lvl2="1">
-        <creaturetypes>
-            <creaturetype type="FAIRY" />
-            <creaturetype type="WATERCREATURE" />
-            <creaturetype type="WINDCREATURE" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="2" />
-            <attr id="AGILITY" value="6" />
-            <attr id="INTUITION" value="4" />
-            <attr id="CONSTITUTION" value="2" />
-            <attr id="MYSTIC" value="2" />
-            <attr id="STRENGTH" value="2" />
-            <attr id="MIND" value="2" />
-            <attr id="WILLPOWER" value="3" />
-            <attr id="SIZE" value="4" />
-            <attr id="SPEED" value="2/12/12" />
-            <attr id="LIFE" value="6" />
-            <attr id="FOCUS" value="15" />
-            <attr id="DEFENSE" value="19" />
-            <attr id="DAMAGE_REDUCTION" value="1" />
-            <attr id="BODYRESIST" value="21" />
-            <attr id="MINDRESIST" value="16" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="12" dmg="1W6+2" spd="7" ini="6" >
-                <features>
-                    <feature type="DISTRACTING" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" >
-                <masterref ref="melee/knock" />"
-            </skillval>
-            <skillval skill="acrobatics" val="13" />
-            <skillval skill="athletics" val="10" />
-            <skillval skill="determination" val="10" />
-            <skillval skill="stealth" val="12" />
-            <skillval skill="perception" val="10" />
-            <skillval skill="endurance" val="10" />
-            <skillval skill="watermagic" val="14" />
-            <skillval skill="windmagic" val="12" />
-        </skillvals>
-        <spellvals>
-            <spellval school="watermagic" spell="cleansewater" />
-            <spellval school="watermagic" spell="disperse_fog" />
-        </spellvals>
-        <features>
-                <creaturefeature type="amphibic" />
-                <creaturefeature type="summonable_creature" level="6" />
-                <creaturefeature type="FAIRYORIGIN" />
-                <creaturefeature type="FLYING" />
-        </features>
-    </creature>
-
-<!-- Wimmelnder Schrecken -->
-    <creature id="TeemingTerror" lvl1="0" lvl2="0">
-        <creaturetypes>
-            <creaturetype type="UNDEAD" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="0" />
-            <attr id="AGILITY" value="2" />
-            <attr id="INTUITION" value="1" />
-            <attr id="CONSTITUTION" value="1" />
-            <attr id="MYSTIC" value="0" />
-            <attr id="STRENGTH" value="1" />
-            <attr id="MIND" value="0" />
-            <attr id="WILLPOWER" value="2" />
-            <attr id="SIZE" value="3" />
-            <attr id="SPEED" value="5" />
-            <attr id="LIFE" value="4" />
-            <attr id="FOCUS" value="4" />
-            <attr id="DEFENSE" value="16" />
-            <attr id="DAMAGE_REDUCTION" value="0" />
-            <attr id="BODYRESIST" value="13" />
-            <attr id="MINDRESIST" value="18" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="5" dmg="1W6" spd="6" ini="6" >
-                <features>
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="5" />
-            <skillval skill="athletics" val="6" />
-            <skillval skill="determination" val="2" />
-            <skillval skill="stealth" val="8" />
-            <skillval skill="perception" val="3" />
-            <skillval skill="endurance" val="3" />
-        </skillvals>
-        <spellvals>
-        </spellvals>
-        <features>
-                <creaturefeature type="IMMUNE_TORPIDITY" />
-                <creaturefeature type="nightvision" />
-                <creaturefeature type="RESIST_EXHAUSTION" level="2" />
-                <creaturefeature type="IMMUNE_POISON" />
-                <creaturefeature type="WEAK" />
-                <creaturefeature type="UNDEAD" />
-                <creaturefeature type="vulnurable_damage" damage="LIGHT" />
-        </features>
-    </creature>
-
-<!-- Windling -->
-    <creature id="Diaper" lvl1="0" lvl2="0">
-        <creaturetypes>
-            <creaturetype type="FAIRY" />
-            <creaturetype type="WINDCREATURE" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="2" />
-            <attr id="AGILITY" value="5" />
-            <attr id="INTUITION" value="2" />
-            <attr id="CONSTITUTION" value="1" />
-            <attr id="MYSTIC" value="1" />
-            <attr id="STRENGTH" value="0" />
-            <attr id="MIND" value="1" />
-            <attr id="WILLPOWER" value="1" />
-            <attr id="SIZE" value="3" />
-            <attr id="SPEED" value="2/12" />
-            <attr id="LIFE" value="4" />
-            <attr id="FOCUS" value="9" />
-            <attr id="DEFENSE" value="17" />
-            <attr id="DAMAGE_REDUCTION" value="0" />
-            <attr id="BODYRESIST" value="15" />
-            <attr id="MINDRESIST" value="18" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="7" dmg="1W6" spd="6" ini="8" >
-                <features>
-                    <feature type="BLUNT" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="10" />
-            <skillval skill="athletics" val="5" />
-            <skillval skill="determination" val="5" />
-            <skillval skill="stealth" val="11" />
-            <skillval skill="perception" val="6" />
-            <skillval skill="endurance" val="2" />
-            <skillval skill="windmagic" val="6" />
-        </skillvals>
-        <spellvals>
-            <spellval school="windmagic" spell="shove" />
-            <spellval school="windmagic" spell="lightweight" />
-        </spellvals>
-        <features>
-                <creaturefeature type="summonable_creature" level="1" />
-                <creaturefeature type="FAIRYORIGIN" />
-                <creaturefeature type="COWARD" />
-                <creaturefeature type="FLYING" />
-                <creaturefeature type="CREATURE" level="3" />
-                <creaturefeature type="vulnurable_damage" damage="STONE" />
-                <creaturefeature type="FRAGILE" />
-        </features>
-    </creature>
-
-<!-- Wogling -->
-    <creature id="Wogling" lvl1="0" lvl2="0">
-        <creaturetypes>
-            <creaturetype type="FAIRY" />
-            <creaturetype type="WATERCREATURE" />
-        </creaturetypes>
-        <attributes>
-            <attr id="CHARISMA" value="2" />
-            <attr id="AGILITY" value="3" />
-            <attr id="INTUITION" value="4" />
-            <attr id="CONSTITUTION" value="1" />
-            <attr id="MYSTIC" value="1" />
-            <attr id="STRENGTH" value="2" />
-            <attr id="MIND" value="2" />
-            <attr id="WILLPOWER" value="1" />
-            <attr id="SIZE" value="3" />
-            <attr id="SPEED" value="2/12" />
-            <attr id="LIFE" value="4" />
-            <attr id="FOCUS" value="9" />
-            <attr id="DEFENSE" value="16" />
-            <attr id="DAMAGE_REDUCTION" value="0" />
-            <attr id="BODYRESIST" value="13" />
-            <attr id="MINDRESIST" value="16" />
-        </attributes>
-        <weapons>
-            <cweapon id="body" skill ="melee" val="4" dmg="1W6" spd="6" ini="6" >
-                <features>
-                    <feature type="BLUNT" />
-                </features>
-            </cweapon>
-        </weapons>
-        <skillvals>
-            <skillval skill="melee" val="0" />
-            <skillval skill="acrobatics" val="7" />
-            <skillval skill="athletics" val="4" />
-            <skillval skill="determination" val="5" />
-            <skillval skill="stealth" val="12" />
-            <skillval skill="perception" val="8" />
-            <skillval skill="endurance" val="2" />
-            <skillval skill="watermagic" val="8" />
-        </skillvals>
-        <spellvals>
-            <spellval school="watermagic" spell="slippery" />
-            <spellval school="watermagic" spell="eroding_acid" />
-        </spellvals>
-        <features>
-                <creaturefeature type="amphibic" />
-                <creaturefeature type="summonable_creature" level="1" />
-                <creaturefeature type="FAIRYORIGIN" />
-                <creaturefeature type="COWARD" />
-                <creaturefeature type="CREATURE" level="2" />
-                <creaturefeature type="vulnurable_damage" damage="FIRE" />
-                <creaturefeature type="FRAGILE" />
-        </features>
-    </creature>
-
-</creatures>
+    <education id="summoner">
+        <modifications>
+            <selmod num="1">
+                <powermod ref="friendearth"/>
+                <powermod ref="friendfire"/>
+                <powermod ref="friendghost" /><powermod ref="friendlight" /><powermod ref="friendnature" /><powermod ref="friendshadow" /><powermod ref="friendundead" /><powermod ref="friendwater" /><powermod ref="friendair"/>
+                
+                
+                
+                
+            	
+                
+            </selmod>
+            <powermod ref="animalfamiliar"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="leadership" value="2"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="empathy" value="2"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="3"/>
+            <selmod num="1">
+                <skillmod ref="streetlore" value="1" />
+                <skillmod ref="survival" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="2"/>
+            <selmod values="4 3 3 2 2">
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="lightmagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="shadowmagic"/>
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="watermagic"/>
+                <skillmod ref="windmagic"/>
+            </selmod>
+                        
+            <mastermod skill="arcanelore"/>
+            <mastermod skill="arcanelore"/>
+        </modifications>
+    </education>
+ 
+    <education id="cryptmaster" variantof="summoner">
+        <modifications>
+            <reqmod type="culture" ref="patalis"/>
+            <powermod ref="friendghost"/>
+            <powermod ref="animalfamiliar"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="empathy" value="3"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="3"/>
+            <skillmod ref="countrylore" value="2"/>
+            <selmod num="1">
+                <skillmod ref="countrylore" value="1" />
+                <skillmod ref="survival" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="2"/>
+            <skillmod ref="deathmagic" value="4"/>
+            <selmod values="3 3 2 1">
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="lightmagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="shadowmagic"/>
+                <skillmod ref="watermagic"/>
+                <skillmod ref="windmagic"/>
+            </selmod>
+                        
+            <mastermod ref="arcanelore/helpful_beings"/>
+            <mastermod ref="deathmagic/ghostexpert"/>
+        </modifications>
+    </education>
+ 
+    <education id="snakecharmer" variantof="summoner">
+        <modifications>
+            <reqmod type="culture" ref="gulong keshubim"/>
+            <selmod num="1">
+                <powermod ref="friendearth"/>
+                <powermod ref="friendfire"/>
+                <powermod ref="friendair"/>
+                <powermod ref="friendwater"/>
+                <powermod ref="friendghost"/>
+                <powermod ref="friendgodservant"/>
+                <powermod ref="friendlight"/>
+                <powermod ref="friendshadow"/>
+                <powermod ref="friendundead"/>
+            </selmod>
+            <powermod ref="animalfamiliar"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="leadership" value="1"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="empathy" value="1"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="3"/>
+            <skillmod ref="nature" value="1"/>
+            <selmod num="1">
+                <skillmod ref="countrylore" value="1" />
+                <skillmod ref="survival" value="1"/>
+            </selmod>
+            <skillmod ref="survival" value="1"/>
+            <skillmod ref="nature" value="2"/>
+            <selmod values="4 3 3 2 2">
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="shadowmagic"/>
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="watermagic"/>
+                <skillmod ref="windmagic"/>
+            </selmod>
+                        
+            <mastermod skill="arcanelore"/>
+            <mastermod skill="arcanelore"/>
+        </modifications>
+    </education>
+ 
+    <education id="titanchild" variantof="summoner">
+        <modifications>
+            <reqmod type="culture" ref="strominseln"/>
+            <selmod num="1">
+                <powermod ref="friendearth"/>
+                <powermod ref="friendfire"/>
+                <powermod ref="friendair"/>
+                <powermod ref="friendwater"/>
+                <powermod ref="friendghost"/>
+                <powermod ref="friendgodservant"/>
+                <powermod ref="friendlight"/>
+                <powermod ref="friendshadow"/>
+                <powermod ref="friendundead"/>
+            </selmod>
+            <powermod ref="animalfamiliar"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <selmod num="1">
+                <skillmod ref="athletics" value="2" />
+                <skillmod ref="endurance" value="2"/>
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="swim" value="2" />
+                <skillmod ref="survival" value="2"/>
+            </selmod>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="empathy" value="1"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="history" value="3"/>
+            <selmod num="1">
+                <skillmod ref="countrylore" value="1" />
+                <skillmod ref="survival" value="1"/>
+            </selmod>
+            <skillmod ref="nature" value="3"/>
+            <selmod values="4 3 3 2 2">
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="windmagic"/>
+                <skillmod ref="watermagic"/>
+            </selmod>
+                        
+            <mastermod skill="arcanelore"/>
+            <mastermod skill="arcanelore"/>
+        </modifications>
+    </education>
+    
+    <education id="combatmage">
+        <modifications>
+            <powermod ref="focuspool"/>
+            
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="relic" value="1"/>
+            </selmod>
+            <selmod num="1">
+                <resourcemod ref="mentor" value="1"/>
+                <resourcemod ref="rank" value="1"/>
+            </selmod>           
+                        
+            <selmod num="1">
+                <skillmod ref="melee" value="2"/>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="chains" value="2"/>
+                <skillmod ref="blades" value="2"/>
+                <skillmod ref="longrange" value="2"/>
+                <skillmod ref="staffs" value="2"/>
+                <skillmod ref="throwing" value="2"/>
+            </selmod>
+            <skillmod ref="leadership" value="1"/>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="combatmagic" value="4"/>
+            <skillmod ref="protectionmagic" value="3"/>
+            <selmod values="3 3">
+                <skillmod ref="antimagic"/>
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="motionmagic"/>
+                <skillmod ref="insightmagic"/>
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="healmagic"/>
+                <skillmod ref="illusionmagic"/>
+                <skillmod ref="lightmagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="shadowmagic"/>
+                <skillmod ref="fatemagic"/>
+                <skillmod ref="enhancemagic"/>
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+                <skillmod ref="watermagic"/>
+                <skillmod ref="windmagic"/>
+            </selmod>
+                        
+            <mastermod ref="combatmagic/ironconcentration"/>
+            <mastermod ref="combatmagic/aimedspells"/>
+        </modifications>
+    </education>
+ 
+    <education id="castigar" variantof="combatmage">
+        <modifications>
+            <reqmod type="culture" ref="mertstaedt"/>
+            <powermod ref="focuspool"/>
+            
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="relic" value="1"/>
+            </selmod>
+            <resourcemod ref="rank" value="1"/>
+                        
+            <selmod num="1">
+                <skillmod ref="melee" value="2"/>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="chains" value="2"/>
+                <skillmod ref="blades" value="2"/>
+                <skillmod ref="longrange" value="2"/>
+                <skillmod ref="staffs" value="2"/>
+                <skillmod ref="throwing" value="2"/>
+            </selmod>
+            <skillmod ref="leadership" value="3"/>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="diplomacy" value="2"/>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="combatmagic" value="4"/>
+            <skillmod ref="protectionmagic" value="3"/>
+            <selmod values="3 3">
+                <skillmod ref="antimagic"/>
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="motionmagic"/>
+                <skillmod ref="insightmagic"/>
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="healmagic"/>
+                <skillmod ref="illusionmagic"/>
+                <skillmod ref="lightmagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="shadowmagic"/>
+                <skillmod ref="fatemagic"/>
+                <skillmod ref="enhancemagic"/>
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+                <skillmod ref="watermagic"/>
+                <skillmod ref="windmagic"/>
+            </selmod>
+                        
+            <mastermod ref="leadership/troopup"/>
+            <mastermod ref="combatmagic/aimedspells"/>
+        </modifications>
+    </education>
+ 
+    <education id="leiyu" variantof="combatmage">
+        <modifications>
+            <reqmod type="culture" ref="zhoujiang"/>
+            <powermod ref="focuspool"/>
+            
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="relic" value="1"/>
+            </selmod>
+            <resourcemod ref="mentor" value="1"/>
+            <selmod num="1">
+                <skillmod ref="melee" value="2"/>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="chains" value="2"/>
+                <skillmod ref="blades" value="2"/>
+                <skillmod ref="longrange" value="2"/>
+                <skillmod ref="staffs" value="2"/>
+                <skillmod ref="throwing" value="2"/>
+            </selmod>
+            <skillmod ref="acrobatics" value="3"/>
+            <skillmod ref="windmagic" value="4"/>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="combatmagic" value="4"/>
+            <selmod num="1">
+                <skillmod ref="antimagic" value="3"/>
+                <skillmod ref="controlmagic" value="3"/>
+                <skillmod ref="motionmagic" value="3"/>
+                <skillmod ref="insightmagic" value="3"/>
+                <skillmod ref="stonemagic" value="3"/>
+                <skillmod ref="firemagic" value="3"/>
+                <skillmod ref="healmagic" value="3"/>
+                <skillmod ref="illusionmagic" value="3"/>
+                <skillmod ref="lightmagic" value="3"/>
+                <skillmod ref="naturemagic" value="3"/>
+                <skillmod ref="shadowmagic" value="3"/>
+                <skillmod ref="fatemagic" value="3"/>
+                <skillmod ref="enhancemagic" value="3"/>
+                <skillmod ref="deathmagic" value="3"/>
+                <skillmod ref="protectionmagic" value="3"/>
+                <skillmod ref="transformationmagic" value="3"/>
+                <skillmod ref="watermagic" value="3"/>
+            </selmod>
+                        
+            <mastermod ref="windmagic/stormvoice"/>
+            <mastermod ref="combatmagic/aimedspells"/>
+        </modifications>
+    </education>
+ 
+    <education id="steelshield" variantof="combatmage">
+        <modifications>
+            <reqmod type="culture" ref="dalmreich"/>
+            <powermod ref="focuspool"/>
+            
+            <selmod num="1">
+                <resourcemod ref="reputation" value="1"/>
+                <resourcemod ref="relic" value="1"/>
+            </selmod>
+            <selmod num="1">
+                <resourcemod ref="mentor" value="1"/>
+                <resourcemod ref="rank" value="1"/>
+            </selmod>           
+                        
+            <selmod num="1">
+                <skillmod ref="melee" value="2"/>
+                <skillmod ref="slashing" value="2"/>
+                <skillmod ref="chains" value="2"/>
+                <skillmod ref="blades" value="2"/>
+                <skillmod ref="longrange" value="2"/>
+                <skillmod ref="staffs" value="2"/>
+                <skillmod ref="throwing" value="2"/>
+            </selmod>
+            <skillmod ref="leadership" value="1"/>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="3"/>
+            <skillmod ref="stealth" value="2"/>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="endurance" value="3"/>
+            <skillmod ref="combatmagic" value="4"/>
+            <skillmod ref="protectionmagic" value="4"/>
+            <selmod values="3 3">
+                <skillmod ref="antimagic"/>
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="motionmagic"/>
+                <skillmod ref="insightmagic"/>
+                <skillmod ref="stonemagic"/>
+                <skillmod ref="firemagic"/>
+                <skillmod ref="healmagic"/>
+                <skillmod ref="illusionmagic"/>
+                <skillmod ref="lightmagic"/>
+                <skillmod ref="naturemagic"/>
+                <skillmod ref="shadowmagic"/>
+                <skillmod ref="fatemagic"/>
+                <skillmod ref="enhancemagic"/>
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+                <skillmod ref="watermagic"/>
+                <skillmod ref="windmagic"/>
+            </selmod>
+                        
+            <mastermod ref="combatmagic/defensive_caster"/>
+            <mastermod ref="combatmagic/aimedspells"/>
+        </modifications>
+    </education>
+    
+    <education id="beingcreator">
+        <modifications>
+            <powermod ref="focuspool"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="alchemy" value="2"/>
+            <skillmod ref="leadership" value="1"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="diplomacy" value="2"/>
+            <selmod values="3 2 1">
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+                <skillmod ref="nature"/>
+            </selmod>
+            <skillmod ref="history" value="3"/>
+            <skillmod ref="endurance" value="2"/>
+            <selmod values="4 2">
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="antimagic" value="3"/>
+                <skillmod ref="motionmagic" value="3"/>
+                <skillmod ref="insightmagic" value="3"/>
+                <skillmod ref="stonemagic" value="3"/>
+                <skillmod ref="firemagic" value="3"/>
+                <skillmod ref="healmagic" value="3"/>
+                <skillmod ref="illusionmagic" value="3"/>
+                <skillmod ref="combatmagic" value="3"/>
+                <skillmod ref="lightmagic" value="3"/>
+                <skillmod ref="naturemagic" value="3"/>
+                <skillmod ref="shadowmagic" value="3"/>
+                <skillmod ref="fatemagic" value="3"/>
+                <skillmod ref="protectionmagic" value="3"/>
+                <skillmod ref="enhancemagic" value="3"/>
+                <skillmod ref="watermagic" value="3"/>
+                <skillmod ref="windmagic" value="3"/>
+            </selmod>
+                        
+            <selmod num="1">
+                <mastermod ref="clscraft/designer"/>
+                <mastermod ref="craftmanship/designer"/>
+                <mastermod ref="deathmagic/dancing_dead"/>
+            </selmod>
+            <selmod num="1">
+                <mastermod ref="arcanelore/spontaneous_instruction"/>
+                <mastermod ref="deathmagic/undead_classicist"/>
+            </selmod>
+        </modifications>
+    </education>
+    
+    <education id="brother_of_the_skull" variantof="beingcreator">
+        <modifications>
+            <reqmod type="culture" ref="midstad patalis"/>
+            <powermod ref="focuspool"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="alchemy" value="2"/>
+            <skillmod ref="leadership" value="2"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="diplomacy" value="1"/>
+            <selmod values="3 2 1">
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+                <skillmod ref="nature"/>
+            </selmod>
+            <skillmod ref="history" value="3"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="deathmagic" value="4"/>
+            <selmod num="1">
+                <skillmod ref="controlmagic" value="2"/>
+                <skillmod ref="transformationmagic" value="2"/>
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="antimagic" value="3"/>
+                <skillmod ref="motionmagic" value="3"/>
+                <skillmod ref="insightmagic" value="3"/>
+                <skillmod ref="stonemagic" value="3"/>
+                <skillmod ref="firemagic" value="3"/>
+                <skillmod ref="healmagic" value="3"/>
+                <skillmod ref="illusionmagic" value="3"/>
+                <skillmod ref="combatmagic" value="3"/>
+                <skillmod ref="lightmagic" value="3"/>
+                <skillmod ref="naturemagic" value="3"/>
+                <skillmod ref="shadowmagic" value="3"/>
+                <skillmod ref="fatemagic" value="3"/>
+                <skillmod ref="protectionmagic" value="3"/>
+                <skillmod ref="enhancemagic" value="3"/>
+                <skillmod ref="watermagic" value="3"/>
+                <skillmod ref="windmagic" value="3"/>
+            </selmod>
+                        
+            <mastermod ref="deathmagic/dancing_dead"/>
+            <mastermod ref="deathmagic/undead_classicist"/>
+        </modifications>
+    </education>
+    
+    <education id="formgiver" variantof="beingcreator">
+        <modifications>
+            <reqmod type="culture" ref="kungaitan"/>
+            <powermod ref="tinker"/>
+            <powermod ref="concentrated"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="alchemy" value="3"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="diplomacy" value="3"/>
+            <selmod values="3 2 1">
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+                <skillmod ref="nature"/>
+            </selmod>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="transformationmagic" value="4"/>
+            <selmod num="1">
+                <skillmod ref="controlmagic" value="2"/>
+                <skillmod ref="deathmagic" value="2"/>
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="antimagic" value="3"/>
+                <skillmod ref="motionmagic" value="3"/>
+                <skillmod ref="insightmagic" value="3"/>
+                <skillmod ref="stonemagic" value="3"/>
+                <skillmod ref="firemagic" value="3"/>
+                <skillmod ref="healmagic" value="3"/>
+                <skillmod ref="illusionmagic" value="3"/>
+                <skillmod ref="combatmagic" value="3"/>
+                <skillmod ref="lightmagic" value="3"/>
+                <skillmod ref="naturemagic" value="3"/>
+                <skillmod ref="shadowmagic" value="3"/>
+                <skillmod ref="fatemagic" value="3"/>
+                <skillmod ref="protectionmagic" value="3"/>
+                <skillmod ref="enhancemagic" value="3"/>
+                <skillmod ref="watermagic" value="3"/>
+                <skillmod ref="windmagic" value="3"/>
+            </selmod>
+                        
+            <selmod num="1">
+                <mastermod ref="clscraft/designer"/>
+                <mastermod ref="craftmanship/designer"/>
+            </selmod>
+            <mastermod ref="arcanelore/spontaneous_instruction"/>
+        </modifications>
+    </education>
+    
+    <education id="nuumian_golembuilder" variantof="beingcreator">
+        <modifications>
+            <reqmod type="culture" ref="mertstaedt"/>
+            <powermod ref="tinker"/>
+            <powermod ref="stablemagic"/>
+            
+            <resourcemod ref="creature" value="2"/>
+                        
+            <skillmod ref="alchemy" value="3"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="diplomacy" value="2"/>
+            <selmod values="3 2 1">
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+                <skillmod ref="nature"/>
+            </selmod>
+            <skillmod ref="history" value="3"/>
+            <skillmod ref="endurance" value="2"/>
+            <skillmod ref="transformationmagic" value="4"/>
+            <selmod num="1">
+                <skillmod ref="controlmagic" value="2"/>
+                <skillmod ref="deathmagic" value="2"/>
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="antimagic" value="3"/>
+                <skillmod ref="motionmagic" value="3"/>
+                <skillmod ref="insightmagic" value="3"/>
+                <skillmod ref="stonemagic" value="3"/>
+                <skillmod ref="firemagic" value="3"/>
+                <skillmod ref="healmagic" value="3"/>
+                <skillmod ref="illusionmagic" value="3"/>
+                <skillmod ref="combatmagic" value="3"/>
+                <skillmod ref="lightmagic" value="3"/>
+                <skillmod ref="naturemagic" value="3"/>
+                <skillmod ref="shadowmagic" value="3"/>
+                <skillmod ref="fatemagic" value="3"/>
+                <skillmod ref="protectionmagic" value="3"/>
+                <skillmod ref="enhancemagic" value="3"/>
+                <skillmod ref="watermagic" value="3"/>
+                <skillmod ref="windmagic" value="3"/>
+            </selmod>
+                        
+            <selmod num="1">
+                <mastermod ref="clscraft/designer"/>
+                <mastermod ref="craftmanship/designer"/>
+            </selmod>
+            <mastermod ref="arcanelore/spontaneous_instruction"/>
+        </modifications>
+    </education>
+    
+    <education id="artifactcrafter">
+        <modifications>
+            <powermod ref="tinker"/>
+            <selmod num="1">
+                <powermod ref="concentrated"/>
+                <powermod ref="literate"/>
+            </selmod>
+            
+            <selmod dist="2">
+                <resourcemod ref="relic"/>
+                <resourcemod ref="wealth"/>
+            </selmod>
+                        
+            <selmod values="3 2 1">
+                <skillmod ref="alchemy"/>
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+            </selmod>
+            <skillmod ref="arcanelore" value="3"/>
+            <selmod num="1">
+                <skillmod ref="diplomacy" value="2"/>
+                <skillmod ref="eloquence" value="2"/>
+            </selmod>
+            <skillmod ref="determination" value="2"/>
+            <selmod num="1">
+                <skillmod ref="heal" value="2"/>
+                <skillmod ref="locksntraps" value="2"/>
+            </selmod>
+            <skillmod ref="perception" value="3"/>
+            <selmod values="4 3 2">
+                <skillmod ref="antimagic" />
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="motionmagic" />
+                <skillmod ref="insightmagic" />
+                <skillmod ref="stonemagic" />
+                <skillmod ref="firemagic" />
+                <skillmod ref="healmagic" />
+                <skillmod ref="illusionmagic" />
+                <skillmod ref="combatmagic" />
+                <skillmod ref="lightmagic" />
+                <skillmod ref="naturemagic" />
+                <skillmod ref="shadowmagic" />
+                <skillmod ref="fatemagic" />
+                <skillmod ref="protectionmagic" />
+                <skillmod ref="enhancemagic" />
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+                <skillmod ref="watermagic" />
+                <skillmod ref="windmagic" />
+            </selmod>
+                        
+            <selmod num="1">
+                <mastermod ref="alchemy/journeyman"/>
+                <mastermod ref="clscraft/journeyman_architecture"/>
+                <mastermod ref="clscraft/journeyman_glassblowing"/>
+                <mastermod ref="clscraft/journeyman_engraving"/>
+                <mastermod ref="clscraft/journeyman_jeweler"/>
+                <mastermod ref="clscraft/journeyman_calligraphy"/>
+                <mastermod ref="clscraft/journeyman_cartography"/>
+                <mastermod ref="clscraft/journeyman_cooking"/>
+                <mastermod ref="clscraft/journeyman_painting"/>
+                <mastermod ref="clscraft/journeyman_tatooing"/>
+                <mastermod ref="craftmanship/journeyman_woodworking"/>
+                <mastermod ref="craftmanship/journeyman_cooking"/>
+                <mastermod ref="craftmanship/journeyman_forging"/>
+                <mastermod ref="craftmanship/journeyman_tailoring"/>
+                <mastermod ref="craftmanship/journeyman_stoneworking"/>
+            </selmod>
+            <selmod num="1">
+                <mastermod ref="arcanelore/artifactlore"/>
+                <mastermod ref="antimagic/magiccrafter"/>
+                <mastermod ref="controlmagic/magiccrafter"/>
+                <mastermod ref="motionmagic/magiccrafter"/>
+                <mastermod ref="insightmagic/magiccrafter"/>
+                <mastermod ref="stonemagic/magiccrafter"/>
+                <mastermod ref="firemagic/magiccrafter"/>
+                <mastermod ref="healmagic/magiccrafter"/>
+                <mastermod ref="illusionmagic/magiccrafter"/>
+                <mastermod ref="combatmagic/magiccrafter"/>
+                <mastermod ref="lightmagic/magiccrafter"/>
+                <mastermod ref="shadowmagic/magiccrafter"/>
+                <mastermod ref="fatemagic/magiccrafter"/>
+                <mastermod ref="protectionmagic/magiccrafter"/>
+                <mastermod ref="enhancemagic/magiccrafter"/>
+                <mastermod ref="deathmagic/magiccrafter"/>
+                <mastermod ref="transformationmagic/magiccrafter"/>
+                <mastermod ref="watermagic/magiccrafter"/>
+                <mastermod ref="windmagic/magiccrafter"/>
+            </selmod>
+        </modifications>
+    </education>
+    
+    <education id="crystalformer" variantof="artifactcrafter">
+        <modifications>
+            <reqmod type="culture" ref="albseebund"/>
+            <powermod ref="tinker"/>
+            <selmod num="1">
+                <powermod ref="concentrated"/>
+                <powermod ref="literate"/>
+            </selmod>
+            
+            <selmod dist="2">
+                <resourcemod ref="relic"/>
+                <resourcemod ref="wealth"/>
+            </selmod>
+                        
+            <skillmod ref="clscraft" value="3"/>
+            <selmod values="2 1">
+                <skillmod ref="alchemy"/>
+                <skillmod ref="craftmanship"/>
+            </selmod>
+            <skillmod ref="arcanelore" value="3"/>
+            <selmod num="1">
+                <skillmod ref="diplomacy" value="2"/>
+                <skillmod ref="eloquence" value="2"/>
+            </selmod>
+            <skillmod ref="determination" value="2"/>
+            <skillmod ref="swim" value="1"/>
+            <skillmod ref="seafaring" value="1"/>
+            <skillmod ref="perception" value="3"/>
+            <selmod values="4 3">
+                <skillmod ref="watermagic" />
+                <skillmod ref="windmagic" />
+            </selmod>
+            <selmod num="1">
+                <skillmod ref="antimagic" value="2"/>
+                <skillmod ref="controlmagic" value="2"/>
+                <skillmod ref="motionmagic" value="2"/>
+                <skillmod ref="insightmagic" value="2"/>
+                <skillmod ref="stonemagic" value="2"/>
+                <skillmod ref="firemagic" value="2"/>
+                <skillmod ref="healmagic" value="2"/>
+                <skillmod ref="illusionmagic" value="2"/>
+                <skillmod ref="combatmagic" value="2"/>
+                <skillmod ref="lightmagic" value="2"/>
+                <skillmod ref="naturemagic" value="2"/>
+                <skillmod ref="shadowmagic" value="2"/>
+                <skillmod ref="fatemagic" value="2"/>
+                <skillmod ref="protectionmagic" value="2"/>
+                <skillmod ref="enhancemagic" value="2"/>
+                <skillmod ref="deathmagic" value="2"/>
+                <skillmod ref="transformationmagic" value="2"/>
+            </selmod>
+                        
+            <selmod num="1">
+                <mastermod ref="clscraft/journeyman_glassblowing"/>
+                 <mastermod ref="clscraft/journeyman_jeweler"/>
+            </selmod>
+            <selmod num="1">
+                <mastermod ref="watermagic/magiccrafter"/>
+                <mastermod ref="windmagic/magiccrafter"/>
+            </selmod>
+        </modifications>
+    </education>
+    
+    <education id="runesmith" variantof="artifactcrafter">
+        <modifications>
+            <reqmod type="culture" ref="borombri"/>
+            <powermod ref="tinker"/>
+            <selmod num="1">
+                <powermod ref="concentrated"/>
+                <powermod ref="literate"/>
+            </selmod>
+            
+            <selmod dist="2">
+                <resourcemod ref="relic"/>
+                <resourcemod ref="wealth"/>
+            </selmod>
+                        
+            <skillmod ref="slashing" value="1"/>
+            <skillmod ref="endurance" value="1"/>
+            <selmod values="3 2">
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+            </selmod>
+            <skillmod ref="alchemy" value="1"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <skillmod ref="determination" value="2"/>
+            <selmod num="1">
+                <skillmod ref="heal" value="2"/>
+                <skillmod ref="locksntraps" value="2"/>
+            </selmod>
+            <skillmod ref="perception" value="3"/>
+            <skillmod ref="stonemagic" value="4"/>
+            <selmod values="3 2">
+                <skillmod ref="antimagic" />
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="motionmagic" />
+                <skillmod ref="insightmagic" />
+                <skillmod ref="firemagic" />
+                <skillmod ref="healmagic" />
+                <skillmod ref="illusionmagic" />
+                <skillmod ref="combatmagic" />
+                <skillmod ref="lightmagic" />
+                <skillmod ref="naturemagic" />
+                <skillmod ref="shadowmagic" />
+                <skillmod ref="fatemagic" />
+                <skillmod ref="protectionmagic" />
+                <skillmod ref="enhancemagic" />
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+                <skillmod ref="watermagic" />
+                <skillmod ref="windmagic" />
+            </selmod>
+                        
+            <mastermod ref="craftmanship/journeyman_forging"/>
+            <mastermod ref="stonemagic/magiccrafter"/>
+        </modifications>
+    </education>
+    
+    <education id="sciptor" variantof="artifactcrafter">
+        <modifications>
+            <reqmod type="culture" ref="ioria"/>
+            <powermod ref="tinker"/>
+            <powermod ref="literate"/>
+            
+            <selmod dist="2">
+                <resourcemod ref="relic"/>
+                <resourcemod ref="wealth"/>
+            </selmod>
+                        
+            <selmod values="3 2 1">
+                <skillmod ref="alchemy"/>
+                <skillmod ref="craftmanship"/>
+                <skillmod ref="clscraft"/>
+            </selmod>
+            <skillmod ref="history" value="2"/>
+            <skillmod ref="alchemy" value="-1"/>
+            <skillmod ref="streetlore" value="1"/>
+            <skillmod ref="arcanelore" value="3"/>
+            <selmod num="1">
+                <skillmod ref="diplomacy" value="2"/>
+                <skillmod ref="eloquence" value="2"/>
+            </selmod>
+            <skillmod ref="determination" value="2"/>
+            <selmod num="1">
+                <skillmod ref="heal" value="2"/>
+                <skillmod ref="locksntraps" value="2"/>
+            </selmod>
+            <skillmod ref="perception" value="2"/>
+            <skillmod ref="fatemagic" value="4"/>
+            <selmod values="3 2">
+                <skillmod ref="antimagic" />
+                <skillmod ref="controlmagic"/>
+                <skillmod ref="motionmagic" />
+                <skillmod ref="insightmagic" />
+                <skillmod ref="stonemagic" />
+                <skillmod ref="firemagic" />
+                <skillmod ref="healmagic" />
+                <skillmod ref="illusionmagic" />
+                <skillmod ref="combatmagic" />
+                <skillmod ref="lightmagic" />
+                <skillmod ref="naturemagic" />
+                <skillmod ref="shadowmagic" />
+                <skillmod ref="protectionmagic" />
+                <skillmod ref="enhancemagic" />
+                <skillmod ref="deathmagic"/>
+                <skillmod ref="transformationmagic"/>
+                <skillmod ref="watermagic" />
+                <skillmod ref="windmagic" />
+            </selmod>
+                        
+            <mastermod ref="arcanelore/createscroll1"/>
+            <selmod num="1">
+                <mastermod ref="arcanelore/artifactlore"/>
+                <mastermod ref="antimagic/magiccrafter"/>
+                <mastermod ref="controlmagic/magiccrafter"/>
+                <mastermod ref="motionmagic/magiccrafter"/>
+                <mastermod ref="insightmagic/magiccrafter"/>
+                <mastermod ref="stonemagic/magiccrafter"/>
+                <mastermod ref="firemagic/magiccrafter"/>
+                <mastermod ref="healmagic/magiccrafter"/>
+                <mastermod ref="illusionmagic/magiccrafter"/>
+                <mastermod ref="combatmagic/magiccrafter"/>
+                <mastermod ref="lightmagic/magiccrafter"/>
+                <mastermod ref="shadowmagic/magiccrafter"/>
+                <mastermod ref="fatemagic/magiccrafter"/>
+                <mastermod ref="protectionmagic/magiccrafter"/>
+                <mastermod ref="enhancemagic/magiccrafter"/>
+                <mastermod ref="deathmagic/magiccrafter"/>
+                <mastermod ref="transformationmagic/magiccrafter"/>
+                <mastermod ref="watermagic/magiccrafter"/>
+                <mastermod ref="windmagic/magiccrafter"/>
+            </selmod>
+        </modifications>
+    </education>
+	
+</educations>

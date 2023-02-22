@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <creatures>
 
+<!-- komplette Dienst, Intstruktionen, Applikationen, Schwachstellen, Preis fehlen noch -->
+
 <!-- Frühlingskind -->
-    <creature id="SpringChild" lvl1="1" lvl2="0" >
+    <creature id="SpringChild" lvl1="1" lvl2="0">
         <creaturetypes>
             <creaturetype type="FAIRY" />
             <creaturetype type="NATURECREATURE" />
@@ -56,6 +58,11 @@
             </skillval>
         </skillvals>
         <spellvals>
+            <spellval school="windmagic" spell="featherfall" />
+            <spellval school="windmagic" spell="smell" />
+            <spellval school="windmagic" spell="lightweight" />
+            <spellval school="windmagic" spell="growth" />
+            <spellval school="windmagic" spell="minorhealing" />
         </spellvals>
         <features>
                 <creaturefeature type="summonable_creature" level="8" />
@@ -68,7 +75,7 @@
     </creature>
 
 <!-- Gleißender Krieger -->
-    <creature id="ShiningWarrior" lvl1="2" lvl2="1" >
+    <creature id="ShiningWarrior" lvl1="2" lvl2="1">
         <creaturetypes>
             <creaturetype type="FAIRY" />
             <creaturetype type="LIGHT_CREATURE" />
@@ -133,7 +140,7 @@
     </creature>
 
 <!-- Glutrauch -->
-    <creature id="GlowSmoke" lvl1="2" lvl2="1" >
+    <creature id="GlowSmoke" lvl1="2" lvl2="1">
         <creaturetypes>
             <creaturetype type="FAIRY" />
             <creaturetype type="FIRECREATURE" />
@@ -177,6 +184,8 @@
             <skillval skill="windmagic" val="7" />
         </skillvals>
         <spellvals>
+            <spellval school="firemagic" spell="flame" />
+            <spellval school="firemagic" spell="fierce_wind" />
         </spellvals>
         <features>
                 <creaturefeature type="summonable_creature" level="5" />
@@ -190,7 +199,7 @@
     </creature>
 
 <!-- Steingolem -->
-    <creature id="StoneGolem" >
+    <creature id="StoneGolem" lvl1="0" lvl2="0">
         <creaturetypes>
             <creaturetype type="CONSTRUCT" />
         </creaturetypes>
@@ -241,7 +250,7 @@
     </creature>
 
 <!-- Hölzerne laufende Truhe -->
-    <creature id="WoodenRunningChest" >
+    <creature id="WoodenRunningChest" lvl1="0" lvl2="0">
         <creaturetypes>
             <creaturetype type="CONSTRUCT" />
         </creaturetypes>
@@ -296,7 +305,7 @@
     </creature>
 
 <!-- Metallene Kutsche -->
-    <creature id="MetalCarriage" >
+    <creature id="MetalCarriage" lvl1="0" lvl2="0">
         <creaturetypes>
             <creaturetype type="CONSTRUCT" />
         </creaturetypes>
@@ -348,7 +357,7 @@
     </creature>
 
 <!-- Gruftkatze -->
-    <creature id="TombCat" lvl1="0" lvl2="0" >
+    <creature id="TombCat" lvl1="0" lvl2="0">
         <creaturetypes>
             <creaturetype type="UNDEAD" />
         </creaturetypes>
@@ -398,7 +407,8 @@
     </creature>
 
 <!-- Hüter -->
-    <creature id="Keeper" lvl1="0" lvl2="0" >
+<!-- Verschiedene Elemente möglich ggf Einzeln aufteilen, zusätzlich 1 beliebigen Grad 0 Zauber -->
+    <creature id="Keeper" lvl1="0" lvl2="0">
         <creaturetypes>
             <creaturetype type="FAIRY" />
         </creaturetypes>
@@ -449,7 +459,7 @@
     </creature>
 
 <!-- Knochenschänder -->
-    <creature id="BoneCrusher" lvl1="3" lvl2="2" >
+    <creature id="BoneCrusher" lvl1="3" lvl2="2">
         <creaturetypes>
             <creaturetype type="UNDEAD" />
         </creaturetypes>
@@ -504,7 +514,7 @@
     </creature>
 
 <!-- Kristallwandler -->
-    <creature id="CrystalShifter" lvl1="1" lvl2="0" >
+    <creature id="CrystalShifter" lvl1="1" lvl2="0">
         <creaturetypes>
             <creaturetype type="FAIRY" />
             <creaturetype type="STONECREATURE" />
@@ -561,7 +571,7 @@
     </creature>
 
 <!-- Magmaläufer -->
-    <creature id="MagmaWalker" lvl1="2" lvl2="1" >
+    <creature id="MagmaWalker" lvl1="2" lvl2="1">
         <creaturetypes>
             <creaturetype type="FAIRY" />
             <creaturetype type="STONECREATURE" />
@@ -621,7 +631,7 @@
     </creature>
 
 <!-- Schwacher Naturgeister -->
-    <creature id="WeakNatureSpirits" lvl1="0" lvl2="0" >
+    <creature id="WeakNatureSpirits" lvl1="0" lvl2="0">
         <creaturetypes>
             <creaturetype type="GHOST" />
             <creaturetype type="NATURECREATURE" />
@@ -677,7 +687,7 @@
     </creature>
 
 <!-- Mittlerer Naturgeist -->
-    <creature id="MediumNatureSpirit" lvl1="3" lvl2="1" >
+    <creature id="MediumNatureSpirit" lvl1="3" lvl2="1">
         <creaturetypes>
             <creaturetype type="GHOST" />
             <creaturetype type="NATURECREATURE" />
@@ -741,7 +751,7 @@
     </creature>
 
 <!-- Rankenbold -->
-    <creature id="Tendril" lvl1="0" lvl2="0" >
+    <creature id="Tendril" lvl1="0" lvl2="0">
         <creaturetypes>
             <creaturetype type="FAIRY" />
             <creaturetype type="NATURECREATURE" />
@@ -794,7 +804,7 @@
     </creature>
 
 <!-- Schattenschwinge -->
-    <creature id="Shadowwing" lvl1="0" lvl2="0" >
+    <creature id="Shadowwing" lvl1="0" lvl2="0">
         <creaturetypes>
             <creaturetype type="FAIRY" />
             <creaturetype type="SHADOWCREATURE" />
@@ -839,6 +849,10 @@
             </skillval>
         </skillvals>
         <spellvals>
+            <spellval school="shadowmagic" spell="shadowveil" />
+            <spellval school="shadowmagic" spell="darkness" />
+            <spellval school="shadowmagic" spell="veil_object" />
+            <spellval school="shadowmagic" spell="sticky_shadows" />
         </spellvals>
         <features>
                 <creaturefeature type="summonable_creature" level="5" />
@@ -853,7 +867,7 @@
     </creature>
 
 <!-- Sonnenvogel (Licht) -->
-    <creature id="SunbirdLight" lvl1="2" lvl2="1" >
+    <creature id="SunbirdLight" lvl1="2" lvl2="1">
         <creaturetypes>
             <creaturetype type="FAIRY" />
             <creaturetype type="LIGHT_CREATURE" />
@@ -900,6 +914,11 @@
             </skillval>
         </skillvals>
         <spellvals>
+            <spellval school="lightmagic" spell="light" />
+            <spellval school="lightmagic" spell="glare" />
+            <spellval school="lightmagic" spell="blazingbarrier" />
+            <spellval school="lightmagic" spell="undeadprotection" />
+            <spellval school="lightmagic" spell="turnundead" />
         </spellvals>
         <features>
                 <creaturefeature type="summonable_creature" level="7" />
@@ -913,7 +932,7 @@
     </creature>
 
 <!-- Spukschatten -->
-    <creature id="HauntedShadow" lvl1="0" lvl2="0" >
+    <creature id="HauntedShadow" lvl1="0" lvl2="0">
         <creaturetypes>
             <creaturetype type="GHOST" />
         </creaturetypes>
@@ -955,6 +974,8 @@
             <skillval skill="illusionmagic" val="10" />
         </skillvals>
         <spellvals>
+            <spellval school="motionmagic" spell="shove" />
+            <spellval school="motionmagic" spell="dancinglights" />
         </spellvals>
         <features>
                 <creaturefeature type="summonable_creature" level="4" />
@@ -974,7 +995,7 @@
     </creature>
 
 <!-- Sturmtänzer -->
-    <creature id="StormDancer" lvl1="2" lvl2="1" >
+    <creature id="StormDancer" lvl1="2" lvl2="1">
         <creaturetypes>
             <creaturetype type="FAIRY" />
             <creaturetype type="WATERCREATURE" />
@@ -1020,6 +1041,8 @@
             <skillval skill="windmagic" val="12" />
         </skillvals>
         <spellvals>
+            <spellval school="watermagic" spell="cleansewater" />
+            <spellval school="watermagic" spell="disperse_fog" />
         </spellvals>
         <features>
                 <creaturefeature type="amphibic" />
@@ -1030,7 +1053,7 @@
     </creature>
 
 <!-- Wimmelnder Schrecken -->
-    <creature id="TeemingTerror" lvl1="0" lvl2="0" >
+    <creature id="TeemingTerror" lvl1="0" lvl2="0">
         <creaturetypes>
             <creaturetype type="UNDEAD" />
         </creaturetypes>
@@ -1081,7 +1104,7 @@
     </creature>
 
 <!-- Windling -->
-    <creature id="Diaper" lvl1="0" lvl2="0" >
+    <creature id="Diaper" lvl1="0" lvl2="0">
         <creaturetypes>
             <creaturetype type="FAIRY" />
             <creaturetype type="WINDCREATURE" />
@@ -1123,6 +1146,8 @@
             <skillval skill="windmagic" val="6" />
         </skillvals>
         <spellvals>
+            <spellval school="windmagic" spell="shove" />
+            <spellval school="windmagic" spell="lightweight" />
         </spellvals>
         <features>
                 <creaturefeature type="summonable_creature" level="1" />
@@ -1136,7 +1161,7 @@
     </creature>
 
 <!-- Wogling -->
-    <creature id="Wogling" lvl1="0" lvl2="0" >
+    <creature id="Wogling" lvl1="0" lvl2="0">
         <creaturetypes>
             <creaturetype type="FAIRY" />
             <creaturetype type="WATERCREATURE" />
@@ -1178,6 +1203,8 @@
             <skillval skill="watermagic" val="8" />
         </skillvals>
         <spellvals>
+            <spellval school="watermagic" spell="slippery" />
+            <spellval school="watermagic" spell="eroding_acid" />
         </spellvals>
         <features>
                 <creaturefeature type="amphibic" />
