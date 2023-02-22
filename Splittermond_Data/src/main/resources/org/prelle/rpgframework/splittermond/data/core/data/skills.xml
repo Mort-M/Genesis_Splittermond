@@ -612,6 +612,7 @@
         <specialization id="tatooing"/>
         <specialization id="cooking"/>
         <specialization id="sculptor"/>
+        <specialization id="mechanic"/> <!--Kesh-->
         <mastership level="1" key="efficiency"/>
         <mastership level="1" key="journeyman"  multiple="true"/>
         <mastership level="1" key="scrimper"/>

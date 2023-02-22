@@ -98,6 +98,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
+	<!-- Errata März 2019 - S. 116 -->
     <spell id="call_animal" diff="15" cost="1" castdur="1T" range="CASTER" enh="1/+1V1">
         <school skill="insightmagic" level="0" />
         <school skill="naturemagic" level="0" />
@@ -116,6 +117,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
+	<!-- Errata März 2019 - S. 116 -->
     <spell id="attention" diff="15" cost="1" castdur="1T" range="TOUCH" spelldur="5m" enh="1/+1V1">
         <school skill="fatemagic" level="0" />
         <type>BLESSING</type>
@@ -131,8 +133,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="absolute_silence" diff="24" cost="K12V3" castdur="5T"
-        range="CASTER" spelldur="K" effectRange="5" enh="2/+K3V3">
+    <spell id="absolute_silence" diff="24" cost="K12V3" castdur="5T" range="CASTER" spelldur="K" effectRange="5" enh="2/+K3V3">
         <school skill="illusionmagic" level="3" />
         <type>SOUND</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -140,8 +141,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="ancestor_advice" diff="24" cost="K12V3" castdur="15m"
-        range="CASTER" spelldur="K" enh="1/+K3V3">
+    <spell id="ancestor_advice" diff="24" cost="K12V3" castdur="15m" range="CASTER" spelldur="K" enh="1/+K3V3">
         <school skill="fatemagic" level="4" />
         <school skill="deathmagic" level="3" />
         <type>OTHERWORLD</type>
@@ -151,8 +151,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-     <spell id="frighting_object" diff="21" cost="K8V2" castdur="5T"
-        range="5m" spelldur="K" enh="2/+K2V2">
+     <spell id="frighting_object" diff="21" cost="K8V2" castdur="5T" range="5m" spelldur="K" enh="2/+K2V2">
         <school skill="controlmagic" level="2" />
         <school skill="shadowmagic" level="2" />
         <type>OBJECT</type>
@@ -162,8 +161,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="nondescript_face" diff="GW" cost="4V1" castdur="1T"
-        range="10m" enh="1/+1V1">
+    <spell id="nondescript_face" diff="GW" cost="4V1" castdur="1T" range="10m" enh="1/+1V1">
         <school skill="controlmagic" level="1" />
         <type>MEMORY</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -171,8 +169,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="aging" diff="21" cost="K12V3" castdur="4m"
-        range="CASTER" spelldur="K" enh="2/+K3V3">
+    <spell id="aging" diff="21" cost="K12V3" castdur="4m" range="CASTER" spelldur="K" enh="2/+K3V3">
         <school skill="fatemagic" level="4" />
         <school skill="deathmagic" level="3" />
         <school skill="transformationmagic" level="3" />
@@ -181,8 +178,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="sense_age" diff="18" cost="4V1" castdur="12T"
-        range="TOUCH" enh="1/+1V1">
+    <spell id="sense_age" diff="18" cost="4V1" castdur="12T" range="TOUCH" enh="1/+1V1">
         <school skill="insightmagic" level="2" />
         <school skill="deathmagic" level="1" />
         <type>AGE</type>
@@ -191,8 +187,7 @@
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="attack_premonition" diff="18" cost="4V1" castdur="1T"
-        range="CASTER" spelldur="20T" enh="1/+1V1">
+    <spell id="attack_premonition" diff="18" cost="4V1" castdur="1T" range="CASTER" spelldur="20T" enh="1/+1V1">
         <school skill="insightmagic" level="1" />
         <school skill="fatemagic" level="2" />
         <type>PERCEPTION</type>
@@ -201,8 +196,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="animate1" diff="18" cost="K4V1" castdur="1m"
-        range="CASTER" spelldur="K" enh="1/+K1V1">
+    <spell id="animate1" diff="18" cost="K4V1" castdur="1m" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="controlmagic" level="1" />
         <school skill="motionmagic" level="1" />
         <school skill="transformationmagic" level="1" />
@@ -212,8 +206,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="animate2" diff="21" cost="K8V2" castdur="2m"
-        range="CASTER" spelldur="K" enh="1/+K1V1">
+    <spell id="animate2" diff="21" cost="K8V2" castdur="2m" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="controlmagic" level="2" />
         <school skill="transformationmagic" level="2" />
         <type>ANIMATION</type>
@@ -222,8 +215,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="animate3" diff="24" cost="K12V3" castdur="5m"
-        range="CASTER" spelldur="K" enh="1/+K1V1">
+    <spell id="animate3" diff="24" cost="K12V3" castdur="5m" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="controlmagic" level="3" />
         <school skill="transformationmagic" level="3" />
         <type>ANIMATION</type>
@@ -232,8 +224,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="animate4" diff="27" cost="K16V4" castdur="10m"
-        range="CASTER" spelldur="K" enh="1/+K1V1">
+    <spell id="animate4" diff="27" cost="K16V4" castdur="10m" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="controlmagic" level="4" />
         <school skill="transformationmagic" level="4" />
         <type>ANIMATION</type>
@@ -242,8 +233,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="animate5" diff="30" cost="K20V5" castdur="15m"
-        range="CASTER" spelldur="K" enh="1/+K1V1">
+    <spell id="animate5" diff="30" cost="K20V5" castdur="15m" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="controlmagic" level="5" />
         <school skill="transformationmagic" level="5" />
         <type>ANIMATION</type>
@@ -252,8 +242,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="antimagic_shell" diff="24" cost="12V3" castdur="8T"
-        range="10m" spelldur="40T" effectRange="5" enh="1/+1V1">
+    <spell id="antimagic_shell" diff="24" cost="12V3" castdur="8T" range="10m" spelldur="40T" effectRange="5" enh="1/+1V1">
         <school skill="antimagic" level="3" />
         <school skill="protectionmagic" level="4" />
         <type>COUNTER</type>
@@ -265,8 +254,7 @@
         <enhancementtype>EFFECT_RANGE</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="wall_running" diff="24" cost="12V3" castdur="3T"
-        range="CASTER" spelldur="20T" enh="2/+3V3">
+    <spell id="wall_running" diff="24" cost="12V3" castdur="3T" range="CASTER" spelldur="20T" enh="2/+3V3">
         <school skill="motionmagic" level="3" />
         <type>ENHANCE_MOTION</type>
         <type>WALL</type>
@@ -275,16 +263,14 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
          <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="disenchant_artifact" diff="27" cost="16V4" castdur="18T"
-        range="TOUCH" enh="2/+4V4">
+    <spell id="disenchant_artifact" diff="27" cost="16V4" castdur="18T" range="TOUCH" enh="2/+4V4">
         <school skill="antimagic" level="4" />
         <type>BREAKSPELL</type>
         <enhancementtype>RELEASETIME</enhancementtype>
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="counter_artifact" diff="21" cost="K8V2" castdur="5T"
-        range="5m" spelldur="K" enh="2/+K2V2">
+    <spell id="counter_artifact" diff="21" cost="K8V2" castdur="5T" range="5m" spelldur="K" enh="2/+K2V2">
         <school skill="antimagic" level="2" />
         <type>BREAKSPELL</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -292,8 +278,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="wave_of_counter_artifact" diff="24" cost="12V3" castdur="7T"
-        range="CASTER" spelldur="30T" effectRange="5" enh="2/+K3V3">
+    <spell id="wave_of_counter_artifact" diff="24" cost="12V3" castdur="7T" range="CASTER" spelldur="30T" effectRange="5" enh="2/+K3V3">
         <school skill="antimagic" level="3" />
         <type>OBJECT</type>
         <type>CONSTRUCT</type>
@@ -303,16 +288,14 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="ashes_to_ashes" diff="18" cost="4V1" castdur="16T"
-        range="TOUCH" enh="1/+1V1">
+    <spell id="ashes_to_ashes" diff="18" cost="4V1" castdur="16T" range="TOUCH" enh="1/+1V1">
         <school skill="firemagic" level="1" />
         <type>ELEMENTALCONTROL</type>
         <enhancementtype>RELEASETIME</enhancementtype>
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="refreshment" diff="18" cost="4V1" castdur="1T"
-        range="TOUCH" enh="1/+1V1">
+    <spell id="refreshment" diff="18" cost="4V1" castdur="1T" range="TOUCH" enh="1/+1V1">
         <school skill="healmagic" level="1" />
         <school skill="enhancemagic" level="2" />
         <type>ENHANCE_BODY</type>
@@ -320,8 +303,7 @@
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="bed_of_shadows" diff="18" cost="4V1" castdur="1T"
-        range="CASTER" spelldur="8h" enh="1/+1V1">
+    <spell id="bed_of_shadows" diff="18" cost="4V1" castdur="1T" range="CASTER" spelldur="8h" enh="1/+1V1">
         <school skill="shadowmagic" level="1" />
         <school skill="protectionmagic" level="2" />
         <type>VEIL</type>
@@ -330,8 +312,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="go_all_out" diff="18" cost="4V1" castdur="1T"
-        range="CASTER" spelldur="30T" enh="1/+1V1">
+    <spell id="go_all_out" diff="18" cost="4V1" castdur="1T" range="CASTER" spelldur="30T" enh="1/+1V1">
         <school skill="fatemagic" level="1" />
         <type>BLESSING</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -339,8 +320,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="uplift" diff="18" cost="K4V1" castdur="2T"
-        range="CASTER" spelldur="K" enh="2/+K1V1">
+    <spell id="uplift" diff="18" cost="K4V1" castdur="2T" range="CASTER" spelldur="K" enh="2/+K1V1">
         <school skill="motionmagic" level="2" />
         <school skill="windmagic" level="1" />
         <type>ENHANCE_MOTION</type>
@@ -349,8 +329,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="aura_counter_motion" diff="21" cost="K8V2" castdur="13T"
-        range="CASTER" spelldur="K" effectRange="5" enh="1/+K2V2">
+    <spell id="aura_counter_motion" diff="21" cost="K8V2" castdur="13T" range="CASTER" spelldur="K" effectRange="5" enh="1/+K2V2">
         <school skill="motionmagic" level="2" />
         <school skill="antimagic" level="1" />
         <type>AURA</type>
@@ -360,8 +339,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="aura_coldness" diff="24" cost="K12V3" castdur="13T"
-        range="CASTER" spelldur="K" effectRange="5" enh="2/+K3V3">
+    <spell id="aura_coldness" diff="24" cost="K12V3" castdur="13T" range="CASTER" spelldur="K" effectRange="5" enh="2/+K3V3">
         <school skill="watermagic" level="3" />
         <type>AURA</type>
         <type>ELEMENTALCONTROL</type>
@@ -370,8 +348,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="aura_catseyes" diff="24" cost="K12V3" castdur="11T"
-        range="CASTER" spelldur="K" effectRange="5" enh="1/+K3V3">
+    <spell id="aura_catseyes" diff="24" cost="K12V3" castdur="11T" range="CASTER" spelldur="K" effectRange="5" enh="1/+K3V3">
         <school skill="insightmagic" level="4" />
         <school skill="shadowmagic" level="3" />
         <school skill="transformationmagic" level="4" />
@@ -382,8 +359,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="aura_slowness" diff="30" cost="K20V5" castdur="9m"
-        range="CASTER" spelldur="K" effectRange="5" enh="2/+K5V5">
+    <spell id="aura_slowness" diff="30" cost="K20V5" castdur="9m" range="CASTER" spelldur="K" effectRange="5" enh="2/+K5V5">
         <school skill="motionmagic" level="5" />
         <type>AURA</type>
         <type>WEAKEN</type>
@@ -392,8 +368,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="aura_enhance_light" diff="18" cost="K4V1" castdur="6T"
-        range="TOUCH" spelldur="K" effectRange="5" enh="1/+K1V1">
+    <spell id="aura_enhance_light" diff="18" cost="K4V1" castdur="6T" range="CASTER" spelldur="K" effectRange="5" enh="1/+K1V1">
         <school skill="firemagic" level="2" />
         <school skill="illusionmagic" level="2" />
         <school skill="lightmagic" level="1" />
@@ -404,8 +379,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-	<spell id="aura_nightrest" diff="21" cost="8V2" castdur="5m"
-		range="CASTER" effectRange="5" spelldur="8h" enh="2/+2V2">
+	<spell id="aura_nightrest" diff="21" cost="8V2" castdur="5m" range="CASTER" effectRange="5" spelldur="8h" enh="2/+2V2">
 		<school skill="healmagic" level="2" />
 		<type>AURA</type>
 		<type>REGENERATION</type>
@@ -415,8 +389,8 @@
 		<enhancementtype>EFFECT_RANGE</enhancementtype>
 		<enhancementtype>SPELLDURATION</enhancementtype>
 	</spell>
-    <spell id="aura_reflexes" diff="27" cost="K16V4" castdur="3m"
-        range="CASTER" spelldur="K" enh="2/+K4V4">
+	<!-- Errata März 2019 - S. 120 -->
+    <spell id="aura_reflexes" diff="27" cost="K16V4" castdur="3m" range="5m" spelldur="K" enh="2/+K4V4">
         <school skill="motionmagic" level="5" />
         <school skill="enhancemagic" level="4" />
         <type>AURA</type>
@@ -425,9 +399,9 @@
         <enhancementtype>RELEASETIME</enhancementtype>
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
+        <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="aura_cleansing" diff="18" cost="K4V1" castdur="5m"
-        range="CASTER" spelldur="K" effectRange="5" enh="2/+K1V1">
+    <spell id="aura_cleansing" diff="18" cost="K4V1" castdur="5m" range="CASTER" spelldur="K" effectRange="5" enh="2/+K1V1">
         <school skill="protectionmagic" level="2" />
         <school skill="watermagic" level="1" />
         <type>AURA</type>
@@ -438,8 +412,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="aura_repair" diff="24" cost="K12V3" castdur="3m"
-        range="CASTER" spelldur="K" effectRange="10" enh="2/+K3V3">
+    <spell id="aura_repair" diff="24" cost="K12V3" castdur="3m" range="CASTER" spelldur="K" effectRange="10" enh="2/+K3V3">
         <school skill="healmagic" level="3" />
         <type>AURA</type>
         <type>OBJECT</type>
@@ -449,8 +422,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="aura_damagereflection" diff="27" cost="K16V4" castdur="3m"
-        range="CASTER" spelldur="K" effectRange="10" enh="2/+K4V4">
+    <spell id="aura_damagereflection" diff="27" cost="K16V4" castdur="3m" range="CASTER" spelldur="K" effectRange="10" enh="2/+K4V4">
         <school skill="antimagic" level="4" />
         <school skill="combatmagic" level="4" />
         <type>AURA</type>
@@ -460,8 +432,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="aura_steadfastness" diff="24" cost="K12V3" castdur="12T"
-        range="CASTER" spelldur="K" effectRange="5" enh="2/+K4V4">
+    <spell id="aura_steadfastness" diff="24" cost="K12V3" castdur="12T" range="CASTER" spelldur="K" effectRange="5" enh="2/+K4V4">
         <school skill="stonemagic" level="3" />
         <school skill="enhancemagic" level="4" />
         <type>AURA</type>
@@ -471,8 +442,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="aura_confidence" diff="24" cost="K8V2" castdur="6T"
-        range="CASTER" spelldur="K" effectRange="5" enh="1/+K2V2">
+    <spell id="aura_confidence" diff="24" cost="K8V2" castdur="6T" range="CASTER" spelldur="K" effectRange="5" enh="1/+K2V2">
         <school skill="protectionmagic" level="2" />
         <school skill="enhancemagic" level="3" />
         <type>AURA</type>
@@ -483,8 +453,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="aura_clearmind" diff="27" cost="K16V4" castdur="5m"
-        range="CASTER" spelldur="K" effectRange="5" enh="1/+K4V4">
+    <spell id="aura_clearmind" diff="27" cost="K16V4" castdur="5m" range="CASTER" spelldur="K" effectRange="5" enh="1/+K4V4">
         <school skill="protectionmagic" level="4" />
         <school skill="antimagic" level="5" />
         <type>AURA</type>
@@ -496,8 +465,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="aura_connectedLife" diff="27" cost="K20V4" castdur="12T"
-        range="CASTER" spelldur="K" effectRange="10" enh="2/+K4V4">
+    <spell id="aura_connectedLife" diff="27" cost="K20V4" castdur="12T" range="CASTER" spelldur="K" effectRange="10" enh="2/+K4V4">
         <school skill="healmagic" level="4" />
         <school skill="fatemagic" level="4" />
         <type>AURA</type>
@@ -509,8 +477,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="aura_shadowsight" diff="27" cost="K16V4" castdur="12T"
-        range="CASTER" spelldur="K" effectRange="5" enh="1/+K4V4">
+    <spell id="aura_shadowsight" diff="27" cost="K16V4" castdur="12T" range="CASTER" spelldur="K" effectRange="5" enh="1/+K4V4">
         <school skill="lightmagic" level="4" />
         <type>AURA</type>
         <type>BLESSING</type>
@@ -519,8 +486,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="blackout" diff="GW" cost="4V1" castdur="2T"
-        range="5m" enh="1/+1V1">
+    <spell id="blackout" diff="GW" cost="4V1" castdur="2T" range="5m" enh="1/+1V1">
         <school skill="controlmagic" level="1" />
         <type>MEMORY</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -528,8 +494,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="banish_animals" diff="24" cost="K12V3" castdur="4T"
-        range="CASTER" spelldur="K" enh="1/+K3V3">
+    <spell id="banish_animals" diff="24" cost="K12V3" castdur="4T" range="CASTER" spelldur="K" enh="1/+K3V3">
         <school skill="antimagic" level="3" />
         <school skill="naturemagic" level="3" />
         <type>ANIMAL</type>
@@ -538,8 +503,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="command" diff="GW" cost="16V4" castdur="2T"
-        range="5m" enh="1/+4V4">
+    <spell id="command" diff="GW" cost="16V4" castdur="2T" range="5m" enh="1/+4V4">
         <school skill="controlmagic" level="4" />
         <type>CONTROL</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -547,8 +511,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="light_shield" diff="18" cost="K4V1" castdur="9T"
-        range="TOUCH" spelldur="K" enh="1/+K1V1">
+    <spell id="light_shield" diff="18" cost="K4V1" castdur="9T" range="TOUCH" spelldur="K" enh="1/+K1V1">
         <school skill="combatmagic" level="2" />
         <school skill="windmagic" level="1" />
         <type>OBJECT</type>
@@ -557,8 +520,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="calm" diff="GW" cost="4V1" castdur="1T"
-        range="5m" enh="1/+1V1">
+    <spell id="calm" diff="GW" cost="4V1" castdur="1T" range="5m" enh="1/+1V1">
         <school skill="controlmagic" level="2" />
         <school skill="healmagic" level="1" />
         <type>ENHANCE_BODY</type>
@@ -569,8 +531,7 @@
         <enhancementtype>RANGE</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="disturb_summoner" diff="18" cost="K4V1" castdur="6T"
-        range="5m" spelldur="K" enh="1/+K1V1">
+    <spell id="disturb_summoner" diff="18" cost="K4V1" castdur="6T" range="5m" spelldur="K" enh="1/+K1V1">
         <school skill="antimagic" level="1" />
         <type>FAIRY_CREATURE</type>
         <type>GHOST_CREATURE</type>
@@ -580,8 +541,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="change_owner" diff="18" cost="3V2" castdur="2T"
-        range="TOUCH" spelldur="12h" enh="1/+K1V1">
+    <spell id="change_owner" diff="18" cost="3V2" castdur="2T" range="TOUCH" spelldur="12h" enh="1/+K1V1">
         <school skill="fatemagic" level="1" />
         <type>OBJECT</type>
         <type>PROPHECY</type>
@@ -590,8 +550,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="stop_motion" diff="KW" cost="4V1" castdur="1T"
-        range="25m" enh="1/+1V1">
+    <spell id="stop_motion" diff="KW" cost="4V1" castdur="1T" range="25m" enh="1/+1V1">
         <school skill="motionmagic" level="1" />
         <type>WEAKEN</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -599,8 +558,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="blinding_flames" diff="24" cost="12V3" castdur="5T"
-        range="CASTER" effectRange="5" enh="2/+3V3">
+    <spell id="blinding_flames" diff="24" cost="12V3" castdur="5T" range="CASTER" effectRange="5" enh="2/+3V3">
         <school skill="firemagic" level="3" />
         <school skill="illusionmagic" level="3" />
         <school skill="lightmagic" level="3" />
@@ -611,8 +569,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="lightning_shield" diff="24" cost="K12V3" castdur="5T"
-        range="CASTER" spelldur="K" enh="1/+K3V3">
+    <spell id="lightning_shield" diff="24" cost="K12V3" castdur="5T" range="CASTER" spelldur="K" enh="1/+K3V3">
         <school skill="protectionmagic" level="4" />
         <school skill="windmagic" level="3" />
         <type>ELECTRICITY</type>
@@ -622,16 +579,14 @@
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="stop_bleeding" diff="21" cost="K8V2" castdur="1T"
-        range="TOUCH" spelldur="K" enh="1/+K2V2">
+    <spell id="stop_bleeding" diff="21" cost="K8V2" castdur="1T" range="TOUCH" spelldur="K" enh="1/+K2V2">
         <school skill="healmagic" level="2" />
         <type>ENHANCE_BODY</type>
         <enhancementtype>RELEASETIME</enhancementtype>
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="bad_omen" diff="30" cost="20V5" castdur="10m"
-        range="CASTER" enh="2/+5V5">
+    <spell id="bad_omen" diff="30" cost="20V5" castdur="10m" range="CASTER" enh="2/+5V5">
         <school skill="insightmagic" level="5" />
         <school skill="fatemagic" level="5" />
         <type>PROPHECY</type>
@@ -639,16 +594,14 @@
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="fire_accelerant" diff="KW" cost="4V1" castdur="8T"
-        range="5m" enh="2/+1V1">
+    <spell id="fire_accelerant" diff="KW" cost="4V1" castdur="8T" range="5m" enh="2/+1V1">
         <school skill="firemagic" level="1" />
         <type>ELEMENTALCONTROL</type>
         <enhancementtype>RELEASETIME</enhancementtype>
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="fire_dilution" diff="18" cost="K4V1" castdur="1T"
-        range="TOUCH" spelldur="K" enh="1/+K1V1">
+    <spell id="fire_dilution" diff="18" cost="K4V1" castdur="1T" range="TOUCH" spelldur="K" enh="1/+K1V1">
         <school skill="firemagic" level="2" />
         <school skill="healmagic" level="1" />
         <school skill="watermagic" level="1" />
@@ -658,8 +611,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="ailing" diff="KW" cost="8V2" castdur="3T"
-        range="TOUCH" enh="2/+2V2">
+    <spell id="ailing" diff="KW" cost="8V2" castdur="3T" range="TOUCH" enh="2/+2V2">
         <school skill="fatemagic" level="2" />
         <school skill="deathmagic" level="2" />
         <type>CURSE</type>
@@ -669,8 +621,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="demons_eyes" diff="18" cost="K4V1" castdur="1T"
-        range="CASTER" spelldur="K" enh="1/+K1V1">
+    <spell id="demons_eyes" diff="18" cost="K4V1" castdur="1T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="illusionmagic" level="1" />
         <school skill="shadowmagic" level="2" />
         <school skill="transformationmagic" level="1" />
@@ -681,8 +632,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="the_last_call" diff="30" cost="20V5" castdur="15m"
-        range="TOUCH" spelldur="1D" enh="2/+5V5">
+    <spell id="the_last_call" diff="30" cost="20V5" castdur="15m" range="TOUCH" spelldur="1D" enh="2/+5V5">
         <school skill="deathmagic" level="5" />
         <type>NECROMANCY</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -690,8 +640,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="thunderstruck" diff="24" cost="12V3" castdur="5T"
-        range="CASTER" effectRange="5" enh="1/+3V3">
+    <spell id="thunderstruck" diff="24" cost="12V3" castdur="5T" range="CASTER" effectRange="5" enh="1/+3V3">
         <school skill="illusionmagic" level="4" />
         <school skill="windmagic" level="3" />
         <type>SUMMON</type>
@@ -700,8 +649,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="thorntendrils" diff="KW" cost="K8V2" castdur="5T"
-        range="10m" spelldur="K" enh="1/+K2V2">
+    <spell id="thorntendrils" diff="KW" cost="K8V2" castdur="5T" range="10m" spelldur="K" enh="1/+K2V2">
         <school skill="naturemagic" level="2" />
         <type>PLANTS</type>
         <enhancementtype>RELEASETIME</enhancementtype>
@@ -709,8 +657,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="blastwave" diff="24" cost="12V3" castdur="1T"
-        range="CASTER" effectRange="5" enh="1/+3V3">
+    <spell id="blastwave" diff="24" cost="12V3" castdur="1T" range="CASTER" effectRange="5" enh="1/+3V3">
         <school skill="motionmagic" level="4" />
         <school skill="windmagic" level="3" />
         <type>SUMMON</type>
@@ -719,8 +666,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="dark_protection" diff="24" cost="K12V3" castdur="12T"
-        range="CASTER" enh="1/+K3V3">
+    <spell id="dark_protection" diff="24" cost="K12V3" castdur="12T" range="CASTER" enh="1/+K3V3">
         <school skill="shadowmagic" level="3" />
         <school skill="protectionmagic" level="4" />
         <type>AURA</type>
@@ -730,8 +676,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="echochamber" diff="GW" cost="8V2" castdur="2T"
-        range="5m" spelldur="3h" enh="1/+2V2">
+    <spell id="echochamber" diff="GW" cost="8V2" castdur="2T" range="5m" spelldur="3h" enh="1/+2V2">
         <school skill="controlmagic" level="2" />
         <school skill="illusionmagic" level="2" />
         <type>SOUND</type>
@@ -741,8 +686,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="ice_armamentarium" diff="24" cost="K12V3" castdur="9T"
-        range="CASTER" enh="1/+K3V3">
+    <spell id="ice_armamentarium" diff="24" cost="K12V3" castdur="9T" range="CASTER" enh="1/+K3V3">
         <school skill="watermagic" level="3" />
         <type>ICE</type>
         <type>SUMMON</type>
@@ -751,8 +695,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="walk_on_ice" diff="18" cost="K4V1" castdur="4T"
-        range="CASTER" enh="2/+K1V1">
+    <spell id="walk_on_ice" diff="18" cost="K4V1" castdur="4T" range="CASTER" enh="2/+K1V1">
         <school skill="motionmagic" level="2" />
         <school skill="naturemagic" level="2" />
         <school skill="watermagic" level="1" />
@@ -763,8 +706,7 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="banish_element" diff="21" cost="8V2" castdur="5T"
-        range="5m" enh="2/+2V2">
+    <spell id="banish_element" diff="21" cost="8V2" castdur="5T" range="5m" enh="2/+2V2">
         <school skill="antimagic" level="2" />
         <school skill="stonemagic" level="3" />
         <school skill="watermagic" level="3" />
@@ -776,8 +718,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="sense_emotion" diff="GW" cost="4V1" castdur="5T"
-        range="5m" enh="2/+1V1">
+    <spell id="sense_emotion" diff="GW" cost="4V1" castdur="5T" range="5m" enh="2/+1V1">
         <school skill="insightmagic" level="1" />
         <type>CLAIRVOYANCE</type>
         <type>THOUGHTS</type>
@@ -786,8 +727,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="grandness" diff="30" cost="K20V5" castdur="30m"
-        range="CASTER" spelldur="K" effectRange="10" enh="1/+K5V5">
+    <spell id="grandness" diff="30" cost="K20V5" castdur="30m" range="CASTER" spelldur="K" effectRange="10" enh="1/+K5V5">
         <school skill="controlmagic" level="5" />
         <type>ATTITUDE</type>
         <type>CONTROL</type>
@@ -796,8 +736,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>EFFECT_RANGE</enhancementtype>
     </spell>
-    <spell id="rest" diff="21" cost="8V2" castdur="1T"
-        range="CASTER" enh="1/+1V1">
+    <spell id="rest" diff="21" cost="8V2" castdur="1T" range="CASTER" enh="1/+1V1">
         <school skill="healmagic" level="2" />
         <school skill="enhancemagic" level="3" />
         <type>AURA</type>
@@ -807,8 +746,7 @@
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="sense_tremors" diff="21" cost="K8V2" castdur="11T"
-        range="CASTER" spelldur="K" enh="2/+K2V2">
+    <spell id="sense_tremors" diff="21" cost="K8V2" castdur="11T" range="CASTER" spelldur="K" enh="2/+K2V2">
         <school skill="insightmagic" level="3" />
         <school skill="stonemagic" level="2" />
         <type>PERCEPTION</type>
@@ -1167,7 +1105,6 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-
     <spell id="support_healing" diff="18" cost="4V1" castdur="3m" range="TOUCH" enh="1/+1V1">
         <school skill="healmagic" level="1" />
         <school skill="enhancemagic" level="2" />
@@ -1248,7 +1185,6 @@
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-
     <spell id="poisoncloud" diff="27" cost="16V4" castdur="13T" range="10m" effectRange="3" spelldur="5T" enh="1/+4V4">
         <school skill="naturemagic" level="5" />
         <school skill="deathmagic" level="5" />
@@ -1262,7 +1198,8 @@
         <enhancementtype>EFFECT_RANGE</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="gliding" diff="21" cost="8V2" castdur="1T" range="5m" spelldur="90T" enh="1/+2V2">
+	<!-- Errata März 2019 - S.130 -->
+    <spell id="gliding" diff="21" cost="8V2" castdur="1T" range="CASTER" spelldur="90T" enh="1/+2V2">
         <school skill="motionmagic" level="2" />
         <school skill="windmagic" level="2" />
         <type>ELEMENTALCONTROL</type>
@@ -1270,7 +1207,6 @@
         <enhancementtype>RELEASETIME</enhancementtype>
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
-        <enhancementtype>RANGE</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
     <spell id="gravebeast" diff="27" cost="16V4" castdur="10m" range="TOUCH" spelldur="1D" enh="2/+4V4">
@@ -1588,7 +1524,8 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-    <spell id="enhance_light" diff="18" cost="K4V1" castdur="4T" range="CASTER" spelldur="K" enh="2/+K1V1">
+	<!-- Errata März 2019 - S. 134 -->
+    <spell id="enhance_light" diff="18" cost="K4V1" castdur="4T" range="TOUCH" spelldur="K" enh="2/+K1V1">
         <school skill="firemagic" level="1" />
         <school skill="lightmagic" level="0" />
         <type>ELEMENTALCONTROL</type>
@@ -2137,6 +2074,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
+	<!-- Errata März 2019 - S. 140 -->
     <spell id="immitate_animal" diff="21" cost="K8V2" castdur="6T" range="5m" spelldur="K" enh="1/+K2V2">
         <school skill="controlmagic" level="3" />
         <school skill="illusionmagic" level="3" />
@@ -2500,7 +2438,8 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>SPELLDURATION</enhancementtype>
     </spell>
-    <spell id="wavebonds" diff="KW" cost="K8V2" castdur="7T" range="CASTER" spelldur="K" enh="1/+K2V2">
+	<!-- Errata März 2019 - S. 145 -->
+    <spell id="wavebonds" diff="KW" cost="K8V2" castdur="7T" range="5m" spelldur="K" enh="3/+K2V2">
         <school skill="watermagic" level="2" />
         <type>ELEMENTALCONTROL</type>
         <type>SUMMON</type>
@@ -2579,7 +2518,6 @@
         <enhancementtype>EXHAUSTED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-
     <!-- Beschwörungszauber S.186 -->
     <spell id="summon_stone_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="stonemagic" level="0" />
@@ -2633,7 +2571,6 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-
     <spell id="summon_fire_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="firemagic" level="0" />
         <type>CONJURATION</type>
@@ -2739,7 +2676,6 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-
     <spell id="summon_nature_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="naturemagic" level="0" />
         <type>CONJURATION</type>
@@ -2798,7 +2734,6 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-
     <spell id="summon_shadow_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="shadowmagic" level="0" />
         <type>CONJURATION</type>
@@ -2851,7 +2786,6 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-
     <spell id="summon_fate_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="fatemagic" level="0" />
         <type>CONJURATION</type>
@@ -2945,7 +2879,6 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-
     <spell id="summon_water_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="watermagic" level="0" />
         <type>CONJURATION</type>
@@ -2998,7 +2931,6 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-
     <spell id="summon_wind_0" diff="15" cost="K1" castdur="2T" range="CASTER" spelldur="K" enh="1/+K1V1">
         <school skill="windmagic" level="0" />
         <type>CONJURATION</type>
@@ -3051,5 +2983,4 @@
         <enhancementtype>CHANNELIZED_FOCUS</enhancementtype>
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
     </spell>
-
 </spells>

@@ -58,7 +58,7 @@
     <enhancementtype>CONSUMED_FOCUS</enhancementtype>
   </spell>
 
-  <spell id="animal_scout" diff="21" cost="K4V1" castdur="7T" range="CASTER" spelldur="K" enh="1/+K1V1">
+  <spell id="animal_scout" diff="18" cost="K4V1" castdur="1m" range="CASTER" spelldur="K" enh="1/+K1V1">
     <school skill="naturemagic" level="1"/>
     <school skill="fatemagic" level="1"/>
     <type>SUMMON</type>

@@ -1128,7 +1128,8 @@
     <type>CURSE</type>
   </spell>
   <spell id="deathprotection" diff="27" cost="K16V4" castdur="5m" range="CASTER" spelldur="K" enh="2/+K4V4" >
-    <school skill="protectionmagic" level="5"/>
+<!-- Errata "Die Magie" März 2019 - S. 102 -->
+<!--    <school skill="protectionmagic" level="5"/> --> 
     <school skill="deathmagic" level="4"/>
     <type>LIFE</type>
   </spell>
@@ -1187,7 +1188,8 @@
   </spell>
   <spell id="indestructible" diff="27" cost="K16V4" castdur="6T" range="TOUCH" spelldur="K" enh="3/+K4V4" >
     <school skill="stonemagic" level="4"/>
-    <school skill="protectionmagic" level="5"/>
+<!-- Errata "Die Magie" März 2019 - S. 102 --> 
+<!--    <school skill="protectionmagic" level="5"/> -->
     <type>OBJECT</type>
   </spell>
   <spell id="damnation" diff="27" cost="K16V4" castdur="17T" range="5m" spelldur="K" enh="2/+K4V4" >
