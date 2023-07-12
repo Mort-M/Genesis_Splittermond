@@ -25,7 +25,7 @@ import org.prelle.splimo.persist.SpellCostConverter;
  *
  */
 public class GenerateSpellList {
-	
+
 	private static XSSFCellStyle style;
 
 	//-------------------------------------------------------------------
@@ -38,7 +38,7 @@ public class GenerateSpellList {
 	//-------------------------------------------------------------------
 	/**
 	 * @param args
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
 		SplittermondDataPlugin plugin = new SplittermondDataPlugin();
@@ -49,7 +49,7 @@ public class GenerateSpellList {
 		POIXMLProperties props = wb.getProperties();
 		props.getCoreProperties().setTitle("Splittermond Zauber ");
 		props.getCoreProperties().setDescription("Übersicht aller Zauber");
-		props.getCoreProperties().setCreator("Alexander Schmidt");
+		props.getCoreProperties().setCreator("Genesis");
 		props.getCoreProperties().setCreated(Instant.now().toString());
 
 		// Header
@@ -57,8 +57,8 @@ public class GenerateSpellList {
 		XSSFFont font = wb.createFont();
 //		font.setFontHeightInPoints((short) 15);
 		font.setBold(true);;
-		style.setFont(font);                 
-		
+		style.setFont(font);
+
 		generateSpells(wb);
 
 		String fileName = "Splittermond_Zauber.xlsx";
@@ -69,12 +69,12 @@ public class GenerateSpellList {
 		}
 		wb.close();
 	}
-	
+
 	//-------------------------------------------------------------------
 	private static void generateSpells(XSSFWorkbook wb) throws IOException {
-		Sheet sheet = wb.createSheet("Zaubersprüche");		
+		Sheet sheet = wb.createSheet("Zaubersprüche");
 		Row sheetRow = sheet.createRow(0);
-		
+
 		sheet.addMergedRegion(new CellRangeAddress(0,0,5,7));
 
 	    sheetRow = sheet.createRow(1);
@@ -102,45 +102,45 @@ public class GenerateSpellList {
 				return o1.getName().compareTo(o2.getName());
 			}
 		});
-		
-		
+
+
 		int i=1;
-		
+
 		SpellCostConverter conv = new SpellCostConverter();
-		for (Spell master : list) {		
-		
-		
+		for (Spell master : list) {
+
+
 //		for (ItemTemplate data : list) {
 //			if (!(data.getType(ItemType.WEAPON)!=null || data.getType(ItemType.LONG_RANGE_WEAPON)!=null))
 //				continue;
-//			
+//
 			Row row = sheet.createRow(++i);
 			row.createCell(0).setCellValue(master.getId());
 			row.createCell(1).setCellValue(master.getName());
 			row.createCell(2).setCellValue(master.getProductName());
 			row.createCell(3).setCellValue(master.getPage());
 			row.createCell(4).setCellValue(master.getSchoolName());
-			row.createCell(5).setCellValue(String.join(", ", master.getTypes().stream().map(t -> t.getName()).collect(Collectors.toList())));			
+			row.createCell(5).setCellValue(String.join(", ", master.getTypes().stream().map(t -> t.getName()).collect(Collectors.toList())));
 			row.createCell(6).setCellValue(master.getDifficulty());
 
 			row.createCell(8).setCellValue(master.getCastDurationString());
 			row.createCell(9).setCellValue(master.getCastRangeString());
 			row.createCell(10).setCellValue(master.getHelpText());
-			row.createCell(11).setCellValue(master.getSpellDurationString());			
+			row.createCell(11).setCellValue(master.getSpellDurationString());
 			row.createCell(12).setCellValue(master.getCastDurationTicks());
-			row.createCell(13).setCellValue(master.getEnhancementString()+ " " +  master.getEnhancementDescription());			
+			row.createCell(13).setCellValue(master.getEnhancementString()+ " " +  master.getEnhancementDescription());
 
-			
+
 //			row.createCell(14).setCellValue(master.getSpellDuration());
 //			row.createCell(15).setCellValue(master.getDescription());
-			
+
 		    try {
 				row.createCell(7).setCellValue(conv.write(master.getCost()));
 			} catch (Exception e) {
 				row.createCell(7).setCellValue("Error: "+e);
 			}
-			
-			
+
+
 		}
 
 		// Mark columns auto-width
@@ -148,5 +148,5 @@ public class GenerateSpellList {
 			sheet.autoSizeColumn(i);
 		}
 	}
-	
+
 }
