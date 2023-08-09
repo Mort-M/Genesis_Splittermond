@@ -22,6 +22,7 @@ import org.prelle.splimo.SkillSpecialization;
 import org.prelle.splimo.SkillValue;
 import org.prelle.splimo.SpliMoCharacter;
 import org.prelle.splimo.charctrl.CharacterController;
+import org.prelle.splimo.modifications.MastershipModification;
 import org.prelle.splimo.modifications.SkillModification;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXConstants;
 import org.prelle.splittermond.chargen.jfx.SpliMoCharGenJFXUtil;
@@ -53,7 +54,7 @@ public class SkillValueTableView extends TableView<SkillValue> {
 	private CharacterController control;
 	private SkillType type;
 	private ScreenManagerProvider provider;
-	
+
 	private TableColumn<SkillValue, String> colName;
 	private TableColumn<SkillValue, Attribute> colAttrib1;
 	private TableColumn<SkillValue, Attribute> colAttrib2;
@@ -75,7 +76,7 @@ public class SkillValueTableView extends TableView<SkillValue> {
 
 	//-------------------------------------------------------------------
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private void initColumns() {		
+	private void initColumns() {
 		colName     = new TableColumn<SkillValue, String>(RES.getString("label.name"));
 		colAttrib1  = new TableColumn<SkillValue, Attribute>(RES.getString("label.attr1"));
 		colAttrib2  = new TableColumn<SkillValue, Attribute>(RES.getString("label.attr2"));
@@ -108,10 +109,10 @@ public class SkillValueTableView extends TableView<SkillValue> {
 		colValue.setStyle( "-fx-alignment: top-center;");
 		colButton.setStyle( "-fx-alignment: top-center;");
 		colMasteries.setStyle( "-fx-alignment: top-left;");
-		
+
 		getColumns().addAll(colName, colAttrib1, colAttrib2, colPoints, colMod, colValue, colMasteries);
 		setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
-		
+
 		colName.setCellValueFactory( param-> new SimpleStringProperty(param.getValue().getSkill().getName()));
 		colAttrib1.setCellValueFactory( param-> new SimpleObjectProperty(param.getValue().getSkill().getAttribute1()));
 		colAttrib2.setCellValueFactory( param-> new SimpleObjectProperty(param.getValue().getSkill().getAttribute2()));
@@ -124,7 +125,7 @@ public class SkillValueTableView extends TableView<SkillValue> {
 			return new SimpleObjectProperty(btn);
 			});
 		colMasteries.setCellValueFactory( param-> new SimpleStringProperty(getMasteriesString(param.getValue())));
-		
+
 		colName.setCellFactory( (col) -> new TableCell<SkillValue,String>() {
 			public void updateItem(String item, boolean empty) {
 				super.updateItem(item, empty);
@@ -135,7 +136,7 @@ public class SkillValueTableView extends TableView<SkillValue> {
 					Skill skill = getTableView().getItems().get(getIndex()).getSkill();
 					attPane.setAttentionFlag(control.getMastershipController().getToDos(skill).size()>0);
 					attPane.setAttentionToolTip(control.getMastershipController().getToDos(skill));
-					setGraphic(attPane); 
+					setGraphic(attPane);
 				}
 			}
 		});
@@ -179,8 +180,8 @@ public class SkillValueTableView extends TableView<SkillValue> {
 //		colMasteries.setCellFactory( col -> new TableCell<SkillValue,String>() {
 //			public void updateItem(String item, boolean empty) {
 //				super.updateItem(item, empty);
-//				if (item==null) { 
-//					setText(null); 
+//				if (item==null) {
+//					setText(null);
 //				} else {
 //					setGraphic(new Button(null, new SymbolIcon("edit")));
 //					setWrapText(true);
@@ -223,22 +224,19 @@ public class SkillValueTableView extends TableView<SkillValue> {
 }
 
 class SkillValueModifierTableCell extends TableCell<SkillValue, Number> {
-	
+
 	private Label label;
-	
+
 	public SkillValueModifierTableCell() {
 		label    = new Label();
 	}
-	
+
 	public void updateItem(Number item, boolean empty) {
 		super.updateItem(item, empty);
 		if (item==null || (0==(int)item)) {
 			setGraphic(null);
 		} else {
 			SkillValue sval = getTableView().getItems().get(getIndex());
-			
-			List<String> names = new ArrayList<>();
-			sval.getModifications().forEach( elem -> names.add(  ((SkillModification)elem).getValue()+" ("+((SkillModification)elem).getSource()+")"));
 			label.setTooltip(new Tooltip(SpliMoCharGenJFXUtil.getModificationTooltip(sval)));
 			label.setText(String.valueOf(item));
 			setGraphic(label);
@@ -247,13 +245,13 @@ class SkillValueModifierTableCell extends TableCell<SkillValue, Number> {
 }
 
 class SkillValueMasteriesTableCell extends TableCell<SkillValue, String> {
-	
+
 	private Button btnOpen;
 	private Label flow;
 	private HBox layout;
 	private CharacterController control;
 	private ScreenManagerProvider provider;
-	
+
 	public SkillValueMasteriesTableCell(CharacterController control, ScreenManagerProvider provider) {
 		this.control  = control;
 		this.provider = provider;
@@ -268,7 +266,7 @@ class SkillValueMasteriesTableCell extends TableCell<SkillValue, String> {
 //		GridPane.setFillHeight(this, false);
 //		layout.setStyle("-fx-max-height: 4em; -fx-background-color: red");
 	}
-	
+
 	//-------------------------------------------------------------------
 	public void updateItem(String item, boolean empty) {
 		super.updateItem(item, empty);
@@ -277,15 +275,15 @@ class SkillValueMasteriesTableCell extends TableCell<SkillValue, String> {
 		} else {
 			SkillValue sVal = getTableView().getItems().get(getIndex());
 			flow.setText(item);
-			
-			
+
+
 			layout  = new HBox(btnOpen, getMasteriesFlowPane(sVal));
 //			layout.setStyle("-fx-background-color: red");
 			HBox.setHgrow(flow, Priority.ALWAYS);
 			setGraphic(layout);
 //			setStyle("-fx-max-height: 7em; -fx-background-color: lime");
 //			setMaxHeight(60);
-			
+
 			btnOpen.setOnAction(ev -> buttonClicked(sVal));
 		}
 	}
@@ -316,14 +314,14 @@ class SkillValueMasteriesTableCell extends TableCell<SkillValue, String> {
 				lbl.setText(lbl.getText()+", ");
 			ret.getChildren().add(lbl);
 		}
-		
+
 		return ret;
 	}
-	
+
 	//-------------------------------------------------------------------
 	private void buttonClicked(SkillValue sval) {
 		LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME).debug("START: editMasterships");
-		
+
 		MastershipDialog dialog = new MastershipDialog(control);
 		dialog.setData(control.getModel(), sval);
 		NavigButtonControl ctrl = new NavigButtonControl();
@@ -333,6 +331,6 @@ class SkillValueMasteriesTableCell extends TableCell<SkillValue, String> {
 		LogManager.getLogger(SpliMoCharGenJFXConstants.BASE_LOGGER_NAME).debug("STOP : editMasterships");
 //		getTableView().refresh();
 //		this.updateItem(SkillValueTableView.getMasteriesString(sval), false);
-		
+
 	}
 }
