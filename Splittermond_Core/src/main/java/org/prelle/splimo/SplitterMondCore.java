@@ -411,13 +411,13 @@ public class SplitterMondCore {
 					}
 				}
 				if (tmp.getEnhancementtype().isEmpty()) {
-					if (tmp.getCost().getChannelled()>0) {
+					if (tmp.getCost().getChannelled()>1) {
 						tmp.getEnhancementtype().add(SpellEnhancementType.CHANNELIZED_FOCUS);
 					} else {
-						if (tmp.getCost().getExhausted()>0)
+						if (tmp.getCost().getExhausted()>1)
 							tmp.getEnhancementtype().add(SpellEnhancementType.EXHAUSTED_FOCUS);
 					}
-					if (tmp.getCost().getConsumed()>0)
+					if (tmp.getCost().getConsumed()>1)
 						tmp.getEnhancementtype().add(SpellEnhancementType.CONSUMED_FOCUS);
 					if (tmp.getCastRange()>0)
 						tmp.getEnhancementtype().add(SpellEnhancementType.RANGE);
@@ -2342,7 +2342,7 @@ public class SplitterMondCore {
 				tmp.getCultures();
 				if (logger.isDebugEnabled())
 					logger.debug("* "+tmp.getName());
-				
+
 				// If town already existed, remove it
 				Town prev = getTown(tmp.getId());
 				if (prev!=null) {
