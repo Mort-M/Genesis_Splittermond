@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<races>
+    <race id="rattlesEast">
+        <modifications>
+            <attrmod type="rel" attr="INTUITION" val="1"/>
+            <attrmod type="rel" attr="STRENGTH" val="-1"/>
+            <selmod>
+            <attrmod type="abs" attr="SIZE" val="4"/>
+            <attrmod type="abs" attr="SIZE" val="3"/>
+            </selmod>
+            <selmod num="1">
+                <attrmod type="rel" attr="AGILITY" val="1"/>
+                <attrmod type="rel" attr="CHARISMA" val="1"/>
+                <attrmod type="rel" attr="CONSTITUTION" val="1"/>
+                <attrmod type="rel" attr="INTUITION" val="1"/>
+                <attrmod type="rel" attr="MIND" val="1"/>
+                <attrmod type="rel" attr="MYSTIC" val="1"/>
+                <attrmod type="rel" attr="STRENGTH" val="1"/>
+                <attrmod type="rel" attr="WILLPOWER" val="1"/>
+            </selmod>
+            <powermod ref="griffintail" />
+            <powermod ref="swift" />
+            <selmod>
+                <powermod ref="resistpoison" />
+                <powermod ref="resistsick"/>
+            </selmod>
+            <selmod>
+            <powermod ref="sensesmell" />
+            <powermod ref="sensesocial" />
+            <powermod ref="lowlight" />
+            </selmod>
+        </modifications>
+		<hair>
+		  <entries>
+			<color from="2" to="3" value="schwarz"/>
+			<color from="4" to="6" value="blaugrau"/>
+			<color from="7" to="10" value="graubraun"/>
+			<color from="11" to="13" value="dunkelbraun"/>
+			<color from="14" to="16" value="goldorange"/>
+			<color from="17" to="19" value="beige"/>
+			<color from="20" to="20" value="weiß"/>
+		  </entries>
+	    </hair>
+		<eyes>
+		  <entries>
+			<color from="2" to="3" value="golden"/>
+			<color from="4" to="6" value="pink"/>
+			<color from="7" to="10" value="schwarz"/>
+			<color from="11" to="13" value="rubinrot"/>
+			<color from="14" to="16" value="braun"/>
+			<color from="17" to="20" value="rot"/>
+	      </entries>
+	    </eyes>
+		<size base="128" d10="2" wmin="30" wmax="60"/>
+    </race>
+
+    <race id="rattlesWest">
+        <modifications>
+            <attrmod type="rel" attr="INTUITION" val="1"/>
+            <attrmod type="rel" attr="STRENGTH" val="-1"/>
+            <selmod>
+            <attrmod type="abs" attr="SIZE" val="3"/>
+            <attrmod type="abs" attr="SIZE" val="4"/>
+            </selmod>
+            <selmod num="1">
+                <attrmod type="rel" attr="AGILITY" val="1"/>
+                <attrmod type="rel" attr="CHARISMA" val="1"/>
+                <attrmod type="rel" attr="CONSTITUTION" val="1"/>
+                <attrmod type="rel" attr="INTUITION" val="1"/>
+                <attrmod type="rel" attr="MIND" val="1"/>
+                <attrmod type="rel" attr="MYSTIC" val="1"/>
+                <attrmod type="rel" attr="STRENGTH" val="1"/>
+                <attrmod type="rel" attr="WILLPOWER" val="1"/>
+            </selmod>
+            <powermod ref="griffintail" />
+            <powermod ref="swift" />
+            <selmod>
+                <powermod ref="resistpoison" />
+                <powermod ref="resistsick"/>
+            </selmod>
+            <selmod>
+            <powermod ref="sensesmell" />
+            <powermod ref="sensesocial" />
+            <powermod ref="lowlight" />
+            </selmod>
+        </modifications>
+		<hair>
+		  <entries>
+			<color from="2" to="3" value="schwarz"/>
+			<color from="4" to="6" value="blaugrau"/>
+			<color from="7" to="10" value="graubraun"/>
+			<color from="11" to="13" value="dunkelbraun"/>
+			<color from="14" to="16" value="goldorange"/>
+			<color from="17" to="19" value="beige"/>
+			<color from="20" to="20" value="weiß"/>
+		  </entries>
+	    </hair>
+		<eyes>
+		  <entries>
+			<color from="2" to="3" value="golden"/>
+			<color from="4" to="6" value="pink"/>
+			<color from="7" to="10" value="schwarz"/>
+			<color from="11" to="13" value="rubinrot"/>
+			<color from="14" to="16" value="braun"/>
+			<color from="17" to="20" value="rot"/>
+	      </entries>
+	    </eyes>
+		<size base="103" d10="2" wmin="20" wmax="40"/>
+    </race>
+</races>

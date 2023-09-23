@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cultures>
+    <culture id="snowjumper" continent="DRAGOREA">
+        <modifications>
+            <racemod ref="rattlesEast"/>
+            <racemod ref="rattlesWest"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="ragtag"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="warrior"/>
+            <backmod ref="artists"/>
+            <backmod ref="priests"/>
+
+            <languagemod ref="dragoreisch"/>
+            <cultureloremod ref="snowjumper"/>
+
+            <selmod>
+                <powermod ref="goodhearing"/>
+                <powermod ref="resistcold"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <skillmod ref="acrobatics" value="1"/>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="determination" value="1"/>
+            <skillmod ref="history" value="1"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="2"/>
+                <skillmod ref="hunting" value="2"/>
+            </selmod>
+            <selmod>
+                <skillmod ref="nature" value="1"/>
+                <skillmod ref="watermagic" value="1"/>
+            </selmod>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+
+            <mastermod ref="survival/terrainlore_forest"/>
+        </modifications>
+    </culture>
+    <culture id="desertfurs" continent="PASHANAR">
+        <modifications>
+            <racemod ref="rattlesEast"/>
+            <racemod ref="rattlesWest"/>
+
+            <backmod ref="eremits"/>
+            <backmod ref="ragtag"/>
+            <backmod ref="merchant"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="artists"/>
+            <backmod ref="priests"/>
+            <backmod ref="traveler"/>
+
+            <languagemod ref="tarrgro"/>
+            <cultureloremod ref="desertfurs"/>
+
+            <powermod ref="resistheat"/>
+
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <skillmod ref="arcanelore" value="1"/>
+            <selmod>
+                <skillmod ref="diplomacy" value="2"/>
+                <skillmod ref="eloquence" value="2"/>
+            </selmod>
+            <skillmod ref="animals" value="2"/>
+            <skillmod ref="history" value="1"/>
+            <skillmod ref="craftmanship" value="1"/>
+            <skillmod ref="nature" value="1"/>
+            <selmod>
+                <skillmod ref="hunting" value="2"/>
+                <skillmod ref="locksntraps" value="2"/>
+            </selmod>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="endurance" value="2"/>
+
+            <selmod>
+                <mastermod ref="survival/terrainlore_desert"/>
+                <mastermod ref="diplomacy/haggler"/>
+            </selmod>
+        </modifications>
+    </culture>
+    <culture id="mossskins" continent="FROSTLANDE">
+        <modifications>
+            <racemod ref="rattlesEast"/>
+            <racemod ref="rattlesWest"/>
+
+            <backmod ref="ragtag"/>
+            <backmod ref="craftsmen"/>
+            <backmod ref="farmer"/>
+            <backmod ref="warrior"/>
+            <backmod ref="artists"/>
+            <backmod ref="priests"/>
+
+            <languagemod ref="moosfellsch"/>
+            <cultureloremod ref="mossskins"/>
+
+            <selmod>
+                <powermod ref="senseorient"/>
+                <powermod ref="sensesocial"/>
+            </selmod>
+
+            <selmod>
+                <skillmod ref="slashing" value="1"/>
+                <skillmod ref="melee" value="1"/>
+                <skillmod ref="chains" value="1"/>
+                <skillmod ref="blades" value="1"/>
+                <skillmod ref="staffs" value="1"/>
+                <skillmod ref="longrange" value="1"/>
+                <skillmod ref="throwing" value="1"/>
+            </selmod>
+            <skillmod ref="athletics" value="2"/>
+            <skillmod ref="empathy" value="1"/>
+            <skillmod ref="determination" value="1"/>
+            <selmod>
+                <skillmod ref="craftmanship" value="2"/>
+                <skillmod ref="hunting" value="2"/>
+            </selmod>
+            <skillmod ref="stealth" value="2"/>
+            <selmod>
+                <skillmod ref="nature" value="1"/>
+                <skillmod ref="naturemagic" value="1"/>
+            </selmod>
+            <skillmod ref="survival" value="2"/>
+            <skillmod ref="perception" value="2"/>
+            <skillmod ref="endurance" value="1"/>
+
+            <mastermod ref="survival/terrainlore_forest"/>
+        </modifications>
+    </culture>
+</cultures>

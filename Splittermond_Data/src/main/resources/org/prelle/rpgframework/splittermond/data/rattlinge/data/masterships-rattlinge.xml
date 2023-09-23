@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<skills>
+   <skill id="melee" type="COMBAT" attr1="AGILITY" attr2="STRENGTH">
+       <mastership level="1" common="true" key="whipTail">
+           <requires>
+               <powerreq ref="griffintail"/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="tailAttack">
+        <requires>
+           <masterreq ref="melee/whipTail"/>
+        </requires>
+       </mastership>
+       <mastership level="2" common="true" key="tailParade">
+        <requires>
+           <masterreq ref="melee/whipTail"/>
+        </requires>
+       </mastership>
+       <mastership level="3" common="true" key="withAllLimbs">
+        <requires>
+           <masterreq ref="melee/tailAttack"/>
+        </requires>
+       </mastership>
+  </skill>
+   <skill id="slashing" type="COMBAT">
+        <mastership level="1" common="true" key="whipTail">
+           <requires>
+               <powerreq ref="griffintail"/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="tailAttack">
+        <requires>
+           <masterreq ref="slashing/whipTail"/>
+        </requires>
+       </mastership>
+       <mastership level="2" common="true" key="tailParade">
+        <requires>
+           <masterreq ref="slashing/whipTail"/>
+        </requires>
+       </mastership>
+       <mastership level="3" common="true" key="withAllLimbs">
+        <requires>
+           <masterreq ref="slashing/tailAttack"/>
+        </requires>
+       </mastership>
+    </skill>
+    <skill id="chains" type="COMBAT">
+        <mastership level="1" common="true" key="whipTail">
+           <requires>
+               <powerreq ref="griffintail"/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="tailAttack">
+        <requires>
+           <masterreq ref="chains/whipTail"/>
+        </requires>
+       </mastership>
+       <mastership level="2" common="true" key="tailParade">
+        <requires>
+           <masterreq ref="chains/whipTail"/>
+        </requires>
+       </mastership>
+       <mastership level="3" common="true" key="withAllLimbs">
+        <requires>
+           <masterreq ref="chains/tailAttack"/>
+        </requires>
+       </mastership>
+    </skill>
+    <skill id="blades" type="COMBAT">
+        <mastership level="1" common="true" key="whipTail">
+           <requires>
+               <powerreq ref="griffintail"/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="tailAttack">
+        <requires>
+           <masterreq ref="blades/whipTail"/>
+        </requires>
+       </mastership>
+       <mastership level="2" common="true" key="tailParade">
+        <requires>
+           <masterreq ref="blades/whipTail"/>
+        </requires>
+       </mastership>
+       <mastership level="3" common="true" key="withAllLimbs">
+        <requires>
+           <masterreq ref="blades/tailAttack"/>
+        </requires>
+       </mastership>
+    </skill>
+    <skill id="staffs" type="COMBAT">
+        <mastership level="1" common="true" key="whipTail">
+           <requires>
+               <powerreq ref="griffintail"/>
+           </requires>
+       </mastership>
+       <mastership level="1" common="true" key="tailAttack">
+        <requires>
+           <masterreq ref="staffs/whipTail"/>
+        </requires>
+       </mastership>
+       <mastership level="2" common="true" key="tailParade">
+        <requires>
+           <masterreq ref="staffs/whipTail"/>
+        </requires>
+       </mastership>
+       <mastership level="3" common="true" key="withAllLimbs">
+        <requires>
+           <masterreq ref="staffs/tailAttack"/>
+        </requires>
+       </mastership>
+    </skill>
+  <skill id="empathy">
+       <mastership level="2" key="socialSymbiosis" />
+  </skill>
+  <skill id="acrobatics">
+       <mastership level="2" key="innerCentre">
+	        <requires>
+                <powerreq ref="griffintail"/>
+            </requires>
+        </mastership>
+   </skill>
+   <skill id="dexterity">
+        <mastership level="1" key="skilledThief">
+        	<requires>
+                    <powerreq ref="griffintail"/>
+                </requires>
+        </mastership>
+   </skill>
+   <skill id="stealth">
+        <mastership level="1" key="oneWithTheShadows" /> 
+        <mastership level="1" key="tracklessStep" />
+   </skill>
+   <skill id="craftmanship">
+        <mastership level="1" key="skilledGripper">
+        	<requires>
+                    <powerreq ref="griffintail"/>
+                </requires>
+        </mastership>
+   </skill>
+   <skill id="streetlore">
+        <mastership level="1" key="Sniffer" />
+    </skill>
+    <skill id="endurance">
+        <mastership level="1" key="thickSkin" />
+     </skill>
+
+</skills>
