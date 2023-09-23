@@ -7,6 +7,7 @@
   <creaturefeaturetype id="shapeshifter"/>
   <creaturefeaturetype id="infectious" levels="true"/>
   <creaturefeaturetype id="light_sensitive" levels="true"/>
+  <creaturefeaturetype id="portal_opener"/>
   <creaturefeaturetype id="weak_spot_attack" />
   <creaturefeaturetype id="swarm" count="true" levels="true"/>
   <creaturefeaturetype id="swarm_presence" levels="true" mods="true"/>
