@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<powers>
+    <power id="empath" />
+    <power id="dangersense" >
+	    <requires>
+	        <selreq>
+	        	<powerreq ref="sensesmell" />
+	        	<powerreq ref="goodsight" />
+	        	<powerreq ref="goodhearing" />
+	        </selreq>
+	    </requires>
+	</power>
+    <power id="articulated" />
+    <power id="smellreader" >
+	    <requires>
+	       	<powerreq ref="sensesmell" />
+	    </requires>
+	</power>
+    <power id="griffintail" cost="2" selectable="GENERATION" >
+	   <modifications>
+      	 <attrmod attr="AGILITY" val="1"/>
+	   </modifications>
+	</power>
+    <power id="hunterinstinct" >
+	    <requires>
+	        <selreq>
+	        	<powerreq ref="sensesmell" />
+	        	<powerreq ref="goodsight" />
+	        	<powerreq ref="goodhearing" />
+	        </selreq>
+	    </requires>
+	</power>
+</powers>
