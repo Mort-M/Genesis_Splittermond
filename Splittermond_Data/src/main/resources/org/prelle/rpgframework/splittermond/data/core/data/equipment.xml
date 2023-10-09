@@ -418,7 +418,7 @@
                 <attrreq attr="INTUITION" val="4"/>
             </requires>
             <features>
-                <feature type="PENETRATING" level="3"/>
+                <feature type="PIERCING" level="3"/>
                 <feature type="DOUBLE_WEAPON"/>
                 <feature type="TWO_HANDED"/>
                 <feature type="SEPERATABLE"/>
