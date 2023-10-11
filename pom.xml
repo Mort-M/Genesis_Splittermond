@@ -106,7 +106,7 @@
 		<module>Splittermond_JSON</module>
 		<module>Splittermond_Plugin</module>
 		<module>Splittermond_ProductData</module>
-		<module>Splittermond_Foundry_Export_Old</module>
+		<!--module>Splittermond_Foundry_Export_Old</module-->
 	</modules>
 
 
