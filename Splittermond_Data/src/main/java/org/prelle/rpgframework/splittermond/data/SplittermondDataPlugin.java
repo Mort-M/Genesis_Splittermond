@@ -531,6 +531,10 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 							SplitterMondCore.loadRaces(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
 						} else if (id.startsWith("creature")) {
 							SplitterMondCore.loadCreatures(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
+						} else if (id.startsWith("cultlore")) {
+							SplitterMondCore.loadCultureLores(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
+						} else if (id.startsWith("language")) {
+							SplitterMondCore.loadLanguages(CUSTOM, datastream, bundle.properties, bundle.helpProperties);
 						} else  {
 							logger.warn("Don't know how to deal with custom data "+bundle.datafile);
 							continue;
