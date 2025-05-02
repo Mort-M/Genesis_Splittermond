@@ -480,6 +480,13 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadCultures(RAT, clazz.getResourceAsStream("rattlinge/data/cultures-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
 		SplitterMondCore.loadMasterships(RAT, clazz.getResourceAsStream("rattlinge/data/masterships-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
 
+		logger.info("START ------------------------------Frynjord--------------------------------------------");
+		PluginSkeleton FRY = new PluginSkeleton("Frynjord", "Frynjord");
+		SplitterMondCore.loadEducations(FRY, clazz.getResourceAsStream("frynjord/data/educations-frynjord.xml"), FRY.getResources(), FRY.getHelpResources());
+		SplitterMondCore.loadEquipment(FRY, clazz.getResourceAsStream("frynjord/data/equipment-frynjord.xml"), FRY.getResources(), FRY.getHelpResources());
+		SplitterMondCore.loadNameTable(FRY, clazz.getResourceAsStream("frynjord/data/nametable-frynjord.xml"), FRY.getResources(), FRY.getHelpResources()); 
+		SplitterMondCore.loadTowns(FRY, clazz.getResourceAsStream("frynjord/data/towns-frynjord.xml"), FRY.getResources(), FRY.getHelpResources());
+		
 		count++; callback.progressChanged( (count/totalPlugins) );
 
 		/*

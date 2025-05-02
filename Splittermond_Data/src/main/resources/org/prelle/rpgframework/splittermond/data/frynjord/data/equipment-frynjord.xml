@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+
+  <!--###################  Waffen  #####################-->
+  
+     <item avail="SMALL_TOWN" cplx="F" id="mammothFeather" load="4" material="METAL" price="1200" robust="5" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="2W10+1" skill="staffs" speed="11" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="3"/>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature type="LONG_WEAPON"/>
+            <feature type="HEAVY"/>
+            <feature type="TWO_HANDED"/>
+         </features>
+      </weapon>
+   </item>
+
+   <item avail="SMALL_TOWN" cplx="G" id="axesword" load="3" material="METAL" price="1000" robust="6" type="WEAPON">
+      <weapon att1="CONSTITUTION" att2="STRENGTH" damage="1W6+3" skill="slashing" speed="9" type="WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="3"/>
+         </requires>
+         <features>
+            <feature type="CLIMBING_HELP"/>
+            <feature type="CRITICAL" level="1"/>
+            <feature type="HEAVY"/>
+         </features>
+      </weapon>
+   </item>
+
+   <item avail="SMALL_TOWN" cplx="G" id="axeswordBig" load="7" material="METAL" price="1900" robust="6" type="WEAPON">
+      <weapon att1="CONSTITUTION" att2="STRENGTH" damage="2W6" skill="slashing" speed="10" type="WEAPON">
+         <requires>
+            <attrreq attr="STRENGTH" val="3"/>
+         </requires>
+         <features>
+            <feature type="CRITICAL" level="2"/>
+            <feature type="PIERCING" level="2"/>           
+            <feature type="FLEXIBLE"/>           
+            <feature type="HEAVY"/>
+         </features>
+      </weapon>
+   </item>
+
+   <item avail="VILLAGE" cplx="U" id="sealClub" load="1" material="WOOD" price="200" robust="3" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W6+2" skill="slashing" speed="6" type="WEAPON">
+         <requires>
+         </requires>
+         <features>
+            <feature type="BLUNT"/>
+         </features>
+      </weapon>
+   </item>
+   
+   <item avail="CAPITAL" cplx="M" id="doubleCrossbow" load="3" material="WOOD" price="2500" robust="4" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="CONSTITUTION" att2="INTUITION" damage="1W6+4" range="25" skill="longrange" speed="8" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="INTUITION" val="2"/>
+         </requires>
+         <features>
+            <feature type="PENETRATING" level="2"/>
+            <feature type="CRITICAL" level="2"/>           
+            <feature type="TWO_HANDED"/>           
+         </features>
+      </rangeweapon>
+   </item>
+
+   <item avail="CAPITAL" cplx="M" id="doubleCrossbowDoubleShot" load="3" material="WOOD" price="2500" robust="4" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="CONSTITUTION" att2="INTUITION" damage="2W6+8" range="25" skill="longrange" speed="16" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="INTUITION" val="2"/>
+            <attrreq attr="CONSTITUTION" val="3"/>
+         </requires>
+         <features>
+            <feature type="PENETRATING" level="4"/>
+            <feature type="CRITICAL" level="2"/>
+            <feature type="HEAVY"/>         
+            <feature type="TWO_HANDED"/> 
+         </features>
+      </rangeweapon>
+   </item>
+
+   <item avail="SMALL_TOWN" cplx="G" id="whaler" load="2" material="WOOD" price="800" robust="4" type="WEAPON">
+      <weapon att1="AGILITY" att2="STRENGTH" damage="1W10+1" skill="staffs" speed="10" type="WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="2"/>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature type="PENETRATING" level="2"/>
+            <feature type="CRITICAL" level="2"/>           
+            <feature type="FLEXIBLE"/>           
+            <feature type="HEAVY"/>
+            <feature type="THROWABLE"/>
+         </features>
+      </weapon>
+   </item>
+
+   <item avail="SMALL_TOWN" cplx="G" id="whalerThrowing" load="2" material="WOOD" price="800" robust="4" type="LONG_RANGE_WEAPON">
+      <rangeweapon att1="AGILITY" att2="STRENGTH" damage="1W10+1" range="10" skill="throwing" speed="10" type="LONG_RANGE_WEAPON">
+         <requires>
+            <attrreq attr="AGILITY" val="2"/>
+            <attrreq attr="STRENGTH" val="2"/>
+         </requires>
+         <features>
+            <feature type="PENETRATING" level="2"/>
+            <feature type="CRITICAL" level="2"/>
+            <feature type="CLOSE_COMBAT_SUITABLE"/>      
+            <feature type="HEAVY"/>
+         </features>
+      </rangeweapon>
+   </item>
+
+
+  <!--###################  Tier und Fahrzeuge  #####################-->	
+
+	<!--  könnten noch Sachen fehlen -->
+
+
+
+  <!--#######  Kleidung und persönliche Ausstattung  #######-->
+<item avail="SMALL_TOWN" cplx="G" id="HookSole" load="1" material="METAL" price="300" robust="3" type="CLOTHING"/>
+<item avail="SMALL_TOWN" cplx="G" id="SnowMask" load="0" material="FABRIC" price="300" robust="1" type="CLOTHING"/>
+
+
+   <!-- ###########################  Kräuter und Alchemika  ###########################-->
+
+<item avail="LARGE_TOWN" cplx="U" id="catMushrooms" load="0" material="OTHER" price="1500" robust="0" type="POTION"/>
+<item avail="LARGE_TOWN" cplx="U" id="dreamSponge" load="0" material="OTHER" price="3000" robust="0" type="POTION"/>
+<item avail="LARGE_TOWN" cplx="U" id="emberFertilizer" load="0" material="OTHER" price="200" robust="0" type="POTION"/>
+<item avail="LARGE_TOWN" cplx="U" id="sharkBitter" load="0" material="OTHER" price="100" robust="0" type="POTION"/>
+
+
+  <!--###################  Artefakte  #####################-->
+  
+  	<!--  könnten noch Sachen fehlen -->
+ 
+
+
+
+
+</items>
