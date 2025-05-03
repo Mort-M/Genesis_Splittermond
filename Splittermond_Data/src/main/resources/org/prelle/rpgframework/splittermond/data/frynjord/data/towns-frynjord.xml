@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<towns>
+     <town id="jordheim" size="SMALL_TOWN" cultures="frynjord"/> <!-- 17000 -->
+     <town id="zitrabyt" size="SMALL_TOWN" cultures="frynjord"/> <!-- 10500 -->
+     <town id="kajuri" size="VILLAGE" cultures="frynjord"/>
+     <town id="noswogra" size="VILLAGE" cultures="frynjord"/>
+     <town id="zimahora" size="SMALL_TOWN" cultures="frynjord"/> <!-- 17000 -->
+     <town id="schaedelstein" size="VILLAGE" cultures="frynjord"/>
+     <town id="jarukie" size="VILLAGE" cultures="frynjord"/>
+     <town id="kisvarik" size="VILLAGE" cultures="frynjord"/>
+     <town id="tanit" size="VILLAGE" cultures="frynjord"/>
+     <town id="innarut" size="VILLAGE" cultures="frynjord"/>
+</towns>

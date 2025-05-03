@@ -85,9 +85,9 @@
     <town id="sulasjada" size="SMALL_TOWN" cultures="jagodien"/>
     <town id="timudin" size="SMALL_TOWN" cultures="jagodien"/>
     
-    <town id="jordheim" size="SMALL_TOWN" cultures="frynjord" /><!-- 17000 -->
-    <town id="zimahora" size="SMALL_TOWN" cultures="frynjord" /><!-- 17000 -->
-    <town id="zitrabyt" size="SMALL_TOWN" cultures="frynjord"/><!-- 8000 -->
+<!--    <town id="jordheim" size="SMALL_TOWN" cultures="frynjord" /> 17000 FRY -->
+<!--    <town id="zimahora" size="SMALL_TOWN" cultures="frynjord" /> 17000 FRY -->
+<!--    <town id="zitrabyt" size="SMALL_TOWN" cultures="frynjord"/>< 8000 FRY -->
     
     <town id="kelbrun" size="SMALL_TOWN" cultures="jagodsklav , jagodstamm" /><!-- 2000 - 10000 -->
     <town id="raszkabrun" size="SMALL_TOWN" cultures="jagodsklav , jagodstamm" /><!-- 1500 -->    

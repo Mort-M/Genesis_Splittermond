@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product id="frynjord" month="12" rules="SPLITTERMOND" year="2024">
+   <title>Das Frynjordsfjell</title>
+   <description>Ganzjährig mit Schnee und Eis bedeckt, bildet das Frynjordsfjell die Grenze der bekannten Welt. Für Jahrtausende lebten hier neben an die Kälte der Polarregion angepassten Tieren nur Drachen, Eisriesen und Yetis in Stille und Einsamkeit. Doch vor beinahe 400 Jahren erreichte ein Zwergenvolk das Gebirge und gründete zwischen Gletschern und Vulkanen die Stadt Jordheim, benannt nach ihrem Führer und Propheten, der nach einer langen Regentschaft erst zum Heiligen und schließlich zum wahrhaftigen Gott aufstieg. Das Volk der Frynjord schuf sich innerhalb weniger Jahre eine neue Heimat, gründete weitere Städte und ließ die alte borombrische Kultur hinter sich. Gut organisiert gehen sie voller Kameradschaft und Fleiß ihren Aufgaben nach und trotzen der unwirtlichen Natur. Schnell wurden sie zu den unangefochtenen Herrschern des Gebirges, und ihre Plünderfahrten sorgen für Angst und Schrecken an allen nördlichen Küsten. Doch ihr eigentliches Streben ist in die Tiefe gerichtet. Durch Höhlen und Tunnel dringen sie immer weiter in die Düsternis vor, wo alte Feinde und lauernde Schrecken sie erwarten.</description>
+   <adventures>
+      <adventure ref="dasunentdeckteTal" rules="SPLITTERMOND"/>  
+   </adventures>
+</product>
