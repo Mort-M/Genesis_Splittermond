@@ -27,12 +27,19 @@
 		<revision>4.2.0-SNAPSHOT</revision>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>sonatype</id>
-			<url>https://oss.sonatype.org/content/groups/public/</url>
-		</repository>
-	</repositories>
+    <repositories>
+        <repository>
+         <name>Central Portal Snapshots</name>
+         <id>central-portal-snapshots</id>
+         <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+         <releases>
+            <enabled>false</enabled>
+         </releases>
+         <snapshots>
+            <enabled>true</enabled>
+         </snapshots>
+      </repository>
+    </repositories>
 
 	<dependencyManagement>
 		<dependencies>
@@ -109,17 +116,19 @@
 		<!--module>Splittermond_Foundry_Export_Old</module-->
 	</modules>
 
-
-  <distributionManagement>
-    <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-      <uniqueVersion>false</uniqueVersion>
-    </repository>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <uniqueVersion>false</uniqueVersion>
-    </snapshotRepository>
-  </distributionManagement>
+    <build>
+        <plugins>
+         <plugin>
+               <groupId>org.sonatype.central</groupId>
+               <artifactId>central-publishing-maven-plugin</artifactId>
+               <version>0.7.0</version>
+               <extensions>true</extensions>
+               <configuration>
+                  <publishingServerId>central</publishingServerId>
+                  <deploymentName>${project.artifactId}_${project.version}</deploymentName>
+                  <autoPublish>true</autoPublish>
+               </configuration>
+         </plugin>
+        </plugins>
+    </build>
 </project>

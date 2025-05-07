@@ -84,6 +84,7 @@
 
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
 				<executions>
 					<execution>
 						<id>scp</id>
@@ -136,27 +137,6 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-			<!-- <plugin> -->
-			<!-- <groupId>org.codehaus.mojo</groupId> -->
-			<!-- <artifactId>wagon-maven-plugin</artifactId> -->
-			<!-- <version>2.0.0</version> -->
-			<!-- <executions> -->
-			<!-- <execution> -->
-			<!-- <id>deploy-plugin</id> -->
-			<!-- <phase>deploy</phase> -->
-			<!-- <goals> -->
-			<!-- <goal>upload</goal> -->
-			<!-- </goals> -->
-			<!-- <configuration> -->
-			<!-- <fromDir>target/</fromDir> -->
-			<!-- <includes>*plugin.jar</includes> -->
-			<!-- <url>scp://prelle@${deploymentServer}/</url> -->
-			<!-- <toDir>${deploymentPath}</toDir> -->
-			<!-- <targetId>rpgframework</targetId> -->
-			<!-- </configuration> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
-			<!-- </plugin> -->
 		</plugins>
 	</build>
 </project>
