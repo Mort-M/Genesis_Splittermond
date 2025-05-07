@@ -14,11 +14,6 @@
 	<name>Splittermond Core</name>
 	<description>Data structures for Splittermond</description>
 
-  <properties>
-    <maven.deploy.skip>false</maven.deploy.skip>
-    <maven.install.skip>false</maven.install.skip>
-  </properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>

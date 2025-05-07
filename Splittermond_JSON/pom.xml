@@ -14,11 +14,6 @@
 	<description>Splittermond export to JSON</description>
 	<version>1.5.0</version>
 
-	<properties>
-		<maven.install.skip>false</maven.install.skip>
-		<maven.deploy.skip>true</maven.deploy.skip>
-	</properties>
-
 	<developers>
 		<developer>
 			<name>Anja Prelle</name>

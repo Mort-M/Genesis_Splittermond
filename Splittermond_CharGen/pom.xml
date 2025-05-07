@@ -13,10 +13,6 @@
 	<name>Splittermond_CharGen</name>
 	<description>Splittermond Character Generator </description>
 
-  <properties>
-    <maven.deploy.skip>true</maven.deploy.skip>
-  </properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
