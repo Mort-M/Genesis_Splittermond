@@ -23,7 +23,7 @@
 
 	<properties>
 		<maven.install.skip>false</maven.install.skip>
-		<maven.deploy.skip>false</maven.deploy.skip>
+		<maven.deploy.skip>true</maven.deploy.skip>
 		<revision>4.2.0-SNAPSHOT</revision>
 	</properties>
 
@@ -112,13 +112,13 @@
 		<module>Splittermond_Data</module>
 		<module>Splittermond_JSON</module>
 		<module>Splittermond_Plugin</module>
-		<!--module>Splittermond_ProductData</module-->
+		<module>Splittermond_ProductData</module>
 		<!--module>Splittermond_Foundry_Export_Old</module-->
 	</modules>
 
     <build>
         <plugins>
-         <plugin>
+         <!--<plugin>
                <groupId>org.sonatype.central</groupId>
                <artifactId>central-publishing-maven-plugin</artifactId>
                <version>0.7.0</version>
@@ -128,7 +128,7 @@
                   <deploymentName>${project.artifactId}_${project.version}</deploymentName>
                   <autoPublish>true</autoPublish>
                </configuration>
-         </plugin>
+         </plugin>-->
         </plugins>
     </build>
 </project>
