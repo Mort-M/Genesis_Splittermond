@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>splittermond-productdata</artifactId>
-	<name>Splittermond Adventure Modules</name>
+	<name>Splittermond Product Data</name>
 	<version>4.1.0</version>
 	
 	<description>Adventure modules released for Splittermond</description>
