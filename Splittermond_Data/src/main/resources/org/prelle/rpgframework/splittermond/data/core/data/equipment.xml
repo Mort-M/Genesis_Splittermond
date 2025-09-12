@@ -1004,4 +1004,27 @@
     <item id="königsblut" avail="CAPITAL" price="10000" load="0" robust="0" type="POTION"/>
     <item id="rosentrunk" avail="LARGE_TOWN" price="1000" load="0" robust="0" type="POTION"/>
     <item id="streunerweiß" avail="LARGE_TOWN" price="1000" load="0" robust="0" type="POTION"/>
+
+   <item id="bolzen_hand" avail="CAPITAL" price="25" load="0" robust="0" type="PROJECTILE">
+      <projectile type="PROJECTILE"/>
+   </item>
+   <item id="pfeil_kurz" avail="VILLAGE" price="16" load="0" robust="0" type="PROJECTILE">
+      <projectile type="PROJECTILE"/>
+   </item>
+   <item id="pfeil_lang" avail="SMALL_TOWN" price="30" load="0" robust="0" type="PROJECTILE">
+      <projectile type="PROJECTILE"/>
+   </item>
+   <item id="bolzen_leicht" avail="SMALL_TOWN" price="40" load="0" robust="0" type="PROJECTILE">
+      <projectile type="PROJECTILE"/>
+   </item>
+   <item id="pfeil_reiter" avail="SMALL_TOWN" price="20" load="0" robust="0" type="PROJECTILE">
+      <projectile type="PROJECTILE"/>
+   </item>
+   <item id="schleuderstein" avail="VILLAGE" price="1" load="0" robust="0" type="PROJECTILE">
+      <projectile type="PROJECTILE"/>
+   </item>
+   <item id="bolzen_schwer" avail="SMALL_TOWN" price="60" load="0" robust="0" type="PROJECTILE">
+      <projectile type="PROJECTILE"/>
+   </item>
+
 </items>
