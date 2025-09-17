@@ -25,6 +25,7 @@ public enum ItemType {
     SHADY,
     LIGHT,
 	CREATURES,
+	FOOD,
 	HEALING,
 	RECREATION,
 	WEAPONITEMS,
