@@ -24,6 +24,11 @@ public enum ItemType {
     CLOTHING,
     SHADY,
     LIGHT,
+	CREATURES,
+	HEALING,
+	RECREATION,
+	WEAPONITEMS,
+	WRITING,
 	OTHER,
     ;
 
