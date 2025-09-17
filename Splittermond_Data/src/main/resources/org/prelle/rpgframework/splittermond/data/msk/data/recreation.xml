@@ -28,8 +28,8 @@
    <item avail="SMALL_TOWN" cplx="G" id="ringSilber" load="0" material="METAL" price="150" robust="4" type="RECREATION"/>
    <item avail="LARGE_TOWN" cplx="G" id="ringGold" load="0" material="METAL" price="800" robust="4" type="RECREATION"/>
    <item avail="VILLAGE" cplx="U" id="pfeife/Kimeru" load="0" material="OTHER" price="15" robust="2" type="RECREATION"/>
-   <item avail="VILLAGE" cplx="U" id="tabakEinfach" load="0" material="OTHER" price="5" robust="0" type="RECREATION"/>
-   <item avail="SMALL_TOWN" cplx="U" id="tabakLuxus" load="0" material="OTHER" price="200" robust="0" type="RECREATION"/>
+   <item avail="VILLAGE" cplx="U" id="tabakEinfach" load="0" material="OTHER" price="5" robust="0" type="FOOD"/>
+   <item avail="SMALL_TOWN" cplx="U" id="tabakLuxus" load="0" material="OTHER" price="200" robust="0" type="FOOD"/>
    <item avail="SMALL_TOWN" cplx="G" id="wasserpfeife" load="2" material="OTHER" price="500" robust="2" type="RECREATION"/>
    <item avail="VILLAGE" cplx="G" id="fiedel" load="2" material="OTHER" price="100" robust="2" skill="performance" spec="performance/instrumentstring" type="RECREATION"/>
    <item avail="VILLAGE" cplx="G" id="flöteBesser" load="0" material="OTHER" price="50" robust="2" skill="performance" spec="performance/instrumentwind" type="RECREATION"/>

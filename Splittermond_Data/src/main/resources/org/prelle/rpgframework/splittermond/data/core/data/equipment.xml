@@ -982,7 +982,7 @@
     <item id="kompass" avail="CAPITAL" price="1500" load="2" robust="2" cplx="A" type="TRAVEL"/>
     <item id="laterneeinfach" avail="VILLAGE" price="50" load="2" robust="3" cplx="G" type="TRAVEL"/>
     <item id="leinensack" avail="VILLAGE" price="10" load="1" robust="1" cplx="U" type="TRAVEL,CONTAINER"/>
-    <item id="marschrationprotag" avail="VILLAGE" price="10" load="1" cplx="U" robust="0" type="TRAVEL"/>
+    <item id="marschrationprotag" avail="VILLAGE" price="10" load="1" cplx="U" robust="0" type="FOOD"/>
     <item id="messer" avail="VILLAGE" price="100" load="1" robust="6" cplx="U" type="TRAVEL"/>
     <item id="rucksack" avail="VILLAGE" price="100" load="1" robust="1" cplx="U" type="TRAVEL,CONTAINER"/>
     <item id="seil10m" avail="VILLAGE" price="200" load="1" robust="1" cplx="U" type="TRAVEL"/>
