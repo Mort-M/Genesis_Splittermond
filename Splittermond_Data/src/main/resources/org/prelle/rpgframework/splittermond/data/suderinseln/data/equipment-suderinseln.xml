@@ -54,13 +54,13 @@
    <item avail="SMALL_TOWN" cplx="U" id="mermaidKiss" load="0" material="OTHER" price="7500" robust="0" type="POTION"/>
 
   <!-- #####################  Piratentand und Seemannskram  #####################-->
-  <item avail="VILLAGE" cplx="G" id="fireheart" load="1" material="OTHER" price="50" robust="2" type="OTHER" />
+  <item avail="VILLAGE" cplx="G" id="fireheart" load="1" material="OTHER" price="50" robust="2" type="FOOD" />
   <item avail="SMALL_TOWN" cplx="G" id="handhook" load="1" material="METAL" price="500" robust="5" type="OTHER" />
   <item avail="VILLAGE" cplx="U" id="pegleg" load="2" material="WOOD" price="200" robust="4" type="OTHER" />
-  <item avail="SMALL_TOWN" cplx="F" id="lalista" load="1" material="OTHER" price="600" robust="1" skill="diplomacy" spec="diplomacy/etiquettes" type="OTHER" />
-  <item avail="SMALL_TOWN" cplx="F" id="quartermasterLuck" load="1" material="OTHER" price="400" robust="1" type="OTHER" />
-  <item avail="VILLAGE" cplx="G" id="rum" load="1" material="OTHER" price="50" robust="2" type="OTHER" />
-  <item avail="LARGE_TOWN" cplx="F" id="summergrape" load="1" material="OTHER" price="800" robust="1" skill="diplomacy" type="OTHER" />
+  <item avail="SMALL_TOWN" cplx="F" id="lalista" load="1" material="OTHER" price="600" robust="1" skill="diplomacy" spec="diplomacy/etiquettes" type="FOOD" />
+  <item avail="SMALL_TOWN" cplx="F" id="quartermasterLuck" load="1" material="OTHER" price="400" robust="1" type="FOOD" />
+  <item avail="VILLAGE" cplx="G" id="rum" load="1" material="OTHER" price="50" robust="2" type="FOOD" />
+  <item avail="LARGE_TOWN" cplx="F" id="summergrape" load="1" material="OTHER" price="800" robust="1" skill="diplomacy" type="FOOD" />
   <!-- ####################  ueberarbeitet weil Preisaenderungen vorhanden  #########################-->
   <item avail="VILLAGE" cplx="U" id="augenklappe" load="0" material="FABRIC" price="5" robust="0" type="CLOTHING" />
   <item avail="CAPITAL" cplx="M" id="fernrohr" load="1" material="OTHER" price="4000" robust="4" skill="perception" spec="perception/see" type="TRAVEL"/>

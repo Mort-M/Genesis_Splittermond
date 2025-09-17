@@ -5,10 +5,10 @@
 <item avail="SMALL_TOWN" cplx="G" id="PaintingSupplies" load="1" material="WOOD" price="1000" robust="2" skill="clscraft" spec="clscraft/painting" type="TOOLS"/>
 
   <!--################  Musikinstrumente  ##################-->
-<item avail="VILLAGE" cplx="U" id="CalamusReed" load="0" material="WOOD" price="10" robust="2" skill="performance" spec="performance/instrumentwind" type="OTHER"/>
-<item avail="SMALL_TOWN" cplx="G" id="CalamusSilver" load="0" material="METAL" price="500" robust="2" skill="performance" spec="performance/instrumentwind" type="OTHER"/>
-<!--item avail="SMALL_TOWN" cplx="F" id="Citarra" load="3" material="WOOD" price="400" robust="2" skill="performance" spec="performance/instrumentstring" type="OTHER"/> ### SEL101 -->
-<item avail="VILLAGE" cplx="U" id="Tumula" load="2" material="WOOD" price="50" robust="2" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
+<item avail="VILLAGE" cplx="U" id="CalamusReed" load="0" material="WOOD" price="10" robust="2" skill="performance" spec="performance/instrumentwind" type="RECREATION"/>
+<item avail="SMALL_TOWN" cplx="G" id="CalamusSilver" load="0" material="METAL" price="500" robust="2" skill="performance" spec="performance/instrumentwind" type="RECREATION"/>
+<!--item avail="SMALL_TOWN" cplx="F" id="Citarra" load="3" material="WOOD" price="400" robust="2" skill="performance" spec="performance/instrumentstring" type="RECREATION"/> ### SEL101 -->
+<item avail="VILLAGE" cplx="U" id="Tumula" load="2" material="WOOD" price="50" robust="2" skill="performance" spec="performance/instrumentperc" type="RECREATION"/>
 
   <!--################  Unehrliche Berufe  ##################-->
 <!--item avail="SMALL_TOWN" cplx="F" id="CounterfeitingTool" load="0" material="OTHER" price="2000" robust="0" skill="clscraft" spec="clscraft/calligraphy" type="SHADY"/> ### MSK63 -->
@@ -39,28 +39,28 @@
 <item avail="CAPITAL" id="AsteriaPearlRed" load="0" material="OTHER" price="1000" robust="2" type="LIGHT"/>
 <item avail="CAPITAL" id="AsteriaPearlGold" load="0" material="OTHER" price="1000" robust="2" type="LIGHT"/>
 <!--item avail="LARGE_TOWN" id="DragonlingTrinket" load="0" material="OTHER" price="3000" robust="4" type="CLOTHING"/> ### MSK 77 -->
-<item avail="LARGE_TOWN" cplx="F" id="FarukanSunscent" load="0" material="OTHER" price="1200" robust="0" type="OTHER"/>
+<item avail="LARGE_TOWN" cplx="F" id="FarukanSunscent" load="0" material="OTHER" price="1200" robust="0" type="RECREATION"/>
 <item avail="LARGE_TOWN" cplx="M" id="FairyYarnCloak" load="1" material="FABRIC" price="6000" robust="1" type="CLOTHING"/>
 <item avail="LARGE_TOWN" cplx="F" id="FeatherHeaddressStromlandIslands" load="1" material="OTHER" price="1000" robust="1" type="CLOTHING"/>
 <item avail="LARGE_TOWN" cplx="F" id="JadeJewelryZhoujiangSet" load="1" material="OTHER" price="4000" robust="1" skill="diplomacy" spec="diplomacy/etiquettes" type="CLOTHING"/>
-<item avail="SMALL_TOWN" cplx="F" id="JokaTreeFragranceWater" load="0" material="OTHER" price="1500" robust="0" type="OTHER"/>
-<item avail="SMALL_TOWN" id="Jokanuts" load="0" material="OTHER" price="20000" robust="0" type="OTHER"/>
-<item avail="LARGE_TOWN" cplx="G" id="DeckOfCardsPalitan" load="0" material="OTHER" price="2000" robust="0" type="OTHER"/>
+<item avail="SMALL_TOWN" cplx="F" id="JokaTreeFragranceWater" load="0" material="OTHER" price="1500" robust="0" type="RECREATION"/>
+<item avail="SMALL_TOWN" id="Jokanuts" load="0" material="OTHER" price="20000" robust="0" type="RECREATION"/>
+<item avail="LARGE_TOWN" cplx="G" id="DeckOfCardsPalitan" load="0" material="OTHER" price="2000" robust="0" type="RECREATION"/>
 <item avail="SMALL_TOWN" id="CrownLavenderOil" load="0" material="OTHER" price="200" robust="0" type="POTION"/>
-<item avail="LARGE_TOWN" cplx="U" id="LacquerBoxPalitan" load="1" material="OTHER" price="500" robust="2" type="OTHER"/>
-<!--item avail="CAPITAL" cplx="M" id="PorcelainServiceSet" load="3" material="OTHER" price="2500" robust="0" skill="diplomacy" spec="diplomacy/etiquettes" type="OTHER"/> ### ZHOU126 -->
-<item avail="LARGE_TOWN" cplx="G" id="AtasatoMakeupPowder" load="0" material="OTHER" price="1800" robust="0" type="OTHER"/>
+<item avail="LARGE_TOWN" cplx="U" id="LacquerBoxPalitan" load="1" material="OTHER" price="500" robust="2" type="RECREATION"/>
+<!--item avail="CAPITAL" cplx="M" id="PorcelainServiceSet" load="3" material="OTHER" price="2500" robust="0" skill="diplomacy" spec="diplomacy/etiquettes" type="RECREATION"/> ### ZHOU126 -->
+<item avail="LARGE_TOWN" cplx="G" id="AtasatoMakeupPowder" load="0" material="OTHER" price="1800" robust="0" type="RECREATION"/>
 <item avail="LARGE_TOWN" cplx="G" id="TurtleShellShield" load="3" material="OTHER" price="3000" robust="4" type="SHIELD"/>
-<item avail="LARGE_TOWN" cplx="F" id="IvoryJewelryBox" load="1" material="OTHER" price="1000" robust="2" type="OTHER"/>
-<item avail="LARGE_TOWN" cplx="M" id="MirrorSiprangu" load="2" material="OTHER" price="2500" robust="0" type="OTHER"/>
-<!--item avail="LARGE_TOWN" cplx="G" id="Hookah" load="2" material="OTHER" price="800" robust="2" type="OTHER"/> ### MSK77 -->
+<item avail="LARGE_TOWN" cplx="F" id="IvoryJewelryBox" load="1" material="OTHER" price="1000" robust="2" type="RECREATION"/>
+<item avail="LARGE_TOWN" cplx="M" id="MirrorSiprangu" load="2" material="OTHER" price="2500" robust="0" type="RECREATION"/>
+<!--item avail="LARGE_TOWN" cplx="G" id="Hookah" load="2" material="OTHER" price="800" robust="2" type="RECREATION"/> ### MSK77 -->
 
   <!--################  Delikatessen  #################-->
-<item avail="VILLAGE" cplx="G" id="Mead" load="1" material="OTHER" price="200" robust="1" type="OTHER"/>
-<item avail="SMALL_TOWN" cplx="A" id="LuseriasLust" load="1" material="OTHER" price="1500" robust="2" type="OTHER"/>
-<item avail="LARGE_TOWN" id="FogThiefEggs" load="1" material="OTHER" price="1000" robust="1" type="OTHER"/>
-<item avail="LARGE_TOWN" cplx="A" id="MusselLiquor" load="1" material="OTHER" price="1000" robust="2" type="OTHER"/>
-<item avail="SMALL_TOWN" cplx="G" id="RaisinWine" load="1" material="OTHER" price="400" robust="1" type="OTHER"/>
+<item avail="VILLAGE" cplx="G" id="Mead" load="1" material="OTHER" price="200" robust="1" type="FOOD"/>
+<item avail="SMALL_TOWN" cplx="A" id="LuseriasLust" load="1" material="OTHER" price="1500" robust="2" type="FOOD"/>
+<item avail="LARGE_TOWN" id="FogThiefEggs" load="1" material="OTHER" price="1000" robust="1" type="FOOD"/>
+<item avail="LARGE_TOWN" cplx="A" id="MusselLiquor" load="1" material="OTHER" price="1000" robust="2" type="FOOD"/>
+<item avail="SMALL_TOWN" cplx="G" id="RaisinWine" load="1" material="OTHER" price="400" robust="1" type="FOOD"/>
 
   <!--##################  Pflanzen  #####''############-->
 <item avail="VILLAGE" id="Asselherb" load="0" material="OTHER" price="300" robust="1" type="POTION"/>

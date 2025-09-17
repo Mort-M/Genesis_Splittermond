@@ -115,11 +115,11 @@
 
   <!--###################  Tier und Fahrzeuge  #####################-->	
 
-<item avail="SMALL_TOWN" cplx="U" id="durok" load="0" material="OTHER" price="1000" robust="0" type="OTHER"/>
-<item avail="SMALL_TOWN" cplx="U" id="woodlouse" load="0" material="OTHER" price="200" robust="0" type="OTHER"/>
-<item avail="SMALL_TOWN" cplx="U" id="wechtenklaeffer" load="0" material="OTHER" price="700" robust="0" type="OTHER"/>
-<item avail="VILLAGE" cplx="G" id="dogSled" load="6" material="OTHER" price="1000" robust="2" skill="animals" spec="animals/vehicle" type="OTHER"/>
-<item avail="LARGE_TOWN" cplx="F" id="iceGlider" load="15" material="OTHER" price="8000" robust="3" skill="seafaring" spec="seafaring/boats" type="OTHER"/>
+<item avail="SMALL_TOWN" cplx="U" id="durok" load="0" material="OTHER" price="1000" robust="0" type="CREATURES"/>
+<item avail="SMALL_TOWN" cplx="U" id="woodlouse" load="0" material="OTHER" price="200" robust="0" type="CREATURES"/>
+<item avail="SMALL_TOWN" cplx="U" id="wechtenklaeffer" load="0" material="OTHER" price="700" robust="0" type="CREATURES"/>
+<item avail="VILLAGE" cplx="G" id="dogSled" load="6" material="OTHER" price="1000" robust="2" skill="animals" spec="animals/vehicle" type="ANIMALS"/>
+<item avail="LARGE_TOWN" cplx="F" id="iceGlider" load="15" material="OTHER" price="8000" robust="3" skill="seafaring" spec="seafaring/boats" type="TRAVEL"/>
 
   <!--###########  Kleidung und persönliche Ausstattung  ###########-->
   
