@@ -17,5 +17,6 @@ module splittermond.json {
 	requires de.rpgframework.chars;
 	requires com.google.gson;
 	requires de.rpgframework.print;
+	requires splittermond.data;
 	
 }

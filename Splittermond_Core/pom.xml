@@ -15,10 +15,10 @@
 	<description>Data structures for Splittermond</description>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>de.rpgframework</groupId>
 			<artifactId>rpgframework-chars</artifactId>
@@ -37,16 +37,6 @@
 			<scope>test</scope>
 			<version>4.12</version>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 		    <groupId>javax.activation</groupId> -->
-<!-- 		    <artifactId>javax.activation-api</artifactId> -->
-<!-- 			<version>1.2.0</version> -->
-<!-- 		</dependency> -->
 	</dependencies>
 
-	<build>
-		<plugins>
-
-		</plugins>
-	</build>
 </project>
