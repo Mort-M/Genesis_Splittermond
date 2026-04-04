@@ -14,17 +14,17 @@
    <item avail="SMALL_TOWN" cplx="G" id="zeltproperson" load="4" material="OTHER" price="100" robust="1" type="TRAVEL"/>
    <item avail="VILLAGE" cplx="U" id="kochgeschirrSatz" load="2" material="OTHER" price="50" robust="5" skill="craftmanship" spec="craftmanship/cooking" type="TRAVEL"/>
    <item avail="VILLAGE" cplx="U" id="angelhakenUndSchnur" load="0" material="OTHER" price="30" robust="3" type="TRAVEL"/>
-   <item avail="VILLAGE" cplx="G" id="bierFässchen" load="5" material="WOOD" price="100" robust="3" type="TRAVEL"/>
-   <item avail="VILLAGE" cplx="U" id="marschrationprotag" load="1" material="OTHER" price="10" robust="0" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="G" id="bierFässchen" load="5" material="WOOD" price="100" robust="3" type="FOOD"/>
+   <item avail="VILLAGE" cplx="U" id="marschrationprotag" load="1" material="OTHER" price="10" robust="0" type="FOOD"/>
    <item avail="VILLAGE" cplx="U" id="essgeschirr" load="1" material="OTHER" price="20" robust="2" type="TRAVEL"/>
    <item avail="VILLAGE" cplx="G" id="kessel3L" load="2" material="METAL" price="30" robust="6" type="TRAVEL"/>
    <item avail="VILLAGE" cplx="U" id="messer" load="1" material="METAL" price="100" robust="6" type="TRAVEL"/>
    <item avail="VILLAGE" cplx="G" id="pfanne" load="1" material="METAL" price="20" robust="6" type="TRAVEL"/>
    <item avail="VILLAGE" cplx="U" id="bratspieß" load="1" material="METAL" price="10" robust="6" type="TRAVEL"/>
-   <item avail="VILLAGE" cplx="G" id="schnapsEinfachFlasche" load="1" material="OTHER" price="50" robust="2" type="TRAVEL"/>
-   <item avail="SMALL_TOWN" cplx="F" id="likörTeuerFlasche" load="1" material="OTHER" price="500" robust="2" type="TRAVEL"/>
-   <item avail="VILLAGE" cplx="U" id="gewürzEinfach" load="0" material="OTHER" price="10" robust="1" type="TRAVEL"/>
-   <item avail="LARGE_TOWN" cplx="U" id="gewürzTeuer" load="0" material="OTHER" price="300" robust="1" type="TRAVEL"/>
+   <item avail="VILLAGE" cplx="G" id="schnapsEinfachFlasche" load="1" material="OTHER" price="50" robust="2" type="FOOD"/>
+   <item avail="SMALL_TOWN" cplx="F" id="likörTeuerFlasche" load="1" material="OTHER" price="500" robust="2" type="FOOD"/>
+   <item avail="VILLAGE" cplx="U" id="gewürzEinfach" load="0" material="OTHER" price="10" robust="1" type="FOOD"/>
+   <item avail="LARGE_TOWN" cplx="U" id="gewürzTeuer" load="0" material="OTHER" price="300" robust="1" type="FOOD"/>
    <item avail="VILLAGE" cplx="U" id="schwimmblase" load="1" material="OTHER" price="30" robust="2" type="TRAVEL"/>
    <item avail="SMALL_TOWN" cplx="G" id="schwimmflossen" load="1" material="LEATHER" price="50" robust="2" type="TRAVEL"/>
 </items>

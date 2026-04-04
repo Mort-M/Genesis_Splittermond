@@ -5,7 +5,11 @@
   	  <attrmod attr="DEFENSE" val="1"/>
   	</modifications>
   </enhancement>
-  
+  <enhancement id="power_resistpoison" cost="2" type="MAGIC"/>
+  <enhancement id="power_resistheat" cost="2" type="MAGIC"/>
+  <enhancement id="power_resistcold" cost="2" type="MAGIC"/>
+  <enhancement id="power_resistsick" cost="2" type="MAGIC"/>
+ 
   <enhancement id="otherworld_emergency_exit" cost="2" type="HIGHARTIFACT" />
   <enhancement id="artifact_proection" cost="1" max="3" type="HIGHARTIFACT" />
   <enhancement id="summoning_helper" cost="1" type="HIGHARTIFACT" />

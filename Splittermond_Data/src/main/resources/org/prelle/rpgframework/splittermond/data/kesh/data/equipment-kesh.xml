@@ -8,8 +8,8 @@
   <item avail="VILLAGE" cplx="G" id="colorfulFeatherJewelry" load="0" material="OTHER" price="30" robust="1" type="CLOTHING" />
   <item avail="VILLAGE" cplx="G" id="hornwax" load="0" material="OTHER" price="50" robust="0" skill="diplomacy" type="CLOTHING" />
   <!--####################  ESSEN UND TRINKEN  #########################-->
-  <item avail="SMALL_TOWN" cplx="F" id="djinnenbrandBottle" load="1" material="OTHER" price="500" robust="1" type="OTHER" />
-  <item avail="SMALL_TOWN" cplx="F" id="simurghendrinkBottle" load="1" material="OTHER" price="200" robust="1" type="OTHER" />
-  <item avail="VILLAGE" cplx="G" id="tea_turubar" load="0" material="OTHER" price="5" robust="0" type="OTHER" />
-  <item avail="VILLAGE" cplx="G" id="teaSet" load="1" material="OTHER" price="100" robust="2" type="OTHER" />
+  <item avail="SMALL_TOWN" cplx="F" id="djinnenbrandBottle" load="1" material="OTHER" price="500" robust="1" type="FOOD" />
+  <item avail="SMALL_TOWN" cplx="F" id="simurghendrinkBottle" load="1" material="OTHER" price="200" robust="1" type="FOOD" />
+  <item avail="VILLAGE" cplx="G" id="tea_turubar" load="0" material="OTHER" price="5" robust="0" type="FOOD" />
+  <item avail="VILLAGE" cplx="G" id="teaSet" load="1" material="OTHER" price="100" robust="2" type="FOOD" />
 </items>

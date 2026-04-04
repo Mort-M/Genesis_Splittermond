@@ -52,10 +52,10 @@
   	  
   <!-- ############ Intrumente ############ -->
   	
-	  <item avail="SMALL_TOWN" id="dathrakk_drum_small" price="50" load="1" robust="2" cplx="U" material="OTHER" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
-	  <item avail="LARGE_TOWN" id="dathrakk_drum_big" price="300" load="4" robust="2" cplx="G" material="OTHER" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
-	  <item avail="SMALL_TOWN" id="sandflute" price="100" load="0" robust="2" cplx="G" material="OTHER" skill="performance" spec="performance/instrumentwind" type="OTHER"/>
-	  <item avail="SMALL_TOWN" id="stilts_screamer" price="500" load="1" robust="3" cplx="U" material="OTHER" skill="performance" spec="performance/instrumentperc" type="OTHER"/>
-	  <item avail="SMALL_TOWN" id="tarrhorn" price="100" load="2" robust="3" cplx="G" material="OTHER" skill="performance" spec="performance/instrumentwind" type="OTHER"/> 
+	  <item avail="SMALL_TOWN" id="dathrakk_drum_small" price="50" load="1" robust="2" cplx="U" material="OTHER" skill="performance" spec="performance/instrumentperc" type="RECREATION"/>
+	  <item avail="LARGE_TOWN" id="dathrakk_drum_big" price="300" load="4" robust="2" cplx="G" material="OTHER" skill="performance" spec="performance/instrumentperc" type="RECREATION"/>
+	  <item avail="SMALL_TOWN" id="sandflute" price="100" load="0" robust="2" cplx="G" material="OTHER" skill="performance" spec="performance/instrumentwind" type="RECREATION"/>
+	  <item avail="SMALL_TOWN" id="stilts_screamer" price="500" load="1" robust="3" cplx="U" material="OTHER" skill="performance" spec="performance/instrumentperc" type="RECREATION"/>
+	  <item avail="SMALL_TOWN" id="tarrhorn" price="100" load="2" robust="3" cplx="G" material="OTHER" skill="performance" spec="performance/instrumentwind" type="RECREATION"/> 
 	  
  </items>

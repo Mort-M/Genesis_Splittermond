@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <items>
-   <item avail="VILLAGE" cplx="G" id="bogensehne" load="0" material="OTHER" price="50" robust="0" type="OTHER"/>
-   <item avail="VILLAGE" cplx="G" id="dolchscheide" load="0" material="OTHER" price="30" robust="2" type="OTHER"/>
-   <item avail="VILLAGE" cplx="G" id="köcherLeer" load="0" material="OTHER" price="50" robust="1" type="OTHER"/>
-   <item avail="SMALL_TOWN" cplx="G" id="sattelköcher" load="1" material="OTHER" price="200" robust="2" type="OTHER"/>
-   <item avail="SMALL_TOWN" cplx="G" id="scheideFürZweihandwaffe" load="1" material="OTHER" price="90" robust="1" type="OTHER"/>
-   <item avail="VILLAGE" cplx="U" id="schleifstein" load="0" material="OTHER" price="50" robust="4" type="OTHER"/>
-   <item avail="VILLAGE" cplx="G" id="schwertscheide" load="0" material="OTHER" price="50" robust="2" type="OTHER"/>
-   <item avail="SMALL_TOWN" cplx="F" id="verborgeneDolchscheide" load="0" material="OTHER" price="200" robust="2" type="OTHER"/>
-   <item avail="VILLAGE" cplx="U" id="waffenbürste" load="1" material="OTHER" price="30" robust="3" type="OTHER"/>
-   <item avail="SMALL_TOWN" cplx="U" id="waffenpolitur" load="1" material="OTHER" price="100" robust="0" type="OTHER"/>
-   <item avail="SMALL_TOWN" cplx="G" id="brustgürtelMitDolchscheiden" load="0" material="OTHER" price="200" robust="1" type="OTHER"/>
-   <item avail="SMALL_TOWN" cplx="G" id="brustgürtelMitPfeilköcher" load="0" material="OTHER" price="200" robust="1" type="OTHER"/>
-   <item avail="SMALL_TOWN" cplx="G" id="brustgürtelMitTragebeutel" load="0" material="OTHER" price="100" robust="1" type="OTHER"/>
-   <item avail="LARGE_TOWN" cplx="G" id="waffengürtelArm" load="0" material="OTHER" price="100" robust="1" type="OTHER"/>
-   <item avail="LARGE_TOWN" cplx="G" id="waffengürtelBein" load="0" material="OTHER" price="100" robust="1" type="OTHER"/>
-   <item avail="SMALL_TOWN" cplx="G" id="waffengürtelHüfte" load="1" material="OTHER" price="200" robust="1" type="OTHER"/>
-   <item avail="LARGE_TOWN" cplx="G" id="waffengürtelRücken" load="1" material="OTHER" price="200" robust="1" type="OTHER"/>
+   <item avail="VILLAGE" cplx="G" id="bogensehne" load="0" material="OTHER" price="50" robust="0" type="WEAPONITEMS"/>
+   <item avail="VILLAGE" cplx="G" id="dolchscheide" load="0" material="OTHER" price="30" robust="2" type="WEAPONITEMS"/>
+   <item avail="VILLAGE" cplx="G" id="köcherLeer" load="0" material="OTHER" price="50" robust="1" type="WEAPONITEMS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="sattelköcher" load="1" material="OTHER" price="200" robust="2" type="WEAPONITEMS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="scheideFürZweihandwaffe" load="1" material="OTHER" price="90" robust="1" type="WEAPONITEMS"/>
+   <item avail="VILLAGE" cplx="U" id="schleifstein" load="0" material="OTHER" price="50" robust="4" type="WEAPONITEMS"/>
+   <item avail="VILLAGE" cplx="G" id="schwertscheide" load="0" material="OTHER" price="50" robust="2" type="WEAPONITEMS"/>
+   <item avail="SMALL_TOWN" cplx="F" id="verborgeneDolchscheide" load="0" material="OTHER" price="200" robust="2" type="WEAPONITEMS"/>
+   <item avail="VILLAGE" cplx="U" id="waffenbürste" load="1" material="OTHER" price="30" robust="3" type="WEAPONITEMS"/>
+   <item avail="SMALL_TOWN" cplx="U" id="waffenpolitur" load="1" material="OTHER" price="100" robust="0" type="WEAPONITEMS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="brustgürtelMitDolchscheiden" load="0" material="OTHER" price="200" robust="1" type="WEAPONITEMS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="brustgürtelMitPfeilköcher" load="0" material="OTHER" price="200" robust="1" type="WEAPONITEMS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="brustgürtelMitTragebeutel" load="0" material="OTHER" price="100" robust="1" type="WEAPONITEMS"/>
+   <item avail="LARGE_TOWN" cplx="G" id="waffengürtelArm" load="0" material="OTHER" price="100" robust="1" type="WEAPONITEMS"/>
+   <item avail="LARGE_TOWN" cplx="G" id="waffengürtelBein" load="0" material="OTHER" price="100" robust="1" type="WEAPONITEMS"/>
+   <item avail="SMALL_TOWN" cplx="G" id="waffengürtelHüfte" load="1" material="OTHER" price="200" robust="1" type="WEAPONITEMS"/>
+   <item avail="LARGE_TOWN" cplx="G" id="waffengürtelRücken" load="1" material="OTHER" price="200" robust="1" type="WEAPONITEMS"/>
 </items>
