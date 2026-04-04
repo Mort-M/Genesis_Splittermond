@@ -107,6 +107,7 @@
                   <publishingServerId>central</publishingServerId>
                   <deploymentName>${project.artifactId}_${project.version}</deploymentName>
                   <autoPublish>false</autoPublish>
+                  <skipPublishing>true</skipPublishing>
                </configuration>
          </plugin>
         </plugins>
