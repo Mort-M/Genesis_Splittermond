@@ -472,13 +472,13 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		SplitterMondCore.loadDeities(GOETTER, clazz.getResourceAsStream("goetter/data/deities-goetter.xml"), GOETTER.getResources(), GOETTER.getHelpResources());
 		
 		logger.info("START ------------------------------Rattlinge--------------------------------------------");
-		PluginSkeleton RAT = new PluginSkeleton("Rattlinge", "Rattlinge");
-		SplitterMondCore.loadPowers(RAT, clazz.getResourceAsStream("rattlinge/data/powers-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
-		SplitterMondCore.loadCultureLores(RAT, clazz.getResourceAsStream("rattlinge/data/culturelores-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
-		SplitterMondCore.loadLanguages(RAT, clazz.getResourceAsStream("rattlinge/data/languages-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
-		SplitterMondCore.loadRaces(RAT, clazz.getResourceAsStream("rattlinge/data/races-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
-		SplitterMondCore.loadCultures(RAT, clazz.getResourceAsStream("rattlinge/data/cultures-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
-		SplitterMondCore.loadMasterships(RAT, clazz.getResourceAsStream("rattlinge/data/masterships-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
+//		PluginSkeleton RAT = new PluginSkeleton("Rattlinge", "Rattlinge");
+//		SplitterMondCore.loadPowers(RAT, clazz.getResourceAsStream("rattlinge/data/powers-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
+//		SplitterMondCore.loadCultureLores(RAT, clazz.getResourceAsStream("rattlinge/data/culturelores-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
+//		SplitterMondCore.loadLanguages(RAT, clazz.getResourceAsStream("rattlinge/data/languages-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
+//		SplitterMondCore.loadRaces(RAT, clazz.getResourceAsStream("rattlinge/data/races-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
+//		SplitterMondCore.loadCultures(RAT, clazz.getResourceAsStream("rattlinge/data/cultures-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
+//		SplitterMondCore.loadMasterships(RAT, clazz.getResourceAsStream("rattlinge/data/masterships-rattlinge.xml"), RAT.getResources(), RAT.getHelpResources());
 
 		logger.info("START ------------------------------Frynjord--------------------------------------------");
 		PluginSkeleton FRY = new PluginSkeleton("Frynjord", "Frynjord");
