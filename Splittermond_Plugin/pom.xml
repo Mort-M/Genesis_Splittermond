@@ -13,6 +13,10 @@
 	<name>Splittermond</name>
 	<version>4.9.1</version>
 
+    <properties>
+        <maven.deploy.skip>true</maven.deploy.skip>
+    </properties>
+
 	<licenses>
 		<license>
 			<name>LGPL</name>
