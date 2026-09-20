@@ -91,8 +91,6 @@ public class MastershipDialog extends ManagedDialog implements GenerationEventLi
 	private CommandBar commands;
 	private ExpLine firstLine;
 
-	private String searchFilter;
-
 	//-------------------------------------------------------------------
 	public MastershipDialog(CharacterController ctrl) {
 		super(ctrl.getModel().getName(), null, CloseType.OK);
@@ -222,13 +220,7 @@ public class MastershipDialog extends ManagedDialog implements GenerationEventLi
 		lvSelected.setOnDragDropped (event -> dragDroppedAvailable(event));
 		lvSelected.setOnDragOver    (event -> dragOverAvailable(event));
 
-		tfSearch.setOnAction(event -> {
-			logger.debug("Filter "+tfSearch.getText());
-			searchFilter = tfSearch.getText();
-			if (searchFilter!=null && searchFilter.isEmpty())
-				searchFilter = null;
-			refresh();
-		});
+		tfSearch.textProperty().addListener((observable, oldValue, newValue) -> refresh());
 	}
 
 	//-------------------------------------------------------------------
@@ -315,6 +307,7 @@ public class MastershipDialog extends ManagedDialog implements GenerationEventLi
 
 		// Available
 		List<MastershipOrSpecialization> toAdd = new ArrayList<MastershipOrSpecialization>() ;
+		String normalizedFilter = MastershipSearchFilter.normalize(tfSearch.getText());
 		if (rbMaster.isSelected()) {
 			for (Mastership tmp : sVal.getSkill().getMasterships()) {
 				// For grouped skills, ignore "journeyman", "expert" and "master"
@@ -322,15 +315,15 @@ public class MastershipDialog extends ManagedDialog implements GenerationEventLi
 					if (tmp.getId().equals("journeyman") || tmp.getId().equals("expert"))
 						continue;
 				}
-				if (!sVal.hasMastership(tmp) || tmp.isMultiple())
+				if ((!sVal.hasMastership(tmp) || tmp.isMultiple())
+						&& MastershipSearchFilter.matches(tmp, normalizedFilter))
 					toAdd.add(tmp);
-				if (searchFilter!=null && !tmp.getHelpText().toLowerCase().contains(searchFilter.toLowerCase()))
-					toAdd.remove(tmp);
 			}
 		}
 		if (rbSpecial.isSelected()) {
 			for (SkillSpecialization tmp : sVal.getSkill().getSpecializations()) {
-				if (sVal.getSpecializationLevel(tmp)==0)
+				if (sVal.getSpecializationLevel(tmp)==0
+						&& MastershipSearchFilter.matches(tmp, normalizedFilter))
 					toAdd.add(tmp);
 			}
 		}
