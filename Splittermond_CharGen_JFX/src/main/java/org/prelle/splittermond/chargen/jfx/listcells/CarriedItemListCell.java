@@ -210,7 +210,7 @@ public class CarriedItemListCell extends ListCell<CarriedItem> {
 
 		statsCommon.setText(String.format("%s: %d  %s: %d",
 				ItemAttribute.LOAD.getShortName(), item.getItem().getLoad(),
-				ItemAttribute.RIGIDITY.getShortName(), item.getItem().getRigidity()));
+				ItemAttribute.RIGIDITY.getShortName(), item.getRigidity()));
 
 		grid.getChildren().remove(extra);
 		Stream.Builder<String> buf = Stream.builder();
