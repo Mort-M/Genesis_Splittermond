@@ -36,6 +36,12 @@
 				<deploymentPath>/var/www/html/plugins/development</deploymentPath>
 			</properties>
       <repositories>
+         <repository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </repository>
         <repository>
             <id>central-portal-snapshots</id>
             <url>https://central.sonatype.com/repository/maven-snapshots/</url>
