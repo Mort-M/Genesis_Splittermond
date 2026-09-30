@@ -1546,7 +1546,7 @@
         <enhancementtype>CONSUMED_FOCUS</enhancementtype>
         <enhancementtype>RANGE</enhancementtype>
     </spell>
-    <spell id="magic_choke" diff="KW" cost="12V3" castdur="8T" range="5m" enh="2/+3V3">
+    <spell id="magic_choke" diff="KW" cost="12V3" castdur="8T" range="5m" spelldur="120T" enh="2/+3V3">
         <school skill="motionmagic" level="3" />
         <type>WEAKEN</type>
         <type>TELEKINESIS</type>
