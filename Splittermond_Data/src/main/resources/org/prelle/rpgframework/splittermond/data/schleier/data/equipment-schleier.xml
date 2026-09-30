@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <item id="akherat_glass" avail="LARGE_TOWN" price="15000" load="1" robust="0" cplx="M" type="OTHER" skill="perception" />
+    <item id="akherat_glass_improved" avail="LARGE_TOWN" price="21000" load="1" robust="0" cplx="M" type="OTHER" skill="perception" />
+    <!-- ItemTemplate has one skill field; the two alternative skills are
+         described in the help rather than granting either a permanent bonus. -->
+    <item id="prayer_wheel" avail="SMALL_TOWN" price="300" load="1" robust="1" cplx="G" type="OTHER" />
+    <item id="ghost_lights" avail="SMALL_TOWN" price="500" load="1" robust="0" cplx="G" type="OTHER" />
+</items>

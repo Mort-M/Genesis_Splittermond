@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<materials>
+    <!-- The calculation patch handles rigidity -2 with a minimum of 1.
+         No additive XML modifier: it would lose the lower bound on the original
+         engine and apply the reduction twice with the calculation patch. -->
+    <material id="ghostiron" quality="4" price="1000" type="METAL" />
+    <!-- -1 denotes no market price. The accompanying price-display change
+         shows this explicitly; it must never be treated as a purchase rebate. -->
+    <material id="maidh_bewerdu_feathers" quality="5" price="-1" type="OTHER">
+        <modifications><skillmod ref="deathmagic" value="2" /></modifications>
+    </material>
+</materials>

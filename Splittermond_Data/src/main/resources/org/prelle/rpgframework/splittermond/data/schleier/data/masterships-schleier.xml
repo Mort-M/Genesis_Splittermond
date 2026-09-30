@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skills>
+    <skill id="deathmagic">
+        <!-- Starting mastership of the Ahnentraeger education (book p. 48).
+             Its effect requires a successful active defence against possession. -->
+        <mastership level="1" key="medium1" />
+    </skill>
+</skills>

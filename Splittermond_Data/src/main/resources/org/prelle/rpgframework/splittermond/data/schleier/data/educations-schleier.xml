@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<educations>
+    <education id="spiritist">
+        <modifications>
+            <powermod ref="concentrated" />
+            <powermod ref="friendghost" />
+            <selmod dist="2">
+                <resourcemod ref="contacts" /><resourcemod ref="creature" />
+                <resourcemod ref="mentor" /><resourcemod ref="rank" /><resourcemod ref="relic" />
+            </selmod>
+            <selmod values="2">
+                <skillmod ref="slashing" /><skillmod ref="melee" /><skillmod ref="chains" />
+                <skillmod ref="blades" /><skillmod ref="staffs" /><skillmod ref="longrange" /><skillmod ref="throwing" />
+            </selmod>
+            <skillmod ref="arcanelore" value="3" />
+            <selmod><skillmod ref="diplomacy" value="3" /><skillmod ref="eloquence" value="3" /></selmod>
+            <skillmod ref="empathy" value="3" /><skillmod ref="determination" value="3" />
+            <skillmod ref="history" value="3" />
+            <selmod><skillmod ref="countrylore" value="2" /><skillmod ref="streetlore" value="2" /></selmod>
+            <skillmod ref="perception" value="2" />
+            <skillmod ref="antimagic" value="3" /><skillmod ref="protectionmagic" value="2" /><skillmod ref="deathmagic" value="4" />
+            <mastermod ref="deathmagic/ghostcreature_conjurer" /><mastermod ref="deathmagic/ghostexpert" />
+        </modifications>
+    </education>
+    <education id="mistcrow" variantof="spiritist">
+        <modifications>
+            <reqmod type="culture" ref="nyrdfing" />
+            <powermod ref="resistmind" /><powermod ref="priest" />
+            <resourcemod ref="rank" value="1"><comment>Starrekyngkirche</comment></resourcemod>
+            <selmod dist="1">
+                <resourcemod ref="contacts" /><resourcemod ref="creature" />
+                <resourcemod ref="mentor" /><resourcemod ref="rank" /><resourcemod ref="relic" />
+            </selmod>
+            <selmod values="2">
+                <skillmod ref="slashing" /><skillmod ref="melee" /><skillmod ref="chains" />
+                <skillmod ref="blades" /><skillmod ref="staffs" /><skillmod ref="longrange" /><skillmod ref="throwing" />
+            </selmod>
+            <skillmod ref="arcanelore" value="3" />
+            <selmod><skillmod ref="diplomacy" value="3" /><skillmod ref="eloquence" value="3" /></selmod>
+            <skillmod ref="empathy" value="3" /><skillmod ref="determination" value="3" /><skillmod ref="history" value="3" />
+            <skillmod ref="perception" value="2" />
+            <skillmod ref="antimagic" value="4" /><skillmod ref="protectionmagic" value="3" /><skillmod ref="deathmagic" value="4" />
+            <mastermod ref="deathmagic/ghostexpert" /><mastermod ref="deathmagic/ghosthunter" />
+        </modifications>
+    </education>
+    <education id="whispershadow" variantof="spiritist">
+        <modifications>
+            <reqmod type="culture" ref="piriwatu,puntani,utarti" />
+            <powermod ref="concentrated" /><powermod ref="friendghost" />
+            <resourcemod ref="rank" value="1"><comment>Flüsterschatten</comment></resourcemod>
+            <selmod dist="1">
+                <resourcemod ref="contacts" /><resourcemod ref="creature" />
+                <resourcemod ref="mentor" /><resourcemod ref="rank" /><resourcemod ref="relic" />
+            </selmod>
+            <skillmod ref="arcanelore" value="3" />
+            <selmod><skillmod ref="diplomacy" value="3" /><skillmod ref="eloquence" value="3" /></selmod>
+            <skillmod ref="empathy" value="3" /><skillmod ref="determination" value="3" /><skillmod ref="history" value="3" />
+            <selmod><skillmod ref="countrylore" value="2" /><skillmod ref="streetlore" value="2" /></selmod>
+            <skillmod ref="perception" value="2" />
+            <skillmod ref="healmagic" value="3" /><skillmod ref="naturemagic" value="4" /><skillmod ref="deathmagic" value="4" />
+            <mastermod ref="deathmagic/ghostcreature_conjurer" /><mastermod ref="deathmagic/ghostexpert" />
+        </modifications>
+    </education>
+    <education id="ancestorcarrier" variantof="spiritist">
+        <modifications>
+            <reqmod type="culture" ref="sadu,zhoujiang" />
+            <powermod ref="concentrated" /><powermod ref="friendghost" />
+            <selmod dist="2">
+                <resourcemod ref="contacts" /><resourcemod ref="creature" /><resourcemod ref="mentor" />
+                <resourcemod ref="rank" /><resourcemod ref="relic" /><resourcemod ref="reputation" />
+            </selmod>
+            <selmod><skillmod ref="clscraft" value="2" /><skillmod ref="craftmanship" value="2" /></selmod>
+            <skillmod ref="arcanelore" value="3" />
+            <selmod><skillmod ref="diplomacy" value="3" /><skillmod ref="eloquence" value="3" /></selmod>
+            <skillmod ref="empathy" value="3" /><skillmod ref="determination" value="3" /><skillmod ref="history" value="3" />
+            <skillmod ref="countrylore" value="2" /><skillmod ref="perception" value="2" />
+            <skillmod ref="antimagic" value="3" /><skillmod ref="protectionmagic" value="2" /><skillmod ref="deathmagic" value="4" />
+            <mastermod ref="deathmagic/medium1" /><mastermod ref="deathmagic/ghostexpert" />
+        </modifications>
+    </education>
+    <education id="zhoujiang_exorcist" variantof="mysticwarrior">
+        <modifications>
+            <reqmod type="culture" ref="zhoujiang" />
+            <selmod><powermod ref="focuspool" /><powermod ref="liferegen" /><powermod ref="resistmind" /></selmod>
+            <resourcemod ref="relic" value="1" />
+            <selmod>
+                <resourcemod ref="relic" value="1" />
+                <resourcemod ref="rank" value="1"><comment>Kirche der Wugei, des Jausei oder der Gagamba</comment></resourcemod>
+            </selmod>
+            <selmod values="3 3">
+                <skillmod ref="slashing" /><skillmod ref="melee" /><skillmod ref="chains" />
+                <skillmod ref="blades" /><skillmod ref="staffs" /><skillmod ref="longrange" /><skillmod ref="throwing" />
+            </selmod>
+            <skillmod ref="arcanelore" value="3" /><skillmod ref="diplomacy" value="1" />
+            <skillmod ref="determination" value="3" /><skillmod ref="history" value="1" />
+            <selmod><skillmod ref="heal" value="1" /><skillmod ref="healmagic" value="1" /></selmod>
+            <skillmod ref="countrylore" value="1" /><skillmod ref="endurance" value="2" />
+            <skillmod ref="antimagic" value="3" /><skillmod ref="protectionmagic" value="3" />
+            <skillmod ref="enhancemagic" value="2" /><skillmod ref="deathmagic" value="4" />
+            <mastermod ref="deathmagic/ghostexpert" /><mastermod ref="deathmagic/ghosthunter" />
+        </modifications>
+    </education>
+    <education id="obsidianseeker" variantof="lorepriest">
+        <modifications>
+            <reqmod type="culture" ref="borombri,furgand" />
+            <powermod ref="friendghost" /><powermod ref="priest" />
+            <selmod><powermod ref="goodmemory" /><powermod ref="literate" /></selmod>
+            <resourcemod ref="rank" value="1"><comment>Obsidiansucher</comment></resourcemod>
+            <selmod><resourcemod ref="creature" value="1" /><resourcemod ref="relic" value="1" /></selmod>
+            <skillmod ref="arcanelore" value="3" /><skillmod ref="diplomacy" value="2" />
+            <skillmod ref="empathy" value="2" /><skillmod ref="determination" value="2" /><skillmod ref="history" value="3" />
+            <skillmod ref="heal" value="1" /><skillmod ref="countrylore" value="3" /><skillmod ref="nature" value="3" />
+            <skillmod ref="survival" value="2" /><skillmod ref="perception" value="2" />
+            <skillmod ref="insightmagic" value="4" /><skillmod ref="deathmagic" value="3" />
+            <!-- The supplied correction assigns Stimmungsgespuer to insight magic. -->
+            <mastermod ref="insightmagic/emotionsense" /><mastermod ref="deathmagic/ghostexpert" />
+        </modifications>
+    </education>
+    <education id="otherworld_emissary" variantof="summoner">
+        <modifications>
+            <powermod ref="friendghost" /><powermod ref="animalfamiliar" />
+            <resourcemod ref="creature" value="2" />
+            <skillmod ref="leadership" value="3" /><skillmod ref="arcanelore" value="3" />
+            <skillmod ref="empathy" value="3" /><skillmod ref="determination" value="3" /><skillmod ref="history" value="3" />
+            <selmod><skillmod ref="streetlore" value="1" /><skillmod ref="survival" value="1" /></selmod>
+            <selmod><skillmod ref="countrylore" value="2" /><skillmod ref="survival" value="2" /></selmod>
+            <selmod><skillmod ref="nature" value="2" /><skillmod ref="streetlore" value="2" /></selmod>
+            <skillmod ref="deathmagic" value="4" />
+            <selmod values="3 3">
+                <skillmod ref="stonemagic" /><skillmod ref="firemagic" /><skillmod ref="lightmagic" />
+                <skillmod ref="naturemagic" /><skillmod ref="shadowmagic" /><skillmod ref="watermagic" /><skillmod ref="windmagic" />
+            </selmod>
+            <mastermod skill="arcanelore" /><mastermod skill="arcanelore" />
+        </modifications>
+    </education>
+</educations>
