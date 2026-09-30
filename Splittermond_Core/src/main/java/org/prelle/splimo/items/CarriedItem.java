@@ -233,6 +233,9 @@ public class CarriedItem extends UniqueObject implements Comparable<CarriedItem>
 			}
 		}
 
+		// This material's lower bound cannot be represented by an additive XML modifier.
+		if (material!=null && "ghostiron".equals(material.getId()))
+			return Math.max(1, value-2);
 		return value;
 	}
 
