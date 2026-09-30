@@ -528,12 +528,10 @@
 		<modifications>
 			<reqmod type="culture" ref="zhoujiang"/>
 			
-			<selmod num="1">
-				<powermod ref="focuspool"/>
-				<powermod ref="liferegen"/>
-			</selmod>
+			<powermod ref="literate"/>
+			<powermod ref="sensesocial"/>
 			<resourcemod ref="contacts" value="1"/>
-			<resourcemod ref="rank" value="1"/>
+			<resourcemod ref="rank" value="1"><comment>Beamtenschaft</comment></resourcemod>
 			
             <skillmod ref="melee" value="1"/>
             <skillmod ref="leadership" value="1"/>
@@ -548,7 +546,7 @@
             <skillmod ref="perception" value="1"/>
             <skillmod ref="antimagic" value="3"/>
             <skillmod ref="insightmagic" value="4"/>
-            <mastermod ref="clscraft/precise_arkancalligraphy"/>
+            <mastermod ref="clscraft/journeyman_calligraphy"/>
             <mastermod ref="antimagic/antighostseal"/>
 		</modifications>
 	</education>

@@ -489,6 +489,13 @@ public class SplittermondDataPlugin implements RulePlugin<SpliMoCharacter> {
 		
 		count++; callback.progressChanged( (count/totalPlugins) );
 
+		// Load after Magie and Zhoujiang: the educations reuse their masterships.
+		PluginSkeleton SCHLEIER = new PluginSkeleton("Schleier", "Hinter dem Schleier");
+		SplitterMondCore.loadMasterships(SCHLEIER, clazz.getResourceAsStream("schleier/data/masterships-schleier.xml"), SCHLEIER.getResources(), SCHLEIER.getHelpResources());
+		SplitterMondCore.loadEducations(SCHLEIER, clazz.getResourceAsStream("schleier/data/educations-schleier.xml"), SCHLEIER.getResources(), SCHLEIER.getHelpResources());
+		SplitterMondCore.loadMaterials(SCHLEIER, clazz.getResourceAsStream("schleier/data/materials-schleier.xml"), SCHLEIER.getResources(), SCHLEIER.getHelpResources());
+		SplitterMondCore.loadEquipment(SCHLEIER, clazz.getResourceAsStream("schleier/data/equipment-schleier.xml"), SCHLEIER.getResources(), SCHLEIER.getHelpResources());
+
 		/*
 		 * Load custom data
 		 */
