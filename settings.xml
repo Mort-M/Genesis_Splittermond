@@ -1,29 +1,6 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0   https://maven.apache.org/xsd/settings-1.0.0.xsd">
-	<servers>
-      <server>
-            <id>central</id>
-            <username>${env.SONATYPE_USER_TOKEN}</username>
-            <password>${env.SONATYPE_PWD_TOKEN}</password>
-      </server>
-		<server>
-			<id>rpgframework</id>
- 			<username>${env.BB_USER_TOKEN}</username>
- 			<password>${env.BB_PWD_TOKEN}</password>
-<!-- 			<privateKey></privateKey> -->
-			<configuration>
-			     <strictHostKeyChecking>no</strictHostKeyChecking>
-           <interactive>false</interactive>
-			 <!--hostkey>www.rpgframework.de ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzeiNcfCKWv3HnwFMGkecxLZ2+kwvGATZdLxagJJGuw9YyKS4HvFbfCGOgj4sycIGV3ctDAP7IEVWCB0E6YkwvWKqN47KFUrfvy/TSy1iny9H6Ax6Id5IZyMc4ntNTcM7C4A400DhvnjELYdk0Ghop7V6dDt56+oKdW2m+xvjyY4F8+vu0yKqkUXD0le7POY84q+qBEbQP8iNA9ntqvJ1yuHANP6HaAwGKv6zo48GgoS3ypWFn2xLF3GTwKp3CWoWdA7MLsuDql8W7iNLdgI+8LY9pIAPZ7GazmtA/xwGOuidgmjE/WDtg3Cp+kK1fRpOIV7rJtGD+FEwyY02hIJpl</hostkey-->
-			</configuration>
-		</server>
-        <server>
-            <id>github</id>
-            <username>${env.GITHUB_USER_TOKEN}</username>
-            <password>${env.GITHUB_PWD_TOKEN}</password>
-        </server>
-	</servers>
 
 	<profiles>
 		<profile>
