@@ -31,14 +31,16 @@ public class SchleierCompletenessTest {
     @BeforeClass public static void load() throws Exception {
         new SplittermondDataPlugin().init(p -> {});
         // Data-only contribution: production loader wiring is a separate change.
-        // Exercise the existing loaders directly to validate the new catalogues.
+        // Exercise the loaders only when production has not already loaded these catalogues.
         PluginSkeleton plugin = new PluginSkeleton("Schleier", "Hinter dem Schleier");
         try (InputStream powers = SchleierCompletenessTest.class.getResourceAsStream(ROOT+"data/powers-schleier.xml");
                 InputStream spells = SchleierCompletenessTest.class.getResourceAsStream(ROOT+"data/spells-schleier.xml")) {
             assertNotNull("Missing powers catalogue", powers);
             assertNotNull("Missing spells catalogue", spells);
-            SplitterMondCore.loadPowers(plugin, powers, plugin.getResources(), plugin.getHelpResources());
-            SplitterMondCore.loadSpells(plugin, spells, plugin.getResources(), plugin.getHelpResources());
+            if (SplitterMondCore.getPower("oldsoul")==null)
+                SplitterMondCore.loadPowers(plugin, powers, plugin.getResources(), plugin.getHelpResources());
+            if (SplitterMondCore.getSpell("forced_return")==null)
+                SplitterMondCore.loadSpells(plugin, spells, plugin.getResources(), plugin.getHelpResources());
         }
     }
 
