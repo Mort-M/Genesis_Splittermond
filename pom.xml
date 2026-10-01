@@ -39,6 +39,11 @@
             <enabled>true</enabled>
          </snapshots>
       </repository>
+      <repository>
+        <id>github</id>
+        <name>GitHub Packages</name>
+        <url>https://maven.pkg.github.com/taranion/Babylon_LicenseCheck</url>
+      </repository>
     </repositories>
 
 	<dependencyManagement>
