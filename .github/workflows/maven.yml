@@ -18,10 +18,11 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+        settings-path: $GITHUB_WORKSPACE/settings-deploy.xml
         
         cache: maven
     - name: Build with Maven
-      run: cat settings.xml ; mvn -B -U -s settings.xml install -DskipTests
+      run: ls -l ; cat settings-deploy.xml ; mvn -B -U -s $GITHUB_WORKSPACE/settings-deploy.xml install -DskipTests
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
 
