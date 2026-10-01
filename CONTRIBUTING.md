@@ -34,4 +34,5 @@ wäre ein Ticket z.B. eine Waffengattung. Wenn Du aber nur Daten aus einem klein
 wo es insgesamt nur 10 Ausrüstungsstücke, kannst Du auch ein Ticket "Ausrüstung aus XY" machen.
 
 Schlecht sind Tickets bei denen Du mischt: z.B. "Bugfix zum Regionalband X und fehlende Daten aus Band Y"
- 
+
+Faustregel: Mische keine Tickets für Code-Änderungen mit Daten-Änderungen
