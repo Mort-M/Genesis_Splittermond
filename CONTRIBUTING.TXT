@@ -1,9 +1,0 @@
-Eure Beteiligungen sind willkommen.
-
-Mit euren Beiträgen überlasst ihr mir, Stefan Prelle, das Recht, diesen Code 
-und Daten im Kontext des RPGFramework Projekts zu nutzen. Dies beinhaltet 
-explizit auch die kommerzielle Nutzung, z.B. durch die Genesis-Lizenzen.
-
-Euer Recht ist es, dass diese Daten weiterhin unter dem für Fanprojekte 
-vorgegebenen Rahmen unentgeltlich zur Verfügung stehen, so daß eure Beiträge
-auch der Community nutzen.
